@@ -416,7 +416,7 @@ pub enum GetMediaErrorKind {
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMediaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,7 @@ impl GetMediaError {
     /// Creates the `GetMediaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMediaErrorKind::Unhandled(err.into()),
+            kind: GetMediaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -457,7 +457,7 @@ impl GetMediaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMediaErrorKind::Unhandled(err.into()),
+            kind: GetMediaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -521,7 +521,32 @@ impl std::error::Error for GetMediaError {
             GetMediaErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             GetMediaErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetMediaErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetMediaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMediaErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

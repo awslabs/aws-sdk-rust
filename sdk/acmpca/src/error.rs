@@ -1257,7 +1257,7 @@ pub enum CreateCertificateAuthorityErrorKind {
     /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1287,7 +1287,9 @@ impl CreateCertificateAuthorityError {
     /// Creates the `CreateCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1296,7 +1298,9 @@ impl CreateCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1356,7 +1360,7 @@ impl std::error::Error for CreateCertificateAuthorityError {
             CreateCertificateAuthorityErrorKind::InvalidPolicyException(_inner) => Some(_inner),
             CreateCertificateAuthorityErrorKind::InvalidTagException(_inner) => Some(_inner),
             CreateCertificateAuthorityErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1387,7 +1391,7 @@ pub enum CreateCertificateAuthorityAuditReportErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCertificateAuthorityAuditReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1434,7 +1438,9 @@ impl CreateCertificateAuthorityAuditReportError {
     /// Creates the `CreateCertificateAuthorityAuditReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCertificateAuthorityAuditReportErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateAuthorityAuditReportErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1443,7 +1449,9 @@ impl CreateCertificateAuthorityAuditReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCertificateAuthorityAuditReportErrorKind::Unhandled(err.into()),
+            kind: CreateCertificateAuthorityAuditReportErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1531,9 +1539,7 @@ impl std::error::Error for CreateCertificateAuthorityAuditReportError {
             CreateCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            CreateCertificateAuthorityAuditReportErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateCertificateAuthorityAuditReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1564,7 +1570,7 @@ pub enum CreatePermissionErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1596,7 +1602,7 @@ impl CreatePermissionError {
     /// Creates the `CreatePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePermissionErrorKind::Unhandled(err.into()),
+            kind: CreatePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1605,7 +1611,7 @@ impl CreatePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePermissionErrorKind::Unhandled(err.into()),
+            kind: CreatePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1681,7 +1687,7 @@ impl std::error::Error for CreatePermissionError {
             CreatePermissionErrorKind::PermissionAlreadyExistsException(_inner) => Some(_inner),
             CreatePermissionErrorKind::RequestFailedException(_inner) => Some(_inner),
             CreatePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreatePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1708,7 +1714,7 @@ pub enum DeleteCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1740,7 +1746,9 @@ impl DeleteCertificateAuthorityError {
     /// Creates the `DeleteCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1749,7 +1757,9 @@ impl DeleteCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1811,7 +1821,7 @@ impl std::error::Error for DeleteCertificateAuthorityError {
             DeleteCertificateAuthorityErrorKind::InvalidArnException(_inner) => Some(_inner),
             DeleteCertificateAuthorityErrorKind::InvalidStateException(_inner) => Some(_inner),
             DeleteCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1838,7 +1848,7 @@ pub enum DeletePermissionErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1868,7 +1878,7 @@ impl DeletePermissionError {
     /// Creates the `DeletePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePermissionErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1877,7 +1887,7 @@ impl DeletePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePermissionErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1937,7 +1947,7 @@ impl std::error::Error for DeletePermissionError {
             DeletePermissionErrorKind::InvalidStateException(_inner) => Some(_inner),
             DeletePermissionErrorKind::RequestFailedException(_inner) => Some(_inner),
             DeletePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeletePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1968,7 +1978,7 @@ pub enum DeletePolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2000,7 +2010,7 @@ impl DeletePolicyError {
     /// Creates the `DeletePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2009,7 +2019,7 @@ impl DeletePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2076,7 +2086,7 @@ impl std::error::Error for DeletePolicyError {
             DeletePolicyErrorKind::LockoutPreventedException(_inner) => Some(_inner),
             DeletePolicyErrorKind::RequestFailedException(_inner) => Some(_inner),
             DeletePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2099,7 +2109,7 @@ pub enum DescribeCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2129,7 +2139,9 @@ impl DescribeCertificateAuthorityError {
     /// Creates the `DescribeCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2138,7 +2150,9 @@ impl DescribeCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2184,7 +2198,7 @@ impl std::error::Error for DescribeCertificateAuthorityError {
             DescribeCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2209,7 +2223,7 @@ pub enum DescribeCertificateAuthorityAuditReportErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCertificateAuthorityAuditReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2247,7 +2261,9 @@ impl DescribeCertificateAuthorityAuditReportError {
     /// Creates the `DescribeCertificateAuthorityAuditReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2256,7 +2272,9 @@ impl DescribeCertificateAuthorityAuditReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2314,9 +2332,7 @@ impl std::error::Error for DescribeCertificateAuthorityAuditReportError {
             DescribeCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2345,7 +2361,7 @@ pub enum GetCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2376,7 +2392,7 @@ impl GetCertificateError {
     /// Creates the `GetCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2385,7 +2401,7 @@ impl GetCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2450,7 +2466,7 @@ impl std::error::Error for GetCertificateError {
             GetCertificateErrorKind::RequestFailedException(_inner) => Some(_inner),
             GetCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
             GetCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2475,7 +2491,7 @@ pub enum GetCertificateAuthorityCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificateAuthorityCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2513,7 +2529,9 @@ impl GetCertificateAuthorityCertificateError {
     /// Creates the `GetCertificateAuthorityCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCertificateAuthorityCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateAuthorityCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2522,7 +2540,9 @@ impl GetCertificateAuthorityCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCertificateAuthorityCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateAuthorityCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2580,7 +2600,7 @@ impl std::error::Error for GetCertificateAuthorityCertificateError {
             GetCertificateAuthorityCertificateErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            GetCertificateAuthorityCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCertificateAuthorityCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2609,7 +2629,7 @@ pub enum GetCertificateAuthorityCsrErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificateAuthorityCsrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2642,7 +2662,9 @@ impl GetCertificateAuthorityCsrError {
     /// Creates the `GetCertificateAuthorityCsrError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCertificateAuthorityCsrErrorKind::Unhandled(err.into()),
+            kind: GetCertificateAuthorityCsrErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2651,7 +2673,9 @@ impl GetCertificateAuthorityCsrError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCertificateAuthorityCsrErrorKind::Unhandled(err.into()),
+            kind: GetCertificateAuthorityCsrErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2719,7 +2743,7 @@ impl std::error::Error for GetCertificateAuthorityCsrError {
             GetCertificateAuthorityCsrErrorKind::RequestFailedException(_inner) => Some(_inner),
             GetCertificateAuthorityCsrErrorKind::RequestInProgressException(_inner) => Some(_inner),
             GetCertificateAuthorityCsrErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetCertificateAuthorityCsrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCertificateAuthorityCsrErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2746,7 +2770,7 @@ pub enum GetPolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2776,7 +2800,7 @@ impl GetPolicyError {
     /// Creates the `GetPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2785,7 +2809,7 @@ impl GetPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2833,7 +2857,7 @@ impl std::error::Error for GetPolicyError {
             GetPolicyErrorKind::InvalidStateException(_inner) => Some(_inner),
             GetPolicyErrorKind::RequestFailedException(_inner) => Some(_inner),
             GetPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2870,7 +2894,7 @@ pub enum ImportCertificateAuthorityCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportCertificateAuthorityCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2926,7 +2950,9 @@ impl ImportCertificateAuthorityCertificateError {
     /// Creates the `ImportCertificateAuthorityCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportCertificateAuthorityCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateAuthorityCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2935,7 +2961,9 @@ impl ImportCertificateAuthorityCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportCertificateAuthorityCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateAuthorityCertificateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3053,9 +3081,7 @@ impl std::error::Error for ImportCertificateAuthorityCertificateError {
             ImportCertificateAuthorityCertificateErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ImportCertificateAuthorityCertificateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ImportCertificateAuthorityCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3086,7 +3112,7 @@ pub enum IssueCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IssueCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3118,7 +3144,7 @@ impl IssueCertificateError {
     /// Creates the `IssueCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: IssueCertificateErrorKind::Unhandled(err.into()),
+            kind: IssueCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3127,7 +3153,7 @@ impl IssueCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: IssueCertificateErrorKind::Unhandled(err.into()),
+            kind: IssueCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3203,7 +3229,7 @@ impl std::error::Error for IssueCertificateError {
             IssueCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
             IssueCertificateErrorKind::MalformedCsrException(_inner) => Some(_inner),
             IssueCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            IssueCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            IssueCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3224,7 +3250,7 @@ pub enum ListCertificateAuthoritiesErrorKind {
     /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCertificateAuthoritiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3251,7 +3277,9 @@ impl ListCertificateAuthoritiesError {
     /// Creates the `ListCertificateAuthoritiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCertificateAuthoritiesErrorKind::Unhandled(err.into()),
+            kind: ListCertificateAuthoritiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3260,7 +3288,9 @@ impl ListCertificateAuthoritiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCertificateAuthoritiesErrorKind::Unhandled(err.into()),
+            kind: ListCertificateAuthoritiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3296,7 +3326,7 @@ impl std::error::Error for ListCertificateAuthoritiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListCertificateAuthoritiesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListCertificateAuthoritiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCertificateAuthoritiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3325,7 +3355,7 @@ pub enum ListPermissionsErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3356,7 +3386,7 @@ impl ListPermissionsError {
     /// Creates the `ListPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3365,7 +3395,7 @@ impl ListPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3430,7 +3460,7 @@ impl std::error::Error for ListPermissionsError {
             ListPermissionsErrorKind::InvalidStateException(_inner) => Some(_inner),
             ListPermissionsErrorKind::RequestFailedException(_inner) => Some(_inner),
             ListPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3455,7 +3485,7 @@ pub enum ListTagsErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3484,7 +3514,7 @@ impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3493,7 +3523,7 @@ impl ListTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3536,7 +3566,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::InvalidArnException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidStateException(_inner) => Some(_inner),
             ListTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3569,7 +3599,7 @@ pub enum PutPolicyErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3602,7 +3632,7 @@ impl PutPolicyError {
     /// Creates the `PutPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3611,7 +3641,7 @@ impl PutPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3677,7 +3707,7 @@ impl std::error::Error for PutPolicyError {
             PutPolicyErrorKind::LockoutPreventedException(_inner) => Some(_inner),
             PutPolicyErrorKind::RequestFailedException(_inner) => Some(_inner),
             PutPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3702,7 +3732,7 @@ pub enum RestoreCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3733,7 +3763,9 @@ impl RestoreCertificateAuthorityError {
     /// Creates the `RestoreCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: RestoreCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3742,7 +3774,9 @@ impl RestoreCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: RestoreCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3794,7 +3828,7 @@ impl std::error::Error for RestoreCertificateAuthorityError {
             RestoreCertificateAuthorityErrorKind::InvalidArnException(_inner) => Some(_inner),
             RestoreCertificateAuthorityErrorKind::InvalidStateException(_inner) => Some(_inner),
             RestoreCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RestoreCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3831,7 +3865,7 @@ pub enum RevokeCertificateErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3866,7 +3900,7 @@ impl RevokeCertificateError {
     /// Creates the `RevokeCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeCertificateErrorKind::Unhandled(err.into()),
+            kind: RevokeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3875,7 +3909,7 @@ impl RevokeCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeCertificateErrorKind::Unhandled(err.into()),
+            kind: RevokeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3975,7 +4009,7 @@ impl std::error::Error for RevokeCertificateError {
             RevokeCertificateErrorKind::RequestFailedException(_inner) => Some(_inner),
             RevokeCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
             RevokeCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RevokeCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4004,7 +4038,7 @@ pub enum TagCertificateAuthorityErrorKind {
     /// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4035,7 +4069,9 @@ impl TagCertificateAuthorityError {
     /// Creates the `TagCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: TagCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4044,7 +4080,9 @@ impl TagCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: TagCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4112,7 +4150,7 @@ impl std::error::Error for TagCertificateAuthorityError {
             TagCertificateAuthorityErrorKind::InvalidTagException(_inner) => Some(_inner),
             TagCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagCertificateAuthorityErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4139,7 +4177,7 @@ pub enum UntagCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4169,7 +4207,9 @@ impl UntagCertificateAuthorityError {
     /// Creates the `UntagCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: UntagCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4178,7 +4218,9 @@ impl UntagCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: UntagCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4238,7 +4280,7 @@ impl std::error::Error for UntagCertificateAuthorityError {
             UntagCertificateAuthorityErrorKind::InvalidStateException(_inner) => Some(_inner),
             UntagCertificateAuthorityErrorKind::InvalidTagException(_inner) => Some(_inner),
             UntagCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4269,7 +4311,7 @@ pub enum UpdateCertificateAuthorityErrorKind {
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4303,7 +4345,9 @@ impl UpdateCertificateAuthorityError {
     /// Creates the `UpdateCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4312,7 +4356,9 @@ impl UpdateCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateAuthorityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4390,7 +4436,32 @@ impl std::error::Error for UpdateCertificateAuthorityError {
             UpdateCertificateAuthorityErrorKind::InvalidPolicyException(_inner) => Some(_inner),
             UpdateCertificateAuthorityErrorKind::InvalidStateException(_inner) => Some(_inner),
             UpdateCertificateAuthorityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

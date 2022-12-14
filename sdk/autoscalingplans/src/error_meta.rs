@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,10 +53,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -82,10 +82,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -112,10 +112,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeScalingPlanResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -142,10 +142,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeScalingPlansErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,9 +166,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetScalingPlanResourceForecastDataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::GetScalingPlanResourceForecastDataErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetScalingPlanResourceForecastDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetScalingPlanResourceForecastDataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -194,10 +194,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

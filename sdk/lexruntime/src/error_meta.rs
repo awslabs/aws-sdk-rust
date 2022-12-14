@@ -31,7 +31,7 @@ pub enum Error {
     /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -73,9 +73,11 @@ where
                 crate::error::DeleteSessionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -98,9 +100,11 @@ where
                 crate::error::GetSessionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,9 +148,11 @@ where
                 crate::error::PostContentErrorKind::UnsupportedMediaTypeException(inner) => {
                     Error::UnsupportedMediaTypeException(inner)
                 }
-                crate::error::PostContentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PostContentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -181,9 +187,11 @@ where
                 crate::error::PostTextErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::PostTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PostTextErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -218,9 +226,11 @@ where
                 crate::error::PutSessionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::PutSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

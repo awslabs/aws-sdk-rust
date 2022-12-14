@@ -946,7 +946,7 @@ pub enum DeleteAlarmsErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAlarmsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -973,7 +973,7 @@ impl DeleteAlarmsError {
     /// Creates the `DeleteAlarmsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAlarmsErrorKind::Unhandled(err.into()),
+            kind: DeleteAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -982,7 +982,7 @@ impl DeleteAlarmsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAlarmsErrorKind::Unhandled(err.into()),
+            kind: DeleteAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1015,7 +1015,7 @@ impl std::error::Error for DeleteAlarmsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteAlarmsErrorKind::ResourceNotFound(_inner) => Some(_inner),
-            DeleteAlarmsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAlarmsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1044,7 +1044,7 @@ pub enum DeleteAnomalyDetectorErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1079,7 +1079,9 @@ impl DeleteAnomalyDetectorError {
     /// Creates the `DeleteAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeleteAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1088,7 +1090,9 @@ impl DeleteAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeleteAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1160,7 +1164,7 @@ impl std::error::Error for DeleteAnomalyDetectorError {
                 Some(_inner)
             }
             DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1185,7 +1189,7 @@ pub enum DeleteDashboardsErrorKind {
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDashboardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1214,7 +1218,7 @@ impl DeleteDashboardsError {
     /// Creates the `DeleteDashboardsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDashboardsErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1223,7 +1227,7 @@ impl DeleteDashboardsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDashboardsErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1275,7 +1279,7 @@ impl std::error::Error for DeleteDashboardsError {
             DeleteDashboardsErrorKind::DashboardNotFoundError(_inner) => Some(_inner),
             DeleteDashboardsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             DeleteDashboardsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteDashboardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDashboardsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1298,7 +1302,7 @@ pub enum DeleteInsightRulesErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1326,7 +1330,7 @@ impl DeleteInsightRulesError {
     /// Creates the `DeleteInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DeleteInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1335,7 +1339,7 @@ impl DeleteInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DeleteInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1379,7 +1383,7 @@ impl std::error::Error for DeleteInsightRulesError {
         match &self.kind {
             DeleteInsightRulesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteInsightRulesErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            DeleteInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1404,7 +1408,7 @@ pub enum DeleteMetricStreamErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMetricStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1433,7 +1437,7 @@ impl DeleteMetricStreamError {
     /// Creates the `DeleteMetricStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMetricStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1442,7 +1446,7 @@ impl DeleteMetricStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMetricStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1494,7 +1498,7 @@ impl std::error::Error for DeleteMetricStreamError {
             DeleteMetricStreamErrorKind::InternalServiceFault(_inner) => Some(_inner),
             DeleteMetricStreamErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteMetricStreamErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            DeleteMetricStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMetricStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1515,7 +1519,7 @@ pub enum DescribeAlarmHistoryErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAlarmHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1542,7 +1546,9 @@ impl DescribeAlarmHistoryError {
     /// Creates the `DescribeAlarmHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAlarmHistoryErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1551,7 +1557,9 @@ impl DescribeAlarmHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAlarmHistoryErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1587,7 +1595,7 @@ impl std::error::Error for DescribeAlarmHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeAlarmHistoryErrorKind::InvalidNextToken(_inner) => Some(_inner),
-            DescribeAlarmHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAlarmHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1608,7 +1616,7 @@ pub enum DescribeAlarmsErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAlarmsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1635,7 +1643,7 @@ impl DescribeAlarmsError {
     /// Creates the `DescribeAlarmsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAlarmsErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1644,7 +1652,7 @@ impl DescribeAlarmsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAlarmsErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1677,7 +1685,7 @@ impl std::error::Error for DescribeAlarmsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeAlarmsErrorKind::InvalidNextToken(_inner) => Some(_inner),
-            DescribeAlarmsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAlarmsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1696,7 +1704,7 @@ pub struct DescribeAlarmsForMetricError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeAlarmsForMetricErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAlarmsForMetricError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1722,7 +1730,9 @@ impl DescribeAlarmsForMetricError {
     /// Creates the `DescribeAlarmsForMetricError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAlarmsForMetricErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmsForMetricErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1731,7 +1741,9 @@ impl DescribeAlarmsForMetricError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAlarmsForMetricErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmsForMetricErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1759,7 +1771,7 @@ impl DescribeAlarmsForMetricError {
 impl std::error::Error for DescribeAlarmsForMetricError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAlarmsForMetricErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAlarmsForMetricErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1786,7 +1798,7 @@ pub enum DescribeAnomalyDetectorsErrorKind {
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAnomalyDetectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1820,7 +1832,9 @@ impl DescribeAnomalyDetectorsError {
     /// Creates the `DescribeAnomalyDetectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAnomalyDetectorsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1829,7 +1843,9 @@ impl DescribeAnomalyDetectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAnomalyDetectorsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1893,7 +1909,7 @@ impl std::error::Error for DescribeAnomalyDetectorsError {
             DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            DescribeAnomalyDetectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAnomalyDetectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1914,7 +1930,7 @@ pub enum DescribeInsightRulesErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,7 +1957,9 @@ impl DescribeInsightRulesError {
     /// Creates the `DescribeInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DescribeInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1950,7 +1968,9 @@ impl DescribeInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DescribeInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1986,7 +2006,7 @@ impl std::error::Error for DescribeInsightRulesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeInsightRulesErrorKind::InvalidNextToken(_inner) => Some(_inner),
-            DescribeInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2005,7 +2025,7 @@ pub struct DisableAlarmActionsError {
 #[derive(std::fmt::Debug)]
 pub enum DisableAlarmActionsErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableAlarmActionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2031,7 +2051,7 @@ impl DisableAlarmActionsError {
     /// Creates the `DisableAlarmActionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableAlarmActionsErrorKind::Unhandled(err.into()),
+            kind: DisableAlarmActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2040,7 +2060,7 @@ impl DisableAlarmActionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableAlarmActionsErrorKind::Unhandled(err.into()),
+            kind: DisableAlarmActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2068,7 +2088,7 @@ impl DisableAlarmActionsError {
 impl std::error::Error for DisableAlarmActionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableAlarmActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableAlarmActionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2091,7 +2111,7 @@ pub enum DisableInsightRulesErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2121,7 +2141,7 @@ impl DisableInsightRulesError {
     /// Creates the `DisableInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DisableInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2130,7 +2150,7 @@ impl DisableInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableInsightRulesErrorKind::Unhandled(err.into()),
+            kind: DisableInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2174,7 +2194,7 @@ impl std::error::Error for DisableInsightRulesError {
         match &self.kind {
             DisableInsightRulesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DisableInsightRulesErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            DisableInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2193,7 +2213,7 @@ pub struct EnableAlarmActionsError {
 #[derive(std::fmt::Debug)]
 pub enum EnableAlarmActionsErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableAlarmActionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2219,7 +2239,7 @@ impl EnableAlarmActionsError {
     /// Creates the `EnableAlarmActionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableAlarmActionsErrorKind::Unhandled(err.into()),
+            kind: EnableAlarmActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2228,7 +2248,7 @@ impl EnableAlarmActionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableAlarmActionsErrorKind::Unhandled(err.into()),
+            kind: EnableAlarmActionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2256,7 +2276,7 @@ impl EnableAlarmActionsError {
 impl std::error::Error for EnableAlarmActionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableAlarmActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableAlarmActionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2281,7 +2301,7 @@ pub enum EnableInsightRulesErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2310,7 +2330,7 @@ impl EnableInsightRulesError {
     /// Creates the `EnableInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableInsightRulesErrorKind::Unhandled(err.into()),
+            kind: EnableInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2319,7 +2339,7 @@ impl EnableInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableInsightRulesErrorKind::Unhandled(err.into()),
+            kind: EnableInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2371,7 +2391,7 @@ impl std::error::Error for EnableInsightRulesError {
             EnableInsightRulesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             EnableInsightRulesErrorKind::LimitExceededException(_inner) => Some(_inner),
             EnableInsightRulesErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            EnableInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2396,7 +2416,7 @@ pub enum GetDashboardErrorKind {
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,7 +2445,7 @@ impl GetDashboardError {
     /// Creates the `GetDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDashboardErrorKind::Unhandled(err.into()),
+            kind: GetDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2434,7 +2454,7 @@ impl GetDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDashboardErrorKind::Unhandled(err.into()),
+            kind: GetDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2480,7 +2500,7 @@ impl std::error::Error for GetDashboardError {
             GetDashboardErrorKind::DashboardNotFoundError(_inner) => Some(_inner),
             GetDashboardErrorKind::InternalServiceFault(_inner) => Some(_inner),
             GetDashboardErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            GetDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2505,7 +2525,7 @@ pub enum GetInsightRuleReportErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightRuleReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2536,7 +2556,9 @@ impl GetInsightRuleReportError {
     /// Creates the `GetInsightRuleReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightRuleReportErrorKind::Unhandled(err.into()),
+            kind: GetInsightRuleReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2545,7 +2567,9 @@ impl GetInsightRuleReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightRuleReportErrorKind::Unhandled(err.into()),
+            kind: GetInsightRuleReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2599,7 +2623,7 @@ impl std::error::Error for GetInsightRuleReportError {
                 Some(_inner)
             }
             GetInsightRuleReportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetInsightRuleReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightRuleReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2620,7 +2644,7 @@ pub enum GetMetricDataErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2647,7 +2671,7 @@ impl GetMetricDataError {
     /// Creates the `GetMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2656,7 +2680,7 @@ impl GetMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMetricDataErrorKind::Unhandled(err.into()),
+            kind: GetMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2689,7 +2713,7 @@ impl std::error::Error for GetMetricDataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetMetricDataErrorKind::InvalidNextToken(_inner) => Some(_inner),
-            GetMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2716,7 +2740,7 @@ pub enum GetMetricStatisticsErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMetricStatisticsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2750,7 +2774,7 @@ impl GetMetricStatisticsError {
     /// Creates the `GetMetricStatisticsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMetricStatisticsErrorKind::Unhandled(err.into()),
+            kind: GetMetricStatisticsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2759,7 +2783,7 @@ impl GetMetricStatisticsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMetricStatisticsErrorKind::Unhandled(err.into()),
+            kind: GetMetricStatisticsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2821,7 +2845,7 @@ impl std::error::Error for GetMetricStatisticsError {
             }
             GetMetricStatisticsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             GetMetricStatisticsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            GetMetricStatisticsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMetricStatisticsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2850,7 +2874,7 @@ pub enum GetMetricStreamErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMetricStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2881,7 +2905,7 @@ impl GetMetricStreamError {
     /// Creates the `GetMetricStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMetricStreamErrorKind::Unhandled(err.into()),
+            kind: GetMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2890,7 +2914,7 @@ impl GetMetricStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMetricStreamErrorKind::Unhandled(err.into()),
+            kind: GetMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2958,7 +2982,7 @@ impl std::error::Error for GetMetricStreamError {
             GetMetricStreamErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             GetMetricStreamErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
             GetMetricStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetMetricStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMetricStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2977,7 +3001,7 @@ pub struct GetMetricWidgetImageError {
 #[derive(std::fmt::Debug)]
 pub enum GetMetricWidgetImageErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMetricWidgetImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3003,7 +3027,9 @@ impl GetMetricWidgetImageError {
     /// Creates the `GetMetricWidgetImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMetricWidgetImageErrorKind::Unhandled(err.into()),
+            kind: GetMetricWidgetImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3012,7 +3038,9 @@ impl GetMetricWidgetImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMetricWidgetImageErrorKind::Unhandled(err.into()),
+            kind: GetMetricWidgetImageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3040,7 +3068,7 @@ impl GetMetricWidgetImageError {
 impl std::error::Error for GetMetricWidgetImageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMetricWidgetImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMetricWidgetImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3063,7 +3091,7 @@ pub enum ListDashboardsErrorKind {
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDashboardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3091,7 +3119,7 @@ impl ListDashboardsError {
     /// Creates the `ListDashboardsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3100,7 +3128,7 @@ impl ListDashboardsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3141,7 +3169,7 @@ impl std::error::Error for ListDashboardsError {
         match &self.kind {
             ListDashboardsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             ListDashboardsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3166,7 +3194,7 @@ pub enum ListManagedInsightRulesErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListManagedInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3199,7 +3227,9 @@ impl ListManagedInsightRulesError {
     /// Creates the `ListManagedInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListManagedInsightRulesErrorKind::Unhandled(err.into()),
+            kind: ListManagedInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3208,7 +3238,9 @@ impl ListManagedInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListManagedInsightRulesErrorKind::Unhandled(err.into()),
+            kind: ListManagedInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3264,7 +3296,7 @@ impl std::error::Error for ListManagedInsightRulesError {
             ListManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
                 Some(_inner)
             }
-            ListManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3287,7 +3319,7 @@ pub enum ListMetricsErrorKind {
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3315,7 +3347,7 @@ impl ListMetricsError {
     /// Creates the `ListMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMetricsErrorKind::Unhandled(err.into()),
+            kind: ListMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3324,7 +3356,7 @@ impl ListMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMetricsErrorKind::Unhandled(err.into()),
+            kind: ListMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3365,7 +3397,7 @@ impl std::error::Error for ListMetricsError {
         match &self.kind {
             ListMetricsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             ListMetricsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3392,7 +3424,7 @@ pub enum ListMetricStreamsErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMetricStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3422,7 +3454,7 @@ impl ListMetricStreamsError {
     /// Creates the `ListMetricStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: ListMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3431,7 +3463,7 @@ impl ListMetricStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: ListMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3488,7 +3520,7 @@ impl std::error::Error for ListMetricStreamsError {
             ListMetricStreamsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             ListMetricStreamsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListMetricStreamsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            ListMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3513,7 +3545,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3542,7 +3574,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3551,7 +3583,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3603,7 +3635,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServiceFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3632,7 +3664,7 @@ pub enum PutAnomalyDetectorErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3665,7 +3697,7 @@ impl PutAnomalyDetectorError {
     /// Creates the `PutAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: PutAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3674,7 +3706,7 @@ impl PutAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: PutAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3744,7 +3776,7 @@ impl std::error::Error for PutAnomalyDetectorError {
             PutAnomalyDetectorErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             PutAnomalyDetectorErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutAnomalyDetectorErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            PutAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3765,7 +3797,7 @@ pub enum PutCompositeAlarmErrorKind {
     /// <p>The quota for alarms for this customer has already been reached.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutCompositeAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3792,7 +3824,7 @@ impl PutCompositeAlarmError {
     /// Creates the `PutCompositeAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutCompositeAlarmErrorKind::Unhandled(err.into()),
+            kind: PutCompositeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3801,7 +3833,7 @@ impl PutCompositeAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutCompositeAlarmErrorKind::Unhandled(err.into()),
+            kind: PutCompositeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3837,7 +3869,7 @@ impl std::error::Error for PutCompositeAlarmError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutCompositeAlarmErrorKind::LimitExceededFault(_inner) => Some(_inner),
-            PutCompositeAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutCompositeAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3860,7 +3892,7 @@ pub enum PutDashboardErrorKind {
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
     InternalServiceFault(crate::error::InternalServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3888,7 +3920,7 @@ impl PutDashboardError {
     /// Creates the `PutDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDashboardErrorKind::Unhandled(err.into()),
+            kind: PutDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3897,7 +3929,7 @@ impl PutDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDashboardErrorKind::Unhandled(err.into()),
+            kind: PutDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3938,7 +3970,7 @@ impl std::error::Error for PutDashboardError {
         match &self.kind {
             PutDashboardErrorKind::DashboardInvalidInputError(_inner) => Some(_inner),
             PutDashboardErrorKind::InternalServiceFault(_inner) => Some(_inner),
-            PutDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3963,7 +3995,7 @@ pub enum PutInsightRuleErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutInsightRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3992,7 +4024,7 @@ impl PutInsightRuleError {
     /// Creates the `PutInsightRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutInsightRuleErrorKind::Unhandled(err.into()),
+            kind: PutInsightRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4001,7 +4033,7 @@ impl PutInsightRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutInsightRuleErrorKind::Unhandled(err.into()),
+            kind: PutInsightRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4053,7 +4085,7 @@ impl std::error::Error for PutInsightRuleError {
             PutInsightRuleErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             PutInsightRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutInsightRuleErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            PutInsightRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutInsightRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4076,7 +4108,7 @@ pub enum PutManagedInsightRulesErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutManagedInsightRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4108,7 +4140,9 @@ impl PutManagedInsightRulesError {
     /// Creates the `PutManagedInsightRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutManagedInsightRulesErrorKind::Unhandled(err.into()),
+            kind: PutManagedInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4117,7 +4151,9 @@ impl PutManagedInsightRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutManagedInsightRulesErrorKind::Unhandled(err.into()),
+            kind: PutManagedInsightRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4163,7 +4199,7 @@ impl std::error::Error for PutManagedInsightRulesError {
             PutManagedInsightRulesErrorKind::MissingRequiredParameterException(_inner) => {
                 Some(_inner)
             }
-            PutManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutManagedInsightRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4184,7 +4220,7 @@ pub enum PutMetricAlarmErrorKind {
     /// <p>The quota for alarms for this customer has already been reached.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMetricAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4211,7 +4247,7 @@ impl PutMetricAlarmError {
     /// Creates the `PutMetricAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMetricAlarmErrorKind::Unhandled(err.into()),
+            kind: PutMetricAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4220,7 +4256,7 @@ impl PutMetricAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMetricAlarmErrorKind::Unhandled(err.into()),
+            kind: PutMetricAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4253,7 +4289,7 @@ impl std::error::Error for PutMetricAlarmError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutMetricAlarmErrorKind::LimitExceededFault(_inner) => Some(_inner),
-            PutMetricAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMetricAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4280,7 +4316,7 @@ pub enum PutMetricDataErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMetricDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4310,7 +4346,7 @@ impl PutMetricDataError {
     /// Creates the `PutMetricDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMetricDataErrorKind::Unhandled(err.into()),
+            kind: PutMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4319,7 +4355,7 @@ impl PutMetricDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMetricDataErrorKind::Unhandled(err.into()),
+            kind: PutMetricDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4376,7 +4412,7 @@ impl std::error::Error for PutMetricDataError {
             PutMetricDataErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             PutMetricDataErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             PutMetricDataErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            PutMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMetricDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4405,7 +4441,7 @@ pub enum PutMetricStreamErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMetricStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4436,7 +4472,7 @@ impl PutMetricStreamError {
     /// Creates the `PutMetricStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMetricStreamErrorKind::Unhandled(err.into()),
+            kind: PutMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4445,7 +4481,7 @@ impl PutMetricStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMetricStreamErrorKind::Unhandled(err.into()),
+            kind: PutMetricStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4513,7 +4549,7 @@ impl std::error::Error for PutMetricStreamError {
             PutMetricStreamErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             PutMetricStreamErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             PutMetricStreamErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            PutMetricStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMetricStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4536,7 +4572,7 @@ pub enum SetAlarmStateErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetAlarmStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4564,7 +4600,7 @@ impl SetAlarmStateError {
     /// Creates the `SetAlarmStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetAlarmStateErrorKind::Unhandled(err.into()),
+            kind: SetAlarmStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4573,7 +4609,7 @@ impl SetAlarmStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetAlarmStateErrorKind::Unhandled(err.into()),
+            kind: SetAlarmStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4611,7 +4647,7 @@ impl std::error::Error for SetAlarmStateError {
         match &self.kind {
             SetAlarmStateErrorKind::InvalidFormatFault(_inner) => Some(_inner),
             SetAlarmStateErrorKind::ResourceNotFound(_inner) => Some(_inner),
-            SetAlarmStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetAlarmStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4636,7 +4672,7 @@ pub enum StartMetricStreamsErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartMetricStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4665,7 +4701,7 @@ impl StartMetricStreamsError {
     /// Creates the `StartMetricStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: StartMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4674,7 +4710,7 @@ impl StartMetricStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: StartMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4726,7 +4762,7 @@ impl std::error::Error for StartMetricStreamsError {
             StartMetricStreamsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             StartMetricStreamsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             StartMetricStreamsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            StartMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4751,7 +4787,7 @@ pub enum StopMetricStreamsErrorKind {
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopMetricStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4780,7 +4816,7 @@ impl StopMetricStreamsError {
     /// Creates the `StopMetricStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: StopMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4789,7 +4825,7 @@ impl StopMetricStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopMetricStreamsErrorKind::Unhandled(err.into()),
+            kind: StopMetricStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4841,7 +4877,7 @@ impl std::error::Error for StopMetricStreamsError {
             StopMetricStreamsErrorKind::InternalServiceFault(_inner) => Some(_inner),
             StopMetricStreamsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             StopMetricStreamsErrorKind::MissingRequiredParameterException(_inner) => Some(_inner),
-            StopMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopMetricStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4868,7 +4904,7 @@ pub enum TagResourceErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4898,7 +4934,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4907,7 +4943,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4964,7 +5000,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServiceFault(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4991,7 +5027,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5021,7 +5057,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5030,7 +5066,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5087,7 +5123,32 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServiceFault(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

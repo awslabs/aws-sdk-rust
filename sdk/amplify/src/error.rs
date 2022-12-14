@@ -501,7 +501,7 @@ pub enum CreateAppErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -532,7 +532,7 @@ impl CreateAppError {
     /// Creates the `CreateAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppErrorKind::Unhandled(err.into()),
+            kind: CreateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -541,7 +541,7 @@ impl CreateAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppErrorKind::Unhandled(err.into()),
+            kind: CreateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -597,7 +597,7 @@ impl std::error::Error for CreateAppError {
             CreateAppErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateAppErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAppErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -626,7 +626,7 @@ pub enum CreateBackendEnvironmentErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBackendEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -657,7 +657,9 @@ impl CreateBackendEnvironmentError {
     /// Creates the `CreateBackendEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: CreateBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -666,7 +668,9 @@ impl CreateBackendEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: CreateBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -734,7 +738,7 @@ impl std::error::Error for CreateBackendEnvironmentError {
             CreateBackendEnvironmentErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateBackendEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBackendEnvironmentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -765,7 +769,7 @@ pub enum CreateBranchErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -797,7 +801,7 @@ impl CreateBranchError {
     /// Creates the `CreateBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -806,7 +810,7 @@ impl CreateBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -870,7 +874,7 @@ impl std::error::Error for CreateBranchError {
             CreateBranchErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateBranchErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBranchErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -897,7 +901,7 @@ pub enum CreateDeploymentErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,7 +931,7 @@ impl CreateDeploymentError {
     /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -936,7 +940,7 @@ impl CreateDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -996,7 +1000,7 @@ impl std::error::Error for CreateDeploymentError {
             CreateDeploymentErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1027,7 +1031,7 @@ pub enum CreateDomainAssociationErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDomainAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1061,7 +1065,9 @@ impl CreateDomainAssociationError {
     /// Creates the `CreateDomainAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1070,7 +1076,9 @@ impl CreateDomainAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1148,7 +1156,7 @@ impl std::error::Error for CreateDomainAssociationError {
             CreateDomainAssociationErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDomainAssociationErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateDomainAssociationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1179,7 +1187,7 @@ pub enum CreateWebhookErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWebhookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1211,7 +1219,7 @@ impl CreateWebhookError {
     /// Creates the `CreateWebhookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWebhookErrorKind::Unhandled(err.into()),
+            kind: CreateWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1220,7 +1228,7 @@ impl CreateWebhookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWebhookErrorKind::Unhandled(err.into()),
+            kind: CreateWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1287,7 +1295,7 @@ impl std::error::Error for CreateWebhookError {
             CreateWebhookErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateWebhookErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateWebhookErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateWebhookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWebhookErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1316,7 +1324,7 @@ pub enum DeleteAppErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1347,7 +1355,7 @@ impl DeleteAppError {
     /// Creates the `DeleteAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppErrorKind::Unhandled(err.into()),
+            kind: DeleteAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1356,7 +1364,7 @@ impl DeleteAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppErrorKind::Unhandled(err.into()),
+            kind: DeleteAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1412,7 +1420,7 @@ impl std::error::Error for DeleteAppError {
             DeleteAppErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteAppErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteAppErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1441,7 +1449,7 @@ pub enum DeleteBackendEnvironmentErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBackendEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1474,7 +1482,9 @@ impl DeleteBackendEnvironmentError {
     /// Creates the `DeleteBackendEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1483,7 +1493,9 @@ impl DeleteBackendEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1553,7 +1565,7 @@ impl std::error::Error for DeleteBackendEnvironmentError {
             DeleteBackendEnvironmentErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteBackendEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBackendEnvironmentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1582,7 +1594,7 @@ pub enum DeleteBranchErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1613,7 +1625,7 @@ impl DeleteBranchError {
     /// Creates the `DeleteBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1622,7 +1634,7 @@ impl DeleteBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1681,7 +1693,7 @@ impl std::error::Error for DeleteBranchError {
             DeleteBranchErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteBranchErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBranchErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1710,7 +1722,7 @@ pub enum DeleteDomainAssociationErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1743,7 +1755,9 @@ impl DeleteDomainAssociationError {
     /// Creates the `DeleteDomainAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1752,7 +1766,9 @@ impl DeleteDomainAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1822,7 +1838,7 @@ impl std::error::Error for DeleteDomainAssociationError {
             DeleteDomainAssociationErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteDomainAssociationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDomainAssociationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1851,7 +1867,7 @@ pub enum DeleteJobErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1882,7 +1898,7 @@ impl DeleteJobError {
     /// Creates the `DeleteJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteJobErrorKind::Unhandled(err.into()),
+            kind: DeleteJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1891,7 +1907,7 @@ impl DeleteJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteJobErrorKind::Unhandled(err.into()),
+            kind: DeleteJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1944,7 +1960,7 @@ impl std::error::Error for DeleteJobError {
             DeleteJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteJobErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteJobErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1973,7 +1989,7 @@ pub enum DeleteWebhookErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWebhookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2004,7 +2020,7 @@ impl DeleteWebhookError {
     /// Creates the `DeleteWebhookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWebhookErrorKind::Unhandled(err.into()),
+            kind: DeleteWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2013,7 +2029,7 @@ impl DeleteWebhookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWebhookErrorKind::Unhandled(err.into()),
+            kind: DeleteWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2072,7 +2088,7 @@ impl std::error::Error for DeleteWebhookError {
             DeleteWebhookErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteWebhookErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteWebhookErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteWebhookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWebhookErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2099,7 +2115,7 @@ pub enum GenerateAccessLogsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateAccessLogsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2129,7 +2145,7 @@ impl GenerateAccessLogsError {
     /// Creates the `GenerateAccessLogsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateAccessLogsErrorKind::Unhandled(err.into()),
+            kind: GenerateAccessLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2138,7 +2154,7 @@ impl GenerateAccessLogsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateAccessLogsErrorKind::Unhandled(err.into()),
+            kind: GenerateAccessLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2198,7 +2214,7 @@ impl std::error::Error for GenerateAccessLogsError {
             GenerateAccessLogsErrorKind::InternalFailureException(_inner) => Some(_inner),
             GenerateAccessLogsErrorKind::NotFoundException(_inner) => Some(_inner),
             GenerateAccessLogsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GenerateAccessLogsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateAccessLogsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2225,7 +2241,7 @@ pub enum GetAppErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2255,7 +2271,7 @@ impl GetAppError {
     /// Creates the `GetAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppErrorKind::Unhandled(err.into()),
+            kind: GetAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2264,7 +2280,7 @@ impl GetAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppErrorKind::Unhandled(err.into()),
+            kind: GetAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2312,7 +2328,7 @@ impl std::error::Error for GetAppError {
             GetAppErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetAppErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAppErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2341,7 +2357,7 @@ pub enum GetArtifactUrlErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetArtifactUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2372,7 +2388,7 @@ impl GetArtifactUrlError {
     /// Creates the `GetArtifactUrlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetArtifactUrlErrorKind::Unhandled(err.into()),
+            kind: GetArtifactUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2381,7 +2397,7 @@ impl GetArtifactUrlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetArtifactUrlErrorKind::Unhandled(err.into()),
+            kind: GetArtifactUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2443,7 +2459,7 @@ impl std::error::Error for GetArtifactUrlError {
             GetArtifactUrlErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetArtifactUrlErrorKind::NotFoundException(_inner) => Some(_inner),
             GetArtifactUrlErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetArtifactUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetArtifactUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2470,7 +2486,7 @@ pub enum GetBackendEnvironmentErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBackendEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2500,7 +2516,9 @@ impl GetBackendEnvironmentError {
     /// Creates the `GetBackendEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: GetBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2509,7 +2527,9 @@ impl GetBackendEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBackendEnvironmentErrorKind::Unhandled(err.into()),
+            kind: GetBackendEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2569,7 +2589,7 @@ impl std::error::Error for GetBackendEnvironmentError {
             GetBackendEnvironmentErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetBackendEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBackendEnvironmentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBackendEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2596,7 +2616,7 @@ pub enum GetBranchErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2626,7 +2646,7 @@ impl GetBranchError {
     /// Creates the `GetBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2635,7 +2655,7 @@ impl GetBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2683,7 +2703,7 @@ impl std::error::Error for GetBranchError {
             GetBranchErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetBranchErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBranchErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2710,7 +2730,7 @@ pub enum GetDomainAssociationErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2740,7 +2760,9 @@ impl GetDomainAssociationError {
     /// Creates the `GetDomainAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: GetDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2749,7 +2771,9 @@ impl GetDomainAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: GetDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2809,7 +2833,7 @@ impl std::error::Error for GetDomainAssociationError {
             GetDomainAssociationErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetDomainAssociationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDomainAssociationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2838,7 +2862,7 @@ pub enum GetJobErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2869,7 +2893,7 @@ impl GetJobError {
     /// Creates the `GetJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetJobErrorKind::Unhandled(err.into()),
+            kind: GetJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2878,7 +2902,7 @@ impl GetJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetJobErrorKind::Unhandled(err.into()),
+            kind: GetJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2931,7 +2955,7 @@ impl std::error::Error for GetJobError {
             GetJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetJobErrorKind::NotFoundException(_inner) => Some(_inner),
             GetJobErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2960,7 +2984,7 @@ pub enum GetWebhookErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWebhookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2991,7 +3015,7 @@ impl GetWebhookError {
     /// Creates the `GetWebhookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWebhookErrorKind::Unhandled(err.into()),
+            kind: GetWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3000,7 +3024,7 @@ impl GetWebhookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWebhookErrorKind::Unhandled(err.into()),
+            kind: GetWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3053,7 +3077,7 @@ impl std::error::Error for GetWebhookError {
             GetWebhookErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetWebhookErrorKind::NotFoundException(_inner) => Some(_inner),
             GetWebhookErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetWebhookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWebhookErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3078,7 +3102,7 @@ pub enum ListAppsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3107,7 +3131,7 @@ impl ListAppsError {
     /// Creates the `ListAppsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppsErrorKind::Unhandled(err.into()),
+            kind: ListAppsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3116,7 +3140,7 @@ impl ListAppsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppsErrorKind::Unhandled(err.into()),
+            kind: ListAppsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3159,7 +3183,7 @@ impl std::error::Error for ListAppsError {
             ListAppsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListAppsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListAppsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListAppsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3186,7 +3210,7 @@ pub enum ListArtifactsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListArtifactsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3216,7 +3240,7 @@ impl ListArtifactsError {
     /// Creates the `ListArtifactsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListArtifactsErrorKind::Unhandled(err.into()),
+            kind: ListArtifactsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3225,7 +3249,7 @@ impl ListArtifactsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListArtifactsErrorKind::Unhandled(err.into()),
+            kind: ListArtifactsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3279,7 +3303,7 @@ impl std::error::Error for ListArtifactsError {
             ListArtifactsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListArtifactsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListArtifactsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListArtifactsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListArtifactsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3304,7 +3328,7 @@ pub enum ListBackendEnvironmentsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBackendEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3333,7 +3357,9 @@ impl ListBackendEnvironmentsError {
     /// Creates the `ListBackendEnvironmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBackendEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListBackendEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3342,7 +3368,9 @@ impl ListBackendEnvironmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBackendEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListBackendEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3394,7 +3422,7 @@ impl std::error::Error for ListBackendEnvironmentsError {
             ListBackendEnvironmentsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListBackendEnvironmentsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListBackendEnvironmentsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListBackendEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBackendEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3419,7 +3447,7 @@ pub enum ListBranchesErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBranchesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3448,7 +3476,7 @@ impl ListBranchesError {
     /// Creates the `ListBranchesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3457,7 +3485,7 @@ impl ListBranchesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3503,7 +3531,7 @@ impl std::error::Error for ListBranchesError {
             ListBranchesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListBranchesErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListBranchesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3528,7 +3556,7 @@ pub enum ListDomainAssociationsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3557,7 +3585,9 @@ impl ListDomainAssociationsError {
     /// Creates the `ListDomainAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListDomainAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3566,7 +3596,9 @@ impl ListDomainAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListDomainAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3618,7 +3650,7 @@ impl std::error::Error for ListDomainAssociationsError {
             ListDomainAssociationsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListDomainAssociationsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListDomainAssociationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListDomainAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3645,7 +3677,7 @@ pub enum ListJobsErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3675,7 +3707,7 @@ impl ListJobsError {
     /// Creates the `ListJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJobsErrorKind::Unhandled(err.into()),
+            kind: ListJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3684,7 +3716,7 @@ impl ListJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJobsErrorKind::Unhandled(err.into()),
+            kind: ListJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3732,7 +3764,7 @@ impl std::error::Error for ListJobsError {
             ListJobsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListJobsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListJobsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3757,7 +3789,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p> An operation failed due to a non-existent resource. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3786,7 +3818,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3795,7 +3827,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3847,7 +3879,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3874,7 +3906,7 @@ pub enum ListWebhooksErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWebhooksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3904,7 +3936,7 @@ impl ListWebhooksError {
     /// Creates the `ListWebhooksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWebhooksErrorKind::Unhandled(err.into()),
+            kind: ListWebhooksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3913,7 +3945,7 @@ impl ListWebhooksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWebhooksErrorKind::Unhandled(err.into()),
+            kind: ListWebhooksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3964,7 +3996,7 @@ impl std::error::Error for ListWebhooksError {
             ListWebhooksErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListWebhooksErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListWebhooksErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListWebhooksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWebhooksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3993,7 +4025,7 @@ pub enum StartDeploymentErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4024,7 +4056,7 @@ impl StartDeploymentError {
     /// Creates the `StartDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDeploymentErrorKind::Unhandled(err.into()),
+            kind: StartDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4033,7 +4065,7 @@ impl StartDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDeploymentErrorKind::Unhandled(err.into()),
+            kind: StartDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4095,7 +4127,7 @@ impl std::error::Error for StartDeploymentError {
             StartDeploymentErrorKind::LimitExceededException(_inner) => Some(_inner),
             StartDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
             StartDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StartDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4124,7 +4156,7 @@ pub enum StartJobErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4155,7 +4187,7 @@ impl StartJobError {
     /// Creates the `StartJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartJobErrorKind::Unhandled(err.into()),
+            kind: StartJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4164,7 +4196,7 @@ impl StartJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartJobErrorKind::Unhandled(err.into()),
+            kind: StartJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4217,7 +4249,7 @@ impl std::error::Error for StartJobError {
             StartJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             StartJobErrorKind::NotFoundException(_inner) => Some(_inner),
             StartJobErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StartJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4246,7 +4278,7 @@ pub enum StopJobErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4277,7 +4309,7 @@ impl StopJobError {
     /// Creates the `StopJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopJobErrorKind::Unhandled(err.into()),
+            kind: StopJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4286,7 +4318,7 @@ impl StopJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopJobErrorKind::Unhandled(err.into()),
+            kind: StopJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4339,7 +4371,7 @@ impl std::error::Error for StopJobError {
             StopJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             StopJobErrorKind::NotFoundException(_inner) => Some(_inner),
             StopJobErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StopJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4364,7 +4396,7 @@ pub enum TagResourceErrorKind {
     /// <p> An operation failed due to a non-existent resource. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4393,7 +4425,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4402,7 +4434,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4451,7 +4483,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4476,7 +4508,7 @@ pub enum UntagResourceErrorKind {
     /// <p> An operation failed due to a non-existent resource. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4505,7 +4537,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4514,7 +4546,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4563,7 +4595,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4590,7 +4622,7 @@ pub enum UpdateAppErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4620,7 +4652,7 @@ impl UpdateAppError {
     /// Creates the `UpdateAppError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAppErrorKind::Unhandled(err.into()),
+            kind: UpdateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4629,7 +4661,7 @@ impl UpdateAppError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAppErrorKind::Unhandled(err.into()),
+            kind: UpdateAppErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4677,7 +4709,7 @@ impl std::error::Error for UpdateAppError {
             UpdateAppErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateAppErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAppErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateAppErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAppErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4706,7 +4738,7 @@ pub enum UpdateBranchErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4737,7 +4769,7 @@ impl UpdateBranchError {
     /// Creates the `UpdateBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4746,7 +4778,7 @@ impl UpdateBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4805,7 +4837,7 @@ impl std::error::Error for UpdateBranchError {
             UpdateBranchErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateBranchErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBranchErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4834,7 +4866,7 @@ pub enum UpdateDomainAssociationErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4867,7 +4899,9 @@ impl UpdateDomainAssociationError {
     /// Creates the `UpdateDomainAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4876,7 +4910,9 @@ impl UpdateDomainAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4946,7 +4982,7 @@ impl std::error::Error for UpdateDomainAssociationError {
             UpdateDomainAssociationErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateDomainAssociationErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDomainAssociationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4975,7 +5011,7 @@ pub enum UpdateWebhookErrorKind {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWebhookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5006,7 +5042,7 @@ impl UpdateWebhookError {
     /// Creates the `UpdateWebhookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWebhookErrorKind::Unhandled(err.into()),
+            kind: UpdateWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5015,7 +5051,7 @@ impl UpdateWebhookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWebhookErrorKind::Unhandled(err.into()),
+            kind: UpdateWebhookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5074,7 +5110,32 @@ impl std::error::Error for UpdateWebhookError {
             UpdateWebhookErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateWebhookErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateWebhookErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateWebhookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWebhookErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

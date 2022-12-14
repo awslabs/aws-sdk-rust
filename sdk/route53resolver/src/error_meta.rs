@@ -36,7 +36,7 @@ pub enum Error {
     /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -78,9 +78,9 @@ where
                 crate::error::AssociateFirewallRuleGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateFirewallRuleGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateFirewallRuleGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateFirewallRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateFirewallRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -106,9 +106,9 @@ where
                 crate::error::AssociateResolverEndpointIpAddressErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::AssociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateResolverEndpointIpAddressErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::AssociateResolverEndpointIpAddressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateResolverEndpointIpAddressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -134,9 +134,9 @@ where
                 crate::error::AssociateResolverQueryLogConfigErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::AssociateResolverQueryLogConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateResolverQueryLogConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::AssociateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -175,10 +175,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateResolverRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,10 +208,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateFirewallDomainListErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -243,10 +243,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateFirewallRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -276,10 +276,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateFirewallRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,10 +315,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateResolverEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -340,9 +340,9 @@ where
                 crate::error::CreateResolverQueryLogConfigErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::CreateResolverQueryLogConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateResolverQueryLogConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,10 +380,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateResolverRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,10 +413,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteFirewallDomainListErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -442,10 +442,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteFirewallRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -478,10 +478,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteFirewallRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -511,10 +511,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteResolverEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -534,9 +534,9 @@ where
                 crate::error::DeleteResolverQueryLogConfigErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteResolverQueryLogConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteResolverQueryLogConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DeleteResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -565,10 +565,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteResolverRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -588,9 +588,9 @@ where
                 crate::error::DisassociateFirewallRuleGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateFirewallRuleGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateFirewallRuleGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateFirewallRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateFirewallRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -618,9 +618,9 @@ where
                 crate::error::DisassociateResolverEndpointIpAddressErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::DisassociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateResolverEndpointIpAddressErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociateResolverEndpointIpAddressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateResolverEndpointIpAddressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -645,9 +645,9 @@ where
                 crate::error::DisassociateResolverQueryLogConfigErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DisassociateResolverQueryLogConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateResolverQueryLogConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateResolverQueryLogConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -674,10 +674,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DisassociateResolverRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -706,10 +706,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetFirewallConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -736,10 +736,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetFirewallDomainListErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,10 +766,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetFirewallRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -791,9 +791,9 @@ where
                 crate::error::GetFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::GetFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetFirewallRuleGroupAssociationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetFirewallRuleGroupAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFirewallRuleGroupAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -812,9 +812,9 @@ where
                 crate::error::GetFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetFirewallRuleGroupPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetFirewallRuleGroupPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetFirewallRuleGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFirewallRuleGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -843,10 +843,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetResolverConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -879,10 +879,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetResolverDnssecConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -908,10 +908,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetResolverEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -944,10 +944,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetResolverQueryLogConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -975,9 +975,9 @@ where
                 crate::error::GetResolverQueryLogConfigAssociationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::GetResolverQueryLogConfigAssociationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetResolverQueryLogConfigAssociationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetResolverQueryLogConfigAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResolverQueryLogConfigAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1000,9 +1000,9 @@ where
                 crate::error::GetResolverQueryLogConfigPolicyErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetResolverQueryLogConfigPolicyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::GetResolverQueryLogConfigPolicyErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::GetResolverQueryLogConfigPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResolverQueryLogConfigPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1025,9 +1025,11 @@ where
                 crate::error::GetResolverRuleErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::GetResolverRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResolverRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1045,9 +1047,9 @@ where
                 crate::error::GetResolverRuleAssociationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetResolverRuleAssociationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetResolverRuleAssociationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetResolverRuleAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResolverRuleAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1071,10 +1073,10 @@ where
                     Error::UnknownResourceException(inner)
                 }
                 crate::error::GetResolverRulePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1110,10 +1112,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ImportFirewallDomainsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1139,10 +1141,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFirewallConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1169,10 +1171,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFirewallDomainListsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1201,10 +1203,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFirewallDomainsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1226,9 +1228,9 @@ where
                 crate::error::ListFirewallRuleGroupAssociationsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::ListFirewallRuleGroupAssociationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListFirewallRuleGroupAssociationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListFirewallRuleGroupAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFirewallRuleGroupAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1255,10 +1257,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFirewallRuleGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1287,10 +1289,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFirewallRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1322,10 +1324,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListResolverConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1358,10 +1360,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListResolverDnssecConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1384,9 +1386,9 @@ where
                 crate::error::ListResolverEndpointIpAddressesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListResolverEndpointIpAddressesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListResolverEndpointIpAddressesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListResolverEndpointIpAddressesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResolverEndpointIpAddressesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1416,10 +1418,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListResolverEndpointsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1447,9 +1449,9 @@ where
                 crate::error::ListResolverQueryLogConfigAssociationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListResolverQueryLogConfigAssociationsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::ListResolverQueryLogConfigAssociationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListResolverQueryLogConfigAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResolverQueryLogConfigAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1469,9 +1471,9 @@ where
                 crate::error::ListResolverQueryLogConfigsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListResolverQueryLogConfigsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListResolverQueryLogConfigsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListResolverQueryLogConfigsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResolverQueryLogConfigsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1490,9 +1492,9 @@ where
                 crate::error::ListResolverRuleAssociationsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListResolverRuleAssociationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListResolverRuleAssociationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListResolverRuleAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResolverRuleAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1521,10 +1523,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListResolverRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1556,10 +1558,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1578,9 +1580,9 @@ where
                 crate::error::PutFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutFirewallRuleGroupPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutFirewallRuleGroupPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutFirewallRuleGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutFirewallRuleGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1604,9 +1606,9 @@ where
                 crate::error::PutResolverQueryLogConfigPolicyErrorKind::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
                 crate::error::PutResolverQueryLogConfigPolicyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::PutResolverQueryLogConfigPolicyErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::PutResolverQueryLogConfigPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutResolverQueryLogConfigPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1633,10 +1635,10 @@ where
                     Error::UnknownResourceException(inner)
                 }
                 crate::error::PutResolverRulePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1668,9 +1670,11 @@ where
                 crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1696,9 +1700,11 @@ where
                 crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1728,10 +1734,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateFirewallConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1767,10 +1773,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateFirewallDomainsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1802,10 +1808,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateFirewallRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1830,9 +1836,9 @@ where
                 crate::error::UpdateFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateFirewallRuleGroupAssociationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateFirewallRuleGroupAssociationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateFirewallRuleGroupAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFirewallRuleGroupAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1871,10 +1877,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateResolverConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1894,9 +1900,9 @@ where
                 crate::error::UpdateResolverDnssecConfigErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateResolverDnssecConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateResolverDnssecConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateResolverDnssecConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateResolverDnssecConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1926,10 +1932,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateResolverEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1964,10 +1970,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateResolverRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

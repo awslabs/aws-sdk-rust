@@ -416,7 +416,7 @@ pub enum ConfigureLogsErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfigureLogsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,7 @@ impl ConfigureLogsError {
     /// Creates the `ConfigureLogsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConfigureLogsErrorKind::Unhandled(err.into()),
+            kind: ConfigureLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -457,7 +457,7 @@ impl ConfigureLogsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConfigureLogsErrorKind::Unhandled(err.into()),
+            kind: ConfigureLogsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -527,7 +527,7 @@ impl std::error::Error for ConfigureLogsError {
             ConfigureLogsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ConfigureLogsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ConfigureLogsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConfigureLogsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -558,7 +558,7 @@ pub enum CreateAssetErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -590,7 +590,7 @@ impl CreateAssetError {
     /// Creates the `CreateAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssetErrorKind::Unhandled(err.into()),
+            kind: CreateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -599,7 +599,7 @@ impl CreateAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssetErrorKind::Unhandled(err.into()),
+            kind: CreateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -669,7 +669,7 @@ impl std::error::Error for CreateAssetError {
             CreateAssetErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateAssetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAssetErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            CreateAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -700,7 +700,7 @@ pub enum CreatePackagingConfigurationErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePackagingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -740,7 +740,9 @@ impl CreatePackagingConfigurationError {
     /// Creates the `CreatePackagingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreatePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -749,7 +751,9 @@ impl CreatePackagingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreatePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -831,7 +835,7 @@ impl std::error::Error for CreatePackagingConfigurationError {
             CreatePackagingConfigurationErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
-            CreatePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -862,7 +866,7 @@ pub enum CreatePackagingGroupErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePackagingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -894,7 +898,9 @@ impl CreatePackagingGroupError {
     /// Creates the `CreatePackagingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: CreatePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -903,7 +909,9 @@ impl CreatePackagingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: CreatePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -979,7 +987,7 @@ impl std::error::Error for CreatePackagingGroupError {
             CreatePackagingGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreatePackagingGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreatePackagingGroupErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            CreatePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1010,7 +1018,7 @@ pub enum DeleteAssetErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1042,7 +1050,7 @@ impl DeleteAssetError {
     /// Creates the `DeleteAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssetErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1051,7 +1059,7 @@ impl DeleteAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssetErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1121,7 +1129,7 @@ impl std::error::Error for DeleteAssetError {
             DeleteAssetErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAssetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAssetErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            DeleteAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1152,7 +1160,7 @@ pub enum DeletePackagingConfigurationErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePackagingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1192,7 +1200,9 @@ impl DeletePackagingConfigurationError {
     /// Creates the `DeletePackagingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeletePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1201,7 +1211,9 @@ impl DeletePackagingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeletePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1283,7 +1295,7 @@ impl std::error::Error for DeletePackagingConfigurationError {
             DeletePackagingConfigurationErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
-            DeletePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1314,7 +1326,7 @@ pub enum DeletePackagingGroupErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePackagingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1346,7 +1358,9 @@ impl DeletePackagingGroupError {
     /// Creates the `DeletePackagingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: DeletePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1355,7 +1369,9 @@ impl DeletePackagingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: DeletePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1431,7 +1447,7 @@ impl std::error::Error for DeletePackagingGroupError {
             DeletePackagingGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeletePackagingGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeletePackagingGroupErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            DeletePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1462,7 +1478,7 @@ pub enum DescribeAssetErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1494,7 +1510,7 @@ impl DescribeAssetError {
     /// Creates the `DescribeAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAssetErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1503,7 +1519,7 @@ impl DescribeAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAssetErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1573,7 +1589,7 @@ impl std::error::Error for DescribeAssetError {
             DescribeAssetErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAssetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeAssetErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            DescribeAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1604,7 +1620,7 @@ pub enum DescribePackagingConfigurationErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePackagingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1647,7 +1663,9 @@ impl DescribePackagingConfigurationError {
     /// Creates the `DescribePackagingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1656,7 +1674,9 @@ impl DescribePackagingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePackagingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribePackagingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1740,7 +1760,7 @@ impl std::error::Error for DescribePackagingConfigurationError {
             DescribePackagingConfigurationErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
-            DescribePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePackagingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1771,7 +1791,7 @@ pub enum DescribePackagingGroupErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePackagingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1803,7 +1823,9 @@ impl DescribePackagingGroupError {
     /// Creates the `DescribePackagingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: DescribePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1812,7 +1834,9 @@ impl DescribePackagingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: DescribePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1888,7 +1912,7 @@ impl std::error::Error for DescribePackagingGroupError {
             DescribePackagingGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribePackagingGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribePackagingGroupErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            DescribePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1919,7 +1943,7 @@ pub enum ListAssetsErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1951,7 +1975,7 @@ impl ListAssetsError {
     /// Creates the `ListAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1960,7 +1984,7 @@ impl ListAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2027,7 +2051,7 @@ impl std::error::Error for ListAssetsError {
             ListAssetsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAssetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAssetsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            ListAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2058,7 +2082,7 @@ pub enum ListPackagingConfigurationsErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPackagingConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2096,7 +2120,9 @@ impl ListPackagingConfigurationsError {
     /// Creates the `ListPackagingConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPackagingConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListPackagingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2105,7 +2131,9 @@ impl ListPackagingConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPackagingConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListPackagingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2187,7 +2215,7 @@ impl std::error::Error for ListPackagingConfigurationsError {
             ListPackagingConfigurationsErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
-            ListPackagingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPackagingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2218,7 +2246,7 @@ pub enum ListPackagingGroupsErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPackagingGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2250,7 +2278,7 @@ impl ListPackagingGroupsError {
     /// Creates the `ListPackagingGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPackagingGroupsErrorKind::Unhandled(err.into()),
+            kind: ListPackagingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2259,7 +2287,7 @@ impl ListPackagingGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPackagingGroupsErrorKind::Unhandled(err.into()),
+            kind: ListPackagingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2335,7 +2363,7 @@ impl std::error::Error for ListPackagingGroupsError {
             ListPackagingGroupsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListPackagingGroupsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListPackagingGroupsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            ListPackagingGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPackagingGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2354,7 +2382,7 @@ pub struct ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2380,7 +2408,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2389,7 +2417,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2417,7 +2445,7 @@ impl ListTagsForResourceError {
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2436,7 +2464,7 @@ pub struct TagResourceError {
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2462,7 +2490,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2471,7 +2499,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2499,7 +2527,7 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2518,7 +2546,7 @@ pub struct UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2544,7 +2572,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2553,7 +2581,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2581,7 +2609,7 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2612,7 +2640,7 @@ pub enum UpdatePackagingGroupErrorKind {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePackagingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2644,7 +2672,9 @@ impl UpdatePackagingGroupError {
     /// Creates the `UpdatePackagingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdatePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2653,7 +2683,9 @@ impl UpdatePackagingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePackagingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdatePackagingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2729,7 +2761,32 @@ impl std::error::Error for UpdatePackagingGroupError {
             UpdatePackagingGroupErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdatePackagingGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdatePackagingGroupErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            UpdatePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePackagingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

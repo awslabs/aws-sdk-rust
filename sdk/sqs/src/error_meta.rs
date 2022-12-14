@@ -36,7 +36,7 @@ pub enum Error {
     /// <p>Error code 400. Unsupported operation.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -69,9 +69,11 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddPermissionErrorKind::OverLimit(inner) => Error::OverLimit(inner),
-                crate::error::AddPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddPermissionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -92,10 +94,10 @@ where
                     Error::ReceiptHandleIsInvalid(inner)
                 }
                 crate::error::ChangeMessageVisibilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -113,9 +115,9 @@ where
                 crate::error::ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
                 crate::error::ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
                 crate::error::ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-                crate::error::ChangeMessageVisibilityBatchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ChangeMessageVisibilityBatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +134,11 @@ where
                 crate::error::CreateQueueErrorKind::QueueNameExists(inner) => {
                     Error::QueueNameExists(inner)
                 }
-                crate::error::CreateQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -151,9 +155,11 @@ where
                 crate::error::DeleteMessageErrorKind::ReceiptHandleIsInvalid(inner) => {
                     Error::ReceiptHandleIsInvalid(inner)
                 }
-                crate::error::DeleteMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,10 +185,10 @@ where
                     Error::TooManyEntriesInBatchRequest(inner)
                 }
                 crate::error::DeleteMessageBatchErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,9 +199,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -212,10 +220,10 @@ where
                     Error::InvalidAttributeName(inner)
                 }
                 crate::error::GetQueueAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -229,9 +237,11 @@ where
                 crate::error::GetQueueUrlErrorKind::QueueDoesNotExist(inner) => {
                     Error::QueueDoesNotExist(inner)
                 }
-                crate::error::GetQueueUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetQueueUrlErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -249,10 +259,10 @@ where
                     Error::QueueDoesNotExist(inner)
                 }
                 crate::error::ListDeadLetterSourceQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,9 +273,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListQueuesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListQueuesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -276,9 +288,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListQueueTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListQueueTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -295,9 +309,11 @@ where
                 crate::error::PurgeQueueErrorKind::QueueDoesNotExist(inner) => {
                     Error::QueueDoesNotExist(inner)
                 }
-                crate::error::PurgeQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PurgeQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -309,9 +325,11 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ReceiveMessageErrorKind::OverLimit(inner) => Error::OverLimit(inner),
-                crate::error::ReceiveMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ReceiveMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +343,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RemovePermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,9 +363,11 @@ where
                 crate::error::SendMessageErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
-                crate::error::SendMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -379,10 +399,10 @@ where
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::SendMessageBatchErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -399,10 +419,10 @@ where
                     Error::InvalidAttributeName(inner)
                 }
                 crate::error::SetQueueAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,9 +433,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -426,9 +448,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

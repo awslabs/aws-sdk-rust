@@ -26,7 +26,7 @@ pub enum Error {
     /// <p>Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections that contain matching units, for example: <code>hours</code>.</p>
     UnresolvableUsageUnitException(crate::error::UnresolvableUsageUnitException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -60,10 +60,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateAnomalyMonitorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -84,10 +84,10 @@ where
                     inner,
                 ) => Error::UnknownMonitorException(inner),
                 crate::error::CreateAnomalySubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -103,9 +103,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateCostCategoryDefinitionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-                crate::error::CreateCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -126,10 +126,10 @@ where
                     Error::UnknownMonitorException(inner)
                 }
                 crate::error::DeleteAnomalyMonitorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,10 +150,10 @@ where
                     inner,
                 ) => Error::UnknownSubscriptionException(inner),
                 crate::error::DeleteAnomalySubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,10 +174,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteCostCategoryDefinitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -197,9 +197,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeCostCategoryDefinitionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DescribeCostCategoryDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -216,9 +216,11 @@ where
                 crate::error::GetAnomaliesErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::GetAnomaliesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAnomaliesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -241,10 +243,10 @@ where
                     Error::UnknownMonitorException(inner)
                 }
                 crate::error::GetAnomalyMonitorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -268,10 +270,10 @@ where
                     inner,
                 ) => Error::UnknownSubscriptionException(inner),
                 crate::error::GetAnomalySubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -297,9 +299,11 @@ where
                 crate::error::GetCostAndUsageErrorKind::RequestChangedException(inner) => {
                     Error::RequestChangedException(inner)
                 }
-                crate::error::GetCostAndUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCostAndUsageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -329,10 +333,10 @@ where
                     inner,
                 ) => Error::RequestChangedException(inner),
                 crate::error::GetCostAndUsageWithResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -361,10 +365,10 @@ where
                     Error::RequestChangedException(inner)
                 }
                 crate::error::GetCostCategoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -381,9 +385,11 @@ where
                 crate::error::GetCostForecastErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::GetCostForecastErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCostForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -412,10 +418,10 @@ where
                     Error::RequestChangedException(inner)
                 }
                 crate::error::GetDimensionValuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,10 +445,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::GetReservationCoverageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,9 +473,9 @@ where
                 crate::error::GetReservationPurchaseRecommendationErrorKind::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
                 crate::error::GetReservationPurchaseRecommendationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetReservationPurchaseRecommendationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::GetReservationPurchaseRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetReservationPurchaseRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -493,10 +499,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::GetReservationUtilizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -517,10 +523,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::GetRightsizingRecommendationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -544,10 +550,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::GetSavingsPlansCoverageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -571,9 +577,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -594,10 +600,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::GetSavingsPlansUtilizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -618,9 +624,9 @@ where
                 crate::error::GetSavingsPlansUtilizationDetailsErrorKind::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
                 crate::error::GetSavingsPlansUtilizationDetailsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetSavingsPlansUtilizationDetailsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::GetSavingsPlansUtilizationDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSavingsPlansUtilizationDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,9 +652,11 @@ where
                 crate::error::GetTagsErrorKind::RequestChangedException(inner) => {
                     Error::RequestChangedException(inner)
                 }
-                crate::error::GetTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -671,10 +679,10 @@ where
                     Error::UnresolvableUsageUnitException(inner)
                 }
                 crate::error::GetUsageForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -695,10 +703,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::ListCostAllocationTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -716,10 +724,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::ListCostCategoryDefinitionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -739,10 +747,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -760,10 +768,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::ProvideAnomalyFeedbackErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -783,9 +791,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -802,9 +812,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -825,10 +837,10 @@ where
                     Error::UnknownMonitorException(inner)
                 }
                 crate::error::UpdateAnomalyMonitorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -852,10 +864,10 @@ where
                     inner,
                 ) => Error::UnknownSubscriptionException(inner),
                 crate::error::UpdateAnomalySubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -877,10 +889,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::UpdateCostAllocationTagsStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -897,9 +909,9 @@ where
                 crate::error::UpdateCostCategoryDefinitionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UpdateCostCategoryDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-                crate::error::UpdateCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCostCategoryDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

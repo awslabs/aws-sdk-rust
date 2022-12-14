@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,11 @@ where
                 crate::error::CreateClusterErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -99,10 +101,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateControlPanelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -138,10 +140,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateRoutingControlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -161,10 +163,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateSafetyRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,9 +195,11 @@ where
                 crate::error::DeleteClusterErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -227,10 +231,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteControlPanelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,10 +267,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteRoutingControlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -289,10 +293,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteSafetyRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -321,9 +325,11 @@ where
                 crate::error::DescribeClusterErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -356,10 +362,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeControlPanelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -392,10 +398,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeRoutingControlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -415,10 +421,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeSafetyRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,9 +445,9 @@ where
                 crate::error::ListAssociatedRoute53HealthChecksErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ListAssociatedRoute53HealthChecksErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListAssociatedRoute53HealthChecksErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListAssociatedRoute53HealthChecksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAssociatedRoute53HealthChecksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,9 +473,11 @@ where
                 crate::error::ListClustersErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListClustersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListClustersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -498,10 +506,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListControlPanelsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -530,10 +538,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRoutingControlsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -559,9 +567,11 @@ where
                 crate::error::ListSafetyRulesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListSafetyRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListSafetyRulesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -584,10 +594,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -607,9 +617,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,9 +641,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -663,10 +677,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateControlPanelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -699,10 +713,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateRoutingControlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -725,10 +739,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateSafetyRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

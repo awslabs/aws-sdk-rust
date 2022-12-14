@@ -215,7 +215,7 @@ pub enum DescribeDimensionKeysErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDimensionKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -244,7 +244,9 @@ impl DescribeDimensionKeysError {
     /// Creates the `DescribeDimensionKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDimensionKeysErrorKind::Unhandled(err.into()),
+            kind: DescribeDimensionKeysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -253,7 +255,9 @@ impl DescribeDimensionKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDimensionKeysErrorKind::Unhandled(err.into()),
+            kind: DescribeDimensionKeysErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -305,7 +309,7 @@ impl std::error::Error for DescribeDimensionKeysError {
             DescribeDimensionKeysErrorKind::InternalServiceError(_inner) => Some(_inner),
             DescribeDimensionKeysErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeDimensionKeysErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            DescribeDimensionKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDimensionKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -330,7 +334,7 @@ pub enum GetDimensionKeyDetailsErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDimensionKeyDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -359,7 +363,9 @@ impl GetDimensionKeyDetailsError {
     /// Creates the `GetDimensionKeyDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDimensionKeyDetailsErrorKind::Unhandled(err.into()),
+            kind: GetDimensionKeyDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -368,7 +374,9 @@ impl GetDimensionKeyDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDimensionKeyDetailsErrorKind::Unhandled(err.into()),
+            kind: GetDimensionKeyDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -420,7 +428,7 @@ impl std::error::Error for GetDimensionKeyDetailsError {
             GetDimensionKeyDetailsErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetDimensionKeyDetailsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetDimensionKeyDetailsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetDimensionKeyDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDimensionKeyDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -445,7 +453,7 @@ pub enum GetResourceMetadataErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -474,7 +482,7 @@ impl GetResourceMetadataError {
     /// Creates the `GetResourceMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -483,7 +491,7 @@ impl GetResourceMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceMetadataErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -535,7 +543,7 @@ impl std::error::Error for GetResourceMetadataError {
             GetResourceMetadataErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetResourceMetadataErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetResourceMetadataErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -560,7 +568,7 @@ pub enum GetResourceMetricsErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -589,7 +597,7 @@ impl GetResourceMetricsError {
     /// Creates the `GetResourceMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -598,7 +606,7 @@ impl GetResourceMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: GetResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -650,7 +658,7 @@ impl std::error::Error for GetResourceMetricsError {
             GetResourceMetricsErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            GetResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -675,7 +683,7 @@ pub enum ListAvailableResourceDimensionsErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableResourceDimensionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,7 +719,9 @@ impl ListAvailableResourceDimensionsError {
     /// Creates the `ListAvailableResourceDimensionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -720,7 +730,9 @@ impl ListAvailableResourceDimensionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceDimensionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -776,7 +788,7 @@ impl std::error::Error for ListAvailableResourceDimensionsError {
             ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(_inner) => {
                 Some(_inner)
             }
-            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableResourceDimensionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -801,7 +813,7 @@ pub enum ListAvailableResourceMetricsErrorKind {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableResourceMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -832,7 +844,9 @@ impl ListAvailableResourceMetricsError {
     /// Creates the `ListAvailableResourceMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -841,7 +855,9 @@ impl ListAvailableResourceMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableResourceMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableResourceMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -893,7 +909,32 @@ impl std::error::Error for ListAvailableResourceMetricsError {
             ListAvailableResourceMetricsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListAvailableResourceMetricsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListAvailableResourceMetricsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
-            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableResourceMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -22,7 +22,7 @@ pub enum Error {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -68,10 +68,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::AddFlowMediaStreamsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -103,9 +103,11 @@ where
                 crate::error::AddFlowOutputsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::AddFlowOutputsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddFlowOutputsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -134,9 +136,11 @@ where
                 crate::error::AddFlowSourcesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::AddFlowSourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddFlowSourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -169,10 +173,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::AddFlowVpcInterfacesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -201,9 +205,11 @@ where
                 crate::error::CreateFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -232,9 +238,11 @@ where
                 crate::error::DeleteFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,9 +271,11 @@ where
                 crate::error::DescribeFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -294,10 +304,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeOfferingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,10 +336,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeReservationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,10 +375,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GrantFlowEntitlementsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -394,10 +404,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEntitlementsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -420,9 +430,11 @@ where
                 crate::error::ListFlowsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListFlowsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFlowsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -445,9 +457,11 @@ where
                 crate::error::ListOfferingsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOfferingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -473,10 +487,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListReservationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -499,10 +513,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -534,10 +548,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::PurchaseOfferingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -570,10 +584,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RemoveFlowMediaStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -605,10 +619,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RemoveFlowOutputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -640,10 +654,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RemoveFlowSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,10 +690,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RemoveFlowVpcInterfaceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -712,10 +726,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RevokeFlowEntitlementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -744,9 +758,11 @@ where
                 crate::error::StartFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StartFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -775,9 +791,11 @@ where
                 crate::error::StopFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StopFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -797,9 +815,11 @@ where
                 crate::error::TagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -819,9 +839,11 @@ where
                 crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -850,9 +872,11 @@ where
                 crate::error::UpdateFlowErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -885,10 +909,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFlowEntitlementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -921,10 +945,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFlowMediaStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -956,10 +980,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFlowOutputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -991,10 +1015,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFlowSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -14,7 +14,7 @@ pub enum Error {
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -51,10 +51,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateDeviceWithPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -77,9 +77,11 @@ where
                 crate::error::CreatePlacementErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreatePlacementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePlacementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -99,9 +101,11 @@ where
                 crate::error::CreateProjectErrorKind::ResourceConflictException(inner) => {
                     Error::ResourceConflictException(inner)
                 }
-                crate::error::CreateProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateProjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,9 +128,11 @@ where
                 crate::error::DeletePlacementErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeletePlacementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePlacementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,9 +155,11 @@ where
                 crate::error::DeleteProjectErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,10 +182,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribePlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -197,9 +205,11 @@ where
                 crate::error::DescribeProjectErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeProjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -221,9 +231,9 @@ where
                 crate::error::DisassociateDeviceFromPlacementErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DisassociateDeviceFromPlacementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateDeviceFromPlacementErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DisassociateDeviceFromPlacementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateDeviceFromPlacementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -247,10 +257,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetDevicesInPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -270,9 +280,11 @@ where
                 crate::error::ListPlacementsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListPlacementsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPlacementsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -289,9 +301,11 @@ where
                 crate::error::ListProjectsErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::ListProjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListProjectsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -314,10 +328,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -337,9 +351,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,9 +375,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -384,9 +402,11 @@ where
                 crate::error::UpdatePlacementErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdatePlacementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePlacementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -409,9 +429,11 @@ where
                 crate::error::UpdateProjectErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateProjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

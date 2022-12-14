@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>The input failed to meet the constraints specified by the AWS service. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66,10 +66,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AssociateTrackerConsumerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -92,9 +92,9 @@ where
                 crate::error::BatchDeleteDevicePositionHistoryErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::BatchDeleteDevicePositionHistoryErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::BatchDeleteDevicePositionHistoryErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchDeleteDevicePositionHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDeleteDevicePositionHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -123,10 +123,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchDeleteGeofenceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -156,10 +156,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchEvaluateGeofencesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,10 +189,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchGetDevicePositionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -221,10 +221,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchPutGeofenceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -254,10 +254,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchUpdateDevicePositionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -283,9 +283,11 @@ where
                 crate::error::CalculateRouteErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CalculateRouteErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CalculateRouteErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,10 +317,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CalculateRouteMatrixErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -348,10 +350,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateGeofenceCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -377,9 +379,11 @@ where
                 crate::error::CreateMapErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateMapErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMapErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -408,10 +412,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreatePlaceIndexErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -441,10 +445,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateRouteCalculatorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -470,9 +474,11 @@ where
                 crate::error::CreateTrackerErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateTrackerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTrackerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -502,10 +508,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteGeofenceCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -531,9 +537,11 @@ where
                 crate::error::DeleteMapErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteMapErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMapErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -562,10 +570,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeletePlaceIndexErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,10 +603,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteRouteCalculatorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -624,9 +632,11 @@ where
                 crate::error::DeleteTrackerErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteTrackerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTrackerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -656,10 +666,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeGeofenceCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -685,9 +695,11 @@ where
                 crate::error::DescribeMapErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeMapErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeMapErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -716,10 +728,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribePlaceIndexErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -749,10 +761,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeRouteCalculatorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -778,9 +790,11 @@ where
                 crate::error::DescribeTrackerErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeTrackerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTrackerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -810,10 +824,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociateTrackerConsumerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -842,10 +856,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDevicePositionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -875,10 +889,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDevicePositionHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -904,9 +918,11 @@ where
                 crate::error::GetGeofenceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetGeofenceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGeofenceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -932,9 +948,11 @@ where
                 crate::error::GetMapGlyphsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetMapGlyphsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMapGlyphsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -960,9 +978,11 @@ where
                 crate::error::GetMapSpritesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetMapSpritesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMapSpritesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -992,10 +1012,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetMapStyleDescriptorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1021,9 +1041,11 @@ where
                 crate::error::GetMapTileErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetMapTileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMapTileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1049,9 +1071,11 @@ where
                 crate::error::GetPlaceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetPlaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPlaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1077,10 +1101,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDevicePositionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1107,10 +1131,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListGeofenceCollectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1136,9 +1160,11 @@ where
                 crate::error::ListGeofencesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListGeofencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGeofencesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1161,9 +1187,11 @@ where
                 crate::error::ListMapsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListMapsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMapsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1189,10 +1217,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPlaceIndexesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1219,10 +1247,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRouteCalculatorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1251,10 +1279,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1284,10 +1312,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTrackerConsumersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1310,9 +1338,11 @@ where
                 crate::error::ListTrackersErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListTrackersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTrackersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1341,9 +1371,11 @@ where
                 crate::error::PutGeofenceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PutGeofenceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutGeofenceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1373,10 +1405,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::SearchPlaceIndexForPositionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1399,9 +1431,9 @@ where
                 crate::error::SearchPlaceIndexForSuggestionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::SearchPlaceIndexForSuggestionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::SearchPlaceIndexForSuggestionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchPlaceIndexForSuggestionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1431,10 +1463,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::SearchPlaceIndexForTextErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1460,9 +1492,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1488,9 +1522,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1520,10 +1556,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateGeofenceCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1549,9 +1585,11 @@ where
                 crate::error::UpdateMapErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateMapErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateMapErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1580,10 +1618,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePlaceIndexErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1613,10 +1651,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateRouteCalculatorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1642,9 +1680,11 @@ where
                 crate::error::UpdateTrackerErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateTrackerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateTrackerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

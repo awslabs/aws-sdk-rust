@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,9 +45,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -67,9 +67,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::AllocateConnectionOnInterconnectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AllocateConnectionOnInterconnectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -96,10 +96,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::AllocateHostedConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -121,9 +121,9 @@ where
                 crate::error::AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::AllocatePrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AllocatePrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,9 +145,9 @@ where
                 crate::error::AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::AllocatePublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AllocatePublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -169,9 +169,9 @@ where
                 crate::error::AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::AllocateTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AllocateTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -192,10 +192,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::AssociateConnectionWithLagErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -216,10 +216,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::AssociateHostedConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,10 +239,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::AssociateMacSecKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,10 +263,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::AssociateVirtualInterfaceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -286,10 +286,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::ConfirmConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,10 +310,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::ConfirmCustomerAgreementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -333,9 +333,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -351,9 +351,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::ConfirmPublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ConfirmPublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -373,9 +373,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::ConfirmTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ConfirmTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -392,9 +392,11 @@ where
                 crate::error::CreateBGPPeerErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::CreateBGPPeerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateBGPPeerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -420,10 +422,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -444,10 +446,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::CreateDirectConnectGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -471,9 +473,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::CreateDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -497,9 +499,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -525,10 +527,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateInterconnectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -551,9 +553,11 @@ where
                 crate::error::CreateLagErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::CreateLagErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLagErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -571,9 +575,9 @@ where
                 crate::error::CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreatePrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePrivateVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -591,9 +595,9 @@ where
                 crate::error::CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreatePublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePublicVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -611,9 +615,9 @@ where
                 crate::error::CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
                 crate::error::CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
                 crate::error::CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::CreateTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTransitVirtualInterfaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -630,9 +634,11 @@ where
                 crate::error::DeleteBGPPeerErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::DeleteBGPPeerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBGPPeerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -652,10 +658,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,10 +682,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DeleteDirectConnectGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -703,9 +709,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -729,9 +735,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -751,10 +757,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::DeleteInterconnectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -771,9 +777,11 @@ where
                 crate::error::DeleteLagErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::DeleteLagErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLagErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -794,10 +802,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DeleteVirtualInterfaceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -818,10 +826,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeConnectionLoaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -841,10 +849,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::DescribeConnectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -864,9 +872,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeConnectionsOnInterconnectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConnectionsOnInterconnectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -887,10 +895,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeCustomerMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -914,9 +922,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -940,9 +948,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -966,9 +974,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -984,9 +992,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeDirectConnectGatewaysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDirectConnectGatewaysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1007,10 +1015,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeHostedConnectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1031,10 +1039,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeInterconnectLoaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1055,10 +1063,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeInterconnectsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1075,9 +1083,11 @@ where
                 crate::error::DescribeLagsErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::DescribeLagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeLagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1094,9 +1104,11 @@ where
                 crate::error::DescribeLoaErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::DescribeLoaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeLoaErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1116,10 +1128,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::DescribeLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1135,9 +1147,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeRouterConfigurationErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DescribeRouterConfigurationErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DescribeRouterConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRouterConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1154,9 +1166,11 @@ where
                 crate::error::DescribeTagsErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::DescribeTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1177,10 +1191,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeVirtualGatewaysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1201,10 +1215,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DescribeVirtualInterfacesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1220,9 +1234,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateConnectionFromLagErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::DisassociateConnectionFromLagErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::DisassociateConnectionFromLagErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateConnectionFromLagErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1243,10 +1257,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::DisassociateMacSecKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1266,9 +1280,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::ListVirtualInterfaceTestHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListVirtualInterfaceTestHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1289,10 +1303,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::StartBgpFailoverTestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1312,10 +1326,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::StopBgpFailoverTestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1338,9 +1352,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1357,9 +1373,11 @@ where
                 crate::error::UntagResourceErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1379,10 +1397,10 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::UpdateConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1403,10 +1421,10 @@ where
                     inner,
                 ) => Error::DirectConnectServerException(inner),
                 crate::error::UpdateDirectConnectGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1430,9 +1448,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1449,9 +1467,11 @@ where
                 crate::error::UpdateLagErrorKind::DirectConnectServerException(inner) => {
                     Error::DirectConnectServerException(inner)
                 }
-                crate::error::UpdateLagErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLagErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1471,9 +1491,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
                 crate::error::UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
-                crate::error::UpdateVirtualInterfaceAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateVirtualInterfaceAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

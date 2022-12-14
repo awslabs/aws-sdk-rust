@@ -347,7 +347,7 @@ pub enum BatchGetRecordErrorKind {
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,7 +377,7 @@ impl BatchGetRecordError {
     /// Creates the `BatchGetRecordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetRecordErrorKind::Unhandled(err.into()),
+            kind: BatchGetRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -386,7 +386,7 @@ impl BatchGetRecordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetRecordErrorKind::Unhandled(err.into()),
+            kind: BatchGetRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -434,7 +434,7 @@ impl std::error::Error for BatchGetRecordError {
             BatchGetRecordErrorKind::InternalFailure(_inner) => Some(_inner),
             BatchGetRecordErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             BatchGetRecordErrorKind::ValidationError(_inner) => Some(_inner),
-            BatchGetRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetRecordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -461,7 +461,7 @@ pub enum DeleteRecordErrorKind {
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -491,7 +491,7 @@ impl DeleteRecordError {
     /// Creates the `DeleteRecordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRecordErrorKind::Unhandled(err.into()),
+            kind: DeleteRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -500,7 +500,7 @@ impl DeleteRecordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRecordErrorKind::Unhandled(err.into()),
+            kind: DeleteRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -548,7 +548,7 @@ impl std::error::Error for DeleteRecordError {
             DeleteRecordErrorKind::InternalFailure(_inner) => Some(_inner),
             DeleteRecordErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             DeleteRecordErrorKind::ValidationError(_inner) => Some(_inner),
-            DeleteRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRecordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -577,7 +577,7 @@ pub enum GetRecordErrorKind {
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -608,7 +608,7 @@ impl GetRecordError {
     /// Creates the `GetRecordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRecordErrorKind::Unhandled(err.into()),
+            kind: GetRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -617,7 +617,7 @@ impl GetRecordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRecordErrorKind::Unhandled(err.into()),
+            kind: GetRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -670,7 +670,7 @@ impl std::error::Error for GetRecordError {
             GetRecordErrorKind::ResourceNotFound(_inner) => Some(_inner),
             GetRecordErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             GetRecordErrorKind::ValidationError(_inner) => Some(_inner),
-            GetRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRecordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -697,7 +697,7 @@ pub enum PutRecordErrorKind {
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRecordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -727,7 +727,7 @@ impl PutRecordError {
     /// Creates the `PutRecordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRecordErrorKind::Unhandled(err.into()),
+            kind: PutRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -736,7 +736,7 @@ impl PutRecordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRecordErrorKind::Unhandled(err.into()),
+            kind: PutRecordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -784,7 +784,32 @@ impl std::error::Error for PutRecordError {
             PutRecordErrorKind::InternalFailure(_inner) => Some(_inner),
             PutRecordErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             PutRecordErrorKind::ValidationError(_inner) => Some(_inner),
-            PutRecordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRecordErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

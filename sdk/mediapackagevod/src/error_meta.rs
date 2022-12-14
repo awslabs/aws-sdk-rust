@@ -16,7 +16,7 @@ pub enum Error {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,11 @@ where
                 crate::error::ConfigureLogsErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ConfigureLogsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -87,9 +89,11 @@ where
                 crate::error::CreateAssetErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::CreateAssetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAssetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -109,9 +113,9 @@ where
                 crate::error::CreatePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreatePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::CreatePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::CreatePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,10 +148,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::CreatePackagingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -176,9 +180,11 @@ where
                 crate::error::DeleteAssetErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::DeleteAssetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAssetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -198,9 +204,9 @@ where
                 crate::error::DeletePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeletePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DeletePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::DeletePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -233,10 +239,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::DeletePackagingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -265,9 +271,11 @@ where
                 crate::error::DescribeAssetErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::DescribeAssetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAssetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -291,9 +299,9 @@ where
                 crate::error::DescribePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::DescribePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,10 +334,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::DescribePackagingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,9 +366,11 @@ where
                 crate::error::ListAssetsErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ListAssetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAssetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,9 +390,9 @@ where
                 crate::error::ListPackagingConfigurationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ListPackagingConfigurationsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListPackagingConfigurationsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::ListPackagingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPackagingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,10 +424,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ListPackagingGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -431,10 +441,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -445,9 +455,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -458,9 +470,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -493,10 +507,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::UpdatePackagingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

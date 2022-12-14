@@ -1685,7 +1685,7 @@ pub enum CancelIngestionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelIngestionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1717,7 +1717,7 @@ impl CancelIngestionError {
     /// Creates the `CancelIngestionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelIngestionErrorKind::Unhandled(err.into()),
+            kind: CancelIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1726,7 +1726,7 @@ impl CancelIngestionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelIngestionErrorKind::Unhandled(err.into()),
+            kind: CancelIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1799,7 +1799,7 @@ impl std::error::Error for CancelIngestionError {
             CancelIngestionErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CancelIngestionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelIngestionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelIngestionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelIngestionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1834,7 +1834,7 @@ pub enum CreateAccountCustomizationErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1872,7 +1872,9 @@ impl CreateAccountCustomizationError {
     /// Creates the `CreateAccountCustomizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: CreateAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1881,7 +1883,9 @@ impl CreateAccountCustomizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: CreateAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1977,7 +1981,7 @@ impl std::error::Error for CreateAccountCustomizationError {
                 Some(_inner)
             }
             CreateAccountCustomizationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2014,7 +2018,7 @@ pub enum CreateAccountSubscriptionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccountSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2055,7 +2059,9 @@ impl CreateAccountSubscriptionError {
     /// Creates the `CreateAccountSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccountSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2064,7 +2070,9 @@ impl CreateAccountSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccountSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2168,7 +2176,7 @@ impl std::error::Error for CreateAccountSubscriptionError {
                 Some(_inner)
             }
             CreateAccountSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2201,7 +2209,7 @@ pub enum CreateAnalysisErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2234,7 +2242,7 @@ impl CreateAnalysisError {
     /// Creates the `CreateAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAnalysisErrorKind::Unhandled(err.into()),
+            kind: CreateAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2243,7 +2251,7 @@ impl CreateAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAnalysisErrorKind::Unhandled(err.into()),
+            kind: CreateAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2321,7 +2329,7 @@ impl std::error::Error for CreateAnalysisError {
             CreateAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAnalysisErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2354,7 +2362,7 @@ pub enum CreateDashboardErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2387,7 +2395,7 @@ impl CreateDashboardError {
     /// Creates the `CreateDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDashboardErrorKind::Unhandled(err.into()),
+            kind: CreateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2396,7 +2404,7 @@ impl CreateDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDashboardErrorKind::Unhandled(err.into()),
+            kind: CreateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2474,7 +2482,7 @@ impl std::error::Error for CreateDashboardError {
             CreateDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateDashboardErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2511,7 +2519,7 @@ pub enum CreateDataSetErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDataSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2546,7 +2554,7 @@ impl CreateDataSetError {
     /// Creates the `CreateDataSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDataSetErrorKind::Unhandled(err.into()),
+            kind: CreateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2555,7 +2563,7 @@ impl CreateDataSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDataSetErrorKind::Unhandled(err.into()),
+            kind: CreateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2646,7 +2654,7 @@ impl std::error::Error for CreateDataSetError {
             CreateDataSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDataSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateDataSetErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateDataSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDataSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2681,7 +2689,7 @@ pub enum CreateDataSourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2715,7 +2723,7 @@ impl CreateDataSourceError {
     /// Creates the `CreateDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDataSourceErrorKind::Unhandled(err.into()),
+            kind: CreateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2724,7 +2732,7 @@ impl CreateDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDataSourceErrorKind::Unhandled(err.into()),
+            kind: CreateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2813,7 +2821,7 @@ impl std::error::Error for CreateDataSourceError {
             CreateDataSourceErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateDataSourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDataSourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2850,7 +2858,7 @@ pub enum CreateFolderErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2885,7 +2893,7 @@ impl CreateFolderError {
     /// Creates the `CreateFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFolderErrorKind::Unhandled(err.into()),
+            kind: CreateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2894,7 +2902,7 @@ impl CreateFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFolderErrorKind::Unhandled(err.into()),
+            kind: CreateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2982,7 +2990,7 @@ impl std::error::Error for CreateFolderError {
             CreateFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFolderErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateFolderErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3017,7 +3025,7 @@ pub enum CreateFolderMembershipErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFolderMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3055,7 +3063,9 @@ impl CreateFolderMembershipError {
     /// Creates the `CreateFolderMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFolderMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateFolderMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3064,7 +3074,9 @@ impl CreateFolderMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFolderMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateFolderMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3158,7 +3170,7 @@ impl std::error::Error for CreateFolderMembershipError {
             CreateFolderMembershipErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            CreateFolderMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFolderMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3195,7 +3207,7 @@ pub enum CreateGroupErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3230,7 +3242,7 @@ impl CreateGroupError {
     /// Creates the `CreateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3239,7 +3251,7 @@ impl CreateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3327,7 +3339,7 @@ impl std::error::Error for CreateGroupError {
             CreateGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateGroupErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             CreateGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3360,7 +3372,7 @@ pub enum CreateGroupMembershipErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3393,7 +3405,9 @@ impl CreateGroupMembershipError {
     /// Creates the `CreateGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3402,7 +3416,9 @@ impl CreateGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3486,7 +3502,7 @@ impl std::error::Error for CreateGroupMembershipError {
             CreateGroupMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateGroupMembershipErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             CreateGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3519,7 +3535,7 @@ pub enum CreateIAMPolicyAssignmentErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateIAMPolicyAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3556,7 +3572,9 @@ impl CreateIAMPolicyAssignmentError {
     /// Creates the `CreateIAMPolicyAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: CreateIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3565,7 +3583,9 @@ impl CreateIAMPolicyAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: CreateIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3651,7 +3671,7 @@ impl std::error::Error for CreateIAMPolicyAssignmentError {
             CreateIAMPolicyAssignmentErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateIAMPolicyAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3684,7 +3704,7 @@ pub enum CreateIngestionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateIngestionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3717,7 +3737,7 @@ impl CreateIngestionError {
     /// Creates the `CreateIngestionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateIngestionErrorKind::Unhandled(err.into()),
+            kind: CreateIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3726,7 +3746,7 @@ impl CreateIngestionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateIngestionErrorKind::Unhandled(err.into()),
+            kind: CreateIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3807,7 +3827,7 @@ impl std::error::Error for CreateIngestionError {
             CreateIngestionErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateIngestionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateIngestionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateIngestionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateIngestionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3846,7 +3866,7 @@ pub enum CreateNamespaceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNamespaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3882,7 +3902,7 @@ impl CreateNamespaceError {
     /// Creates the `CreateNamespaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNamespaceErrorKind::Unhandled(err.into()),
+            kind: CreateNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3891,7 +3911,7 @@ impl CreateNamespaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNamespaceErrorKind::Unhandled(err.into()),
+            kind: CreateNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3993,7 +4013,7 @@ impl std::error::Error for CreateNamespaceError {
             CreateNamespaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateNamespaceErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             CreateNamespaceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateNamespaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNamespaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4030,7 +4050,7 @@ pub enum CreateTemplateErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4065,7 +4085,7 @@ impl CreateTemplateError {
     /// Creates the `CreateTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4074,7 +4094,7 @@ impl CreateTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4168,7 +4188,7 @@ impl std::error::Error for CreateTemplateError {
             CreateTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateTemplateErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4201,7 +4221,7 @@ pub enum CreateTemplateAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTemplateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4234,7 +4254,7 @@ impl CreateTemplateAliasError {
     /// Creates the `CreateTemplateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4243,7 +4263,7 @@ impl CreateTemplateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4327,7 +4347,7 @@ impl std::error::Error for CreateTemplateAliasError {
             CreateTemplateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTemplateAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateTemplateAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4362,7 +4382,7 @@ pub enum CreateThemeErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4396,7 +4416,7 @@ impl CreateThemeError {
     /// Creates the `CreateThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateThemeErrorKind::Unhandled(err.into()),
+            kind: CreateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4405,7 +4425,7 @@ impl CreateThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateThemeErrorKind::Unhandled(err.into()),
+            kind: CreateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4485,7 +4505,7 @@ impl std::error::Error for CreateThemeError {
             CreateThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateThemeErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateThemeErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4520,7 +4540,7 @@ pub enum CreateThemeAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateThemeAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4554,7 +4574,7 @@ impl CreateThemeAliasError {
     /// Creates the `CreateThemeAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateThemeAliasErrorKind::Unhandled(err.into()),
+            kind: CreateThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4563,7 +4583,7 @@ impl CreateThemeAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateThemeAliasErrorKind::Unhandled(err.into()),
+            kind: CreateThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4652,7 +4672,7 @@ impl std::error::Error for CreateThemeAliasError {
             CreateThemeAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateThemeAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateThemeAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            CreateThemeAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateThemeAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4685,7 +4705,7 @@ pub enum DeleteAccountCustomizationErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4722,7 +4742,9 @@ impl DeleteAccountCustomizationError {
     /// Creates the `DeleteAccountCustomizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4731,7 +4753,9 @@ impl DeleteAccountCustomizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4819,7 +4843,7 @@ impl std::error::Error for DeleteAccountCustomizationError {
                 Some(_inner)
             }
             DeleteAccountCustomizationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4850,7 +4874,7 @@ pub enum DeleteAnalysisErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4882,7 +4906,7 @@ impl DeleteAnalysisError {
     /// Creates the `DeleteAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAnalysisErrorKind::Unhandled(err.into()),
+            kind: DeleteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4891,7 +4915,7 @@ impl DeleteAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAnalysisErrorKind::Unhandled(err.into()),
+            kind: DeleteAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4961,7 +4985,7 @@ impl std::error::Error for DeleteAnalysisError {
             DeleteAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAnalysisErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4992,7 +5016,7 @@ pub enum DeleteDashboardErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5024,7 +5048,7 @@ impl DeleteDashboardError {
     /// Creates the `DeleteDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDashboardErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5033,7 +5057,7 @@ impl DeleteDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDashboardErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5103,7 +5127,7 @@ impl std::error::Error for DeleteDashboardError {
             DeleteDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteDashboardErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5132,7 +5156,7 @@ pub enum DeleteDataSetErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDataSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5163,7 +5187,7 @@ impl DeleteDataSetError {
     /// Creates the `DeleteDataSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDataSetErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5172,7 +5196,7 @@ impl DeleteDataSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDataSetErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5234,7 +5258,7 @@ impl std::error::Error for DeleteDataSetError {
             DeleteDataSetErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteDataSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDataSetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteDataSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDataSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5263,7 +5287,7 @@ pub enum DeleteDataSourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5294,7 +5318,7 @@ impl DeleteDataSourceError {
     /// Creates the `DeleteDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDataSourceErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5303,7 +5327,7 @@ impl DeleteDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDataSourceErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5371,7 +5395,7 @@ impl std::error::Error for DeleteDataSourceError {
             DeleteDataSourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteDataSourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDataSourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5406,7 +5430,7 @@ pub enum DeleteFolderErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5440,7 +5464,7 @@ impl DeleteFolderError {
     /// Creates the `DeleteFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFolderErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5449,7 +5473,7 @@ impl DeleteFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFolderErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5532,7 +5556,7 @@ impl std::error::Error for DeleteFolderError {
             DeleteFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFolderErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteFolderErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5563,7 +5587,7 @@ pub enum DeleteFolderMembershipErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFolderMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5599,7 +5623,9 @@ impl DeleteFolderMembershipError {
     /// Creates the `DeleteFolderMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFolderMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5608,7 +5634,9 @@ impl DeleteFolderMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFolderMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5686,7 +5714,7 @@ impl std::error::Error for DeleteFolderMembershipError {
             DeleteFolderMembershipErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DeleteFolderMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFolderMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5719,7 +5747,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5752,7 +5780,7 @@ impl DeleteGroupError {
     /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5761,7 +5789,7 @@ impl DeleteGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5839,7 +5867,7 @@ impl std::error::Error for DeleteGroupError {
             DeleteGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGroupErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5872,7 +5900,7 @@ pub enum DeleteGroupMembershipErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5905,7 +5933,9 @@ impl DeleteGroupMembershipError {
     /// Creates the `DeleteGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5914,7 +5944,9 @@ impl DeleteGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5998,7 +6030,7 @@ impl std::error::Error for DeleteGroupMembershipError {
             DeleteGroupMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGroupMembershipErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6031,7 +6063,7 @@ pub enum DeleteIAMPolicyAssignmentErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteIAMPolicyAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6068,7 +6100,9 @@ impl DeleteIAMPolicyAssignmentError {
     /// Creates the `DeleteIAMPolicyAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: DeleteIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6077,7 +6111,9 @@ impl DeleteIAMPolicyAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: DeleteIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6163,7 +6199,7 @@ impl std::error::Error for DeleteIAMPolicyAssignmentError {
             DeleteIAMPolicyAssignmentErrorKind::ResourceExistsException(_inner) => Some(_inner),
             DeleteIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteIAMPolicyAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6196,7 +6232,7 @@ pub enum DeleteNamespaceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNamespaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6229,7 +6265,7 @@ impl DeleteNamespaceError {
     /// Creates the `DeleteNamespaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNamespaceErrorKind::Unhandled(err.into()),
+            kind: DeleteNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6238,7 +6274,7 @@ impl DeleteNamespaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNamespaceErrorKind::Unhandled(err.into()),
+            kind: DeleteNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6319,7 +6355,7 @@ impl std::error::Error for DeleteNamespaceError {
             DeleteNamespaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteNamespaceErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteNamespaceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteNamespaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNamespaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6352,7 +6388,7 @@ pub enum DeleteTemplateErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6385,7 +6421,7 @@ impl DeleteTemplateError {
     /// Creates the `DeleteTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6394,7 +6430,7 @@ impl DeleteTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6472,7 +6508,7 @@ impl std::error::Error for DeleteTemplateError {
             DeleteTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteTemplateErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6501,7 +6537,7 @@ pub enum DeleteTemplateAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTemplateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6532,7 +6568,7 @@ impl DeleteTemplateAliasError {
     /// Creates the `DeleteTemplateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6541,7 +6577,7 @@ impl DeleteTemplateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6609,7 +6645,7 @@ impl std::error::Error for DeleteTemplateAliasError {
             DeleteTemplateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTemplateAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteTemplateAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6642,7 +6678,7 @@ pub enum DeleteThemeErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6675,7 +6711,7 @@ impl DeleteThemeError {
     /// Creates the `DeleteThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteThemeErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6684,7 +6720,7 @@ impl DeleteThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteThemeErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6759,7 +6795,7 @@ impl std::error::Error for DeleteThemeError {
             DeleteThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteThemeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteThemeErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6790,7 +6826,7 @@ pub enum DeleteThemeAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteThemeAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6822,7 +6858,7 @@ impl DeleteThemeAliasError {
     /// Creates the `DeleteThemeAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteThemeAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6831,7 +6867,7 @@ impl DeleteThemeAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteThemeAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6904,7 +6940,7 @@ impl std::error::Error for DeleteThemeAliasError {
             DeleteThemeAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteThemeAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteThemeAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DeleteThemeAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteThemeAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6937,7 +6973,7 @@ pub enum DeleteUserErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6970,7 +7006,7 @@ impl DeleteUserError {
     /// Creates the `DeleteUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6979,7 +7015,7 @@ impl DeleteUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7054,7 +7090,7 @@ impl std::error::Error for DeleteUserError {
             DeleteUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteUserErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7087,7 +7123,7 @@ pub enum DeleteUserByPrincipalIdErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserByPrincipalIdError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7122,7 +7158,9 @@ impl DeleteUserByPrincipalIdError {
     /// Creates the `DeleteUserByPrincipalIdError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserByPrincipalIdErrorKind::Unhandled(err.into()),
+            kind: DeleteUserByPrincipalIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7131,7 +7169,9 @@ impl DeleteUserByPrincipalIdError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserByPrincipalIdErrorKind::Unhandled(err.into()),
+            kind: DeleteUserByPrincipalIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7217,7 +7257,7 @@ impl std::error::Error for DeleteUserByPrincipalIdError {
             DeleteUserByPrincipalIdErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteUserByPrincipalIdErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteUserByPrincipalIdErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteUserByPrincipalIdErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserByPrincipalIdErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7248,7 +7288,7 @@ pub enum DescribeAccountCustomizationErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7288,7 +7328,9 @@ impl DescribeAccountCustomizationError {
     /// Creates the `DescribeAccountCustomizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7297,7 +7339,9 @@ impl DescribeAccountCustomizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7379,7 +7423,7 @@ impl std::error::Error for DescribeAccountCustomizationError {
                 Some(_inner)
             }
             DescribeAccountCustomizationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7410,7 +7454,7 @@ pub enum DescribeAccountSettingsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7444,7 +7488,9 @@ impl DescribeAccountSettingsError {
     /// Creates the `DescribeAccountSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7453,7 +7499,9 @@ impl DescribeAccountSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7531,7 +7579,7 @@ impl std::error::Error for DescribeAccountSettingsError {
             DescribeAccountSettingsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAccountSettingsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeAccountSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7562,7 +7610,7 @@ pub enum DescribeAccountSubscriptionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7600,7 +7648,9 @@ impl DescribeAccountSubscriptionError {
     /// Creates the `DescribeAccountSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7609,7 +7659,9 @@ impl DescribeAccountSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7689,7 +7741,7 @@ impl std::error::Error for DescribeAccountSubscriptionError {
                 Some(_inner)
             }
             DescribeAccountSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7720,7 +7772,7 @@ pub enum DescribeAnalysisErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7752,7 +7804,7 @@ impl DescribeAnalysisError {
     /// Creates the `DescribeAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAnalysisErrorKind::Unhandled(err.into()),
+            kind: DescribeAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7761,7 +7813,7 @@ impl DescribeAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAnalysisErrorKind::Unhandled(err.into()),
+            kind: DescribeAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7837,7 +7889,7 @@ impl std::error::Error for DescribeAnalysisError {
             DescribeAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeAnalysisErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7866,7 +7918,7 @@ pub enum DescribeAnalysisPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAnalysisPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7903,7 +7955,9 @@ impl DescribeAnalysisPermissionsError {
     /// Creates the `DescribeAnalysisPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAnalysisPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnalysisPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7912,7 +7966,9 @@ impl DescribeAnalysisPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAnalysisPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnalysisPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7984,7 +8040,7 @@ impl std::error::Error for DescribeAnalysisPermissionsError {
             DescribeAnalysisPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeAnalysisPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAnalysisPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8015,7 +8071,7 @@ pub enum DescribeDashboardErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8047,7 +8103,7 @@ impl DescribeDashboardError {
     /// Creates the `DescribeDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDashboardErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8056,7 +8112,7 @@ impl DescribeDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDashboardErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8132,7 +8188,7 @@ impl std::error::Error for DescribeDashboardError {
             DescribeDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8161,7 +8217,7 @@ pub enum DescribeDashboardPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDashboardPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8200,7 +8256,9 @@ impl DescribeDashboardPermissionsError {
     /// Creates the `DescribeDashboardPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDashboardPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8209,7 +8267,9 @@ impl DescribeDashboardPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDashboardPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8283,7 +8343,7 @@ impl std::error::Error for DescribeDashboardPermissionsError {
             DescribeDashboardPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeDashboardPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDashboardPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8312,7 +8372,7 @@ pub enum DescribeDataSetErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDataSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8343,7 +8403,7 @@ impl DescribeDataSetError {
     /// Creates the `DescribeDataSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDataSetErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8352,7 +8412,7 @@ impl DescribeDataSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDataSetErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8417,7 +8477,7 @@ impl std::error::Error for DescribeDataSetError {
             DescribeDataSetErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeDataSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDataSetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDataSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDataSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8446,7 +8506,7 @@ pub enum DescribeDataSetPermissionsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDataSetPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8479,7 +8539,9 @@ impl DescribeDataSetPermissionsError {
     /// Creates the `DescribeDataSetPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDataSetPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSetPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8488,7 +8550,9 @@ impl DescribeDataSetPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDataSetPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSetPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8558,7 +8622,7 @@ impl std::error::Error for DescribeDataSetPermissionsError {
             }
             DescribeDataSetPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDataSetPermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDataSetPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDataSetPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8587,7 +8651,7 @@ pub enum DescribeDataSourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8618,7 +8682,7 @@ impl DescribeDataSourceError {
     /// Creates the `DescribeDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDataSourceErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8627,7 +8691,7 @@ impl DescribeDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDataSourceErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8695,7 +8759,7 @@ impl std::error::Error for DescribeDataSourceError {
             DescribeDataSourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeDataSourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDataSourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8724,7 +8788,7 @@ pub enum DescribeDataSourcePermissionsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDataSourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8764,7 +8828,9 @@ impl DescribeDataSourcePermissionsError {
     /// Creates the `DescribeDataSourcePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDataSourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8773,7 +8839,9 @@ impl DescribeDataSourcePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDataSourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDataSourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8847,7 +8915,7 @@ impl std::error::Error for DescribeDataSourcePermissionsError {
                 Some(_inner)
             }
             DescribeDataSourcePermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDataSourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDataSourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8878,7 +8946,7 @@ pub enum DescribeFolderErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8910,7 +8978,7 @@ impl DescribeFolderError {
     /// Creates the `DescribeFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFolderErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8919,7 +8987,7 @@ impl DescribeFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFolderErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8992,7 +9060,7 @@ impl std::error::Error for DescribeFolderError {
             DescribeFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFolderErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeFolderErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9023,7 +9091,7 @@ pub enum DescribeFolderPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFolderPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9059,7 +9127,9 @@ impl DescribeFolderPermissionsError {
     /// Creates the `DescribeFolderPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFolderPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9068,7 +9138,9 @@ impl DescribeFolderPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFolderPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9148,7 +9220,7 @@ impl std::error::Error for DescribeFolderPermissionsError {
             DescribeFolderPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeFolderPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFolderPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9179,7 +9251,7 @@ pub enum DescribeFolderResolvedPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFolderResolvedPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9226,7 +9298,9 @@ impl DescribeFolderResolvedPermissionsError {
     /// Creates the `DescribeFolderResolvedPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFolderResolvedPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderResolvedPermissionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9235,7 +9309,9 @@ impl DescribeFolderResolvedPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFolderResolvedPermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderResolvedPermissionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9321,7 +9397,7 @@ impl std::error::Error for DescribeFolderResolvedPermissionsError {
             DescribeFolderResolvedPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeFolderResolvedPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFolderResolvedPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9354,7 +9430,7 @@ pub enum DescribeGroupErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9387,7 +9463,7 @@ impl DescribeGroupError {
     /// Creates the `DescribeGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9396,7 +9472,7 @@ impl DescribeGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9474,7 +9550,7 @@ impl std::error::Error for DescribeGroupError {
             DescribeGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeGroupErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9507,7 +9583,7 @@ pub enum DescribeGroupMembershipErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9542,7 +9618,9 @@ impl DescribeGroupMembershipError {
     /// Creates the `DescribeGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9551,7 +9629,9 @@ impl DescribeGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9637,7 +9717,7 @@ impl std::error::Error for DescribeGroupMembershipError {
             DescribeGroupMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeGroupMembershipErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9668,7 +9748,7 @@ pub enum DescribeIAMPolicyAssignmentErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIAMPolicyAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9706,7 +9786,9 @@ impl DescribeIAMPolicyAssignmentError {
     /// Creates the `DescribeIAMPolicyAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: DescribeIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9715,7 +9797,9 @@ impl DescribeIAMPolicyAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: DescribeIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9793,7 +9877,7 @@ impl std::error::Error for DescribeIAMPolicyAssignmentError {
             }
             DescribeIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeIAMPolicyAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9824,7 +9908,7 @@ pub enum DescribeIngestionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIngestionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9856,7 +9940,7 @@ impl DescribeIngestionError {
     /// Creates the `DescribeIngestionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIngestionErrorKind::Unhandled(err.into()),
+            kind: DescribeIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9865,7 +9949,7 @@ impl DescribeIngestionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIngestionErrorKind::Unhandled(err.into()),
+            kind: DescribeIngestionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9941,7 +10025,7 @@ impl std::error::Error for DescribeIngestionError {
             DescribeIngestionErrorKind::ResourceExistsException(_inner) => Some(_inner),
             DescribeIngestionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeIngestionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeIngestionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeIngestionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9970,7 +10054,7 @@ pub enum DescribeIpRestrictionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIpRestrictionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10001,7 +10085,9 @@ impl DescribeIpRestrictionError {
     /// Creates the `DescribeIpRestrictionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIpRestrictionErrorKind::Unhandled(err.into()),
+            kind: DescribeIpRestrictionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10010,7 +10096,9 @@ impl DescribeIpRestrictionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIpRestrictionErrorKind::Unhandled(err.into()),
+            kind: DescribeIpRestrictionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10078,7 +10166,7 @@ impl std::error::Error for DescribeIpRestrictionError {
             DescribeIpRestrictionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeIpRestrictionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeIpRestrictionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeIpRestrictionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeIpRestrictionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10109,7 +10197,7 @@ pub enum DescribeNamespaceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNamespaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10141,7 +10229,7 @@ impl DescribeNamespaceError {
     /// Creates the `DescribeNamespaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNamespaceErrorKind::Unhandled(err.into()),
+            kind: DescribeNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10150,7 +10238,7 @@ impl DescribeNamespaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNamespaceErrorKind::Unhandled(err.into()),
+            kind: DescribeNamespaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10226,7 +10314,7 @@ impl std::error::Error for DescribeNamespaceError {
             DescribeNamespaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeNamespaceErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeNamespaceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeNamespaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNamespaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10261,7 +10349,7 @@ pub enum DescribeTemplateErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10295,7 +10383,7 @@ impl DescribeTemplateError {
     /// Creates the `DescribeTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10304,7 +10392,7 @@ impl DescribeTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10393,7 +10481,7 @@ impl std::error::Error for DescribeTemplateError {
             DescribeTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeTemplateErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10420,7 +10508,7 @@ pub enum DescribeTemplateAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTemplateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10452,7 +10540,9 @@ impl DescribeTemplateAliasError {
     /// Creates the `DescribeTemplateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10461,7 +10551,9 @@ impl DescribeTemplateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10521,7 +10613,7 @@ impl std::error::Error for DescribeTemplateAliasError {
             DescribeTemplateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTemplateAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeTemplateAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10552,7 +10644,7 @@ pub enum DescribeTemplatePermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTemplatePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10590,7 +10682,9 @@ impl DescribeTemplatePermissionsError {
     /// Creates the `DescribeTemplatePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTemplatePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10599,7 +10693,9 @@ impl DescribeTemplatePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTemplatePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeTemplatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10679,7 +10775,7 @@ impl std::error::Error for DescribeTemplatePermissionsError {
             DescribeTemplatePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeTemplatePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTemplatePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10712,7 +10808,7 @@ pub enum DescribeThemeErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10745,7 +10841,7 @@ impl DescribeThemeError {
     /// Creates the `DescribeThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeThemeErrorKind::Unhandled(err.into()),
+            kind: DescribeThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10754,7 +10850,7 @@ impl DescribeThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeThemeErrorKind::Unhandled(err.into()),
+            kind: DescribeThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10832,7 +10928,7 @@ impl std::error::Error for DescribeThemeError {
             DescribeThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeThemeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeThemeErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10863,7 +10959,7 @@ pub enum DescribeThemeAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeThemeAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10895,7 +10991,7 @@ impl DescribeThemeAliasError {
     /// Creates the `DescribeThemeAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeThemeAliasErrorKind::Unhandled(err.into()),
+            kind: DescribeThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10904,7 +11000,7 @@ impl DescribeThemeAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeThemeAliasErrorKind::Unhandled(err.into()),
+            kind: DescribeThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10980,7 +11076,7 @@ impl std::error::Error for DescribeThemeAliasError {
             DescribeThemeAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeThemeAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeThemeAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            DescribeThemeAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeThemeAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11011,7 +11107,7 @@ pub enum DescribeThemePermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeThemePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11047,7 +11143,9 @@ impl DescribeThemePermissionsError {
     /// Creates the `DescribeThemePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeThemePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeThemePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11056,7 +11154,9 @@ impl DescribeThemePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeThemePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeThemePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11136,7 +11236,7 @@ impl std::error::Error for DescribeThemePermissionsError {
             DescribeThemePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            DescribeThemePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeThemePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11169,7 +11269,7 @@ pub enum DescribeUserErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11202,7 +11302,7 @@ impl DescribeUserError {
     /// Creates the `DescribeUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11211,7 +11311,7 @@ impl DescribeUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11289,7 +11389,7 @@ impl std::error::Error for DescribeUserError {
             DescribeUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeUserErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DescribeUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11327,7 +11427,7 @@ pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateEmbedUrlForAnonymousUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11378,7 +11478,9 @@ impl GenerateEmbedUrlForAnonymousUserError {
     /// Creates the `GenerateEmbedUrlForAnonymousUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(err.into()),
+            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11387,7 +11489,9 @@ impl GenerateEmbedUrlForAnonymousUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(err.into()),
+            kind: GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11493,7 +11597,7 @@ impl std::error::Error for GenerateEmbedUrlForAnonymousUserError {
             GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11533,7 +11637,7 @@ pub enum GenerateEmbedUrlForRegisteredUserErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateEmbedUrlForRegisteredUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11591,7 +11695,9 @@ impl GenerateEmbedUrlForRegisteredUserError {
     /// Creates the `GenerateEmbedUrlForRegisteredUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(err.into()),
+            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11600,7 +11706,9 @@ impl GenerateEmbedUrlForRegisteredUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(err.into()),
+            kind: GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11719,7 +11827,7 @@ impl std::error::Error for GenerateEmbedUrlForRegisteredUserError {
             Some(_inner)
             ,
             GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -11766,7 +11874,7 @@ pub enum GetDashboardEmbedUrlErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDashboardEmbedUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11808,7 +11916,9 @@ impl GetDashboardEmbedUrlError {
     /// Creates the `GetDashboardEmbedUrlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDashboardEmbedUrlErrorKind::Unhandled(err.into()),
+            kind: GetDashboardEmbedUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11817,7 +11927,9 @@ impl GetDashboardEmbedUrlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDashboardEmbedUrlErrorKind::Unhandled(err.into()),
+            kind: GetDashboardEmbedUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11945,7 +12057,7 @@ impl std::error::Error for GetDashboardEmbedUrlError {
             GetDashboardEmbedUrlErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException(_inner) => Some(_inner),
             GetDashboardEmbedUrlErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            GetDashboardEmbedUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDashboardEmbedUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11984,7 +12096,7 @@ pub enum GetSessionEmbedUrlErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionEmbedUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12021,7 +12133,7 @@ impl GetSessionEmbedUrlError {
     /// Creates the `GetSessionEmbedUrlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSessionEmbedUrlErrorKind::Unhandled(err.into()),
+            kind: GetSessionEmbedUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12030,7 +12142,7 @@ impl GetSessionEmbedUrlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSessionEmbedUrlErrorKind::Unhandled(err.into()),
+            kind: GetSessionEmbedUrlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12132,7 +12244,7 @@ impl std::error::Error for GetSessionEmbedUrlError {
             }
             GetSessionEmbedUrlErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetSessionEmbedUrlErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            GetSessionEmbedUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSessionEmbedUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12159,7 +12271,7 @@ pub enum ListAnalysesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnalysesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12189,7 +12301,7 @@ impl ListAnalysesError {
     /// Creates the `ListAnalysesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnalysesErrorKind::Unhandled(err.into()),
+            kind: ListAnalysesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12198,7 +12310,7 @@ impl ListAnalysesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnalysesErrorKind::Unhandled(err.into()),
+            kind: ListAnalysesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12255,7 +12367,7 @@ impl std::error::Error for ListAnalysesError {
             ListAnalysesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListAnalysesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAnalysesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListAnalysesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnalysesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12282,7 +12394,7 @@ pub enum ListDashboardsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDashboardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12312,7 +12424,7 @@ impl ListDashboardsError {
     /// Creates the `ListDashboardsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12321,7 +12433,7 @@ impl ListDashboardsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12378,7 +12490,7 @@ impl std::error::Error for ListDashboardsError {
             ListDashboardsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListDashboardsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListDashboardsErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12409,7 +12521,7 @@ pub enum ListDashboardVersionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDashboardVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12443,7 +12555,9 @@ impl ListDashboardVersionsError {
     /// Creates the `ListDashboardVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDashboardVersionsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12452,7 +12566,9 @@ impl ListDashboardVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDashboardVersionsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12528,7 +12644,7 @@ impl std::error::Error for ListDashboardVersionsError {
             ListDashboardVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDashboardVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListDashboardVersionsErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListDashboardVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDashboardVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12557,7 +12673,7 @@ pub enum ListDataSetsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDataSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12588,7 +12704,7 @@ impl ListDataSetsError {
     /// Creates the `ListDataSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDataSetsErrorKind::Unhandled(err.into()),
+            kind: ListDataSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12597,7 +12713,7 @@ impl ListDataSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDataSetsErrorKind::Unhandled(err.into()),
+            kind: ListDataSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12659,7 +12775,7 @@ impl std::error::Error for ListDataSetsError {
             ListDataSetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListDataSetsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListDataSetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDataSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDataSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12688,7 +12804,7 @@ pub enum ListDataSourcesErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDataSourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12719,7 +12835,7 @@ impl ListDataSourcesError {
     /// Creates the `ListDataSourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDataSourcesErrorKind::Unhandled(err.into()),
+            kind: ListDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12728,7 +12844,7 @@ impl ListDataSourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDataSourcesErrorKind::Unhandled(err.into()),
+            kind: ListDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12793,7 +12909,7 @@ impl std::error::Error for ListDataSourcesError {
             ListDataSourcesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListDataSourcesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListDataSourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDataSourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDataSourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12826,7 +12942,7 @@ pub enum ListFolderMembersErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFolderMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12859,7 +12975,7 @@ impl ListFolderMembersError {
     /// Creates the `ListFolderMembersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFolderMembersErrorKind::Unhandled(err.into()),
+            kind: ListFolderMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12868,7 +12984,7 @@ impl ListFolderMembersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFolderMembersErrorKind::Unhandled(err.into()),
+            kind: ListFolderMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12952,7 +13068,7 @@ impl std::error::Error for ListFolderMembersError {
             ListFolderMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFolderMembersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFolderMembersErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListFolderMembersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFolderMembersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12985,7 +13101,7 @@ pub enum ListFoldersErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFoldersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13018,7 +13134,7 @@ impl ListFoldersError {
     /// Creates the `ListFoldersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFoldersErrorKind::Unhandled(err.into()),
+            kind: ListFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13027,7 +13143,7 @@ impl ListFoldersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFoldersErrorKind::Unhandled(err.into()),
+            kind: ListFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13105,7 +13221,7 @@ impl std::error::Error for ListFoldersError {
             ListFoldersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFoldersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFoldersErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListFoldersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFoldersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13140,7 +13256,7 @@ pub enum ListGroupMembershipsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupMembershipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13174,7 +13290,9 @@ impl ListGroupMembershipsError {
     /// Creates the `ListGroupMembershipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13183,7 +13301,9 @@ impl ListGroupMembershipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13275,7 +13395,7 @@ impl std::error::Error for ListGroupMembershipsError {
             ListGroupMembershipsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListGroupMembershipsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ListGroupMembershipsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGroupMembershipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupMembershipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13310,7 +13430,7 @@ pub enum ListGroupsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13344,7 +13464,7 @@ impl ListGroupsError {
     /// Creates the `ListGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13353,7 +13473,7 @@ impl ListGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13436,7 +13556,7 @@ impl std::error::Error for ListGroupsError {
             ListGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListGroupsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ListGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13467,7 +13587,7 @@ pub enum ListIAMPolicyAssignmentsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIAMPolicyAssignmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13501,7 +13621,9 @@ impl ListIAMPolicyAssignmentsError {
     /// Creates the `ListIAMPolicyAssignmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIAMPolicyAssignmentsErrorKind::Unhandled(err.into()),
+            kind: ListIAMPolicyAssignmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13510,7 +13632,9 @@ impl ListIAMPolicyAssignmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIAMPolicyAssignmentsErrorKind::Unhandled(err.into()),
+            kind: ListIAMPolicyAssignmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13588,7 +13712,7 @@ impl std::error::Error for ListIAMPolicyAssignmentsError {
             }
             ListIAMPolicyAssignmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListIAMPolicyAssignmentsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListIAMPolicyAssignmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIAMPolicyAssignmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13621,7 +13745,7 @@ pub enum ListIAMPolicyAssignmentsForUserErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIAMPolicyAssignmentsForUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13669,7 +13793,9 @@ impl ListIAMPolicyAssignmentsForUserError {
     /// Creates the `ListIAMPolicyAssignmentsForUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(err.into()),
+            kind: ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -13678,7 +13804,9 @@ impl ListIAMPolicyAssignmentsForUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(err.into()),
+            kind: ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -13772,7 +13900,7 @@ impl std::error::Error for ListIAMPolicyAssignmentsForUserError {
                 Some(_inner)
             }
             ListIAMPolicyAssignmentsForUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13805,7 +13933,7 @@ pub enum ListIngestionsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIngestionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13838,7 +13966,7 @@ impl ListIngestionsError {
     /// Creates the `ListIngestionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIngestionsErrorKind::Unhandled(err.into()),
+            kind: ListIngestionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13847,7 +13975,7 @@ impl ListIngestionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIngestionsErrorKind::Unhandled(err.into()),
+            kind: ListIngestionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13928,7 +14056,7 @@ impl std::error::Error for ListIngestionsError {
             ListIngestionsErrorKind::ResourceExistsException(_inner) => Some(_inner),
             ListIngestionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListIngestionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListIngestionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIngestionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13963,7 +14091,7 @@ pub enum ListNamespacesErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNamespacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13997,7 +14125,7 @@ impl ListNamespacesError {
     /// Creates the `ListNamespacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNamespacesErrorKind::Unhandled(err.into()),
+            kind: ListNamespacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14006,7 +14134,7 @@ impl ListNamespacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNamespacesErrorKind::Unhandled(err.into()),
+            kind: ListNamespacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14095,7 +14223,7 @@ impl std::error::Error for ListNamespacesError {
             ListNamespacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListNamespacesErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ListNamespacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListNamespacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNamespacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14124,7 +14252,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14155,7 +14283,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14164,7 +14292,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14232,7 +14360,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14261,7 +14389,7 @@ pub enum ListTemplateAliasesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTemplateAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14292,7 +14420,7 @@ impl ListTemplateAliasesError {
     /// Creates the `ListTemplateAliasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTemplateAliasesErrorKind::Unhandled(err.into()),
+            kind: ListTemplateAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14301,7 +14429,7 @@ impl ListTemplateAliasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTemplateAliasesErrorKind::Unhandled(err.into()),
+            kind: ListTemplateAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14369,7 +14497,7 @@ impl std::error::Error for ListTemplateAliasesError {
             ListTemplateAliasesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTemplateAliasesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTemplateAliasesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListTemplateAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTemplateAliasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14400,7 +14528,7 @@ pub enum ListTemplatesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14432,7 +14560,7 @@ impl ListTemplatesError {
     /// Creates the `ListTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14441,7 +14569,7 @@ impl ListTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14514,7 +14642,7 @@ impl std::error::Error for ListTemplatesError {
             ListTemplatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTemplatesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14545,7 +14673,7 @@ pub enum ListTemplateVersionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTemplateVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14577,7 +14705,9 @@ impl ListTemplateVersionsError {
     /// Creates the `ListTemplateVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTemplateVersionsErrorKind::Unhandled(err.into()),
+            kind: ListTemplateVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14586,7 +14716,9 @@ impl ListTemplateVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTemplateVersionsErrorKind::Unhandled(err.into()),
+            kind: ListTemplateVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14662,7 +14794,7 @@ impl std::error::Error for ListTemplateVersionsError {
             ListTemplateVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTemplateVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTemplateVersionsErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListTemplateVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTemplateVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14695,7 +14827,7 @@ pub enum ListThemeAliasesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListThemeAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14728,7 +14860,7 @@ impl ListThemeAliasesError {
     /// Creates the `ListThemeAliasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListThemeAliasesErrorKind::Unhandled(err.into()),
+            kind: ListThemeAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14737,7 +14869,7 @@ impl ListThemeAliasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListThemeAliasesErrorKind::Unhandled(err.into()),
+            kind: ListThemeAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14818,7 +14950,7 @@ impl std::error::Error for ListThemeAliasesError {
             ListThemeAliasesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListThemeAliasesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListThemeAliasesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListThemeAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListThemeAliasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14851,7 +14983,7 @@ pub enum ListThemesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListThemesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14884,7 +15016,7 @@ impl ListThemesError {
     /// Creates the `ListThemesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListThemesErrorKind::Unhandled(err.into()),
+            kind: ListThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14893,7 +15025,7 @@ impl ListThemesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListThemesErrorKind::Unhandled(err.into()),
+            kind: ListThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14968,7 +15100,7 @@ impl std::error::Error for ListThemesError {
             ListThemesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListThemesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListThemesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListThemesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListThemesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15001,7 +15133,7 @@ pub enum ListThemeVersionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListThemeVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15034,7 +15166,7 @@ impl ListThemeVersionsError {
     /// Creates the `ListThemeVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListThemeVersionsErrorKind::Unhandled(err.into()),
+            kind: ListThemeVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15043,7 +15175,7 @@ impl ListThemeVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListThemeVersionsErrorKind::Unhandled(err.into()),
+            kind: ListThemeVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15127,7 +15259,7 @@ impl std::error::Error for ListThemeVersionsError {
             ListThemeVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListThemeVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListThemeVersionsErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            ListThemeVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListThemeVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15160,7 +15292,7 @@ pub enum ListUserGroupsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUserGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15193,7 +15325,7 @@ impl ListUserGroupsError {
     /// Creates the `ListUserGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUserGroupsErrorKind::Unhandled(err.into()),
+            kind: ListUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15202,7 +15334,7 @@ impl ListUserGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUserGroupsErrorKind::Unhandled(err.into()),
+            kind: ListUserGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15283,7 +15415,7 @@ impl std::error::Error for ListUserGroupsError {
             ListUserGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListUserGroupsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ListUserGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListUserGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUserGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15318,7 +15450,7 @@ pub enum ListUsersErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15352,7 +15484,7 @@ impl ListUsersError {
     /// Creates the `ListUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15361,7 +15493,7 @@ impl ListUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15438,7 +15570,7 @@ impl std::error::Error for ListUsersError {
             ListUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListUsersErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ListUsersErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15475,7 +15607,7 @@ pub enum RegisterUserErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15510,7 +15642,7 @@ impl RegisterUserError {
     /// Creates the `RegisterUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterUserErrorKind::Unhandled(err.into()),
+            kind: RegisterUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15519,7 +15651,7 @@ impl RegisterUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterUserErrorKind::Unhandled(err.into()),
+            kind: RegisterUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15610,7 +15742,7 @@ impl std::error::Error for RegisterUserError {
             RegisterUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterUserErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             RegisterUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RegisterUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15641,7 +15773,7 @@ pub enum RestoreAnalysisErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15673,7 +15805,7 @@ impl RestoreAnalysisError {
     /// Creates the `RestoreAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreAnalysisErrorKind::Unhandled(err.into()),
+            kind: RestoreAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15682,7 +15814,7 @@ impl RestoreAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreAnalysisErrorKind::Unhandled(err.into()),
+            kind: RestoreAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15752,7 +15884,7 @@ impl std::error::Error for RestoreAnalysisError {
             RestoreAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestoreAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             RestoreAnalysisErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            RestoreAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15783,7 +15915,7 @@ pub enum SearchAnalysesErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchAnalysesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15815,7 +15947,7 @@ impl SearchAnalysesError {
     /// Creates the `SearchAnalysesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchAnalysesErrorKind::Unhandled(err.into()),
+            kind: SearchAnalysesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15824,7 +15956,7 @@ impl SearchAnalysesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchAnalysesErrorKind::Unhandled(err.into()),
+            kind: SearchAnalysesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15897,7 +16029,7 @@ impl std::error::Error for SearchAnalysesError {
             SearchAnalysesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchAnalysesErrorKind::ThrottlingException(_inner) => Some(_inner),
             SearchAnalysesErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            SearchAnalysesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchAnalysesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15928,7 +16060,7 @@ pub enum SearchDashboardsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchDashboardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15960,7 +16092,7 @@ impl SearchDashboardsError {
     /// Creates the `SearchDashboardsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchDashboardsErrorKind::Unhandled(err.into()),
+            kind: SearchDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15969,7 +16101,7 @@ impl SearchDashboardsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchDashboardsErrorKind::Unhandled(err.into()),
+            kind: SearchDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16045,7 +16177,7 @@ impl std::error::Error for SearchDashboardsError {
             SearchDashboardsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchDashboardsErrorKind::ThrottlingException(_inner) => Some(_inner),
             SearchDashboardsErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            SearchDashboardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchDashboardsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16078,7 +16210,7 @@ pub enum SearchFoldersErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchFoldersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16111,7 +16243,7 @@ impl SearchFoldersError {
     /// Creates the `SearchFoldersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchFoldersErrorKind::Unhandled(err.into()),
+            kind: SearchFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16120,7 +16252,7 @@ impl SearchFoldersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchFoldersErrorKind::Unhandled(err.into()),
+            kind: SearchFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16198,7 +16330,7 @@ impl std::error::Error for SearchFoldersError {
             SearchFoldersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchFoldersErrorKind::ThrottlingException(_inner) => Some(_inner),
             SearchFoldersErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            SearchFoldersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchFoldersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16233,7 +16365,7 @@ pub enum SearchGroupsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16267,7 +16399,7 @@ impl SearchGroupsError {
     /// Creates the `SearchGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchGroupsErrorKind::Unhandled(err.into()),
+            kind: SearchGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16276,7 +16408,7 @@ impl SearchGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchGroupsErrorKind::Unhandled(err.into()),
+            kind: SearchGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16362,7 +16494,7 @@ impl std::error::Error for SearchGroupsError {
             SearchGroupsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchGroupsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             SearchGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SearchGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16393,7 +16525,7 @@ pub enum TagResourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16425,7 +16557,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16434,7 +16566,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16501,7 +16633,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16530,7 +16662,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16561,7 +16693,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16570,7 +16702,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16632,7 +16764,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16665,7 +16797,7 @@ pub enum UpdateAccountCustomizationErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16702,7 +16834,9 @@ impl UpdateAccountCustomizationError {
     /// Creates the `UpdateAccountCustomizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16711,7 +16845,9 @@ impl UpdateAccountCustomizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAccountCustomizationErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountCustomizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16799,7 +16935,7 @@ impl std::error::Error for UpdateAccountCustomizationError {
                 Some(_inner)
             }
             UpdateAccountCustomizationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAccountCustomizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16830,7 +16966,7 @@ pub enum UpdateAccountSettingsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16862,7 +16998,9 @@ impl UpdateAccountSettingsError {
     /// Creates the `UpdateAccountSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16871,7 +17009,9 @@ impl UpdateAccountSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16947,7 +17087,7 @@ impl std::error::Error for UpdateAccountSettingsError {
             UpdateAccountSettingsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAccountSettingsErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             UpdateAccountSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16980,7 +17120,7 @@ pub enum UpdateAnalysisErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17013,7 +17153,7 @@ impl UpdateAnalysisError {
     /// Creates the `UpdateAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAnalysisErrorKind::Unhandled(err.into()),
+            kind: UpdateAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17022,7 +17162,7 @@ impl UpdateAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAnalysisErrorKind::Unhandled(err.into()),
+            kind: UpdateAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17100,7 +17240,7 @@ impl std::error::Error for UpdateAnalysisError {
             UpdateAnalysisErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAnalysisErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17131,7 +17271,7 @@ pub enum UpdateAnalysisPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAnalysisPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17167,7 +17307,9 @@ impl UpdateAnalysisPermissionsError {
     /// Creates the `UpdateAnalysisPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAnalysisPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateAnalysisPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17176,7 +17318,9 @@ impl UpdateAnalysisPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAnalysisPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateAnalysisPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17256,7 +17400,7 @@ impl std::error::Error for UpdateAnalysisPermissionsError {
             UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateAnalysisPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAnalysisPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17289,7 +17433,7 @@ pub enum UpdateDashboardErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17322,7 +17466,7 @@ impl UpdateDashboardError {
     /// Creates the `UpdateDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDashboardErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17331,7 +17475,7 @@ impl UpdateDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDashboardErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17409,7 +17553,7 @@ impl std::error::Error for UpdateDashboardError {
             UpdateDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDashboardErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17440,7 +17584,7 @@ pub enum UpdateDashboardPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDashboardPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17476,7 +17620,9 @@ impl UpdateDashboardPermissionsError {
     /// Creates the `UpdateDashboardPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDashboardPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17485,7 +17631,9 @@ impl UpdateDashboardPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDashboardPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17565,7 +17713,7 @@ impl std::error::Error for UpdateDashboardPermissionsError {
             UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateDashboardPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDashboardPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17596,7 +17744,7 @@ pub enum UpdateDashboardPublishedVersionErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDashboardPublishedVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17639,7 +17787,9 @@ impl UpdateDashboardPublishedVersionError {
     /// Creates the `UpdateDashboardPublishedVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDashboardPublishedVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardPublishedVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -17648,7 +17798,9 @@ impl UpdateDashboardPublishedVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDashboardPublishedVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardPublishedVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -17732,7 +17884,7 @@ impl std::error::Error for UpdateDashboardPublishedVersionError {
             UpdateDashboardPublishedVersionErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateDashboardPublishedVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDashboardPublishedVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17767,7 +17919,7 @@ pub enum UpdateDataSetErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17801,7 +17953,7 @@ impl UpdateDataSetError {
     /// Creates the `UpdateDataSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataSetErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17810,7 +17962,7 @@ impl UpdateDataSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataSetErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17893,7 +18045,7 @@ impl std::error::Error for UpdateDataSetError {
             UpdateDataSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDataSetErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateDataSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17924,7 +18076,7 @@ pub enum UpdateDataSetPermissionsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataSetPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17958,7 +18110,9 @@ impl UpdateDataSetPermissionsError {
     /// Creates the `UpdateDataSetPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataSetPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSetPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17967,7 +18121,9 @@ impl UpdateDataSetPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataSetPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSetPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18045,7 +18201,7 @@ impl std::error::Error for UpdateDataSetPermissionsError {
             }
             UpdateDataSetPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataSetPermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDataSetPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataSetPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18076,7 +18232,7 @@ pub enum UpdateDataSourceErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18108,7 +18264,7 @@ impl UpdateDataSourceError {
     /// Creates the `UpdateDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18117,7 +18273,7 @@ impl UpdateDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -18190,7 +18346,7 @@ impl std::error::Error for UpdateDataSourceError {
             UpdateDataSourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UpdateDataSourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataSourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18221,7 +18377,7 @@ pub enum UpdateDataSourcePermissionsErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataSourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18257,7 +18413,9 @@ impl UpdateDataSourcePermissionsError {
     /// Creates the `UpdateDataSourcePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataSourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18266,7 +18424,9 @@ impl UpdateDataSourcePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataSourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18344,7 +18504,7 @@ impl std::error::Error for UpdateDataSourcePermissionsError {
             }
             UpdateDataSourcePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataSourcePermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDataSourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataSourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18379,7 +18539,7 @@ pub enum UpdateFolderErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18413,7 +18573,7 @@ impl UpdateFolderError {
     /// Creates the `UpdateFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFolderErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18422,7 +18582,7 @@ impl UpdateFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFolderErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -18505,7 +18665,7 @@ impl std::error::Error for UpdateFolderError {
             UpdateFolderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFolderErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateFolderErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18538,7 +18698,7 @@ pub enum UpdateFolderPermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFolderPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18575,7 +18735,9 @@ impl UpdateFolderPermissionsError {
     /// Creates the `UpdateFolderPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFolderPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18584,7 +18746,9 @@ impl UpdateFolderPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFolderPermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18672,7 +18836,7 @@ impl std::error::Error for UpdateFolderPermissionsError {
             UpdateFolderPermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateFolderPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFolderPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18705,7 +18869,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18738,7 +18902,7 @@ impl UpdateGroupError {
     /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18747,7 +18911,7 @@ impl UpdateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -18825,7 +18989,7 @@ impl std::error::Error for UpdateGroupError {
             UpdateGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGroupErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             UpdateGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18858,7 +19022,7 @@ pub enum UpdateIAMPolicyAssignmentErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIAMPolicyAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18895,7 +19059,9 @@ impl UpdateIAMPolicyAssignmentError {
     /// Creates the `UpdateIAMPolicyAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: UpdateIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18904,7 +19070,9 @@ impl UpdateIAMPolicyAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIAMPolicyAssignmentErrorKind::Unhandled(err.into()),
+            kind: UpdateIAMPolicyAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18990,7 +19158,7 @@ impl std::error::Error for UpdateIAMPolicyAssignmentError {
             UpdateIAMPolicyAssignmentErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateIAMPolicyAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateIAMPolicyAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19021,7 +19189,7 @@ pub enum UpdateIpRestrictionErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIpRestrictionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19053,7 +19221,7 @@ impl UpdateIpRestrictionError {
     /// Creates the `UpdateIpRestrictionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIpRestrictionErrorKind::Unhandled(err.into()),
+            kind: UpdateIpRestrictionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19062,7 +19230,7 @@ impl UpdateIpRestrictionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIpRestrictionErrorKind::Unhandled(err.into()),
+            kind: UpdateIpRestrictionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19138,7 +19306,7 @@ impl std::error::Error for UpdateIpRestrictionError {
             UpdateIpRestrictionErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateIpRestrictionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateIpRestrictionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateIpRestrictionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateIpRestrictionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19170,7 +19338,7 @@ pub enum UpdatePublicSharingSettingsErrorKind {
     /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePublicSharingSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19208,7 +19376,9 @@ impl UpdatePublicSharingSettingsError {
     /// Creates the `UpdatePublicSharingSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePublicSharingSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdatePublicSharingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19217,7 +19387,9 @@ impl UpdatePublicSharingSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePublicSharingSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdatePublicSharingSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19297,7 +19469,7 @@ impl std::error::Error for UpdatePublicSharingSettingsError {
             UpdatePublicSharingSettingsErrorKind::UnsupportedPricingPlanException(_inner) => {
                 Some(_inner)
             }
-            UpdatePublicSharingSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePublicSharingSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19332,7 +19504,7 @@ pub enum UpdateTemplateErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19366,7 +19538,7 @@ impl UpdateTemplateError {
     /// Creates the `UpdateTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19375,7 +19547,7 @@ impl UpdateTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19461,7 +19633,7 @@ impl std::error::Error for UpdateTemplateError {
             UpdateTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateTemplateErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19490,7 +19662,7 @@ pub enum UpdateTemplateAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTemplateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19521,7 +19693,7 @@ impl UpdateTemplateAliasError {
     /// Creates the `UpdateTemplateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19530,7 +19702,7 @@ impl UpdateTemplateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTemplateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19598,7 +19770,7 @@ impl std::error::Error for UpdateTemplateAliasError {
             UpdateTemplateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTemplateAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateTemplateAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTemplateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19629,7 +19801,7 @@ pub enum UpdateTemplatePermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTemplatePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19665,7 +19837,9 @@ impl UpdateTemplatePermissionsError {
     /// Creates the `UpdateTemplatePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTemplatePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19674,7 +19848,9 @@ impl UpdateTemplatePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTemplatePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateTemplatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19754,7 +19930,7 @@ impl std::error::Error for UpdateTemplatePermissionsError {
             UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateTemplatePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTemplatePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19789,7 +19965,7 @@ pub enum UpdateThemeErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19823,7 +19999,7 @@ impl UpdateThemeError {
     /// Creates the `UpdateThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateThemeErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19832,7 +20008,7 @@ impl UpdateThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateThemeErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19912,7 +20088,7 @@ impl std::error::Error for UpdateThemeError {
             UpdateThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateThemeErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateThemeErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19945,7 +20121,7 @@ pub enum UpdateThemeAliasErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateThemeAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19978,7 +20154,7 @@ impl UpdateThemeAliasError {
     /// Creates the `UpdateThemeAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateThemeAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19987,7 +20163,7 @@ impl UpdateThemeAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateThemeAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20068,7 +20244,7 @@ impl std::error::Error for UpdateThemeAliasError {
             UpdateThemeAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateThemeAliasErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateThemeAliasErrorKind::UnsupportedUserEditionException(_inner) => Some(_inner),
-            UpdateThemeAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateThemeAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20099,7 +20275,7 @@ pub enum UpdateThemePermissionsErrorKind {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateThemePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20135,7 +20311,9 @@ impl UpdateThemePermissionsError {
     /// Creates the `UpdateThemePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateThemePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateThemePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -20144,7 +20322,9 @@ impl UpdateThemePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateThemePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdateThemePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -20222,7 +20402,7 @@ impl std::error::Error for UpdateThemePermissionsError {
             UpdateThemePermissionsErrorKind::UnsupportedUserEditionException(_inner) => {
                 Some(_inner)
             }
-            UpdateThemePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateThemePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20255,7 +20435,7 @@ pub enum UpdateUserErrorKind {
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20288,7 +20468,7 @@ impl UpdateUserError {
     /// Creates the `UpdateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20297,7 +20477,7 @@ impl UpdateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20372,7 +20552,32 @@ impl std::error::Error for UpdateUserError {
             UpdateUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateUserErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             UpdateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -10,7 +10,7 @@ pub enum Error {
     /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35,9 +35,11 @@ where
                 crate::error::ActivateGatewayErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ActivateGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ActivateGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -54,9 +56,11 @@ where
                 crate::error::AddCacheErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::AddCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -76,10 +80,10 @@ where
                     Error::InvalidGatewayRequestException(inner)
                 }
                 crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -96,9 +100,11 @@ where
                 crate::error::AddUploadBufferErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::AddUploadBufferErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddUploadBufferErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -118,10 +124,10 @@ where
                     Error::InvalidGatewayRequestException(inner)
                 }
                 crate::error::AddWorkingStorageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -138,9 +144,11 @@ where
                 crate::error::AssignTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::AssignTapePoolErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssignTapePoolErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -160,10 +168,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::AssociateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -180,9 +188,11 @@ where
                 crate::error::AttachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::AttachVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AttachVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,9 +209,11 @@ where
                 crate::error::CancelArchivalErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::CancelArchivalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelArchivalErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -218,9 +230,11 @@ where
                 crate::error::CancelRetrievalErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::CancelRetrievalErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelRetrievalErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -241,10 +255,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateCachediSCSIVolumeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -264,10 +278,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateNFSFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -287,10 +301,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateSMBFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,9 +324,11 @@ where
                 crate::error::CreateSnapshotErrorKind::ServiceUnavailableError(inner) => {
                     Error::ServiceUnavailableError(inner)
                 }
-                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -337,9 +353,9 @@ where
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
-                crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -360,10 +376,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateStorediSCSIVolumeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,9 +396,11 @@ where
                 crate::error::CreateTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::CreateTapePoolErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTapePoolErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -399,9 +417,11 @@ where
                 crate::error::CreateTapesErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::CreateTapesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTapesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -422,10 +442,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateTapeWithBarcodeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -445,9 +465,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -468,10 +488,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DeleteBandwidthRateLimitErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,10 +512,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DeleteChapCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -512,9 +532,11 @@ where
                 crate::error::DeleteFileShareErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DeleteFileShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFileShareErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -531,9 +553,11 @@ where
                 crate::error::DeleteGatewayErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DeleteGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -554,10 +578,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DeleteSnapshotScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -574,9 +598,11 @@ where
                 crate::error::DeleteTapeErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DeleteTapeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTapeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -596,10 +622,10 @@ where
                     Error::InvalidGatewayRequestException(inner)
                 }
                 crate::error::DeleteTapeArchiveErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -616,9 +642,11 @@ where
                 crate::error::DeleteTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DeleteTapePoolErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTapePoolErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -635,9 +663,11 @@ where
                 crate::error::DeleteVolumeErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -657,9 +687,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeAvailabilityMonitorTestErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,9 +705,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeBandwidthRateLimitErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeBandwidthRateLimitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBandwidthRateLimitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -698,9 +728,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -717,9 +747,11 @@ where
                 crate::error::DescribeCacheErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DescribeCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -735,9 +767,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeCachediSCSIVolumesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeCachediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCachediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -758,10 +790,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeChapCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -781,9 +813,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeFileSystemAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +831,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeGatewayInformationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeGatewayInformationErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeGatewayInformationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGatewayInformationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -817,9 +849,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeMaintenanceStartTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -840,10 +872,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeNFSFileSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -864,10 +896,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeSMBFileSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -887,10 +919,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeSMBSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -911,10 +943,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeSnapshotScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -930,9 +962,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeStorediSCSIVolumesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeStorediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeStorediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -953,10 +985,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeTapeArchivesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -972,9 +1004,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeTapeRecoveryPointsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeTapeRecoveryPointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTapeRecoveryPointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -991,9 +1023,11 @@ where
                 crate::error::DescribeTapesErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DescribeTapesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTapesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1014,10 +1048,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeUploadBufferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1037,10 +1071,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeVTLDevicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1061,10 +1095,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeWorkingStorageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1081,9 +1115,11 @@ where
                 crate::error::DetachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DetachVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetachVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1100,9 +1136,11 @@ where
                 crate::error::DisableGatewayErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::DisableGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisableGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1123,10 +1161,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DisassociateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1143,9 +1181,11 @@ where
                 crate::error::JoinDomainErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::JoinDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::JoinDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1165,9 +1205,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1184,9 +1224,11 @@ where
                 crate::error::ListFileSharesErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListFileSharesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFileSharesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1202,9 +1244,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListFileSystemAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::ListFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1221,9 +1263,11 @@ where
                 crate::error::ListGatewaysErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListGatewaysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGatewaysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1240,9 +1284,11 @@ where
                 crate::error::ListLocalDisksErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListLocalDisksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLocalDisksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1262,10 +1308,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1282,9 +1328,11 @@ where
                 crate::error::ListTapePoolsErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListTapePoolsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTapePoolsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1301,9 +1349,11 @@ where
                 crate::error::ListTapesErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListTapesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTapesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1324,10 +1374,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::ListVolumeInitiatorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1348,10 +1398,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::ListVolumeRecoveryPointsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1368,9 +1418,11 @@ where
                 crate::error::ListVolumesErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ListVolumesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListVolumesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1390,10 +1442,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::NotifyWhenUploadedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1410,9 +1462,11 @@ where
                 crate::error::RefreshCacheErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::RefreshCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RefreshCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1433,10 +1487,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1453,9 +1507,11 @@ where
                 crate::error::ResetCacheErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ResetCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResetCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1475,10 +1531,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::RetrieveTapeArchiveErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1494,9 +1550,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RetrieveTapeRecoveryPointErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::RetrieveTapeRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RetrieveTapeRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1517,10 +1573,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::SetLocalConsolePasswordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1540,10 +1596,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::SetSMBGuestPasswordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1560,9 +1616,11 @@ where
                 crate::error::ShutdownGatewayErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::ShutdownGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ShutdownGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1578,9 +1636,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartAvailabilityMonitorTestErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::StartAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1597,9 +1655,11 @@ where
                 crate::error::StartGatewayErrorKind::InvalidGatewayRequestException(inner) => {
                     Error::InvalidGatewayRequestException(inner)
                 }
-                crate::error::StartGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1619,9 +1679,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1642,10 +1702,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateBandwidthRateLimitErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1665,9 +1725,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1688,10 +1748,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateChapCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1707,9 +1767,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateFileSystemAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateFileSystemAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFileSystemAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1730,10 +1790,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateGatewayInformationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1754,10 +1814,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateGatewaySoftwareNowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1773,9 +1833,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateMaintenanceStartTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1795,10 +1855,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateNFSFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1818,10 +1878,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateSMBFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1837,9 +1897,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateSMBFileShareVisibilityErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateSMBFileShareVisibilityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateSMBFileShareVisibilityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1860,10 +1920,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateSMBLocalGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1879,9 +1939,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateSMBSecurityStrategyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateSMBSecurityStrategyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateSMBSecurityStrategyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1902,10 +1962,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateSnapshotScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1925,10 +1985,10 @@ where
                     inner,
                 ) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateVTLDeviceTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

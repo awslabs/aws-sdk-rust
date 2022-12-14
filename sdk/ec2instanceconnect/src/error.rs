@@ -767,7 +767,7 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -821,7 +821,9 @@ impl SendSerialConsoleSSHPublicKeyError {
     /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(err.into()),
+            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -830,7 +832,9 @@ impl SendSerialConsoleSSHPublicKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(err.into()),
+            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -960,7 +964,7 @@ impl std::error::Error for SendSerialConsoleSSHPublicKeyError {
             ) => Some(_inner),
             SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(_inner) => Some(_inner),
             SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -993,7 +997,7 @@ pub enum SendSSHPublicKeyErrorKind {
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1026,7 +1030,7 @@ impl SendSSHPublicKeyError {
     /// Creates the `SendSSHPublicKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendSSHPublicKeyErrorKind::Unhandled(err.into()),
+            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1035,7 +1039,7 @@ impl SendSSHPublicKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendSSHPublicKeyErrorKind::Unhandled(err.into()),
+            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1113,7 +1117,32 @@ impl std::error::Error for SendSSHPublicKeyError {
             SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::ServiceException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SendSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendSSHPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

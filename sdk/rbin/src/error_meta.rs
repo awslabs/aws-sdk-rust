@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>One or more of the parameters in the request is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,9 +41,11 @@ where
                 crate::error::CreateRuleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -63,9 +65,11 @@ where
                 crate::error::DeleteRuleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -85,9 +89,11 @@ where
                 crate::error::GetRuleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -104,9 +110,11 @@ where
                 crate::error::ListRulesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRulesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -129,10 +137,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -155,9 +163,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -177,9 +187,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,9 +211,11 @@ where
                 crate::error::UpdateRuleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

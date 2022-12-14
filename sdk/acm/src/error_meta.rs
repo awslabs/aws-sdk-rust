@@ -36,7 +36,7 @@ pub enum Error {
     /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -93,10 +93,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::AddTagsToCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -119,10 +119,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -142,10 +142,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,10 +168,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ExportCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -192,10 +192,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetAccountConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -215,9 +215,11 @@ where
                 crate::error::GetCertificateErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCertificateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,10 +254,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::ImportCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,10 +274,10 @@ where
                     Error::InvalidArgsException(inner)
                 }
                 crate::error::ListCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +298,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,10 +328,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutAccountConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -362,10 +364,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::RemoveTagsFromCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +387,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::RenewCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -408,9 +410,9 @@ where
                 crate::error::RequestCertificateErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::RequestCertificateErrorKind::TagPolicyException(inner) => Error::TagPolicyException(inner),
                 crate::error::RequestCertificateErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::RequestCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RequestCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -428,9 +430,9 @@ where
                 crate::error::ResendValidationEmailErrorKind::InvalidDomainValidationOptionsException(inner) => Error::InvalidDomainValidationOptionsException(inner),
                 crate::error::ResendValidationEmailErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::ResendValidationEmailErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ResendValidationEmailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResendValidationEmailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -457,10 +459,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateCertificateOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -396,7 +396,7 @@ pub enum GetLatestConfigurationErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLatestConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -426,7 +426,9 @@ impl GetLatestConfigurationError {
     /// Creates the `GetLatestConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLatestConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLatestConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -435,7 +437,9 @@ impl GetLatestConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLatestConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLatestConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -495,7 +499,7 @@ impl std::error::Error for GetLatestConfigurationError {
             GetLatestConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
             GetLatestConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLatestConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLatestConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLatestConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -522,7 +526,7 @@ pub enum StartConfigurationSessionErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartConfigurationSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -552,7 +556,9 @@ impl StartConfigurationSessionError {
     /// Creates the `StartConfigurationSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartConfigurationSessionErrorKind::Unhandled(err.into()),
+            kind: StartConfigurationSessionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -561,7 +567,9 @@ impl StartConfigurationSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartConfigurationSessionErrorKind::Unhandled(err.into()),
+            kind: StartConfigurationSessionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -621,7 +629,32 @@ impl std::error::Error for StartConfigurationSessionError {
             StartConfigurationSessionErrorKind::InternalServerException(_inner) => Some(_inner),
             StartConfigurationSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartConfigurationSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartConfigurationSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartConfigurationSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

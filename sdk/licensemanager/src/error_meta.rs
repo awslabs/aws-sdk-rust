@@ -41,7 +41,7 @@ pub enum Error {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -95,9 +95,11 @@ where
                 crate::error::AcceptGrantErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::AcceptGrantErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptGrantErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +134,11 @@ where
                 crate::error::CheckInLicenseErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CheckInLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CheckInLicenseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -159,9 +163,9 @@ where
                 crate::error::CheckoutBorrowLicenseErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(inner) => Error::UnsupportedDigitalSignatureMethodException(inner),
                 crate::error::CheckoutBorrowLicenseErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CheckoutBorrowLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CheckoutBorrowLicenseErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -182,9 +186,9 @@ where
                 crate::error::CheckoutLicenseErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(inner) => Error::UnsupportedDigitalSignatureMethodException(inner),
                 crate::error::CheckoutLicenseErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CheckoutLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CheckoutLicenseErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -216,9 +220,11 @@ where
                 crate::error::CreateGrantErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateGrantErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGrantErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -253,10 +259,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateGrantVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -288,9 +294,11 @@ where
                 crate::error::CreateLicenseErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLicenseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,9 +318,9 @@ where
                 crate::error::CreateLicenseConfigurationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::CreateLicenseConfigurationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::CreateLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -340,9 +348,9 @@ where
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateLicenseConversionTaskForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -372,9 +380,9 @@ where
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,10 +421,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateLicenseVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -451,9 +459,11 @@ where
                 crate::error::CreateTokenErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -485,9 +495,11 @@ where
                 crate::error::DeleteGrantErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteGrantErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGrantErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,9 +534,11 @@ where
                 crate::error::DeleteLicenseErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLicenseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -543,9 +557,9 @@ where
                 crate::error::DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteLicenseConfigurationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::DeleteLicenseConfigurationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::DeleteLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,9 +589,9 @@ where
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -609,9 +623,11 @@ where
                 crate::error::DeleteTokenErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -647,10 +663,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ExtendLicenseConsumptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,9 +692,11 @@ where
                 crate::error::GetAccessTokenErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetAccessTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAccessTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -710,9 +728,11 @@ where
                 crate::error::GetGrantErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetGrantErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGrantErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -741,9 +761,11 @@ where
                 crate::error::GetLicenseErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetLicenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLicenseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -773,10 +795,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::GetLicenseConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -806,10 +828,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::GetLicenseConversionTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -835,9 +857,9 @@ where
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -866,9 +888,11 @@ where
                 crate::error::GetLicenseUsageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetLicenseUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLicenseUsageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -894,10 +918,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::GetServiceSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -925,9 +949,9 @@ where
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListAssociationsForLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAssociationsForLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -963,10 +987,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDistributedGrantsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -993,9 +1017,9 @@ where
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1015,9 +1039,9 @@ where
                 crate::error::ListLicenseConfigurationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListLicenseConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLicenseConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1036,9 +1060,9 @@ where
                 crate::error::ListLicenseConversionTasksErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListLicenseConversionTasksErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListLicenseConversionTasksErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListLicenseConversionTasksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1065,9 +1089,9 @@ where
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListLicenseManagerReportGeneratorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLicenseManagerReportGeneratorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1096,9 +1120,11 @@ where
                 crate::error::ListLicensesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListLicensesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLicensesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1125,9 +1151,9 @@ where
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListLicenseSpecificationsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLicenseSpecificationsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1156,10 +1182,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::ListLicenseVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1194,10 +1220,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListReceivedGrantsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1233,10 +1259,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListReceivedLicensesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1272,10 +1298,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::ListResourceInventoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1304,10 +1330,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1333,9 +1359,11 @@ where
                 crate::error::ListTokensErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListTokensErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTokensErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1359,9 +1387,9 @@ where
                 crate::error::ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListUsageForLicenseConfigurationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::ListUsageForLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsageForLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1393,9 +1421,11 @@ where
                 crate::error::RejectGrantErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::RejectGrantErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RejectGrantErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1421,9 +1451,11 @@ where
                 crate::error::TagResourceErrorKind::ServerInternalException(inner) => {
                     Error::ServerInternalException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1449,9 +1481,11 @@ where
                 crate::error::UntagResourceErrorKind::ServerInternalException(inner) => {
                     Error::ServerInternalException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1471,9 +1505,9 @@ where
                 crate::error::UpdateLicenseConfigurationErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
                 crate::error::UpdateLicenseConfigurationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::UpdateLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLicenseConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1503,9 +1537,9 @@ where
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1534,9 +1568,9 @@ where
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(inner) => Error::LicenseUsageException(inner),
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
-                crate::error::UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1566,10 +1600,10 @@ where
                     Error::ServerInternalException(inner)
                 }
                 crate::error::UpdateServiceSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

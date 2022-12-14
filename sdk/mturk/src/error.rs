@@ -198,7 +198,7 @@ pub enum AcceptQualificationRequestErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptQualificationRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -226,7 +226,9 @@ impl AcceptQualificationRequestError {
     /// Creates the `AcceptQualificationRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptQualificationRequestErrorKind::Unhandled(err.into()),
+            kind: AcceptQualificationRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -235,7 +237,9 @@ impl AcceptQualificationRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptQualificationRequestErrorKind::Unhandled(err.into()),
+            kind: AcceptQualificationRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -279,7 +283,7 @@ impl std::error::Error for AcceptQualificationRequestError {
         match &self.kind {
             AcceptQualificationRequestErrorKind::RequestError(_inner) => Some(_inner),
             AcceptQualificationRequestErrorKind::ServiceFault(_inner) => Some(_inner),
-            AcceptQualificationRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AcceptQualificationRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -302,7 +306,7 @@ pub enum ApproveAssignmentErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ApproveAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -330,7 +334,7 @@ impl ApproveAssignmentError {
     /// Creates the `ApproveAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ApproveAssignmentErrorKind::Unhandled(err.into()),
+            kind: ApproveAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -339,7 +343,7 @@ impl ApproveAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ApproveAssignmentErrorKind::Unhandled(err.into()),
+            kind: ApproveAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -377,7 +381,7 @@ impl std::error::Error for ApproveAssignmentError {
         match &self.kind {
             ApproveAssignmentErrorKind::RequestError(_inner) => Some(_inner),
             ApproveAssignmentErrorKind::ServiceFault(_inner) => Some(_inner),
-            ApproveAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ApproveAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -400,7 +404,7 @@ pub enum AssociateQualificationWithWorkerErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateQualificationWithWorkerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -431,7 +435,9 @@ impl AssociateQualificationWithWorkerError {
     /// Creates the `AssociateQualificationWithWorkerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateQualificationWithWorkerErrorKind::Unhandled(err.into()),
+            kind: AssociateQualificationWithWorkerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -440,7 +446,9 @@ impl AssociateQualificationWithWorkerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateQualificationWithWorkerErrorKind::Unhandled(err.into()),
+            kind: AssociateQualificationWithWorkerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -484,7 +492,7 @@ impl std::error::Error for AssociateQualificationWithWorkerError {
         match &self.kind {
             AssociateQualificationWithWorkerErrorKind::RequestError(_inner) => Some(_inner),
             AssociateQualificationWithWorkerErrorKind::ServiceFault(_inner) => Some(_inner),
-            AssociateQualificationWithWorkerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateQualificationWithWorkerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -507,7 +515,7 @@ pub enum CreateAdditionalAssignmentsForHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAdditionalAssignmentsForHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -538,7 +546,9 @@ impl CreateAdditionalAssignmentsForHITError {
     /// Creates the `CreateAdditionalAssignmentsForHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAdditionalAssignmentsForHITErrorKind::Unhandled(err.into()),
+            kind: CreateAdditionalAssignmentsForHITErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -547,7 +557,9 @@ impl CreateAdditionalAssignmentsForHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAdditionalAssignmentsForHITErrorKind::Unhandled(err.into()),
+            kind: CreateAdditionalAssignmentsForHITErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -591,7 +603,7 @@ impl std::error::Error for CreateAdditionalAssignmentsForHITError {
         match &self.kind {
             CreateAdditionalAssignmentsForHITErrorKind::RequestError(_inner) => Some(_inner),
             CreateAdditionalAssignmentsForHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateAdditionalAssignmentsForHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAdditionalAssignmentsForHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -614,7 +626,7 @@ pub enum CreateHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -642,7 +654,7 @@ impl CreateHITError {
     /// Creates the `CreateHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHITErrorKind::Unhandled(err.into()),
+            kind: CreateHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -651,7 +663,7 @@ impl CreateHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHITErrorKind::Unhandled(err.into()),
+            kind: CreateHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -689,7 +701,7 @@ impl std::error::Error for CreateHITError {
         match &self.kind {
             CreateHITErrorKind::RequestError(_inner) => Some(_inner),
             CreateHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -712,7 +724,7 @@ pub enum CreateHITTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHITTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -740,7 +752,7 @@ impl CreateHITTypeError {
     /// Creates the `CreateHITTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHITTypeErrorKind::Unhandled(err.into()),
+            kind: CreateHITTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -749,7 +761,7 @@ impl CreateHITTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHITTypeErrorKind::Unhandled(err.into()),
+            kind: CreateHITTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -787,7 +799,7 @@ impl std::error::Error for CreateHITTypeError {
         match &self.kind {
             CreateHITTypeErrorKind::RequestError(_inner) => Some(_inner),
             CreateHITTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateHITTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHITTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -810,7 +822,7 @@ pub enum CreateHITWithHITTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHITWithHITTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -838,7 +850,9 @@ impl CreateHITWithHITTypeError {
     /// Creates the `CreateHITWithHITTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHITWithHITTypeErrorKind::Unhandled(err.into()),
+            kind: CreateHITWithHITTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -847,7 +861,9 @@ impl CreateHITWithHITTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHITWithHITTypeErrorKind::Unhandled(err.into()),
+            kind: CreateHITWithHITTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -885,7 +901,7 @@ impl std::error::Error for CreateHITWithHITTypeError {
         match &self.kind {
             CreateHITWithHITTypeErrorKind::RequestError(_inner) => Some(_inner),
             CreateHITWithHITTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateHITWithHITTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHITWithHITTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -908,7 +924,7 @@ pub enum CreateQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -936,7 +952,9 @@ impl CreateQualificationTypeError {
     /// Creates the `CreateQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: CreateQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -945,7 +963,9 @@ impl CreateQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: CreateQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -989,7 +1009,7 @@ impl std::error::Error for CreateQualificationTypeError {
         match &self.kind {
             CreateQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             CreateQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1012,7 +1032,7 @@ pub enum CreateWorkerBlockErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkerBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,7 +1060,7 @@ impl CreateWorkerBlockError {
     /// Creates the `CreateWorkerBlockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkerBlockErrorKind::Unhandled(err.into()),
+            kind: CreateWorkerBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1049,7 +1069,7 @@ impl CreateWorkerBlockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkerBlockErrorKind::Unhandled(err.into()),
+            kind: CreateWorkerBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1087,7 +1107,7 @@ impl std::error::Error for CreateWorkerBlockError {
         match &self.kind {
             CreateWorkerBlockErrorKind::RequestError(_inner) => Some(_inner),
             CreateWorkerBlockErrorKind::ServiceFault(_inner) => Some(_inner),
-            CreateWorkerBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkerBlockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1110,7 +1130,7 @@ pub enum DeleteHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1138,7 +1158,7 @@ impl DeleteHITError {
     /// Creates the `DeleteHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHITErrorKind::Unhandled(err.into()),
+            kind: DeleteHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1147,7 +1167,7 @@ impl DeleteHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHITErrorKind::Unhandled(err.into()),
+            kind: DeleteHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1185,7 +1205,7 @@ impl std::error::Error for DeleteHITError {
         match &self.kind {
             DeleteHITErrorKind::RequestError(_inner) => Some(_inner),
             DeleteHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            DeleteHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1208,7 +1228,7 @@ pub enum DeleteQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1236,7 +1256,9 @@ impl DeleteQualificationTypeError {
     /// Creates the `DeleteQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: DeleteQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1245,7 +1267,9 @@ impl DeleteQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: DeleteQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1289,7 +1313,7 @@ impl std::error::Error for DeleteQualificationTypeError {
         match &self.kind {
             DeleteQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             DeleteQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            DeleteQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1312,7 +1336,7 @@ pub enum DeleteWorkerBlockErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkerBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1340,7 +1364,7 @@ impl DeleteWorkerBlockError {
     /// Creates the `DeleteWorkerBlockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkerBlockErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkerBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1349,7 +1373,7 @@ impl DeleteWorkerBlockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkerBlockErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkerBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1387,7 +1411,7 @@ impl std::error::Error for DeleteWorkerBlockError {
         match &self.kind {
             DeleteWorkerBlockErrorKind::RequestError(_inner) => Some(_inner),
             DeleteWorkerBlockErrorKind::ServiceFault(_inner) => Some(_inner),
-            DeleteWorkerBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkerBlockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1410,7 +1434,7 @@ pub enum DisassociateQualificationFromWorkerErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateQualificationFromWorkerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1441,7 +1465,9 @@ impl DisassociateQualificationFromWorkerError {
     /// Creates the `DisassociateQualificationFromWorkerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateQualificationFromWorkerErrorKind::Unhandled(err.into()),
+            kind: DisassociateQualificationFromWorkerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1450,7 +1476,9 @@ impl DisassociateQualificationFromWorkerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateQualificationFromWorkerErrorKind::Unhandled(err.into()),
+            kind: DisassociateQualificationFromWorkerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1494,9 +1522,7 @@ impl std::error::Error for DisassociateQualificationFromWorkerError {
         match &self.kind {
             DisassociateQualificationFromWorkerErrorKind::RequestError(_inner) => Some(_inner),
             DisassociateQualificationFromWorkerErrorKind::ServiceFault(_inner) => Some(_inner),
-            DisassociateQualificationFromWorkerErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateQualificationFromWorkerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1519,7 +1545,7 @@ pub enum GetAccountBalanceErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountBalanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1547,7 +1573,7 @@ impl GetAccountBalanceError {
     /// Creates the `GetAccountBalanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountBalanceErrorKind::Unhandled(err.into()),
+            kind: GetAccountBalanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1556,7 +1582,7 @@ impl GetAccountBalanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountBalanceErrorKind::Unhandled(err.into()),
+            kind: GetAccountBalanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1594,7 +1620,7 @@ impl std::error::Error for GetAccountBalanceError {
         match &self.kind {
             GetAccountBalanceErrorKind::RequestError(_inner) => Some(_inner),
             GetAccountBalanceErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetAccountBalanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountBalanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1617,7 +1643,7 @@ pub enum GetAssignmentErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1645,7 +1671,7 @@ impl GetAssignmentError {
     /// Creates the `GetAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssignmentErrorKind::Unhandled(err.into()),
+            kind: GetAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1654,7 +1680,7 @@ impl GetAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssignmentErrorKind::Unhandled(err.into()),
+            kind: GetAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1692,7 +1718,7 @@ impl std::error::Error for GetAssignmentError {
         match &self.kind {
             GetAssignmentErrorKind::RequestError(_inner) => Some(_inner),
             GetAssignmentErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1715,7 +1741,7 @@ pub enum GetFileUploadURLErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFileUploadURLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1743,7 +1769,7 @@ impl GetFileUploadURLError {
     /// Creates the `GetFileUploadURLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFileUploadURLErrorKind::Unhandled(err.into()),
+            kind: GetFileUploadURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1752,7 +1778,7 @@ impl GetFileUploadURLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFileUploadURLErrorKind::Unhandled(err.into()),
+            kind: GetFileUploadURLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1790,7 +1816,7 @@ impl std::error::Error for GetFileUploadURLError {
         match &self.kind {
             GetFileUploadURLErrorKind::RequestError(_inner) => Some(_inner),
             GetFileUploadURLErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetFileUploadURLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFileUploadURLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1813,7 +1839,7 @@ pub enum GetHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1841,7 +1867,7 @@ impl GetHITError {
     /// Creates the `GetHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetHITErrorKind::Unhandled(err.into()),
+            kind: GetHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1850,7 +1876,7 @@ impl GetHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetHITErrorKind::Unhandled(err.into()),
+            kind: GetHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1888,7 +1914,7 @@ impl std::error::Error for GetHITError {
         match &self.kind {
             GetHITErrorKind::RequestError(_inner) => Some(_inner),
             GetHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1911,7 +1937,7 @@ pub enum GetQualificationScoreErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetQualificationScoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1939,7 +1965,9 @@ impl GetQualificationScoreError {
     /// Creates the `GetQualificationScoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetQualificationScoreErrorKind::Unhandled(err.into()),
+            kind: GetQualificationScoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1948,7 +1976,9 @@ impl GetQualificationScoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetQualificationScoreErrorKind::Unhandled(err.into()),
+            kind: GetQualificationScoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1986,7 +2016,7 @@ impl std::error::Error for GetQualificationScoreError {
         match &self.kind {
             GetQualificationScoreErrorKind::RequestError(_inner) => Some(_inner),
             GetQualificationScoreErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetQualificationScoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetQualificationScoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2009,7 +2039,7 @@ pub enum GetQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2037,7 +2067,9 @@ impl GetQualificationTypeError {
     /// Creates the `GetQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: GetQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2046,7 +2078,9 @@ impl GetQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: GetQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2084,7 +2118,7 @@ impl std::error::Error for GetQualificationTypeError {
         match &self.kind {
             GetQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             GetQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            GetQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2107,7 +2141,7 @@ pub enum ListAssignmentsForHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssignmentsForHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2135,7 +2169,9 @@ impl ListAssignmentsForHITError {
     /// Creates the `ListAssignmentsForHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssignmentsForHITErrorKind::Unhandled(err.into()),
+            kind: ListAssignmentsForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2144,7 +2180,9 @@ impl ListAssignmentsForHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssignmentsForHITErrorKind::Unhandled(err.into()),
+            kind: ListAssignmentsForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2182,7 +2220,7 @@ impl std::error::Error for ListAssignmentsForHITError {
         match &self.kind {
             ListAssignmentsForHITErrorKind::RequestError(_inner) => Some(_inner),
             ListAssignmentsForHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListAssignmentsForHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssignmentsForHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2205,7 +2243,7 @@ pub enum ListBonusPaymentsErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBonusPaymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2233,7 +2271,7 @@ impl ListBonusPaymentsError {
     /// Creates the `ListBonusPaymentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBonusPaymentsErrorKind::Unhandled(err.into()),
+            kind: ListBonusPaymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2242,7 +2280,7 @@ impl ListBonusPaymentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBonusPaymentsErrorKind::Unhandled(err.into()),
+            kind: ListBonusPaymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2280,7 +2318,7 @@ impl std::error::Error for ListBonusPaymentsError {
         match &self.kind {
             ListBonusPaymentsErrorKind::RequestError(_inner) => Some(_inner),
             ListBonusPaymentsErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListBonusPaymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBonusPaymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2303,7 +2341,7 @@ pub enum ListHITsErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHITsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2331,7 +2369,7 @@ impl ListHITsError {
     /// Creates the `ListHITsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHITsErrorKind::Unhandled(err.into()),
+            kind: ListHITsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2340,7 +2378,7 @@ impl ListHITsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHITsErrorKind::Unhandled(err.into()),
+            kind: ListHITsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2378,7 +2416,7 @@ impl std::error::Error for ListHITsError {
         match &self.kind {
             ListHITsErrorKind::RequestError(_inner) => Some(_inner),
             ListHITsErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListHITsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHITsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2401,7 +2439,7 @@ pub enum ListHITsForQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHITsForQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2429,7 +2467,9 @@ impl ListHITsForQualificationTypeError {
     /// Creates the `ListHITsForQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHITsForQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: ListHITsForQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2438,7 +2478,9 @@ impl ListHITsForQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHITsForQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: ListHITsForQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2482,7 +2524,7 @@ impl std::error::Error for ListHITsForQualificationTypeError {
         match &self.kind {
             ListHITsForQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             ListHITsForQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListHITsForQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHITsForQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2505,7 +2547,7 @@ pub enum ListQualificationRequestsErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListQualificationRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2533,7 +2575,9 @@ impl ListQualificationRequestsError {
     /// Creates the `ListQualificationRequestsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListQualificationRequestsErrorKind::Unhandled(err.into()),
+            kind: ListQualificationRequestsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2542,7 +2586,9 @@ impl ListQualificationRequestsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListQualificationRequestsErrorKind::Unhandled(err.into()),
+            kind: ListQualificationRequestsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2586,7 +2632,7 @@ impl std::error::Error for ListQualificationRequestsError {
         match &self.kind {
             ListQualificationRequestsErrorKind::RequestError(_inner) => Some(_inner),
             ListQualificationRequestsErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListQualificationRequestsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListQualificationRequestsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2609,7 +2655,7 @@ pub enum ListQualificationTypesErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListQualificationTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2637,7 +2683,9 @@ impl ListQualificationTypesError {
     /// Creates the `ListQualificationTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListQualificationTypesErrorKind::Unhandled(err.into()),
+            kind: ListQualificationTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2646,7 +2694,9 @@ impl ListQualificationTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListQualificationTypesErrorKind::Unhandled(err.into()),
+            kind: ListQualificationTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2684,7 +2734,7 @@ impl std::error::Error for ListQualificationTypesError {
         match &self.kind {
             ListQualificationTypesErrorKind::RequestError(_inner) => Some(_inner),
             ListQualificationTypesErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListQualificationTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListQualificationTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2707,7 +2757,7 @@ pub enum ListReviewableHITsErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReviewableHITsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2735,7 +2785,7 @@ impl ListReviewableHITsError {
     /// Creates the `ListReviewableHITsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReviewableHITsErrorKind::Unhandled(err.into()),
+            kind: ListReviewableHITsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2744,7 +2794,7 @@ impl ListReviewableHITsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReviewableHITsErrorKind::Unhandled(err.into()),
+            kind: ListReviewableHITsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2782,7 +2832,7 @@ impl std::error::Error for ListReviewableHITsError {
         match &self.kind {
             ListReviewableHITsErrorKind::RequestError(_inner) => Some(_inner),
             ListReviewableHITsErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListReviewableHITsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReviewableHITsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2805,7 +2855,7 @@ pub enum ListReviewPolicyResultsForHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReviewPolicyResultsForHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2836,7 +2886,9 @@ impl ListReviewPolicyResultsForHITError {
     /// Creates the `ListReviewPolicyResultsForHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReviewPolicyResultsForHITErrorKind::Unhandled(err.into()),
+            kind: ListReviewPolicyResultsForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2845,7 +2897,9 @@ impl ListReviewPolicyResultsForHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReviewPolicyResultsForHITErrorKind::Unhandled(err.into()),
+            kind: ListReviewPolicyResultsForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2889,7 +2943,7 @@ impl std::error::Error for ListReviewPolicyResultsForHITError {
         match &self.kind {
             ListReviewPolicyResultsForHITErrorKind::RequestError(_inner) => Some(_inner),
             ListReviewPolicyResultsForHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListReviewPolicyResultsForHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReviewPolicyResultsForHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2912,7 +2966,7 @@ pub enum ListWorkerBlocksErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkerBlocksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2940,7 +2994,7 @@ impl ListWorkerBlocksError {
     /// Creates the `ListWorkerBlocksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkerBlocksErrorKind::Unhandled(err.into()),
+            kind: ListWorkerBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2949,7 +3003,7 @@ impl ListWorkerBlocksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkerBlocksErrorKind::Unhandled(err.into()),
+            kind: ListWorkerBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2987,7 +3041,7 @@ impl std::error::Error for ListWorkerBlocksError {
         match &self.kind {
             ListWorkerBlocksErrorKind::RequestError(_inner) => Some(_inner),
             ListWorkerBlocksErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListWorkerBlocksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkerBlocksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3010,7 +3064,7 @@ pub enum ListWorkersWithQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkersWithQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3041,7 +3095,9 @@ impl ListWorkersWithQualificationTypeError {
     /// Creates the `ListWorkersWithQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkersWithQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: ListWorkersWithQualificationTypeErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3050,7 +3106,9 @@ impl ListWorkersWithQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkersWithQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: ListWorkersWithQualificationTypeErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3094,7 +3152,7 @@ impl std::error::Error for ListWorkersWithQualificationTypeError {
         match &self.kind {
             ListWorkersWithQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             ListWorkersWithQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            ListWorkersWithQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkersWithQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3117,7 +3175,7 @@ pub enum NotifyWorkersErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for NotifyWorkersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3145,7 +3203,7 @@ impl NotifyWorkersError {
     /// Creates the `NotifyWorkersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: NotifyWorkersErrorKind::Unhandled(err.into()),
+            kind: NotifyWorkersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3154,7 +3212,7 @@ impl NotifyWorkersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: NotifyWorkersErrorKind::Unhandled(err.into()),
+            kind: NotifyWorkersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3192,7 +3250,7 @@ impl std::error::Error for NotifyWorkersError {
         match &self.kind {
             NotifyWorkersErrorKind::RequestError(_inner) => Some(_inner),
             NotifyWorkersErrorKind::ServiceFault(_inner) => Some(_inner),
-            NotifyWorkersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            NotifyWorkersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3215,7 +3273,7 @@ pub enum RejectAssignmentErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3243,7 +3301,7 @@ impl RejectAssignmentError {
     /// Creates the `RejectAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectAssignmentErrorKind::Unhandled(err.into()),
+            kind: RejectAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3252,7 +3310,7 @@ impl RejectAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectAssignmentErrorKind::Unhandled(err.into()),
+            kind: RejectAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3290,7 +3348,7 @@ impl std::error::Error for RejectAssignmentError {
         match &self.kind {
             RejectAssignmentErrorKind::RequestError(_inner) => Some(_inner),
             RejectAssignmentErrorKind::ServiceFault(_inner) => Some(_inner),
-            RejectAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RejectAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3313,7 +3371,7 @@ pub enum RejectQualificationRequestErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectQualificationRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3341,7 +3399,9 @@ impl RejectQualificationRequestError {
     /// Creates the `RejectQualificationRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectQualificationRequestErrorKind::Unhandled(err.into()),
+            kind: RejectQualificationRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3350,7 +3410,9 @@ impl RejectQualificationRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectQualificationRequestErrorKind::Unhandled(err.into()),
+            kind: RejectQualificationRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3394,7 +3456,7 @@ impl std::error::Error for RejectQualificationRequestError {
         match &self.kind {
             RejectQualificationRequestErrorKind::RequestError(_inner) => Some(_inner),
             RejectQualificationRequestErrorKind::ServiceFault(_inner) => Some(_inner),
-            RejectQualificationRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RejectQualificationRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3417,7 +3479,7 @@ pub enum SendBonusErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendBonusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3445,7 +3507,7 @@ impl SendBonusError {
     /// Creates the `SendBonusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendBonusErrorKind::Unhandled(err.into()),
+            kind: SendBonusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3454,7 +3516,7 @@ impl SendBonusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendBonusErrorKind::Unhandled(err.into()),
+            kind: SendBonusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3492,7 +3554,7 @@ impl std::error::Error for SendBonusError {
         match &self.kind {
             SendBonusErrorKind::RequestError(_inner) => Some(_inner),
             SendBonusErrorKind::ServiceFault(_inner) => Some(_inner),
-            SendBonusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendBonusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3515,7 +3577,7 @@ pub enum SendTestEventNotificationErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendTestEventNotificationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,7 +3605,9 @@ impl SendTestEventNotificationError {
     /// Creates the `SendTestEventNotificationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendTestEventNotificationErrorKind::Unhandled(err.into()),
+            kind: SendTestEventNotificationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3552,7 +3616,9 @@ impl SendTestEventNotificationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendTestEventNotificationErrorKind::Unhandled(err.into()),
+            kind: SendTestEventNotificationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3596,7 +3662,7 @@ impl std::error::Error for SendTestEventNotificationError {
         match &self.kind {
             SendTestEventNotificationErrorKind::RequestError(_inner) => Some(_inner),
             SendTestEventNotificationErrorKind::ServiceFault(_inner) => Some(_inner),
-            SendTestEventNotificationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendTestEventNotificationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3619,7 +3685,7 @@ pub enum UpdateExpirationForHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateExpirationForHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3647,7 +3713,9 @@ impl UpdateExpirationForHITError {
     /// Creates the `UpdateExpirationForHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateExpirationForHITErrorKind::Unhandled(err.into()),
+            kind: UpdateExpirationForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3656,7 +3724,9 @@ impl UpdateExpirationForHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateExpirationForHITErrorKind::Unhandled(err.into()),
+            kind: UpdateExpirationForHITErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3694,7 +3764,7 @@ impl std::error::Error for UpdateExpirationForHITError {
         match &self.kind {
             UpdateExpirationForHITErrorKind::RequestError(_inner) => Some(_inner),
             UpdateExpirationForHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            UpdateExpirationForHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateExpirationForHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3717,7 +3787,7 @@ pub enum UpdateHITReviewStatusErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateHITReviewStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3745,7 +3815,9 @@ impl UpdateHITReviewStatusError {
     /// Creates the `UpdateHITReviewStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateHITReviewStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateHITReviewStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3754,7 +3826,9 @@ impl UpdateHITReviewStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateHITReviewStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateHITReviewStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3792,7 +3866,7 @@ impl std::error::Error for UpdateHITReviewStatusError {
         match &self.kind {
             UpdateHITReviewStatusErrorKind::RequestError(_inner) => Some(_inner),
             UpdateHITReviewStatusErrorKind::ServiceFault(_inner) => Some(_inner),
-            UpdateHITReviewStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateHITReviewStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3815,7 +3889,7 @@ pub enum UpdateHITTypeOfHITErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateHITTypeOfHITError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3843,7 +3917,7 @@ impl UpdateHITTypeOfHITError {
     /// Creates the `UpdateHITTypeOfHITError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateHITTypeOfHITErrorKind::Unhandled(err.into()),
+            kind: UpdateHITTypeOfHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3852,7 +3926,7 @@ impl UpdateHITTypeOfHITError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateHITTypeOfHITErrorKind::Unhandled(err.into()),
+            kind: UpdateHITTypeOfHITErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3890,7 +3964,7 @@ impl std::error::Error for UpdateHITTypeOfHITError {
         match &self.kind {
             UpdateHITTypeOfHITErrorKind::RequestError(_inner) => Some(_inner),
             UpdateHITTypeOfHITErrorKind::ServiceFault(_inner) => Some(_inner),
-            UpdateHITTypeOfHITErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateHITTypeOfHITErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3913,7 +3987,7 @@ pub enum UpdateNotificationSettingsErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNotificationSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3941,7 +4015,9 @@ impl UpdateNotificationSettingsError {
     /// Creates the `UpdateNotificationSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNotificationSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3950,7 +4026,9 @@ impl UpdateNotificationSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNotificationSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3994,7 +4072,7 @@ impl std::error::Error for UpdateNotificationSettingsError {
         match &self.kind {
             UpdateNotificationSettingsErrorKind::RequestError(_inner) => Some(_inner),
             UpdateNotificationSettingsErrorKind::ServiceFault(_inner) => Some(_inner),
-            UpdateNotificationSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNotificationSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4017,7 +4095,7 @@ pub enum UpdateQualificationTypeErrorKind {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateQualificationTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4045,7 +4123,9 @@ impl UpdateQualificationTypeError {
     /// Creates the `UpdateQualificationTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4054,7 +4134,9 @@ impl UpdateQualificationTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateQualificationTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateQualificationTypeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4098,7 +4180,32 @@ impl std::error::Error for UpdateQualificationTypeError {
         match &self.kind {
             UpdateQualificationTypeErrorKind::RequestError(_inner) => Some(_inner),
             UpdateQualificationTypeErrorKind::ServiceFault(_inner) => Some(_inner),
-            UpdateQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateQualificationTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

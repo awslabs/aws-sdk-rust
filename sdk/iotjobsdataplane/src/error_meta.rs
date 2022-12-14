@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -63,10 +63,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeJobExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -96,10 +96,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetPendingJobExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -118,9 +118,9 @@ where
                 crate::error::StartNextPendingJobExecutionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartNextPendingJobExecutionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::StartNextPendingJobExecutionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::StartNextPendingJobExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartNextPendingJobExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -152,10 +152,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateJobExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,9 +44,9 @@ where
                 crate::error::CancelJournalKinesisStreamErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::CancelJournalKinesisStreamErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
-                crate::error::CancelJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -69,9 +69,11 @@ where
                 crate::error::CreateLedgerErrorKind::ResourceInUseException(inner) => {
                     Error::ResourceInUseException(inner)
                 }
-                crate::error::CreateLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLedgerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -94,9 +96,11 @@ where
                 crate::error::DeleteLedgerErrorKind::ResourcePreconditionNotMetException(inner) => {
                     Error::ResourcePreconditionNotMetException(inner)
                 }
-                crate::error::DeleteLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLedgerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -113,9 +117,9 @@ where
                 crate::error::DescribeJournalKinesisStreamErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DescribeJournalKinesisStreamErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
-                crate::error::DescribeJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeJournalKinesisStreamErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -133,10 +137,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeJournalS3ExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -153,9 +157,11 @@ where
                 crate::error::DescribeLedgerErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeLedgerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -175,10 +181,10 @@ where
                     inner,
                 ) => Error::ResourcePreconditionNotMetException(inner),
                 crate::error::ExportJournalToS3ErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -198,9 +204,11 @@ where
                 crate::error::GetBlockErrorKind::ResourcePreconditionNotMetException(inner) => {
                     Error::ResourcePreconditionNotMetException(inner)
                 }
-                crate::error::GetBlockErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBlockErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -220,9 +228,11 @@ where
                 crate::error::GetDigestErrorKind::ResourcePreconditionNotMetException(inner) => {
                     Error::ResourcePreconditionNotMetException(inner)
                 }
-                crate::error::GetDigestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDigestErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -242,9 +252,11 @@ where
                 crate::error::GetRevisionErrorKind::ResourcePreconditionNotMetException(inner) => {
                     Error::ResourcePreconditionNotMetException(inner)
                 }
-                crate::error::GetRevisionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRevisionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -266,9 +278,9 @@ where
                 crate::error::ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
-                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -283,10 +295,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListJournalS3ExportsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -301,10 +313,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListJournalS3ExportsForLedgerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,9 +327,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLedgersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListLedgersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLedgersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -337,10 +351,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -357,9 +371,9 @@ where
                 crate::error::StreamJournalToKinesisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::StreamJournalToKinesisErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(inner) => Error::ResourcePreconditionNotMetException(inner),
-                crate::error::StreamJournalToKinesisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StreamJournalToKinesisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -376,9 +390,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -395,9 +411,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,9 +432,11 @@ where
                 crate::error::UpdateLedgerErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UpdateLedgerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLedgerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -437,10 +457,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateLedgerPermissionsModeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

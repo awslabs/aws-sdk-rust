@@ -22,7 +22,7 @@ pub enum Error {
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -78,10 +78,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::AcceptInputDeviceTransferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -116,9 +116,11 @@ where
                 crate::error::BatchDeleteErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::BatchDeleteErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDeleteErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -153,9 +155,11 @@ where
                 crate::error::BatchStartErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::BatchStartErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchStartErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -190,9 +194,11 @@ where
                 crate::error::BatchStopErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::BatchStopErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchStopErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -230,10 +236,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::BatchUpdateScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -275,10 +281,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::CancelInputDeviceTransferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -313,9 +319,11 @@ where
                 crate::error::ClaimDeviceErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ClaimDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ClaimDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -350,9 +358,11 @@ where
                 crate::error::CreateChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::CreateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -381,9 +391,11 @@ where
                 crate::error::CreateInputErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateInputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateInputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -416,10 +428,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::CreateInputSecurityGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -454,9 +466,11 @@ where
                 crate::error::CreateMultiplexErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::CreateMultiplexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMultiplexErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -495,10 +509,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::CreateMultiplexProgramErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -530,10 +544,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreatePartnerInputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -556,9 +570,11 @@ where
                 crate::error::CreateTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::CreateTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -593,9 +609,11 @@ where
                 crate::error::DeleteChannelErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -630,9 +648,11 @@ where
                 crate::error::DeleteInputErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteInputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteInputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -668,10 +688,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteInputSecurityGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -706,9 +726,11 @@ where
                 crate::error::DeleteMultiplexErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteMultiplexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMultiplexErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -747,10 +769,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteMultiplexProgramErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -788,10 +810,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteReservationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -823,9 +845,11 @@ where
                 crate::error::DeleteScheduleErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteScheduleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteScheduleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -848,9 +872,11 @@ where
                 crate::error::DeleteTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -882,9 +908,11 @@ where
                 crate::error::DescribeChannelErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -916,9 +944,11 @@ where
                 crate::error::DescribeInputErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeInputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeInputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -953,10 +983,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeInputDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -977,9 +1007,9 @@ where
                 crate::error::DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
                 crate::error::DescribeInputDeviceThumbnailErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeInputDeviceThumbnailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeInputDeviceThumbnailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1015,10 +1045,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeInputSecurityGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1053,10 +1083,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeMultiplexErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1092,10 +1122,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeMultiplexProgramErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1130,10 +1160,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeOfferingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1168,10 +1198,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeReservationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1206,10 +1236,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1238,9 +1268,11 @@ where
                 crate::error::ListChannelsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChannelsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1272,10 +1304,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListInputDevicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1311,10 +1343,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::ListInputDeviceTransfersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1343,9 +1375,11 @@ where
                 crate::error::ListInputsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListInputsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListInputsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1378,10 +1412,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListInputSecurityGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1410,9 +1444,11 @@ where
                 crate::error::ListMultiplexesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListMultiplexesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMultiplexesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1448,10 +1484,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListMultiplexProgramsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1480,9 +1516,11 @@ where
                 crate::error::ListOfferingsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOfferingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1514,10 +1552,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListReservationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1543,10 +1581,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1584,10 +1622,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::PurchaseOfferingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1625,10 +1663,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::RebootInputDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1670,10 +1708,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::RejectInputDeviceTransferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1708,9 +1746,11 @@ where
                 crate::error::StartChannelErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StartChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1736,9 +1776,9 @@ where
                 crate::error::StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::StartInputDeviceMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1773,9 +1813,11 @@ where
                 crate::error::StartMultiplexErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StartMultiplexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartMultiplexErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1810,9 +1852,11 @@ where
                 crate::error::StopChannelErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StopChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1847,9 +1891,11 @@ where
                 crate::error::StopMultiplexErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::StopMultiplexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopMultiplexErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1890,10 +1936,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::TransferInputDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1925,9 +1971,11 @@ where
                 crate::error::UpdateChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1968,10 +2016,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::UpdateChannelClassErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2003,9 +2051,11 @@ where
                 crate::error::UpdateInputErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateInputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateInputErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2043,10 +2093,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::UpdateInputDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2082,10 +2132,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateInputSecurityGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2120,9 +2170,11 @@ where
                 crate::error::UpdateMultiplexErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::UpdateMultiplexErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateMultiplexErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2161,10 +2213,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::UpdateMultiplexProgramErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2202,10 +2254,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateReservationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

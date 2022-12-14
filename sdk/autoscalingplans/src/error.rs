@@ -412,7 +412,7 @@ pub enum CreateScalingPlanErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateScalingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,7 +442,7 @@ impl CreateScalingPlanError {
     /// Creates the `CreateScalingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateScalingPlanErrorKind::Unhandled(err.into()),
+            kind: CreateScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -451,7 +451,7 @@ impl CreateScalingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateScalingPlanErrorKind::Unhandled(err.into()),
+            kind: CreateScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -511,7 +511,7 @@ impl std::error::Error for CreateScalingPlanError {
             CreateScalingPlanErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateScalingPlanErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateScalingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateScalingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateScalingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -538,7 +538,7 @@ pub enum DeleteScalingPlanErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteScalingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,7 +568,7 @@ impl DeleteScalingPlanError {
     /// Creates the `DeleteScalingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteScalingPlanErrorKind::Unhandled(err.into()),
+            kind: DeleteScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -577,7 +577,7 @@ impl DeleteScalingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteScalingPlanErrorKind::Unhandled(err.into()),
+            kind: DeleteScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -637,7 +637,7 @@ impl std::error::Error for DeleteScalingPlanError {
             DeleteScalingPlanErrorKind::InternalServiceException(_inner) => Some(_inner),
             DeleteScalingPlanErrorKind::ObjectNotFoundException(_inner) => Some(_inner),
             DeleteScalingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteScalingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteScalingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -664,7 +664,7 @@ pub enum DescribeScalingPlanResourcesErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeScalingPlanResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -700,7 +700,9 @@ impl DescribeScalingPlanResourcesError {
     /// Creates the `DescribeScalingPlanResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeScalingPlanResourcesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingPlanResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -709,7 +711,9 @@ impl DescribeScalingPlanResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeScalingPlanResourcesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingPlanResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -773,7 +777,7 @@ impl std::error::Error for DescribeScalingPlanResourcesError {
                 Some(_inner)
             }
             DescribeScalingPlanResourcesErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeScalingPlanResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeScalingPlanResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -800,7 +804,7 @@ pub enum DescribeScalingPlansErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeScalingPlansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -830,7 +834,9 @@ impl DescribeScalingPlansError {
     /// Creates the `DescribeScalingPlansError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeScalingPlansErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingPlansErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -839,7 +845,9 @@ impl DescribeScalingPlansError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeScalingPlansErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingPlansErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -899,7 +907,7 @@ impl std::error::Error for DescribeScalingPlansError {
             DescribeScalingPlansErrorKind::InternalServiceException(_inner) => Some(_inner),
             DescribeScalingPlansErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             DescribeScalingPlansErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeScalingPlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeScalingPlansErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -922,7 +930,7 @@ pub enum GetScalingPlanResourceForecastDataErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetScalingPlanResourceForecastDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -957,7 +965,9 @@ impl GetScalingPlanResourceForecastDataError {
     /// Creates the `GetScalingPlanResourceForecastDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetScalingPlanResourceForecastDataErrorKind::Unhandled(err.into()),
+            kind: GetScalingPlanResourceForecastDataErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -966,7 +976,9 @@ impl GetScalingPlanResourceForecastDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetScalingPlanResourceForecastDataErrorKind::Unhandled(err.into()),
+            kind: GetScalingPlanResourceForecastDataErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1014,7 +1026,7 @@ impl std::error::Error for GetScalingPlanResourceForecastDataError {
             GetScalingPlanResourceForecastDataErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetScalingPlanResourceForecastDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetScalingPlanResourceForecastDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1041,7 +1053,7 @@ pub enum UpdateScalingPlanErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateScalingPlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1071,7 +1083,7 @@ impl UpdateScalingPlanError {
     /// Creates the `UpdateScalingPlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateScalingPlanErrorKind::Unhandled(err.into()),
+            kind: UpdateScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1080,7 +1092,7 @@ impl UpdateScalingPlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateScalingPlanErrorKind::Unhandled(err.into()),
+            kind: UpdateScalingPlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1140,7 +1152,32 @@ impl std::error::Error for UpdateScalingPlanError {
             UpdateScalingPlanErrorKind::InternalServiceException(_inner) => Some(_inner),
             UpdateScalingPlanErrorKind::ObjectNotFoundException(_inner) => Some(_inner),
             UpdateScalingPlanErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateScalingPlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateScalingPlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -416,7 +416,7 @@ pub enum GetIceServerConfigErrorKind {
     /// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
     SessionExpiredException(crate::error::SessionExpiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIceServerConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,7 @@ impl GetIceServerConfigError {
     /// Creates the `GetIceServerConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIceServerConfigErrorKind::Unhandled(err.into()),
+            kind: GetIceServerConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -457,7 +457,7 @@ impl GetIceServerConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIceServerConfigErrorKind::Unhandled(err.into()),
+            kind: GetIceServerConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -533,7 +533,7 @@ impl std::error::Error for GetIceServerConfigError {
             GetIceServerConfigErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetIceServerConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetIceServerConfigErrorKind::SessionExpiredException(_inner) => Some(_inner),
-            GetIceServerConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIceServerConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -560,7 +560,7 @@ pub enum SendAlexaOfferToMasterErrorKind {
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendAlexaOfferToMasterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -590,7 +590,9 @@ impl SendAlexaOfferToMasterError {
     /// Creates the `SendAlexaOfferToMasterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendAlexaOfferToMasterErrorKind::Unhandled(err.into()),
+            kind: SendAlexaOfferToMasterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -599,7 +601,9 @@ impl SendAlexaOfferToMasterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendAlexaOfferToMasterErrorKind::Unhandled(err.into()),
+            kind: SendAlexaOfferToMasterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -659,7 +663,32 @@ impl std::error::Error for SendAlexaOfferToMasterError {
             SendAlexaOfferToMasterErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             SendAlexaOfferToMasterErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             SendAlexaOfferToMasterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            SendAlexaOfferToMasterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendAlexaOfferToMasterErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

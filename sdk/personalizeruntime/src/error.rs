@@ -148,7 +148,7 @@ pub enum GetPersonalizedRankingErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPersonalizedRankingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -176,7 +176,9 @@ impl GetPersonalizedRankingError {
     /// Creates the `GetPersonalizedRankingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPersonalizedRankingErrorKind::Unhandled(err.into()),
+            kind: GetPersonalizedRankingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -185,7 +187,9 @@ impl GetPersonalizedRankingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPersonalizedRankingErrorKind::Unhandled(err.into()),
+            kind: GetPersonalizedRankingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -229,7 +233,7 @@ impl std::error::Error for GetPersonalizedRankingError {
         match &self.kind {
             GetPersonalizedRankingErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetPersonalizedRankingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetPersonalizedRankingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPersonalizedRankingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -252,7 +256,7 @@ pub enum GetRecommendationsErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -280,7 +284,7 @@ impl GetRecommendationsError {
     /// Creates the `GetRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -289,7 +293,7 @@ impl GetRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -333,7 +337,32 @@ impl std::error::Error for GetRecommendationsError {
         match &self.kind {
             GetRecommendationsErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetRecommendationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

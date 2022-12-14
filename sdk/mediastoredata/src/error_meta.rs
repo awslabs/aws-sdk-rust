@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>The requested content range is not valid.</p>
     RequestedRangeNotSatisfiableException(crate::error::RequestedRangeNotSatisfiableException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,9 +41,11 @@ where
                 crate::error::DeleteObjectErrorKind::ObjectNotFoundException(inner) => {
                     Error::ObjectNotFoundException(inner)
                 }
-                crate::error::DeleteObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -63,9 +65,11 @@ where
                 crate::error::DescribeObjectErrorKind::ObjectNotFoundException(inner) => {
                     Error::ObjectNotFoundException(inner)
                 }
-                crate::error::DescribeObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -88,9 +92,11 @@ where
                 crate::error::GetObjectErrorKind::RequestedRangeNotSatisfiableException(inner) => {
                     Error::RequestedRangeNotSatisfiableException(inner)
                 }
-                crate::error::GetObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -107,9 +113,11 @@ where
                 crate::error::ListItemsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListItemsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListItemsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -126,9 +134,11 @@ where
                 crate::error::PutObjectErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::PutObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

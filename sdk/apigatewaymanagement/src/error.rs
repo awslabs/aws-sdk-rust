@@ -280,7 +280,7 @@ pub enum DeleteConnectionErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time or the WebSocket client side buffer is full.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -309,7 +309,7 @@ impl DeleteConnectionError {
     /// Creates the `DeleteConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -318,7 +318,7 @@ impl DeleteConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -364,7 +364,7 @@ impl std::error::Error for DeleteConnectionError {
             DeleteConnectionErrorKind::ForbiddenException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::GoneException(_inner) => Some(_inner),
             DeleteConnectionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -389,7 +389,7 @@ pub enum GetConnectionErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time or the WebSocket client side buffer is full.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -418,7 +418,7 @@ impl GetConnectionError {
     /// Creates the `GetConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectionErrorKind::Unhandled(err.into()),
+            kind: GetConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -427,7 +427,7 @@ impl GetConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectionErrorKind::Unhandled(err.into()),
+            kind: GetConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -473,7 +473,7 @@ impl std::error::Error for GetConnectionError {
             GetConnectionErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetConnectionErrorKind::GoneException(_inner) => Some(_inner),
             GetConnectionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            GetConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -500,7 +500,7 @@ pub enum PostToConnectionErrorKind {
     /// <p>The data has exceeded the maximum size allowed.</p>
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostToConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -530,7 +530,7 @@ impl PostToConnectionError {
     /// Creates the `PostToConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostToConnectionErrorKind::Unhandled(err.into()),
+            kind: PostToConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -539,7 +539,7 @@ impl PostToConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostToConnectionErrorKind::Unhandled(err.into()),
+            kind: PostToConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -593,7 +593,32 @@ impl std::error::Error for PostToConnectionError {
             PostToConnectionErrorKind::GoneException(_inner) => Some(_inner),
             PostToConnectionErrorKind::LimitExceededException(_inner) => Some(_inner),
             PostToConnectionErrorKind::PayloadTooLargeException(_inner) => Some(_inner),
-            PostToConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostToConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

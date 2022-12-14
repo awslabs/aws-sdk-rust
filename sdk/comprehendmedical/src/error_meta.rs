@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55,9 +55,9 @@ where
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeEntitiesDetectionV2JobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEntitiesDetectionV2JobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -84,10 +84,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -114,10 +114,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribePHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,10 +144,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,10 +174,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -206,9 +206,11 @@ where
                 crate::error::DetectEntitiesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DetectEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectEntitiesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -240,10 +242,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DetectEntitiesV2ErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,9 +274,11 @@ where
                 crate::error::DetectPHIErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DetectPHIErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectPHIErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -303,9 +307,11 @@ where
                 crate::error::InferICD10CMErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::InferICD10CMErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InferICD10CMErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -334,9 +340,11 @@ where
                 crate::error::InferRxNormErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::InferRxNormErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InferRxNormErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,9 +373,11 @@ where
                 crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -394,10 +404,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListEntitiesDetectionV2JobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -424,10 +434,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListICD10CMInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -454,10 +464,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPHIDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -484,10 +494,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRxNormInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -514,10 +524,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListSNOMEDCTInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -544,10 +554,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::StartEntitiesDetectionV2JobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -574,10 +584,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::StartICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -604,10 +614,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::StartPHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -634,10 +644,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::StartRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -664,10 +674,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::StartSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -691,10 +701,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::StopEntitiesDetectionV2JobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -718,10 +728,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::StopICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -744,10 +754,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StopPHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -771,10 +781,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StopRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -801,10 +811,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::StopSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

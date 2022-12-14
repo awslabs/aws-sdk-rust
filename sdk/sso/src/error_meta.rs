@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,10 +47,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRoleCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -76,10 +76,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListAccountRolesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -102,9 +102,11 @@ where
                 crate::error::ListAccountsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListAccountsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccountsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,9 +126,11 @@ where
                 crate::error::LogoutErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::LogoutErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::LogoutErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

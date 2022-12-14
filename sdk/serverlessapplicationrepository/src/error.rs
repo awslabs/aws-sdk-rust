@@ -546,7 +546,7 @@ pub enum CreateApplicationErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -577,7 +577,7 @@ impl CreateApplicationError {
     /// Creates the `CreateApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -586,7 +586,7 @@ impl CreateApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -651,7 +651,7 @@ impl std::error::Error for CreateApplicationError {
             CreateApplicationErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateApplicationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateApplicationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -680,7 +680,7 @@ pub enum CreateApplicationVersionErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApplicationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -713,7 +713,9 @@ impl CreateApplicationVersionError {
     /// Creates the `CreateApplicationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -722,7 +724,9 @@ impl CreateApplicationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -790,7 +794,7 @@ impl std::error::Error for CreateApplicationVersionError {
             CreateApplicationVersionErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateApplicationVersionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateApplicationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -817,7 +821,7 @@ pub enum CreateCloudFormationChangeSetErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCloudFormationChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -854,7 +858,9 @@ impl CreateCloudFormationChangeSetError {
     /// Creates the `CreateCloudFormationChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCloudFormationChangeSetErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -863,7 +869,9 @@ impl CreateCloudFormationChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCloudFormationChangeSetErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -927,7 +935,7 @@ impl std::error::Error for CreateCloudFormationChangeSetError {
             CreateCloudFormationChangeSetErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            CreateCloudFormationChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCloudFormationChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -956,7 +964,7 @@ pub enum CreateCloudFormationTemplateErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCloudFormationTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -991,7 +999,9 @@ impl CreateCloudFormationTemplateError {
     /// Creates the `CreateCloudFormationTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCloudFormationTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1000,7 +1010,9 @@ impl CreateCloudFormationTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCloudFormationTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateCloudFormationTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1070,7 +1082,7 @@ impl std::error::Error for CreateCloudFormationTemplateError {
             }
             CreateCloudFormationTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateCloudFormationTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateCloudFormationTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCloudFormationTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1101,7 +1113,7 @@ pub enum DeleteApplicationErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1133,7 +1145,7 @@ impl DeleteApplicationError {
     /// Creates the `DeleteApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1142,7 +1154,7 @@ impl DeleteApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1212,7 +1224,7 @@ impl std::error::Error for DeleteApplicationError {
             DeleteApplicationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DeleteApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteApplicationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1241,7 +1253,7 @@ pub enum GetApplicationErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1272,7 +1284,7 @@ impl GetApplicationError {
     /// Creates the `GetApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApplicationErrorKind::Unhandled(err.into()),
+            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1281,7 +1293,7 @@ impl GetApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApplicationErrorKind::Unhandled(err.into()),
+            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1340,7 +1352,7 @@ impl std::error::Error for GetApplicationError {
             GetApplicationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApplicationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1369,7 +1381,7 @@ pub enum GetApplicationPolicyErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApplicationPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1400,7 +1412,9 @@ impl GetApplicationPolicyError {
     /// Creates the `GetApplicationPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApplicationPolicyErrorKind::Unhandled(err.into()),
+            kind: GetApplicationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1409,7 +1423,9 @@ impl GetApplicationPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApplicationPolicyErrorKind::Unhandled(err.into()),
+            kind: GetApplicationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1477,7 +1493,7 @@ impl std::error::Error for GetApplicationPolicyError {
             GetApplicationPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetApplicationPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApplicationPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetApplicationPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApplicationPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1506,7 +1522,7 @@ pub enum GetCloudFormationTemplateErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCloudFormationTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1539,7 +1555,9 @@ impl GetCloudFormationTemplateError {
     /// Creates the `GetCloudFormationTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCloudFormationTemplateErrorKind::Unhandled(err.into()),
+            kind: GetCloudFormationTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1548,7 +1566,9 @@ impl GetCloudFormationTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCloudFormationTemplateErrorKind::Unhandled(err.into()),
+            kind: GetCloudFormationTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1618,7 +1638,7 @@ impl std::error::Error for GetCloudFormationTemplateError {
             }
             GetCloudFormationTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetCloudFormationTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetCloudFormationTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCloudFormationTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1647,7 +1667,7 @@ pub enum ListApplicationDependenciesErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationDependenciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1680,7 +1700,9 @@ impl ListApplicationDependenciesError {
     /// Creates the `ListApplicationDependenciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApplicationDependenciesErrorKind::Unhandled(err.into()),
+            kind: ListApplicationDependenciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1689,7 +1711,9 @@ impl ListApplicationDependenciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApplicationDependenciesErrorKind::Unhandled(err.into()),
+            kind: ListApplicationDependenciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1759,7 +1783,7 @@ impl std::error::Error for ListApplicationDependenciesError {
             }
             ListApplicationDependenciesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListApplicationDependenciesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListApplicationDependenciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApplicationDependenciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1786,7 +1810,7 @@ pub enum ListApplicationsErrorKind {
     /// <p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1816,7 +1840,7 @@ impl ListApplicationsError {
     /// Creates the `ListApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1825,7 +1849,7 @@ impl ListApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1879,7 +1903,7 @@ impl std::error::Error for ListApplicationsError {
             ListApplicationsErrorKind::ForbiddenException(_inner) => Some(_inner),
             ListApplicationsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListApplicationsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1908,7 +1932,7 @@ pub enum ListApplicationVersionsErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1939,7 +1963,9 @@ impl ListApplicationVersionsError {
     /// Creates the `ListApplicationVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApplicationVersionsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1948,7 +1974,9 @@ impl ListApplicationVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApplicationVersionsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2016,7 +2044,7 @@ impl std::error::Error for ListApplicationVersionsError {
             ListApplicationVersionsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListApplicationVersionsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListApplicationVersionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListApplicationVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApplicationVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2045,7 +2073,7 @@ pub enum PutApplicationPolicyErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutApplicationPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2076,7 +2104,9 @@ impl PutApplicationPolicyError {
     /// Creates the `PutApplicationPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutApplicationPolicyErrorKind::Unhandled(err.into()),
+            kind: PutApplicationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2085,7 +2115,9 @@ impl PutApplicationPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutApplicationPolicyErrorKind::Unhandled(err.into()),
+            kind: PutApplicationPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2153,7 +2185,7 @@ impl std::error::Error for PutApplicationPolicyError {
             PutApplicationPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             PutApplicationPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             PutApplicationPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutApplicationPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutApplicationPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2182,7 +2214,7 @@ pub enum UnshareApplicationErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnshareApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2213,7 +2245,7 @@ impl UnshareApplicationError {
     /// Creates the `UnshareApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UnshareApplicationErrorKind::Unhandled(err.into()),
+            kind: UnshareApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2222,7 +2254,7 @@ impl UnshareApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UnshareApplicationErrorKind::Unhandled(err.into()),
+            kind: UnshareApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2290,7 +2322,7 @@ impl std::error::Error for UnshareApplicationError {
             UnshareApplicationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UnshareApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
             UnshareApplicationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UnshareApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UnshareApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2321,7 +2353,7 @@ pub enum UpdateApplicationErrorKind {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2353,7 +2385,7 @@ impl UpdateApplicationError {
     /// Creates the `UpdateApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2362,7 +2394,7 @@ impl UpdateApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2432,7 +2464,32 @@ impl std::error::Error for UpdateApplicationError {
             UpdateApplicationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

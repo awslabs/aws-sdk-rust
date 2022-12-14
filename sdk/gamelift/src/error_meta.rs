@@ -34,7 +34,7 @@ pub enum Error {
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -77,9 +77,11 @@ where
                 crate::error::AcceptMatchErrorKind::UnsupportedRegionException(inner) => {
                     Error::UnsupportedRegionException(inner)
                 }
-                crate::error::AcceptMatchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptMatchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -108,9 +110,11 @@ where
                 crate::error::ClaimGameServerErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ClaimGameServerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ClaimGameServerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -139,9 +143,11 @@ where
                 crate::error::CreateAliasErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -167,9 +173,11 @@ where
                 crate::error::CreateBuildErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateBuildErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateBuildErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,9 +212,11 @@ where
                 crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => {
                     Error::UnsupportedRegionException(inner)
                 }
-                crate::error::CreateFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,10 +249,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,10 +282,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,10 +332,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::CreateGameSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,10 +368,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,9 +395,9 @@ where
                 crate::error::CreateMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::CreateMatchmakingConfigurationErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
                 crate::error::CreateMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::CreateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,10 +424,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::CreateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -452,10 +462,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreatePlayerSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -491,10 +501,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreatePlayerSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -520,9 +530,11 @@ where
                 crate::error::CreateScriptErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateScriptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateScriptErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -549,10 +561,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::CreateVpcPeeringAuthorizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,10 +591,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -608,9 +620,11 @@ where
                 crate::error::DeleteAliasErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -636,9 +650,11 @@ where
                 crate::error::DeleteBuildErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteBuildErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBuildErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -667,9 +683,11 @@ where
                 crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -699,10 +717,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -729,10 +747,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -762,10 +780,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -788,9 +806,9 @@ where
                 crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DeleteMatchmakingConfigurationErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
                 crate::error::DeleteMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DeleteMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -820,10 +838,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::DeleteMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -849,10 +867,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteScalingPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -878,9 +896,11 @@ where
                 crate::error::DeleteScriptErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteScriptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteScriptErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -907,10 +927,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::DeleteVpcPeeringAuthorizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -937,10 +957,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DeleteVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -967,10 +987,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DeregisterGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -993,9 +1013,11 @@ where
                 crate::error::DescribeAliasErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DescribeAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1018,9 +1040,11 @@ where
                 crate::error::DescribeBuildErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DescribeBuildErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBuildErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1047,10 +1071,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeEC2InstanceLimitsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1077,10 +1101,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1107,10 +1131,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1136,10 +1160,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetEventsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1162,9 +1186,9 @@ where
                 crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeFleetLocationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetLocationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1183,9 +1207,9 @@ where
                 crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
                 crate::error::DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1208,9 +1232,9 @@ where
                 crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeFleetLocationUtilizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetLocationUtilizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1237,10 +1261,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1267,10 +1291,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetUtilizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1296,10 +1320,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1326,10 +1350,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1356,10 +1380,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::DescribeGameServerInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1379,9 +1403,9 @@ where
                 crate::error::DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeGameSessionDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGameSessionDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1408,10 +1432,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::DescribeGameSessionPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1438,10 +1462,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeGameSessionQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1474,10 +1498,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::DescribeGameSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1506,10 +1530,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::DescribeInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1532,10 +1556,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::DescribeMatchmakingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1556,9 +1580,9 @@ where
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeMatchmakingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeMatchmakingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1585,10 +1609,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeMatchmakingRuleSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1615,10 +1639,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribePlayerSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1645,10 +1669,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::DescribeRuntimeConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1678,10 +1702,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1704,9 +1728,11 @@ where
                 crate::error::DescribeScriptErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DescribeScriptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeScriptErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1727,9 +1753,9 @@ where
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeVpcPeeringAuthorizationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeVpcPeeringAuthorizationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1756,10 +1782,10 @@ where
                     inner,
                 ) => Error::UnauthorizedException(inner),
                 crate::error::DescribeVpcPeeringConnectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1786,10 +1812,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetGameSessionLogUrlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1815,10 +1841,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetInstanceAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1838,9 +1864,11 @@ where
                 crate::error::ListAliasesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListAliasesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAliasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1860,9 +1888,11 @@ where
                 crate::error::ListBuildsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListBuildsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBuildsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1885,9 +1915,11 @@ where
                 crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListFleetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFleetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1911,10 +1943,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListGameServerGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1934,9 +1966,11 @@ where
                 crate::error::ListGameServersErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListGameServersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGameServersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1956,9 +1990,11 @@ where
                 crate::error::ListScriptsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListScriptsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListScriptsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1984,10 +2020,10 @@ where
                     Error::TaggingFailedException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2013,10 +2049,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2045,10 +2081,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::RegisterGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2075,10 +2111,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::RequestUploadCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2104,9 +2140,11 @@ where
                 crate::error::ResolveAliasErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ResolveAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResolveAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2133,10 +2171,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ResumeGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2168,10 +2206,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2200,10 +2238,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StartFleetActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2230,10 +2268,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::StartGameSessionPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2259,10 +2297,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StartMatchBackfillErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2288,10 +2326,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StartMatchmakingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2320,10 +2358,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StopFleetActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2350,10 +2388,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::StopGameSessionPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2376,9 +2414,11 @@ where
                 crate::error::StopMatchmakingErrorKind::UnsupportedRegionException(inner) => {
                     Error::UnsupportedRegionException(inner)
                 }
-                crate::error::StopMatchmakingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopMatchmakingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2405,10 +2445,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::SuspendGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2431,9 +2471,11 @@ where
                 crate::error::TagResourceErrorKind::TaggingFailedException(inner) => {
                     Error::TaggingFailedException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2456,9 +2498,11 @@ where
                 crate::error::UntagResourceErrorKind::TaggingFailedException(inner) => {
                     Error::TaggingFailedException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2481,9 +2525,11 @@ where
                 crate::error::UpdateAliasErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2506,9 +2552,11 @@ where
                 crate::error::UpdateBuildErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateBuildErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateBuildErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2544,10 +2592,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateFleetAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2585,10 +2633,10 @@ where
                     Error::UnsupportedRegionException(inner)
                 }
                 crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2624,10 +2672,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateFleetPortSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2653,10 +2701,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2683,10 +2731,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2718,10 +2766,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateGameSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2748,10 +2796,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2773,9 +2821,9 @@ where
                 crate::error::UpdateMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
-                crate::error::UpdateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2805,10 +2853,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateRuntimeConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2831,9 +2879,11 @@ where
                 crate::error::UpdateScriptErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateScriptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateScriptErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2857,10 +2907,10 @@ where
                     inner,
                 ) => Error::UnsupportedRegionException(inner),
                 crate::error::ValidateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

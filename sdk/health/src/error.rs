@@ -211,7 +211,7 @@ pub enum DescribeAffectedAccountsForOrganizationErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedAccountsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -243,7 +243,9 @@ impl DescribeAffectedAccountsForOrganizationError {
     /// Creates the `DescribeAffectedAccountsForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -252,7 +254,9 @@ impl DescribeAffectedAccountsForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -290,9 +294,7 @@ impl std::error::Error for DescribeAffectedAccountsForOrganizationError {
             DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_inner) => {
                 Some(_inner)
             }
-            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -315,7 +317,7 @@ pub enum DescribeAffectedEntitiesErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -343,7 +345,9 @@ impl DescribeAffectedEntitiesError {
     /// Creates the `DescribeAffectedEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAffectedEntitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -352,7 +356,9 @@ impl DescribeAffectedEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAffectedEntitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -396,7 +402,7 @@ impl std::error::Error for DescribeAffectedEntitiesError {
         match &self.kind {
             DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
             DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -419,7 +425,7 @@ pub enum DescribeAffectedEntitiesForOrganizationErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -454,7 +460,9 @@ impl DescribeAffectedEntitiesForOrganizationError {
     /// Creates the `DescribeAffectedEntitiesForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -463,7 +471,9 @@ impl DescribeAffectedEntitiesForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -511,9 +521,7 @@ impl std::error::Error for DescribeAffectedEntitiesForOrganizationError {
             DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_inner) => {
                 Some(_inner)
             }
-            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -532,7 +540,7 @@ pub struct DescribeEntityAggregatesError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeEntityAggregatesErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEntityAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -558,7 +566,9 @@ impl DescribeEntityAggregatesError {
     /// Creates the `DescribeEntityAggregatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEntityAggregatesErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -567,7 +577,9 @@ impl DescribeEntityAggregatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEntityAggregatesErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -595,7 +607,7 @@ impl DescribeEntityAggregatesError {
 impl std::error::Error for DescribeEntityAggregatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -616,7 +628,7 @@ pub enum DescribeEventAggregatesErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -643,7 +655,9 @@ impl DescribeEventAggregatesError {
     /// Creates the `DescribeEventAggregatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventAggregatesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -652,7 +666,9 @@ impl DescribeEventAggregatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventAggregatesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -688,7 +704,7 @@ impl std::error::Error for DescribeEventAggregatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeEventAggregatesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeEventAggregatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -709,7 +725,7 @@ pub enum DescribeEventDetailsErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -736,7 +752,9 @@ impl DescribeEventDetailsError {
     /// Creates the `DescribeEventDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventDetailsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -745,7 +763,9 @@ impl DescribeEventDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventDetailsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -781,7 +801,7 @@ impl std::error::Error for DescribeEventDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeEventDetailsErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -802,7 +822,7 @@ pub enum DescribeEventDetailsForOrganizationErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventDetailsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -834,7 +854,9 @@ impl DescribeEventDetailsForOrganizationError {
     /// Creates the `DescribeEventDetailsForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -843,7 +865,9 @@ impl DescribeEventDetailsForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -879,9 +903,7 @@ impl std::error::Error for DescribeEventDetailsForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -904,7 +926,7 @@ pub enum DescribeEventsErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -932,7 +954,7 @@ impl DescribeEventsError {
     /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -941,7 +963,7 @@ impl DescribeEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -982,7 +1004,7 @@ impl std::error::Error for DescribeEventsError {
         match &self.kind {
             DescribeEventsErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
             DescribeEventsErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1005,7 +1027,7 @@ pub enum DescribeEventsForOrganizationErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1036,7 +1058,9 @@ impl DescribeEventsForOrganizationError {
     /// Creates the `DescribeEventsForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1045,7 +1069,9 @@ impl DescribeEventsForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventsForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1089,7 +1115,7 @@ impl std::error::Error for DescribeEventsForOrganizationError {
         match &self.kind {
             DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
             DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1112,7 +1138,7 @@ pub enum DescribeEventTypesErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1140,7 +1166,7 @@ impl DescribeEventTypesError {
     /// Creates the `DescribeEventTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1149,7 +1175,7 @@ impl DescribeEventTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1193,7 +1219,7 @@ impl std::error::Error for DescribeEventTypesError {
         match &self.kind {
             DescribeEventTypesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
             DescribeEventTypesErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1212,7 +1238,7 @@ pub struct DescribeHealthServiceStatusForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeHealthServiceStatusForOrganizationErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHealthServiceStatusForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1241,7 +1267,9 @@ impl DescribeHealthServiceStatusForOrganizationError {
     /// Creates the `DescribeHealthServiceStatusForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1250,7 +1278,9 @@ impl DescribeHealthServiceStatusForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1278,9 +1308,7 @@ impl DescribeHealthServiceStatusForOrganizationError {
 impl std::error::Error for DescribeHealthServiceStatusForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1301,7 +1329,7 @@ pub enum DisableHealthServiceAccessForOrganizationErrorKind {
     /// <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableHealthServiceAccessForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1333,7 +1361,9 @@ impl DisableHealthServiceAccessForOrganizationError {
     /// Creates the `DisableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1342,7 +1372,9 @@ impl DisableHealthServiceAccessForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1380,9 +1412,7 @@ impl std::error::Error for DisableHealthServiceAccessForOrganizationError {
             DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
                 _inner,
             ) => Some(_inner),
-            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1403,7 +1433,7 @@ pub enum EnableHealthServiceAccessForOrganizationErrorKind {
     /// <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableHealthServiceAccessForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1435,7 +1465,9 @@ impl EnableHealthServiceAccessForOrganizationError {
     /// Creates the `EnableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1444,7 +1476,9 @@ impl EnableHealthServiceAccessForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1482,9 +1516,32 @@ impl std::error::Error for EnableHealthServiceAccessForOrganizationError {
             EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
                 _inner,
             ) => Some(_inner),
-            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

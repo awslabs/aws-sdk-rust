@@ -8,7 +8,7 @@ pub enum Error {
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29,9 +29,11 @@ where
                 crate::error::SearchErrorKind::SearchException(inner) => {
                     Error::SearchException(inner)
                 }
-                crate::error::SearchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -45,9 +47,11 @@ where
                 crate::error::SuggestErrorKind::SearchException(inner) => {
                     Error::SearchException(inner)
                 }
-                crate::error::SuggestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SuggestErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -61,9 +65,11 @@ where
                 crate::error::UploadDocumentsErrorKind::DocumentServiceException(inner) => {
                     Error::DocumentServiceException(inner)
                 }
-                crate::error::UploadDocumentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UploadDocumentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

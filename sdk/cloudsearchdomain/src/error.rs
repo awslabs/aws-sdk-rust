@@ -168,7 +168,7 @@ pub enum SearchErrorKind {
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -195,7 +195,7 @@ impl SearchError {
     /// Creates the `SearchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchErrorKind::Unhandled(err.into()),
+            kind: SearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -204,7 +204,7 @@ impl SearchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchErrorKind::Unhandled(err.into()),
+            kind: SearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -237,7 +237,7 @@ impl std::error::Error for SearchError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SearchErrorKind::SearchException(_inner) => Some(_inner),
-            SearchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -258,7 +258,7 @@ pub enum SuggestErrorKind {
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SuggestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -285,7 +285,7 @@ impl SuggestError {
     /// Creates the `SuggestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SuggestErrorKind::Unhandled(err.into()),
+            kind: SuggestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -294,7 +294,7 @@ impl SuggestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SuggestErrorKind::Unhandled(err.into()),
+            kind: SuggestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -327,7 +327,7 @@ impl std::error::Error for SuggestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SuggestErrorKind::SearchException(_inner) => Some(_inner),
-            SuggestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SuggestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -348,7 +348,7 @@ pub enum UploadDocumentsErrorKind {
     /// <p>Information about any problems encountered while processing an upload request.</p>
     DocumentServiceException(crate::error::DocumentServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UploadDocumentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -375,7 +375,7 @@ impl UploadDocumentsError {
     /// Creates the `UploadDocumentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UploadDocumentsErrorKind::Unhandled(err.into()),
+            kind: UploadDocumentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -384,7 +384,7 @@ impl UploadDocumentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UploadDocumentsErrorKind::Unhandled(err.into()),
+            kind: UploadDocumentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -420,7 +420,32 @@ impl std::error::Error for UploadDocumentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UploadDocumentsErrorKind::DocumentServiceException(_inner) => Some(_inner),
-            UploadDocumentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UploadDocumentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

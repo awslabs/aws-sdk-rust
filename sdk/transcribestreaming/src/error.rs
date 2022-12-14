@@ -349,7 +349,7 @@ pub enum StartMedicalStreamTranscriptionErrorKind {
     /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartMedicalStreamTranscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -389,7 +389,9 @@ impl StartMedicalStreamTranscriptionError {
     /// Creates the `StartMedicalStreamTranscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartMedicalStreamTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartMedicalStreamTranscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -398,7 +400,9 @@ impl StartMedicalStreamTranscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartMedicalStreamTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartMedicalStreamTranscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -472,7 +476,7 @@ impl std::error::Error for StartMedicalStreamTranscriptionError {
             StartMedicalStreamTranscriptionErrorKind::LimitExceededException(_inner) => {
                 Some(_inner)
             }
-            StartMedicalStreamTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartMedicalStreamTranscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -501,7 +505,7 @@ pub enum StartStreamTranscriptionErrorKind {
     /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartStreamTranscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -532,7 +536,9 @@ impl StartStreamTranscriptionError {
     /// Creates the `StartStreamTranscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartStreamTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartStreamTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -541,7 +547,9 @@ impl StartStreamTranscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartStreamTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartStreamTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -609,8 +617,33 @@ impl std::error::Error for StartStreamTranscriptionError {
             StartStreamTranscriptionErrorKind::InternalFailureException(_inner) => Some(_inner),
             StartStreamTranscriptionErrorKind::ConflictException(_inner) => Some(_inner),
             StartStreamTranscriptionErrorKind::LimitExceededException(_inner) => Some(_inner),
-            StartStreamTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartStreamTranscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }
 
@@ -628,7 +661,7 @@ pub struct AudioStreamError {
 #[derive(std::fmt::Debug)]
 pub enum AudioStreamErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AudioStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -654,7 +687,7 @@ impl AudioStreamError {
     /// Creates the `AudioStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AudioStreamErrorKind::Unhandled(err.into()),
+            kind: AudioStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -663,7 +696,7 @@ impl AudioStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AudioStreamErrorKind::Unhandled(err.into()),
+            kind: AudioStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -691,7 +724,7 @@ impl AudioStreamError {
 impl std::error::Error for AudioStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AudioStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AudioStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -720,7 +753,7 @@ pub enum MedicalTranscriptResultStreamErrorKind {
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MedicalTranscriptResultStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -758,7 +791,9 @@ impl MedicalTranscriptResultStreamError {
     /// Creates the `MedicalTranscriptResultStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MedicalTranscriptResultStreamErrorKind::Unhandled(err.into()),
+            kind: MedicalTranscriptResultStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -767,7 +802,9 @@ impl MedicalTranscriptResultStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MedicalTranscriptResultStreamErrorKind::Unhandled(err.into()),
+            kind: MedicalTranscriptResultStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -839,7 +876,7 @@ impl std::error::Error for MedicalTranscriptResultStreamError {
             MedicalTranscriptResultStreamErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            MedicalTranscriptResultStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MedicalTranscriptResultStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -868,7 +905,7 @@ pub enum TranscriptResultStreamErrorKind {
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TranscriptResultStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -899,7 +936,9 @@ impl TranscriptResultStreamError {
     /// Creates the `TranscriptResultStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TranscriptResultStreamErrorKind::Unhandled(err.into()),
+            kind: TranscriptResultStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -908,7 +947,9 @@ impl TranscriptResultStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TranscriptResultStreamErrorKind::Unhandled(err.into()),
+            kind: TranscriptResultStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -976,7 +1017,7 @@ impl std::error::Error for TranscriptResultStreamError {
             TranscriptResultStreamErrorKind::InternalFailureException(_inner) => Some(_inner),
             TranscriptResultStreamErrorKind::ConflictException(_inner) => Some(_inner),
             TranscriptResultStreamErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TranscriptResultStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TranscriptResultStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }

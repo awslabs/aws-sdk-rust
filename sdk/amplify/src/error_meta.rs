@@ -18,7 +18,7 @@ pub enum Error {
     /// <p> An operation failed due to a lack of access. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,11 @@ where
                 crate::error::CreateAppErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -88,10 +90,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateBackendEnvironmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -120,9 +122,11 @@ where
                 crate::error::CreateBranchErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateBranchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateBranchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,10 +152,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::CreateDeploymentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,9 +175,9 @@ where
                 crate::error::CreateDomainAssociationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateDomainAssociationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::CreateDomainAssociationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::CreateDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -202,9 +206,11 @@ where
                 crate::error::CreateWebhookErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateWebhookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -230,9 +236,11 @@ where
                 crate::error::DeleteAppErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -251,9 +259,9 @@ where
                 crate::error::DeleteBackendEnvironmentErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::DeleteBackendEnvironmentErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DeleteBackendEnvironmentErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DeleteBackendEnvironmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackendEnvironmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -279,9 +287,11 @@ where
                 crate::error::DeleteBranchErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteBranchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBranchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -300,9 +310,9 @@ where
                 crate::error::DeleteDomainAssociationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::DeleteDomainAssociationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DeleteDomainAssociationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DeleteDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -328,9 +338,11 @@ where
                 crate::error::DeleteJobErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -356,9 +368,11 @@ where
                 crate::error::DeleteWebhookErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteWebhookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -384,10 +398,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GenerateAccessLogsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -410,9 +424,11 @@ where
                 crate::error::GetAppErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -438,9 +454,11 @@ where
                 crate::error::GetArtifactUrlErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetArtifactUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetArtifactUrlErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,10 +485,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetBackendEnvironmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -493,9 +511,11 @@ where
                 crate::error::GetBranchErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetBranchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBranchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,10 +542,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetDomainAssociationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -551,9 +571,11 @@ where
                 crate::error::GetJobErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,9 +601,11 @@ where
                 crate::error::GetWebhookErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetWebhookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -601,9 +625,11 @@ where
                 crate::error::ListAppsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListAppsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAppsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -626,9 +652,11 @@ where
                 crate::error::ListArtifactsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListArtifactsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListArtifactsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -652,10 +680,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListBackendEnvironmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,9 +703,11 @@ where
                 crate::error::ListBranchesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListBranchesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBranchesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -701,10 +731,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListDomainAssociationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -727,9 +757,11 @@ where
                 crate::error::ListJobsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -752,10 +784,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -778,9 +810,11 @@ where
                 crate::error::ListWebhooksErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListWebhooksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWebhooksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -806,9 +840,11 @@ where
                 crate::error::StartDeploymentErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::StartDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDeploymentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -834,9 +870,11 @@ where
                 crate::error::StartJobErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::StartJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -862,9 +900,11 @@ where
                 crate::error::StopJobErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::StopJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -884,9 +924,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -906,9 +948,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -931,9 +975,11 @@ where
                 crate::error::UpdateAppErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -959,9 +1005,11 @@ where
                 crate::error::UpdateBranchErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateBranchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateBranchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -980,9 +1028,9 @@ where
                 crate::error::UpdateDomainAssociationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::UpdateDomainAssociationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::UpdateDomainAssociationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::UpdateDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDomainAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1008,9 +1056,11 @@ where
                 crate::error::UpdateWebhookErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::UpdateWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateWebhookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

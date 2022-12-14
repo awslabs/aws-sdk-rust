@@ -1725,7 +1725,7 @@ pub enum AbortDocumentVersionUploadErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AbortDocumentVersionUploadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1763,7 +1763,9 @@ impl AbortDocumentVersionUploadError {
     /// Creates the `AbortDocumentVersionUploadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AbortDocumentVersionUploadErrorKind::Unhandled(err.into()),
+            kind: AbortDocumentVersionUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1772,7 +1774,9 @@ impl AbortDocumentVersionUploadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AbortDocumentVersionUploadErrorKind::Unhandled(err.into()),
+            kind: AbortDocumentVersionUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1854,7 +1858,7 @@ impl std::error::Error for AbortDocumentVersionUploadError {
             AbortDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            AbortDocumentVersionUploadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AbortDocumentVersionUploadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1883,7 +1887,7 @@ pub enum ActivateUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ActivateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1914,7 +1918,7 @@ impl ActivateUserError {
     /// Creates the `ActivateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ActivateUserErrorKind::Unhandled(err.into()),
+            kind: ActivateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1923,7 +1927,7 @@ impl ActivateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ActivateUserErrorKind::Unhandled(err.into()),
+            kind: ActivateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1991,7 +1995,7 @@ impl std::error::Error for ActivateUserError {
             ActivateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ActivateUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             ActivateUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            ActivateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ActivateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2018,7 +2022,7 @@ pub enum AddResourcePermissionsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddResourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2052,7 +2056,9 @@ impl AddResourcePermissionsError {
     /// Creates the `AddResourcePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: AddResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2061,7 +2067,9 @@ impl AddResourcePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: AddResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2123,7 +2131,7 @@ impl std::error::Error for AddResourcePermissionsError {
             AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            AddResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2158,7 +2166,7 @@ pub enum CreateCommentErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2192,7 +2200,7 @@ impl CreateCommentError {
     /// Creates the `CreateCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCommentErrorKind::Unhandled(err.into()),
+            kind: CreateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2201,7 +2209,7 @@ impl CreateCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCommentErrorKind::Unhandled(err.into()),
+            kind: CreateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2293,7 +2301,7 @@ impl std::error::Error for CreateCommentError {
             CreateCommentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateCommentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             CreateCommentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            CreateCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2326,7 +2334,7 @@ pub enum CreateCustomMetadataErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2363,7 +2371,9 @@ impl CreateCustomMetadataError {
     /// Creates the `CreateCustomMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomMetadataErrorKind::Unhandled(err.into()),
+            kind: CreateCustomMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2372,7 +2382,9 @@ impl CreateCustomMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomMetadataErrorKind::Unhandled(err.into()),
+            kind: CreateCustomMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2460,7 +2472,7 @@ impl std::error::Error for CreateCustomMetadataError {
             CreateCustomMetadataErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2497,7 +2509,7 @@ pub enum CreateFolderErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2532,7 +2544,7 @@ impl CreateFolderError {
     /// Creates the `CreateFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFolderErrorKind::Unhandled(err.into()),
+            kind: CreateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2541,7 +2553,7 @@ impl CreateFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFolderErrorKind::Unhandled(err.into()),
+            kind: CreateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2638,7 +2650,7 @@ impl std::error::Error for CreateFolderError {
             CreateFolderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateFolderErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             CreateFolderErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            CreateFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2669,7 +2681,7 @@ pub enum CreateLabelsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2701,7 +2713,7 @@ impl CreateLabelsError {
     /// Creates the `CreateLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLabelsErrorKind::Unhandled(err.into()),
+            kind: CreateLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2710,7 +2722,7 @@ impl CreateLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLabelsErrorKind::Unhandled(err.into()),
+            kind: CreateLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2783,7 +2795,7 @@ impl std::error::Error for CreateLabelsError {
             CreateLabelsErrorKind::TooManyLabelsException(_inner) => Some(_inner),
             CreateLabelsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             CreateLabelsErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            CreateLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2808,7 +2820,7 @@ pub enum CreateNotificationSubscriptionErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNotificationSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2846,7 +2858,9 @@ impl CreateNotificationSubscriptionError {
     /// Creates the `CreateNotificationSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNotificationSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2855,7 +2869,9 @@ impl CreateNotificationSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNotificationSubscriptionErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2913,7 +2929,7 @@ impl std::error::Error for CreateNotificationSubscriptionError {
             CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(
                 _inner,
             ) => Some(_inner),
-            CreateNotificationSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNotificationSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2942,7 +2958,7 @@ pub enum CreateUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2973,7 +2989,7 @@ impl CreateUserError {
     /// Creates the `CreateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2982,7 +2998,7 @@ impl CreateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3050,7 +3066,7 @@ impl std::error::Error for CreateUserError {
             CreateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             CreateUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            CreateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3079,7 +3095,7 @@ pub enum DeactivateUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeactivateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3110,7 +3126,7 @@ impl DeactivateUserError {
     /// Creates the `DeactivateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeactivateUserErrorKind::Unhandled(err.into()),
+            kind: DeactivateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3119,7 +3135,7 @@ impl DeactivateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeactivateUserErrorKind::Unhandled(err.into()),
+            kind: DeactivateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3187,7 +3203,7 @@ impl std::error::Error for DeactivateUserError {
             DeactivateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeactivateUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeactivateUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeactivateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeactivateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3220,7 +3236,7 @@ pub enum DeleteCommentErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3253,7 +3269,7 @@ impl DeleteCommentError {
     /// Creates the `DeleteCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCommentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3262,7 +3278,7 @@ impl DeleteCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCommentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3346,7 +3362,7 @@ impl std::error::Error for DeleteCommentError {
             DeleteCommentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteCommentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteCommentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeleteCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3377,7 +3393,7 @@ pub enum DeleteCustomMetadataErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3411,7 +3427,9 @@ impl DeleteCustomMetadataError {
     /// Creates the `DeleteCustomMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomMetadataErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3420,7 +3438,9 @@ impl DeleteCustomMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomMetadataErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3498,7 +3518,7 @@ impl std::error::Error for DeleteCustomMetadataError {
             DeleteCustomMetadataErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3533,7 +3553,7 @@ pub enum DeleteDocumentErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3567,7 +3587,7 @@ impl DeleteDocumentError {
     /// Creates the `DeleteDocumentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDocumentErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3576,7 +3596,7 @@ impl DeleteDocumentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDocumentErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3668,7 +3688,7 @@ impl std::error::Error for DeleteDocumentError {
             DeleteDocumentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteDocumentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeleteDocumentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3703,7 +3723,7 @@ pub enum DeleteFolderErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3737,7 +3757,7 @@ impl DeleteFolderError {
     /// Creates the `DeleteFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFolderErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3746,7 +3766,7 @@ impl DeleteFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFolderErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3838,7 +3858,7 @@ impl std::error::Error for DeleteFolderError {
             DeleteFolderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteFolderErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteFolderErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeleteFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3871,7 +3891,7 @@ pub enum DeleteFolderContentsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFolderContentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3906,7 +3926,9 @@ impl DeleteFolderContentsError {
     /// Creates the `DeleteFolderContentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFolderContentsErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderContentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3915,7 +3937,9 @@ impl DeleteFolderContentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFolderContentsErrorKind::Unhandled(err.into()),
+            kind: DeleteFolderContentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4001,7 +4025,7 @@ impl std::error::Error for DeleteFolderContentsError {
             DeleteFolderContentsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DeleteFolderContentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFolderContentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4030,7 +4054,7 @@ pub enum DeleteLabelsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4061,7 +4085,7 @@ impl DeleteLabelsError {
     /// Creates the `DeleteLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLabelsErrorKind::Unhandled(err.into()),
+            kind: DeleteLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4070,7 +4094,7 @@ impl DeleteLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLabelsErrorKind::Unhandled(err.into()),
+            kind: DeleteLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4138,7 +4162,7 @@ impl std::error::Error for DeleteLabelsError {
             DeleteLabelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteLabelsErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeleteLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4165,7 +4189,7 @@ pub enum DeleteNotificationSubscriptionErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNotificationSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4206,7 +4230,9 @@ impl DeleteNotificationSubscriptionError {
     /// Creates the `DeleteNotificationSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNotificationSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4215,7 +4241,9 @@ impl DeleteNotificationSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNotificationSubscriptionErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4283,7 +4311,7 @@ impl std::error::Error for DeleteNotificationSubscriptionError {
             DeleteNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(
                 _inner,
             ) => Some(_inner),
-            DeleteNotificationSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNotificationSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4312,7 +4340,7 @@ pub enum DeleteUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4343,7 +4371,7 @@ impl DeleteUserError {
     /// Creates the `DeleteUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4352,7 +4380,7 @@ impl DeleteUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4417,7 +4445,7 @@ impl std::error::Error for DeleteUserError {
             DeleteUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DeleteUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4446,7 +4474,7 @@ pub enum DescribeActivitiesErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeActivitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4479,7 +4507,7 @@ impl DescribeActivitiesError {
     /// Creates the `DescribeActivitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeActivitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeActivitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4488,7 +4516,7 @@ impl DescribeActivitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeActivitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeActivitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4558,7 +4586,7 @@ impl std::error::Error for DescribeActivitiesError {
             DescribeActivitiesErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DescribeActivitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeActivitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4589,7 +4617,7 @@ pub enum DescribeCommentsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCommentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4621,7 +4649,7 @@ impl DescribeCommentsError {
     /// Creates the `DescribeCommentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCommentsErrorKind::Unhandled(err.into()),
+            kind: DescribeCommentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4630,7 +4658,7 @@ impl DescribeCommentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCommentsErrorKind::Unhandled(err.into()),
+            kind: DescribeCommentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4706,7 +4734,7 @@ impl std::error::Error for DescribeCommentsError {
             DescribeCommentsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeCommentsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DescribeCommentsErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DescribeCommentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCommentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4739,7 +4767,7 @@ pub enum DescribeDocumentVersionsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDocumentVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4776,7 +4804,9 @@ impl DescribeDocumentVersionsError {
     /// Creates the `DescribeDocumentVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDocumentVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4785,7 +4815,9 @@ impl DescribeDocumentVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDocumentVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4873,7 +4905,7 @@ impl std::error::Error for DescribeDocumentVersionsError {
             DescribeDocumentVersionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DescribeDocumentVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDocumentVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4904,7 +4936,7 @@ pub enum DescribeFolderContentsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFolderContentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4938,7 +4970,9 @@ impl DescribeFolderContentsError {
     /// Creates the `DescribeFolderContentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFolderContentsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderContentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4947,7 +4981,9 @@ impl DescribeFolderContentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFolderContentsErrorKind::Unhandled(err.into()),
+            kind: DescribeFolderContentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5025,7 +5061,7 @@ impl std::error::Error for DescribeFolderContentsError {
             DescribeFolderContentsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DescribeFolderContentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFolderContentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5052,7 +5088,7 @@ pub enum DescribeGroupsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5082,7 +5118,7 @@ impl DescribeGroupsError {
     /// Creates the `DescribeGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5091,7 +5127,7 @@ impl DescribeGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5151,7 +5187,7 @@ impl std::error::Error for DescribeGroupsError {
             DescribeGroupsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeGroupsErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DescribeGroupsErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DescribeGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5176,7 +5212,7 @@ pub enum DescribeNotificationSubscriptionsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationSubscriptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5214,7 +5250,9 @@ impl DescribeNotificationSubscriptionsError {
     /// Creates the `DescribeNotificationSubscriptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNotificationSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationSubscriptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5223,7 +5261,9 @@ impl DescribeNotificationSubscriptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNotificationSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationSubscriptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5281,7 +5321,7 @@ impl std::error::Error for DescribeNotificationSubscriptionsError {
             DescribeNotificationSubscriptionsErrorKind::UnauthorizedResourceAccessException(
                 _inner,
             ) => Some(_inner),
-            DescribeNotificationSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNotificationSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5308,7 +5348,7 @@ pub enum DescribeResourcePermissionsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeResourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5346,7 +5386,9 @@ impl DescribeResourcePermissionsError {
     /// Creates the `DescribeResourcePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5355,7 +5397,9 @@ impl DescribeResourcePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5421,7 +5465,7 @@ impl std::error::Error for DescribeResourcePermissionsError {
             DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DescribeResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5450,7 +5494,7 @@ pub enum DescribeRootFoldersErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRootFoldersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5483,7 +5527,7 @@ impl DescribeRootFoldersError {
     /// Creates the `DescribeRootFoldersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRootFoldersErrorKind::Unhandled(err.into()),
+            kind: DescribeRootFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5492,7 +5536,7 @@ impl DescribeRootFoldersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRootFoldersErrorKind::Unhandled(err.into()),
+            kind: DescribeRootFoldersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5562,7 +5606,7 @@ impl std::error::Error for DescribeRootFoldersError {
             DescribeRootFoldersErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            DescribeRootFoldersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRootFoldersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5595,7 +5639,7 @@ pub enum DescribeUsersErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5628,7 +5672,7 @@ impl DescribeUsersError {
     /// Creates the `DescribeUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUsersErrorKind::Unhandled(err.into()),
+            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5637,7 +5681,7 @@ impl DescribeUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUsersErrorKind::Unhandled(err.into()),
+            kind: DescribeUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5721,7 +5765,7 @@ impl std::error::Error for DescribeUsersError {
             DescribeUsersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeUsersErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             DescribeUsersErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            DescribeUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5750,7 +5794,7 @@ pub enum GetCurrentUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCurrentUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5781,7 +5825,7 @@ impl GetCurrentUserError {
     /// Creates the `GetCurrentUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCurrentUserErrorKind::Unhandled(err.into()),
+            kind: GetCurrentUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5790,7 +5834,7 @@ impl GetCurrentUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCurrentUserErrorKind::Unhandled(err.into()),
+            kind: GetCurrentUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5858,7 +5902,7 @@ impl std::error::Error for GetCurrentUserError {
             GetCurrentUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetCurrentUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetCurrentUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetCurrentUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCurrentUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5891,7 +5935,7 @@ pub enum GetDocumentErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5924,7 +5968,7 @@ impl GetDocumentError {
     /// Creates the `GetDocumentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentErrorKind::Unhandled(err.into()),
+            kind: GetDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5933,7 +5977,7 @@ impl GetDocumentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentErrorKind::Unhandled(err.into()),
+            kind: GetDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6017,7 +6061,7 @@ impl std::error::Error for GetDocumentError {
             GetDocumentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDocumentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetDocumentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetDocumentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6046,7 +6090,7 @@ pub enum GetDocumentPathErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentPathError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6077,7 +6121,7 @@ impl GetDocumentPathError {
     /// Creates the `GetDocumentPathError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentPathErrorKind::Unhandled(err.into()),
+            kind: GetDocumentPathErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6086,7 +6130,7 @@ impl GetDocumentPathError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentPathErrorKind::Unhandled(err.into()),
+            kind: GetDocumentPathErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6154,7 +6198,7 @@ impl std::error::Error for GetDocumentPathError {
             GetDocumentPathErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDocumentPathErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetDocumentPathErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetDocumentPathErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentPathErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6187,7 +6231,7 @@ pub enum GetDocumentVersionErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6222,7 +6266,7 @@ impl GetDocumentVersionError {
     /// Creates the `GetDocumentVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentVersionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6231,7 +6275,7 @@ impl GetDocumentVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentVersionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6317,7 +6361,7 @@ impl std::error::Error for GetDocumentVersionError {
             GetDocumentVersionErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            GetDocumentVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6350,7 +6394,7 @@ pub enum GetFolderErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6383,7 +6427,7 @@ impl GetFolderError {
     /// Creates the `GetFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6392,7 +6436,7 @@ impl GetFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6464,7 +6508,7 @@ impl std::error::Error for GetFolderError {
             GetFolderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetFolderErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetFolderErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6493,7 +6537,7 @@ pub enum GetFolderPathErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFolderPathError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6524,7 +6568,7 @@ impl GetFolderPathError {
     /// Creates the `GetFolderPathError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFolderPathErrorKind::Unhandled(err.into()),
+            kind: GetFolderPathErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6533,7 +6577,7 @@ impl GetFolderPathError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFolderPathErrorKind::Unhandled(err.into()),
+            kind: GetFolderPathErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6601,7 +6645,7 @@ impl std::error::Error for GetFolderPathError {
             GetFolderPathErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetFolderPathErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetFolderPathErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetFolderPathErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFolderPathErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6630,7 +6674,7 @@ pub enum GetResourcesErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6661,7 +6705,7 @@ impl GetResourcesError {
     /// Creates the `GetResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6670,7 +6714,7 @@ impl GetResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6738,7 +6782,7 @@ impl std::error::Error for GetResourcesError {
             GetResourcesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetResourcesErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             GetResourcesErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6779,7 +6823,7 @@ pub enum InitiateDocumentVersionUploadErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InitiateDocumentVersionUploadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6841,7 +6885,9 @@ impl InitiateDocumentVersionUploadError {
     /// Creates the `InitiateDocumentVersionUploadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InitiateDocumentVersionUploadErrorKind::Unhandled(err.into()),
+            kind: InitiateDocumentVersionUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6850,7 +6896,9 @@ impl InitiateDocumentVersionUploadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InitiateDocumentVersionUploadErrorKind::Unhandled(err.into()),
+            kind: InitiateDocumentVersionUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6988,7 +7036,7 @@ impl std::error::Error for InitiateDocumentVersionUploadError {
             InitiateDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            InitiateDocumentVersionUploadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InitiateDocumentVersionUploadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7015,7 +7063,7 @@ pub enum RemoveAllResourcePermissionsErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveAllResourcePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7053,7 +7101,9 @@ impl RemoveAllResourcePermissionsError {
     /// Creates the `RemoveAllResourcePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveAllResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: RemoveAllResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7062,7 +7112,9 @@ impl RemoveAllResourcePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveAllResourcePermissionsErrorKind::Unhandled(err.into()),
+            kind: RemoveAllResourcePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7130,7 +7182,7 @@ impl std::error::Error for RemoveAllResourcePermissionsError {
             RemoveAllResourcePermissionsErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            RemoveAllResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveAllResourcePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7157,7 +7209,7 @@ pub enum RemoveResourcePermissionErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveResourcePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7191,7 +7243,9 @@ impl RemoveResourcePermissionError {
     /// Creates the `RemoveResourcePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveResourcePermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveResourcePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7200,7 +7254,9 @@ impl RemoveResourcePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveResourcePermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveResourcePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7264,7 +7320,7 @@ impl std::error::Error for RemoveResourcePermissionError {
             RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            RemoveResourcePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveResourcePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7303,7 +7359,7 @@ pub enum UpdateDocumentErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7339,7 +7395,7 @@ impl UpdateDocumentError {
     /// Creates the `UpdateDocumentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDocumentErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7348,7 +7404,7 @@ impl UpdateDocumentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDocumentErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7456,7 +7512,7 @@ impl std::error::Error for UpdateDocumentError {
             UpdateDocumentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateDocumentErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             UpdateDocumentErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            UpdateDocumentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7491,7 +7547,7 @@ pub enum UpdateDocumentVersionErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDocumentVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7529,7 +7585,9 @@ impl UpdateDocumentVersionError {
     /// Creates the `UpdateDocumentVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDocumentVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7538,7 +7596,9 @@ impl UpdateDocumentVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDocumentVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7632,7 +7692,7 @@ impl std::error::Error for UpdateDocumentVersionError {
             UpdateDocumentVersionErrorKind::UnauthorizedResourceAccessException(_inner) => {
                 Some(_inner)
             }
-            UpdateDocumentVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDocumentVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7671,7 +7731,7 @@ pub enum UpdateFolderErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7707,7 +7767,7 @@ impl UpdateFolderError {
     /// Creates the `UpdateFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFolderErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7716,7 +7776,7 @@ impl UpdateFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFolderErrorKind::Unhandled(err.into()),
+            kind: UpdateFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7821,7 +7881,7 @@ impl std::error::Error for UpdateFolderError {
             UpdateFolderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFolderErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             UpdateFolderErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            UpdateFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7856,7 +7916,7 @@ pub enum UpdateUserErrorKind {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7890,7 +7950,7 @@ impl UpdateUserError {
     /// Creates the `UpdateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7899,7 +7959,7 @@ impl UpdateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7985,7 +8045,32 @@ impl std::error::Error for UpdateUserError {
             UpdateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateUserErrorKind::UnauthorizedOperationException(_inner) => Some(_inner),
             UpdateUserErrorKind::UnauthorizedResourceAccessException(_inner) => Some(_inner),
-            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

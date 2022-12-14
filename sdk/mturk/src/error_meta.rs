@@ -8,7 +8,7 @@ pub enum Error {
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36,10 +36,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::AcceptQualificationRequestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -59,10 +59,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ApproveAssignmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -87,10 +87,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::AssociateQualificationWithWorkerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -115,10 +115,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::CreateAdditionalAssignmentsForHITErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -131,9 +131,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateHITErrorKind::RequestError(inner) => Error::RequestError(inner),
                 crate::error::CreateHITErrorKind::ServiceFault(inner) => Error::ServiceFault(inner),
-                crate::error::CreateHITErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateHITErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,9 +152,11 @@ where
                 crate::error::CreateHITTypeErrorKind::ServiceFault(inner) => {
                     Error::ServiceFault(inner)
                 }
-                crate::error::CreateHITTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateHITTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -173,10 +177,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::CreateHITWithHITTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -197,10 +201,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::CreateQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -220,10 +224,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::CreateWorkerBlockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -236,9 +240,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteHITErrorKind::RequestError(inner) => Error::RequestError(inner),
                 crate::error::DeleteHITErrorKind::ServiceFault(inner) => Error::ServiceFault(inner),
-                crate::error::DeleteHITErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteHITErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -259,10 +265,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::DeleteQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -282,10 +288,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::DeleteWorkerBlockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -314,10 +320,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::DisassociateQualificationFromWorkerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -337,10 +343,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::GetAccountBalanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -357,9 +363,11 @@ where
                 crate::error::GetAssignmentErrorKind::ServiceFault(inner) => {
                     Error::ServiceFault(inner)
                 }
-                crate::error::GetAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAssignmentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -379,10 +387,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::GetFileUploadURLErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -395,9 +403,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetHITErrorKind::RequestError(inner) => Error::RequestError(inner),
                 crate::error::GetHITErrorKind::ServiceFault(inner) => Error::ServiceFault(inner),
-                crate::error::GetHITErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetHITErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -418,10 +428,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::GetQualificationScoreErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -442,10 +452,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::GetQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -466,10 +476,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListAssignmentsForHITErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -489,10 +499,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListBonusPaymentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -505,9 +515,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListHITsErrorKind::RequestError(inner) => Error::RequestError(inner),
                 crate::error::ListHITsErrorKind::ServiceFault(inner) => Error::ServiceFault(inner),
-                crate::error::ListHITsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHITsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -528,10 +540,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListHITsForQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -552,10 +564,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListQualificationRequestsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -576,10 +588,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListQualificationTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -599,10 +611,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListReviewableHITsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -623,10 +635,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListReviewPolicyResultsForHITErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,10 +658,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListWorkerBlocksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -674,10 +686,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::ListWorkersWithQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -694,9 +706,11 @@ where
                 crate::error::NotifyWorkersErrorKind::ServiceFault(inner) => {
                     Error::ServiceFault(inner)
                 }
-                crate::error::NotifyWorkersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::NotifyWorkersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -716,10 +730,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::RejectAssignmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -740,10 +754,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::RejectQualificationRequestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,9 +770,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SendBonusErrorKind::RequestError(inner) => Error::RequestError(inner),
                 crate::error::SendBonusErrorKind::ServiceFault(inner) => Error::ServiceFault(inner),
-                crate::error::SendBonusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendBonusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -779,10 +795,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::SendTestEventNotificationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -803,10 +819,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::UpdateExpirationForHITErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -827,10 +843,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::UpdateHITReviewStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -850,10 +866,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::UpdateHITTypeOfHITErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -874,10 +890,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::UpdateNotificationSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -898,10 +914,10 @@ where
                     Error::ServiceFault(inner)
                 }
                 crate::error::UpdateQualificationTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

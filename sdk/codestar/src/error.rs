@@ -873,7 +873,7 @@ pub enum AssociateTeamMemberErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateTeamMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -908,7 +908,7 @@ impl AssociateTeamMemberError {
     /// Creates the `AssociateTeamMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: AssociateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -917,7 +917,7 @@ impl AssociateTeamMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: AssociateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1003,7 +1003,7 @@ impl std::error::Error for AssociateTeamMemberError {
                 Some(_inner)
             }
             AssociateTeamMemberErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1036,7 +1036,7 @@ pub enum CreateProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1069,7 +1069,7 @@ impl CreateProjectError {
     /// Creates the `CreateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1078,7 +1078,7 @@ impl CreateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1159,7 +1159,7 @@ impl std::error::Error for CreateProjectError {
             CreateProjectErrorKind::ProjectConfigurationException(_inner) => Some(_inner),
             CreateProjectErrorKind::ProjectCreationFailedException(_inner) => Some(_inner),
             CreateProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1182,7 +1182,7 @@ pub enum CreateUserProfileErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1210,7 +1210,7 @@ impl CreateUserProfileError {
     /// Creates the `CreateUserProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUserProfileErrorKind::Unhandled(err.into()),
+            kind: CreateUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1219,7 +1219,7 @@ impl CreateUserProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUserProfileErrorKind::Unhandled(err.into()),
+            kind: CreateUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1263,7 +1263,7 @@ impl std::error::Error for CreateUserProfileError {
         match &self.kind {
             CreateUserProfileErrorKind::UserProfileAlreadyExistsException(_inner) => Some(_inner),
             CreateUserProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateUserProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUserProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1288,7 +1288,7 @@ pub enum DeleteProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1317,7 +1317,7 @@ impl DeleteProjectError {
     /// Creates the `DeleteProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1326,7 +1326,7 @@ impl DeleteProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1375,7 +1375,7 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteProjectErrorKind::InvalidServiceRoleException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1396,7 +1396,7 @@ pub enum DeleteUserProfileErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1423,7 +1423,7 @@ impl DeleteUserProfileError {
     /// Creates the `DeleteUserProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1432,7 +1432,7 @@ impl DeleteUserProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1468,7 +1468,7 @@ impl std::error::Error for DeleteUserProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteUserProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteUserProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1497,7 +1497,7 @@ pub enum DescribeProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1528,7 +1528,7 @@ impl DescribeProjectError {
     /// Creates the `DescribeProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1537,7 +1537,7 @@ impl DescribeProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1602,7 +1602,7 @@ impl std::error::Error for DescribeProjectError {
             DescribeProjectErrorKind::ProjectConfigurationException(_inner) => Some(_inner),
             DescribeProjectErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             DescribeProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1625,7 +1625,7 @@ pub enum DescribeUserProfileErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUserProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1653,7 +1653,7 @@ impl DescribeUserProfileError {
     /// Creates the `DescribeUserProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUserProfileErrorKind::Unhandled(err.into()),
+            kind: DescribeUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1662,7 +1662,7 @@ impl DescribeUserProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUserProfileErrorKind::Unhandled(err.into()),
+            kind: DescribeUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1706,7 +1706,7 @@ impl std::error::Error for DescribeUserProfileError {
         match &self.kind {
             DescribeUserProfileErrorKind::UserProfileNotFoundException(_inner) => Some(_inner),
             DescribeUserProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeUserProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUserProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1733,7 +1733,7 @@ pub enum DisassociateTeamMemberErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateTeamMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1765,7 +1765,9 @@ impl DisassociateTeamMemberError {
     /// Creates the `DisassociateTeamMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: DisassociateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1774,7 +1776,9 @@ impl DisassociateTeamMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: DisassociateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1836,7 +1840,7 @@ impl std::error::Error for DisassociateTeamMemberError {
             DisassociateTeamMemberErrorKind::InvalidServiceRoleException(_inner) => Some(_inner),
             DisassociateTeamMemberErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             DisassociateTeamMemberErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1859,7 +1863,7 @@ pub enum ListProjectsErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1887,7 +1891,7 @@ impl ListProjectsError {
     /// Creates the `ListProjectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1896,7 +1900,7 @@ impl ListProjectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1937,7 +1941,7 @@ impl std::error::Error for ListProjectsError {
         match &self.kind {
             ListProjectsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListProjectsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1962,7 +1966,7 @@ pub enum ListResourcesErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1991,7 +1995,7 @@ impl ListResourcesError {
     /// Creates the `ListResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourcesErrorKind::Unhandled(err.into()),
+            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2000,7 +2004,7 @@ impl ListResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourcesErrorKind::Unhandled(err.into()),
+            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2049,7 +2053,7 @@ impl std::error::Error for ListResourcesError {
             ListResourcesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListResourcesErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             ListResourcesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2074,7 +2078,7 @@ pub enum ListTagsForProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2103,7 +2107,7 @@ impl ListTagsForProjectError {
     /// Creates the `ListTagsForProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForProjectErrorKind::Unhandled(err.into()),
+            kind: ListTagsForProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2112,7 +2116,7 @@ impl ListTagsForProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForProjectErrorKind::Unhandled(err.into()),
+            kind: ListTagsForProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2164,7 +2168,7 @@ impl std::error::Error for ListTagsForProjectError {
             ListTagsForProjectErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListTagsForProjectErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             ListTagsForProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2189,7 +2193,7 @@ pub enum ListTeamMembersErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTeamMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2218,7 +2222,7 @@ impl ListTeamMembersError {
     /// Creates the `ListTeamMembersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTeamMembersErrorKind::Unhandled(err.into()),
+            kind: ListTeamMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2227,7 +2231,7 @@ impl ListTeamMembersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTeamMembersErrorKind::Unhandled(err.into()),
+            kind: ListTeamMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2276,7 +2280,7 @@ impl std::error::Error for ListTeamMembersError {
             ListTeamMembersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListTeamMembersErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             ListTeamMembersErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTeamMembersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTeamMembersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2299,7 +2303,7 @@ pub enum ListUserProfilesErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUserProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2327,7 +2331,7 @@ impl ListUserProfilesError {
     /// Creates the `ListUserProfilesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUserProfilesErrorKind::Unhandled(err.into()),
+            kind: ListUserProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2336,7 +2340,7 @@ impl ListUserProfilesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUserProfilesErrorKind::Unhandled(err.into()),
+            kind: ListUserProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2380,7 +2384,7 @@ impl std::error::Error for ListUserProfilesError {
         match &self.kind {
             ListUserProfilesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListUserProfilesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListUserProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUserProfilesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2407,7 +2411,7 @@ pub enum TagProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2437,7 +2441,7 @@ impl TagProjectError {
     /// Creates the `TagProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagProjectErrorKind::Unhandled(err.into()),
+            kind: TagProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2446,7 +2450,7 @@ impl TagProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagProjectErrorKind::Unhandled(err.into()),
+            kind: TagProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2497,7 +2501,7 @@ impl std::error::Error for TagProjectError {
             TagProjectErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagProjectErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             TagProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            TagProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2524,7 +2528,7 @@ pub enum UntagProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2554,7 +2558,7 @@ impl UntagProjectError {
     /// Creates the `UntagProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagProjectErrorKind::Unhandled(err.into()),
+            kind: UntagProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2563,7 +2567,7 @@ impl UntagProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagProjectErrorKind::Unhandled(err.into()),
+            kind: UntagProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2617,7 +2621,7 @@ impl std::error::Error for UntagProjectError {
             UntagProjectErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagProjectErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             UntagProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2640,7 +2644,7 @@ pub enum UpdateProjectErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2668,7 +2672,7 @@ impl UpdateProjectError {
     /// Creates the `UpdateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2677,7 +2681,7 @@ impl UpdateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2718,7 +2722,7 @@ impl std::error::Error for UpdateProjectError {
         match &self.kind {
             UpdateProjectErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2751,7 +2755,7 @@ pub enum UpdateTeamMemberErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTeamMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2784,7 +2788,7 @@ impl UpdateTeamMemberError {
     /// Creates the `UpdateTeamMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: UpdateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2793,7 +2797,7 @@ impl UpdateTeamMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTeamMemberErrorKind::Unhandled(err.into()),
+            kind: UpdateTeamMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2877,7 +2881,7 @@ impl std::error::Error for UpdateTeamMemberError {
             UpdateTeamMemberErrorKind::ProjectNotFoundException(_inner) => Some(_inner),
             UpdateTeamMemberErrorKind::TeamMemberNotFoundException(_inner) => Some(_inner),
             UpdateTeamMemberErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTeamMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2900,7 +2904,7 @@ pub enum UpdateUserProfileErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUserProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2928,7 +2932,7 @@ impl UpdateUserProfileError {
     /// Creates the `UpdateUserProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUserProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2937,7 +2941,7 @@ impl UpdateUserProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUserProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateUserProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2981,7 +2985,32 @@ impl std::error::Error for UpdateUserProfileError {
         match &self.kind {
             UpdateUserProfileErrorKind::UserProfileNotFoundException(_inner) => Some(_inner),
             UpdateUserProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateUserProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUserProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

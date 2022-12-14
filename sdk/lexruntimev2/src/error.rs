@@ -546,7 +546,7 @@ pub enum DeleteSessionErrorKind {
     /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -578,7 +578,7 @@ impl DeleteSessionError {
     /// Creates the `DeleteSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -587,7 +587,7 @@ impl DeleteSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -651,7 +651,7 @@ impl std::error::Error for DeleteSessionError {
             DeleteSessionErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteSessionErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteSessionErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -680,7 +680,7 @@ pub enum GetSessionErrorKind {
     /// <p></p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,7 +711,7 @@ impl GetSessionError {
     /// Creates the `GetSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSessionErrorKind::Unhandled(err.into()),
+            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -720,7 +720,7 @@ impl GetSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSessionErrorKind::Unhandled(err.into()),
+            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -776,7 +776,7 @@ impl std::error::Error for GetSessionError {
             GetSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetSessionErrorKind::ValidationException(_inner) => Some(_inner),
             GetSessionErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -811,7 +811,7 @@ pub enum PutSessionErrorKind {
     /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -845,7 +845,7 @@ impl PutSessionError {
     /// Creates the `PutSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSessionErrorKind::Unhandled(err.into()),
+            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -854,7 +854,7 @@ impl PutSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSessionErrorKind::Unhandled(err.into()),
+            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -928,7 +928,7 @@ impl std::error::Error for PutSessionError {
             PutSessionErrorKind::DependencyFailedException(_inner) => Some(_inner),
             PutSessionErrorKind::InternalServerException(_inner) => Some(_inner),
             PutSessionErrorKind::ConflictException(_inner) => Some(_inner),
-            PutSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -963,7 +963,7 @@ pub enum RecognizeTextErrorKind {
     /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RecognizeTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -997,7 +997,7 @@ impl RecognizeTextError {
     /// Creates the `RecognizeTextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RecognizeTextErrorKind::Unhandled(err.into()),
+            kind: RecognizeTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1006,7 +1006,7 @@ impl RecognizeTextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RecognizeTextErrorKind::Unhandled(err.into()),
+            kind: RecognizeTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1083,7 +1083,7 @@ impl std::error::Error for RecognizeTextError {
             RecognizeTextErrorKind::DependencyFailedException(_inner) => Some(_inner),
             RecognizeTextErrorKind::InternalServerException(_inner) => Some(_inner),
             RecognizeTextErrorKind::ConflictException(_inner) => Some(_inner),
-            RecognizeTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RecognizeTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1118,7 +1118,7 @@ pub enum RecognizeUtteranceErrorKind {
     /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RecognizeUtteranceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1152,7 +1152,7 @@ impl RecognizeUtteranceError {
     /// Creates the `RecognizeUtteranceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RecognizeUtteranceErrorKind::Unhandled(err.into()),
+            kind: RecognizeUtteranceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1161,7 +1161,7 @@ impl RecognizeUtteranceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RecognizeUtteranceErrorKind::Unhandled(err.into()),
+            kind: RecognizeUtteranceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1253,7 +1253,32 @@ impl std::error::Error for RecognizeUtteranceError {
             RecognizeUtteranceErrorKind::DependencyFailedException(_inner) => Some(_inner),
             RecognizeUtteranceErrorKind::InternalServerException(_inner) => Some(_inner),
             RecognizeUtteranceErrorKind::ConflictException(_inner) => Some(_inner),
-            RecognizeUtteranceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RecognizeUtteranceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

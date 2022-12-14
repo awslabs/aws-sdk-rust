@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,11 @@ where
                 crate::error::CancelChangeSetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CancelChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelChangeSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -93,10 +95,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -125,9 +127,11 @@ where
                 crate::error::DescribeEntityErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeEntityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEntityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,9 +154,11 @@ where
                 crate::error::ListChangeSetsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListChangeSetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChangeSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,9 +184,11 @@ where
                 crate::error::ListEntitiesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListEntitiesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -212,9 +220,11 @@ where
                 crate::error::StartChangeSetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::StartChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartChangeSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

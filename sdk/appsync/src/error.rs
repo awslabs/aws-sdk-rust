@@ -737,7 +737,7 @@ pub enum AssociateApiErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -767,7 +767,7 @@ impl AssociateApiError {
     /// Creates the `AssociateApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateApiErrorKind::Unhandled(err.into()),
+            kind: AssociateApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -776,7 +776,7 @@ impl AssociateApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateApiErrorKind::Unhandled(err.into()),
+            kind: AssociateApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -827,7 +827,7 @@ impl std::error::Error for AssociateApiError {
             AssociateApiErrorKind::BadRequestException(_inner) => Some(_inner),
             AssociateApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             AssociateApiErrorKind::NotFoundException(_inner) => Some(_inner),
-            AssociateApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -856,7 +856,7 @@ pub enum CreateApiCacheErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApiCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -887,7 +887,7 @@ impl CreateApiCacheError {
     /// Creates the `CreateApiCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApiCacheErrorKind::Unhandled(err.into()),
+            kind: CreateApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -896,7 +896,7 @@ impl CreateApiCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApiCacheErrorKind::Unhandled(err.into()),
+            kind: CreateApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -958,7 +958,7 @@ impl std::error::Error for CreateApiCacheError {
             CreateApiCacheErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateApiCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateApiCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateApiCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApiCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -991,7 +991,7 @@ pub enum CreateApiKeyErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1024,7 +1024,7 @@ impl CreateApiKeyError {
     /// Creates the `CreateApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1033,7 +1033,7 @@ impl CreateApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1105,7 +1105,7 @@ impl std::error::Error for CreateApiKeyError {
             CreateApiKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1134,7 +1134,7 @@ pub enum CreateDataSourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1165,7 +1165,7 @@ impl CreateDataSourceError {
     /// Creates the `CreateDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDataSourceErrorKind::Unhandled(err.into()),
+            kind: CreateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1174,7 +1174,7 @@ impl CreateDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDataSourceErrorKind::Unhandled(err.into()),
+            kind: CreateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1239,7 +1239,7 @@ impl std::error::Error for CreateDataSourceError {
             CreateDataSourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateDataSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateDataSourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1264,7 +1264,7 @@ pub enum CreateDomainNameErrorKind {
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1293,7 +1293,7 @@ impl CreateDomainNameError {
     /// Creates the `CreateDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDomainNameErrorKind::Unhandled(err.into()),
+            kind: CreateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1302,7 +1302,7 @@ impl CreateDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDomainNameErrorKind::Unhandled(err.into()),
+            kind: CreateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1354,7 +1354,7 @@ impl std::error::Error for CreateDomainNameError {
             CreateDomainNameErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::InternalFailureException(_inner) => Some(_inner),
-            CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1381,7 +1381,7 @@ pub enum CreateFunctionErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1411,7 +1411,7 @@ impl CreateFunctionError {
     /// Creates the `CreateFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFunctionErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1420,7 +1420,7 @@ impl CreateFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFunctionErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1477,7 +1477,7 @@ impl std::error::Error for CreateFunctionError {
             CreateFunctionErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateFunctionErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateFunctionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1508,7 +1508,7 @@ pub enum CreateGraphqlApiErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGraphqlApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,7 +1540,7 @@ impl CreateGraphqlApiError {
     /// Creates the `CreateGraphqlApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: CreateGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1549,7 +1549,7 @@ impl CreateGraphqlApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: CreateGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1625,7 +1625,7 @@ impl std::error::Error for CreateGraphqlApiError {
             CreateGraphqlApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateGraphqlApiErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateGraphqlApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1652,7 +1652,7 @@ pub enum CreateResolverErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1682,7 +1682,7 @@ impl CreateResolverError {
     /// Creates the `CreateResolverError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateResolverErrorKind::Unhandled(err.into()),
+            kind: CreateResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1691,7 +1691,7 @@ impl CreateResolverError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateResolverErrorKind::Unhandled(err.into()),
+            kind: CreateResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1748,7 +1748,7 @@ impl std::error::Error for CreateResolverError {
             CreateResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateResolverErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateResolverErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateResolverErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateResolverErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1777,7 +1777,7 @@ pub enum CreateTypeErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1808,7 +1808,7 @@ impl CreateTypeError {
     /// Creates the `CreateTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTypeErrorKind::Unhandled(err.into()),
+            kind: CreateTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1817,7 +1817,7 @@ impl CreateTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTypeErrorKind::Unhandled(err.into()),
+            kind: CreateTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1873,7 +1873,7 @@ impl std::error::Error for CreateTypeError {
             CreateTypeErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1902,7 +1902,7 @@ pub enum DeleteApiCacheErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApiCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1933,7 +1933,7 @@ impl DeleteApiCacheError {
     /// Creates the `DeleteApiCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApiCacheErrorKind::Unhandled(err.into()),
+            kind: DeleteApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1942,7 +1942,7 @@ impl DeleteApiCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApiCacheErrorKind::Unhandled(err.into()),
+            kind: DeleteApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2004,7 +2004,7 @@ impl std::error::Error for DeleteApiCacheError {
             DeleteApiCacheErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteApiCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteApiCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteApiCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApiCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2031,7 +2031,7 @@ pub enum DeleteApiKeyErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2061,7 +2061,7 @@ impl DeleteApiKeyError {
     /// Creates the `DeleteApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2070,7 +2070,7 @@ impl DeleteApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2121,7 +2121,7 @@ impl std::error::Error for DeleteApiKeyError {
             DeleteApiKeyErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2150,7 +2150,7 @@ pub enum DeleteDataSourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2181,7 +2181,7 @@ impl DeleteDataSourceError {
     /// Creates the `DeleteDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDataSourceErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2190,7 +2190,7 @@ impl DeleteDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDataSourceErrorKind::Unhandled(err.into()),
+            kind: DeleteDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2255,7 +2255,7 @@ impl std::error::Error for DeleteDataSourceError {
             DeleteDataSourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteDataSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDataSourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2284,7 +2284,7 @@ pub enum DeleteDomainNameErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2315,7 +2315,7 @@ impl DeleteDomainNameError {
     /// Creates the `DeleteDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainNameErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2324,7 +2324,7 @@ impl DeleteDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainNameErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2389,7 +2389,7 @@ impl std::error::Error for DeleteDomainNameError {
             DeleteDomainNameErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2416,7 +2416,7 @@ pub enum DeleteFunctionErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2446,7 +2446,7 @@ impl DeleteFunctionError {
     /// Creates the `DeleteFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2455,7 +2455,7 @@ impl DeleteFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2512,7 +2512,7 @@ impl std::error::Error for DeleteFunctionError {
             DeleteFunctionErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteFunctionErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteFunctionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2543,7 +2543,7 @@ pub enum DeleteGraphqlApiErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGraphqlApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2575,7 +2575,7 @@ impl DeleteGraphqlApiError {
     /// Creates the `DeleteGraphqlApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: DeleteGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2584,7 +2584,7 @@ impl DeleteGraphqlApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: DeleteGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2657,7 +2657,7 @@ impl std::error::Error for DeleteGraphqlApiError {
             DeleteGraphqlApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteGraphqlApiErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteGraphqlApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2684,7 +2684,7 @@ pub enum DeleteResolverErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2714,7 +2714,7 @@ impl DeleteResolverError {
     /// Creates the `DeleteResolverError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResolverErrorKind::Unhandled(err.into()),
+            kind: DeleteResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2723,7 +2723,7 @@ impl DeleteResolverError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResolverErrorKind::Unhandled(err.into()),
+            kind: DeleteResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2780,7 +2780,7 @@ impl std::error::Error for DeleteResolverError {
             DeleteResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteResolverErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteResolverErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteResolverErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResolverErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2809,7 +2809,7 @@ pub enum DeleteTypeErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2840,7 +2840,7 @@ impl DeleteTypeError {
     /// Creates the `DeleteTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTypeErrorKind::Unhandled(err.into()),
+            kind: DeleteTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2849,7 +2849,7 @@ impl DeleteTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTypeErrorKind::Unhandled(err.into()),
+            kind: DeleteTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2905,7 +2905,7 @@ impl std::error::Error for DeleteTypeError {
             DeleteTypeErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2934,7 +2934,7 @@ pub enum DisassociateApiErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2965,7 +2965,7 @@ impl DisassociateApiError {
     /// Creates the `DisassociateApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateApiErrorKind::Unhandled(err.into()),
+            kind: DisassociateApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2974,7 +2974,7 @@ impl DisassociateApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateApiErrorKind::Unhandled(err.into()),
+            kind: DisassociateApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3036,7 +3036,7 @@ impl std::error::Error for DisassociateApiError {
             DisassociateApiErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DisassociateApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             DisassociateApiErrorKind::NotFoundException(_inner) => Some(_inner),
-            DisassociateApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3061,7 +3061,7 @@ pub enum EvaluateMappingTemplateErrorKind {
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EvaluateMappingTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3090,7 +3090,9 @@ impl EvaluateMappingTemplateError {
     /// Creates the `EvaluateMappingTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EvaluateMappingTemplateErrorKind::Unhandled(err.into()),
+            kind: EvaluateMappingTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3099,7 +3101,9 @@ impl EvaluateMappingTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EvaluateMappingTemplateErrorKind::Unhandled(err.into()),
+            kind: EvaluateMappingTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3151,7 +3155,7 @@ impl std::error::Error for EvaluateMappingTemplateError {
             EvaluateMappingTemplateErrorKind::AccessDeniedException(_inner) => Some(_inner),
             EvaluateMappingTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             EvaluateMappingTemplateErrorKind::InternalFailureException(_inner) => Some(_inner),
-            EvaluateMappingTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EvaluateMappingTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3180,7 +3184,7 @@ pub enum FlushApiCacheErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FlushApiCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3211,7 +3215,7 @@ impl FlushApiCacheError {
     /// Creates the `FlushApiCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FlushApiCacheErrorKind::Unhandled(err.into()),
+            kind: FlushApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3220,7 +3224,7 @@ impl FlushApiCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FlushApiCacheErrorKind::Unhandled(err.into()),
+            kind: FlushApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3279,7 +3283,7 @@ impl std::error::Error for FlushApiCacheError {
             FlushApiCacheErrorKind::InternalFailureException(_inner) => Some(_inner),
             FlushApiCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             FlushApiCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            FlushApiCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FlushApiCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3306,7 +3310,7 @@ pub enum GetApiAssociationErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApiAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3336,7 +3340,7 @@ impl GetApiAssociationError {
     /// Creates the `GetApiAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApiAssociationErrorKind::Unhandled(err.into()),
+            kind: GetApiAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3345,7 +3349,7 @@ impl GetApiAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApiAssociationErrorKind::Unhandled(err.into()),
+            kind: GetApiAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3402,7 +3406,7 @@ impl std::error::Error for GetApiAssociationError {
             GetApiAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetApiAssociationErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetApiAssociationErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetApiAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApiAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3431,7 +3435,7 @@ pub enum GetApiCacheErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApiCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3462,7 +3466,7 @@ impl GetApiCacheError {
     /// Creates the `GetApiCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApiCacheErrorKind::Unhandled(err.into()),
+            kind: GetApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3471,7 +3475,7 @@ impl GetApiCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApiCacheErrorKind::Unhandled(err.into()),
+            kind: GetApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3530,7 +3534,7 @@ impl std::error::Error for GetApiCacheError {
             GetApiCacheErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetApiCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApiCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetApiCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApiCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3559,7 +3563,7 @@ pub enum GetDataSourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3590,7 +3594,7 @@ impl GetDataSourceError {
     /// Creates the `GetDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDataSourceErrorKind::Unhandled(err.into()),
+            kind: GetDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3599,7 +3603,7 @@ impl GetDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDataSourceErrorKind::Unhandled(err.into()),
+            kind: GetDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3658,7 +3662,7 @@ impl std::error::Error for GetDataSourceError {
             GetDataSourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetDataSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDataSourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3685,7 +3689,7 @@ pub enum GetDomainNameErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3715,7 +3719,7 @@ impl GetDomainNameError {
     /// Creates the `GetDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainNameErrorKind::Unhandled(err.into()),
+            kind: GetDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3724,7 +3728,7 @@ impl GetDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainNameErrorKind::Unhandled(err.into()),
+            kind: GetDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3775,7 +3779,7 @@ impl std::error::Error for GetDomainNameError {
             GetDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDomainNameErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3800,7 +3804,7 @@ pub enum GetFunctionErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3829,7 +3833,7 @@ impl GetFunctionError {
     /// Creates the `GetFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionErrorKind::Unhandled(err.into()),
+            kind: GetFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3838,7 +3842,7 @@ impl GetFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionErrorKind::Unhandled(err.into()),
+            kind: GetFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3884,7 +3888,7 @@ impl std::error::Error for GetFunctionError {
             GetFunctionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             GetFunctionErrorKind::NotFoundException(_inner) => Some(_inner),
             GetFunctionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3913,7 +3917,7 @@ pub enum GetGraphqlApiErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGraphqlApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3944,7 +3948,7 @@ impl GetGraphqlApiError {
     /// Creates the `GetGraphqlApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: GetGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3953,7 +3957,7 @@ impl GetGraphqlApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: GetGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4009,7 +4013,7 @@ impl std::error::Error for GetGraphqlApiError {
             GetGraphqlApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetGraphqlApiErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGraphqlApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4036,7 +4040,7 @@ pub enum GetIntrospectionSchemaErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIntrospectionSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4066,7 +4070,9 @@ impl GetIntrospectionSchemaError {
     /// Creates the `GetIntrospectionSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIntrospectionSchemaErrorKind::Unhandled(err.into()),
+            kind: GetIntrospectionSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4075,7 +4081,9 @@ impl GetIntrospectionSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIntrospectionSchemaErrorKind::Unhandled(err.into()),
+            kind: GetIntrospectionSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4135,7 +4143,7 @@ impl std::error::Error for GetIntrospectionSchemaError {
             GetIntrospectionSchemaErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetIntrospectionSchemaErrorKind::NotFoundException(_inner) => Some(_inner),
             GetIntrospectionSchemaErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetIntrospectionSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIntrospectionSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4160,7 +4168,7 @@ pub enum GetResolverErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4189,7 +4197,7 @@ impl GetResolverError {
     /// Creates the `GetResolverError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResolverErrorKind::Unhandled(err.into()),
+            kind: GetResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4198,7 +4206,7 @@ impl GetResolverError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResolverErrorKind::Unhandled(err.into()),
+            kind: GetResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4244,7 +4252,7 @@ impl std::error::Error for GetResolverError {
             GetResolverErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             GetResolverErrorKind::NotFoundException(_inner) => Some(_inner),
             GetResolverErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetResolverErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResolverErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4271,7 +4279,7 @@ pub enum GetSchemaCreationStatusErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSchemaCreationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4301,7 +4309,9 @@ impl GetSchemaCreationStatusError {
     /// Creates the `GetSchemaCreationStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSchemaCreationStatusErrorKind::Unhandled(err.into()),
+            kind: GetSchemaCreationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4310,7 +4320,9 @@ impl GetSchemaCreationStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSchemaCreationStatusErrorKind::Unhandled(err.into()),
+            kind: GetSchemaCreationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4370,7 +4382,7 @@ impl std::error::Error for GetSchemaCreationStatusError {
             GetSchemaCreationStatusErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetSchemaCreationStatusErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSchemaCreationStatusErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetSchemaCreationStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSchemaCreationStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4399,7 +4411,7 @@ pub enum GetTypeErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4430,7 +4442,7 @@ impl GetTypeError {
     /// Creates the `GetTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTypeErrorKind::Unhandled(err.into()),
+            kind: GetTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4439,7 +4451,7 @@ impl GetTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTypeErrorKind::Unhandled(err.into()),
+            kind: GetTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4495,7 +4507,7 @@ impl std::error::Error for GetTypeError {
             GetTypeErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             GetTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4522,7 +4534,7 @@ pub enum ListApiKeysErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4552,7 +4564,7 @@ impl ListApiKeysError {
     /// Creates the `ListApiKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApiKeysErrorKind::Unhandled(err.into()),
+            kind: ListApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4561,7 +4573,7 @@ impl ListApiKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApiKeysErrorKind::Unhandled(err.into()),
+            kind: ListApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4612,7 +4624,7 @@ impl std::error::Error for ListApiKeysError {
             ListApiKeysErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListApiKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             ListApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApiKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4639,7 +4651,7 @@ pub enum ListDataSourcesErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDataSourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4669,7 +4681,7 @@ impl ListDataSourcesError {
     /// Creates the `ListDataSourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDataSourcesErrorKind::Unhandled(err.into()),
+            kind: ListDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4678,7 +4690,7 @@ impl ListDataSourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDataSourcesErrorKind::Unhandled(err.into()),
+            kind: ListDataSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4732,7 +4744,7 @@ impl std::error::Error for ListDataSourcesError {
             ListDataSourcesErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListDataSourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListDataSourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListDataSourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDataSourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4757,7 +4769,7 @@ pub enum ListDomainNamesErrorKind {
     /// <p>An internal AppSync error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4786,7 +4798,7 @@ impl ListDomainNamesError {
     /// Creates the `ListDomainNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainNamesErrorKind::Unhandled(err.into()),
+            kind: ListDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4795,7 +4807,7 @@ impl ListDomainNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainNamesErrorKind::Unhandled(err.into()),
+            kind: ListDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4844,7 +4856,7 @@ impl std::error::Error for ListDomainNamesError {
             ListDomainNamesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListDomainNamesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListDomainNamesErrorKind::InternalFailureException(_inner) => Some(_inner),
-            ListDomainNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4871,7 +4883,7 @@ pub enum ListFunctionsErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFunctionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4901,7 +4913,7 @@ impl ListFunctionsError {
     /// Creates the `ListFunctionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFunctionsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4910,7 +4922,7 @@ impl ListFunctionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFunctionsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4961,7 +4973,7 @@ impl std::error::Error for ListFunctionsError {
             ListFunctionsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListFunctionsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListFunctionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListFunctionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFunctionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4986,7 +4998,7 @@ pub enum ListGraphqlApisErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGraphqlApisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5015,7 +5027,7 @@ impl ListGraphqlApisError {
     /// Creates the `ListGraphqlApisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGraphqlApisErrorKind::Unhandled(err.into()),
+            kind: ListGraphqlApisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5024,7 +5036,7 @@ impl ListGraphqlApisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGraphqlApisErrorKind::Unhandled(err.into()),
+            kind: ListGraphqlApisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5073,7 +5085,7 @@ impl std::error::Error for ListGraphqlApisError {
             ListGraphqlApisErrorKind::BadRequestException(_inner) => Some(_inner),
             ListGraphqlApisErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListGraphqlApisErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListGraphqlApisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGraphqlApisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5100,7 +5112,7 @@ pub enum ListResolversErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResolversError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5130,7 +5142,7 @@ impl ListResolversError {
     /// Creates the `ListResolversError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResolversErrorKind::Unhandled(err.into()),
+            kind: ListResolversErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5139,7 +5151,7 @@ impl ListResolversError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResolversErrorKind::Unhandled(err.into()),
+            kind: ListResolversErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5190,7 +5202,7 @@ impl std::error::Error for ListResolversError {
             ListResolversErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListResolversErrorKind::NotFoundException(_inner) => Some(_inner),
             ListResolversErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListResolversErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResolversErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5217,7 +5229,7 @@ pub enum ListResolversByFunctionErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResolversByFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5247,7 +5259,9 @@ impl ListResolversByFunctionError {
     /// Creates the `ListResolversByFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResolversByFunctionErrorKind::Unhandled(err.into()),
+            kind: ListResolversByFunctionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5256,7 +5270,9 @@ impl ListResolversByFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResolversByFunctionErrorKind::Unhandled(err.into()),
+            kind: ListResolversByFunctionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5316,7 +5332,7 @@ impl std::error::Error for ListResolversByFunctionError {
             ListResolversByFunctionErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListResolversByFunctionErrorKind::NotFoundException(_inner) => Some(_inner),
             ListResolversByFunctionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListResolversByFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResolversByFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5347,7 +5363,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5379,7 +5395,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5388,7 +5404,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5464,7 +5480,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5493,7 +5509,7 @@ pub enum ListTypesErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5524,7 +5540,7 @@ impl ListTypesError {
     /// Creates the `ListTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTypesErrorKind::Unhandled(err.into()),
+            kind: ListTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5533,7 +5549,7 @@ impl ListTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTypesErrorKind::Unhandled(err.into()),
+            kind: ListTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5589,7 +5605,7 @@ impl std::error::Error for ListTypesError {
             ListTypesErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListTypesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTypesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5618,7 +5634,7 @@ pub enum StartSchemaCreationErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSchemaCreationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5649,7 +5665,7 @@ impl StartSchemaCreationError {
     /// Creates the `StartSchemaCreationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSchemaCreationErrorKind::Unhandled(err.into()),
+            kind: StartSchemaCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5658,7 +5674,7 @@ impl StartSchemaCreationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSchemaCreationErrorKind::Unhandled(err.into()),
+            kind: StartSchemaCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5726,7 +5742,7 @@ impl std::error::Error for StartSchemaCreationError {
             StartSchemaCreationErrorKind::InternalFailureException(_inner) => Some(_inner),
             StartSchemaCreationErrorKind::NotFoundException(_inner) => Some(_inner),
             StartSchemaCreationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StartSchemaCreationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSchemaCreationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5757,7 +5773,7 @@ pub enum TagResourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5789,7 +5805,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5798,7 +5814,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5859,7 +5875,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5890,7 +5906,7 @@ pub enum UntagResourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5922,7 +5938,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5931,7 +5947,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5995,7 +6011,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6024,7 +6040,7 @@ pub enum UpdateApiCacheErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApiCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6055,7 +6071,7 @@ impl UpdateApiCacheError {
     /// Creates the `UpdateApiCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApiCacheErrorKind::Unhandled(err.into()),
+            kind: UpdateApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6064,7 +6080,7 @@ impl UpdateApiCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApiCacheErrorKind::Unhandled(err.into()),
+            kind: UpdateApiCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6126,7 +6142,7 @@ impl std::error::Error for UpdateApiCacheError {
             UpdateApiCacheErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateApiCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateApiCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateApiCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateApiCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6157,7 +6173,7 @@ pub enum UpdateApiKeyErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6189,7 +6205,7 @@ impl UpdateApiKeyError {
     /// Creates the `UpdateApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApiKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6198,7 +6214,7 @@ impl UpdateApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApiKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6262,7 +6278,7 @@ impl std::error::Error for UpdateApiKeyError {
             UpdateApiKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6291,7 +6307,7 @@ pub enum UpdateDataSourceErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6322,7 +6338,7 @@ impl UpdateDataSourceError {
     /// Creates the `UpdateDataSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6331,7 +6347,7 @@ impl UpdateDataSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateDataSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6396,7 +6412,7 @@ impl std::error::Error for UpdateDataSourceError {
             UpdateDataSourceErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateDataSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDataSourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDataSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6425,7 +6441,7 @@ pub enum UpdateDomainNameErrorKind {
     /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6456,7 +6472,7 @@ impl UpdateDomainNameError {
     /// Creates the `UpdateDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainNameErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6465,7 +6481,7 @@ impl UpdateDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainNameErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6530,7 +6546,7 @@ impl std::error::Error for UpdateDomainNameError {
             UpdateDomainNameErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6557,7 +6573,7 @@ pub enum UpdateFunctionErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6587,7 +6603,7 @@ impl UpdateFunctionError {
     /// Creates the `UpdateFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFunctionErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6596,7 +6612,7 @@ impl UpdateFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFunctionErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6653,7 +6669,7 @@ impl std::error::Error for UpdateFunctionError {
             UpdateFunctionErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateFunctionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFunctionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6684,7 +6700,7 @@ pub enum UpdateGraphqlApiErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGraphqlApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6716,7 +6732,7 @@ impl UpdateGraphqlApiError {
     /// Creates the `UpdateGraphqlApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: UpdateGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6725,7 +6741,7 @@ impl UpdateGraphqlApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGraphqlApiErrorKind::Unhandled(err.into()),
+            kind: UpdateGraphqlApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6798,7 +6814,7 @@ impl std::error::Error for UpdateGraphqlApiError {
             UpdateGraphqlApiErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateGraphqlApiErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGraphqlApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGraphqlApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6825,7 +6841,7 @@ pub enum UpdateResolverErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateResolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6855,7 +6871,7 @@ impl UpdateResolverError {
     /// Creates the `UpdateResolverError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateResolverErrorKind::Unhandled(err.into()),
+            kind: UpdateResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6864,7 +6880,7 @@ impl UpdateResolverError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateResolverErrorKind::Unhandled(err.into()),
+            kind: UpdateResolverErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6921,7 +6937,7 @@ impl std::error::Error for UpdateResolverError {
             UpdateResolverErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateResolverErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateResolverErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateResolverErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateResolverErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6950,7 +6966,7 @@ pub enum UpdateTypeErrorKind {
     /// <p>You aren't authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6981,7 +6997,7 @@ impl UpdateTypeError {
     /// Creates the `UpdateTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6990,7 +7006,7 @@ impl UpdateTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTypeErrorKind::Unhandled(err.into()),
+            kind: UpdateTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7046,7 +7062,32 @@ impl std::error::Error for UpdateTypeError {
             UpdateTypeErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

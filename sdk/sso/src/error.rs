@@ -282,7 +282,7 @@ pub enum GetRoleCredentialsErrorKind {
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRoleCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -312,7 +312,7 @@ impl GetRoleCredentialsError {
     /// Creates the `GetRoleCredentialsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRoleCredentialsErrorKind::Unhandled(err.into()),
+            kind: GetRoleCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -321,7 +321,7 @@ impl GetRoleCredentialsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRoleCredentialsErrorKind::Unhandled(err.into()),
+            kind: GetRoleCredentialsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -381,7 +381,7 @@ impl std::error::Error for GetRoleCredentialsError {
             GetRoleCredentialsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRoleCredentialsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRoleCredentialsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRoleCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRoleCredentialsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -408,7 +408,7 @@ pub enum ListAccountRolesErrorKind {
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountRolesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -438,7 +438,7 @@ impl ListAccountRolesError {
     /// Creates the `ListAccountRolesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountRolesErrorKind::Unhandled(err.into()),
+            kind: ListAccountRolesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -447,7 +447,7 @@ impl ListAccountRolesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountRolesErrorKind::Unhandled(err.into()),
+            kind: ListAccountRolesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -507,7 +507,7 @@ impl std::error::Error for ListAccountRolesError {
             ListAccountRolesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccountRolesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAccountRolesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListAccountRolesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountRolesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -534,7 +534,7 @@ pub enum ListAccountsErrorKind {
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -564,7 +564,7 @@ impl ListAccountsError {
     /// Creates the `ListAccountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountsErrorKind::Unhandled(err.into()),
+            kind: ListAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -573,7 +573,7 @@ impl ListAccountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountsErrorKind::Unhandled(err.into()),
+            kind: ListAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -630,7 +630,7 @@ impl std::error::Error for ListAccountsError {
             ListAccountsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccountsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAccountsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -655,7 +655,7 @@ pub enum LogoutErrorKind {
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for LogoutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -684,7 +684,7 @@ impl LogoutError {
     /// Creates the `LogoutError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: LogoutErrorKind::Unhandled(err.into()),
+            kind: LogoutErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -693,7 +693,7 @@ impl LogoutError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: LogoutErrorKind::Unhandled(err.into()),
+            kind: LogoutErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -736,7 +736,32 @@ impl std::error::Error for LogoutError {
             LogoutErrorKind::InvalidRequestException(_inner) => Some(_inner),
             LogoutErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             LogoutErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            LogoutErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            LogoutErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

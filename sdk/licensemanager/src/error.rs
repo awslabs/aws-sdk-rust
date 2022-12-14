@@ -1178,7 +1178,7 @@ pub enum AcceptGrantErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1211,7 +1211,7 @@ impl AcceptGrantError {
     /// Creates the `AcceptGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptGrantErrorKind::Unhandled(err.into()),
+            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1220,7 +1220,7 @@ impl AcceptGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptGrantErrorKind::Unhandled(err.into()),
+            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1292,7 +1292,7 @@ impl std::error::Error for AcceptGrantError {
             AcceptGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             AcceptGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
             AcceptGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AcceptGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1327,7 +1327,7 @@ pub enum CheckInLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckInLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1361,7 +1361,7 @@ impl CheckInLicenseError {
     /// Creates the `CheckInLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckInLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1370,7 +1370,7 @@ impl CheckInLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckInLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1456,7 +1456,7 @@ impl std::error::Error for CheckInLicenseError {
             CheckInLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CheckInLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
             CheckInLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckInLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1499,7 +1499,7 @@ pub enum CheckoutBorrowLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckoutBorrowLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1538,7 +1538,9 @@ impl CheckoutBorrowLicenseError {
     /// Creates the `CheckoutBorrowLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckoutBorrowLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1547,7 +1549,9 @@ impl CheckoutBorrowLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckoutBorrowLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1665,7 +1669,7 @@ impl std::error::Error for CheckoutBorrowLicenseError {
                 Some(_inner)
             }
             CheckoutBorrowLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1706,7 +1710,7 @@ pub enum CheckoutLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckoutLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1744,7 +1748,7 @@ impl CheckoutLicenseError {
     /// Creates the `CheckoutLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckoutLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1753,7 +1757,7 @@ impl CheckoutLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckoutLicenseErrorKind::Unhandled(err.into()),
+            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1857,7 +1861,7 @@ impl std::error::Error for CheckoutLicenseError {
                 Some(_inner)
             }
             CheckoutLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckoutLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1890,7 +1894,7 @@ pub enum CreateGrantErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1923,7 +1927,7 @@ impl CreateGrantError {
     /// Creates the `CreateGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGrantErrorKind::Unhandled(err.into()),
+            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1932,7 +1936,7 @@ impl CreateGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGrantErrorKind::Unhandled(err.into()),
+            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2004,7 +2008,7 @@ impl std::error::Error for CreateGrantError {
             CreateGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             CreateGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
             CreateGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2037,7 +2041,7 @@ pub enum CreateGrantVersionErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2070,7 +2074,7 @@ impl CreateGrantVersionError {
     /// Creates the `CreateGrantVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGrantVersionErrorKind::Unhandled(err.into()),
+            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2079,7 +2083,7 @@ impl CreateGrantVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGrantVersionErrorKind::Unhandled(err.into()),
+            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2163,7 +2167,7 @@ impl std::error::Error for CreateGrantVersionError {
             CreateGrantVersionErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             CreateGrantVersionErrorKind::ServerInternalException(_inner) => Some(_inner),
             CreateGrantVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGrantVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2196,7 +2200,7 @@ pub enum CreateLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,7 +2233,7 @@ impl CreateLicenseError {
     /// Creates the `CreateLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLicenseErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2238,7 +2242,7 @@ impl CreateLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLicenseErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2313,7 +2317,7 @@ impl std::error::Error for CreateLicenseError {
             CreateLicenseErrorKind::RedirectException(_inner) => Some(_inner),
             CreateLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
             CreateLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2344,7 +2348,7 @@ pub enum CreateLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2382,7 +2386,9 @@ impl CreateLicenseConfigurationError {
     /// Creates the `CreateLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2391,7 +2397,9 @@ impl CreateLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2471,7 +2479,7 @@ impl std::error::Error for CreateLicenseConfigurationError {
                 Some(_inner)
             }
             CreateLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2502,7 +2510,7 @@ pub enum CreateLicenseConversionTaskForResourceErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseConversionTaskForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,7 +2557,9 @@ impl CreateLicenseConversionTaskForResourceError {
     /// Creates the `CreateLicenseConversionTaskForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2558,7 +2568,9 @@ impl CreateLicenseConversionTaskForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2646,9 +2658,7 @@ impl std::error::Error for CreateLicenseConversionTaskForResourceError {
             CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2683,7 +2693,7 @@ pub enum CreateLicenseManagerReportGeneratorErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2736,7 +2746,9 @@ impl CreateLicenseManagerReportGeneratorError {
     /// Creates the `CreateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2745,7 +2757,9 @@ impl CreateLicenseManagerReportGeneratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2853,9 +2867,7 @@ impl std::error::Error for CreateLicenseManagerReportGeneratorError {
             CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2890,7 +2902,7 @@ pub enum CreateLicenseVersionErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2924,7 +2936,9 @@ impl CreateLicenseVersionError {
     /// Creates the `CreateLicenseVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLicenseVersionErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2933,7 +2947,9 @@ impl CreateLicenseVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLicenseVersionErrorKind::Unhandled(err.into()),
+            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3025,7 +3041,7 @@ impl std::error::Error for CreateLicenseVersionError {
             CreateLicenseVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateLicenseVersionErrorKind::ServerInternalException(_inner) => Some(_inner),
             CreateLicenseVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLicenseVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3060,7 +3076,7 @@ pub enum CreateTokenErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3094,7 +3110,7 @@ impl CreateTokenError {
     /// Creates the `CreateTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3103,7 +3119,7 @@ impl CreateTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3180,7 +3196,7 @@ impl std::error::Error for CreateTokenError {
             CreateTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
             CreateTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3213,7 +3229,7 @@ pub enum DeleteGrantErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3246,7 +3262,7 @@ impl DeleteGrantError {
     /// Creates the `DeleteGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGrantErrorKind::Unhandled(err.into()),
+            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3255,7 +3271,7 @@ impl DeleteGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGrantErrorKind::Unhandled(err.into()),
+            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3327,7 +3343,7 @@ impl std::error::Error for DeleteGrantError {
             DeleteGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             DeleteGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
             DeleteGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3362,7 +3378,7 @@ pub enum DeleteLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3396,7 +3412,7 @@ impl DeleteLicenseError {
     /// Creates the `DeleteLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLicenseErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3405,7 +3421,7 @@ impl DeleteLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLicenseErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3485,7 +3501,7 @@ impl std::error::Error for DeleteLicenseError {
             DeleteLicenseErrorKind::RedirectException(_inner) => Some(_inner),
             DeleteLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
             DeleteLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3514,7 +3530,7 @@ pub enum DeleteLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3549,7 +3565,9 @@ impl DeleteLicenseConfigurationError {
     /// Creates the `DeleteLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3558,7 +3576,9 @@ impl DeleteLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3628,7 +3648,7 @@ impl std::error::Error for DeleteLicenseConfigurationError {
             }
             DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             DeleteLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3663,7 +3683,7 @@ pub enum DeleteLicenseManagerReportGeneratorErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3716,7 +3736,9 @@ impl DeleteLicenseManagerReportGeneratorError {
     /// Creates the `DeleteLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3725,7 +3747,9 @@ impl DeleteLicenseManagerReportGeneratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3833,9 +3857,7 @@ impl std::error::Error for DeleteLicenseManagerReportGeneratorError {
             DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3868,7 +3890,7 @@ pub enum DeleteTokenErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3901,7 +3923,7 @@ impl DeleteTokenError {
     /// Creates the `DeleteTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTokenErrorKind::Unhandled(err.into()),
+            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3910,7 +3932,7 @@ impl DeleteTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTokenErrorKind::Unhandled(err.into()),
+            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3979,7 +4001,7 @@ impl std::error::Error for DeleteTokenError {
             DeleteTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
             DeleteTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4012,7 +4034,7 @@ pub enum ExtendLicenseConsumptionErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExtendLicenseConsumptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4047,7 +4069,9 @@ impl ExtendLicenseConsumptionError {
     /// Creates the `ExtendLicenseConsumptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExtendLicenseConsumptionErrorKind::Unhandled(err.into()),
+            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4056,7 +4080,9 @@ impl ExtendLicenseConsumptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExtendLicenseConsumptionErrorKind::Unhandled(err.into()),
+            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4142,7 +4168,7 @@ impl std::error::Error for ExtendLicenseConsumptionError {
             ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExtendLicenseConsumptionErrorKind::ServerInternalException(_inner) => Some(_inner),
             ExtendLicenseConsumptionErrorKind::ValidationException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4171,7 +4197,7 @@ pub enum GetAccessTokenErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccessTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4202,7 +4228,7 @@ impl GetAccessTokenError {
     /// Creates the `GetAccessTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccessTokenErrorKind::Unhandled(err.into()),
+            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4211,7 +4237,7 @@ impl GetAccessTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccessTokenErrorKind::Unhandled(err.into()),
+            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4276,7 +4302,7 @@ impl std::error::Error for GetAccessTokenError {
             GetAccessTokenErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetAccessTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetAccessTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccessTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4309,7 +4335,7 @@ pub enum GetGrantErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4342,7 +4368,7 @@ impl GetGrantError {
     /// Creates the `GetGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGrantErrorKind::Unhandled(err.into()),
+            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4351,7 +4377,7 @@ impl GetGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGrantErrorKind::Unhandled(err.into()),
+            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4420,7 +4446,7 @@ impl std::error::Error for GetGrantError {
             GetGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             GetGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            GetGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4451,7 +4477,7 @@ pub enum GetLicenseErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4483,7 +4509,7 @@ impl GetLicenseError {
     /// Creates the `GetLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLicenseErrorKind::Unhandled(err.into()),
+            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4492,7 +4518,7 @@ impl GetLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLicenseErrorKind::Unhandled(err.into()),
+            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4556,7 +4582,7 @@ impl std::error::Error for GetLicenseError {
             GetLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4585,7 +4611,7 @@ pub enum GetLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4618,7 +4644,9 @@ impl GetLicenseConfigurationError {
     /// Creates the `GetLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4627,7 +4655,9 @@ impl GetLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4697,7 +4727,7 @@ impl std::error::Error for GetLicenseConfigurationError {
             }
             GetLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4726,7 +4756,7 @@ pub enum GetLicenseConversionTaskErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseConversionTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4759,7 +4789,9 @@ impl GetLicenseConversionTaskError {
     /// Creates the `GetLicenseConversionTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLicenseConversionTaskErrorKind::Unhandled(err.into()),
+            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4768,7 +4800,9 @@ impl GetLicenseConversionTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLicenseConversionTaskErrorKind::Unhandled(err.into()),
+            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4838,7 +4872,7 @@ impl std::error::Error for GetLicenseConversionTaskError {
             }
             GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4873,7 +4907,7 @@ pub enum GetLicenseManagerReportGeneratorErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4924,7 +4958,9 @@ impl GetLicenseManagerReportGeneratorError {
     /// Creates the `GetLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4933,7 +4969,9 @@ impl GetLicenseManagerReportGeneratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5039,7 +5077,7 @@ impl std::error::Error for GetLicenseManagerReportGeneratorError {
                 Some(_inner)
             }
             GetLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5070,7 +5108,7 @@ pub enum GetLicenseUsageErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5102,7 +5140,7 @@ impl GetLicenseUsageError {
     /// Creates the `GetLicenseUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLicenseUsageErrorKind::Unhandled(err.into()),
+            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5111,7 +5149,7 @@ impl GetLicenseUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLicenseUsageErrorKind::Unhandled(err.into()),
+            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5184,7 +5222,7 @@ impl std::error::Error for GetLicenseUsageError {
             GetLicenseUsageErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetLicenseUsageErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetLicenseUsageErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLicenseUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5211,7 +5249,7 @@ pub enum GetServiceSettingsErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetServiceSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5241,7 +5279,7 @@ impl GetServiceSettingsError {
     /// Creates the `GetServiceSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetServiceSettingsErrorKind::Unhandled(err.into()),
+            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5250,7 +5288,7 @@ impl GetServiceSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetServiceSettingsErrorKind::Unhandled(err.into()),
+            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5310,7 +5348,7 @@ impl std::error::Error for GetServiceSettingsError {
             GetServiceSettingsErrorKind::AuthorizationException(_inner) => Some(_inner),
             GetServiceSettingsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             GetServiceSettingsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5341,7 +5379,7 @@ pub enum ListAssociationsForLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssociationsForLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5388,7 +5426,9 @@ impl ListAssociationsForLicenseConfigurationError {
     /// Creates the `ListAssociationsForLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5397,7 +5437,9 @@ impl ListAssociationsForLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5485,9 +5527,7 @@ impl std::error::Error for ListAssociationsForLicenseConfigurationError {
             ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
                 Some(_inner)
             }
-            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5520,7 +5560,7 @@ pub enum ListDistributedGrantsErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDistributedGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5553,7 +5593,9 @@ impl ListDistributedGrantsError {
     /// Creates the `ListDistributedGrantsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDistributedGrantsErrorKind::Unhandled(err.into()),
+            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5562,7 +5604,9 @@ impl ListDistributedGrantsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDistributedGrantsErrorKind::Unhandled(err.into()),
+            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5646,7 +5690,7 @@ impl std::error::Error for ListDistributedGrantsError {
             ListDistributedGrantsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             ListDistributedGrantsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListDistributedGrantsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDistributedGrantsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5675,7 +5719,7 @@ pub enum ListFailuresForLicenseConfigurationOperationsErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFailuresForLicenseConfigurationOperationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5723,7 +5767,9 @@ impl ListFailuresForLicenseConfigurationOperationsError {
     /// Creates the `ListFailuresForLicenseConfigurationOperationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(err.into()),
+            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5732,7 +5778,9 @@ impl ListFailuresForLicenseConfigurationOperationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(err.into()),
+            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5813,7 +5861,7 @@ impl std::error::Error for ListFailuresForLicenseConfigurationOperationsError {
             Some(_inner)
             ,
             ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -5845,7 +5893,7 @@ pub enum ListLicenseConfigurationsErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5881,7 +5929,9 @@ impl ListLicenseConfigurationsError {
     /// Creates the `ListLicenseConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicenseConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5890,7 +5940,9 @@ impl ListLicenseConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicenseConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5970,7 +6022,7 @@ impl std::error::Error for ListLicenseConfigurationsError {
             }
             ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5999,7 +6051,7 @@ pub enum ListLicenseConversionTasksErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseConversionTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6034,7 +6086,9 @@ impl ListLicenseConversionTasksError {
     /// Creates the `ListLicenseConversionTasksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicenseConversionTasksErrorKind::Unhandled(err.into()),
+            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6043,7 +6097,9 @@ impl ListLicenseConversionTasksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicenseConversionTasksErrorKind::Unhandled(err.into()),
+            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6113,7 +6169,7 @@ impl std::error::Error for ListLicenseConversionTasksError {
             }
             ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6148,7 +6204,7 @@ pub enum ListLicenseManagerReportGeneratorsErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseManagerReportGeneratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6201,7 +6257,9 @@ impl ListLicenseManagerReportGeneratorsError {
     /// Creates the `ListLicenseManagerReportGeneratorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6210,7 +6268,9 @@ impl ListLicenseManagerReportGeneratorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6318,7 +6378,7 @@ impl std::error::Error for ListLicenseManagerReportGeneratorsError {
             ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6349,7 +6409,7 @@ pub enum ListLicensesErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6381,7 +6441,7 @@ impl ListLicensesError {
     /// Creates the `ListLicensesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicensesErrorKind::Unhandled(err.into()),
+            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6390,7 +6450,7 @@ impl ListLicensesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicensesErrorKind::Unhandled(err.into()),
+            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6457,7 +6517,7 @@ impl std::error::Error for ListLicensesError {
             ListLicensesErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListLicensesErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListLicensesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLicensesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLicensesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6486,7 +6546,7 @@ pub enum ListLicenseSpecificationsForResourceErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseSpecificationsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6530,7 +6590,9 @@ impl ListLicenseSpecificationsForResourceError {
     /// Creates the `ListLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6539,7 +6601,9 @@ impl ListLicenseSpecificationsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6617,9 +6681,7 @@ impl std::error::Error for ListLicenseSpecificationsForResourceError {
             ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
                 Some(_inner)
             }
-            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6648,7 +6710,7 @@ pub enum ListLicenseVersionsErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6679,7 +6741,7 @@ impl ListLicenseVersionsError {
     /// Creates the `ListLicenseVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLicenseVersionsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6688,7 +6750,7 @@ impl ListLicenseVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLicenseVersionsErrorKind::Unhandled(err.into()),
+            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6756,7 +6818,7 @@ impl std::error::Error for ListLicenseVersionsError {
             ListLicenseVersionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListLicenseVersionsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListLicenseVersionsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLicenseVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6789,7 +6851,7 @@ pub enum ListReceivedGrantsErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6822,7 +6884,7 @@ impl ListReceivedGrantsError {
     /// Creates the `ListReceivedGrantsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReceivedGrantsErrorKind::Unhandled(err.into()),
+            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6831,7 +6893,7 @@ impl ListReceivedGrantsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReceivedGrantsErrorKind::Unhandled(err.into()),
+            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6915,7 +6977,7 @@ impl std::error::Error for ListReceivedGrantsError {
             ListReceivedGrantsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             ListReceivedGrantsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListReceivedGrantsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReceivedGrantsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6948,7 +7010,7 @@ pub enum ListReceivedLicensesErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedLicensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6981,7 +7043,9 @@ impl ListReceivedLicensesError {
     /// Creates the `ListReceivedLicensesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReceivedLicensesErrorKind::Unhandled(err.into()),
+            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6990,7 +7054,9 @@ impl ListReceivedLicensesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReceivedLicensesErrorKind::Unhandled(err.into()),
+            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7074,7 +7140,7 @@ impl std::error::Error for ListReceivedLicensesError {
             ListReceivedLicensesErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             ListReceivedLicensesErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListReceivedLicensesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReceivedLicensesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7107,7 +7173,7 @@ pub enum ListResourceInventoryErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceInventoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7140,7 +7206,9 @@ impl ListResourceInventoryError {
     /// Creates the `ListResourceInventoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourceInventoryErrorKind::Unhandled(err.into()),
+            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7149,7 +7217,9 @@ impl ListResourceInventoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourceInventoryErrorKind::Unhandled(err.into()),
+            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7233,7 +7303,7 @@ impl std::error::Error for ListResourceInventoryError {
             ListResourceInventoryErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListResourceInventoryErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListResourceInventoryErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourceInventoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7262,7 +7332,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7293,7 +7363,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7302,7 +7372,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7370,7 +7440,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7399,7 +7469,7 @@ pub enum ListTokensErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTokensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7430,7 +7500,7 @@ impl ListTokensError {
     /// Creates the `ListTokensError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTokensErrorKind::Unhandled(err.into()),
+            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7439,7 +7509,7 @@ impl ListTokensError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTokensErrorKind::Unhandled(err.into()),
+            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7495,7 +7565,7 @@ impl std::error::Error for ListTokensError {
             ListTokensErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             ListTokensErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListTokensErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTokensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTokensErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7526,7 +7596,7 @@ pub enum ListUsageForLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUsageForLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7573,7 +7643,9 @@ impl ListUsageForLicenseConfigurationError {
     /// Creates the `ListUsageForLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7582,7 +7654,9 @@ impl ListUsageForLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7670,7 +7744,7 @@ impl std::error::Error for ListUsageForLicenseConfigurationError {
             ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
                 Some(_inner)
             }
-            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7703,7 +7777,7 @@ pub enum RejectGrantErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7736,7 +7810,7 @@ impl RejectGrantError {
     /// Creates the `RejectGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectGrantErrorKind::Unhandled(err.into()),
+            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7745,7 +7819,7 @@ impl RejectGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectGrantErrorKind::Unhandled(err.into()),
+            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7817,7 +7891,7 @@ impl std::error::Error for RejectGrantError {
             RejectGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             RejectGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
             RejectGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            RejectGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RejectGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7846,7 +7920,7 @@ pub enum TagResourceErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7877,7 +7951,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7886,7 +7960,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7945,7 +8019,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             TagResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7974,7 +8048,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8005,7 +8079,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8014,7 +8088,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8079,7 +8153,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UntagResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8110,7 +8184,7 @@ pub enum UpdateLicenseConfigurationErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8148,7 +8222,9 @@ impl UpdateLicenseConfigurationError {
     /// Creates the `UpdateLicenseConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8157,7 +8233,9 @@ impl UpdateLicenseConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLicenseConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8237,7 +8315,7 @@ impl std::error::Error for UpdateLicenseConfigurationError {
                 Some(_inner)
             }
             UpdateLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8272,7 +8350,7 @@ pub enum UpdateLicenseManagerReportGeneratorErrorKind {
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8325,7 +8403,9 @@ impl UpdateLicenseManagerReportGeneratorError {
     /// Creates the `UpdateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8334,7 +8414,9 @@ impl UpdateLicenseManagerReportGeneratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8442,9 +8524,7 @@ impl std::error::Error for UpdateLicenseManagerReportGeneratorError {
             UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8478,7 +8558,7 @@ pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseSpecificationsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8528,7 +8608,9 @@ impl UpdateLicenseSpecificationsForResourceError {
     /// Creates the `UpdateLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8537,7 +8619,9 @@ impl UpdateLicenseSpecificationsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(err.into()),
+            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8635,9 +8719,7 @@ impl std::error::Error for UpdateLicenseSpecificationsForResourceError {
             UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
                 Some(_inner)
             }
-            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8666,7 +8748,7 @@ pub enum UpdateServiceSettingsErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateServiceSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8697,7 +8779,9 @@ impl UpdateServiceSettingsError {
     /// Creates the `UpdateServiceSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateServiceSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8706,7 +8790,9 @@ impl UpdateServiceSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateServiceSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8774,7 +8860,32 @@ impl std::error::Error for UpdateServiceSettingsError {
             UpdateServiceSettingsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UpdateServiceSettingsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
             UpdateServiceSettingsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

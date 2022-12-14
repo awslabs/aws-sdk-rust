@@ -349,7 +349,7 @@ pub enum ListRealtimeContactAnalysisSegmentsErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRealtimeContactAnalysisSegmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -393,7 +393,9 @@ impl ListRealtimeContactAnalysisSegmentsError {
     /// Creates the `ListRealtimeContactAnalysisSegmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(err.into()),
+            kind: ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -402,7 +404,9 @@ impl ListRealtimeContactAnalysisSegmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(err.into()),
+            kind: ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -480,9 +484,32 @@ impl std::error::Error for ListRealtimeContactAnalysisSegmentsError {
             ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

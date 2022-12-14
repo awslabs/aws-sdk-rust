@@ -1125,7 +1125,7 @@ pub enum CreateParallelDataErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1159,7 +1159,7 @@ impl CreateParallelDataError {
     /// Creates the `CreateParallelDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateParallelDataErrorKind::Unhandled(err.into()),
+            kind: CreateParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1168,7 +1168,7 @@ impl CreateParallelDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateParallelDataErrorKind::Unhandled(err.into()),
+            kind: CreateParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1260,7 +1260,7 @@ impl std::error::Error for CreateParallelDataError {
             CreateParallelDataErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateParallelDataErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateParallelDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1287,7 +1287,7 @@ pub enum DeleteParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1317,7 +1317,7 @@ impl DeleteParallelDataError {
     /// Creates the `DeleteParallelDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteParallelDataErrorKind::Unhandled(err.into()),
+            kind: DeleteParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1326,7 +1326,7 @@ impl DeleteParallelDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteParallelDataErrorKind::Unhandled(err.into()),
+            kind: DeleteParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1386,7 +1386,7 @@ impl std::error::Error for DeleteParallelDataError {
             DeleteParallelDataErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteParallelDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteParallelDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1413,7 +1413,7 @@ pub enum DeleteTerminologyErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTerminologyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1443,7 +1443,7 @@ impl DeleteTerminologyError {
     /// Creates the `DeleteTerminologyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTerminologyErrorKind::Unhandled(err.into()),
+            kind: DeleteTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1452,7 +1452,7 @@ impl DeleteTerminologyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTerminologyErrorKind::Unhandled(err.into()),
+            kind: DeleteTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1512,7 +1512,7 @@ impl std::error::Error for DeleteTerminologyError {
             DeleteTerminologyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteTerminologyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTerminologyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteTerminologyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTerminologyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1537,7 +1537,7 @@ pub enum DescribeTextTranslationJobErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTextTranslationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1566,7 +1566,9 @@ impl DescribeTextTranslationJobError {
     /// Creates the `DescribeTextTranslationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1575,7 +1577,9 @@ impl DescribeTextTranslationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1627,7 +1631,7 @@ impl std::error::Error for DescribeTextTranslationJobError {
             DescribeTextTranslationJobErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeTextTranslationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTextTranslationJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1654,7 +1658,7 @@ pub enum GetParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1684,7 +1688,7 @@ impl GetParallelDataError {
     /// Creates the `GetParallelDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetParallelDataErrorKind::Unhandled(err.into()),
+            kind: GetParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1693,7 +1697,7 @@ impl GetParallelDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetParallelDataErrorKind::Unhandled(err.into()),
+            kind: GetParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1753,7 +1757,7 @@ impl std::error::Error for GetParallelDataError {
             GetParallelDataErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             GetParallelDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetParallelDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1780,7 +1784,7 @@ pub enum GetTerminologyErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTerminologyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1810,7 +1814,7 @@ impl GetTerminologyError {
     /// Creates the `GetTerminologyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTerminologyErrorKind::Unhandled(err.into()),
+            kind: GetTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1819,7 +1823,7 @@ impl GetTerminologyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTerminologyErrorKind::Unhandled(err.into()),
+            kind: GetTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1879,7 +1883,7 @@ impl std::error::Error for GetTerminologyError {
             GetTerminologyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             GetTerminologyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetTerminologyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetTerminologyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTerminologyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1910,7 +1914,7 @@ pub enum ImportTerminologyErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportTerminologyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1942,7 +1946,7 @@ impl ImportTerminologyError {
     /// Creates the `ImportTerminologyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportTerminologyErrorKind::Unhandled(err.into()),
+            kind: ImportTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1951,7 +1955,7 @@ impl ImportTerminologyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportTerminologyErrorKind::Unhandled(err.into()),
+            kind: ImportTerminologyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2027,7 +2031,7 @@ impl std::error::Error for ImportTerminologyError {
             ImportTerminologyErrorKind::LimitExceededException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportTerminologyErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            ImportTerminologyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportTerminologyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2054,7 +2058,7 @@ pub enum ListLanguagesErrorKind {
     /// <p>Requested display language code is not supported.</p>
     UnsupportedDisplayLanguageCodeException(crate::error::UnsupportedDisplayLanguageCodeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLanguagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2086,7 +2090,7 @@ impl ListLanguagesError {
     /// Creates the `ListLanguagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLanguagesErrorKind::Unhandled(err.into()),
+            kind: ListLanguagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2095,7 +2099,7 @@ impl ListLanguagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLanguagesErrorKind::Unhandled(err.into()),
+            kind: ListLanguagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2155,7 +2159,7 @@ impl std::error::Error for ListLanguagesError {
             ListLanguagesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListLanguagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(_inner) => Some(_inner),
-            ListLanguagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLanguagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2180,7 +2184,7 @@ pub enum ListParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2209,7 +2213,7 @@ impl ListParallelDataError {
     /// Creates the `ListParallelDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListParallelDataErrorKind::Unhandled(err.into()),
+            kind: ListParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2218,7 +2222,7 @@ impl ListParallelDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListParallelDataErrorKind::Unhandled(err.into()),
+            kind: ListParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2270,7 +2274,7 @@ impl std::error::Error for ListParallelDataError {
             ListParallelDataErrorKind::InternalServerException(_inner) => Some(_inner),
             ListParallelDataErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListParallelDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2295,7 +2299,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2324,7 +2328,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2333,7 +2337,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2385,7 +2389,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2410,7 +2414,7 @@ pub enum ListTerminologiesErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTerminologiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2439,7 +2443,7 @@ impl ListTerminologiesError {
     /// Creates the `ListTerminologiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTerminologiesErrorKind::Unhandled(err.into()),
+            kind: ListTerminologiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2448,7 +2452,7 @@ impl ListTerminologiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTerminologiesErrorKind::Unhandled(err.into()),
+            kind: ListTerminologiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2500,7 +2504,7 @@ impl std::error::Error for ListTerminologiesError {
             ListTerminologiesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTerminologiesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTerminologiesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTerminologiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTerminologiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2527,7 +2531,7 @@ pub enum ListTextTranslationJobsErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTextTranslationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2557,7 +2561,9 @@ impl ListTextTranslationJobsError {
     /// Creates the `ListTextTranslationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTextTranslationJobsErrorKind::Unhandled(err.into()),
+            kind: ListTextTranslationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2566,7 +2572,9 @@ impl ListTextTranslationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTextTranslationJobsErrorKind::Unhandled(err.into()),
+            kind: ListTextTranslationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2626,7 +2634,7 @@ impl std::error::Error for ListTextTranslationJobsError {
             ListTextTranslationJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListTextTranslationJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTextTranslationJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTextTranslationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTextTranslationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2657,7 +2665,7 @@ pub enum StartTextTranslationJobErrorKind {
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTextTranslationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2693,7 +2701,9 @@ impl StartTextTranslationJobError {
     /// Creates the `StartTextTranslationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: StartTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2702,7 +2712,9 @@ impl StartTextTranslationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: StartTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2782,7 +2794,7 @@ impl std::error::Error for StartTextTranslationJobError {
             StartTextTranslationJobErrorKind::UnsupportedLanguagePairException(_inner) => {
                 Some(_inner)
             }
-            StartTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2807,7 +2819,7 @@ pub enum StopTextTranslationJobErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopTextTranslationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2836,7 +2848,9 @@ impl StopTextTranslationJobError {
     /// Creates the `StopTextTranslationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: StopTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2845,7 +2859,9 @@ impl StopTextTranslationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopTextTranslationJobErrorKind::Unhandled(err.into()),
+            kind: StopTextTranslationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2897,7 +2913,7 @@ impl std::error::Error for StopTextTranslationJobError {
             StopTextTranslationJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopTextTranslationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopTextTranslationJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            StopTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopTextTranslationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2926,7 +2942,7 @@ pub enum TagResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2957,7 +2973,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2966,7 +2982,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3028,7 +3044,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3063,7 +3079,7 @@ pub enum TranslateTextErrorKind {
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TranslateTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3097,7 +3113,7 @@ impl TranslateTextError {
     /// Creates the `TranslateTextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TranslateTextErrorKind::Unhandled(err.into()),
+            kind: TranslateTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3106,7 +3122,7 @@ impl TranslateTextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TranslateTextErrorKind::Unhandled(err.into()),
+            kind: TranslateTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3198,7 +3214,7 @@ impl std::error::Error for TranslateTextError {
             TranslateTextErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             TranslateTextErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TranslateTextErrorKind::UnsupportedLanguagePairException(_inner) => Some(_inner),
-            TranslateTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TranslateTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3225,7 +3241,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3255,7 +3271,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3264,7 +3280,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3324,7 +3340,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3359,7 +3375,7 @@ pub enum UpdateParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateParallelDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3393,7 +3409,7 @@ impl UpdateParallelDataError {
     /// Creates the `UpdateParallelDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateParallelDataErrorKind::Unhandled(err.into()),
+            kind: UpdateParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3402,7 +3418,7 @@ impl UpdateParallelDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateParallelDataErrorKind::Unhandled(err.into()),
+            kind: UpdateParallelDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3494,7 +3510,32 @@ impl std::error::Error for UpdateParallelDataError {
             UpdateParallelDataErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateParallelDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateParallelDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateParallelDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateParallelDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -65,10 +65,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AssociateAccountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -104,10 +104,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AssociatePricingRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -136,9 +136,9 @@ where
                 crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
                 crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchAssociateResourcesToCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,9 +166,9 @@ where
                 crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDisassociateResourcesFromCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -200,10 +200,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateBillingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -236,10 +236,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateCustomLineItemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -274,10 +274,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreatePricingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -309,10 +309,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreatePricingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -338,10 +338,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteBillingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -371,10 +371,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteCustomLineItemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -403,10 +403,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeletePricingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -435,10 +435,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeletePricingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -471,10 +471,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociateAccountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -507,10 +507,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociatePricingRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -540,10 +540,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListAccountAssociationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -573,10 +573,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListBillingGroupCostReportsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -605,10 +605,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListBillingGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -637,10 +637,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListCustomLineItemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -666,10 +666,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPricingPlansErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -696,9 +696,9 @@ where
                 crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPricingPlansAssociatedWithPricingRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -724,10 +724,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPricingRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,9 +754,9 @@ where
                 crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPricingRulesAssociatedToPricingPlanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -783,9 +783,9 @@ where
                 crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResourcesAssociatedToCustomLineItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -814,10 +814,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -843,9 +843,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -871,9 +873,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -905,10 +909,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateBillingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -938,10 +942,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateCustomLineItemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -973,10 +977,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePricingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1008,10 +1012,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePricingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

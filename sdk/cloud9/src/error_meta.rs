@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -69,10 +69,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateEnvironmentEC2ErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -93,9 +93,9 @@ where
                 crate::error::CreateEnvironmentMembershipErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateEnvironmentMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::CreateEnvironmentMembershipErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::CreateEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -130,10 +130,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteEnvironmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -154,9 +154,9 @@ where
                 crate::error::DeleteEnvironmentMembershipErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DeleteEnvironmentMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -181,9 +181,9 @@ where
                 crate::error::DescribeEnvironmentMembershipsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DescribeEnvironmentMembershipsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeEnvironmentMembershipsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEnvironmentMembershipsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -219,10 +219,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeEnvironmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -258,10 +258,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeEnvironmentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +296,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEnvironmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,10 +322,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -348,9 +348,11 @@ where
                 crate::error::TagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -373,9 +375,11 @@ where
                 crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -410,10 +414,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateEnvironmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -434,9 +438,9 @@ where
                 crate::error::UpdateEnvironmentMembershipErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UpdateEnvironmentMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::UpdateEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateEnvironmentMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -10,7 +10,7 @@ pub enum Error {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,9 +41,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-                crate::error::DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -64,10 +64,10 @@ where
                     Error::UnsupportedLocale(inner)
                 }
                 crate::error::DescribeAffectedEntitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -91,9 +91,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
                 crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-                crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -108,10 +108,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEntityAggregatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -129,10 +129,10 @@ where
                     Error::InvalidPaginationToken(inner)
                 }
                 crate::error::DescribeEventAggregatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,10 +150,10 @@ where
                     Error::UnsupportedLocale(inner)
                 }
                 crate::error::DescribeEventDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,10 +179,10 @@ where
                     inner,
                 ) => Error::UnsupportedLocale(inner),
                 crate::error::DescribeEventDetailsForOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,9 +199,11 @@ where
                 crate::error::DescribeEventsErrorKind::UnsupportedLocale(inner) => {
                     Error::UnsupportedLocale(inner)
                 }
-                crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -222,10 +224,10 @@ where
                     Error::UnsupportedLocale(inner)
                 }
                 crate::error::DescribeEventsForOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -245,10 +247,10 @@ where
                     Error::UnsupportedLocale(inner)
                 }
                 crate::error::DescribeEventTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,9 +274,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
                     inner,
-                ) => Error::Unhandled(inner),
+                ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -297,9 +299,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,9 +324,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

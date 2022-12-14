@@ -34,7 +34,7 @@ pub enum Error {
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -92,10 +92,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateParallelDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -121,10 +121,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteParallelDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,10 +150,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteTerminologyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -177,10 +177,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeTextTranslationJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -203,9 +203,11 @@ where
                 crate::error::GetParallelDataErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetParallelDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetParallelDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -228,9 +230,11 @@ where
                 crate::error::GetTerminologyErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetTerminologyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTerminologyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -262,10 +266,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::ImportTerminologyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -288,9 +292,11 @@ where
                 crate::error::ListLanguagesErrorKind::UnsupportedDisplayLanguageCodeException(
                     inner,
                 ) => Error::UnsupportedDisplayLanguageCodeException(inner),
-                crate::error::ListLanguagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLanguagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -313,10 +319,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListParallelDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -339,10 +345,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,10 +371,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTerminologiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -395,10 +401,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTextTranslationJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -418,9 +424,9 @@ where
                 crate::error::StartTextTranslationJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartTextTranslationJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::StartTextTranslationJobErrorKind::UnsupportedLanguagePairException(inner) => Error::UnsupportedLanguagePairException(inner),
-                crate::error::StartTextTranslationJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartTextTranslationJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -444,10 +450,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::StopTextTranslationJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -473,9 +479,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -510,9 +518,11 @@ where
                 crate::error::TranslateTextErrorKind::UnsupportedLanguagePairException(inner) => {
                     Error::UnsupportedLanguagePairException(inner)
                 }
-                crate::error::TranslateTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TranslateTextErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -535,9 +545,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,10 +587,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateParallelDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

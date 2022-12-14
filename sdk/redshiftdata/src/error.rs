@@ -541,7 +541,7 @@ pub enum BatchExecuteStatementErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -572,7 +572,9 @@ impl BatchExecuteStatementError {
     /// Creates the `BatchExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -581,7 +583,9 @@ impl BatchExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -635,7 +639,7 @@ impl std::error::Error for BatchExecuteStatementError {
             }
             BatchExecuteStatementErrorKind::BatchExecuteStatementException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::ValidationException(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -662,7 +666,7 @@ pub enum CancelStatementErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -692,7 +696,7 @@ impl CancelStatementError {
     /// Creates the `CancelStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelStatementErrorKind::Unhandled(err.into()),
+            kind: CancelStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -701,7 +705,7 @@ impl CancelStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelStatementErrorKind::Unhandled(err.into()),
+            kind: CancelStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -758,7 +762,7 @@ impl std::error::Error for CancelStatementError {
             CancelStatementErrorKind::InternalServerException(_inner) => Some(_inner),
             CancelStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelStatementErrorKind::ValidationException(_inner) => Some(_inner),
-            CancelStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -783,7 +787,7 @@ pub enum DescribeStatementErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -812,7 +816,7 @@ impl DescribeStatementError {
     /// Creates the `DescribeStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStatementErrorKind::Unhandled(err.into()),
+            kind: DescribeStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -821,7 +825,7 @@ impl DescribeStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStatementErrorKind::Unhandled(err.into()),
+            kind: DescribeStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -873,7 +877,7 @@ impl std::error::Error for DescribeStatementError {
             DescribeStatementErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeStatementErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -898,7 +902,7 @@ pub enum DescribeTableErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,7 +931,7 @@ impl DescribeTableError {
     /// Creates the `DescribeTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTableErrorKind::Unhandled(err.into()),
+            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -936,7 +940,7 @@ impl DescribeTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTableErrorKind::Unhandled(err.into()),
+            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -985,7 +989,7 @@ impl std::error::Error for DescribeTableError {
             DescribeTableErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             DescribeTableErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeTableErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1010,7 +1014,7 @@ pub enum ExecuteStatementErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1039,7 +1043,7 @@ impl ExecuteStatementError {
     /// Creates the `ExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1048,7 +1052,7 @@ impl ExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1100,7 +1104,7 @@ impl std::error::Error for ExecuteStatementError {
             ExecuteStatementErrorKind::ActiveStatementsExceededException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ExecuteStatementException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ValidationException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1125,7 +1129,7 @@ pub enum GetStatementResultErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetStatementResultError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1154,7 +1158,7 @@ impl GetStatementResultError {
     /// Creates the `GetStatementResultError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetStatementResultErrorKind::Unhandled(err.into()),
+            kind: GetStatementResultErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1163,7 +1167,7 @@ impl GetStatementResultError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetStatementResultErrorKind::Unhandled(err.into()),
+            kind: GetStatementResultErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1215,7 +1219,7 @@ impl std::error::Error for GetStatementResultError {
             GetStatementResultErrorKind::InternalServerException(_inner) => Some(_inner),
             GetStatementResultErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetStatementResultErrorKind::ValidationException(_inner) => Some(_inner),
-            GetStatementResultErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetStatementResultErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1240,7 +1244,7 @@ pub enum ListDatabasesErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDatabasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1269,7 +1273,7 @@ impl ListDatabasesError {
     /// Creates the `ListDatabasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDatabasesErrorKind::Unhandled(err.into()),
+            kind: ListDatabasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1278,7 +1282,7 @@ impl ListDatabasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDatabasesErrorKind::Unhandled(err.into()),
+            kind: ListDatabasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1327,7 +1331,7 @@ impl std::error::Error for ListDatabasesError {
             ListDatabasesErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListDatabasesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListDatabasesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDatabasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDatabasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1352,7 +1356,7 @@ pub enum ListSchemasErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSchemasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1381,7 +1385,7 @@ impl ListSchemasError {
     /// Creates the `ListSchemasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSchemasErrorKind::Unhandled(err.into()),
+            kind: ListSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1390,7 +1394,7 @@ impl ListSchemasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSchemasErrorKind::Unhandled(err.into()),
+            kind: ListSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1436,7 +1440,7 @@ impl std::error::Error for ListSchemasError {
             ListSchemasErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListSchemasErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSchemasErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSchemasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSchemasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1459,7 +1463,7 @@ pub enum ListStatementsErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStatementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1487,7 +1491,7 @@ impl ListStatementsError {
     /// Creates the `ListStatementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListStatementsErrorKind::Unhandled(err.into()),
+            kind: ListStatementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1496,7 +1500,7 @@ impl ListStatementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListStatementsErrorKind::Unhandled(err.into()),
+            kind: ListStatementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1537,7 +1541,7 @@ impl std::error::Error for ListStatementsError {
         match &self.kind {
             ListStatementsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListStatementsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListStatementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListStatementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1562,7 +1566,7 @@ pub enum ListTablesErrorKind {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1591,7 +1595,7 @@ impl ListTablesError {
     /// Creates the `ListTablesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1600,7 +1604,7 @@ impl ListTablesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1646,7 +1650,32 @@ impl std::error::Error for ListTablesError {
             ListTablesErrorKind::DatabaseConnectionException(_inner) => Some(_inner),
             ListTablesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTablesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTablesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

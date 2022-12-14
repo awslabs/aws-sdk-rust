@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54,9 +54,9 @@ where
                 crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -81,9 +81,9 @@ where
                 crate::error::CreateMediaConcatenationPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateMediaConcatenationPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::CreateMediaConcatenationPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::CreateMediaConcatenationPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMediaConcatenationPipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -108,9 +108,9 @@ where
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::CreateMediaLiveConnectorPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMediaLiveConnectorPipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,10 +146,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -184,10 +184,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::DeleteMediaPipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -223,10 +223,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -261,10 +261,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::GetMediaPipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -285,9 +285,9 @@ where
                 crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,10 +322,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::ListMediaPipelinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -360,10 +360,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -395,9 +395,11 @@ where
                 crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
                     Error::UnauthorizedClientException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -429,9 +431,11 @@ where
                 crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
                     Error::UnauthorizedClientException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

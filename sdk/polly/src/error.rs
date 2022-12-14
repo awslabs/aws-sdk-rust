@@ -1385,7 +1385,7 @@ pub enum DeleteLexiconErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1413,7 +1413,7 @@ impl DeleteLexiconError {
     /// Creates the `DeleteLexiconError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLexiconErrorKind::Unhandled(err.into()),
+            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1422,7 +1422,7 @@ impl DeleteLexiconError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLexiconErrorKind::Unhandled(err.into()),
+            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1466,7 +1466,7 @@ impl std::error::Error for DeleteLexiconError {
         match &self.kind {
             DeleteLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
             DeleteLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLexiconErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1489,7 +1489,7 @@ pub enum DescribeVoicesErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVoicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1517,7 +1517,7 @@ impl DescribeVoicesError {
     /// Creates the `DescribeVoicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVoicesErrorKind::Unhandled(err.into()),
+            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1526,7 +1526,7 @@ impl DescribeVoicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVoicesErrorKind::Unhandled(err.into()),
+            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1570,7 +1570,7 @@ impl std::error::Error for DescribeVoicesError {
         match &self.kind {
             DescribeVoicesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             DescribeVoicesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DescribeVoicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVoicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1594,7 +1594,7 @@ pub enum GetLexiconErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1622,7 +1622,7 @@ impl GetLexiconError {
     /// Creates the `GetLexiconError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLexiconErrorKind::Unhandled(err.into()),
+            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1631,7 +1631,7 @@ impl GetLexiconError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLexiconErrorKind::Unhandled(err.into()),
+            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1669,7 +1669,7 @@ impl std::error::Error for GetLexiconError {
         match &self.kind {
             GetLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
             GetLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLexiconErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1694,7 +1694,7 @@ pub enum GetSpeechSynthesisTaskErrorKind {
     /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
     SynthesisTaskNotFoundException(crate::error::SynthesisTaskNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1725,7 +1725,9 @@ impl GetSpeechSynthesisTaskError {
     /// Creates the `GetSpeechSynthesisTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(err.into()),
+            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1734,7 +1736,9 @@ impl GetSpeechSynthesisTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(err.into()),
+            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1786,7 +1790,7 @@ impl std::error::Error for GetSpeechSynthesisTaskError {
             GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) => Some(_inner),
             GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => Some(_inner),
             GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1809,7 +1813,7 @@ pub enum ListLexiconsErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLexiconsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1837,7 +1841,7 @@ impl ListLexiconsError {
     /// Creates the `ListLexiconsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLexiconsErrorKind::Unhandled(err.into()),
+            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1846,7 +1850,7 @@ impl ListLexiconsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLexiconsErrorKind::Unhandled(err.into()),
+            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1890,7 +1894,7 @@ impl std::error::Error for ListLexiconsError {
         match &self.kind {
             ListLexiconsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListLexiconsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListLexiconsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLexiconsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1913,7 +1917,7 @@ pub enum ListSpeechSynthesisTasksErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSpeechSynthesisTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,7 +1945,9 @@ impl ListSpeechSynthesisTasksError {
     /// Creates the `ListSpeechSynthesisTasksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(err.into()),
+            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1950,7 +1956,9 @@ impl ListSpeechSynthesisTasksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(err.into()),
+            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1994,7 +2002,7 @@ impl std::error::Error for ListSpeechSynthesisTasksError {
         match &self.kind {
             ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2027,7 +2035,7 @@ pub enum PutLexiconErrorKind {
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2060,7 +2068,7 @@ impl PutLexiconError {
     /// Creates the `PutLexiconError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutLexiconErrorKind::Unhandled(err.into()),
+            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2069,7 +2077,7 @@ impl PutLexiconError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutLexiconErrorKind::Unhandled(err.into()),
+            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2147,7 +2155,7 @@ impl std::error::Error for PutLexiconError {
             PutLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
             PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) => Some(_inner),
             PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) => Some(_inner),
-            PutLexiconErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutLexiconErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2193,7 +2201,7 @@ pub enum StartSpeechSynthesisTaskErrorKind {
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2237,7 +2245,9 @@ impl StartSpeechSynthesisTaskError {
     /// Creates the `StartSpeechSynthesisTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(err.into()),
+            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2246,7 +2256,9 @@ impl StartSpeechSynthesisTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(err.into()),
+            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2376,7 +2388,7 @@ impl std::error::Error for StartSpeechSynthesisTaskError {
                 _inner,
             ) => Some(_inner),
             StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2416,7 +2428,7 @@ pub enum SynthesizeSpeechErrorKind {
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SynthesizeSpeechError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2453,7 +2465,7 @@ impl SynthesizeSpeechError {
     /// Creates the `SynthesizeSpeechError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SynthesizeSpeechErrorKind::Unhandled(err.into()),
+            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2462,7 +2474,7 @@ impl SynthesizeSpeechError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SynthesizeSpeechErrorKind::Unhandled(err.into()),
+            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2564,7 +2576,32 @@ impl std::error::Error for SynthesizeSpeechError {
                 Some(_inner)
             }
             SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SynthesizeSpeechErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -544,7 +544,7 @@ pub enum AssociateGatewayToServerErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateGatewayToServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -574,7 +574,9 @@ impl AssociateGatewayToServerError {
     /// Creates the `AssociateGatewayToServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateGatewayToServerErrorKind::Unhandled(err.into()),
+            kind: AssociateGatewayToServerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -583,7 +585,9 @@ impl AssociateGatewayToServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateGatewayToServerErrorKind::Unhandled(err.into()),
+            kind: AssociateGatewayToServerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -643,7 +647,7 @@ impl std::error::Error for AssociateGatewayToServerError {
             AssociateGatewayToServerErrorKind::InternalServerException(_inner) => Some(_inner),
             AssociateGatewayToServerErrorKind::ValidationException(_inner) => Some(_inner),
             AssociateGatewayToServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AssociateGatewayToServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateGatewayToServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -668,7 +672,7 @@ pub enum CreateGatewayErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -697,7 +701,7 @@ impl CreateGatewayError {
     /// Creates the `CreateGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -706,7 +710,7 @@ impl CreateGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -752,7 +756,7 @@ impl std::error::Error for CreateGatewayError {
             CreateGatewayErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateGatewayErrorKind::ValidationException(_inner) => Some(_inner),
             CreateGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -779,7 +783,7 @@ pub enum DeleteGatewayErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -809,7 +813,7 @@ impl DeleteGatewayError {
     /// Creates the `DeleteGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -818,7 +822,7 @@ impl DeleteGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -872,7 +876,7 @@ impl std::error::Error for DeleteGatewayError {
             DeleteGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGatewayErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -901,7 +905,7 @@ pub enum DeleteHypervisorErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHypervisorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -932,7 +936,7 @@ impl DeleteHypervisorError {
     /// Creates the `DeleteHypervisorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHypervisorErrorKind::Unhandled(err.into()),
+            kind: DeleteHypervisorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -941,7 +945,7 @@ impl DeleteHypervisorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHypervisorErrorKind::Unhandled(err.into()),
+            kind: DeleteHypervisorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1009,7 +1013,7 @@ impl std::error::Error for DeleteHypervisorError {
             DeleteHypervisorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteHypervisorErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteHypervisorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteHypervisorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHypervisorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1038,7 +1042,7 @@ pub enum DisassociateGatewayFromServerErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateGatewayFromServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1076,7 +1080,9 @@ impl DisassociateGatewayFromServerError {
     /// Creates the `DisassociateGatewayFromServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateGatewayFromServerErrorKind::Unhandled(err.into()),
+            kind: DisassociateGatewayFromServerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1085,7 +1091,9 @@ impl DisassociateGatewayFromServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateGatewayFromServerErrorKind::Unhandled(err.into()),
+            kind: DisassociateGatewayFromServerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1155,7 +1163,7 @@ impl std::error::Error for DisassociateGatewayFromServerError {
             }
             DisassociateGatewayFromServerErrorKind::ValidationException(_inner) => Some(_inner),
             DisassociateGatewayFromServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DisassociateGatewayFromServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateGatewayFromServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1182,7 +1190,7 @@ pub enum GetGatewayErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1212,7 +1220,7 @@ impl GetGatewayError {
     /// Creates the `GetGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGatewayErrorKind::Unhandled(err.into()),
+            kind: GetGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1221,7 +1229,7 @@ impl GetGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGatewayErrorKind::Unhandled(err.into()),
+            kind: GetGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1272,7 +1280,7 @@ impl std::error::Error for GetGatewayError {
             GetGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetGatewayErrorKind::ValidationException(_inner) => Some(_inner),
             GetGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1299,7 +1307,7 @@ pub enum GetVirtualMachineErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVirtualMachineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1329,7 +1337,7 @@ impl GetVirtualMachineError {
     /// Creates the `GetVirtualMachineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetVirtualMachineErrorKind::Unhandled(err.into()),
+            kind: GetVirtualMachineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1338,7 +1346,7 @@ impl GetVirtualMachineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetVirtualMachineErrorKind::Unhandled(err.into()),
+            kind: GetVirtualMachineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1398,7 +1406,7 @@ impl std::error::Error for GetVirtualMachineError {
             GetVirtualMachineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetVirtualMachineErrorKind::ValidationException(_inner) => Some(_inner),
             GetVirtualMachineErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetVirtualMachineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetVirtualMachineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1425,7 +1433,7 @@ pub enum ImportHypervisorConfigurationErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportHypervisorConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1460,7 +1468,9 @@ impl ImportHypervisorConfigurationError {
     /// Creates the `ImportHypervisorConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportHypervisorConfigurationErrorKind::Unhandled(err.into()),
+            kind: ImportHypervisorConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1469,7 +1479,9 @@ impl ImportHypervisorConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportHypervisorConfigurationErrorKind::Unhandled(err.into()),
+            kind: ImportHypervisorConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1529,7 +1541,7 @@ impl std::error::Error for ImportHypervisorConfigurationError {
             ImportHypervisorConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
             ImportHypervisorConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
             ImportHypervisorConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ImportHypervisorConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportHypervisorConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1554,7 +1566,7 @@ pub enum ListGatewaysErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1583,7 +1595,7 @@ impl ListGatewaysError {
     /// Creates the `ListGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1592,7 +1604,7 @@ impl ListGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1638,7 +1650,7 @@ impl std::error::Error for ListGatewaysError {
             ListGatewaysErrorKind::InternalServerException(_inner) => Some(_inner),
             ListGatewaysErrorKind::ValidationException(_inner) => Some(_inner),
             ListGatewaysErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1663,7 +1675,7 @@ pub enum ListHypervisorsErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHypervisorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1692,7 +1704,7 @@ impl ListHypervisorsError {
     /// Creates the `ListHypervisorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHypervisorsErrorKind::Unhandled(err.into()),
+            kind: ListHypervisorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1701,7 +1713,7 @@ impl ListHypervisorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHypervisorsErrorKind::Unhandled(err.into()),
+            kind: ListHypervisorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1747,7 +1759,7 @@ impl std::error::Error for ListHypervisorsError {
             ListHypervisorsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListHypervisorsErrorKind::ValidationException(_inner) => Some(_inner),
             ListHypervisorsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListHypervisorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHypervisorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1774,7 +1786,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1804,7 +1816,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1813,7 +1825,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1873,7 +1885,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1898,7 +1910,7 @@ pub enum ListVirtualMachinesErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualMachinesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1927,7 +1939,7 @@ impl ListVirtualMachinesError {
     /// Creates the `ListVirtualMachinesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualMachinesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualMachinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1936,7 +1948,7 @@ impl ListVirtualMachinesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualMachinesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualMachinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1988,7 +2000,7 @@ impl std::error::Error for ListVirtualMachinesError {
             ListVirtualMachinesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListVirtualMachinesErrorKind::ValidationException(_inner) => Some(_inner),
             ListVirtualMachinesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListVirtualMachinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualMachinesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2017,7 +2029,7 @@ pub enum PutMaintenanceStartTimeErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMaintenanceStartTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2048,7 +2060,9 @@ impl PutMaintenanceStartTimeError {
     /// Creates the `PutMaintenanceStartTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: PutMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2057,7 +2071,9 @@ impl PutMaintenanceStartTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMaintenanceStartTimeErrorKind::Unhandled(err.into()),
+            kind: PutMaintenanceStartTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2125,7 +2141,7 @@ impl std::error::Error for PutMaintenanceStartTimeError {
             PutMaintenanceStartTimeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutMaintenanceStartTimeErrorKind::ValidationException(_inner) => Some(_inner),
             PutMaintenanceStartTimeErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMaintenanceStartTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2152,7 +2168,7 @@ pub enum TagResourceErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,7 +2198,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2191,7 +2207,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2242,7 +2258,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2271,7 +2287,7 @@ pub enum TestHypervisorConfigurationErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestHypervisorConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2304,7 +2320,9 @@ impl TestHypervisorConfigurationError {
     /// Creates the `TestHypervisorConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestHypervisorConfigurationErrorKind::Unhandled(err.into()),
+            kind: TestHypervisorConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2313,7 +2331,9 @@ impl TestHypervisorConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestHypervisorConfigurationErrorKind::Unhandled(err.into()),
+            kind: TestHypervisorConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2381,7 +2401,7 @@ impl std::error::Error for TestHypervisorConfigurationError {
             TestHypervisorConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TestHypervisorConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
             TestHypervisorConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TestHypervisorConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestHypervisorConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2408,7 +2428,7 @@ pub enum UntagResourceErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2438,7 +2458,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2447,7 +2467,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2501,7 +2521,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2530,7 +2550,7 @@ pub enum UpdateGatewayInformationErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2561,7 +2581,9 @@ impl UpdateGatewayInformationError {
     /// Creates the `UpdateGatewayInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2570,7 +2592,9 @@ impl UpdateGatewayInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayInformationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2638,7 +2662,7 @@ impl std::error::Error for UpdateGatewayInformationError {
             UpdateGatewayInformationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGatewayInformationErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateGatewayInformationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewayInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2665,7 +2689,7 @@ pub enum UpdateGatewaySoftwareNowErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewaySoftwareNowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2695,7 +2719,9 @@ impl UpdateGatewaySoftwareNowError {
     /// Creates the `UpdateGatewaySoftwareNowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2704,7 +2730,9 @@ impl UpdateGatewaySoftwareNowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewaySoftwareNowErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2764,7 +2792,7 @@ impl std::error::Error for UpdateGatewaySoftwareNowError {
             UpdateGatewaySoftwareNowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGatewaySoftwareNowErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateGatewaySoftwareNowErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewaySoftwareNowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2793,7 +2821,7 @@ pub enum UpdateHypervisorErrorKind {
     /// <p>TPS has been limited to protect against intentional or unintentional high request volumes.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateHypervisorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2824,7 +2852,7 @@ impl UpdateHypervisorError {
     /// Creates the `UpdateHypervisorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateHypervisorErrorKind::Unhandled(err.into()),
+            kind: UpdateHypervisorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2833,7 +2861,7 @@ impl UpdateHypervisorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateHypervisorErrorKind::Unhandled(err.into()),
+            kind: UpdateHypervisorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2901,7 +2929,32 @@ impl std::error::Error for UpdateHypervisorError {
             UpdateHypervisorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateHypervisorErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateHypervisorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateHypervisorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateHypervisorErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

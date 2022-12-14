@@ -349,7 +349,7 @@ pub enum QueryForecastErrorKind {
     /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for QueryForecastError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,7 +380,7 @@ impl QueryForecastError {
     /// Creates the `QueryForecastError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: QueryForecastErrorKind::Unhandled(err.into()),
+            kind: QueryForecastErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -389,7 +389,7 @@ impl QueryForecastError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: QueryForecastErrorKind::Unhandled(err.into()),
+            kind: QueryForecastErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -454,7 +454,7 @@ impl std::error::Error for QueryForecastError {
             QueryForecastErrorKind::LimitExceededException(_inner) => Some(_inner),
             QueryForecastErrorKind::ResourceInUseException(_inner) => Some(_inner),
             QueryForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            QueryForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            QueryForecastErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -483,7 +483,7 @@ pub enum QueryWhatIfForecastErrorKind {
     /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for QueryWhatIfForecastError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -514,7 +514,7 @@ impl QueryWhatIfForecastError {
     /// Creates the `QueryWhatIfForecastError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: QueryWhatIfForecastErrorKind::Unhandled(err.into()),
+            kind: QueryWhatIfForecastErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -523,7 +523,7 @@ impl QueryWhatIfForecastError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: QueryWhatIfForecastErrorKind::Unhandled(err.into()),
+            kind: QueryWhatIfForecastErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -591,7 +591,32 @@ impl std::error::Error for QueryWhatIfForecastError {
             QueryWhatIfForecastErrorKind::LimitExceededException(_inner) => Some(_inner),
             QueryWhatIfForecastErrorKind::ResourceInUseException(_inner) => Some(_inner),
             QueryWhatIfForecastErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            QueryWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            QueryWhatIfForecastErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

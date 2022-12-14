@@ -553,7 +553,7 @@ pub enum DisableControlErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -594,7 +594,7 @@ impl DisableControlError {
     /// Creates the `DisableControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableControlErrorKind::Unhandled(err.into()),
+            kind: DisableControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -603,7 +603,7 @@ impl DisableControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableControlErrorKind::Unhandled(err.into()),
+            kind: DisableControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -678,7 +678,7 @@ impl std::error::Error for DisableControlError {
             DisableControlErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             DisableControlErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisableControlErrorKind::ValidationException(_inner) => Some(_inner),
-            DisableControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -711,7 +711,7 @@ pub enum EnableControlErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -752,7 +752,7 @@ impl EnableControlError {
     /// Creates the `EnableControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableControlErrorKind::Unhandled(err.into()),
+            kind: EnableControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -761,7 +761,7 @@ impl EnableControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableControlErrorKind::Unhandled(err.into()),
+            kind: EnableControlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -833,7 +833,7 @@ impl std::error::Error for EnableControlError {
             EnableControlErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             EnableControlErrorKind::ThrottlingException(_inner) => Some(_inner),
             EnableControlErrorKind::ValidationException(_inner) => Some(_inner),
-            EnableControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -862,7 +862,7 @@ pub enum GetControlOperationErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetControlOperationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -901,7 +901,7 @@ impl GetControlOperationError {
     /// Creates the `GetControlOperationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetControlOperationErrorKind::Unhandled(err.into()),
+            kind: GetControlOperationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -910,7 +910,7 @@ impl GetControlOperationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetControlOperationErrorKind::Unhandled(err.into()),
+            kind: GetControlOperationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -978,7 +978,7 @@ impl std::error::Error for GetControlOperationError {
             GetControlOperationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetControlOperationErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetControlOperationErrorKind::ValidationException(_inner) => Some(_inner),
-            GetControlOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetControlOperationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1007,7 +1007,7 @@ pub enum ListEnabledControlsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEnabledControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1046,7 +1046,7 @@ impl ListEnabledControlsError {
     /// Creates the `ListEnabledControlsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEnabledControlsErrorKind::Unhandled(err.into()),
+            kind: ListEnabledControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1055,7 +1055,7 @@ impl ListEnabledControlsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEnabledControlsErrorKind::Unhandled(err.into()),
+            kind: ListEnabledControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1123,7 +1123,32 @@ impl std::error::Error for ListEnabledControlsError {
             ListEnabledControlsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListEnabledControlsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListEnabledControlsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListEnabledControlsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEnabledControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

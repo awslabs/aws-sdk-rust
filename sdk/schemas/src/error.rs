@@ -895,7 +895,7 @@ pub enum CreateDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,7 +927,7 @@ impl CreateDiscovererError {
     /// Creates the `CreateDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDiscovererErrorKind::Unhandled(err.into()),
+            kind: CreateDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -936,7 +936,7 @@ impl CreateDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDiscovererErrorKind::Unhandled(err.into()),
+            kind: CreateDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1006,7 +1006,7 @@ impl std::error::Error for CreateDiscovererError {
             CreateDiscovererErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1037,7 +1037,7 @@ pub enum CreateRegistryErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRegistryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1069,7 +1069,7 @@ impl CreateRegistryError {
     /// Creates the `CreateRegistryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRegistryErrorKind::Unhandled(err.into()),
+            kind: CreateRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1078,7 +1078,7 @@ impl CreateRegistryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRegistryErrorKind::Unhandled(err.into()),
+            kind: CreateRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1145,7 +1145,7 @@ impl std::error::Error for CreateRegistryError {
             CreateRegistryErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateRegistryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateRegistryErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateRegistryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRegistryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1172,7 +1172,7 @@ pub enum CreateSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1202,7 +1202,7 @@ impl CreateSchemaError {
     /// Creates the `CreateSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSchemaErrorKind::Unhandled(err.into()),
+            kind: CreateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1211,7 +1211,7 @@ impl CreateSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSchemaErrorKind::Unhandled(err.into()),
+            kind: CreateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1265,7 +1265,7 @@ impl std::error::Error for CreateSchemaError {
             CreateSchemaErrorKind::ForbiddenException(_inner) => Some(_inner),
             CreateSchemaErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1296,7 +1296,7 @@ pub enum DeleteDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1328,7 +1328,7 @@ impl DeleteDiscovererError {
     /// Creates the `DeleteDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDiscovererErrorKind::Unhandled(err.into()),
+            kind: DeleteDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1337,7 +1337,7 @@ impl DeleteDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDiscovererErrorKind::Unhandled(err.into()),
+            kind: DeleteDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1407,7 +1407,7 @@ impl std::error::Error for DeleteDiscovererError {
             DeleteDiscovererErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1438,7 +1438,7 @@ pub enum DeleteRegistryErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRegistryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1470,7 +1470,7 @@ impl DeleteRegistryError {
     /// Creates the `DeleteRegistryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRegistryErrorKind::Unhandled(err.into()),
+            kind: DeleteRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1479,7 +1479,7 @@ impl DeleteRegistryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRegistryErrorKind::Unhandled(err.into()),
+            kind: DeleteRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1546,7 +1546,7 @@ impl std::error::Error for DeleteRegistryError {
             DeleteRegistryErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteRegistryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteRegistryErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteRegistryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRegistryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1577,7 +1577,7 @@ pub enum DeleteResourcePolicyErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1609,7 +1609,9 @@ impl DeleteResourcePolicyError {
     /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1618,7 +1620,9 @@ impl DeleteResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1694,7 +1698,7 @@ impl std::error::Error for DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1725,7 +1729,7 @@ pub enum DeleteSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1757,7 +1761,7 @@ impl DeleteSchemaError {
     /// Creates the `DeleteSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSchemaErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1766,7 +1770,7 @@ impl DeleteSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSchemaErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1830,7 +1834,7 @@ impl std::error::Error for DeleteSchemaError {
             DeleteSchemaErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteSchemaErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1861,7 +1865,7 @@ pub enum DeleteSchemaVersionErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSchemaVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1893,7 +1897,7 @@ impl DeleteSchemaVersionError {
     /// Creates the `DeleteSchemaVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSchemaVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1902,7 +1906,7 @@ impl DeleteSchemaVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSchemaVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1978,7 +1982,7 @@ impl std::error::Error for DeleteSchemaVersionError {
             DeleteSchemaVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteSchemaVersionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteSchemaVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteSchemaVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSchemaVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2009,7 +2013,7 @@ pub enum DescribeCodeBindingErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCodeBindingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2041,7 +2045,7 @@ impl DescribeCodeBindingError {
     /// Creates the `DescribeCodeBindingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCodeBindingErrorKind::Unhandled(err.into()),
+            kind: DescribeCodeBindingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2050,7 +2054,7 @@ impl DescribeCodeBindingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCodeBindingErrorKind::Unhandled(err.into()),
+            kind: DescribeCodeBindingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2126,7 +2130,7 @@ impl std::error::Error for DescribeCodeBindingError {
             DescribeCodeBindingErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeCodeBindingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeCodeBindingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeCodeBindingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCodeBindingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2157,7 +2161,7 @@ pub enum DescribeDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,7 +2193,7 @@ impl DescribeDiscovererError {
     /// Creates the `DescribeDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDiscovererErrorKind::Unhandled(err.into()),
+            kind: DescribeDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2198,7 +2202,7 @@ impl DescribeDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDiscovererErrorKind::Unhandled(err.into()),
+            kind: DescribeDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2274,7 +2278,7 @@ impl std::error::Error for DescribeDiscovererError {
             DescribeDiscovererErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2305,7 +2309,7 @@ pub enum DescribeRegistryErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRegistryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2337,7 +2341,7 @@ impl DescribeRegistryError {
     /// Creates the `DescribeRegistryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRegistryErrorKind::Unhandled(err.into()),
+            kind: DescribeRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2346,7 +2350,7 @@ impl DescribeRegistryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRegistryErrorKind::Unhandled(err.into()),
+            kind: DescribeRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2416,7 +2420,7 @@ impl std::error::Error for DescribeRegistryError {
             DescribeRegistryErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeRegistryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeRegistryErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeRegistryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRegistryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2447,7 +2451,7 @@ pub enum DescribeSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2479,7 +2483,7 @@ impl DescribeSchemaError {
     /// Creates the `DescribeSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSchemaErrorKind::Unhandled(err.into()),
+            kind: DescribeSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2488,7 +2492,7 @@ impl DescribeSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSchemaErrorKind::Unhandled(err.into()),
+            kind: DescribeSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2555,7 +2559,7 @@ impl std::error::Error for DescribeSchemaError {
             DescribeSchemaErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeSchemaErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2588,7 +2592,7 @@ pub enum ExportSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2621,7 +2625,7 @@ impl ExportSchemaError {
     /// Creates the `ExportSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportSchemaErrorKind::Unhandled(err.into()),
+            kind: ExportSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2630,7 +2634,7 @@ impl ExportSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportSchemaErrorKind::Unhandled(err.into()),
+            kind: ExportSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2702,7 +2706,7 @@ impl std::error::Error for ExportSchemaError {
             ExportSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ExportSchemaErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ExportSchemaErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ExportSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2733,7 +2737,7 @@ pub enum GetCodeBindingSourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCodeBindingSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2765,7 +2769,9 @@ impl GetCodeBindingSourceError {
     /// Creates the `GetCodeBindingSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCodeBindingSourceErrorKind::Unhandled(err.into()),
+            kind: GetCodeBindingSourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2774,7 +2780,9 @@ impl GetCodeBindingSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCodeBindingSourceErrorKind::Unhandled(err.into()),
+            kind: GetCodeBindingSourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2850,7 +2858,7 @@ impl std::error::Error for GetCodeBindingSourceError {
             GetCodeBindingSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             GetCodeBindingSourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetCodeBindingSourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetCodeBindingSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCodeBindingSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2879,7 +2887,7 @@ pub enum GetDiscoveredSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDiscoveredSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2910,7 +2918,7 @@ impl GetDiscoveredSchemaError {
     /// Creates the `GetDiscoveredSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDiscoveredSchemaErrorKind::Unhandled(err.into()),
+            kind: GetDiscoveredSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2919,7 +2927,7 @@ impl GetDiscoveredSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDiscoveredSchemaErrorKind::Unhandled(err.into()),
+            kind: GetDiscoveredSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2987,7 +2995,7 @@ impl std::error::Error for GetDiscoveredSchemaError {
             GetDiscoveredSchemaErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetDiscoveredSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDiscoveredSchemaErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDiscoveredSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDiscoveredSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3018,7 +3026,7 @@ pub enum GetResourcePolicyErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3050,7 +3058,7 @@ impl GetResourcePolicyError {
     /// Creates the `GetResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3059,7 +3067,7 @@ impl GetResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3132,7 +3140,7 @@ impl std::error::Error for GetResourcePolicyError {
             GetResourcePolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3161,7 +3169,7 @@ pub enum ListDiscoverersErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDiscoverersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3192,7 +3200,7 @@ impl ListDiscoverersError {
     /// Creates the `ListDiscoverersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDiscoverersErrorKind::Unhandled(err.into()),
+            kind: ListDiscoverersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3201,7 +3209,7 @@ impl ListDiscoverersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDiscoverersErrorKind::Unhandled(err.into()),
+            kind: ListDiscoverersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3263,7 +3271,7 @@ impl std::error::Error for ListDiscoverersError {
             ListDiscoverersErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListDiscoverersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListDiscoverersErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListDiscoverersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDiscoverersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3292,7 +3300,7 @@ pub enum ListRegistriesErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRegistriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3323,7 +3331,7 @@ impl ListRegistriesError {
     /// Creates the `ListRegistriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRegistriesErrorKind::Unhandled(err.into()),
+            kind: ListRegistriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3332,7 +3340,7 @@ impl ListRegistriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRegistriesErrorKind::Unhandled(err.into()),
+            kind: ListRegistriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3394,7 +3402,7 @@ impl std::error::Error for ListRegistriesError {
             ListRegistriesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListRegistriesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListRegistriesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListRegistriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRegistriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3423,7 +3431,7 @@ pub enum ListSchemasErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSchemasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3454,7 +3462,7 @@ impl ListSchemasError {
     /// Creates the `ListSchemasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSchemasErrorKind::Unhandled(err.into()),
+            kind: ListSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3463,7 +3471,7 @@ impl ListSchemasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSchemasErrorKind::Unhandled(err.into()),
+            kind: ListSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3522,7 +3530,7 @@ impl std::error::Error for ListSchemasError {
             ListSchemasErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListSchemasErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListSchemasErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListSchemasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSchemasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3553,7 +3561,7 @@ pub enum ListSchemaVersionsErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSchemaVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3585,7 +3593,7 @@ impl ListSchemaVersionsError {
     /// Creates the `ListSchemaVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSchemaVersionsErrorKind::Unhandled(err.into()),
+            kind: ListSchemaVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3594,7 +3602,7 @@ impl ListSchemaVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSchemaVersionsErrorKind::Unhandled(err.into()),
+            kind: ListSchemaVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3670,7 +3678,7 @@ impl std::error::Error for ListSchemaVersionsError {
             ListSchemaVersionsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListSchemaVersionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListSchemaVersionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListSchemaVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSchemaVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3697,7 +3705,7 @@ pub enum ListTagsForResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3727,7 +3735,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3736,7 +3744,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3796,7 +3804,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3829,7 +3837,7 @@ pub enum PutCodeBindingErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutCodeBindingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3862,7 +3870,7 @@ impl PutCodeBindingError {
     /// Creates the `PutCodeBindingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutCodeBindingErrorKind::Unhandled(err.into()),
+            kind: PutCodeBindingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3871,7 +3879,7 @@ impl PutCodeBindingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutCodeBindingErrorKind::Unhandled(err.into()),
+            kind: PutCodeBindingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3943,7 +3951,7 @@ impl std::error::Error for PutCodeBindingError {
             PutCodeBindingErrorKind::NotFoundException(_inner) => Some(_inner),
             PutCodeBindingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutCodeBindingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutCodeBindingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutCodeBindingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3976,7 +3984,7 @@ pub enum PutResourcePolicyErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4009,7 +4017,7 @@ impl PutResourcePolicyError {
     /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4018,7 +4026,7 @@ impl PutResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4099,7 +4107,7 @@ impl std::error::Error for PutResourcePolicyError {
             PutResourcePolicyErrorKind::PreconditionFailedException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4128,7 +4136,7 @@ pub enum SearchSchemasErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchSchemasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4159,7 +4167,7 @@ impl SearchSchemasError {
     /// Creates the `SearchSchemasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchSchemasErrorKind::Unhandled(err.into()),
+            kind: SearchSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4168,7 +4176,7 @@ impl SearchSchemasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchSchemasErrorKind::Unhandled(err.into()),
+            kind: SearchSchemasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4227,7 +4235,7 @@ impl std::error::Error for SearchSchemasError {
             SearchSchemasErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             SearchSchemasErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             SearchSchemasErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            SearchSchemasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchSchemasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4258,7 +4266,7 @@ pub enum StartDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4290,7 +4298,7 @@ impl StartDiscovererError {
     /// Creates the `StartDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDiscovererErrorKind::Unhandled(err.into()),
+            kind: StartDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4299,7 +4307,7 @@ impl StartDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDiscovererErrorKind::Unhandled(err.into()),
+            kind: StartDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4366,7 +4374,7 @@ impl std::error::Error for StartDiscovererError {
             StartDiscovererErrorKind::NotFoundException(_inner) => Some(_inner),
             StartDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StartDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4397,7 +4405,7 @@ pub enum StopDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4429,7 +4437,7 @@ impl StopDiscovererError {
     /// Creates the `StopDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopDiscovererErrorKind::Unhandled(err.into()),
+            kind: StopDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4438,7 +4446,7 @@ impl StopDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopDiscovererErrorKind::Unhandled(err.into()),
+            kind: StopDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4505,7 +4513,7 @@ impl std::error::Error for StopDiscovererError {
             StopDiscovererErrorKind::NotFoundException(_inner) => Some(_inner),
             StopDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StopDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            StopDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4532,7 +4540,7 @@ pub enum TagResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4562,7 +4570,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4571,7 +4579,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4622,7 +4630,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4649,7 +4657,7 @@ pub enum UntagResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4679,7 +4687,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4688,7 +4696,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4739,7 +4747,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ForbiddenException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4770,7 +4778,7 @@ pub enum UpdateDiscovererErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDiscovererError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4802,7 +4810,7 @@ impl UpdateDiscovererError {
     /// Creates the `UpdateDiscovererError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDiscovererErrorKind::Unhandled(err.into()),
+            kind: UpdateDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4811,7 +4819,7 @@ impl UpdateDiscovererError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDiscovererErrorKind::Unhandled(err.into()),
+            kind: UpdateDiscovererErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4881,7 +4889,7 @@ impl std::error::Error for UpdateDiscovererError {
             UpdateDiscovererErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDiscovererErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateDiscovererErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDiscovererErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDiscovererErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4912,7 +4920,7 @@ pub enum UpdateRegistryErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRegistryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4944,7 +4952,7 @@ impl UpdateRegistryError {
     /// Creates the `UpdateRegistryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRegistryErrorKind::Unhandled(err.into()),
+            kind: UpdateRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4953,7 +4961,7 @@ impl UpdateRegistryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRegistryErrorKind::Unhandled(err.into()),
+            kind: UpdateRegistryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5020,7 +5028,7 @@ impl std::error::Error for UpdateRegistryError {
             UpdateRegistryErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRegistryErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateRegistryErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateRegistryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRegistryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5049,7 +5057,7 @@ pub enum UpdateSchemaErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5080,7 +5088,7 @@ impl UpdateSchemaError {
     /// Creates the `UpdateSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSchemaErrorKind::Unhandled(err.into()),
+            kind: UpdateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5089,7 +5097,7 @@ impl UpdateSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSchemaErrorKind::Unhandled(err.into()),
+            kind: UpdateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5148,7 +5156,32 @@ impl std::error::Error for UpdateSchemaError {
             UpdateSchemaErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

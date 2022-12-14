@@ -416,7 +416,7 @@ pub enum CopyBackupToRegionErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyBackupToRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,7 @@ impl CopyBackupToRegionError {
     /// Creates the `CopyBackupToRegionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopyBackupToRegionErrorKind::Unhandled(err.into()),
+            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -457,7 +457,7 @@ impl CopyBackupToRegionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopyBackupToRegionErrorKind::Unhandled(err.into()),
+            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -533,7 +533,7 @@ impl std::error::Error for CopyBackupToRegionError {
             CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             CopyBackupToRegionErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             CopyBackupToRegionErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopyBackupToRegionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -564,7 +564,7 @@ pub enum CreateClusterErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -596,7 +596,7 @@ impl CreateClusterError {
     /// Creates the `CreateClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateClusterErrorKind::Unhandled(err.into()),
+            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -605,7 +605,7 @@ impl CreateClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateClusterErrorKind::Unhandled(err.into()),
+            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -678,7 +678,7 @@ impl std::error::Error for CreateClusterError {
             CreateClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             CreateClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             CreateClusterErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -707,7 +707,7 @@ pub enum CreateHsmErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -738,7 +738,7 @@ impl CreateHsmError {
     /// Creates the `CreateHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHsmErrorKind::Unhandled(err.into()),
+            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -747,7 +747,7 @@ impl CreateHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHsmErrorKind::Unhandled(err.into()),
+            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -812,7 +812,7 @@ impl std::error::Error for CreateHsmError {
             CreateHsmErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             CreateHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             CreateHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            CreateHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -841,7 +841,7 @@ pub enum DeleteBackupErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -872,7 +872,7 @@ impl DeleteBackupError {
     /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBackupErrorKind::Unhandled(err.into()),
+            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -881,7 +881,7 @@ impl DeleteBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBackupErrorKind::Unhandled(err.into()),
+            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -949,7 +949,7 @@ impl std::error::Error for DeleteBackupError {
             DeleteBackupErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             DeleteBackupErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -980,7 +980,7 @@ pub enum DeleteClusterErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1012,7 +1012,7 @@ impl DeleteClusterError {
     /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1021,7 +1021,7 @@ impl DeleteClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1094,7 +1094,7 @@ impl std::error::Error for DeleteClusterError {
             DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             DeleteClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DeleteClusterErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1123,7 +1123,7 @@ pub enum DeleteHsmErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1154,7 +1154,7 @@ impl DeleteHsmError {
     /// Creates the `DeleteHsmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHsmErrorKind::Unhandled(err.into()),
+            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1163,7 +1163,7 @@ impl DeleteHsmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHsmErrorKind::Unhandled(err.into()),
+            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1228,7 +1228,7 @@ impl std::error::Error for DeleteHsmError {
             DeleteHsmErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             DeleteHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHsmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1259,7 +1259,7 @@ pub enum DescribeBackupsErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1291,7 +1291,7 @@ impl DescribeBackupsError {
     /// Creates the `DescribeBackupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBackupsErrorKind::Unhandled(err.into()),
+            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1300,7 +1300,7 @@ impl DescribeBackupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBackupsErrorKind::Unhandled(err.into()),
+            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1376,7 +1376,7 @@ impl std::error::Error for DescribeBackupsError {
             DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             DescribeBackupsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DescribeBackupsErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBackupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1405,7 +1405,7 @@ pub enum DescribeClustersErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1436,7 +1436,7 @@ impl DescribeClustersError {
     /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1445,7 +1445,7 @@ impl DescribeClustersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1513,7 +1513,7 @@ impl std::error::Error for DescribeClustersError {
             DescribeClustersErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             DescribeClustersErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             DescribeClustersErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1542,7 +1542,7 @@ pub enum InitializeClusterErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InitializeClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1573,7 +1573,7 @@ impl InitializeClusterError {
     /// Creates the `InitializeClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InitializeClusterErrorKind::Unhandled(err.into()),
+            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1582,7 +1582,7 @@ impl InitializeClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InitializeClusterErrorKind::Unhandled(err.into()),
+            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1650,7 +1650,7 @@ impl std::error::Error for InitializeClusterError {
             InitializeClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             InitializeClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InitializeClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1681,7 +1681,7 @@ pub enum ListTagsErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1713,7 +1713,7 @@ impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1722,7 +1722,7 @@ impl ListTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1792,7 +1792,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             ListTagsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             ListTagsErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1821,7 +1821,7 @@ pub enum ModifyBackupAttributesErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyBackupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1858,7 +1858,9 @@ impl ModifyBackupAttributesError {
     /// Creates the `ModifyBackupAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyBackupAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1867,7 +1869,9 @@ impl ModifyBackupAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyBackupAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1941,7 +1945,7 @@ impl std::error::Error for ModifyBackupAttributesError {
                 Some(_inner)
             }
             ModifyBackupAttributesErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ModifyBackupAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyBackupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1970,7 +1974,7 @@ pub enum ModifyClusterErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2001,7 +2005,7 @@ impl ModifyClusterError {
     /// Creates the `ModifyClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2010,7 +2014,7 @@ impl ModifyClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyClusterErrorKind::Unhandled(err.into()),
+            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2078,7 +2082,7 @@ impl std::error::Error for ModifyClusterError {
             ModifyClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             ModifyClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2107,7 +2111,7 @@ pub enum RestoreBackupErrorKind {
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2138,7 +2142,7 @@ impl RestoreBackupError {
     /// Creates the `RestoreBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreBackupErrorKind::Unhandled(err.into()),
+            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2147,7 +2151,7 @@ impl RestoreBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreBackupErrorKind::Unhandled(err.into()),
+            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2215,7 +2219,7 @@ impl std::error::Error for RestoreBackupError {
             RestoreBackupErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
             RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             RestoreBackupErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2246,7 +2250,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2278,7 +2282,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2287,7 +2291,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2360,7 +2364,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             TagResourceErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2391,7 +2395,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2423,7 +2427,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2432,7 +2436,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2505,7 +2509,32 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
             UntagResourceErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

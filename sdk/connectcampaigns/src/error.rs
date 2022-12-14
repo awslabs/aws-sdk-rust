@@ -869,7 +869,7 @@ pub enum CreateCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -910,7 +910,7 @@ impl CreateCampaignError {
     /// Creates the `CreateCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCampaignErrorKind::Unhandled(err.into()),
+            kind: CreateCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -919,7 +919,7 @@ impl CreateCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCampaignErrorKind::Unhandled(err.into()),
+            kind: CreateCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -994,7 +994,7 @@ impl std::error::Error for CreateCampaignError {
             CreateCampaignErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1021,7 +1021,7 @@ pub enum DeleteCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1056,7 +1056,7 @@ impl DeleteCampaignError {
     /// Creates the `DeleteCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCampaignErrorKind::Unhandled(err.into()),
+            kind: DeleteCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1065,7 +1065,7 @@ impl DeleteCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCampaignErrorKind::Unhandled(err.into()),
+            kind: DeleteCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1122,7 +1122,7 @@ impl std::error::Error for DeleteCampaignError {
             DeleteCampaignErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1153,7 +1153,7 @@ pub enum DeleteConnectInstanceConfigErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectInstanceConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1195,7 +1195,9 @@ impl DeleteConnectInstanceConfigError {
     /// Creates the `DeleteConnectInstanceConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectInstanceConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectInstanceConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1204,7 +1206,9 @@ impl DeleteConnectInstanceConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectInstanceConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectInstanceConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1280,7 +1284,7 @@ impl std::error::Error for DeleteConnectInstanceConfigError {
             DeleteConnectInstanceConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteConnectInstanceConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteConnectInstanceConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteConnectInstanceConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectInstanceConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1309,7 +1313,7 @@ pub enum DeleteInstanceOnboardingJobErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInstanceOnboardingJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1347,7 +1351,9 @@ impl DeleteInstanceOnboardingJobError {
     /// Creates the `DeleteInstanceOnboardingJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInstanceOnboardingJobErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceOnboardingJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1356,7 +1362,9 @@ impl DeleteInstanceOnboardingJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInstanceOnboardingJobErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceOnboardingJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1424,7 +1432,7 @@ impl std::error::Error for DeleteInstanceOnboardingJobError {
             DeleteInstanceOnboardingJobErrorKind::InvalidStateException(_inner) => Some(_inner),
             DeleteInstanceOnboardingJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteInstanceOnboardingJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteInstanceOnboardingJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInstanceOnboardingJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1451,7 +1459,7 @@ pub enum DescribeCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1486,7 +1494,7 @@ impl DescribeCampaignError {
     /// Creates the `DescribeCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCampaignErrorKind::Unhandled(err.into()),
+            kind: DescribeCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1495,7 +1503,7 @@ impl DescribeCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCampaignErrorKind::Unhandled(err.into()),
+            kind: DescribeCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1555,7 +1563,7 @@ impl std::error::Error for DescribeCampaignError {
             DescribeCampaignErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1584,7 +1592,7 @@ pub enum GetCampaignStateErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCampaignStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1623,7 +1631,7 @@ impl GetCampaignStateError {
     /// Creates the `GetCampaignStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCampaignStateErrorKind::Unhandled(err.into()),
+            kind: GetCampaignStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1632,7 +1640,7 @@ impl GetCampaignStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCampaignStateErrorKind::Unhandled(err.into()),
+            kind: GetCampaignStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1700,7 +1708,7 @@ impl std::error::Error for GetCampaignStateError {
             GetCampaignStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCampaignStateErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCampaignStateErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCampaignStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCampaignStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1727,7 +1735,7 @@ pub enum GetCampaignStateBatchErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCampaignStateBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1765,7 +1773,9 @@ impl GetCampaignStateBatchError {
     /// Creates the `GetCampaignStateBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCampaignStateBatchErrorKind::Unhandled(err.into()),
+            kind: GetCampaignStateBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1774,7 +1784,9 @@ impl GetCampaignStateBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCampaignStateBatchErrorKind::Unhandled(err.into()),
+            kind: GetCampaignStateBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1834,7 +1846,7 @@ impl std::error::Error for GetCampaignStateBatchError {
             GetCampaignStateBatchErrorKind::InternalServerException(_inner) => Some(_inner),
             GetCampaignStateBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetCampaignStateBatchErrorKind::ValidationException(_inner) => Some(_inner),
-            GetCampaignStateBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCampaignStateBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1861,7 +1873,7 @@ pub enum GetConnectInstanceConfigErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConnectInstanceConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1896,7 +1908,9 @@ impl GetConnectInstanceConfigError {
     /// Creates the `GetConnectInstanceConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConnectInstanceConfigErrorKind::Unhandled(err.into()),
+            kind: GetConnectInstanceConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1905,7 +1919,9 @@ impl GetConnectInstanceConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConnectInstanceConfigErrorKind::Unhandled(err.into()),
+            kind: GetConnectInstanceConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1965,7 +1981,7 @@ impl std::error::Error for GetConnectInstanceConfigError {
             GetConnectInstanceConfigErrorKind::InternalServerException(_inner) => Some(_inner),
             GetConnectInstanceConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetConnectInstanceConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            GetConnectInstanceConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConnectInstanceConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1992,7 +2008,7 @@ pub enum GetInstanceOnboardingJobStatusErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInstanceOnboardingJobStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2034,7 +2050,9 @@ impl GetInstanceOnboardingJobStatusError {
     /// Creates the `GetInstanceOnboardingJobStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInstanceOnboardingJobStatusErrorKind::Unhandled(err.into()),
+            kind: GetInstanceOnboardingJobStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2043,7 +2061,9 @@ impl GetInstanceOnboardingJobStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInstanceOnboardingJobStatusErrorKind::Unhandled(err.into()),
+            kind: GetInstanceOnboardingJobStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2107,7 +2127,7 @@ impl std::error::Error for GetInstanceOnboardingJobStatusError {
                 Some(_inner)
             }
             GetInstanceOnboardingJobStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            GetInstanceOnboardingJobStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInstanceOnboardingJobStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2132,7 +2152,7 @@ pub enum ListCampaignsErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCampaignsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2166,7 +2186,7 @@ impl ListCampaignsError {
     /// Creates the `ListCampaignsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCampaignsErrorKind::Unhandled(err.into()),
+            kind: ListCampaignsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2175,7 +2195,7 @@ impl ListCampaignsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCampaignsErrorKind::Unhandled(err.into()),
+            kind: ListCampaignsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2221,7 +2241,7 @@ impl std::error::Error for ListCampaignsError {
             ListCampaignsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListCampaignsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListCampaignsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListCampaignsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCampaignsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2250,7 +2270,7 @@ pub enum ListTagsForResourceErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2289,7 +2309,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2298,7 +2318,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2366,7 +2386,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2399,7 +2419,7 @@ pub enum PauseCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PauseCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2440,7 +2460,7 @@ impl PauseCampaignError {
     /// Creates the `PauseCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PauseCampaignErrorKind::Unhandled(err.into()),
+            kind: PauseCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2449,7 +2469,7 @@ impl PauseCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PauseCampaignErrorKind::Unhandled(err.into()),
+            kind: PauseCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2521,7 +2541,7 @@ impl std::error::Error for PauseCampaignError {
             PauseCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PauseCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
             PauseCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            PauseCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PauseCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2554,7 +2574,7 @@ pub enum PutDialRequestBatchErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDialRequestBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2595,7 +2615,7 @@ impl PutDialRequestBatchError {
     /// Creates the `PutDialRequestBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDialRequestBatchErrorKind::Unhandled(err.into()),
+            kind: PutDialRequestBatchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2604,7 +2624,7 @@ impl PutDialRequestBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDialRequestBatchErrorKind::Unhandled(err.into()),
+            kind: PutDialRequestBatchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2688,7 +2708,7 @@ impl std::error::Error for PutDialRequestBatchError {
             PutDialRequestBatchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutDialRequestBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutDialRequestBatchErrorKind::ValidationException(_inner) => Some(_inner),
-            PutDialRequestBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDialRequestBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2721,7 +2741,7 @@ pub enum ResumeCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResumeCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2762,7 +2782,7 @@ impl ResumeCampaignError {
     /// Creates the `ResumeCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResumeCampaignErrorKind::Unhandled(err.into()),
+            kind: ResumeCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2771,7 +2791,7 @@ impl ResumeCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResumeCampaignErrorKind::Unhandled(err.into()),
+            kind: ResumeCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2846,7 +2866,7 @@ impl std::error::Error for ResumeCampaignError {
             ResumeCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ResumeCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
             ResumeCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            ResumeCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResumeCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2879,7 +2899,7 @@ pub enum StartCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2920,7 +2940,7 @@ impl StartCampaignError {
     /// Creates the `StartCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartCampaignErrorKind::Unhandled(err.into()),
+            kind: StartCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2929,7 +2949,7 @@ impl StartCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartCampaignErrorKind::Unhandled(err.into()),
+            kind: StartCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3001,7 +3021,7 @@ impl std::error::Error for StartCampaignError {
             StartCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            StartCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3032,7 +3052,7 @@ pub enum StartInstanceOnboardingJobErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartInstanceOnboardingJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3072,7 +3092,9 @@ impl StartInstanceOnboardingJobError {
     /// Creates the `StartInstanceOnboardingJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartInstanceOnboardingJobErrorKind::Unhandled(err.into()),
+            kind: StartInstanceOnboardingJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3081,7 +3103,9 @@ impl StartInstanceOnboardingJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartInstanceOnboardingJobErrorKind::Unhandled(err.into()),
+            kind: StartInstanceOnboardingJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3157,7 +3181,7 @@ impl std::error::Error for StartInstanceOnboardingJobError {
             StartInstanceOnboardingJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartInstanceOnboardingJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartInstanceOnboardingJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartInstanceOnboardingJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartInstanceOnboardingJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3190,7 +3214,7 @@ pub enum StopCampaignErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3229,7 +3253,7 @@ impl StopCampaignError {
     /// Creates the `StopCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopCampaignErrorKind::Unhandled(err.into()),
+            kind: StopCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3238,7 +3262,7 @@ impl StopCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopCampaignErrorKind::Unhandled(err.into()),
+            kind: StopCampaignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3310,7 +3334,7 @@ impl std::error::Error for StopCampaignError {
             StopCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopCampaignErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopCampaignErrorKind::ValidationException(_inner) => Some(_inner),
-            StopCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3339,7 +3363,7 @@ pub enum TagResourceErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3376,7 +3400,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3385,7 +3409,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3441,7 +3465,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3470,7 +3494,7 @@ pub enum UntagResourceErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3509,7 +3533,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3518,7 +3542,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3577,7 +3601,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3606,7 +3630,7 @@ pub enum UpdateCampaignDialerConfigErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCampaignDialerConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3642,7 +3666,9 @@ impl UpdateCampaignDialerConfigError {
     /// Creates the `UpdateCampaignDialerConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCampaignDialerConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignDialerConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3651,7 +3677,9 @@ impl UpdateCampaignDialerConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCampaignDialerConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignDialerConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3719,7 +3747,7 @@ impl std::error::Error for UpdateCampaignDialerConfigError {
             UpdateCampaignDialerConfigErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateCampaignDialerConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCampaignDialerConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateCampaignDialerConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCampaignDialerConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3748,7 +3776,7 @@ pub enum UpdateCampaignNameErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCampaignNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3784,7 +3812,7 @@ impl UpdateCampaignNameError {
     /// Creates the `UpdateCampaignNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCampaignNameErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3793,7 +3821,7 @@ impl UpdateCampaignNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCampaignNameErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3861,7 +3889,7 @@ impl std::error::Error for UpdateCampaignNameError {
             UpdateCampaignNameErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateCampaignNameErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCampaignNameErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateCampaignNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCampaignNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3892,7 +3920,7 @@ pub enum UpdateCampaignOutboundCallConfigErrorKind {
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCampaignOutboundCallConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3941,7 +3969,9 @@ impl UpdateCampaignOutboundCallConfigError {
     /// Creates the `UpdateCampaignOutboundCallConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCampaignOutboundCallConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignOutboundCallConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3950,7 +3980,9 @@ impl UpdateCampaignOutboundCallConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCampaignOutboundCallConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCampaignOutboundCallConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4032,7 +4064,32 @@ impl std::error::Error for UpdateCampaignOutboundCallConfigError {
             }
             UpdateCampaignOutboundCallConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateCampaignOutboundCallConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateCampaignOutboundCallConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCampaignOutboundCallConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

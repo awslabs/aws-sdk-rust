@@ -1356,7 +1356,7 @@ pub enum CreateTokenErrorKind {
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1393,7 +1393,7 @@ impl CreateTokenError {
     /// Creates the `CreateTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1402,7 +1402,7 @@ impl CreateTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTokenErrorKind::Unhandled(err.into()),
+            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1494,7 +1494,7 @@ impl std::error::Error for CreateTokenError {
             CreateTokenErrorKind::SlowDownException(_inner) => Some(_inner),
             CreateTokenErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             CreateTokenErrorKind::UnsupportedGrantTypeException(_inner) => Some(_inner),
-            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1521,7 +1521,7 @@ pub enum RegisterClientErrorKind {
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::error::InvalidScopeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterClientError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1551,7 +1551,7 @@ impl RegisterClientError {
     /// Creates the `RegisterClientError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterClientErrorKind::Unhandled(err.into()),
+            kind: RegisterClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1560,7 +1560,7 @@ impl RegisterClientError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterClientErrorKind::Unhandled(err.into()),
+            kind: RegisterClientErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1620,7 +1620,7 @@ impl std::error::Error for RegisterClientError {
             RegisterClientErrorKind::InvalidClientMetadataException(_inner) => Some(_inner),
             RegisterClientErrorKind::InvalidRequestException(_inner) => Some(_inner),
             RegisterClientErrorKind::InvalidScopeException(_inner) => Some(_inner),
-            RegisterClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterClientErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1649,7 +1649,7 @@ pub enum StartDeviceAuthorizationErrorKind {
     /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDeviceAuthorizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1680,7 +1680,9 @@ impl StartDeviceAuthorizationError {
     /// Creates the `StartDeviceAuthorizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDeviceAuthorizationErrorKind::Unhandled(err.into()),
+            kind: StartDeviceAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1689,7 +1691,9 @@ impl StartDeviceAuthorizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDeviceAuthorizationErrorKind::Unhandled(err.into()),
+            kind: StartDeviceAuthorizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1757,7 +1761,32 @@ impl std::error::Error for StartDeviceAuthorizationError {
             StartDeviceAuthorizationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartDeviceAuthorizationErrorKind::SlowDownException(_inner) => Some(_inner),
             StartDeviceAuthorizationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            StartDeviceAuthorizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDeviceAuthorizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

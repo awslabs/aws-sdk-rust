@@ -24,7 +24,7 @@ pub enum Error {
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -77,10 +77,10 @@ where
                     inner,
                 ) => Error::UnsupportedDocumentEncodingException(inner),
                 crate::error::DeleteThingShadowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -115,10 +115,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::GetRetainedMessageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -153,9 +153,11 @@ where
                 crate::error::GetThingShadowErrorKind::UnsupportedDocumentEncodingException(
                     inner,
                 ) => Error::UnsupportedDocumentEncodingException(inner),
-                crate::error::GetThingShadowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetThingShadowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -191,10 +193,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListNamedShadowsForThingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -227,10 +229,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::ListRetainedMessagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -253,9 +255,11 @@ where
                 crate::error::PublishErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::PublishErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PublishErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +300,10 @@ where
                     inner,
                 ) => Error::UnsupportedDocumentEncodingException(inner),
                 crate::error::UpdateThingShadowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

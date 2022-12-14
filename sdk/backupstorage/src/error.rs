@@ -726,7 +726,7 @@ pub enum DeleteObjectErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -759,7 +759,7 @@ impl DeleteObjectError {
     /// Creates the `DeleteObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteObjectErrorKind::Unhandled(err.into()),
+            kind: DeleteObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -768,7 +768,7 @@ impl DeleteObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteObjectErrorKind::Unhandled(err.into()),
+            kind: DeleteObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -843,7 +843,7 @@ impl std::error::Error for DeleteObjectError {
             DeleteObjectErrorKind::ServiceInternalException(_inner) => Some(_inner),
             DeleteObjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteObjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -876,7 +876,7 @@ pub enum GetChunkErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetChunkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -909,7 +909,7 @@ impl GetChunkError {
     /// Creates the `GetChunkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetChunkErrorKind::Unhandled(err.into()),
+            kind: GetChunkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -918,7 +918,7 @@ impl GetChunkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetChunkErrorKind::Unhandled(err.into()),
+            kind: GetChunkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -984,7 +984,7 @@ impl std::error::Error for GetChunkError {
             GetChunkErrorKind::RetryableException(_inner) => Some(_inner),
             GetChunkErrorKind::ServiceInternalException(_inner) => Some(_inner),
             GetChunkErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetChunkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetChunkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1019,7 +1019,7 @@ pub enum GetObjectMetadataErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetObjectMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1053,7 +1053,7 @@ impl GetObjectMetadataError {
     /// Creates the `GetObjectMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetObjectMetadataErrorKind::Unhandled(err.into()),
+            kind: GetObjectMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1062,7 +1062,7 @@ impl GetObjectMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetObjectMetadataErrorKind::Unhandled(err.into()),
+            kind: GetObjectMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1154,7 +1154,7 @@ impl std::error::Error for GetObjectMetadataError {
             GetObjectMetadataErrorKind::ServiceInternalException(_inner) => Some(_inner),
             GetObjectMetadataErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetObjectMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetObjectMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetObjectMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1185,7 +1185,7 @@ pub enum ListChunksErrorKind {
     /// Retryable exception, indicates internal server error.
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChunksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1217,7 +1217,7 @@ impl ListChunksError {
     /// Creates the `ListChunksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChunksErrorKind::Unhandled(err.into()),
+            kind: ListChunksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1226,7 +1226,7 @@ impl ListChunksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChunksErrorKind::Unhandled(err.into()),
+            kind: ListChunksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1290,7 +1290,7 @@ impl std::error::Error for ListChunksError {
             ListChunksErrorKind::RetryableException(_inner) => Some(_inner),
             ListChunksErrorKind::ServiceInternalException(_inner) => Some(_inner),
             ListChunksErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListChunksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChunksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1325,7 +1325,7 @@ pub enum ListObjectsErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1359,7 +1359,7 @@ impl ListObjectsError {
     /// Creates the `ListObjectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectsErrorKind::Unhandled(err.into()),
+            kind: ListObjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1368,7 +1368,7 @@ impl ListObjectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectsErrorKind::Unhandled(err.into()),
+            kind: ListObjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1451,7 +1451,7 @@ impl std::error::Error for ListObjectsError {
             ListObjectsErrorKind::ServiceInternalException(_inner) => Some(_inner),
             ListObjectsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListObjectsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListObjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1486,7 +1486,7 @@ pub enum NotifyObjectCompleteErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for NotifyObjectCompleteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1520,7 +1520,9 @@ impl NotifyObjectCompleteError {
     /// Creates the `NotifyObjectCompleteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: NotifyObjectCompleteErrorKind::Unhandled(err.into()),
+            kind: NotifyObjectCompleteErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1529,7 +1531,9 @@ impl NotifyObjectCompleteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: NotifyObjectCompleteErrorKind::Unhandled(err.into()),
+            kind: NotifyObjectCompleteErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1621,7 +1625,7 @@ impl std::error::Error for NotifyObjectCompleteError {
             NotifyObjectCompleteErrorKind::ServiceInternalException(_inner) => Some(_inner),
             NotifyObjectCompleteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             NotifyObjectCompleteErrorKind::ThrottlingException(_inner) => Some(_inner),
-            NotifyObjectCompleteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            NotifyObjectCompleteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1656,7 +1660,7 @@ pub enum PutChunkErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutChunkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1690,7 +1694,7 @@ impl PutChunkError {
     /// Creates the `PutChunkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutChunkErrorKind::Unhandled(err.into()),
+            kind: PutChunkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1699,7 +1703,7 @@ impl PutChunkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutChunkErrorKind::Unhandled(err.into()),
+            kind: PutChunkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1776,7 +1780,7 @@ impl std::error::Error for PutChunkError {
             PutChunkErrorKind::ServiceInternalException(_inner) => Some(_inner),
             PutChunkErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             PutChunkErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutChunkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutChunkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1811,7 +1815,7 @@ pub enum PutObjectErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1845,7 +1849,7 @@ impl PutObjectError {
     /// Creates the `PutObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutObjectErrorKind::Unhandled(err.into()),
+            kind: PutObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1854,7 +1858,7 @@ impl PutObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutObjectErrorKind::Unhandled(err.into()),
+            kind: PutObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1931,7 +1935,7 @@ impl std::error::Error for PutObjectError {
             PutObjectErrorKind::ServiceInternalException(_inner) => Some(_inner),
             PutObjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             PutObjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1966,7 +1970,7 @@ pub enum StartObjectErrorKind {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2000,7 +2004,7 @@ impl StartObjectError {
     /// Creates the `StartObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartObjectErrorKind::Unhandled(err.into()),
+            kind: StartObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2009,7 +2013,7 @@ impl StartObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartObjectErrorKind::Unhandled(err.into()),
+            kind: StartObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2092,7 +2096,32 @@ impl std::error::Error for StartObjectError {
             StartObjectErrorKind::ServiceInternalException(_inner) => Some(_inner),
             StartObjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartObjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

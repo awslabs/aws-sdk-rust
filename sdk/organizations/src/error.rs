@@ -3295,7 +3295,7 @@ pub enum AcceptHandshakeErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptHandshakeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3334,7 +3334,7 @@ impl AcceptHandshakeError {
     /// Creates the `AcceptHandshakeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptHandshakeErrorKind::Unhandled(err.into()),
+            kind: AcceptHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3343,7 +3343,7 @@ impl AcceptHandshakeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptHandshakeErrorKind::Unhandled(err.into()),
+            kind: AcceptHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3456,7 +3456,7 @@ impl std::error::Error for AcceptHandshakeError {
             AcceptHandshakeErrorKind::InvalidInputException(_inner) => Some(_inner),
             AcceptHandshakeErrorKind::ServiceException(_inner) => Some(_inner),
             AcceptHandshakeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AcceptHandshakeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AcceptHandshakeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3570,7 +3570,7 @@ pub enum AttachPolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3609,7 +3609,7 @@ impl AttachPolicyError {
     /// Creates the `AttachPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachPolicyErrorKind::Unhandled(err.into()),
+            kind: AttachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3618,7 +3618,7 @@ impl AttachPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachPolicyErrorKind::Unhandled(err.into()),
+            kind: AttachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3741,7 +3741,7 @@ impl std::error::Error for AttachPolicyError {
             AttachPolicyErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             AttachPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             AttachPolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            AttachPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3805,7 +3805,7 @@ pub enum CancelHandshakeErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelHandshakeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3839,7 +3839,7 @@ impl CancelHandshakeError {
     /// Creates the `CancelHandshakeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelHandshakeErrorKind::Unhandled(err.into()),
+            kind: CancelHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3848,7 +3848,7 @@ impl CancelHandshakeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelHandshakeErrorKind::Unhandled(err.into()),
+            kind: CancelHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3937,7 +3937,7 @@ impl std::error::Error for CancelHandshakeError {
             CancelHandshakeErrorKind::InvalidInputException(_inner) => Some(_inner),
             CancelHandshakeErrorKind::ServiceException(_inner) => Some(_inner),
             CancelHandshakeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CancelHandshakeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelHandshakeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4047,7 +4047,7 @@ pub enum CloseAccountErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CloseAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4084,7 +4084,7 @@ impl CloseAccountError {
     /// Creates the `CloseAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CloseAccountErrorKind::Unhandled(err.into()),
+            kind: CloseAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4093,7 +4093,7 @@ impl CloseAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CloseAccountErrorKind::Unhandled(err.into()),
+            kind: CloseAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4197,7 +4197,7 @@ impl std::error::Error for CloseAccountError {
             CloseAccountErrorKind::ServiceException(_inner) => Some(_inner),
             CloseAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CloseAccountErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            CloseAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CloseAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4303,7 +4303,7 @@ pub enum CreateAccountErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4338,7 +4338,7 @@ impl CreateAccountError {
     /// Creates the `CreateAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccountErrorKind::Unhandled(err.into()),
+            kind: CreateAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4347,7 +4347,7 @@ impl CreateAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccountErrorKind::Unhandled(err.into()),
+            kind: CreateAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4438,7 +4438,7 @@ impl std::error::Error for CreateAccountError {
             CreateAccountErrorKind::ServiceException(_inner) => Some(_inner),
             CreateAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAccountErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            CreateAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4544,7 +4544,7 @@ pub enum CreateGovCloudAccountErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGovCloudAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4587,7 +4587,9 @@ impl CreateGovCloudAccountError {
     /// Creates the `CreateGovCloudAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGovCloudAccountErrorKind::Unhandled(err.into()),
+            kind: CreateGovCloudAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4596,7 +4598,9 @@ impl CreateGovCloudAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGovCloudAccountErrorKind::Unhandled(err.into()),
+            kind: CreateGovCloudAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4698,7 +4702,7 @@ impl std::error::Error for CreateGovCloudAccountError {
             CreateGovCloudAccountErrorKind::ServiceException(_inner) => Some(_inner),
             CreateGovCloudAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateGovCloudAccountErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            CreateGovCloudAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGovCloudAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4802,7 +4806,7 @@ pub enum CreateOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4838,7 +4842,7 @@ impl CreateOrganizationError {
     /// Creates the `CreateOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateOrganizationErrorKind::Unhandled(err.into()),
+            kind: CreateOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4847,7 +4851,7 @@ impl CreateOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateOrganizationErrorKind::Unhandled(err.into()),
+            kind: CreateOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4936,7 +4940,7 @@ impl std::error::Error for CreateOrganizationError {
             CreateOrganizationErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateOrganizationErrorKind::ServiceException(_inner) => Some(_inner),
             CreateOrganizationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5042,7 +5046,7 @@ pub enum CreateOrganizationalUnitErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateOrganizationalUnitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5085,7 +5089,9 @@ impl CreateOrganizationalUnitError {
     /// Creates the `CreateOrganizationalUnitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: CreateOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5094,7 +5100,9 @@ impl CreateOrganizationalUnitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: CreateOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5200,7 +5208,7 @@ impl std::error::Error for CreateOrganizationalUnitError {
             CreateOrganizationalUnitErrorKind::ParentNotFoundException(_inner) => Some(_inner),
             CreateOrganizationalUnitErrorKind::ServiceException(_inner) => Some(_inner),
             CreateOrganizationalUnitErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5312,7 +5320,7 @@ pub enum CreatePolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5351,7 +5359,7 @@ impl CreatePolicyError {
     /// Creates the `CreatePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePolicyErrorKind::Unhandled(err.into()),
+            kind: CreatePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5360,7 +5368,7 @@ impl CreatePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePolicyErrorKind::Unhandled(err.into()),
+            kind: CreatePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5469,7 +5477,7 @@ impl std::error::Error for CreatePolicyError {
             CreatePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             CreatePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreatePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            CreatePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5533,7 +5541,7 @@ pub enum DeclineHandshakeErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeclineHandshakeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5567,7 +5575,7 @@ impl DeclineHandshakeError {
     /// Creates the `DeclineHandshakeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeclineHandshakeErrorKind::Unhandled(err.into()),
+            kind: DeclineHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5576,7 +5584,7 @@ impl DeclineHandshakeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeclineHandshakeErrorKind::Unhandled(err.into()),
+            kind: DeclineHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5665,7 +5673,7 @@ impl std::error::Error for DeclineHandshakeError {
             DeclineHandshakeErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeclineHandshakeErrorKind::ServiceException(_inner) => Some(_inner),
             DeclineHandshakeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeclineHandshakeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeclineHandshakeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5727,7 +5735,7 @@ pub enum DeleteOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5760,7 +5768,7 @@ impl DeleteOrganizationError {
     /// Creates the `DeleteOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteOrganizationErrorKind::Unhandled(err.into()),
+            kind: DeleteOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5769,7 +5777,7 @@ impl DeleteOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteOrganizationErrorKind::Unhandled(err.into()),
+            kind: DeleteOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5850,7 +5858,7 @@ impl std::error::Error for DeleteOrganizationError {
             DeleteOrganizationErrorKind::OrganizationNotEmptyException(_inner) => Some(_inner),
             DeleteOrganizationErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteOrganizationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5914,7 +5922,7 @@ pub enum DeleteOrganizationalUnitErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteOrganizationalUnitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5956,7 +5964,9 @@ impl DeleteOrganizationalUnitError {
     /// Creates the `DeleteOrganizationalUnitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: DeleteOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5965,7 +5975,9 @@ impl DeleteOrganizationalUnitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: DeleteOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6065,7 +6077,7 @@ impl std::error::Error for DeleteOrganizationalUnitError {
             }
             DeleteOrganizationalUnitErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteOrganizationalUnitErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6131,7 +6143,7 @@ pub enum DeletePolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6166,7 +6178,7 @@ impl DeletePolicyError {
     /// Creates the `DeletePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6175,7 +6187,7 @@ impl DeletePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6263,7 +6275,7 @@ impl std::error::Error for DeletePolicyError {
             DeletePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             DeletePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeletePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6371,7 +6383,7 @@ pub enum DeregisterDelegatedAdministratorErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterDelegatedAdministratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6428,7 +6440,9 @@ impl DeregisterDelegatedAdministratorError {
     /// Creates the `DeregisterDelegatedAdministratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterDelegatedAdministratorErrorKind::Unhandled(err.into()),
+            kind: DeregisterDelegatedAdministratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6437,7 +6451,9 @@ impl DeregisterDelegatedAdministratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterDelegatedAdministratorErrorKind::Unhandled(err.into()),
+            kind: DeregisterDelegatedAdministratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6563,7 +6579,7 @@ impl std::error::Error for DeregisterDelegatedAdministratorError {
             DeregisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            DeregisterDelegatedAdministratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterDelegatedAdministratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6623,7 +6639,7 @@ pub enum DescribeAccountErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6655,7 +6671,7 @@ impl DescribeAccountError {
     /// Creates the `DescribeAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6664,7 +6680,7 @@ impl DescribeAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6737,7 +6753,7 @@ impl std::error::Error for DescribeAccountError {
             DescribeAccountErrorKind::InvalidInputException(_inner) => Some(_inner),
             DescribeAccountErrorKind::ServiceException(_inner) => Some(_inner),
             DescribeAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6799,7 +6815,7 @@ pub enum DescribeCreateAccountStatusErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCreateAccountStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6838,7 +6854,9 @@ impl DescribeCreateAccountStatusError {
     /// Creates the `DescribeCreateAccountStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCreateAccountStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeCreateAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6847,7 +6865,9 @@ impl DescribeCreateAccountStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCreateAccountStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeCreateAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6937,7 +6957,7 @@ impl std::error::Error for DescribeCreateAccountStatusError {
             DescribeCreateAccountStatusErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            DescribeCreateAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCreateAccountStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7043,7 +7063,7 @@ pub enum DescribeEffectivePolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEffectivePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7084,7 +7104,9 @@ impl DescribeEffectivePolicyError {
     /// Creates the `DescribeEffectivePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEffectivePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeEffectivePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7093,7 +7115,9 @@ impl DescribeEffectivePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEffectivePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeEffectivePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7199,7 +7223,7 @@ impl std::error::Error for DescribeEffectivePolicyError {
             DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            DescribeEffectivePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEffectivePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7259,7 +7283,7 @@ pub enum DescribeHandshakeErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHandshakeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7291,7 +7315,7 @@ impl DescribeHandshakeError {
     /// Creates the `DescribeHandshakeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHandshakeErrorKind::Unhandled(err.into()),
+            kind: DescribeHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7300,7 +7324,7 @@ impl DescribeHandshakeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHandshakeErrorKind::Unhandled(err.into()),
+            kind: DescribeHandshakeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7373,7 +7397,7 @@ impl std::error::Error for DescribeHandshakeError {
             DescribeHandshakeErrorKind::InvalidInputException(_inner) => Some(_inner),
             DescribeHandshakeErrorKind::ServiceException(_inner) => Some(_inner),
             DescribeHandshakeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeHandshakeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHandshakeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7403,7 +7427,7 @@ pub enum DescribeOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7436,7 +7460,9 @@ impl DescribeOrganizationError {
     /// Creates the `DescribeOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7445,7 +7471,9 @@ impl DescribeOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeOrganizationErrorKind::Unhandled(err.into()),
+            kind: DescribeOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7515,7 +7543,7 @@ impl std::error::Error for DescribeOrganizationError {
             DescribeOrganizationErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DescribeOrganizationErrorKind::ServiceException(_inner) => Some(_inner),
             DescribeOrganizationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7575,7 +7603,7 @@ pub enum DescribeOrganizationalUnitErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeOrganizationalUnitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7611,7 +7639,9 @@ impl DescribeOrganizationalUnitError {
     /// Creates the `DescribeOrganizationalUnitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: DescribeOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7620,7 +7650,9 @@ impl DescribeOrganizationalUnitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: DescribeOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7700,7 +7732,7 @@ impl std::error::Error for DescribeOrganizationalUnitError {
             }
             DescribeOrganizationalUnitErrorKind::ServiceException(_inner) => Some(_inner),
             DescribeOrganizationalUnitErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7762,7 +7794,7 @@ pub enum DescribePolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7795,7 +7827,7 @@ impl DescribePolicyError {
     /// Creates the `DescribePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7804,7 +7836,7 @@ impl DescribePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7885,7 +7917,7 @@ impl std::error::Error for DescribePolicyError {
             DescribePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             DescribePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            DescribePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7997,7 +8029,7 @@ pub enum DetachPolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8035,7 +8067,7 @@ impl DetachPolicyError {
     /// Creates the `DetachPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachPolicyErrorKind::Unhandled(err.into()),
+            kind: DetachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8044,7 +8076,7 @@ impl DetachPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachPolicyErrorKind::Unhandled(err.into()),
+            kind: DetachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8159,7 +8191,7 @@ impl std::error::Error for DetachPolicyError {
             DetachPolicyErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             DetachPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DetachPolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            DetachPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8263,7 +8295,7 @@ pub enum DisableAWSServiceAccessErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableAWSServiceAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8303,7 +8335,9 @@ impl DisableAWSServiceAccessError {
     /// Creates the `DisableAWSServiceAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableAWSServiceAccessErrorKind::Unhandled(err.into()),
+            kind: DisableAWSServiceAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8312,7 +8346,9 @@ impl DisableAWSServiceAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableAWSServiceAccessErrorKind::Unhandled(err.into()),
+            kind: DisableAWSServiceAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8410,7 +8446,7 @@ impl std::error::Error for DisableAWSServiceAccessError {
             DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            DisableAWSServiceAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableAWSServiceAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8520,7 +8556,7 @@ pub enum DisablePolicyTypeErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisablePolicyTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8557,7 +8593,7 @@ impl DisablePolicyTypeError {
     /// Creates the `DisablePolicyTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisablePolicyTypeErrorKind::Unhandled(err.into()),
+            kind: DisablePolicyTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8566,7 +8602,7 @@ impl DisablePolicyTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisablePolicyTypeErrorKind::Unhandled(err.into()),
+            kind: DisablePolicyTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8679,7 +8715,7 @@ impl std::error::Error for DisablePolicyTypeError {
             DisablePolicyTypeErrorKind::ServiceException(_inner) => Some(_inner),
             DisablePolicyTypeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DisablePolicyTypeErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            DisablePolicyTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisablePolicyTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8756,7 +8792,7 @@ pub enum EnableAllFeaturesErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableAllFeaturesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8791,7 +8827,7 @@ impl EnableAllFeaturesError {
     /// Creates the `EnableAllFeaturesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableAllFeaturesErrorKind::Unhandled(err.into()),
+            kind: EnableAllFeaturesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8800,7 +8836,7 @@ impl EnableAllFeaturesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableAllFeaturesErrorKind::Unhandled(err.into()),
+            kind: EnableAllFeaturesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8883,7 +8919,7 @@ impl std::error::Error for EnableAllFeaturesError {
             EnableAllFeaturesErrorKind::InvalidInputException(_inner) => Some(_inner),
             EnableAllFeaturesErrorKind::ServiceException(_inner) => Some(_inner),
             EnableAllFeaturesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            EnableAllFeaturesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableAllFeaturesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8987,7 +9023,7 @@ pub enum EnableAWSServiceAccessErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableAWSServiceAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9027,7 +9063,9 @@ impl EnableAWSServiceAccessError {
     /// Creates the `EnableAWSServiceAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableAWSServiceAccessErrorKind::Unhandled(err.into()),
+            kind: EnableAWSServiceAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9036,7 +9074,9 @@ impl EnableAWSServiceAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableAWSServiceAccessErrorKind::Unhandled(err.into()),
+            kind: EnableAWSServiceAccessErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9134,7 +9174,7 @@ impl std::error::Error for EnableAWSServiceAccessError {
             EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            EnableAWSServiceAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableAWSServiceAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9248,7 +9288,7 @@ pub enum EnablePolicyTypeErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnablePolicyTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9288,7 +9328,7 @@ impl EnablePolicyTypeError {
     /// Creates the `EnablePolicyTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnablePolicyTypeErrorKind::Unhandled(err.into()),
+            kind: EnablePolicyTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9297,7 +9337,7 @@ impl EnablePolicyTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnablePolicyTypeErrorKind::Unhandled(err.into()),
+            kind: EnablePolicyTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9420,7 +9460,7 @@ impl std::error::Error for EnablePolicyTypeError {
             EnablePolicyTypeErrorKind::ServiceException(_inner) => Some(_inner),
             EnablePolicyTypeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             EnablePolicyTypeErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            EnablePolicyTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnablePolicyTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9545,7 +9585,7 @@ pub enum InviteAccountToOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InviteAccountToOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9596,7 +9636,9 @@ impl InviteAccountToOrganizationError {
     /// Creates the `InviteAccountToOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InviteAccountToOrganizationErrorKind::Unhandled(err.into()),
+            kind: InviteAccountToOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9605,7 +9647,9 @@ impl InviteAccountToOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InviteAccountToOrganizationErrorKind::Unhandled(err.into()),
+            kind: InviteAccountToOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9735,7 +9779,7 @@ impl std::error::Error for InviteAccountToOrganizationError {
             InviteAccountToOrganizationErrorKind::InvalidInputException(_inner) => Some(_inner),
             InviteAccountToOrganizationErrorKind::ServiceException(_inner) => Some(_inner),
             InviteAccountToOrganizationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            InviteAccountToOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InviteAccountToOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9841,7 +9885,7 @@ pub enum LeaveOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for LeaveOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9878,7 +9922,7 @@ impl LeaveOrganizationError {
     /// Creates the `LeaveOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: LeaveOrganizationErrorKind::Unhandled(err.into()),
+            kind: LeaveOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9887,7 +9931,7 @@ impl LeaveOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: LeaveOrganizationErrorKind::Unhandled(err.into()),
+            kind: LeaveOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9986,7 +10030,7 @@ impl std::error::Error for LeaveOrganizationError {
             }
             LeaveOrganizationErrorKind::ServiceException(_inner) => Some(_inner),
             LeaveOrganizationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            LeaveOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            LeaveOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10044,7 +10088,7 @@ pub enum ListAccountsErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10075,7 +10119,7 @@ impl ListAccountsError {
     /// Creates the `ListAccountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountsErrorKind::Unhandled(err.into()),
+            kind: ListAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10084,7 +10128,7 @@ impl ListAccountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountsErrorKind::Unhandled(err.into()),
+            kind: ListAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10143,7 +10187,7 @@ impl std::error::Error for ListAccountsError {
             ListAccountsErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListAccountsErrorKind::ServiceException(_inner) => Some(_inner),
             ListAccountsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10203,7 +10247,7 @@ pub enum ListAccountsForParentErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountsForParentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10237,7 +10281,9 @@ impl ListAccountsForParentError {
     /// Creates the `ListAccountsForParentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountsForParentErrorKind::Unhandled(err.into()),
+            kind: ListAccountsForParentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10246,7 +10292,9 @@ impl ListAccountsForParentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountsForParentErrorKind::Unhandled(err.into()),
+            kind: ListAccountsForParentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10324,7 +10372,7 @@ impl std::error::Error for ListAccountsForParentError {
             ListAccountsForParentErrorKind::ParentNotFoundException(_inner) => Some(_inner),
             ListAccountsForParentErrorKind::ServiceException(_inner) => Some(_inner),
             ListAccountsForParentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListAccountsForParentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountsForParentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10426,7 +10474,7 @@ pub enum ListAWSServiceAccessForOrganizationErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAWSServiceAccessForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10474,7 +10522,9 @@ impl ListAWSServiceAccessForOrganizationError {
     /// Creates the `ListAWSServiceAccessForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAWSServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: ListAWSServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10483,7 +10533,9 @@ impl ListAWSServiceAccessForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAWSServiceAccessForOrganizationErrorKind::Unhandled(err.into()),
+            kind: ListAWSServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10579,9 +10631,7 @@ impl std::error::Error for ListAWSServiceAccessForOrganizationError {
             ListAWSServiceAccessForOrganizationErrorKind::UnsupportedApiEndpointException(
                 _inner,
             ) => Some(_inner),
-            ListAWSServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAWSServiceAccessForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10641,7 +10691,7 @@ pub enum ListChildrenErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChildrenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10673,7 +10723,7 @@ impl ListChildrenError {
     /// Creates the `ListChildrenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChildrenErrorKind::Unhandled(err.into()),
+            kind: ListChildrenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10682,7 +10732,7 @@ impl ListChildrenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChildrenErrorKind::Unhandled(err.into()),
+            kind: ListChildrenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10749,7 +10799,7 @@ impl std::error::Error for ListChildrenError {
             ListChildrenErrorKind::ParentNotFoundException(_inner) => Some(_inner),
             ListChildrenErrorKind::ServiceException(_inner) => Some(_inner),
             ListChildrenErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListChildrenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChildrenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10809,7 +10859,7 @@ pub enum ListCreateAccountStatusErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCreateAccountStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10845,7 +10895,9 @@ impl ListCreateAccountStatusError {
     /// Creates the `ListCreateAccountStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCreateAccountStatusErrorKind::Unhandled(err.into()),
+            kind: ListCreateAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10854,7 +10906,9 @@ impl ListCreateAccountStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCreateAccountStatusErrorKind::Unhandled(err.into()),
+            kind: ListCreateAccountStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10934,7 +10988,7 @@ impl std::error::Error for ListCreateAccountStatusError {
             ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            ListCreateAccountStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCreateAccountStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11036,7 +11090,7 @@ pub enum ListDelegatedAdministratorsErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDelegatedAdministratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11075,7 +11129,9 @@ impl ListDelegatedAdministratorsError {
     /// Creates the `ListDelegatedAdministratorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDelegatedAdministratorsErrorKind::Unhandled(err.into()),
+            kind: ListDelegatedAdministratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11084,7 +11140,9 @@ impl ListDelegatedAdministratorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDelegatedAdministratorsErrorKind::Unhandled(err.into()),
+            kind: ListDelegatedAdministratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11174,7 +11232,7 @@ impl std::error::Error for ListDelegatedAdministratorsError {
             ListDelegatedAdministratorsErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            ListDelegatedAdministratorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDelegatedAdministratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11280,7 +11338,7 @@ pub enum ListDelegatedServicesForAccountErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDelegatedServicesForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11334,7 +11392,9 @@ impl ListDelegatedServicesForAccountError {
     /// Creates the `ListDelegatedServicesForAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDelegatedServicesForAccountErrorKind::Unhandled(err.into()),
+            kind: ListDelegatedServicesForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11343,7 +11403,9 @@ impl ListDelegatedServicesForAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDelegatedServicesForAccountErrorKind::Unhandled(err.into()),
+            kind: ListDelegatedServicesForAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11455,7 +11517,7 @@ impl std::error::Error for ListDelegatedServicesForAccountError {
             ListDelegatedServicesForAccountErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            ListDelegatedServicesForAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDelegatedServicesForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11513,7 +11575,7 @@ pub enum ListHandshakesForAccountErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHandshakesForAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11546,7 +11608,9 @@ impl ListHandshakesForAccountError {
     /// Creates the `ListHandshakesForAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHandshakesForAccountErrorKind::Unhandled(err.into()),
+            kind: ListHandshakesForAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11555,7 +11619,9 @@ impl ListHandshakesForAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHandshakesForAccountErrorKind::Unhandled(err.into()),
+            kind: ListHandshakesForAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11625,7 +11691,7 @@ impl std::error::Error for ListHandshakesForAccountError {
             ListHandshakesForAccountErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListHandshakesForAccountErrorKind::ServiceException(_inner) => Some(_inner),
             ListHandshakesForAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListHandshakesForAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHandshakesForAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11685,7 +11751,7 @@ pub enum ListHandshakesForOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHandshakesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11726,7 +11792,9 @@ impl ListHandshakesForOrganizationError {
     /// Creates the `ListHandshakesForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHandshakesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: ListHandshakesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11735,7 +11803,9 @@ impl ListHandshakesForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHandshakesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: ListHandshakesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11817,7 +11887,7 @@ impl std::error::Error for ListHandshakesForOrganizationError {
             ListHandshakesForOrganizationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListHandshakesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHandshakesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11877,7 +11947,7 @@ pub enum ListOrganizationalUnitsForParentErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOrganizationalUnitsForParentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11922,7 +11992,9 @@ impl ListOrganizationalUnitsForParentError {
     /// Creates the `ListOrganizationalUnitsForParentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOrganizationalUnitsForParentErrorKind::Unhandled(err.into()),
+            kind: ListOrganizationalUnitsForParentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11931,7 +12003,9 @@ impl ListOrganizationalUnitsForParentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOrganizationalUnitsForParentErrorKind::Unhandled(err.into()),
+            kind: ListOrganizationalUnitsForParentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -12017,7 +12091,7 @@ impl std::error::Error for ListOrganizationalUnitsForParentError {
             ListOrganizationalUnitsForParentErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListOrganizationalUnitsForParentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListOrganizationalUnitsForParentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12077,7 +12151,7 @@ pub enum ListParentsErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListParentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12109,7 +12183,7 @@ impl ListParentsError {
     /// Creates the `ListParentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListParentsErrorKind::Unhandled(err.into()),
+            kind: ListParentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12118,7 +12192,7 @@ impl ListParentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListParentsErrorKind::Unhandled(err.into()),
+            kind: ListParentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12182,7 +12256,7 @@ impl std::error::Error for ListParentsError {
             ListParentsErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListParentsErrorKind::ServiceException(_inner) => Some(_inner),
             ListParentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListParentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListParentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12242,7 +12316,7 @@ pub enum ListPoliciesErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12274,7 +12348,7 @@ impl ListPoliciesError {
     /// Creates the `ListPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12283,7 +12357,7 @@ impl ListPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12350,7 +12424,7 @@ impl std::error::Error for ListPoliciesError {
             ListPoliciesErrorKind::ServiceException(_inner) => Some(_inner),
             ListPoliciesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListPoliciesErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            ListPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12412,7 +12486,7 @@ pub enum ListPoliciesForTargetErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPoliciesForTargetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12449,7 +12523,9 @@ impl ListPoliciesForTargetError {
     /// Creates the `ListPoliciesForTargetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPoliciesForTargetErrorKind::Unhandled(err.into()),
+            kind: ListPoliciesForTargetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12458,7 +12534,9 @@ impl ListPoliciesForTargetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPoliciesForTargetErrorKind::Unhandled(err.into()),
+            kind: ListPoliciesForTargetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12544,7 +12622,7 @@ impl std::error::Error for ListPoliciesForTargetError {
             ListPoliciesForTargetErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             ListPoliciesForTargetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListPoliciesForTargetErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            ListPoliciesForTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPoliciesForTargetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12602,7 +12680,7 @@ pub enum ListRootsErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRootsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12633,7 +12711,7 @@ impl ListRootsError {
     /// Creates the `ListRootsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRootsErrorKind::Unhandled(err.into()),
+            kind: ListRootsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12642,7 +12720,7 @@ impl ListRootsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRootsErrorKind::Unhandled(err.into()),
+            kind: ListRootsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12698,7 +12776,7 @@ impl std::error::Error for ListRootsError {
             ListRootsErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListRootsErrorKind::ServiceException(_inner) => Some(_inner),
             ListRootsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListRootsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRootsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12758,7 +12836,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12792,7 +12870,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12801,7 +12879,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12877,7 +12955,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ServiceException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12939,7 +13017,7 @@ pub enum ListTargetsForPolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTargetsForPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12974,7 +13052,9 @@ impl ListTargetsForPolicyError {
     /// Creates the `ListTargetsForPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTargetsForPolicyErrorKind::Unhandled(err.into()),
+            kind: ListTargetsForPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12983,7 +13063,9 @@ impl ListTargetsForPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTargetsForPolicyErrorKind::Unhandled(err.into()),
+            kind: ListTargetsForPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13069,7 +13151,7 @@ impl std::error::Error for ListTargetsForPolicyError {
             ListTargetsForPolicyErrorKind::ServiceException(_inner) => Some(_inner),
             ListTargetsForPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListTargetsForPolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            ListTargetsForPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTargetsForPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13137,7 +13219,7 @@ pub enum MoveAccountErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MoveAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13173,7 +13255,7 @@ impl MoveAccountError {
     /// Creates the `MoveAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MoveAccountErrorKind::Unhandled(err.into()),
+            kind: MoveAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13182,7 +13264,7 @@ impl MoveAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MoveAccountErrorKind::Unhandled(err.into()),
+            kind: MoveAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13281,7 +13363,7 @@ impl std::error::Error for MoveAccountError {
             MoveAccountErrorKind::ServiceException(_inner) => Some(_inner),
             MoveAccountErrorKind::SourceParentNotFoundException(_inner) => Some(_inner),
             MoveAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            MoveAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MoveAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13389,7 +13471,7 @@ pub enum RegisterDelegatedAdministratorErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterDelegatedAdministratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13442,7 +13524,9 @@ impl RegisterDelegatedAdministratorError {
     /// Creates the `RegisterDelegatedAdministratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterDelegatedAdministratorErrorKind::Unhandled(err.into()),
+            kind: RegisterDelegatedAdministratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13451,7 +13535,9 @@ impl RegisterDelegatedAdministratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterDelegatedAdministratorErrorKind::Unhandled(err.into()),
+            kind: RegisterDelegatedAdministratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13573,7 +13659,7 @@ impl std::error::Error for RegisterDelegatedAdministratorError {
             RegisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException(_inner) => {
                 Some(_inner)
             }
-            RegisterDelegatedAdministratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterDelegatedAdministratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13679,7 +13765,7 @@ pub enum RemoveAccountFromOrganizationErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveAccountFromOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13729,7 +13815,9 @@ impl RemoveAccountFromOrganizationError {
     /// Creates the `RemoveAccountFromOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveAccountFromOrganizationErrorKind::Unhandled(err.into()),
+            kind: RemoveAccountFromOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13738,7 +13826,9 @@ impl RemoveAccountFromOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveAccountFromOrganizationErrorKind::Unhandled(err.into()),
+            kind: RemoveAccountFromOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13850,7 +13940,7 @@ impl std::error::Error for RemoveAccountFromOrganizationError {
             RemoveAccountFromOrganizationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            RemoveAccountFromOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveAccountFromOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13954,7 +14044,7 @@ pub enum TagResourceErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13988,7 +14078,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13997,7 +14087,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14077,7 +14167,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             TagResourceErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14181,7 +14271,7 @@ pub enum UntagResourceErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14215,7 +14305,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14224,7 +14314,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14307,7 +14397,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             UntagResourceErrorKind::TargetNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14371,7 +14461,7 @@ pub enum UpdateOrganizationalUnitErrorKind {
     /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateOrganizationalUnitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14413,7 +14503,9 @@ impl UpdateOrganizationalUnitError {
     /// Creates the `UpdateOrganizationalUnitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: UpdateOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14422,7 +14514,9 @@ impl UpdateOrganizationalUnitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateOrganizationalUnitErrorKind::Unhandled(err.into()),
+            kind: UpdateOrganizationalUnitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14522,7 +14616,7 @@ impl std::error::Error for UpdateOrganizationalUnitError {
             }
             UpdateOrganizationalUnitErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateOrganizationalUnitErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateOrganizationalUnitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14634,7 +14728,7 @@ pub enum UpdatePolicyErrorKind {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14672,7 +14766,7 @@ impl UpdatePolicyError {
     /// Creates the `UpdatePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePolicyErrorKind::Unhandled(err.into()),
+            kind: UpdatePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14681,7 +14775,7 @@ impl UpdatePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePolicyErrorKind::Unhandled(err.into()),
+            kind: UpdatePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14796,7 +14890,32 @@ impl std::error::Error for UpdatePolicyError {
             UpdatePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             UpdatePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdatePolicyErrorKind::UnsupportedApiEndpointException(_inner) => Some(_inner),
-            UpdatePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

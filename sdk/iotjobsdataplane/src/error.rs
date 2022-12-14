@@ -503,7 +503,7 @@ pub enum DescribeJobExecutionErrorKind {
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,7 +535,9 @@ impl DescribeJobExecutionError {
     /// Creates the `DescribeJobExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeJobExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -544,7 +546,9 @@ impl DescribeJobExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeJobExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -620,7 +624,7 @@ impl std::error::Error for DescribeJobExecutionError {
             DescribeJobExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeJobExecutionErrorKind::TerminalStateException(_inner) => Some(_inner),
             DescribeJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeJobExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -649,7 +653,7 @@ pub enum GetPendingJobExecutionsErrorKind {
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPendingJobExecutionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -682,7 +686,9 @@ impl GetPendingJobExecutionsError {
     /// Creates the `GetPendingJobExecutionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPendingJobExecutionsErrorKind::Unhandled(err.into()),
+            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -691,7 +697,9 @@ impl GetPendingJobExecutionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPendingJobExecutionsErrorKind::Unhandled(err.into()),
+            kind: GetPendingJobExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -761,7 +769,7 @@ impl std::error::Error for GetPendingJobExecutionsError {
             GetPendingJobExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetPendingJobExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetPendingJobExecutionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPendingJobExecutionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -790,7 +798,7 @@ pub enum StartNextPendingJobExecutionErrorKind {
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartNextPendingJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -827,7 +835,9 @@ impl StartNextPendingJobExecutionError {
     /// Creates the `StartNextPendingJobExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartNextPendingJobExecutionErrorKind::Unhandled(err.into()),
+            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -836,7 +846,9 @@ impl StartNextPendingJobExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartNextPendingJobExecutionErrorKind::Unhandled(err.into()),
+            kind: StartNextPendingJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -910,7 +922,7 @@ impl std::error::Error for StartNextPendingJobExecutionError {
                 Some(_inner)
             }
             StartNextPendingJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartNextPendingJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -941,7 +953,7 @@ pub enum UpdateJobExecutionErrorKind {
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateJobExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -973,7 +985,7 @@ impl UpdateJobExecutionError {
     /// Creates the `UpdateJobExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateJobExecutionErrorKind::Unhandled(err.into()),
+            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -982,7 +994,7 @@ impl UpdateJobExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateJobExecutionErrorKind::Unhandled(err.into()),
+            kind: UpdateJobExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1058,7 +1070,32 @@ impl std::error::Error for UpdateJobExecutionError {
             UpdateJobExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateJobExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateJobExecutionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateJobExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateJobExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

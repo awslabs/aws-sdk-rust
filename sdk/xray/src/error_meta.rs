@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,9 +41,11 @@ where
                 crate::error::BatchGetTracesErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::BatchGetTracesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetTracesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -60,9 +62,11 @@ where
                 crate::error::CreateGroupErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -85,10 +89,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::CreateSamplingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -105,9 +109,11 @@ where
                 crate::error::DeleteGroupErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -127,10 +133,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::DeleteSamplingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,10 +156,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetEncryptionConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -170,9 +176,11 @@ where
                 crate::error::GetGroupErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,9 +197,11 @@ where
                 crate::error::GetGroupsErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,9 +218,11 @@ where
                 crate::error::GetInsightErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetInsightErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetInsightErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -230,10 +242,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetInsightEventsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -254,10 +266,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetInsightImpactGraphErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -277,10 +289,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetInsightSummariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -300,10 +312,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetSamplingRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -324,10 +336,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetSamplingStatisticSummariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -347,10 +359,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetSamplingTargetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -367,9 +379,11 @@ where
                 crate::error::GetServiceGraphErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetServiceGraphErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServiceGraphErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -394,10 +408,10 @@ where
                     inner,
                 ) => Error::ThrottledException(inner),
                 crate::error::GetTimeSeriesServiceStatisticsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,9 +428,11 @@ where
                 crate::error::GetTraceGraphErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetTraceGraphErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTraceGraphErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -436,10 +452,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetTraceSummariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -462,10 +478,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -485,10 +501,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::PutEncryptionConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -508,10 +524,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::PutTelemetryRecordsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -531,10 +547,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::PutTraceSegmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -557,9 +573,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,9 +597,11 @@ where
                 crate::error::UntagResourceErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -598,9 +618,11 @@ where
                 crate::error::UpdateGroupErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::UpdateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -620,10 +642,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::UpdateSamplingRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

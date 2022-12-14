@@ -347,7 +347,7 @@ pub enum DeleteReportDefinitionErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteReportDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,7 +377,9 @@ impl DeleteReportDefinitionError {
     /// Creates the `DeleteReportDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: DeleteReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -386,7 +388,9 @@ impl DeleteReportDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: DeleteReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -446,7 +450,7 @@ impl std::error::Error for DeleteReportDefinitionError {
             DeleteReportDefinitionErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteReportDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteReportDefinitionErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -473,7 +477,7 @@ pub enum GetReportDefinitionErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetReportDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -503,7 +507,7 @@ impl GetReportDefinitionError {
     /// Creates the `GetReportDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: GetReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -512,7 +516,7 @@ impl GetReportDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: GetReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -572,7 +576,7 @@ impl std::error::Error for GetReportDefinitionError {
             GetReportDefinitionErrorKind::InternalServerException(_inner) => Some(_inner),
             GetReportDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetReportDefinitionErrorKind::ValidationException(_inner) => Some(_inner),
-            GetReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -599,7 +603,7 @@ pub enum ImportApplicationUsageErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportApplicationUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,7 +633,9 @@ impl ImportApplicationUsageError {
     /// Creates the `ImportApplicationUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportApplicationUsageErrorKind::Unhandled(err.into()),
+            kind: ImportApplicationUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -638,7 +644,9 @@ impl ImportApplicationUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportApplicationUsageErrorKind::Unhandled(err.into()),
+            kind: ImportApplicationUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -698,7 +706,7 @@ impl std::error::Error for ImportApplicationUsageError {
             ImportApplicationUsageErrorKind::InternalServerException(_inner) => Some(_inner),
             ImportApplicationUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
             ImportApplicationUsageErrorKind::ValidationException(_inner) => Some(_inner),
-            ImportApplicationUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportApplicationUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -725,7 +733,7 @@ pub enum ListReportDefinitionsErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReportDefinitionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,7 +763,9 @@ impl ListReportDefinitionsError {
     /// Creates the `ListReportDefinitionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReportDefinitionsErrorKind::Unhandled(err.into()),
+            kind: ListReportDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -764,7 +774,9 @@ impl ListReportDefinitionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReportDefinitionsErrorKind::Unhandled(err.into()),
+            kind: ListReportDefinitionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -824,7 +836,7 @@ impl std::error::Error for ListReportDefinitionsError {
             ListReportDefinitionsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListReportDefinitionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListReportDefinitionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReportDefinitionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReportDefinitionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -853,7 +865,7 @@ pub enum PutReportDefinitionErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutReportDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -884,7 +896,7 @@ impl PutReportDefinitionError {
     /// Creates the `PutReportDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: PutReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -893,7 +905,7 @@ impl PutReportDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: PutReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -961,7 +973,7 @@ impl std::error::Error for PutReportDefinitionError {
             PutReportDefinitionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             PutReportDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutReportDefinitionErrorKind::ValidationException(_inner) => Some(_inner),
-            PutReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -988,7 +1000,7 @@ pub enum UpdateReportDefinitionErrorKind {
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateReportDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1018,7 +1030,9 @@ impl UpdateReportDefinitionError {
     /// Creates the `UpdateReportDefinitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: UpdateReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1027,7 +1041,9 @@ impl UpdateReportDefinitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateReportDefinitionErrorKind::Unhandled(err.into()),
+            kind: UpdateReportDefinitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1087,7 +1103,32 @@ impl std::error::Error for UpdateReportDefinitionError {
             UpdateReportDefinitionErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateReportDefinitionErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateReportDefinitionErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateReportDefinitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

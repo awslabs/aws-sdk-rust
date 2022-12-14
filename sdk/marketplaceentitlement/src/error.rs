@@ -215,7 +215,7 @@ pub enum GetEntitlementsErrorKind {
     /// <p>The calls to the GetEntitlements API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEntitlementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -244,7 +244,7 @@ impl GetEntitlementsError {
     /// Creates the `GetEntitlementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEntitlementsErrorKind::Unhandled(err.into()),
+            kind: GetEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -253,7 +253,7 @@ impl GetEntitlementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEntitlementsErrorKind::Unhandled(err.into()),
+            kind: GetEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -302,7 +302,32 @@ impl std::error::Error for GetEntitlementsError {
             GetEntitlementsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             GetEntitlementsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetEntitlementsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEntitlementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEntitlementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

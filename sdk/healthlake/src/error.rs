@@ -412,7 +412,7 @@ pub enum CreateFHIRDatastoreErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,7 +442,7 @@ impl CreateFHIRDatastoreError {
     /// Creates the `CreateFHIRDatastoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -451,7 +451,7 @@ impl CreateFHIRDatastoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: CreateFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -511,7 +511,7 @@ impl std::error::Error for CreateFHIRDatastoreError {
             CreateFHIRDatastoreErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -542,7 +542,7 @@ pub enum DeleteFHIRDatastoreErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -574,7 +574,7 @@ impl DeleteFHIRDatastoreError {
     /// Creates the `DeleteFHIRDatastoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -583,7 +583,7 @@ impl DeleteFHIRDatastoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: DeleteFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -659,7 +659,7 @@ impl std::error::Error for DeleteFHIRDatastoreError {
             DeleteFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -686,7 +686,7 @@ pub enum DescribeFHIRDatastoreErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRDatastoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -716,7 +716,9 @@ impl DescribeFHIRDatastoreError {
     /// Creates the `DescribeFHIRDatastoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -725,7 +727,9 @@ impl DescribeFHIRDatastoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFHIRDatastoreErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRDatastoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -785,7 +789,7 @@ impl std::error::Error for DescribeFHIRDatastoreError {
             DescribeFHIRDatastoreErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFHIRDatastoreErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeFHIRDatastoreErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFHIRDatastoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -812,7 +816,7 @@ pub enum DescribeFHIRExportJobErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -842,7 +846,9 @@ impl DescribeFHIRExportJobError {
     /// Creates the `DescribeFHIRExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFHIRExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -851,7 +857,9 @@ impl DescribeFHIRExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFHIRExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -911,7 +919,7 @@ impl std::error::Error for DescribeFHIRExportJobError {
             DescribeFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFHIRExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeFHIRExportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -938,7 +946,7 @@ pub enum DescribeFHIRImportJobErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFHIRImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -968,7 +976,9 @@ impl DescribeFHIRImportJobError {
     /// Creates the `DescribeFHIRImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFHIRImportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -977,7 +987,9 @@ impl DescribeFHIRImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFHIRImportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1037,7 +1049,7 @@ impl std::error::Error for DescribeFHIRImportJobError {
             DescribeFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFHIRImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeFHIRImportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1062,7 +1074,7 @@ pub enum ListFHIRDatastoresErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRDatastoresError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1091,7 +1103,7 @@ impl ListFHIRDatastoresError {
     /// Creates the `ListFHIRDatastoresError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFHIRDatastoresErrorKind::Unhandled(err.into()),
+            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1100,7 +1112,7 @@ impl ListFHIRDatastoresError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFHIRDatastoresErrorKind::Unhandled(err.into()),
+            kind: ListFHIRDatastoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1152,7 +1164,7 @@ impl std::error::Error for ListFHIRDatastoresError {
             ListFHIRDatastoresErrorKind::InternalServerException(_inner) => Some(_inner),
             ListFHIRDatastoresErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFHIRDatastoresErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRDatastoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFHIRDatastoresErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1181,7 +1193,7 @@ pub enum ListFHIRExportJobsErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1212,7 +1224,7 @@ impl ListFHIRExportJobsError {
     /// Creates the `ListFHIRExportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFHIRExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1221,7 +1233,7 @@ impl ListFHIRExportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFHIRExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListFHIRExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1289,7 +1301,7 @@ impl std::error::Error for ListFHIRExportJobsError {
             ListFHIRExportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFHIRExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFHIRExportJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRExportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFHIRExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1318,7 +1330,7 @@ pub enum ListFHIRImportJobsErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFHIRImportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1349,7 +1361,7 @@ impl ListFHIRImportJobsError {
     /// Creates the `ListFHIRImportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFHIRImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1358,7 +1370,7 @@ impl ListFHIRImportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFHIRImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListFHIRImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1426,7 +1438,7 @@ impl std::error::Error for ListFHIRImportJobsError {
             ListFHIRImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFHIRImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFHIRImportJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFHIRImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFHIRImportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1449,7 +1461,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1477,7 +1489,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1486,7 +1498,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1530,7 +1542,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1559,7 +1571,7 @@ pub enum StartFHIRExportJobErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFHIRExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1590,7 +1602,7 @@ impl StartFHIRExportJobError {
     /// Creates the `StartFHIRExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFHIRExportJobErrorKind::Unhandled(err.into()),
+            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1599,7 +1611,7 @@ impl StartFHIRExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFHIRExportJobErrorKind::Unhandled(err.into()),
+            kind: StartFHIRExportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1667,7 +1679,7 @@ impl std::error::Error for StartFHIRExportJobError {
             StartFHIRExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartFHIRExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartFHIRExportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFHIRExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1696,7 +1708,7 @@ pub enum StartFHIRImportJobErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFHIRImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1727,7 +1739,7 @@ impl StartFHIRImportJobError {
     /// Creates the `StartFHIRImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFHIRImportJobErrorKind::Unhandled(err.into()),
+            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1736,7 +1748,7 @@ impl StartFHIRImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFHIRImportJobErrorKind::Unhandled(err.into()),
+            kind: StartFHIRImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1804,7 +1816,7 @@ impl std::error::Error for StartFHIRImportJobError {
             StartFHIRImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartFHIRImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartFHIRImportJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFHIRImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1827,7 +1839,7 @@ pub enum TagResourceErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1855,7 +1867,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1864,7 +1876,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1905,7 +1917,7 @@ impl std::error::Error for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1928,7 +1940,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1956,7 +1968,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1965,7 +1977,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2006,7 +2018,32 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -503,7 +503,7 @@ pub enum BatchExecuteStatementErrorKind {
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -535,7 +535,9 @@ impl BatchExecuteStatementError {
     /// Creates the `BatchExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -544,7 +546,9 @@ impl BatchExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -620,7 +624,7 @@ impl std::error::Error for BatchExecuteStatementError {
             BatchExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::StatementTimeoutException(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -651,7 +655,7 @@ pub enum BeginTransactionErrorKind {
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BeginTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -683,7 +687,7 @@ impl BeginTransactionError {
     /// Creates the `BeginTransactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BeginTransactionErrorKind::Unhandled(err.into()),
+            kind: BeginTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -692,7 +696,7 @@ impl BeginTransactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BeginTransactionErrorKind::Unhandled(err.into()),
+            kind: BeginTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -765,7 +769,7 @@ impl std::error::Error for BeginTransactionError {
             BeginTransactionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             BeginTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             BeginTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
-            BeginTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BeginTransactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -798,7 +802,7 @@ pub enum CommitTransactionErrorKind {
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CommitTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -831,7 +835,7 @@ impl CommitTransactionError {
     /// Creates the `CommitTransactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CommitTransactionErrorKind::Unhandled(err.into()),
+            kind: CommitTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -840,7 +844,7 @@ impl CommitTransactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CommitTransactionErrorKind::Unhandled(err.into()),
+            kind: CommitTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -921,7 +925,7 @@ impl std::error::Error for CommitTransactionError {
             CommitTransactionErrorKind::NotFoundException(_inner) => Some(_inner),
             CommitTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             CommitTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
-            CommitTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CommitTransactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -950,7 +954,7 @@ pub enum ExecuteSqlErrorKind {
     /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteSqlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -981,7 +985,7 @@ impl ExecuteSqlError {
     /// Creates the `ExecuteSqlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteSqlErrorKind::Unhandled(err.into()),
+            kind: ExecuteSqlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -990,7 +994,7 @@ impl ExecuteSqlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteSqlErrorKind::Unhandled(err.into()),
+            kind: ExecuteSqlErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1046,7 +1050,7 @@ impl std::error::Error for ExecuteSqlError {
             ExecuteSqlErrorKind::ForbiddenException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ExecuteSqlErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ExecuteSqlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteSqlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1077,7 +1081,7 @@ pub enum ExecuteStatementErrorKind {
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1109,7 +1113,7 @@ impl ExecuteStatementError {
     /// Creates the `ExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1118,7 +1122,7 @@ impl ExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1191,7 +1195,7 @@ impl std::error::Error for ExecuteStatementError {
             ExecuteStatementErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             ExecuteStatementErrorKind::StatementTimeoutException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1224,7 +1228,7 @@ pub enum RollbackTransactionErrorKind {
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RollbackTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1257,7 +1261,7 @@ impl RollbackTransactionError {
     /// Creates the `RollbackTransactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RollbackTransactionErrorKind::Unhandled(err.into()),
+            kind: RollbackTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1266,7 +1270,7 @@ impl RollbackTransactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RollbackTransactionErrorKind::Unhandled(err.into()),
+            kind: RollbackTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1350,7 +1354,32 @@ impl std::error::Error for RollbackTransactionError {
             RollbackTransactionErrorKind::NotFoundException(_inner) => Some(_inner),
             RollbackTransactionErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
             RollbackTransactionErrorKind::StatementTimeoutException(_inner) => Some(_inner),
-            RollbackTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RollbackTransactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

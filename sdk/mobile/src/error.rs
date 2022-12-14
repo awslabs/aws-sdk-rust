@@ -623,7 +623,7 @@ pub enum CreateProjectErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -656,7 +656,7 @@ impl CreateProjectError {
     /// Creates the `CreateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -665,7 +665,7 @@ impl CreateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -740,7 +740,7 @@ impl std::error::Error for CreateProjectError {
             CreateProjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateProjectErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateProjectErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -769,7 +769,7 @@ pub enum DeleteProjectErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -800,7 +800,7 @@ impl DeleteProjectError {
     /// Creates the `DeleteProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -809,7 +809,7 @@ impl DeleteProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -871,7 +871,7 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteProjectErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteProjectErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -902,7 +902,7 @@ pub enum DescribeBundleErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBundleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -934,7 +934,7 @@ impl DescribeBundleError {
     /// Creates the `DescribeBundleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBundleErrorKind::Unhandled(err.into()),
+            kind: DescribeBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -943,7 +943,7 @@ impl DescribeBundleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBundleErrorKind::Unhandled(err.into()),
+            kind: DescribeBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1013,7 +1013,7 @@ impl std::error::Error for DescribeBundleError {
             DescribeBundleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeBundleErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeBundleErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeBundleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBundleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1044,7 +1044,7 @@ pub enum DescribeProjectErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1076,7 +1076,7 @@ impl DescribeProjectError {
     /// Creates the `DescribeProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1085,7 +1085,7 @@ impl DescribeProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1155,7 +1155,7 @@ impl std::error::Error for DescribeProjectError {
             DescribeProjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeProjectErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeProjectErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1186,7 +1186,7 @@ pub enum ExportBundleErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportBundleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1218,7 +1218,7 @@ impl ExportBundleError {
     /// Creates the `ExportBundleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportBundleErrorKind::Unhandled(err.into()),
+            kind: ExportBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1227,7 +1227,7 @@ impl ExportBundleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportBundleErrorKind::Unhandled(err.into()),
+            kind: ExportBundleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1294,7 +1294,7 @@ impl std::error::Error for ExportBundleError {
             ExportBundleErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ExportBundleErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ExportBundleErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ExportBundleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportBundleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1325,7 +1325,7 @@ pub enum ExportProjectErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1357,7 +1357,7 @@ impl ExportProjectError {
     /// Creates the `ExportProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportProjectErrorKind::Unhandled(err.into()),
+            kind: ExportProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1366,7 +1366,7 @@ impl ExportProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportProjectErrorKind::Unhandled(err.into()),
+            kind: ExportProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1433,7 +1433,7 @@ impl std::error::Error for ExportProjectError {
             ExportProjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ExportProjectErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ExportProjectErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ExportProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1462,7 +1462,7 @@ pub enum ListBundlesErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBundlesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1493,7 +1493,7 @@ impl ListBundlesError {
     /// Creates the `ListBundlesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBundlesErrorKind::Unhandled(err.into()),
+            kind: ListBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1502,7 +1502,7 @@ impl ListBundlesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBundlesErrorKind::Unhandled(err.into()),
+            kind: ListBundlesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1564,7 +1564,7 @@ impl std::error::Error for ListBundlesError {
             ListBundlesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListBundlesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListBundlesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListBundlesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBundlesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1593,7 +1593,7 @@ pub enum ListProjectsErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1624,7 +1624,7 @@ impl ListProjectsError {
     /// Creates the `ListProjectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1633,7 +1633,7 @@ impl ListProjectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1695,7 +1695,7 @@ impl std::error::Error for ListProjectsError {
             ListProjectsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListProjectsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListProjectsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1730,7 +1730,7 @@ pub enum UpdateProjectErrorKind {
     /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1764,7 +1764,7 @@ impl UpdateProjectError {
     /// Creates the `UpdateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1773,7 +1773,7 @@ impl UpdateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1856,7 +1856,32 @@ impl std::error::Error for UpdateProjectError {
             UpdateProjectErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateProjectErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateProjectErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

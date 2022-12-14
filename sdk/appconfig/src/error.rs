@@ -546,7 +546,7 @@ pub enum CreateApplicationErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -574,7 +574,7 @@ impl CreateApplicationError {
     /// Creates the `CreateApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -583,7 +583,7 @@ impl CreateApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -627,7 +627,7 @@ impl std::error::Error for CreateApplicationError {
         match &self.kind {
             CreateApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
-            CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -652,7 +652,7 @@ pub enum CreateConfigurationProfileErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,7 +681,9 @@ impl CreateConfigurationProfileError {
     /// Creates the `CreateConfigurationProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -690,7 +692,9 @@ impl CreateConfigurationProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -742,7 +746,7 @@ impl std::error::Error for CreateConfigurationProfileError {
             CreateConfigurationProfileErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateConfigurationProfileErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateConfigurationProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -765,7 +769,7 @@ pub enum CreateDeploymentStrategyErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentStrategyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -793,7 +797,9 @@ impl CreateDeploymentStrategyError {
     /// Creates the `CreateDeploymentStrategyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -802,7 +808,9 @@ impl CreateDeploymentStrategyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -846,7 +854,7 @@ impl std::error::Error for CreateDeploymentStrategyError {
         match &self.kind {
             CreateDeploymentStrategyErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateDeploymentStrategyErrorKind::InternalServerException(_inner) => Some(_inner),
-            CreateDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -871,7 +879,7 @@ pub enum CreateEnvironmentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -900,7 +908,7 @@ impl CreateEnvironmentError {
     /// Creates the `CreateEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -909,7 +917,7 @@ impl CreateEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -961,7 +969,7 @@ impl std::error::Error for CreateEnvironmentError {
             CreateEnvironmentErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -988,7 +996,7 @@ pub enum CreateExtensionErrorKind {
     /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateExtensionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1018,7 +1026,7 @@ impl CreateExtensionError {
     /// Creates the `CreateExtensionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateExtensionErrorKind::Unhandled(err.into()),
+            kind: CreateExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1027,7 +1035,7 @@ impl CreateExtensionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateExtensionErrorKind::Unhandled(err.into()),
+            kind: CreateExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1081,7 +1089,7 @@ impl std::error::Error for CreateExtensionError {
             CreateExtensionErrorKind::ConflictException(_inner) => Some(_inner),
             CreateExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateExtensionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            CreateExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateExtensionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1108,7 +1116,7 @@ pub enum CreateExtensionAssociationErrorKind {
     /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateExtensionAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1140,7 +1148,9 @@ impl CreateExtensionAssociationError {
     /// Creates the `CreateExtensionAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1149,7 +1159,9 @@ impl CreateExtensionAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: CreateExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1211,7 +1223,7 @@ impl std::error::Error for CreateExtensionAssociationError {
             CreateExtensionAssociationErrorKind::ServiceQuotaExceededException(_inner) => {
                 Some(_inner)
             }
-            CreateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1242,7 +1254,7 @@ pub enum CreateHostedConfigurationVersionErrorKind {
     /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHostedConfigurationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1285,7 +1297,9 @@ impl CreateHostedConfigurationVersionError {
     /// Creates the `CreateHostedConfigurationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateHostedConfigurationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1294,7 +1308,9 @@ impl CreateHostedConfigurationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateHostedConfigurationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1378,7 +1394,7 @@ impl std::error::Error for CreateHostedConfigurationVersionError {
             CreateHostedConfigurationVersionErrorKind::ServiceQuotaExceededException(_inner) => {
                 Some(_inner)
             }
-            CreateHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1403,7 +1419,7 @@ pub enum DeleteApplicationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1432,7 +1448,7 @@ impl DeleteApplicationError {
     /// Creates the `DeleteApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1441,7 +1457,7 @@ impl DeleteApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1493,7 +1509,7 @@ impl std::error::Error for DeleteApplicationError {
             DeleteApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1520,7 +1536,7 @@ pub enum DeleteConfigurationProfileErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1550,7 +1566,9 @@ impl DeleteConfigurationProfileError {
     /// Creates the `DeleteConfigurationProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1559,7 +1577,9 @@ impl DeleteConfigurationProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1619,7 +1639,7 @@ impl std::error::Error for DeleteConfigurationProfileError {
             DeleteConfigurationProfileErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteConfigurationProfileErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteConfigurationProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1644,7 +1664,7 @@ pub enum DeleteDeploymentStrategyErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeploymentStrategyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1673,7 +1693,9 @@ impl DeleteDeploymentStrategyError {
     /// Creates the `DeleteDeploymentStrategyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: DeleteDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1682,7 +1704,9 @@ impl DeleteDeploymentStrategyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: DeleteDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1734,7 +1758,7 @@ impl std::error::Error for DeleteDeploymentStrategyError {
             DeleteDeploymentStrategyErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteDeploymentStrategyErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteDeploymentStrategyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1761,7 +1785,7 @@ pub enum DeleteEnvironmentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,7 +1815,7 @@ impl DeleteEnvironmentError {
     /// Creates the `DeleteEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1800,7 +1824,7 @@ impl DeleteEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1857,7 +1881,7 @@ impl std::error::Error for DeleteEnvironmentError {
             DeleteEnvironmentErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1882,7 +1906,7 @@ pub enum DeleteExtensionErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteExtensionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1911,7 +1935,7 @@ impl DeleteExtensionError {
     /// Creates the `DeleteExtensionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteExtensionErrorKind::Unhandled(err.into()),
+            kind: DeleteExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1920,7 +1944,7 @@ impl DeleteExtensionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteExtensionErrorKind::Unhandled(err.into()),
+            kind: DeleteExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1969,7 +1993,7 @@ impl std::error::Error for DeleteExtensionError {
             DeleteExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteExtensionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1994,7 +2018,7 @@ pub enum DeleteExtensionAssociationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteExtensionAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2023,7 +2047,9 @@ impl DeleteExtensionAssociationError {
     /// Creates the `DeleteExtensionAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2032,7 +2058,9 @@ impl DeleteExtensionAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: DeleteExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2084,7 +2112,7 @@ impl std::error::Error for DeleteExtensionAssociationError {
             DeleteExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2109,7 +2137,7 @@ pub enum DeleteHostedConfigurationVersionErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHostedConfigurationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2145,7 +2173,9 @@ impl DeleteHostedConfigurationVersionError {
     /// Creates the `DeleteHostedConfigurationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteHostedConfigurationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2154,7 +2184,9 @@ impl DeleteHostedConfigurationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteHostedConfigurationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2210,7 +2242,7 @@ impl std::error::Error for DeleteHostedConfigurationVersionError {
             DeleteHostedConfigurationVersionErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DeleteHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2235,7 +2267,7 @@ pub enum GetApplicationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2264,7 +2296,7 @@ impl GetApplicationError {
     /// Creates the `GetApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApplicationErrorKind::Unhandled(err.into()),
+            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2273,7 +2305,7 @@ impl GetApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApplicationErrorKind::Unhandled(err.into()),
+            kind: GetApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2322,7 +2354,7 @@ impl std::error::Error for GetApplicationError {
             GetApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             GetApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2347,7 +2379,7 @@ pub enum GetConfigurationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2376,7 +2408,7 @@ impl GetConfigurationError {
     /// Creates the `GetConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2385,7 +2417,7 @@ impl GetConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2437,7 +2469,7 @@ impl std::error::Error for GetConfigurationError {
             GetConfigurationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
             GetConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2462,7 +2494,7 @@ pub enum GetConfigurationProfileErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2491,7 +2523,9 @@ impl GetConfigurationProfileError {
     /// Creates the `GetConfigurationProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2500,7 +2534,9 @@ impl GetConfigurationProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2552,7 +2588,7 @@ impl std::error::Error for GetConfigurationProfileError {
             GetConfigurationProfileErrorKind::BadRequestException(_inner) => Some(_inner),
             GetConfigurationProfileErrorKind::InternalServerException(_inner) => Some(_inner),
             GetConfigurationProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2577,7 +2613,7 @@ pub enum GetDeploymentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2606,7 +2642,7 @@ impl GetDeploymentError {
     /// Creates the `GetDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeploymentErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2615,7 +2651,7 @@ impl GetDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeploymentErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2664,7 +2700,7 @@ impl std::error::Error for GetDeploymentError {
             GetDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2689,7 +2725,7 @@ pub enum GetDeploymentStrategyErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentStrategyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2718,7 +2754,9 @@ impl GetDeploymentStrategyError {
     /// Creates the `GetDeploymentStrategyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2727,7 +2765,9 @@ impl GetDeploymentStrategyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2779,7 +2819,7 @@ impl std::error::Error for GetDeploymentStrategyError {
             GetDeploymentStrategyErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDeploymentStrategyErrorKind::InternalServerException(_inner) => Some(_inner),
             GetDeploymentStrategyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2804,7 +2844,7 @@ pub enum GetEnvironmentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2833,7 +2873,7 @@ impl GetEnvironmentError {
     /// Creates the `GetEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEnvironmentErrorKind::Unhandled(err.into()),
+            kind: GetEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2842,7 +2882,7 @@ impl GetEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEnvironmentErrorKind::Unhandled(err.into()),
+            kind: GetEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2891,7 +2931,7 @@ impl std::error::Error for GetEnvironmentError {
             GetEnvironmentErrorKind::BadRequestException(_inner) => Some(_inner),
             GetEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2916,7 +2956,7 @@ pub enum GetExtensionErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExtensionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2945,7 +2985,7 @@ impl GetExtensionError {
     /// Creates the `GetExtensionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetExtensionErrorKind::Unhandled(err.into()),
+            kind: GetExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2954,7 +2994,7 @@ impl GetExtensionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetExtensionErrorKind::Unhandled(err.into()),
+            kind: GetExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3003,7 +3043,7 @@ impl std::error::Error for GetExtensionError {
             GetExtensionErrorKind::BadRequestException(_inner) => Some(_inner),
             GetExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
             GetExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetExtensionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3028,7 +3068,7 @@ pub enum GetExtensionAssociationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExtensionAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3057,7 +3097,9 @@ impl GetExtensionAssociationError {
     /// Creates the `GetExtensionAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: GetExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3066,7 +3108,9 @@ impl GetExtensionAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: GetExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3118,7 +3162,7 @@ impl std::error::Error for GetExtensionAssociationError {
             GetExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
             GetExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3143,7 +3187,7 @@ pub enum GetHostedConfigurationVersionErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHostedConfigurationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3179,7 +3223,9 @@ impl GetHostedConfigurationVersionError {
     /// Creates the `GetHostedConfigurationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: GetHostedConfigurationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3188,7 +3234,9 @@ impl GetHostedConfigurationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetHostedConfigurationVersionErrorKind::Unhandled(err.into()),
+            kind: GetHostedConfigurationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3242,7 +3290,7 @@ impl std::error::Error for GetHostedConfigurationVersionError {
             GetHostedConfigurationVersionErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            GetHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetHostedConfigurationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3265,7 +3313,7 @@ pub enum ListApplicationsErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3293,7 +3341,7 @@ impl ListApplicationsError {
     /// Creates the `ListApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3302,7 +3350,7 @@ impl ListApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3346,7 +3394,7 @@ impl std::error::Error for ListApplicationsError {
         match &self.kind {
             ListApplicationsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListApplicationsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3371,7 +3419,7 @@ pub enum ListConfigurationProfilesErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConfigurationProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3400,7 +3448,9 @@ impl ListConfigurationProfilesError {
     /// Creates the `ListConfigurationProfilesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConfigurationProfilesErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationProfilesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3409,7 +3459,9 @@ impl ListConfigurationProfilesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConfigurationProfilesErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationProfilesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3461,7 +3513,7 @@ impl std::error::Error for ListConfigurationProfilesError {
             ListConfigurationProfilesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListConfigurationProfilesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListConfigurationProfilesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListConfigurationProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConfigurationProfilesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3486,7 +3538,7 @@ pub enum ListDeploymentsErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3515,7 +3567,7 @@ impl ListDeploymentsError {
     /// Creates the `ListDeploymentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDeploymentsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3524,7 +3576,7 @@ impl ListDeploymentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDeploymentsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3573,7 +3625,7 @@ impl std::error::Error for ListDeploymentsError {
             ListDeploymentsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListDeploymentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListDeploymentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListDeploymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3596,7 +3648,7 @@ pub enum ListDeploymentStrategiesErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentStrategiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3624,7 +3676,9 @@ impl ListDeploymentStrategiesError {
     /// Creates the `ListDeploymentStrategiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDeploymentStrategiesErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentStrategiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3633,7 +3687,9 @@ impl ListDeploymentStrategiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDeploymentStrategiesErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentStrategiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3677,7 +3733,7 @@ impl std::error::Error for ListDeploymentStrategiesError {
         match &self.kind {
             ListDeploymentStrategiesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListDeploymentStrategiesErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListDeploymentStrategiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDeploymentStrategiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3702,7 +3758,7 @@ pub enum ListEnvironmentsErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3731,7 +3787,7 @@ impl ListEnvironmentsError {
     /// Creates the `ListEnvironmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3740,7 +3796,7 @@ impl ListEnvironmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3792,7 +3848,7 @@ impl std::error::Error for ListEnvironmentsError {
             ListEnvironmentsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3815,7 +3871,7 @@ pub enum ListExtensionAssociationsErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExtensionAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3843,7 +3899,9 @@ impl ListExtensionAssociationsError {
     /// Creates the `ListExtensionAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListExtensionAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListExtensionAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3852,7 +3910,9 @@ impl ListExtensionAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListExtensionAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListExtensionAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3896,7 +3956,7 @@ impl std::error::Error for ListExtensionAssociationsError {
         match &self.kind {
             ListExtensionAssociationsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListExtensionAssociationsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListExtensionAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListExtensionAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3919,7 +3979,7 @@ pub enum ListExtensionsErrorKind {
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExtensionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3947,7 +4007,7 @@ impl ListExtensionsError {
     /// Creates the `ListExtensionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListExtensionsErrorKind::Unhandled(err.into()),
+            kind: ListExtensionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3956,7 +4016,7 @@ impl ListExtensionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListExtensionsErrorKind::Unhandled(err.into()),
+            kind: ListExtensionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3997,7 +4057,7 @@ impl std::error::Error for ListExtensionsError {
         match &self.kind {
             ListExtensionsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListExtensionsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListExtensionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListExtensionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4022,7 +4082,7 @@ pub enum ListHostedConfigurationVersionsErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHostedConfigurationVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4058,7 +4118,9 @@ impl ListHostedConfigurationVersionsError {
     /// Creates the `ListHostedConfigurationVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHostedConfigurationVersionsErrorKind::Unhandled(err.into()),
+            kind: ListHostedConfigurationVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4067,7 +4129,9 @@ impl ListHostedConfigurationVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHostedConfigurationVersionsErrorKind::Unhandled(err.into()),
+            kind: ListHostedConfigurationVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4123,7 +4187,7 @@ impl std::error::Error for ListHostedConfigurationVersionsError {
             ListHostedConfigurationVersionsErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ListHostedConfigurationVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHostedConfigurationVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4148,7 +4212,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4177,7 +4241,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4186,7 +4250,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4238,7 +4302,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4265,7 +4329,7 @@ pub enum StartDeploymentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4295,7 +4359,7 @@ impl StartDeploymentError {
     /// Creates the `StartDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDeploymentErrorKind::Unhandled(err.into()),
+            kind: StartDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4304,7 +4368,7 @@ impl StartDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDeploymentErrorKind::Unhandled(err.into()),
+            kind: StartDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4358,7 +4422,7 @@ impl std::error::Error for StartDeploymentError {
             StartDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
             StartDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
             StartDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4383,7 +4447,7 @@ pub enum StopDeploymentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4412,7 +4476,7 @@ impl StopDeploymentError {
     /// Creates the `StopDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopDeploymentErrorKind::Unhandled(err.into()),
+            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4421,7 +4485,7 @@ impl StopDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopDeploymentErrorKind::Unhandled(err.into()),
+            kind: StopDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4470,7 +4534,7 @@ impl std::error::Error for StopDeploymentError {
             StopDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
             StopDeploymentErrorKind::InternalServerException(_inner) => Some(_inner),
             StopDeploymentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StopDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4495,7 +4559,7 @@ pub enum TagResourceErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4524,7 +4588,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4533,7 +4597,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4579,7 +4643,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4604,7 +4668,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4633,7 +4697,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4642,7 +4706,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4691,7 +4755,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4716,7 +4780,7 @@ pub enum UpdateApplicationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4745,7 +4809,7 @@ impl UpdateApplicationError {
     /// Creates the `UpdateApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4754,7 +4818,7 @@ impl UpdateApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateApplicationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4806,7 +4870,7 @@ impl std::error::Error for UpdateApplicationError {
             UpdateApplicationErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4831,7 +4895,7 @@ pub enum UpdateConfigurationProfileErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConfigurationProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4860,7 +4924,9 @@ impl UpdateConfigurationProfileError {
     /// Creates the `UpdateConfigurationProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4869,7 +4935,9 @@ impl UpdateConfigurationProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConfigurationProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4921,7 +4989,7 @@ impl std::error::Error for UpdateConfigurationProfileError {
             UpdateConfigurationProfileErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateConfigurationProfileErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateConfigurationProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateConfigurationProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4946,7 +5014,7 @@ pub enum UpdateDeploymentStrategyErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDeploymentStrategyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4975,7 +5043,9 @@ impl UpdateDeploymentStrategyError {
     /// Creates the `UpdateDeploymentStrategyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: UpdateDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4984,7 +5054,9 @@ impl UpdateDeploymentStrategyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDeploymentStrategyErrorKind::Unhandled(err.into()),
+            kind: UpdateDeploymentStrategyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5036,7 +5108,7 @@ impl std::error::Error for UpdateDeploymentStrategyError {
             UpdateDeploymentStrategyErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateDeploymentStrategyErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateDeploymentStrategyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDeploymentStrategyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5061,7 +5133,7 @@ pub enum UpdateEnvironmentErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5090,7 +5162,7 @@ impl UpdateEnvironmentError {
     /// Creates the `UpdateEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5099,7 +5171,7 @@ impl UpdateEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5151,7 +5223,7 @@ impl std::error::Error for UpdateEnvironmentError {
             UpdateEnvironmentErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5178,7 +5250,7 @@ pub enum UpdateExtensionErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateExtensionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5208,7 +5280,7 @@ impl UpdateExtensionError {
     /// Creates the `UpdateExtensionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateExtensionErrorKind::Unhandled(err.into()),
+            kind: UpdateExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5217,7 +5289,7 @@ impl UpdateExtensionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateExtensionErrorKind::Unhandled(err.into()),
+            kind: UpdateExtensionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5271,7 +5343,7 @@ impl std::error::Error for UpdateExtensionError {
             UpdateExtensionErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateExtensionErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateExtensionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateExtensionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateExtensionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5296,7 +5368,7 @@ pub enum UpdateExtensionAssociationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateExtensionAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5325,7 +5397,9 @@ impl UpdateExtensionAssociationError {
     /// Creates the `UpdateExtensionAssociationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5334,7 +5408,9 @@ impl UpdateExtensionAssociationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateExtensionAssociationErrorKind::Unhandled(err.into()),
+            kind: UpdateExtensionAssociationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5386,7 +5462,7 @@ impl std::error::Error for UpdateExtensionAssociationError {
             UpdateExtensionAssociationErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateExtensionAssociationErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateExtensionAssociationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateExtensionAssociationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5411,7 +5487,7 @@ pub enum ValidateConfigurationErrorKind {
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ValidateConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5440,7 +5516,9 @@ impl ValidateConfigurationError {
     /// Creates the `ValidateConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ValidateConfigurationErrorKind::Unhandled(err.into()),
+            kind: ValidateConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5449,7 +5527,9 @@ impl ValidateConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ValidateConfigurationErrorKind::Unhandled(err.into()),
+            kind: ValidateConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5501,7 +5581,32 @@ impl std::error::Error for ValidateConfigurationError {
             ValidateConfigurationErrorKind::BadRequestException(_inner) => Some(_inner),
             ValidateConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
             ValidateConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ValidateConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ValidateConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

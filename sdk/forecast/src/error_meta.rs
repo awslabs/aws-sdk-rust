@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,10 +56,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateAutoPredictorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -79,9 +79,11 @@ where
                 crate::error::CreateDatasetErrorKind::ResourceAlreadyExistsException(inner) => {
                     Error::ResourceAlreadyExistsException(inner)
                 }
-                crate::error::CreateDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDatasetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -110,10 +112,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateDatasetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -143,10 +145,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateDatasetImportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -176,10 +178,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateExplainabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -198,9 +200,9 @@ where
                 crate::error::CreateExplainabilityExportErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::CreateExplainabilityExportErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::CreateExplainabilityExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::CreateExplainabilityExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateExplainabilityExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -226,9 +228,11 @@ where
                 crate::error::CreateForecastErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreateForecastErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -258,10 +262,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateForecastExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -287,9 +291,11 @@ where
                 crate::error::CreateMonitorErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreateMonitorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMonitorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,9 +321,11 @@ where
                 crate::error::CreatePredictorErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreatePredictorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePredictorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -340,9 +348,9 @@ where
                 crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::CreatePredictorBacktestExportJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::CreatePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -372,10 +380,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateWhatIfAnalysisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -405,10 +413,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateWhatIfForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -427,9 +435,9 @@ where
                 crate::error::CreateWhatIfForecastExportErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::CreateWhatIfForecastExportErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::CreateWhatIfForecastExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::CreateWhatIfForecastExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateWhatIfForecastExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -449,9 +457,11 @@ where
                 crate::error::DeleteDatasetErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDatasetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -474,10 +484,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteDatasetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -501,10 +511,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteDatasetImportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -528,10 +538,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteExplainabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -555,10 +565,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteExplainabilityExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -578,9 +588,11 @@ where
                 crate::error::DeleteForecastErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteForecastErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteForecastErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -604,10 +616,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteForecastExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -627,9 +639,11 @@ where
                 crate::error::DeleteMonitorErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteMonitorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMonitorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -649,9 +663,11 @@ where
                 crate::error::DeletePredictorErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeletePredictorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePredictorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -672,9 +688,9 @@ where
                 crate::error::DeletePredictorBacktestExportJobErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::DeletePredictorBacktestExportJobErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeletePredictorBacktestExportJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeletePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,10 +713,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteResourceTreeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -724,10 +740,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteWhatIfAnalysisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -751,10 +767,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteWhatIfForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -778,10 +794,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteWhatIfForecastExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -802,10 +818,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeAutoPredictorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -822,9 +838,11 @@ where
                 crate::error::DescribeDatasetErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeDatasetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDatasetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -845,10 +863,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeDatasetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -869,10 +887,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDatasetImportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -893,10 +911,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeExplainabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -917,10 +935,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeExplainabilityExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -940,10 +958,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -964,10 +982,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeForecastExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -984,9 +1002,11 @@ where
                 crate::error::DescribeMonitorErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeMonitorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeMonitorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1006,10 +1026,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribePredictorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1030,9 +1050,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribePredictorBacktestExportJobErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::DescribePredictorBacktestExportJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePredictorBacktestExportJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1053,10 +1073,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeWhatIfAnalysisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1077,10 +1097,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeWhatIfForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1101,10 +1121,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeWhatIfForecastExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1127,10 +1147,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetAccuracyMetricsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1147,10 +1167,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListDatasetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1171,10 +1191,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListDatasetImportJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1188,9 +1208,11 @@ where
                 crate::error::ListDatasetsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListDatasetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDatasetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1211,10 +1233,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListExplainabilitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1235,10 +1257,10 @@ where
                     inner,
                 ) => Error::InvalidNextTokenException(inner),
                 crate::error::ListExplainabilityExportsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1259,10 +1281,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListForecastExportJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1279,9 +1301,11 @@ where
                 crate::error::ListForecastsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListForecastsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListForecastsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1305,10 +1329,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListMonitorEvaluationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1325,9 +1349,11 @@ where
                 crate::error::ListMonitorsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListMonitorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMonitorsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1347,9 +1373,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListPredictorBacktestExportJobsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::ListPredictorBacktestExportJobsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListPredictorBacktestExportJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPredictorBacktestExportJobsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1366,9 +1392,11 @@ where
                 crate::error::ListPredictorsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListPredictorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPredictorsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1388,10 +1416,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1411,10 +1439,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListWhatIfAnalysesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1435,10 +1463,10 @@ where
                     inner,
                 ) => Error::InvalidNextTokenException(inner),
                 crate::error::ListWhatIfForecastExportsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1458,10 +1486,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListWhatIfForecastsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1484,9 +1512,11 @@ where
                 crate::error::ResumeResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ResumeResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResumeResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1506,9 +1536,11 @@ where
                 crate::error::StopResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::StopResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1528,9 +1560,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1547,9 +1581,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1572,10 +1608,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateDatasetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

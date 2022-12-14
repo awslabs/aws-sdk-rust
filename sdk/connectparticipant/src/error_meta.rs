@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -60,10 +60,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CompleteAttachmentUploadErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -90,10 +90,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateParticipantConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -120,10 +120,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisconnectParticipantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,9 +146,11 @@ where
                 crate::error::GetAttachmentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetAttachmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAttachmentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,9 +173,11 @@ where
                 crate::error::GetTranscriptErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetTranscriptErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTranscriptErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -196,9 +200,11 @@ where
                 crate::error::SendEventErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::SendEventErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendEventErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -221,9 +227,11 @@ where
                 crate::error::SendMessageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::SendMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -253,10 +261,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartAttachmentUploadErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -54,7 +54,7 @@ pub enum Error {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -105,9 +105,9 @@ where
                 crate::error::AcceptResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
                 crate::error::AcceptResourceShareInvitationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::AcceptResourceShareInvitationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::AcceptResourceShareInvitationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptResourceShareInvitationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +132,9 @@ where
                 crate::error::AssociateResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::AssociateResourceShareErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::AssociateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -159,9 +159,9 @@ where
                 crate::error::AssociateResourceSharePermissionErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::AssociateResourceSharePermissionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::AssociateResourceSharePermissionErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::AssociateResourceSharePermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateResourceSharePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -185,9 +185,9 @@ where
                 crate::error::CreateResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateResourceShareErrorKind::TagPolicyViolationException(inner) => Error::TagPolicyViolationException(inner),
                 crate::error::CreateResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::CreateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,9 +209,9 @@ where
                 crate::error::DeleteResourceShareErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::DeleteResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::DeleteResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -235,9 +235,9 @@ where
                 crate::error::DisassociateResourceShareErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::DisassociateResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DisassociateResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::DisassociateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -267,9 +267,9 @@ where
                 crate::error::DisassociateResourceSharePermissionErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::DisassociateResourceSharePermissionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DisassociateResourceSharePermissionErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::DisassociateResourceSharePermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateResourceSharePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -290,9 +290,9 @@ where
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::EnableSharingWithAwsOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableSharingWithAwsOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -321,9 +321,11 @@ where
                 crate::error::GetPermissionErrorKind::UnknownResourceException(inner) => {
                     Error::UnknownResourceException(inner)
                 }
-                crate::error::GetPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPermissionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -355,10 +357,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetResourcePoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -379,9 +381,9 @@ where
                 crate::error::GetResourceShareAssociationsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::GetResourceShareAssociationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetResourceShareAssociationsErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::GetResourceShareAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResourceShareAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -403,9 +405,9 @@ where
                 crate::error::GetResourceShareInvitationsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::GetResourceShareInvitationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetResourceShareInvitationsErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::GetResourceShareInvitationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResourceShareInvitationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -437,10 +439,10 @@ where
                     Error::UnknownResourceException(inner)
                 }
                 crate::error::GetResourceSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,9 +469,9 @@ where
                 crate::error::ListPendingInvitationResourcesErrorKind::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
                 crate::error::ListPendingInvitationResourcesErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::ListPendingInvitationResourcesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::ListPendingInvitationResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPendingInvitationResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -495,9 +497,11 @@ where
                 crate::error::ListPermissionsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPermissionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -533,10 +537,10 @@ where
                     Error::UnknownResourceException(inner)
                 }
                 crate::error::ListPermissionVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -565,9 +569,11 @@ where
                 crate::error::ListPrincipalsErrorKind::UnknownResourceException(inner) => {
                     Error::UnknownResourceException(inner)
                 }
-                crate::error::ListPrincipalsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPrincipalsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -599,9 +605,11 @@ where
                 crate::error::ListResourcesErrorKind::UnknownResourceException(inner) => {
                     Error::UnknownResourceException(inner)
                 }
-                crate::error::ListResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -622,9 +630,9 @@ where
                 crate::error::ListResourceSharePermissionsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::ListResourceSharePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ListResourceSharePermissionsErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::ListResourceSharePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResourceSharePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -650,10 +658,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListResourceTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -683,9 +691,9 @@ where
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -709,9 +717,9 @@ where
                 crate::error::RejectResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
                 crate::error::RejectResourceShareInvitationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::RejectResourceShareInvitationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::RejectResourceShareInvitationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RejectResourceShareInvitationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -746,9 +754,11 @@ where
                 crate::error::TagResourceErrorKind::UnknownResourceException(inner) => {
                     Error::UnknownResourceException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -768,9 +778,11 @@ where
                 crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -792,9 +804,9 @@ where
                 crate::error::UpdateResourceShareErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::UpdateResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::UpdateResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-                crate::error::UpdateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

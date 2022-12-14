@@ -347,7 +347,7 @@ pub enum BatchAcknowledgeAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAcknowledgeAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -377,7 +377,9 @@ impl BatchAcknowledgeAlarmError {
     /// Creates the `BatchAcknowledgeAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchAcknowledgeAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchAcknowledgeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -386,7 +388,9 @@ impl BatchAcknowledgeAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchAcknowledgeAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchAcknowledgeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -446,7 +450,7 @@ impl std::error::Error for BatchAcknowledgeAlarmError {
             BatchAcknowledgeAlarmErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchAcknowledgeAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchAcknowledgeAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchAcknowledgeAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -473,7 +477,7 @@ pub enum BatchDeleteDetectorErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeleteDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -503,7 +507,7 @@ impl BatchDeleteDetectorError {
     /// Creates the `BatchDeleteDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDeleteDetectorErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -512,7 +516,7 @@ impl BatchDeleteDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDeleteDetectorErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -572,7 +576,7 @@ impl std::error::Error for BatchDeleteDetectorError {
             BatchDeleteDetectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDeleteDetectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchDeleteDetectorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDeleteDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDeleteDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -599,7 +603,7 @@ pub enum BatchDisableAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisableAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -629,7 +633,7 @@ impl BatchDisableAlarmError {
     /// Creates the `BatchDisableAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDisableAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchDisableAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -638,7 +642,7 @@ impl BatchDisableAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDisableAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchDisableAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -698,7 +702,7 @@ impl std::error::Error for BatchDisableAlarmError {
             BatchDisableAlarmErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDisableAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchDisableAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDisableAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDisableAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -725,7 +729,7 @@ pub enum BatchEnableAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchEnableAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,7 +759,7 @@ impl BatchEnableAlarmError {
     /// Creates the `BatchEnableAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchEnableAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchEnableAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -764,7 +768,7 @@ impl BatchEnableAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchEnableAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchEnableAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -824,7 +828,7 @@ impl std::error::Error for BatchEnableAlarmError {
             BatchEnableAlarmErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchEnableAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchEnableAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchEnableAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchEnableAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -851,7 +855,7 @@ pub enum BatchPutMessageErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchPutMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -881,7 +885,7 @@ impl BatchPutMessageError {
     /// Creates the `BatchPutMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchPutMessageErrorKind::Unhandled(err.into()),
+            kind: BatchPutMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -890,7 +894,7 @@ impl BatchPutMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchPutMessageErrorKind::Unhandled(err.into()),
+            kind: BatchPutMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -947,7 +951,7 @@ impl std::error::Error for BatchPutMessageError {
             BatchPutMessageErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchPutMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchPutMessageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchPutMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchPutMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -974,7 +978,7 @@ pub enum BatchResetAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchResetAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,7 +1008,7 @@ impl BatchResetAlarmError {
     /// Creates the `BatchResetAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchResetAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchResetAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1013,7 +1017,7 @@ impl BatchResetAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchResetAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchResetAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1070,7 +1074,7 @@ impl std::error::Error for BatchResetAlarmError {
             BatchResetAlarmErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchResetAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchResetAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchResetAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchResetAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1097,7 +1101,7 @@ pub enum BatchSnoozeAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchSnoozeAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1127,7 +1131,7 @@ impl BatchSnoozeAlarmError {
     /// Creates the `BatchSnoozeAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchSnoozeAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchSnoozeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1136,7 +1140,7 @@ impl BatchSnoozeAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchSnoozeAlarmErrorKind::Unhandled(err.into()),
+            kind: BatchSnoozeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1196,7 +1200,7 @@ impl std::error::Error for BatchSnoozeAlarmError {
             BatchSnoozeAlarmErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchSnoozeAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchSnoozeAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchSnoozeAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchSnoozeAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1223,7 +1227,7 @@ pub enum BatchUpdateDetectorErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchUpdateDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1253,7 +1257,7 @@ impl BatchUpdateDetectorError {
     /// Creates the `BatchUpdateDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchUpdateDetectorErrorKind::Unhandled(err.into()),
+            kind: BatchUpdateDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1262,7 +1266,7 @@ impl BatchUpdateDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchUpdateDetectorErrorKind::Unhandled(err.into()),
+            kind: BatchUpdateDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1322,7 +1326,7 @@ impl std::error::Error for BatchUpdateDetectorError {
             BatchUpdateDetectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchUpdateDetectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             BatchUpdateDetectorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchUpdateDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchUpdateDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1351,7 +1355,7 @@ pub enum DescribeAlarmErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAlarmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1382,7 +1386,7 @@ impl DescribeAlarmError {
     /// Creates the `DescribeAlarmError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAlarmErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1391,7 +1395,7 @@ impl DescribeAlarmError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAlarmErrorKind::Unhandled(err.into()),
+            kind: DescribeAlarmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1456,7 +1460,7 @@ impl std::error::Error for DescribeAlarmError {
             DescribeAlarmErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAlarmErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAlarmErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAlarmErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAlarmErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1485,7 +1489,7 @@ pub enum DescribeDetectorErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1516,7 +1520,7 @@ impl DescribeDetectorError {
     /// Creates the `DescribeDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDetectorErrorKind::Unhandled(err.into()),
+            kind: DescribeDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1525,7 +1529,7 @@ impl DescribeDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDetectorErrorKind::Unhandled(err.into()),
+            kind: DescribeDetectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1593,7 +1597,7 @@ impl std::error::Error for DescribeDetectorError {
             DescribeDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDetectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeDetectorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1622,7 +1626,7 @@ pub enum ListAlarmsErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAlarmsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1653,7 +1657,7 @@ impl ListAlarmsError {
     /// Creates the `ListAlarmsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAlarmsErrorKind::Unhandled(err.into()),
+            kind: ListAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1662,7 +1666,7 @@ impl ListAlarmsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAlarmsErrorKind::Unhandled(err.into()),
+            kind: ListAlarmsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1721,7 +1725,7 @@ impl std::error::Error for ListAlarmsError {
             ListAlarmsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAlarmsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAlarmsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAlarmsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAlarmsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1750,7 +1754,7 @@ pub enum ListDetectorsErrorKind {
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDetectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1781,7 +1785,7 @@ impl ListDetectorsError {
     /// Creates the `ListDetectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDetectorsErrorKind::Unhandled(err.into()),
+            kind: ListDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1790,7 +1794,7 @@ impl ListDetectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDetectorsErrorKind::Unhandled(err.into()),
+            kind: ListDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1855,7 +1859,32 @@ impl std::error::Error for ListDetectorsError {
             ListDetectorsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDetectorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListDetectorsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDetectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDetectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

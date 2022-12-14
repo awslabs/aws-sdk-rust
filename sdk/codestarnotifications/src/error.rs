@@ -546,7 +546,7 @@ pub enum CreateNotificationRuleErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNotificationRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -582,7 +582,9 @@ impl CreateNotificationRuleError {
     /// Creates the `CreateNotificationRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -591,7 +593,9 @@ impl CreateNotificationRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: CreateNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -669,7 +673,7 @@ impl std::error::Error for CreateNotificationRuleError {
             CreateNotificationRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateNotificationRuleErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateNotificationRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -694,7 +698,7 @@ pub enum DeleteNotificationRuleErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNotificationRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -725,7 +729,9 @@ impl DeleteNotificationRuleError {
     /// Creates the `DeleteNotificationRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -734,7 +740,9 @@ impl DeleteNotificationRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -788,7 +796,7 @@ impl std::error::Error for DeleteNotificationRuleError {
             }
             DeleteNotificationRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteNotificationRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -809,7 +817,7 @@ pub enum DeleteTargetErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTargetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -836,7 +844,7 @@ impl DeleteTargetError {
     /// Creates the `DeleteTargetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTargetErrorKind::Unhandled(err.into()),
+            kind: DeleteTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -845,7 +853,7 @@ impl DeleteTargetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTargetErrorKind::Unhandled(err.into()),
+            kind: DeleteTargetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -878,7 +886,7 @@ impl std::error::Error for DeleteTargetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteTargetErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTargetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -901,7 +909,7 @@ pub enum DescribeNotificationRuleErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -929,7 +937,9 @@ impl DescribeNotificationRuleError {
     /// Creates the `DescribeNotificationRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -938,7 +948,9 @@ impl DescribeNotificationRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -982,7 +994,7 @@ impl std::error::Error for DescribeNotificationRuleError {
         match &self.kind {
             DescribeNotificationRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeNotificationRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1005,7 +1017,7 @@ pub enum ListEventTypesErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEventTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1033,7 +1045,7 @@ impl ListEventTypesError {
     /// Creates the `ListEventTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEventTypesErrorKind::Unhandled(err.into()),
+            kind: ListEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1042,7 +1054,7 @@ impl ListEventTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEventTypesErrorKind::Unhandled(err.into()),
+            kind: ListEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1083,7 +1095,7 @@ impl std::error::Error for ListEventTypesError {
         match &self.kind {
             ListEventTypesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListEventTypesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListEventTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEventTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1106,7 +1118,7 @@ pub enum ListNotificationRulesErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNotificationRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1134,7 +1146,9 @@ impl ListNotificationRulesError {
     /// Creates the `ListNotificationRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNotificationRulesErrorKind::Unhandled(err.into()),
+            kind: ListNotificationRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1143,7 +1157,9 @@ impl ListNotificationRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNotificationRulesErrorKind::Unhandled(err.into()),
+            kind: ListNotificationRulesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1187,7 +1203,7 @@ impl std::error::Error for ListNotificationRulesError {
         match &self.kind {
             ListNotificationRulesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListNotificationRulesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListNotificationRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNotificationRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1210,7 +1226,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1238,7 +1254,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1247,7 +1263,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1291,7 +1307,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1314,7 +1330,7 @@ pub enum ListTargetsErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1342,7 +1358,7 @@ impl ListTargetsError {
     /// Creates the `ListTargetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTargetsErrorKind::Unhandled(err.into()),
+            kind: ListTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1351,7 +1367,7 @@ impl ListTargetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTargetsErrorKind::Unhandled(err.into()),
+            kind: ListTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1392,7 +1408,7 @@ impl std::error::Error for ListTargetsError {
         match &self.kind {
             ListTargetsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListTargetsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1417,7 +1433,7 @@ pub enum SubscribeErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1446,7 +1462,7 @@ impl SubscribeError {
     /// Creates the `SubscribeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SubscribeErrorKind::Unhandled(err.into()),
+            kind: SubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1455,7 +1471,7 @@ impl SubscribeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SubscribeErrorKind::Unhandled(err.into()),
+            kind: SubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1498,7 +1514,7 @@ impl std::error::Error for SubscribeError {
             SubscribeErrorKind::ConfigurationException(_inner) => Some(_inner),
             SubscribeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SubscribeErrorKind::ValidationException(_inner) => Some(_inner),
-            SubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SubscribeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1525,7 +1541,7 @@ pub enum TagResourceErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1555,7 +1571,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1564,7 +1580,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1618,7 +1634,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1639,7 +1655,7 @@ pub enum UnsubscribeErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnsubscribeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1666,7 +1682,7 @@ impl UnsubscribeError {
     /// Creates the `UnsubscribeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UnsubscribeErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1675,7 +1691,7 @@ impl UnsubscribeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UnsubscribeErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1708,7 +1724,7 @@ impl std::error::Error for UnsubscribeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UnsubscribeErrorKind::ValidationException(_inner) => Some(_inner),
-            UnsubscribeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UnsubscribeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1735,7 +1751,7 @@ pub enum UntagResourceErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1765,7 +1781,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1774,7 +1790,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1831,7 +1847,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1856,7 +1872,7 @@ pub enum UpdateNotificationRuleErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNotificationRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1885,7 +1901,9 @@ impl UpdateNotificationRuleError {
     /// Creates the `UpdateNotificationRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1894,7 +1912,9 @@ impl UpdateNotificationRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNotificationRuleErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1946,7 +1966,32 @@ impl std::error::Error for UpdateNotificationRuleError {
             UpdateNotificationRuleErrorKind::ConfigurationException(_inner) => Some(_inner),
             UpdateNotificationRuleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateNotificationRuleErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNotificationRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

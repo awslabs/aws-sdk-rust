@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,9 +58,9 @@ where
                 crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateAwsAccountWithPartnerAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -88,9 +88,9 @@ where
                 crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateMulticastGroupWithFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -118,9 +118,9 @@ where
                 crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWirelessDeviceWithFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +148,9 @@ where
                 crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,9 +174,9 @@ where
                 crate::error::AssociateWirelessDeviceWithThingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWirelessDeviceWithThingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateWirelessDeviceWithThingErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateWirelessDeviceWithThingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWirelessDeviceWithThingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,9 +204,9 @@ where
                 crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateWirelessGatewayWithCertificateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateWirelessGatewayWithCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWirelessGatewayWithCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -230,9 +230,9 @@ where
                 crate::error::AssociateWirelessGatewayWithThingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWirelessGatewayWithThingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateWirelessGatewayWithThingErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateWirelessGatewayWithThingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWirelessGatewayWithThingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -265,10 +265,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CancelMulticastGroupSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -300,10 +300,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateDestinationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -332,10 +332,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateDeviceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -364,9 +364,11 @@ where
                 crate::error::CreateFuotaTaskErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFuotaTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -399,10 +401,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateMulticastGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -427,9 +429,9 @@ where
                 crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -459,10 +461,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateServiceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -495,10 +497,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -528,10 +530,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateWirelessGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -564,10 +566,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateWirelessGatewayTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,9 +597,9 @@ where
                 crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,10 +631,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteDestinationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -664,10 +666,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteDeviceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -693,9 +695,11 @@ where
                 crate::error::DeleteFuotaTaskErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFuotaTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -728,10 +732,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteMulticastGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,9 +760,9 @@ where
                 crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -788,10 +792,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteQueuedMessagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -824,10 +828,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteServiceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -857,10 +861,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -890,10 +894,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteWirelessGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -923,10 +927,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteWirelessGatewayTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -953,9 +957,9 @@ where
                 crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -981,9 +985,9 @@ where
                 crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateAwsAccountFromPartnerAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1010,9 +1014,9 @@ where
                 crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateMulticastGroupFromFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1040,9 +1044,9 @@ where
                 crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWirelessDeviceFromFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1069,9 +1073,9 @@ where
                 crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1099,9 +1103,9 @@ where
                 crate::error::DisassociateWirelessDeviceFromThingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWirelessDeviceFromThingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateWirelessDeviceFromThingErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateWirelessDeviceFromThingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWirelessDeviceFromThingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1128,9 +1132,9 @@ where
                 crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWirelessGatewayFromCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1158,9 +1162,9 @@ where
                 crate::error::DisassociateWirelessGatewayFromThingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWirelessGatewayFromThingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateWirelessGatewayFromThingErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateWirelessGatewayFromThingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWirelessGatewayFromThingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1186,9 +1190,11 @@ where
                 crate::error::GetDestinationErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDestinationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1217,10 +1223,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDeviceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1245,9 +1251,9 @@ where
                 crate::error::GetEventConfigurationByResourceTypesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEventConfigurationByResourceTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEventConfigurationByResourceTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1273,9 +1279,11 @@ where
                 crate::error::GetFuotaTaskErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFuotaTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1305,10 +1313,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetLogLevelsByResourceTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1337,10 +1345,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetMulticastGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1370,10 +1378,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetMulticastGroupSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1396,9 +1404,9 @@ where
                 crate::error::GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1424,10 +1432,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPartnerAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1453,9 +1461,11 @@ where
                 crate::error::GetPositionErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetPositionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPositionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1485,10 +1495,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPositionConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1518,10 +1528,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::GetResourceEventConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1550,10 +1560,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetResourceLogLevelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1579,10 +1589,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetServiceEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1611,10 +1621,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetServiceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1643,10 +1653,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1676,10 +1686,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetWirelessDeviceStatisticsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1708,10 +1718,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetWirelessGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1741,10 +1751,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::GetWirelessGatewayCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1771,9 +1781,9 @@ where
                 crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetWirelessGatewayFirmwareInformationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetWirelessGatewayFirmwareInformationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetWirelessGatewayFirmwareInformationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1803,10 +1813,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetWirelessGatewayStatisticsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1836,10 +1846,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetWirelessGatewayTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1862,9 +1872,9 @@ where
                 crate::error::GetWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetWirelessGatewayTaskDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetWirelessGatewayTaskDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1890,10 +1900,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDestinationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1919,10 +1929,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDeviceProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1949,10 +1959,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListEventConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1975,9 +1985,11 @@ where
                 crate::error::ListFuotaTasksErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListFuotaTasksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFuotaTasksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2003,10 +2015,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListMulticastGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2029,9 +2041,9 @@ where
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListMulticastGroupsByFuotaTaskErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMulticastGroupsByFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2053,9 +2065,9 @@ where
                 crate::error::ListNetworkAnalyzerConfigurationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ListNetworkAnalyzerConfigurationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListNetworkAnalyzerConfigurationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListNetworkAnalyzerConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2081,10 +2093,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPartnerAccountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2111,10 +2123,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPositionConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2143,10 +2155,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListQueuedMessagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2172,10 +2184,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListServiceProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2204,10 +2216,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2233,10 +2245,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListWirelessDevicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2263,10 +2275,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListWirelessGatewaysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2289,9 +2301,9 @@ where
                 crate::error::ListWirelessGatewayTaskDefinitionsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ListWirelessGatewayTaskDefinitionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListWirelessGatewayTaskDefinitionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListWirelessGatewayTaskDefinitionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWirelessGatewayTaskDefinitionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2321,10 +2333,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutPositionConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2353,10 +2365,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutResourceLogLevelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2386,10 +2398,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ResetAllResourceLogLevelsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2419,10 +2431,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ResetResourceLogLevelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2455,10 +2467,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::SendDataToMulticastGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2485,10 +2497,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::SendDataToWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2515,9 +2527,9 @@ where
                 crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2544,9 +2556,9 @@ where
                 crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2575,9 +2587,11 @@ where
                 crate::error::StartFuotaTaskErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::StartFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartFuotaTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2610,10 +2624,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartMulticastGroupSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2642,9 +2656,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2670,10 +2686,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::TestWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2699,9 +2715,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2730,10 +2748,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateDestinationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2759,9 +2777,9 @@ where
                 crate::error::UpdateEventConfigurationByResourceTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateEventConfigurationByResourceTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateEventConfigurationByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2790,9 +2808,11 @@ where
                 crate::error::UpdateFuotaTaskErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateFuotaTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFuotaTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2816,9 +2836,9 @@ where
                 crate::error::UpdateLogLevelsByResourceTypesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateLogLevelsByResourceTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateLogLevelsByResourceTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateLogLevelsByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLogLevelsByResourceTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2851,10 +2871,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateMulticastGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2878,9 +2898,9 @@ where
                 crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2907,10 +2927,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePartnerAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2936,9 +2956,11 @@ where
                 crate::error::UpdatePositionErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdatePositionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePositionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2962,9 +2984,9 @@ where
                 crate::error::UpdateResourceEventConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateResourceEventConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateResourceEventConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateResourceEventConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateResourceEventConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2994,10 +3016,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateWirelessDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3027,10 +3049,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateWirelessGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

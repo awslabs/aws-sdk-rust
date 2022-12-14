@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>The operation is not supported. Check the connection status and try again.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,10 +47,10 @@ where
                     Error::ResourceUnavailableException(inner)
                 }
                 crate::error::CreateConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -64,9 +64,11 @@ where
                 crate::error::CreateHostErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateHostErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateHostErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -83,10 +85,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -103,9 +105,11 @@ where
                 crate::error::DeleteHostErrorKind::ResourceUnavailableException(inner) => {
                     Error::ResourceUnavailableException(inner)
                 }
-                crate::error::DeleteHostErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteHostErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,9 +126,11 @@ where
                 crate::error::GetConnectionErrorKind::ResourceUnavailableException(inner) => {
                     Error::ResourceUnavailableException(inner)
                 }
-                crate::error::GetConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetConnectionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -141,9 +147,11 @@ where
                 crate::error::GetHostErrorKind::ResourceUnavailableException(inner) => {
                     Error::ResourceUnavailableException(inner)
                 }
-                crate::error::GetHostErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetHostErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -154,9 +162,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListConnectionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListConnectionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -167,9 +177,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListHostsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListHostsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHostsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -186,10 +198,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -206,9 +218,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -222,9 +236,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -247,9 +263,11 @@ where
                 crate::error::UpdateHostErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::UpdateHostErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateHostErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

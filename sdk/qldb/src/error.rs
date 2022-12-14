@@ -652,7 +652,7 @@ pub enum CancelJournalKinesisStreamErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelJournalKinesisStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -683,7 +683,9 @@ impl CancelJournalKinesisStreamError {
     /// Creates the `CancelJournalKinesisStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelJournalKinesisStreamErrorKind::Unhandled(err.into()),
+            kind: CancelJournalKinesisStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -692,7 +694,9 @@ impl CancelJournalKinesisStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelJournalKinesisStreamErrorKind::Unhandled(err.into()),
+            kind: CancelJournalKinesisStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -746,7 +750,7 @@ impl std::error::Error for CancelJournalKinesisStreamError {
             CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
-            CancelJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -773,7 +777,7 @@ pub enum CreateLedgerErrorKind {
     /// <p>The specified resource can't be modified at this time.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -803,7 +807,7 @@ impl CreateLedgerError {
     /// Creates the `CreateLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLedgerErrorKind::Unhandled(err.into()),
+            kind: CreateLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -812,7 +816,7 @@ impl CreateLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLedgerErrorKind::Unhandled(err.into()),
+            kind: CreateLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -866,7 +870,7 @@ impl std::error::Error for CreateLedgerError {
             CreateLedgerErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateLedgerErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateLedgerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            CreateLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -893,7 +897,7 @@ pub enum DeleteLedgerErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,7 +927,7 @@ impl DeleteLedgerError {
     /// Creates the `DeleteLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLedgerErrorKind::Unhandled(err.into()),
+            kind: DeleteLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -932,7 +936,7 @@ impl DeleteLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLedgerErrorKind::Unhandled(err.into()),
+            kind: DeleteLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -989,7 +993,7 @@ impl std::error::Error for DeleteLedgerError {
             DeleteLedgerErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLedgerErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
-            DeleteLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1014,7 +1018,7 @@ pub enum DescribeJournalKinesisStreamErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeJournalKinesisStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1049,7 +1053,9 @@ impl DescribeJournalKinesisStreamError {
     /// Creates the `DescribeJournalKinesisStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeJournalKinesisStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeJournalKinesisStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1058,7 +1064,9 @@ impl DescribeJournalKinesisStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeJournalKinesisStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeJournalKinesisStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1116,7 +1124,7 @@ impl std::error::Error for DescribeJournalKinesisStreamError {
             DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
-            DescribeJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeJournalKinesisStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1137,7 +1145,7 @@ pub enum DescribeJournalS3ExportErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeJournalS3ExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,7 +1172,9 @@ impl DescribeJournalS3ExportError {
     /// Creates the `DescribeJournalS3ExportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeJournalS3ExportErrorKind::Unhandled(err.into()),
+            kind: DescribeJournalS3ExportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1173,7 +1183,9 @@ impl DescribeJournalS3ExportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeJournalS3ExportErrorKind::Unhandled(err.into()),
+            kind: DescribeJournalS3ExportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1209,7 +1221,7 @@ impl std::error::Error for DescribeJournalS3ExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeJournalS3ExportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeJournalS3ExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeJournalS3ExportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1232,7 +1244,7 @@ pub enum DescribeLedgerErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1260,7 +1272,7 @@ impl DescribeLedgerError {
     /// Creates the `DescribeLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLedgerErrorKind::Unhandled(err.into()),
+            kind: DescribeLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1269,7 +1281,7 @@ impl DescribeLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLedgerErrorKind::Unhandled(err.into()),
+            kind: DescribeLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1313,7 +1325,7 @@ impl std::error::Error for DescribeLedgerError {
         match &self.kind {
             DescribeLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1336,7 +1348,7 @@ pub enum ExportJournalToS3ErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportJournalToS3Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1366,7 +1378,7 @@ impl ExportJournalToS3Error {
     /// Creates the `ExportJournalToS3Error::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportJournalToS3ErrorKind::Unhandled(err.into()),
+            kind: ExportJournalToS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1375,7 +1387,7 @@ impl ExportJournalToS3Error {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportJournalToS3ErrorKind::Unhandled(err.into()),
+            kind: ExportJournalToS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1419,7 +1431,7 @@ impl std::error::Error for ExportJournalToS3Error {
         match &self.kind {
             ExportJournalToS3ErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExportJournalToS3ErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
-            ExportJournalToS3ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportJournalToS3ErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1444,7 +1456,7 @@ pub enum GetBlockErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,7 +1485,7 @@ impl GetBlockError {
     /// Creates the `GetBlockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBlockErrorKind::Unhandled(err.into()),
+            kind: GetBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1482,7 +1494,7 @@ impl GetBlockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBlockErrorKind::Unhandled(err.into()),
+            kind: GetBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1528,7 +1540,7 @@ impl std::error::Error for GetBlockError {
             GetBlockErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetBlockErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
-            GetBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBlockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1553,7 +1565,7 @@ pub enum GetDigestErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDigestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1582,7 +1594,7 @@ impl GetDigestError {
     /// Creates the `GetDigestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDigestErrorKind::Unhandled(err.into()),
+            kind: GetDigestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1591,7 +1603,7 @@ impl GetDigestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDigestErrorKind::Unhandled(err.into()),
+            kind: GetDigestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1637,7 +1649,7 @@ impl std::error::Error for GetDigestError {
             GetDigestErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetDigestErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetDigestErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
-            GetDigestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDigestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1662,7 +1674,7 @@ pub enum GetRevisionErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRevisionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1691,7 +1703,7 @@ impl GetRevisionError {
     /// Creates the `GetRevisionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRevisionErrorKind::Unhandled(err.into()),
+            kind: GetRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1700,7 +1712,7 @@ impl GetRevisionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRevisionErrorKind::Unhandled(err.into()),
+            kind: GetRevisionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1752,7 +1764,7 @@ impl std::error::Error for GetRevisionError {
             GetRevisionErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetRevisionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRevisionErrorKind::ResourcePreconditionNotMetException(_inner) => Some(_inner),
-            GetRevisionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRevisionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1777,7 +1789,7 @@ pub enum ListJournalKinesisStreamsForLedgerErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJournalKinesisStreamsForLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1815,7 +1827,9 @@ impl ListJournalKinesisStreamsForLedgerError {
     /// Creates the `ListJournalKinesisStreamsForLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(err.into()),
+            kind: ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1824,7 +1838,9 @@ impl ListJournalKinesisStreamsForLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(err.into()),
+            kind: ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1882,7 +1898,7 @@ impl std::error::Error for ListJournalKinesisStreamsForLedgerError {
             ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetException(
                 _inner,
             ) => Some(_inner),
-            ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJournalKinesisStreamsForLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1901,7 +1917,7 @@ pub struct ListJournalS3ExportsError {
 #[derive(std::fmt::Debug)]
 pub enum ListJournalS3ExportsErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJournalS3ExportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1927,7 +1943,9 @@ impl ListJournalS3ExportsError {
     /// Creates the `ListJournalS3ExportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJournalS3ExportsErrorKind::Unhandled(err.into()),
+            kind: ListJournalS3ExportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1936,7 +1954,9 @@ impl ListJournalS3ExportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJournalS3ExportsErrorKind::Unhandled(err.into()),
+            kind: ListJournalS3ExportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1964,7 +1984,7 @@ impl ListJournalS3ExportsError {
 impl std::error::Error for ListJournalS3ExportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListJournalS3ExportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJournalS3ExportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1983,7 +2003,7 @@ pub struct ListJournalS3ExportsForLedgerError {
 #[derive(std::fmt::Debug)]
 pub enum ListJournalS3ExportsForLedgerErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJournalS3ExportsForLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2012,7 +2032,9 @@ impl ListJournalS3ExportsForLedgerError {
     /// Creates the `ListJournalS3ExportsForLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJournalS3ExportsForLedgerErrorKind::Unhandled(err.into()),
+            kind: ListJournalS3ExportsForLedgerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2021,7 +2043,9 @@ impl ListJournalS3ExportsForLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJournalS3ExportsForLedgerErrorKind::Unhandled(err.into()),
+            kind: ListJournalS3ExportsForLedgerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2049,7 +2073,7 @@ impl ListJournalS3ExportsForLedgerError {
 impl std::error::Error for ListJournalS3ExportsForLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListJournalS3ExportsForLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJournalS3ExportsForLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2068,7 +2092,7 @@ pub struct ListLedgersError {
 #[derive(std::fmt::Debug)]
 pub enum ListLedgersErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLedgersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2094,7 +2118,7 @@ impl ListLedgersError {
     /// Creates the `ListLedgersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLedgersErrorKind::Unhandled(err.into()),
+            kind: ListLedgersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2103,7 +2127,7 @@ impl ListLedgersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLedgersErrorKind::Unhandled(err.into()),
+            kind: ListLedgersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2131,7 +2155,7 @@ impl ListLedgersError {
 impl std::error::Error for ListLedgersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLedgersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLedgersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2154,7 +2178,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,7 +2206,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2191,7 +2215,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2235,7 +2259,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2260,7 +2284,7 @@ pub enum StreamJournalToKinesisErrorKind {
     /// <p>The operation failed because a condition wasn't satisfied in advance.</p>
     ResourcePreconditionNotMetException(crate::error::ResourcePreconditionNotMetException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StreamJournalToKinesisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2291,7 +2315,9 @@ impl StreamJournalToKinesisError {
     /// Creates the `StreamJournalToKinesisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StreamJournalToKinesisErrorKind::Unhandled(err.into()),
+            kind: StreamJournalToKinesisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2300,7 +2326,9 @@ impl StreamJournalToKinesisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StreamJournalToKinesisErrorKind::Unhandled(err.into()),
+            kind: StreamJournalToKinesisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2354,7 +2382,7 @@ impl std::error::Error for StreamJournalToKinesisError {
             StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetException(_inner) => {
                 Some(_inner)
             }
-            StreamJournalToKinesisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StreamJournalToKinesisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2377,7 +2405,7 @@ pub enum TagResourceErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2405,7 +2433,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2414,7 +2442,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2458,7 +2486,7 @@ impl std::error::Error for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2481,7 +2509,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2509,7 +2537,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2518,7 +2546,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2562,7 +2590,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2585,7 +2613,7 @@ pub enum UpdateLedgerErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLedgerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2613,7 +2641,7 @@ impl UpdateLedgerError {
     /// Creates the `UpdateLedgerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLedgerErrorKind::Unhandled(err.into()),
+            kind: UpdateLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2622,7 +2650,7 @@ impl UpdateLedgerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLedgerErrorKind::Unhandled(err.into()),
+            kind: UpdateLedgerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2666,7 +2694,7 @@ impl std::error::Error for UpdateLedgerError {
         match &self.kind {
             UpdateLedgerErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateLedgerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateLedgerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLedgerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2689,7 +2717,7 @@ pub enum UpdateLedgerPermissionsModeErrorKind {
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLedgerPermissionsModeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2721,7 +2749,9 @@ impl UpdateLedgerPermissionsModeError {
     /// Creates the `UpdateLedgerPermissionsModeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(err.into()),
+            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2730,7 +2760,9 @@ impl UpdateLedgerPermissionsModeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(err.into()),
+            kind: UpdateLedgerPermissionsModeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2774,7 +2806,32 @@ impl std::error::Error for UpdateLedgerPermissionsModeError {
         match &self.kind {
             UpdateLedgerPermissionsModeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLedgerPermissionsModeErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

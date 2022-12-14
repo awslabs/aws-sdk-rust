@@ -426,7 +426,7 @@ pub enum CreateSlackChannelConfigurationErrorKind {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -466,7 +466,9 @@ impl CreateSlackChannelConfigurationError {
     /// Creates the `CreateSlackChannelConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -475,7 +477,9 @@ impl CreateSlackChannelConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -547,7 +551,7 @@ impl std::error::Error for CreateSlackChannelConfigurationError {
                 Some(_inner)
             }
             CreateSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -572,7 +576,7 @@ pub enum DeleteAccountAliasErrorKind {
     /// <p>The specified resource is missing or doesn't exist, such as an account alias or Slack channel configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -601,7 +605,7 @@ impl DeleteAccountAliasError {
     /// Creates the `DeleteAccountAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAccountAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -610,7 +614,7 @@ impl DeleteAccountAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAccountAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -662,7 +666,7 @@ impl std::error::Error for DeleteAccountAliasError {
             DeleteAccountAliasErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteAccountAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -697,7 +701,7 @@ pub enum DeleteSlackChannelConfigurationErrorKind {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -737,7 +741,9 @@ impl DeleteSlackChannelConfigurationError {
     /// Creates the `DeleteSlackChannelConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -746,7 +752,9 @@ impl DeleteSlackChannelConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -818,7 +826,7 @@ impl std::error::Error for DeleteSlackChannelConfigurationError {
                 Some(_inner)
             }
             DeleteSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -853,7 +861,7 @@ pub enum DeleteSlackWorkspaceConfigurationErrorKind {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSlackWorkspaceConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -895,7 +903,9 @@ impl DeleteSlackWorkspaceConfigurationError {
     /// Creates the `DeleteSlackWorkspaceConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -904,7 +914,9 @@ impl DeleteSlackWorkspaceConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -978,7 +990,7 @@ impl std::error::Error for DeleteSlackWorkspaceConfigurationError {
                 Some(_inner)
             }
             DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -999,7 +1011,7 @@ pub enum GetAccountAliasErrorKind {
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1026,7 +1038,7 @@ impl GetAccountAliasError {
     /// Creates the `GetAccountAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountAliasErrorKind::Unhandled(err.into()),
+            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1035,7 +1047,7 @@ impl GetAccountAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountAliasErrorKind::Unhandled(err.into()),
+            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1071,7 +1083,7 @@ impl std::error::Error for GetAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetAccountAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1094,7 +1106,7 @@ pub enum ListSlackChannelConfigurationsErrorKind {
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSlackChannelConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1127,7 +1139,9 @@ impl ListSlackChannelConfigurationsError {
     /// Creates the `ListSlackChannelConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1136,7 +1150,9 @@ impl ListSlackChannelConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1182,7 +1198,7 @@ impl std::error::Error for ListSlackChannelConfigurationsError {
             ListSlackChannelConfigurationsErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
-            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1205,7 +1221,7 @@ pub enum ListSlackWorkspaceConfigurationsErrorKind {
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSlackWorkspaceConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1240,7 +1256,9 @@ impl ListSlackWorkspaceConfigurationsError {
     /// Creates the `ListSlackWorkspaceConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1249,7 +1267,9 @@ impl ListSlackWorkspaceConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1297,7 +1317,7 @@ impl std::error::Error for ListSlackWorkspaceConfigurationsError {
             ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_inner) => {
                 Some(_inner)
             }
-            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1322,7 +1342,7 @@ pub enum PutAccountAliasErrorKind {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1351,7 +1371,7 @@ impl PutAccountAliasError {
     /// Creates the `PutAccountAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountAliasErrorKind::Unhandled(err.into()),
+            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1360,7 +1380,7 @@ impl PutAccountAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountAliasErrorKind::Unhandled(err.into()),
+            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1409,7 +1429,7 @@ impl std::error::Error for PutAccountAliasError {
             PutAccountAliasErrorKind::AccessDeniedException(_inner) => Some(_inner),
             PutAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
             PutAccountAliasErrorKind::ValidationException(_inner) => Some(_inner),
-            PutAccountAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1444,7 +1464,7 @@ pub enum UpdateSlackChannelConfigurationErrorKind {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1484,7 +1504,9 @@ impl UpdateSlackChannelConfigurationError {
     /// Creates the `UpdateSlackChannelConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1493,7 +1515,9 @@ impl UpdateSlackChannelConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1565,7 +1589,32 @@ impl std::error::Error for UpdateSlackChannelConfigurationError {
                 Some(_inner)
             }
             UpdateSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

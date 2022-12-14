@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Use the Amazon Web Services Management Console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57,10 +57,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::AcceptPortfolioShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -87,10 +87,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateBudgetWithResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -111,9 +111,9 @@ where
                 crate::error::AssociatePrincipalWithPortfolioErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::AssociatePrincipalWithPortfolioErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AssociatePrincipalWithPortfolioErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AssociatePrincipalWithPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociatePrincipalWithPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -130,9 +130,9 @@ where
                 crate::error::AssociateProductWithPortfolioErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::AssociateProductWithPortfolioErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AssociateProductWithPortfolioErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AssociateProductWithPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateProductWithPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -157,9 +157,9 @@ where
                 crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
                 crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateServiceActionWithProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -183,9 +183,9 @@ where
                 crate::error::AssociateTagOptionWithResourceErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AssociateTagOptionWithResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateTagOptionWithResourceErrorKind::TagOptionNotMigratedException(inner) => Error::TagOptionNotMigratedException(inner),
-                crate::error::AssociateTagOptionWithResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateTagOptionWithResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,9 +208,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchAssociateServiceActionWithProvisioningArtifactErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
-                crate::error::BatchAssociateServiceActionWithProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchAssociateServiceActionWithProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -233,9 +233,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
-                crate::error::BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDisassociateServiceActionFromProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,9 +252,11 @@ where
                 crate::error::CopyProductErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CopyProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CopyProductErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -280,10 +282,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateConstraintErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -303,9 +305,11 @@ where
                 crate::error::CreatePortfolioErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::CreatePortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePortfolioErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -335,10 +339,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreatePortfolioShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,9 +362,11 @@ where
                 crate::error::CreateProductErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::CreateProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateProductErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -384,10 +390,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateProvisionedProductPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -411,10 +417,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateProvisioningArtifactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -434,10 +440,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateServiceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -457,9 +463,11 @@ where
                 crate::error::CreateTagOptionErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::CreateTagOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTagOptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -479,10 +487,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteConstraintErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -505,9 +513,11 @@ where
                 crate::error::DeletePortfolioErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::DeletePortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePortfolioErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -534,10 +544,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeletePortfolioShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -560,9 +570,11 @@ where
                 crate::error::DeleteProductErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::DeleteProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteProductErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -583,10 +595,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteProvisionedProductPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -610,10 +622,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteProvisioningArtifactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -633,10 +645,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteServiceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -656,9 +668,11 @@ where
                 crate::error::DeleteTagOptionErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::DeleteTagOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTagOptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,10 +689,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeConstraintErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -696,10 +710,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeCopyProductStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -716,10 +730,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribePortfolioErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -740,10 +754,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribePortfolioSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -760,9 +774,9 @@ where
                 crate::error::DescribePortfolioShareStatusErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DescribePortfolioShareStatusErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::DescribePortfolioShareStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribePortfolioShareStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePortfolioShareStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -779,9 +793,11 @@ where
                 crate::error::DescribeProductErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeProductErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -802,10 +818,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeProductAsAdminErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -825,10 +841,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeProductViewErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -849,10 +865,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeProvisionedProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -872,9 +888,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeProvisionedProductPlanErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DescribeProvisionedProductPlanErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeProvisionedProductPlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeProvisionedProductPlanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -895,10 +911,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeProvisioningArtifactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -918,9 +934,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeProvisioningParametersErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DescribeProvisioningParametersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeProvisioningParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeProvisioningParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -934,9 +950,11 @@ where
                 crate::error::DescribeRecordErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRecordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -954,10 +972,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeServiceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -981,9 +999,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeServiceActionExecutionParametersErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DescribeServiceActionExecutionParametersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeServiceActionExecutionParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeServiceActionExecutionParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1003,10 +1021,10 @@ where
                     Error::TagOptionNotMigratedException(inner)
                 }
                 crate::error::DescribeTagOptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1023,9 +1041,9 @@ where
                 crate::error::DisableAWSOrganizationsAccessErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::DisableAWSOrganizationsAccessErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::DisableAWSOrganizationsAccessErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DisableAWSOrganizationsAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisableAWSOrganizationsAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1044,9 +1062,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateBudgetFromResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DisassociateBudgetFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateBudgetFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1067,9 +1085,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociatePrincipalFromPortfolioErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DisassociatePrincipalFromPortfolioErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DisassociatePrincipalFromPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociatePrincipalFromPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1090,9 +1108,9 @@ where
                 crate::error::DisassociateProductFromPortfolioErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::DisassociateProductFromPortfolioErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DisassociateProductFromPortfolioErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DisassociateProductFromPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateProductFromPortfolioErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1115,9 +1133,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateServiceActionFromProvisioningArtifactErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DisassociateServiceActionFromProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateServiceActionFromProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1137,9 +1155,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateTagOptionFromResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateTagOptionFromResourceErrorKind::TagOptionNotMigratedException(inner) => Error::TagOptionNotMigratedException(inner),
-                crate::error::DisassociateTagOptionFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateTagOptionFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1156,9 +1174,9 @@ where
                 crate::error::EnableAWSOrganizationsAccessErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::EnableAWSOrganizationsAccessErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::EnableAWSOrganizationsAccessErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::EnableAWSOrganizationsAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableAWSOrganizationsAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1175,9 +1193,9 @@ where
                 crate::error::ExecuteProvisionedProductPlanErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ExecuteProvisionedProductPlanErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::ExecuteProvisionedProductPlanErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ExecuteProvisionedProductPlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExecuteProvisionedProductPlanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1202,9 +1220,9 @@ where
                 crate::error::ExecuteProvisionedProductServiceActionErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ExecuteProvisionedProductServiceActionErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::ExecuteProvisionedProductServiceActionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ExecuteProvisionedProductServiceActionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExecuteProvisionedProductServiceActionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1224,9 +1242,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetAWSOrganizationsAccessStatusErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::GetAWSOrganizationsAccessStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetAWSOrganizationsAccessStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAWSOrganizationsAccessStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1247,10 +1265,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::GetProvisionedProductOutputsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1277,10 +1295,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ImportAsProvisionedProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1296,9 +1314,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListAcceptedPortfolioSharesErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ListAcceptedPortfolioSharesErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
-                crate::error::ListAcceptedPortfolioSharesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAcceptedPortfolioSharesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1319,10 +1337,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListBudgetsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1343,10 +1361,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListConstraintsForPortfolioErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1363,9 +1381,11 @@ where
                 crate::error::ListLaunchPathsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListLaunchPathsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLaunchPathsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1386,9 +1406,9 @@ where
                 crate::error::ListOrganizationPortfolioAccessErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ListOrganizationPortfolioAccessErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::ListOrganizationPortfolioAccessErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ListOrganizationPortfolioAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOrganizationPortfolioAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1408,10 +1428,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListPortfolioAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1425,9 +1445,11 @@ where
                 crate::error::ListPortfoliosErrorKind::InvalidParametersException(inner) => {
                     Error::InvalidParametersException(inner)
                 }
-                crate::error::ListPortfoliosErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPortfoliosErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1448,10 +1470,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPortfoliosForProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1472,10 +1494,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPrincipalsForPortfolioErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1496,10 +1518,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListProvisionedProductPlansErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1520,10 +1542,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::ListProvisioningArtifactsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1547,9 +1569,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListProvisioningArtifactsForServiceActionErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ListProvisioningArtifactsForServiceActionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ListProvisioningArtifactsForServiceActionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListProvisioningArtifactsForServiceActionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1566,10 +1588,10 @@ where
                     Error::InvalidParametersException(inner)
                 }
                 crate::error::ListRecordHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1593,10 +1615,10 @@ where
                     inner,
                 ) => Error::TagOptionNotMigratedException(inner),
                 crate::error::ListResourcesForTagOptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1613,10 +1635,10 @@ where
                     Error::InvalidParametersException(inner)
                 }
                 crate::error::ListServiceActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1640,9 +1662,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListServiceActionsForProvisioningArtifactErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ListServiceActionsForProvisioningArtifactErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ListServiceActionsForProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListServiceActionsForProvisioningArtifactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1666,9 +1688,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListStackInstancesForProvisionedProductErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::ListStackInstancesForProvisionedProductErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ListStackInstancesForProvisionedProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListStackInstancesForProvisionedProductErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1685,9 +1707,11 @@ where
                 crate::error::ListTagOptionsErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::ListTagOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagOptionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1710,10 +1734,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ProvisionProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1731,10 +1755,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::RejectPortfolioShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1752,10 +1776,10 @@ where
                     inner,
                 ) => Error::InvalidParametersException(inner),
                 crate::error::ScanProvisionedProductsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1769,9 +1793,11 @@ where
                 crate::error::SearchProductsErrorKind::InvalidParametersException(inner) => {
                     Error::InvalidParametersException(inner)
                 }
-                crate::error::SearchProductsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchProductsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1792,10 +1818,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::SearchProductsAsAdminErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1813,10 +1839,10 @@ where
                     inner,
                 ) => Error::InvalidParametersException(inner),
                 crate::error::SearchProvisionedProductsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1834,10 +1860,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::TerminateProvisionedProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1857,10 +1883,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateConstraintErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1883,9 +1909,11 @@ where
                 crate::error::UpdatePortfolioErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::UpdatePortfolioErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePortfolioErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1912,10 +1940,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdatePortfolioShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1935,9 +1963,11 @@ where
                 crate::error::UpdateProductErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::UpdateProductErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateProductErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1958,10 +1988,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateProvisionedProductErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1983,9 +2013,9 @@ where
                 crate::error::UpdateProvisionedProductPropertiesErrorKind::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
                 crate::error::UpdateProvisionedProductPropertiesErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::UpdateProvisionedProductPropertiesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateProvisionedProductPropertiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateProvisionedProductPropertiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2006,10 +2036,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateProvisioningArtifactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2029,10 +2059,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateServiceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2055,9 +2085,11 @@ where
                 crate::error::UpdateTagOptionErrorKind::TagOptionNotMigratedException(inner) => {
                     Error::TagOptionNotMigratedException(inner)
                 }
-                crate::error::UpdateTagOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateTagOptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

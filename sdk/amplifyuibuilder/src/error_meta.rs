@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>You don't have permission to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50,9 +50,11 @@ where
                 crate::error::CreateComponentErrorKind::ServiceQuotaExceededException(inner) => {
                     Error::ServiceQuotaExceededException(inner)
                 }
-                crate::error::CreateComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -75,9 +77,11 @@ where
                 crate::error::CreateFormErrorKind::ServiceQuotaExceededException(inner) => {
                     Error::ServiceQuotaExceededException(inner)
                 }
-                crate::error::CreateFormErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFormErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -100,9 +104,11 @@ where
                 crate::error::CreateThemeErrorKind::ServiceQuotaExceededException(inner) => {
                     Error::ServiceQuotaExceededException(inner)
                 }
-                crate::error::CreateThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,9 +128,11 @@ where
                 crate::error::DeleteComponentErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,9 +152,11 @@ where
                 crate::error::DeleteFormErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteFormErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFormErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,9 +176,11 @@ where
                 crate::error::DeleteThemeErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -186,10 +198,10 @@ where
                     Error::InvalidParameterException(inner)
                 }
                 crate::error::ExchangeCodeForTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,10 +221,10 @@ where
                     Error::InvalidParameterException(inner)
                 }
                 crate::error::ExportComponentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -229,9 +241,11 @@ where
                 crate::error::ExportFormsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ExportFormsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportFormsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -248,9 +262,11 @@ where
                 crate::error::ExportThemesErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ExportThemesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportThemesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -270,9 +286,11 @@ where
                 crate::error::GetComponentErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -292,9 +310,11 @@ where
                 crate::error::GetFormErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetFormErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFormErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -311,9 +331,11 @@ where
                 crate::error::GetMetadataErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::GetMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetadataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -333,9 +355,11 @@ where
                 crate::error::GetThemeErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -352,9 +376,11 @@ where
                 crate::error::ListComponentsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ListComponentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListComponentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -371,9 +397,11 @@ where
                 crate::error::ListFormsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ListFormsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFormsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -390,9 +418,11 @@ where
                 crate::error::ListThemesErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ListThemesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListThemesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -409,9 +439,11 @@ where
                 crate::error::PutMetadataFlagErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::PutMetadataFlagErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMetadataFlagErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -425,9 +457,11 @@ where
                 crate::error::RefreshTokenErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::RefreshTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RefreshTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -447,9 +481,11 @@ where
                 crate::error::UpdateComponentErrorKind::ResourceConflictException(inner) => {
                     Error::ResourceConflictException(inner)
                 }
-                crate::error::UpdateComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -469,9 +505,11 @@ where
                 crate::error::UpdateFormErrorKind::ResourceConflictException(inner) => {
                     Error::ResourceConflictException(inner)
                 }
-                crate::error::UpdateFormErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFormErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -491,9 +529,11 @@ where
                 crate::error::UpdateThemeErrorKind::ResourceConflictException(inner) => {
                     Error::ResourceConflictException(inner)
                 }
-                crate::error::UpdateThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

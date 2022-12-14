@@ -611,7 +611,7 @@ pub enum AddFlowMediaStreamsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddFlowMediaStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -643,7 +643,7 @@ impl AddFlowMediaStreamsError {
     /// Creates the `AddFlowMediaStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddFlowMediaStreamsErrorKind::Unhandled(err.into()),
+            kind: AddFlowMediaStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -652,7 +652,7 @@ impl AddFlowMediaStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddFlowMediaStreamsErrorKind::Unhandled(err.into()),
+            kind: AddFlowMediaStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -728,7 +728,7 @@ impl std::error::Error for AddFlowMediaStreamsError {
             AddFlowMediaStreamsErrorKind::NotFoundException(_inner) => Some(_inner),
             AddFlowMediaStreamsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AddFlowMediaStreamsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddFlowMediaStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddFlowMediaStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -761,7 +761,7 @@ pub enum AddFlowOutputsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddFlowOutputsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -794,7 +794,7 @@ impl AddFlowOutputsError {
     /// Creates the `AddFlowOutputsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddFlowOutputsErrorKind::Unhandled(err.into()),
+            kind: AddFlowOutputsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -803,7 +803,7 @@ impl AddFlowOutputsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddFlowOutputsErrorKind::Unhandled(err.into()),
+            kind: AddFlowOutputsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -878,7 +878,7 @@ impl std::error::Error for AddFlowOutputsError {
             AddFlowOutputsErrorKind::NotFoundException(_inner) => Some(_inner),
             AddFlowOutputsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AddFlowOutputsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddFlowOutputsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddFlowOutputsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -909,7 +909,7 @@ pub enum AddFlowSourcesErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddFlowSourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -941,7 +941,7 @@ impl AddFlowSourcesError {
     /// Creates the `AddFlowSourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddFlowSourcesErrorKind::Unhandled(err.into()),
+            kind: AddFlowSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -950,7 +950,7 @@ impl AddFlowSourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddFlowSourcesErrorKind::Unhandled(err.into()),
+            kind: AddFlowSourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1017,7 +1017,7 @@ impl std::error::Error for AddFlowSourcesError {
             AddFlowSourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             AddFlowSourcesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AddFlowSourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddFlowSourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddFlowSourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1048,7 +1048,7 @@ pub enum AddFlowVpcInterfacesErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddFlowVpcInterfacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,7 +1080,9 @@ impl AddFlowVpcInterfacesError {
     /// Creates the `AddFlowVpcInterfacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddFlowVpcInterfacesErrorKind::Unhandled(err.into()),
+            kind: AddFlowVpcInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1089,7 +1091,9 @@ impl AddFlowVpcInterfacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddFlowVpcInterfacesErrorKind::Unhandled(err.into()),
+            kind: AddFlowVpcInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1165,7 +1169,7 @@ impl std::error::Error for AddFlowVpcInterfacesError {
             AddFlowVpcInterfacesErrorKind::NotFoundException(_inner) => Some(_inner),
             AddFlowVpcInterfacesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AddFlowVpcInterfacesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddFlowVpcInterfacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddFlowVpcInterfacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1196,7 +1200,7 @@ pub enum CreateFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1228,7 +1232,7 @@ impl CreateFlowError {
     /// Creates the `CreateFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFlowErrorKind::Unhandled(err.into()),
+            kind: CreateFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1237,7 +1241,7 @@ impl CreateFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFlowErrorKind::Unhandled(err.into()),
+            kind: CreateFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1301,7 +1305,7 @@ impl std::error::Error for CreateFlowError {
             CreateFlowErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1332,7 +1336,7 @@ pub enum DeleteFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1364,7 +1368,7 @@ impl DeleteFlowError {
     /// Creates the `DeleteFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFlowErrorKind::Unhandled(err.into()),
+            kind: DeleteFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1373,7 +1377,7 @@ impl DeleteFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFlowErrorKind::Unhandled(err.into()),
+            kind: DeleteFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1437,7 +1441,7 @@ impl std::error::Error for DeleteFlowError {
             DeleteFlowErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1468,7 +1472,7 @@ pub enum DescribeFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1500,7 +1504,7 @@ impl DescribeFlowError {
     /// Creates the `DescribeFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFlowErrorKind::Unhandled(err.into()),
+            kind: DescribeFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1509,7 +1513,7 @@ impl DescribeFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFlowErrorKind::Unhandled(err.into()),
+            kind: DescribeFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1576,7 +1580,7 @@ impl std::error::Error for DescribeFlowError {
             DescribeFlowErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1605,7 +1609,7 @@ pub enum DescribeOfferingErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1636,7 +1640,7 @@ impl DescribeOfferingError {
     /// Creates the `DescribeOfferingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeOfferingErrorKind::Unhandled(err.into()),
+            kind: DescribeOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1645,7 +1649,7 @@ impl DescribeOfferingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeOfferingErrorKind::Unhandled(err.into()),
+            kind: DescribeOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1710,7 +1714,7 @@ impl std::error::Error for DescribeOfferingError {
             DescribeOfferingErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeOfferingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeOfferingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeOfferingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeOfferingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1739,7 +1743,7 @@ pub enum DescribeReservationErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReservationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,7 +1774,7 @@ impl DescribeReservationError {
     /// Creates the `DescribeReservationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeReservationErrorKind::Unhandled(err.into()),
+            kind: DescribeReservationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1779,7 +1783,7 @@ impl DescribeReservationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeReservationErrorKind::Unhandled(err.into()),
+            kind: DescribeReservationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1847,7 +1851,7 @@ impl std::error::Error for DescribeReservationError {
             DescribeReservationErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeReservationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeReservationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeReservationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeReservationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1880,7 +1884,7 @@ pub enum GrantFlowEntitlementsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GrantFlowEntitlementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1915,7 +1919,9 @@ impl GrantFlowEntitlementsError {
     /// Creates the `GrantFlowEntitlementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GrantFlowEntitlementsErrorKind::Unhandled(err.into()),
+            kind: GrantFlowEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1924,7 +1930,9 @@ impl GrantFlowEntitlementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GrantFlowEntitlementsErrorKind::Unhandled(err.into()),
+            kind: GrantFlowEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2010,7 +2018,7 @@ impl std::error::Error for GrantFlowEntitlementsError {
             GrantFlowEntitlementsErrorKind::NotFoundException(_inner) => Some(_inner),
             GrantFlowEntitlementsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GrantFlowEntitlementsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GrantFlowEntitlementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GrantFlowEntitlementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2037,7 +2045,7 @@ pub enum ListEntitlementsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEntitlementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2067,7 +2075,7 @@ impl ListEntitlementsError {
     /// Creates the `ListEntitlementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEntitlementsErrorKind::Unhandled(err.into()),
+            kind: ListEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2076,7 +2084,7 @@ impl ListEntitlementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEntitlementsErrorKind::Unhandled(err.into()),
+            kind: ListEntitlementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2136,7 +2144,7 @@ impl std::error::Error for ListEntitlementsError {
             ListEntitlementsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListEntitlementsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListEntitlementsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEntitlementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEntitlementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2163,7 +2171,7 @@ pub enum ListFlowsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFlowsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2193,7 +2201,7 @@ impl ListFlowsError {
     /// Creates the `ListFlowsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFlowsErrorKind::Unhandled(err.into()),
+            kind: ListFlowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2202,7 +2210,7 @@ impl ListFlowsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFlowsErrorKind::Unhandled(err.into()),
+            kind: ListFlowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2256,7 +2264,7 @@ impl std::error::Error for ListFlowsError {
             ListFlowsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListFlowsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListFlowsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListFlowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFlowsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2283,7 +2291,7 @@ pub enum ListOfferingsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOfferingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2313,7 +2321,7 @@ impl ListOfferingsError {
     /// Creates the `ListOfferingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOfferingsErrorKind::Unhandled(err.into()),
+            kind: ListOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2322,7 +2330,7 @@ impl ListOfferingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOfferingsErrorKind::Unhandled(err.into()),
+            kind: ListOfferingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2379,7 +2387,7 @@ impl std::error::Error for ListOfferingsError {
             ListOfferingsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListOfferingsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListOfferingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListOfferingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListOfferingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2406,7 +2414,7 @@ pub enum ListReservationsErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReservationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2436,7 +2444,7 @@ impl ListReservationsError {
     /// Creates the `ListReservationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListReservationsErrorKind::Unhandled(err.into()),
+            kind: ListReservationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2445,7 +2453,7 @@ impl ListReservationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListReservationsErrorKind::Unhandled(err.into()),
+            kind: ListReservationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2505,7 +2513,7 @@ impl std::error::Error for ListReservationsError {
             ListReservationsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListReservationsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListReservationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListReservationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListReservationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2530,7 +2538,7 @@ pub enum ListTagsForResourceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2559,7 +2567,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2568,7 +2576,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2620,7 +2628,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2651,7 +2659,7 @@ pub enum PurchaseOfferingErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PurchaseOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2683,7 +2691,7 @@ impl PurchaseOfferingError {
     /// Creates the `PurchaseOfferingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PurchaseOfferingErrorKind::Unhandled(err.into()),
+            kind: PurchaseOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2692,7 +2700,7 @@ impl PurchaseOfferingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PurchaseOfferingErrorKind::Unhandled(err.into()),
+            kind: PurchaseOfferingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2762,7 +2770,7 @@ impl std::error::Error for PurchaseOfferingError {
             PurchaseOfferingErrorKind::NotFoundException(_inner) => Some(_inner),
             PurchaseOfferingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             PurchaseOfferingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PurchaseOfferingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PurchaseOfferingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2793,7 +2801,7 @@ pub enum RemoveFlowMediaStreamErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFlowMediaStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2825,7 +2833,9 @@ impl RemoveFlowMediaStreamError {
     /// Creates the `RemoveFlowMediaStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFlowMediaStreamErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowMediaStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2834,7 +2844,9 @@ impl RemoveFlowMediaStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFlowMediaStreamErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowMediaStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2910,7 +2922,7 @@ impl std::error::Error for RemoveFlowMediaStreamError {
             RemoveFlowMediaStreamErrorKind::NotFoundException(_inner) => Some(_inner),
             RemoveFlowMediaStreamErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RemoveFlowMediaStreamErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveFlowMediaStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFlowMediaStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2941,7 +2953,7 @@ pub enum RemoveFlowOutputErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFlowOutputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2973,7 +2985,7 @@ impl RemoveFlowOutputError {
     /// Creates the `RemoveFlowOutputError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFlowOutputErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowOutputErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2982,7 +2994,7 @@ impl RemoveFlowOutputError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFlowOutputErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowOutputErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3052,7 +3064,7 @@ impl std::error::Error for RemoveFlowOutputError {
             RemoveFlowOutputErrorKind::NotFoundException(_inner) => Some(_inner),
             RemoveFlowOutputErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RemoveFlowOutputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveFlowOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFlowOutputErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3083,7 +3095,7 @@ pub enum RemoveFlowSourceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFlowSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3115,7 +3127,7 @@ impl RemoveFlowSourceError {
     /// Creates the `RemoveFlowSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFlowSourceErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3124,7 +3136,7 @@ impl RemoveFlowSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFlowSourceErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3194,7 +3206,7 @@ impl std::error::Error for RemoveFlowSourceError {
             RemoveFlowSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             RemoveFlowSourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RemoveFlowSourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveFlowSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFlowSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3225,7 +3237,7 @@ pub enum RemoveFlowVpcInterfaceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFlowVpcInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3257,7 +3269,9 @@ impl RemoveFlowVpcInterfaceError {
     /// Creates the `RemoveFlowVpcInterfaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFlowVpcInterfaceErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowVpcInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3266,7 +3280,9 @@ impl RemoveFlowVpcInterfaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFlowVpcInterfaceErrorKind::Unhandled(err.into()),
+            kind: RemoveFlowVpcInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3342,7 +3358,7 @@ impl std::error::Error for RemoveFlowVpcInterfaceError {
             RemoveFlowVpcInterfaceErrorKind::NotFoundException(_inner) => Some(_inner),
             RemoveFlowVpcInterfaceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RemoveFlowVpcInterfaceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveFlowVpcInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFlowVpcInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3373,7 +3389,7 @@ pub enum RevokeFlowEntitlementErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeFlowEntitlementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3405,7 +3421,9 @@ impl RevokeFlowEntitlementError {
     /// Creates the `RevokeFlowEntitlementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeFlowEntitlementErrorKind::Unhandled(err.into()),
+            kind: RevokeFlowEntitlementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3414,7 +3432,9 @@ impl RevokeFlowEntitlementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeFlowEntitlementErrorKind::Unhandled(err.into()),
+            kind: RevokeFlowEntitlementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3490,7 +3510,7 @@ impl std::error::Error for RevokeFlowEntitlementError {
             RevokeFlowEntitlementErrorKind::NotFoundException(_inner) => Some(_inner),
             RevokeFlowEntitlementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RevokeFlowEntitlementErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RevokeFlowEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeFlowEntitlementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3521,7 +3541,7 @@ pub enum StartFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3553,7 +3573,7 @@ impl StartFlowError {
     /// Creates the `StartFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFlowErrorKind::Unhandled(err.into()),
+            kind: StartFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3562,7 +3582,7 @@ impl StartFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFlowErrorKind::Unhandled(err.into()),
+            kind: StartFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3626,7 +3646,7 @@ impl std::error::Error for StartFlowError {
             StartFlowErrorKind::NotFoundException(_inner) => Some(_inner),
             StartFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            StartFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3657,7 +3677,7 @@ pub enum StopFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3689,7 +3709,7 @@ impl StopFlowError {
     /// Creates the `StopFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopFlowErrorKind::Unhandled(err.into()),
+            kind: StopFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3698,7 +3718,7 @@ impl StopFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopFlowErrorKind::Unhandled(err.into()),
+            kind: StopFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3762,7 +3782,7 @@ impl std::error::Error for StopFlowError {
             StopFlowErrorKind::NotFoundException(_inner) => Some(_inner),
             StopFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StopFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            StopFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3787,7 +3807,7 @@ pub enum TagResourceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3816,7 +3836,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3825,7 +3845,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3871,7 +3891,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3896,7 +3916,7 @@ pub enum UntagResourceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3925,7 +3945,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3934,7 +3954,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3980,7 +4000,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4011,7 +4031,7 @@ pub enum UpdateFlowErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFlowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4043,7 +4063,7 @@ impl UpdateFlowError {
     /// Creates the `UpdateFlowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFlowErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4052,7 +4072,7 @@ impl UpdateFlowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFlowErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4116,7 +4136,7 @@ impl std::error::Error for UpdateFlowError {
             UpdateFlowErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFlowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFlowErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFlowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4147,7 +4167,7 @@ pub enum UpdateFlowEntitlementErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFlowEntitlementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4179,7 +4199,9 @@ impl UpdateFlowEntitlementError {
     /// Creates the `UpdateFlowEntitlementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFlowEntitlementErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowEntitlementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4188,7 +4210,9 @@ impl UpdateFlowEntitlementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFlowEntitlementErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowEntitlementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4264,7 +4288,7 @@ impl std::error::Error for UpdateFlowEntitlementError {
             UpdateFlowEntitlementErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFlowEntitlementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFlowEntitlementErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFlowEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFlowEntitlementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4295,7 +4319,7 @@ pub enum UpdateFlowMediaStreamErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFlowMediaStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4327,7 +4351,9 @@ impl UpdateFlowMediaStreamError {
     /// Creates the `UpdateFlowMediaStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFlowMediaStreamErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowMediaStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4336,7 +4362,9 @@ impl UpdateFlowMediaStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFlowMediaStreamErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowMediaStreamErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4412,7 +4440,7 @@ impl std::error::Error for UpdateFlowMediaStreamError {
             UpdateFlowMediaStreamErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFlowMediaStreamErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFlowMediaStreamErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFlowMediaStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFlowMediaStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4443,7 +4471,7 @@ pub enum UpdateFlowOutputErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFlowOutputError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4475,7 +4503,7 @@ impl UpdateFlowOutputError {
     /// Creates the `UpdateFlowOutputError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFlowOutputErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowOutputErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4484,7 +4512,7 @@ impl UpdateFlowOutputError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFlowOutputErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowOutputErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4554,7 +4582,7 @@ impl std::error::Error for UpdateFlowOutputError {
             UpdateFlowOutputErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFlowOutputErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFlowOutputErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFlowOutputErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFlowOutputErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4585,7 +4613,7 @@ pub enum UpdateFlowSourceErrorKind {
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFlowSourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4617,7 +4645,7 @@ impl UpdateFlowSourceError {
     /// Creates the `UpdateFlowSourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFlowSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4626,7 +4654,7 @@ impl UpdateFlowSourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFlowSourceErrorKind::Unhandled(err.into()),
+            kind: UpdateFlowSourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4696,7 +4724,32 @@ impl std::error::Error for UpdateFlowSourceError {
             UpdateFlowSourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFlowSourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateFlowSourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFlowSourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFlowSourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

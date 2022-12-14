@@ -43,7 +43,7 @@ pub enum Error {
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -95,9 +95,11 @@ where
                 crate::error::CancelIngestionErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CancelIngestionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelIngestionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -119,9 +121,9 @@ where
                 crate::error::CreateAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateAccountCustomizationErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::CreateAccountCustomizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,9 +146,9 @@ where
                 crate::error::CreateAccountSubscriptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateAccountSubscriptionErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::CreateAccountSubscriptionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateAccountSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAccountSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,9 +180,11 @@ where
                 crate::error::CreateAnalysisErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -212,9 +216,11 @@ where
                 crate::error::CreateDashboardErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateDashboardErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDashboardErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,9 +258,11 @@ where
                 crate::error::CreateDataSetErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateDataSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDataSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -292,10 +300,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateDataSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -333,9 +341,11 @@ where
                 crate::error::CreateFolderErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -374,10 +384,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::CreateFolderMembershipErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -415,9 +425,11 @@ where
                 crate::error::CreateGroupErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -453,10 +465,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateGroupMembershipErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -477,9 +489,9 @@ where
                 crate::error::CreateIAMPolicyAssignmentErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::CreateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateIAMPolicyAssignmentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -511,9 +523,11 @@ where
                 crate::error::CreateIngestionErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateIngestionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateIngestionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -554,9 +568,11 @@ where
                 crate::error::CreateNamespaceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateNamespaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -594,9 +610,11 @@ where
                 crate::error::CreateTemplateErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -631,10 +649,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::CreateTemplateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -669,9 +687,11 @@ where
                 crate::error::CreateThemeErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::CreateThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -709,10 +729,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::CreateThemeAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -733,9 +753,9 @@ where
                 crate::error::DeleteAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteAccountCustomizationErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::DeleteAccountCustomizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DeleteAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -764,9 +784,11 @@ where
                 crate::error::DeleteAnalysisErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DeleteAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -795,9 +817,11 @@ where
                 crate::error::DeleteDashboardErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DeleteDashboardErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDashboardErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -823,9 +847,11 @@ where
                 crate::error::DeleteDataSetErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteDataSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDataSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -854,10 +880,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteDataSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -892,9 +918,11 @@ where
                 crate::error::DeleteFolderErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DeleteFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -927,10 +955,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::DeleteFolderMembershipErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -962,9 +990,11 @@ where
                 crate::error::DeleteGroupErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1000,10 +1030,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteGroupMembershipErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1024,9 +1054,9 @@ where
                 crate::error::DeleteIAMPolicyAssignmentErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::DeleteIAMPolicyAssignmentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteIAMPolicyAssignmentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DeleteIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1058,9 +1088,11 @@ where
                 crate::error::DeleteNamespaceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteNamespaceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteNamespaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1092,9 +1124,11 @@ where
                 crate::error::DeleteTemplateErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DeleteTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1123,10 +1157,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::DeleteTemplateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1158,9 +1192,11 @@ where
                 crate::error::DeleteThemeErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DeleteThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1192,10 +1228,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::DeleteThemeAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1227,9 +1263,11 @@ where
                 crate::error::DeleteUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1265,10 +1303,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteUserByPrincipalIdErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1288,9 +1326,9 @@ where
                 crate::error::DescribeAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAccountCustomizationErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::DescribeAccountCustomizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1323,10 +1361,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeAccountSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1346,9 +1384,9 @@ where
                 crate::error::DescribeAccountSubscriptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAccountSubscriptionErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::DescribeAccountSubscriptionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeAccountSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAccountSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1380,10 +1418,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::DescribeAnalysisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1402,9 +1440,9 @@ where
                 crate::error::DescribeAnalysisPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAnalysisPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeAnalysisPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeAnalysisPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAnalysisPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1436,10 +1474,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::DescribeDashboardErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1458,9 +1496,9 @@ where
                 crate::error::DescribeDashboardPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDashboardPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeDashboardPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeDashboardPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDashboardPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1486,9 +1524,11 @@ where
                 crate::error::DescribeDataSetErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeDataSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDataSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1507,9 +1547,9 @@ where
                 crate::error::DescribeDataSetPermissionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeDataSetPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDataSetPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeDataSetPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDataSetPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1538,10 +1578,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeDataSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1560,9 +1600,9 @@ where
                 crate::error::DescribeDataSourcePermissionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeDataSourcePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDataSourcePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeDataSourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDataSourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1591,9 +1631,11 @@ where
                 crate::error::DescribeFolderErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DescribeFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1613,9 +1655,9 @@ where
                 crate::error::DescribeFolderPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeFolderPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeFolderPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeFolderPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFolderPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1639,9 +1681,9 @@ where
                 crate::error::DescribeFolderResolvedPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeFolderResolvedPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeFolderResolvedPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeFolderResolvedPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFolderResolvedPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1673,9 +1715,11 @@ where
                 crate::error::DescribeGroupErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1711,10 +1755,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeGroupMembershipErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1734,9 +1778,9 @@ where
                 crate::error::DescribeIAMPolicyAssignmentErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeIAMPolicyAssignmentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeIAMPolicyAssignmentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1768,10 +1812,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeIngestionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1801,10 +1845,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeIpRestrictionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1836,10 +1880,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeNamespaceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1877,10 +1921,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::DescribeTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1907,10 +1951,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::DescribeTemplateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1930,9 +1974,9 @@ where
                 crate::error::DescribeTemplatePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeTemplatePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeTemplatePermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeTemplatePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTemplatePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1964,9 +2008,11 @@ where
                 crate::error::DescribeThemeErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::DescribeThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1998,10 +2044,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::DescribeThemeAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2021,9 +2067,9 @@ where
                 crate::error::DescribeThemePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeThemePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeThemePermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::DescribeThemePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeThemePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2055,9 +2101,11 @@ where
                 crate::error::DescribeUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2083,9 +2131,9 @@ where
                 crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
                 crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2112,9 +2160,9 @@ where
                 crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
                 crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2140,9 +2188,9 @@ where
                 crate::error::GetDashboardEmbedUrlErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetDashboardEmbedUrlErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
                 crate::error::GetDashboardEmbedUrlErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::GetDashboardEmbedUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDashboardEmbedUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2164,9 +2212,9 @@ where
                 crate::error::GetSessionEmbedUrlErrorKind::SessionLifetimeInMinutesInvalidException(inner) => Error::SessionLifetimeInMinutesInvalidException(inner),
                 crate::error::GetSessionEmbedUrlErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetSessionEmbedUrlErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::GetSessionEmbedUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSessionEmbedUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2189,9 +2237,11 @@ where
                 crate::error::ListAnalysesErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::ListAnalysesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAnalysesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2214,9 +2264,11 @@ where
                 crate::error::ListDashboardsErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::ListDashboardsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDashboardsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2249,10 +2301,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::ListDashboardVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2278,9 +2330,11 @@ where
                 crate::error::ListDataSetsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListDataSetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDataSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2306,9 +2360,11 @@ where
                 crate::error::ListDataSourcesErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListDataSourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDataSourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2343,10 +2399,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::ListFolderMembersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2378,9 +2434,11 @@ where
                 crate::error::ListFoldersErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::ListFoldersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFoldersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2419,10 +2477,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListGroupMembershipsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2457,9 +2515,11 @@ where
                 crate::error::ListGroupsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2492,10 +2552,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListIAMPolicyAssignmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2520,9 +2580,9 @@ where
                 crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListIAMPolicyAssignmentsForUserErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListIAMPolicyAssignmentsForUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2554,9 +2614,11 @@ where
                 crate::error::ListIngestionsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListIngestionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListIngestionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2591,9 +2653,11 @@ where
                 crate::error::ListNamespacesErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListNamespacesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListNamespacesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2622,10 +2686,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2654,10 +2718,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::ListTemplateAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2686,9 +2750,11 @@ where
                 crate::error::ListTemplatesErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::ListTemplatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTemplatesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2721,10 +2787,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::ListTemplateVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2759,10 +2825,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::ListThemeAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2794,9 +2860,11 @@ where
                 crate::error::ListThemesErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::ListThemesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListThemesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2831,10 +2899,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::ListThemeVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2866,9 +2934,11 @@ where
                 crate::error::ListUserGroupsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListUserGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUserGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2903,9 +2973,11 @@ where
                 crate::error::ListUsersErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2943,9 +3015,11 @@ where
                 crate::error::RegisterUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::RegisterUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2974,9 +3048,11 @@ where
                 crate::error::RestoreAnalysisErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::RestoreAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RestoreAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3005,9 +3081,11 @@ where
                 crate::error::SearchAnalysesErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::SearchAnalysesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchAnalysesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3039,10 +3117,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::SearchDashboardsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3074,9 +3152,11 @@ where
                 crate::error::SearchFoldersErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::SearchFoldersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchFoldersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3111,9 +3191,11 @@ where
                 crate::error::SearchGroupsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::SearchGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3142,9 +3224,11 @@ where
                 crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3170,9 +3254,11 @@ where
                 crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3193,9 +3279,9 @@ where
                 crate::error::UpdateAccountCustomizationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateAccountCustomizationErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::UpdateAccountCustomizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAccountCustomizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3228,10 +3314,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateAccountSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3263,9 +3349,11 @@ where
                 crate::error::UpdateAnalysisErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3285,9 +3373,9 @@ where
                 crate::error::UpdateAnalysisPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateAnalysisPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateAnalysisPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::UpdateAnalysisPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAnalysisPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3319,9 +3407,11 @@ where
                 crate::error::UpdateDashboardErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateDashboardErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDashboardErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3341,9 +3431,9 @@ where
                 crate::error::UpdateDashboardPermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateDashboardPermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateDashboardPermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::UpdateDashboardPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDashboardPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3367,9 +3457,9 @@ where
                 crate::error::UpdateDashboardPublishedVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateDashboardPublishedVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateDashboardPublishedVersionErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::UpdateDashboardPublishedVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDashboardPublishedVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3404,9 +3494,11 @@ where
                 crate::error::UpdateDataSetErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateDataSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDataSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3439,10 +3531,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateDataSetPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3474,10 +3566,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateDataSourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3497,9 +3589,9 @@ where
                 crate::error::UpdateDataSourcePermissionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::UpdateDataSourcePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateDataSourcePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateDataSourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDataSourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3534,9 +3626,11 @@ where
                 crate::error::UpdateFolderErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3572,10 +3666,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::UpdateFolderPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3607,9 +3701,11 @@ where
                 crate::error::UpdateGroupErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UpdateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3630,9 +3726,9 @@ where
                 crate::error::UpdateIAMPolicyAssignmentErrorKind::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
                 crate::error::UpdateIAMPolicyAssignmentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateIAMPolicyAssignmentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateIAMPolicyAssignmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3664,10 +3760,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateIpRestrictionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3687,9 +3783,9 @@ where
                 crate::error::UpdatePublicSharingSettingsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdatePublicSharingSettingsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdatePublicSharingSettingsErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
-                crate::error::UpdatePublicSharingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePublicSharingSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3724,9 +3820,11 @@ where
                 crate::error::UpdateTemplateErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3755,10 +3853,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::UpdateTemplateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3778,9 +3876,9 @@ where
                 crate::error::UpdateTemplatePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateTemplatePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateTemplatePermissionsErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
-                crate::error::UpdateTemplatePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateTemplatePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3815,9 +3913,11 @@ where
                 crate::error::UpdateThemeErrorKind::UnsupportedUserEditionException(inner) => {
                     Error::UnsupportedUserEditionException(inner)
                 }
-                crate::error::UpdateThemeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateThemeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3852,10 +3952,10 @@ where
                     Error::UnsupportedUserEditionException(inner)
                 }
                 crate::error::UpdateThemeAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3888,10 +3988,10 @@ where
                     inner,
                 ) => Error::UnsupportedUserEditionException(inner),
                 crate::error::UpdateThemePermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3923,9 +4023,11 @@ where
                 crate::error::UpdateUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

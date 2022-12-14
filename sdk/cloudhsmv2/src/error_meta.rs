@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,10 +59,10 @@ where
                     Error::CloudHsmTagException(inner)
                 }
                 crate::error::CopyBackupToRegionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -91,9 +91,11 @@ where
                 crate::error::CreateClusterErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::CreateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -119,9 +121,11 @@ where
                 crate::error::CreateHsmErrorKind::CloudHsmServiceException(inner) => {
                     Error::CloudHsmServiceException(inner)
                 }
-                crate::error::CreateHsmErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateHsmErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -147,9 +151,11 @@ where
                 crate::error::DeleteBackupErrorKind::CloudHsmServiceException(inner) => {
                     Error::CloudHsmServiceException(inner)
                 }
-                crate::error::DeleteBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,9 +184,11 @@ where
                 crate::error::DeleteClusterErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::DeleteClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -206,9 +214,11 @@ where
                 crate::error::DeleteHsmErrorKind::CloudHsmServiceException(inner) => {
                     Error::CloudHsmServiceException(inner)
                 }
-                crate::error::DeleteHsmErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteHsmErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -237,9 +247,11 @@ where
                 crate::error::DescribeBackupsErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -268,10 +280,10 @@ where
                     Error::CloudHsmTagException(inner)
                 }
                 crate::error::DescribeClustersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -300,10 +312,10 @@ where
                     Error::CloudHsmServiceException(inner)
                 }
                 crate::error::InitializeClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -332,9 +344,11 @@ where
                 crate::error::ListTagsErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -353,9 +367,9 @@ where
                 crate::error::ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(inner) => Error::CloudHsmInvalidRequestException(inner),
                 crate::error::ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(inner) => Error::CloudHsmResourceNotFoundException(inner),
                 crate::error::ModifyBackupAttributesErrorKind::CloudHsmServiceException(inner) => Error::CloudHsmServiceException(inner),
-                crate::error::ModifyBackupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyBackupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -381,9 +395,11 @@ where
                 crate::error::ModifyClusterErrorKind::CloudHsmServiceException(inner) => {
                     Error::CloudHsmServiceException(inner)
                 }
-                crate::error::ModifyClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -409,9 +425,11 @@ where
                 crate::error::RestoreBackupErrorKind::CloudHsmServiceException(inner) => {
                     Error::CloudHsmServiceException(inner)
                 }
-                crate::error::RestoreBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RestoreBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -440,9 +458,11 @@ where
                 crate::error::TagResourceErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -471,9 +491,11 @@ where
                 crate::error::UntagResourceErrorKind::CloudHsmTagException(inner) => {
                     Error::CloudHsmTagException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

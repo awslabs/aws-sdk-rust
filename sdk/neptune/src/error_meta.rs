@@ -139,7 +139,7 @@ pub enum Error {
     /// <p>The designated subscription could not be found.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -237,10 +237,10 @@ where
                     Error::InvalidDbClusterStateFault(inner)
                 }
                 crate::error::AddRoleToDBClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -260,9 +260,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault(inner) => Error::SourceNotFoundFault(inner),
                 crate::error::AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
-                crate::error::AddSourceIdentifierToSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddSourceIdentifierToSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -285,10 +285,10 @@ where
                     Error::DbSnapshotNotFoundFault(inner)
                 }
                 crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -306,10 +306,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::ApplyPendingMaintenanceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,9 +326,9 @@ where
                 crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(inner) => Error::DbParameterGroupAlreadyExistsFault(inner),
                 crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(inner) => Error::DbParameterGroupQuotaExceededFault(inner),
-                crate::error::CopyDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CopyDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -348,9 +348,9 @@ where
                 crate::error::CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
                 crate::error::CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
-                crate::error::CopyDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CopyDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -374,10 +374,10 @@ where
                     inner,
                 ) => Error::DbParameterGroupQuotaExceededFault(inner),
                 crate::error::CopyDBParameterGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,9 +439,11 @@ where
                 crate::error::CreateDBClusterErrorKind::StorageQuotaExceededFault(inner) => {
                     Error::StorageQuotaExceededFault(inner)
                 }
-                crate::error::CreateDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -461,9 +463,9 @@ where
                 crate::error::CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
                 crate::error::CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
-                crate::error::CreateDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -479,9 +481,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(inner) => Error::DbParameterGroupAlreadyExistsFault(inner),
                 crate::error::CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(inner) => Error::DbParameterGroupQuotaExceededFault(inner),
-                crate::error::CreateDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -500,9 +502,9 @@ where
                 crate::error::CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(inner) => Error::InvalidDbClusterSnapshotStateFault(inner),
                 crate::error::CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
-                crate::error::CreateDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -570,10 +572,10 @@ where
                     Error::StorageTypeNotSupportedFault(inner)
                 }
                 crate::error::CreateDBInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -589,9 +591,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(inner) => Error::DbParameterGroupAlreadyExistsFault(inner),
                 crate::error::CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(inner) => Error::DbParameterGroupQuotaExceededFault(inner),
-                crate::error::CreateDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -620,10 +622,10 @@ where
                     Error::InvalidSubnet(inner)
                 }
                 crate::error::CreateDBSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -644,9 +646,9 @@ where
                 crate::error::CreateEventSubscriptionErrorKind::SourceNotFoundFault(inner) => Error::SourceNotFoundFault(inner),
                 crate::error::CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(inner) => Error::SubscriptionAlreadyExistFault(inner),
                 crate::error::CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(inner) => Error::SubscriptionCategoryNotFoundFault(inner),
-                crate::error::CreateEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -672,10 +674,10 @@ where
                     Error::InvalidDbClusterStateFault(inner)
                 }
                 crate::error::CreateGlobalClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -701,9 +703,11 @@ where
                 crate::error::DeleteDBClusterErrorKind::SnapshotQuotaExceededFault(inner) => {
                     Error::SnapshotQuotaExceededFault(inner)
                 }
-                crate::error::DeleteDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -720,9 +724,9 @@ where
                 crate::error::DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(inner) => Error::DbClusterEndpointNotFoundFault(inner),
                 crate::error::DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(inner) => Error::InvalidDbClusterEndpointStateFault(inner),
                 crate::error::DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
-                crate::error::DeleteDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -738,9 +742,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(inner) => Error::InvalidDbParameterGroupStateFault(inner),
-                crate::error::DeleteDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,9 +760,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(inner) => Error::DbClusterSnapshotNotFoundFault(inner),
                 crate::error::DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(inner) => Error::InvalidDbClusterSnapshotStateFault(inner),
-                crate::error::DeleteDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDBClusterSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -787,10 +791,10 @@ where
                     Error::SnapshotQuotaExceededFault(inner)
                 }
                 crate::error::DeleteDBInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -806,9 +810,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(inner) => Error::InvalidDbParameterGroupStateFault(inner),
-                crate::error::DeleteDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -831,10 +835,10 @@ where
                     Error::InvalidDbSubnetStateFault(inner)
                 }
                 crate::error::DeleteDBSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -850,9 +854,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault(inner) => Error::InvalidEventSubscriptionStateFault(inner),
                 crate::error::DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
-                crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -872,10 +876,10 @@ where
                     inner,
                 ) => Error::InvalidGlobalClusterStateFault(inner),
                 crate::error::DeleteGlobalClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -893,10 +897,10 @@ where
                     inner,
                 ) => Error::DbClusterNotFoundFault(inner),
                 crate::error::DescribeDBClusterEndpointsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -915,9 +919,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
-                crate::error::DescribeDBClusterParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDBClusterParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -932,9 +936,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
-                crate::error::DescribeDBClusterParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDBClusterParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -951,10 +955,10 @@ where
                     Error::DbClusterNotFoundFault(inner)
                 }
                 crate::error::DescribeDBClustersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -977,9 +981,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault(inner) => Error::DbClusterSnapshotNotFoundFault(inner),
-                crate::error::DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -994,9 +998,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(inner) => Error::DbClusterSnapshotNotFoundFault(inner),
-                crate::error::DescribeDBClusterSnapshotsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDBClusterSnapshotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1011,10 +1015,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDBEngineVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1031,10 +1035,10 @@ where
                     Error::DbInstanceNotFoundFault(inner)
                 }
                 crate::error::DescribeDBInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1052,10 +1056,10 @@ where
                     inner,
                 ) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::DescribeDBParameterGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1073,10 +1077,10 @@ where
                     inner,
                 ) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::DescribeDBParametersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1094,10 +1098,10 @@ where
                     inner,
                 ) => Error::DbSubnetGroupNotFoundFault(inner),
                 crate::error::DescribeDBSubnetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1120,10 +1124,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEngineDefaultClusterParametersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1142,10 +1146,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEngineDefaultParametersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1160,10 +1164,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEventCategoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1174,9 +1178,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1194,10 +1200,10 @@ where
                     inner,
                 ) => Error::SubscriptionNotFoundFault(inner),
                 crate::error::DescribeEventSubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1215,10 +1221,10 @@ where
                     inner,
                 ) => Error::GlobalClusterNotFoundFault(inner),
                 crate::error::DescribeGlobalClustersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1238,10 +1244,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1263,10 +1269,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DescribePendingMaintenanceActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1290,9 +1296,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
                 crate::error::DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
-                crate::error::DescribeValidDBInstanceModificationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeValidDBInstanceModificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1315,10 +1321,10 @@ where
                     Error::InvalidDbInstanceStateFault(inner)
                 }
                 crate::error::FailoverDBClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1345,10 +1351,10 @@ where
                     inner,
                 ) => Error::InvalidGlobalClusterStateFault(inner),
                 crate::error::FailoverGlobalClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1371,10 +1377,10 @@ where
                     Error::DbSnapshotNotFoundFault(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1418,9 +1424,11 @@ where
                 crate::error::ModifyDBClusterErrorKind::StorageQuotaExceededFault(inner) => {
                     Error::StorageQuotaExceededFault(inner)
                 }
-                crate::error::ModifyDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1439,9 +1447,9 @@ where
                 crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(inner) => Error::InvalidDbClusterEndpointStateFault(inner),
                 crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
-                crate::error::ModifyDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyDBClusterEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1457,9 +1465,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(inner) => Error::InvalidDbParameterGroupStateFault(inner),
-                crate::error::ModifyDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1480,9 +1488,9 @@ where
                 crate::error::ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault(inner) => Error::DbClusterSnapshotNotFoundFault(inner),
                 crate::error::ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault(inner) => Error::InvalidDbClusterSnapshotStateFault(inner),
                 crate::error::ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(inner) => Error::SharedSnapshotQuotaExceededFault(inner),
-                crate::error::ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1544,10 +1552,10 @@ where
                     Error::StorageTypeNotSupportedFault(inner)
                 }
                 crate::error::ModifyDBInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1563,9 +1571,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(inner) => Error::InvalidDbParameterGroupStateFault(inner),
-                crate::error::ModifyDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyDBParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1594,10 +1602,10 @@ where
                     Error::SubnetAlreadyInUse(inner)
                 }
                 crate::error::ModifyDBSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1617,9 +1625,9 @@ where
                 crate::error::ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(inner) => Error::SnsTopicArnNotFoundFault(inner),
                 crate::error::ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(inner) => Error::SubscriptionCategoryNotFoundFault(inner),
                 crate::error::ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
-                crate::error::ModifyEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyEventSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1639,10 +1647,10 @@ where
                     inner,
                 ) => Error::InvalidGlobalClusterStateFault(inner),
                 crate::error::ModifyGlobalClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1663,10 +1671,10 @@ where
                     inner,
                 ) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::PromoteReadReplicaDBClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1686,10 +1694,10 @@ where
                     Error::InvalidDbInstanceStateFault(inner)
                 }
                 crate::error::RebootDBInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1713,10 +1721,10 @@ where
                     inner,
                 ) => Error::InvalidGlobalClusterStateFault(inner),
                 crate::error::RemoveFromGlobalClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1740,10 +1748,10 @@ where
                     inner,
                 ) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::RemoveRoleFromDBClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1767,9 +1775,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault(inner) => Error::SourceNotFoundFault(inner),
                 crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault(inner) => Error::SubscriptionNotFoundFault(inner),
-                crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1793,10 +1801,10 @@ where
                     Error::DbSnapshotNotFoundFault(inner)
                 }
                 crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1812,9 +1820,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(inner) => Error::DbParameterGroupNotFoundFault(inner),
                 crate::error::ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(inner) => Error::InvalidDbParameterGroupStateFault(inner),
-                crate::error::ResetDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResetDBClusterParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1835,10 +1843,10 @@ where
                     inner,
                 ) => Error::InvalidDbParameterGroupStateFault(inner),
                 crate::error::ResetDBParameterGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1868,9 +1876,9 @@ where
                 crate::error::RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
                 crate::error::RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
-                crate::error::RestoreDBClusterFromSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RestoreDBClusterFromSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1901,9 +1909,9 @@ where
                 crate::error::RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
                 crate::error::RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
                 crate::error::RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
-                crate::error::RestoreDBClusterToPointInTimeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RestoreDBClusterToPointInTimeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1923,9 +1931,11 @@ where
                 crate::error::StartDBClusterErrorKind::InvalidDbInstanceStateFault(inner) => {
                     Error::InvalidDbInstanceStateFault(inner)
                 }
-                crate::error::StartDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1945,9 +1955,11 @@ where
                 crate::error::StopDBClusterErrorKind::InvalidDbInstanceStateFault(inner) => {
                     Error::InvalidDbInstanceStateFault(inner)
                 }
-                crate::error::StopDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopDBClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

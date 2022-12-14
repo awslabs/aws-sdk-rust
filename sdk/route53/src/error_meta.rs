@@ -176,7 +176,7 @@ pub enum Error {
     /// <p>The specified VPC and hosted zone are not currently associated.</p>
     VpcAssociationNotFound(crate::error::VpcAssociationNotFound),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -283,10 +283,10 @@ where
                     Error::NoSuchKeySigningKey(inner)
                 }
                 crate::error::ActivateKeySigningKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +325,10 @@ where
                     inner,
                 ) => Error::PublicZoneVpcAssociation(inner),
                 crate::error::AssociateVPCWithHostedZoneErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -348,9 +348,9 @@ where
                 crate::error::ChangeCidrCollectionErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::ChangeCidrCollectionErrorKind::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
                 crate::error::ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(inner) => Error::NoSuchCidrCollectionException(inner),
-                crate::error::ChangeCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ChangeCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,10 +380,10 @@ where
                     Error::PriorRequestNotComplete(inner)
                 }
                 crate::error::ChangeResourceRecordSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,10 +413,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ChangeTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -434,9 +434,9 @@ where
                 crate::error::CreateCidrCollectionErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
                 crate::error::CreateCidrCollectionErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::CreateCidrCollectionErrorKind::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
-                crate::error::CreateCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCidrCollectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -459,10 +459,10 @@ where
                     Error::TooManyHealthChecks(inner)
                 }
                 crate::error::CreateHealthCheckErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -503,10 +503,10 @@ where
                     Error::TooManyHostedZones(inner)
                 }
                 crate::error::CreateHostedZoneErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -550,10 +550,10 @@ where
                     Error::TooManyKeySigningKeys(inner)
                 }
                 crate::error::CreateKeySigningKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -573,9 +573,9 @@ where
                 crate::error::CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup(inner) => Error::NoSuchCloudWatchLogsLogGroup(inner),
                 crate::error::CreateQueryLoggingConfigErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
                 crate::error::CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists(inner) => Error::QueryLoggingConfigAlreadyExists(inner),
-                crate::error::CreateQueryLoggingConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateQueryLoggingConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -596,9 +596,9 @@ where
                 crate::error::CreateReusableDelegationSetErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
                 crate::error::CreateReusableDelegationSetErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::CreateReusableDelegationSetErrorKind::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
-                crate::error::CreateReusableDelegationSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReusableDelegationSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -624,10 +624,10 @@ where
                     Error::TrafficPolicyAlreadyExists(inner)
                 }
                 crate::error::CreateTrafficPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,9 +646,9 @@ where
                 crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
                 crate::error::CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances(inner) => Error::TooManyTrafficPolicyInstances(inner),
                 crate::error::CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists(inner) => Error::TrafficPolicyInstanceAlreadyExists(inner),
-                crate::error::CreateTrafficPolicyInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTrafficPolicyInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -667,9 +667,9 @@ where
                 crate::error::CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument(inner) => Error::InvalidTrafficPolicyDocument(inner),
                 crate::error::CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
                 crate::error::CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy(inner) => Error::TooManyTrafficPolicyVersionsForCurrentPolicy(inner),
-                crate::error::CreateTrafficPolicyVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTrafficPolicyVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -692,9 +692,9 @@ where
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
                 crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(inner) => Error::TooManyVpcAssociationAuthorizations(inner),
-                crate::error::CreateVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -730,10 +730,10 @@ where
                     Error::NoSuchKeySigningKey(inner)
                 }
                 crate::error::DeactivateKeySigningKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -760,10 +760,10 @@ where
                     inner,
                 ) => Error::NoSuchCidrCollectionException(inner),
                 crate::error::DeleteCidrCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -786,10 +786,10 @@ where
                     Error::NoSuchHealthCheck(inner)
                 }
                 crate::error::DeleteHealthCheckErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -818,10 +818,10 @@ where
                     Error::PriorRequestNotComplete(inner)
                 }
                 crate::error::DeleteHostedZoneErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -853,10 +853,10 @@ where
                     Error::NoSuchKeySigningKey(inner)
                 }
                 crate::error::DeleteKeySigningKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -880,10 +880,10 @@ where
                     inner,
                 ) => Error::NoSuchQueryLoggingConfig(inner),
                 crate::error::DeleteQueryLoggingConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -910,10 +910,10 @@ where
                     Error::NoSuchDelegationSet(inner)
                 }
                 crate::error::DeleteReusableDelegationSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -939,10 +939,10 @@ where
                     Error::TrafficPolicyInUse(inner)
                 }
                 crate::error::DeleteTrafficPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -966,10 +966,10 @@ where
                     inner,
                 ) => Error::PriorRequestNotComplete(inner),
                 crate::error::DeleteTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -992,9 +992,9 @@ where
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
                 crate::error::DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(inner) => Error::VpcAssociationAuthorizationNotFound(inner),
-                crate::error::DeleteVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1033,10 +1033,10 @@ where
                     Error::NoSuchHostedZone(inner)
                 }
                 crate::error::DisableHostedZoneDNSSECErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1066,10 +1066,10 @@ where
                     inner,
                 ) => Error::VpcAssociationNotFound(inner),
                 crate::error::DisassociateVPCFromHostedZoneErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1092,9 +1092,9 @@ where
                 crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => Error::InvalidKmsArn(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(inner) => Error::KeySigningKeyWithActiveStatusNotFound(inner),
                 crate::error::EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-                crate::error::EnableHostedZoneDNSSECErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableHostedZoneDNSSECErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1108,9 +1108,11 @@ where
                 crate::error::GetAccountLimitErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::GetAccountLimitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAccountLimitErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1123,9 +1125,11 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetChangeErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::GetChangeErrorKind::NoSuchChange(inner) => Error::NoSuchChange(inner),
-                crate::error::GetChangeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetChangeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1139,10 +1143,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetCheckerIpRangesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1160,9 +1164,11 @@ where
                 crate::error::GetDNSSECErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
-                crate::error::GetDNSSECErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDNSSECErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1179,9 +1185,11 @@ where
                 crate::error::GetGeoLocationErrorKind::NoSuchGeoLocation(inner) => {
                     Error::NoSuchGeoLocation(inner)
                 }
-                crate::error::GetGeoLocationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGeoLocationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1201,9 +1209,11 @@ where
                 crate::error::GetHealthCheckErrorKind::NoSuchHealthCheck(inner) => {
                     Error::NoSuchHealthCheck(inner)
                 }
-                crate::error::GetHealthCheckErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetHealthCheckErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1217,10 +1227,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetHealthCheckCountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1245,10 +1255,10 @@ where
                     inner,
                 ) => Error::NoSuchHealthCheck(inner),
                 crate::error::GetHealthCheckLastFailureReasonErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1269,10 +1279,10 @@ where
                     Error::NoSuchHealthCheck(inner)
                 }
                 crate::error::GetHealthCheckStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1289,9 +1299,11 @@ where
                 crate::error::GetHostedZoneErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
-                crate::error::GetHostedZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetHostedZoneErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1308,10 +1320,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::GetHostedZoneCountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1334,10 +1346,10 @@ where
                     Error::NoSuchHostedZone(inner)
                 }
                 crate::error::GetHostedZoneLimitErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1358,10 +1370,10 @@ where
                     Error::NoSuchQueryLoggingConfig(inner)
                 }
                 crate::error::GetQueryLoggingConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1385,10 +1397,10 @@ where
                     Error::NoSuchDelegationSet(inner)
                 }
                 crate::error::GetReusableDelegationSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1409,10 +1421,10 @@ where
                     inner,
                 ) => Error::NoSuchDelegationSet(inner),
                 crate::error::GetReusableDelegationSetLimitErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1432,10 +1444,10 @@ where
                     Error::NoSuchTrafficPolicy(inner)
                 }
                 crate::error::GetTrafficPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1456,10 +1468,10 @@ where
                     inner,
                 ) => Error::NoSuchTrafficPolicyInstance(inner),
                 crate::error::GetTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1474,10 +1486,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTrafficPolicyInstanceCountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1497,9 +1509,11 @@ where
                 crate::error::ListCidrBlocksErrorKind::NoSuchCidrLocationException(inner) => {
                     Error::NoSuchCidrLocationException(inner)
                 }
-                crate::error::ListCidrBlocksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCidrBlocksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1516,10 +1530,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListCidrCollectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1539,10 +1553,10 @@ where
                     Error::NoSuchCidrCollectionException(inner)
                 }
                 crate::error::ListCidrLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1559,10 +1573,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListGeoLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1582,10 +1596,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListHealthChecksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1605,9 +1619,11 @@ where
                 crate::error::ListHostedZonesErrorKind::NoSuchDelegationSet(inner) => {
                     Error::NoSuchDelegationSet(inner)
                 }
-                crate::error::ListHostedZonesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHostedZonesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1628,10 +1644,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListHostedZonesByNameErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1652,10 +1668,10 @@ where
                     Error::InvalidPaginationToken(inner)
                 }
                 crate::error::ListHostedZonesByVPCErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1679,10 +1695,10 @@ where
                     Error::NoSuchHostedZone(inner)
                 }
                 crate::error::ListQueryLoggingConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1703,10 +1719,10 @@ where
                     Error::NoSuchHostedZone(inner)
                 }
                 crate::error::ListResourceRecordSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1724,10 +1740,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListReusableDelegationSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1756,10 +1772,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1789,10 +1805,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1809,10 +1825,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::ListTrafficPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1833,10 +1849,10 @@ where
                     inner,
                 ) => Error::NoSuchTrafficPolicyInstance(inner),
                 crate::error::ListTrafficPolicyInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1861,9 +1877,9 @@ where
                 crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
                 crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance(inner) => Error::NoSuchTrafficPolicyInstance(inner),
-                crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1885,9 +1901,9 @@ where
                 crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
                 crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance(inner) => Error::NoSuchTrafficPolicyInstance(inner),
-                crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1908,10 +1924,10 @@ where
                     Error::NoSuchTrafficPolicy(inner)
                 }
                 crate::error::ListTrafficPolicyVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1939,10 +1955,10 @@ where
                     inner,
                 ) => Error::NoSuchHostedZone(inner),
                 crate::error::ListVPCAssociationAuthorizationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1959,9 +1975,11 @@ where
                 crate::error::TestDNSAnswerErrorKind::NoSuchHostedZone(inner) => {
                     Error::NoSuchHostedZone(inner)
                 }
-                crate::error::TestDNSAnswerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TestDNSAnswerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1984,10 +2002,10 @@ where
                     Error::NoSuchHealthCheck(inner)
                 }
                 crate::error::UpdateHealthCheckErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2011,10 +2029,10 @@ where
                     Error::PriorRequestNotComplete(inner)
                 }
                 crate::error::UpdateHostedZoneCommentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2038,10 +2056,10 @@ where
                     Error::NoSuchTrafficPolicy(inner)
                 }
                 crate::error::UpdateTrafficPolicyCommentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2071,10 +2089,10 @@ where
                     inner,
                 ) => Error::PriorRequestNotComplete(inner),
                 crate::error::UpdateTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

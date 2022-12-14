@@ -416,7 +416,7 @@ pub enum AssociateDomainErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,7 @@ impl AssociateDomainError {
     /// Creates the `AssociateDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateDomainErrorKind::Unhandled(err.into()),
+            kind: AssociateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -457,7 +457,7 @@ impl AssociateDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateDomainErrorKind::Unhandled(err.into()),
+            kind: AssociateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -533,7 +533,7 @@ impl std::error::Error for AssociateDomainError {
             AssociateDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateDomainErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             AssociateDomainErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            AssociateDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -564,7 +564,7 @@ pub enum AssociateWebsiteAuthorizationProviderErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateWebsiteAuthorizationProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -611,7 +611,9 @@ impl AssociateWebsiteAuthorizationProviderError {
     /// Creates the `AssociateWebsiteAuthorizationProviderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(err.into()),
+            kind: AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -620,7 +622,9 @@ impl AssociateWebsiteAuthorizationProviderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(err.into()),
+            kind: AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -708,9 +712,7 @@ impl std::error::Error for AssociateWebsiteAuthorizationProviderError {
             AssociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -741,7 +743,7 @@ pub enum AssociateWebsiteCertificateAuthorityErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateWebsiteCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -788,7 +790,9 @@ impl AssociateWebsiteCertificateAuthorityError {
     /// Creates the `AssociateWebsiteCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -797,7 +801,9 @@ impl AssociateWebsiteCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -885,9 +891,7 @@ impl std::error::Error for AssociateWebsiteCertificateAuthorityError {
             AssociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -918,7 +922,7 @@ pub enum CreateFleetErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -950,7 +954,7 @@ impl CreateFleetError {
     /// Creates the `CreateFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -959,7 +963,7 @@ impl CreateFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1029,7 +1033,7 @@ impl std::error::Error for CreateFleetError {
             CreateFleetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFleetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateFleetErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1058,7 +1062,7 @@ pub enum DeleteFleetErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1089,7 +1093,7 @@ impl DeleteFleetError {
     /// Creates the `DeleteFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1098,7 +1102,7 @@ impl DeleteFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1160,7 +1164,7 @@ impl std::error::Error for DeleteFleetError {
             DeleteFleetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFleetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteFleetErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1189,7 +1193,7 @@ pub enum DescribeAuditStreamConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAuditStreamConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,7 +1237,9 @@ impl DescribeAuditStreamConfigurationError {
     /// Creates the `DescribeAuditStreamConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAuditStreamConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeAuditStreamConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1242,7 +1248,9 @@ impl DescribeAuditStreamConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAuditStreamConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeAuditStreamConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1320,7 +1328,7 @@ impl std::error::Error for DescribeAuditStreamConfigurationError {
             DescribeAuditStreamConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DescribeAuditStreamConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAuditStreamConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1349,7 +1357,7 @@ pub enum DescribeCompanyNetworkConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCompanyNetworkConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1393,7 +1401,9 @@ impl DescribeCompanyNetworkConfigurationError {
     /// Creates the `DescribeCompanyNetworkConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCompanyNetworkConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeCompanyNetworkConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1402,7 +1412,9 @@ impl DescribeCompanyNetworkConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCompanyNetworkConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeCompanyNetworkConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1480,9 +1492,7 @@ impl std::error::Error for DescribeCompanyNetworkConfigurationError {
             DescribeCompanyNetworkConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DescribeCompanyNetworkConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeCompanyNetworkConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1511,7 +1521,7 @@ pub enum DescribeDeviceErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1542,7 +1552,7 @@ impl DescribeDeviceError {
     /// Creates the `DescribeDeviceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDeviceErrorKind::Unhandled(err.into()),
+            kind: DescribeDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1551,7 +1561,7 @@ impl DescribeDeviceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDeviceErrorKind::Unhandled(err.into()),
+            kind: DescribeDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1619,7 +1629,7 @@ impl std::error::Error for DescribeDeviceError {
             DescribeDeviceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeDeviceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDeviceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1648,7 +1658,7 @@ pub enum DescribeDevicePolicyConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDevicePolicyConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1692,7 +1702,9 @@ impl DescribeDevicePolicyConfigurationError {
     /// Creates the `DescribeDevicePolicyConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDevicePolicyConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeDevicePolicyConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1701,7 +1713,9 @@ impl DescribeDevicePolicyConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDevicePolicyConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeDevicePolicyConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1779,7 +1793,7 @@ impl std::error::Error for DescribeDevicePolicyConfigurationError {
             DescribeDevicePolicyConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DescribeDevicePolicyConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDevicePolicyConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1808,7 +1822,7 @@ pub enum DescribeDomainErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1839,7 +1853,7 @@ impl DescribeDomainError {
     /// Creates the `DescribeDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDomainErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1848,7 +1862,7 @@ impl DescribeDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDomainErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1916,7 +1930,7 @@ impl std::error::Error for DescribeDomainError {
             DescribeDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDomainErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeDomainErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1945,7 +1959,7 @@ pub enum DescribeFleetMetadataErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFleetMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1976,7 +1990,9 @@ impl DescribeFleetMetadataError {
     /// Creates the `DescribeFleetMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFleetMetadataErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1985,7 +2001,9 @@ impl DescribeFleetMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFleetMetadataErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2053,7 +2071,7 @@ impl std::error::Error for DescribeFleetMetadataError {
             DescribeFleetMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFleetMetadataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeFleetMetadataErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeFleetMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFleetMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2082,7 +2100,7 @@ pub enum DescribeIdentityProviderConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIdentityProviderConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2126,7 +2144,9 @@ impl DescribeIdentityProviderConfigurationError {
     /// Creates the `DescribeIdentityProviderConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIdentityProviderConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityProviderConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2135,7 +2155,9 @@ impl DescribeIdentityProviderConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIdentityProviderConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityProviderConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2213,9 +2235,7 @@ impl std::error::Error for DescribeIdentityProviderConfigurationError {
             DescribeIdentityProviderConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DescribeIdentityProviderConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeIdentityProviderConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2244,7 +2264,7 @@ pub enum DescribeWebsiteCertificateAuthorityErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWebsiteCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2288,7 +2308,9 @@ impl DescribeWebsiteCertificateAuthorityError {
     /// Creates the `DescribeWebsiteCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2297,7 +2319,9 @@ impl DescribeWebsiteCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2375,9 +2399,7 @@ impl std::error::Error for DescribeWebsiteCertificateAuthorityError {
             DescribeWebsiteCertificateAuthorityErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2406,7 +2428,7 @@ pub enum DisassociateDomainErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2437,7 +2459,7 @@ impl DisassociateDomainError {
     /// Creates the `DisassociateDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateDomainErrorKind::Unhandled(err.into()),
+            kind: DisassociateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2446,7 +2468,7 @@ impl DisassociateDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateDomainErrorKind::Unhandled(err.into()),
+            kind: DisassociateDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2514,7 +2536,7 @@ impl std::error::Error for DisassociateDomainError {
             DisassociateDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateDomainErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DisassociateDomainErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DisassociateDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2545,7 +2567,7 @@ pub enum DisassociateWebsiteAuthorizationProviderErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateWebsiteAuthorizationProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2592,7 +2614,9 @@ impl DisassociateWebsiteAuthorizationProviderError {
     /// Creates the `DisassociateWebsiteAuthorizationProviderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2601,7 +2625,9 @@ impl DisassociateWebsiteAuthorizationProviderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2689,9 +2715,7 @@ impl std::error::Error for DisassociateWebsiteAuthorizationProviderError {
             DisassociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2720,7 +2744,7 @@ pub enum DisassociateWebsiteCertificateAuthorityErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateWebsiteCertificateAuthorityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2764,7 +2788,9 @@ impl DisassociateWebsiteCertificateAuthorityError {
     /// Creates the `DisassociateWebsiteCertificateAuthorityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2773,7 +2799,9 @@ impl DisassociateWebsiteCertificateAuthorityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2851,9 +2879,7 @@ impl std::error::Error for DisassociateWebsiteCertificateAuthorityError {
             DisassociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2882,7 +2908,7 @@ pub enum ListDevicesErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2913,7 +2939,7 @@ impl ListDevicesError {
     /// Creates the `ListDevicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDevicesErrorKind::Unhandled(err.into()),
+            kind: ListDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2922,7 +2948,7 @@ impl ListDevicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDevicesErrorKind::Unhandled(err.into()),
+            kind: ListDevicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2984,7 +3010,7 @@ impl std::error::Error for ListDevicesError {
             ListDevicesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDevicesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListDevicesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListDevicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDevicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3013,7 +3039,7 @@ pub enum ListDomainsErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3044,7 +3070,7 @@ impl ListDomainsError {
     /// Creates the `ListDomainsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainsErrorKind::Unhandled(err.into()),
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3053,7 +3079,7 @@ impl ListDomainsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainsErrorKind::Unhandled(err.into()),
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3115,7 +3141,7 @@ impl std::error::Error for ListDomainsError {
             ListDomainsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDomainsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListDomainsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3142,7 +3168,7 @@ pub enum ListFleetsErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFleetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3172,7 +3198,7 @@ impl ListFleetsError {
     /// Creates the `ListFleetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3181,7 +3207,7 @@ impl ListFleetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3232,7 +3258,7 @@ impl std::error::Error for ListFleetsError {
             ListFleetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListFleetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListFleetsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3253,7 +3279,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3280,7 +3306,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3289,7 +3315,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3325,7 +3351,7 @@ impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3354,7 +3380,7 @@ pub enum ListWebsiteAuthorizationProvidersErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWebsiteAuthorizationProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3398,7 +3424,9 @@ impl ListWebsiteAuthorizationProvidersError {
     /// Creates the `ListWebsiteAuthorizationProvidersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWebsiteAuthorizationProvidersErrorKind::Unhandled(err.into()),
+            kind: ListWebsiteAuthorizationProvidersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3407,7 +3435,9 @@ impl ListWebsiteAuthorizationProvidersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWebsiteAuthorizationProvidersErrorKind::Unhandled(err.into()),
+            kind: ListWebsiteAuthorizationProvidersErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3485,7 +3515,7 @@ impl std::error::Error for ListWebsiteAuthorizationProvidersError {
             ListWebsiteAuthorizationProvidersErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            ListWebsiteAuthorizationProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWebsiteAuthorizationProvidersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3512,7 +3542,7 @@ pub enum ListWebsiteCertificateAuthoritiesErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWebsiteCertificateAuthoritiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3553,7 +3583,9 @@ impl ListWebsiteCertificateAuthoritiesError {
     /// Creates the `ListWebsiteCertificateAuthoritiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(err.into()),
+            kind: ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3562,7 +3594,9 @@ impl ListWebsiteCertificateAuthoritiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(err.into()),
+            kind: ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3630,7 +3664,7 @@ impl std::error::Error for ListWebsiteCertificateAuthoritiesError {
             ListWebsiteCertificateAuthoritiesErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3659,7 +3693,7 @@ pub enum RestoreDomainAccessErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreDomainAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3690,7 +3724,7 @@ impl RestoreDomainAccessError {
     /// Creates the `RestoreDomainAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreDomainAccessErrorKind::Unhandled(err.into()),
+            kind: RestoreDomainAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3699,7 +3733,7 @@ impl RestoreDomainAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreDomainAccessErrorKind::Unhandled(err.into()),
+            kind: RestoreDomainAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3767,7 +3801,7 @@ impl std::error::Error for RestoreDomainAccessError {
             RestoreDomainAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestoreDomainAccessErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RestoreDomainAccessErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            RestoreDomainAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreDomainAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3796,7 +3830,7 @@ pub enum RevokeDomainAccessErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeDomainAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3827,7 +3861,7 @@ impl RevokeDomainAccessError {
     /// Creates the `RevokeDomainAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeDomainAccessErrorKind::Unhandled(err.into()),
+            kind: RevokeDomainAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3836,7 +3870,7 @@ impl RevokeDomainAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeDomainAccessErrorKind::Unhandled(err.into()),
+            kind: RevokeDomainAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3904,7 +3938,7 @@ impl std::error::Error for RevokeDomainAccessError {
             RevokeDomainAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RevokeDomainAccessErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RevokeDomainAccessErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            RevokeDomainAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeDomainAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3933,7 +3967,7 @@ pub enum SignOutUserErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SignOutUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3964,7 +3998,7 @@ impl SignOutUserError {
     /// Creates the `SignOutUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SignOutUserErrorKind::Unhandled(err.into()),
+            kind: SignOutUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3973,7 +4007,7 @@ impl SignOutUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SignOutUserErrorKind::Unhandled(err.into()),
+            kind: SignOutUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4035,7 +4069,7 @@ impl std::error::Error for SignOutUserError {
             SignOutUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SignOutUserErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             SignOutUserErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            SignOutUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SignOutUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4056,7 +4090,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4083,7 +4117,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4092,7 +4126,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4125,7 +4159,7 @@ impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4146,7 +4180,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4173,7 +4207,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4182,7 +4216,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4218,7 +4252,7 @@ impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4247,7 +4281,7 @@ pub enum UpdateAuditStreamConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAuditStreamConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4289,7 +4323,9 @@ impl UpdateAuditStreamConfigurationError {
     /// Creates the `UpdateAuditStreamConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAuditStreamConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateAuditStreamConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4298,7 +4334,9 @@ impl UpdateAuditStreamConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAuditStreamConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateAuditStreamConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4374,7 +4412,7 @@ impl std::error::Error for UpdateAuditStreamConfigurationError {
                 Some(_inner)
             }
             UpdateAuditStreamConfigurationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateAuditStreamConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAuditStreamConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4403,7 +4441,7 @@ pub enum UpdateCompanyNetworkConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCompanyNetworkConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4447,7 +4485,9 @@ impl UpdateCompanyNetworkConfigurationError {
     /// Creates the `UpdateCompanyNetworkConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCompanyNetworkConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateCompanyNetworkConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4456,7 +4496,9 @@ impl UpdateCompanyNetworkConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCompanyNetworkConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateCompanyNetworkConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4534,7 +4576,7 @@ impl std::error::Error for UpdateCompanyNetworkConfigurationError {
             UpdateCompanyNetworkConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            UpdateCompanyNetworkConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCompanyNetworkConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4563,7 +4605,7 @@ pub enum UpdateDevicePolicyConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDevicePolicyConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4607,7 +4649,9 @@ impl UpdateDevicePolicyConfigurationError {
     /// Creates the `UpdateDevicePolicyConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDevicePolicyConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateDevicePolicyConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4616,7 +4660,9 @@ impl UpdateDevicePolicyConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDevicePolicyConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateDevicePolicyConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4692,7 +4738,7 @@ impl std::error::Error for UpdateDevicePolicyConfigurationError {
                 Some(_inner)
             }
             UpdateDevicePolicyConfigurationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDevicePolicyConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDevicePolicyConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4721,7 +4767,7 @@ pub enum UpdateDomainMetadataErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4752,7 +4798,9 @@ impl UpdateDomainMetadataError {
     /// Creates the `UpdateDomainMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4761,7 +4809,9 @@ impl UpdateDomainMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4829,7 +4879,7 @@ impl std::error::Error for UpdateDomainMetadataError {
             UpdateDomainMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDomainMetadataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDomainMetadataErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDomainMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4858,7 +4908,7 @@ pub enum UpdateFleetMetadataErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFleetMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4889,7 +4939,7 @@ impl UpdateFleetMetadataError {
     /// Creates the `UpdateFleetMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFleetMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateFleetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4898,7 +4948,7 @@ impl UpdateFleetMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFleetMetadataErrorKind::Unhandled(err.into()),
+            kind: UpdateFleetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4966,7 +5016,7 @@ impl std::error::Error for UpdateFleetMetadataError {
             UpdateFleetMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFleetMetadataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateFleetMetadataErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateFleetMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFleetMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4995,7 +5045,7 @@ pub enum UpdateIdentityProviderConfigurationErrorKind {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIdentityProviderConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5039,7 +5089,9 @@ impl UpdateIdentityProviderConfigurationError {
     /// Creates the `UpdateIdentityProviderConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIdentityProviderConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateIdentityProviderConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5048,7 +5100,9 @@ impl UpdateIdentityProviderConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIdentityProviderConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateIdentityProviderConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5126,9 +5180,32 @@ impl std::error::Error for UpdateIdentityProviderConfigurationError {
             UpdateIdentityProviderConfigurationErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            UpdateIdentityProviderConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateIdentityProviderConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

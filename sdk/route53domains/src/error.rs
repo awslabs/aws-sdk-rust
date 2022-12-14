@@ -412,7 +412,7 @@ pub enum AcceptDomainTransferFromAnotherAwsAccountErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptDomainTransferFromAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -453,7 +453,9 @@ impl AcceptDomainTransferFromAnotherAwsAccountError {
     /// Creates the `AcceptDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -462,7 +464,9 @@ impl AcceptDomainTransferFromAnotherAwsAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -530,9 +534,7 @@ impl std::error::Error for AcceptDomainTransferFromAnotherAwsAccountError {
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
-            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -557,7 +559,7 @@ pub enum CancelDomainTransferToAnotherAwsAccountErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelDomainTransferToAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -593,7 +595,9 @@ impl CancelDomainTransferToAnotherAwsAccountError {
     /// Creates the `CancelDomainTransferToAnotherAwsAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -602,7 +606,9 @@ impl CancelDomainTransferToAnotherAwsAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -658,9 +664,7 @@ impl std::error::Error for CancelDomainTransferToAnotherAwsAccountError {
             CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
-            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -683,7 +687,7 @@ pub enum CheckDomainAvailabilityErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckDomainAvailabilityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -711,7 +715,9 @@ impl CheckDomainAvailabilityError {
     /// Creates the `CheckDomainAvailabilityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckDomainAvailabilityErrorKind::Unhandled(err.into()),
+            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -720,7 +726,9 @@ impl CheckDomainAvailabilityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckDomainAvailabilityErrorKind::Unhandled(err.into()),
+            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -764,7 +772,7 @@ impl std::error::Error for CheckDomainAvailabilityError {
         match &self.kind {
             CheckDomainAvailabilityErrorKind::InvalidInput(_inner) => Some(_inner),
             CheckDomainAvailabilityErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckDomainAvailabilityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -787,7 +795,7 @@ pub enum CheckDomainTransferabilityErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckDomainTransferabilityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -815,7 +823,9 @@ impl CheckDomainTransferabilityError {
     /// Creates the `CheckDomainTransferabilityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckDomainTransferabilityErrorKind::Unhandled(err.into()),
+            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -824,7 +834,9 @@ impl CheckDomainTransferabilityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckDomainTransferabilityErrorKind::Unhandled(err.into()),
+            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -868,7 +880,7 @@ impl std::error::Error for CheckDomainTransferabilityError {
         match &self.kind {
             CheckDomainTransferabilityErrorKind::InvalidInput(_inner) => Some(_inner),
             CheckDomainTransferabilityErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckDomainTransferabilityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -895,7 +907,7 @@ pub enum DeleteDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -925,7 +937,7 @@ impl DeleteDomainError {
     /// Creates the `DeleteDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -934,7 +946,7 @@ impl DeleteDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -982,7 +994,7 @@ impl std::error::Error for DeleteDomainError {
             DeleteDomainErrorKind::InvalidInput(_inner) => Some(_inner),
             DeleteDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
             DeleteDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1007,7 +1019,7 @@ pub enum DeleteTagsForDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1036,7 +1048,7 @@ impl DeleteTagsForDomainError {
     /// Creates the `DeleteTagsForDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1045,7 +1057,7 @@ impl DeleteTagsForDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1091,7 +1103,7 @@ impl std::error::Error for DeleteTagsForDomainError {
             DeleteTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
             DeleteTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             DeleteTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DeleteTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1114,7 +1126,7 @@ pub enum DisableDomainAutoRenewErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableDomainAutoRenewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1142,7 +1154,9 @@ impl DisableDomainAutoRenewError {
     /// Creates the `DisableDomainAutoRenewError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableDomainAutoRenewErrorKind::Unhandled(err.into()),
+            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1151,7 +1165,9 @@ impl DisableDomainAutoRenewError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableDomainAutoRenewErrorKind::Unhandled(err.into()),
+            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1192,7 +1208,7 @@ impl std::error::Error for DisableDomainAutoRenewError {
         match &self.kind {
             DisableDomainAutoRenewErrorKind::InvalidInput(_inner) => Some(_inner),
             DisableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1221,7 +1237,7 @@ pub enum DisableDomainTransferLockErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableDomainTransferLockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1252,7 +1268,9 @@ impl DisableDomainTransferLockError {
     /// Creates the `DisableDomainTransferLockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableDomainTransferLockErrorKind::Unhandled(err.into()),
+            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1261,7 +1279,9 @@ impl DisableDomainTransferLockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableDomainTransferLockErrorKind::Unhandled(err.into()),
+            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1329,7 +1349,7 @@ impl std::error::Error for DisableDomainTransferLockError {
             DisableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             DisableDomainTransferLockErrorKind::TldRulesViolation(_inner) => Some(_inner),
             DisableDomainTransferLockErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            DisableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1354,7 +1374,7 @@ pub enum EnableDomainAutoRenewErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableDomainAutoRenewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1383,7 +1403,9 @@ impl EnableDomainAutoRenewError {
     /// Creates the `EnableDomainAutoRenewError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableDomainAutoRenewErrorKind::Unhandled(err.into()),
+            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1392,7 +1414,9 @@ impl EnableDomainAutoRenewError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableDomainAutoRenewErrorKind::Unhandled(err.into()),
+            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1441,7 +1465,7 @@ impl std::error::Error for EnableDomainAutoRenewError {
             EnableDomainAutoRenewErrorKind::InvalidInput(_inner) => Some(_inner),
             EnableDomainAutoRenewErrorKind::TldRulesViolation(_inner) => Some(_inner),
             EnableDomainAutoRenewErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableDomainAutoRenewErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1470,7 +1494,7 @@ pub enum EnableDomainTransferLockErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableDomainTransferLockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1501,7 +1525,9 @@ impl EnableDomainTransferLockError {
     /// Creates the `EnableDomainTransferLockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableDomainTransferLockErrorKind::Unhandled(err.into()),
+            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1510,7 +1536,9 @@ impl EnableDomainTransferLockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableDomainTransferLockErrorKind::Unhandled(err.into()),
+            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1578,7 +1606,7 @@ impl std::error::Error for EnableDomainTransferLockError {
             EnableDomainTransferLockErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             EnableDomainTransferLockErrorKind::TldRulesViolation(_inner) => Some(_inner),
             EnableDomainTransferLockErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            EnableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableDomainTransferLockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1603,7 +1631,7 @@ pub enum GetContactReachabilityStatusErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactReachabilityStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1632,7 +1660,9 @@ impl GetContactReachabilityStatusError {
     /// Creates the `GetContactReachabilityStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContactReachabilityStatusErrorKind::Unhandled(err.into()),
+            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1641,7 +1671,9 @@ impl GetContactReachabilityStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContactReachabilityStatusErrorKind::Unhandled(err.into()),
+            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1693,7 +1725,7 @@ impl std::error::Error for GetContactReachabilityStatusError {
             GetContactReachabilityStatusErrorKind::InvalidInput(_inner) => Some(_inner),
             GetContactReachabilityStatusErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             GetContactReachabilityStatusErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContactReachabilityStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1716,7 +1748,7 @@ pub enum GetDomainDetailErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainDetailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1744,7 +1776,7 @@ impl GetDomainDetailError {
     /// Creates the `GetDomainDetailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainDetailErrorKind::Unhandled(err.into()),
+            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1753,7 +1785,7 @@ impl GetDomainDetailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainDetailErrorKind::Unhandled(err.into()),
+            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1791,7 +1823,7 @@ impl std::error::Error for GetDomainDetailError {
         match &self.kind {
             GetDomainDetailErrorKind::InvalidInput(_inner) => Some(_inner),
             GetDomainDetailErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetDomainDetailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainDetailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1814,7 +1846,7 @@ pub enum GetDomainSuggestionsErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainSuggestionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1842,7 +1874,9 @@ impl GetDomainSuggestionsError {
     /// Creates the `GetDomainSuggestionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainSuggestionsErrorKind::Unhandled(err.into()),
+            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1851,7 +1885,9 @@ impl GetDomainSuggestionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainSuggestionsErrorKind::Unhandled(err.into()),
+            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1889,7 +1925,7 @@ impl std::error::Error for GetDomainSuggestionsError {
         match &self.kind {
             GetDomainSuggestionsErrorKind::InvalidInput(_inner) => Some(_inner),
             GetDomainSuggestionsErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            GetDomainSuggestionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainSuggestionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1910,7 +1946,7 @@ pub enum GetOperationDetailErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetOperationDetailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1937,7 +1973,7 @@ impl GetOperationDetailError {
     /// Creates the `GetOperationDetailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetOperationDetailErrorKind::Unhandled(err.into()),
+            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1946,7 +1982,7 @@ impl GetOperationDetailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetOperationDetailErrorKind::Unhandled(err.into()),
+            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1979,7 +2015,7 @@ impl std::error::Error for GetOperationDetailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetOperationDetailErrorKind::InvalidInput(_inner) => Some(_inner),
-            GetOperationDetailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetOperationDetailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2000,7 +2036,7 @@ pub enum ListDomainsErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2027,7 +2063,7 @@ impl ListDomainsError {
     /// Creates the `ListDomainsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainsErrorKind::Unhandled(err.into()),
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2036,7 +2072,7 @@ impl ListDomainsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainsErrorKind::Unhandled(err.into()),
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2069,7 +2105,7 @@ impl std::error::Error for ListDomainsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListDomainsErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2090,7 +2126,7 @@ pub enum ListOperationsErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOperationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2117,7 +2153,7 @@ impl ListOperationsError {
     /// Creates the `ListOperationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOperationsErrorKind::Unhandled(err.into()),
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2126,7 +2162,7 @@ impl ListOperationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOperationsErrorKind::Unhandled(err.into()),
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2159,7 +2195,7 @@ impl std::error::Error for ListOperationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListOperationsErrorKind::InvalidInput(_inner) => Some(_inner),
-            ListOperationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListOperationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2182,7 +2218,7 @@ pub enum ListPricesErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPricesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2210,7 +2246,7 @@ impl ListPricesError {
     /// Creates the `ListPricesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPricesErrorKind::Unhandled(err.into()),
+            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2219,7 +2255,7 @@ impl ListPricesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPricesErrorKind::Unhandled(err.into()),
+            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2257,7 +2293,7 @@ impl std::error::Error for ListPricesError {
         match &self.kind {
             ListPricesErrorKind::InvalidInput(_inner) => Some(_inner),
             ListPricesErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ListPricesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPricesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2282,7 +2318,7 @@ pub enum ListTagsForDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2311,7 +2347,7 @@ impl ListTagsForDomainError {
     /// Creates the `ListTagsForDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2320,7 +2356,7 @@ impl ListTagsForDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2366,7 +2402,7 @@ impl std::error::Error for ListTagsForDomainError {
             ListTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
             ListTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             ListTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ListTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2397,7 +2433,7 @@ pub enum RegisterDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2429,7 +2465,7 @@ impl RegisterDomainError {
     /// Creates the `RegisterDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterDomainErrorKind::Unhandled(err.into()),
+            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2438,7 +2474,7 @@ impl RegisterDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterDomainErrorKind::Unhandled(err.into()),
+            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2499,7 +2535,7 @@ impl std::error::Error for RegisterDomainError {
             RegisterDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             RegisterDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
             RegisterDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RegisterDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2524,7 +2560,7 @@ pub enum RejectDomainTransferFromAnotherAwsAccountErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectDomainTransferFromAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,7 +2598,9 @@ impl RejectDomainTransferFromAnotherAwsAccountError {
     /// Creates the `RejectDomainTransferFromAnotherAwsAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2571,7 +2609,9 @@ impl RejectDomainTransferFromAnotherAwsAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2629,9 +2669,7 @@ impl std::error::Error for RejectDomainTransferFromAnotherAwsAccountError {
             RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
-            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2660,7 +2698,7 @@ pub enum RenewDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RenewDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2691,7 +2729,7 @@ impl RenewDomainError {
     /// Creates the `RenewDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RenewDomainErrorKind::Unhandled(err.into()),
+            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2700,7 +2738,7 @@ impl RenewDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RenewDomainErrorKind::Unhandled(err.into()),
+            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2753,7 +2791,7 @@ impl std::error::Error for RenewDomainError {
             RenewDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             RenewDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
             RenewDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RenewDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RenewDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2778,7 +2816,7 @@ pub enum ResendContactReachabilityEmailErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResendContactReachabilityEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2812,7 +2850,9 @@ impl ResendContactReachabilityEmailError {
     /// Creates the `ResendContactReachabilityEmailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResendContactReachabilityEmailErrorKind::Unhandled(err.into()),
+            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2821,7 +2861,9 @@ impl ResendContactReachabilityEmailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResendContactReachabilityEmailErrorKind::Unhandled(err.into()),
+            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2873,7 +2915,7 @@ impl std::error::Error for ResendContactReachabilityEmailError {
             ResendContactReachabilityEmailErrorKind::InvalidInput(_inner) => Some(_inner),
             ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             ResendContactReachabilityEmailErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResendContactReachabilityEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2896,7 +2938,7 @@ pub enum RetrieveDomainAuthCodeErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetrieveDomainAuthCodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2924,7 +2966,9 @@ impl RetrieveDomainAuthCodeError {
     /// Creates the `RetrieveDomainAuthCodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(err.into()),
+            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2933,7 +2977,9 @@ impl RetrieveDomainAuthCodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(err.into()),
+            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2974,7 +3020,7 @@ impl std::error::Error for RetrieveDomainAuthCodeError {
         match &self.kind {
             RetrieveDomainAuthCodeErrorKind::InvalidInput(_inner) => Some(_inner),
             RetrieveDomainAuthCodeErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RetrieveDomainAuthCodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3005,7 +3051,7 @@ pub enum TransferDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransferDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3037,7 +3083,7 @@ impl TransferDomainError {
     /// Creates the `TransferDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TransferDomainErrorKind::Unhandled(err.into()),
+            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3046,7 +3092,7 @@ impl TransferDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TransferDomainErrorKind::Unhandled(err.into()),
+            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3107,7 +3153,7 @@ impl std::error::Error for TransferDomainError {
             TransferDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             TransferDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
             TransferDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            TransferDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TransferDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3134,7 +3180,7 @@ pub enum TransferDomainToAnotherAwsAccountErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransferDomainToAnotherAwsAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3169,7 +3215,9 @@ impl TransferDomainToAnotherAwsAccountError {
     /// Creates the `TransferDomainToAnotherAwsAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3178,7 +3226,9 @@ impl TransferDomainToAnotherAwsAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(err.into()),
+            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3240,7 +3290,7 @@ impl std::error::Error for TransferDomainToAnotherAwsAccountError {
                 Some(_inner)
             }
             TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3269,7 +3319,7 @@ pub enum UpdateDomainContactErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3300,7 +3350,7 @@ impl UpdateDomainContactError {
     /// Creates the `UpdateDomainContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainContactErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3309,7 +3359,7 @@ impl UpdateDomainContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainContactErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3371,7 +3421,7 @@ impl std::error::Error for UpdateDomainContactError {
             UpdateDomainContactErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             UpdateDomainContactErrorKind::TldRulesViolation(_inner) => Some(_inner),
             UpdateDomainContactErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3400,7 +3450,7 @@ pub enum UpdateDomainContactPrivacyErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainContactPrivacyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3431,7 +3481,9 @@ impl UpdateDomainContactPrivacyError {
     /// Creates the `UpdateDomainContactPrivacyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3440,7 +3492,9 @@ impl UpdateDomainContactPrivacyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3508,7 +3562,7 @@ impl std::error::Error for UpdateDomainContactPrivacyError {
             UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             UpdateDomainContactPrivacyErrorKind::TldRulesViolation(_inner) => Some(_inner),
             UpdateDomainContactPrivacyErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainContactPrivacyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3537,7 +3591,7 @@ pub enum UpdateDomainNameserversErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainNameserversError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3568,7 +3622,9 @@ impl UpdateDomainNameserversError {
     /// Creates the `UpdateDomainNameserversError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainNameserversErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3577,7 +3633,9 @@ impl UpdateDomainNameserversError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainNameserversErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3645,7 +3703,7 @@ impl std::error::Error for UpdateDomainNameserversError {
             UpdateDomainNameserversErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             UpdateDomainNameserversErrorKind::TldRulesViolation(_inner) => Some(_inner),
             UpdateDomainNameserversErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateDomainNameserversErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainNameserversErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3670,7 +3728,7 @@ pub enum UpdateTagsForDomainErrorKind {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTagsForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3699,7 +3757,7 @@ impl UpdateTagsForDomainError {
     /// Creates the `UpdateTagsForDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3708,7 +3766,7 @@ impl UpdateTagsForDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTagsForDomainErrorKind::Unhandled(err.into()),
+            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3754,7 +3812,7 @@ impl std::error::Error for UpdateTagsForDomainError {
             UpdateTagsForDomainErrorKind::InvalidInput(_inner) => Some(_inner),
             UpdateTagsForDomainErrorKind::OperationLimitExceeded(_inner) => Some(_inner),
             UpdateTagsForDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
-            UpdateTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTagsForDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3775,7 +3833,7 @@ pub enum ViewBillingErrorKind {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ViewBillingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3802,7 +3860,7 @@ impl ViewBillingError {
     /// Creates the `ViewBillingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ViewBillingErrorKind::Unhandled(err.into()),
+            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3811,7 +3869,7 @@ impl ViewBillingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ViewBillingErrorKind::Unhandled(err.into()),
+            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3844,7 +3902,32 @@ impl std::error::Error for ViewBillingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ViewBillingErrorKind::InvalidInput(_inner) => Some(_inner),
-            ViewBillingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ViewBillingErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

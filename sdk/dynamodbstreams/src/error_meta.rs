@@ -22,7 +22,7 @@ pub enum Error {
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49,9 +49,11 @@ where
                 crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -77,9 +79,11 @@ where
                 crate::error::GetRecordsErrorKind::TrimmedDataAccessException(inner) => {
                     Error::TrimmedDataAccessException(inner)
                 }
-                crate::error::GetRecordsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecordsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -102,10 +106,10 @@ where
                     Error::TrimmedDataAccessException(inner)
                 }
                 crate::error::GetShardIteratorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,9 +126,11 @@ where
                 crate::error::ListStreamsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListStreamsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListStreamsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -479,7 +479,7 @@ pub enum CreateGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -510,7 +510,7 @@ impl CreateGroupError {
     /// Creates the `CreateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -519,7 +519,7 @@ impl CreateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -581,7 +581,7 @@ impl std::error::Error for CreateGroupError {
             CreateGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             CreateGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -612,7 +612,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -644,7 +644,7 @@ impl DeleteGroupError {
     /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -653,7 +653,7 @@ impl DeleteGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -720,7 +720,7 @@ impl std::error::Error for DeleteGroupError {
             DeleteGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             DeleteGroupErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -751,7 +751,7 @@ pub enum GetGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -783,7 +783,7 @@ impl GetGroupError {
     /// Creates the `GetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupErrorKind::Unhandled(err.into()),
+            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -792,7 +792,7 @@ impl GetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupErrorKind::Unhandled(err.into()),
+            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -853,7 +853,7 @@ impl std::error::Error for GetGroupError {
             GetGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             GetGroupErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -884,7 +884,7 @@ pub enum GetGroupConfigurationErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -916,7 +916,9 @@ impl GetGroupConfigurationError {
     /// Creates the `GetGroupConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -925,7 +927,9 @@ impl GetGroupConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1001,7 +1005,7 @@ impl std::error::Error for GetGroupConfigurationError {
             GetGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             GetGroupConfigurationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGroupConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1032,7 +1036,7 @@ pub enum GetGroupQueryErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1064,7 +1068,7 @@ impl GetGroupQueryError {
     /// Creates the `GetGroupQueryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupQueryErrorKind::Unhandled(err.into()),
+            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1073,7 +1077,7 @@ impl GetGroupQueryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupQueryErrorKind::Unhandled(err.into()),
+            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1140,7 +1144,7 @@ impl std::error::Error for GetGroupQueryError {
             GetGroupQueryErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             GetGroupQueryErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGroupQueryErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupQueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1171,7 +1175,7 @@ pub enum GetTagsErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1203,7 +1207,7 @@ impl GetTagsError {
     /// Creates the `GetTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTagsErrorKind::Unhandled(err.into()),
+            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1212,7 +1216,7 @@ impl GetTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTagsErrorKind::Unhandled(err.into()),
+            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1273,7 +1277,7 @@ impl std::error::Error for GetTagsError {
             GetTagsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             GetTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1304,7 +1308,7 @@ pub enum GroupResourcesErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1336,7 +1340,7 @@ impl GroupResourcesError {
     /// Creates the `GroupResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GroupResourcesErrorKind::Unhandled(err.into()),
+            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1345,7 +1349,7 @@ impl GroupResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GroupResourcesErrorKind::Unhandled(err.into()),
+            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1412,7 +1416,7 @@ impl std::error::Error for GroupResourcesError {
             GroupResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             GroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             GroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1445,7 +1449,7 @@ pub enum ListGroupResourcesErrorKind {
     /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1478,7 +1482,7 @@ impl ListGroupResourcesError {
     /// Creates the `ListGroupResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupResourcesErrorKind::Unhandled(err.into()),
+            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1487,7 +1491,7 @@ impl ListGroupResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupResourcesErrorKind::Unhandled(err.into()),
+            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1571,7 +1575,7 @@ impl std::error::Error for ListGroupResourcesError {
             ListGroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListGroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListGroupResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1600,7 +1604,7 @@ pub enum ListGroupsErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1631,7 +1635,7 @@ impl ListGroupsError {
     /// Creates the `ListGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1640,7 +1644,7 @@ impl ListGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1699,7 +1703,7 @@ impl std::error::Error for ListGroupsError {
             ListGroupsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListGroupsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             ListGroupsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1730,7 +1734,7 @@ pub enum PutGroupConfigurationErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutGroupConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1762,7 +1766,9 @@ impl PutGroupConfigurationError {
     /// Creates the `PutGroupConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutGroupConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1771,7 +1777,9 @@ impl PutGroupConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutGroupConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1847,7 +1855,7 @@ impl std::error::Error for PutGroupConfigurationError {
             PutGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             PutGroupConfigurationErrorKind::NotFoundException(_inner) => Some(_inner),
             PutGroupConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1878,7 +1886,7 @@ pub enum SearchResourcesErrorKind {
     /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1910,7 +1918,7 @@ impl SearchResourcesError {
     /// Creates the `SearchResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchResourcesErrorKind::Unhandled(err.into()),
+            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1919,7 +1927,7 @@ impl SearchResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchResourcesErrorKind::Unhandled(err.into()),
+            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1989,7 +1997,7 @@ impl std::error::Error for SearchResourcesError {
             SearchResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             SearchResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             SearchResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2020,7 +2028,7 @@ pub enum TagErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2052,7 +2060,7 @@ impl TagError {
     /// Creates the `TagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagErrorKind::Unhandled(err.into()),
+            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2061,7 +2069,7 @@ impl TagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagErrorKind::Unhandled(err.into()),
+            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2119,7 +2127,7 @@ impl std::error::Error for TagError {
             TagErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             TagErrorKind::NotFoundException(_inner) => Some(_inner),
             TagErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2150,7 +2158,7 @@ pub enum UngroupResourcesErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UngroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,7 +2190,7 @@ impl UngroupResourcesError {
     /// Creates the `UngroupResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UngroupResourcesErrorKind::Unhandled(err.into()),
+            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2191,7 +2199,7 @@ impl UngroupResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UngroupResourcesErrorKind::Unhandled(err.into()),
+            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2261,7 +2269,7 @@ impl std::error::Error for UngroupResourcesError {
             UngroupResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             UngroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             UngroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UngroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2292,7 +2300,7 @@ pub enum UntagErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2324,7 +2332,7 @@ impl UntagError {
     /// Creates the `UntagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagErrorKind::Unhandled(err.into()),
+            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2333,7 +2341,7 @@ impl UntagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagErrorKind::Unhandled(err.into()),
+            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2391,7 +2399,7 @@ impl std::error::Error for UntagError {
             UntagErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             UntagErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2422,7 +2430,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2454,7 +2462,7 @@ impl UpdateGroupError {
     /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2463,7 +2471,7 @@ impl UpdateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2530,7 +2538,7 @@ impl std::error::Error for UpdateGroupError {
             UpdateGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             UpdateGroupErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2561,7 +2569,7 @@ pub enum UpdateGroupQueryErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2593,7 +2601,7 @@ impl UpdateGroupQueryError {
     /// Creates the `UpdateGroupQueryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGroupQueryErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2602,7 +2610,7 @@ impl UpdateGroupQueryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGroupQueryErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2672,7 +2680,32 @@ impl std::error::Error for UpdateGroupQueryError {
             UpdateGroupQueryErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             UpdateGroupQueryErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGroupQueryErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGroupQueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -34,7 +34,7 @@ pub enum Error {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -80,9 +80,9 @@ where
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -114,10 +114,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::AddApplicationInputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,9 +144,9 @@ where
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AddApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -176,10 +176,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::AddApplicationOutputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -202,9 +202,9 @@ where
                 crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AddApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -227,9 +227,9 @@ where
                 crate::error::AddApplicationVpcConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::AddApplicationVpcConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::AddApplicationVpcConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AddApplicationVpcConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddApplicationVpcConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -267,10 +267,10 @@ where
                     Error::UnsupportedOperationException(inner)
                 }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -294,10 +294,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateApplicationPresignedUrlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -318,9 +318,9 @@ where
                 crate::error::CreateApplicationSnapshotErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::CreateApplicationSnapshotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateApplicationSnapshotErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::CreateApplicationSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateApplicationSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -339,9 +339,9 @@ where
                 crate::error::DeleteApplicationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeleteApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -369,9 +369,9 @@ where
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -398,9 +398,9 @@ where
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -430,10 +430,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteApplicationOutputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -460,9 +460,9 @@ where
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,10 +492,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::DeleteApplicationSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -518,9 +518,9 @@ where
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteApplicationVpcConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteApplicationVpcConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -543,10 +543,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -563,9 +563,9 @@ where
                 crate::error::DescribeApplicationSnapshotErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeApplicationSnapshotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeApplicationSnapshotErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DescribeApplicationSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeApplicationSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -582,9 +582,9 @@ where
                 crate::error::DescribeApplicationVersionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeApplicationVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeApplicationVersionErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DescribeApplicationVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeApplicationVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -603,9 +603,9 @@ where
                 crate::error::DiscoverInputSchemaErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(inner) => Error::UnableToDetectSchemaException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DiscoverInputSchemaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DiscoverInputSchemaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -622,10 +622,10 @@ where
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,10 +646,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::ListApplicationSnapshotsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -673,10 +673,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::ListApplicationVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -699,10 +699,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -734,10 +734,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::RollbackApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -755,9 +755,9 @@ where
                 crate::error::StartApplicationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StartApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::StartApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::StartApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -774,9 +774,9 @@ where
                 crate::error::StopApplicationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StopApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::StopApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::StopApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -802,9 +802,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -830,9 +832,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -853,9 +857,9 @@ where
                 crate::error::UpdateApplicationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UpdateApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::UpdateApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -882,9 +886,9 @@ where
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

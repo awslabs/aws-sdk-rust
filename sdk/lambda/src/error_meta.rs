@@ -74,7 +74,7 @@ pub enum Error {
     /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -134,9 +134,9 @@ where
                 crate::error::AddLayerVersionPermissionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AddLayerVersionPermissionErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::AddLayerVersionPermissionErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::AddLayerVersionPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddLayerVersionPermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,9 +168,11 @@ where
                 crate::error::AddPermissionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::AddPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddPermissionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -196,9 +198,11 @@ where
                 crate::error::CreateAliasErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -219,10 +223,10 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::CreateCodeSigningConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,10 +256,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::CreateEventSourceMappingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -293,9 +297,11 @@ where
                 crate::error::CreateFunctionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFunctionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +331,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateFunctionUrlConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -351,9 +357,11 @@ where
                 crate::error::DeleteAliasErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,10 +388,10 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::DeleteCodeSigningConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,10 +421,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteEventSourceMappingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -442,9 +450,11 @@ where
                 crate::error::DeleteFunctionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFunctionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -468,9 +478,9 @@ where
                 crate::error::DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteFunctionCodeSigningConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -489,9 +499,9 @@ where
                 crate::error::DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteFunctionConcurrencyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteFunctionConcurrencyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteFunctionConcurrencyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFunctionConcurrencyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -514,9 +524,9 @@ where
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -543,10 +553,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteFunctionUrlConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -566,10 +576,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteLayerVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -593,9 +603,9 @@ where
                 crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -615,10 +625,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -641,9 +651,11 @@ where
                 crate::error::GetAliasErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -667,10 +679,10 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::GetCodeSigningConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,10 +709,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetEventSourceMappingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -723,9 +735,11 @@ where
                 crate::error::GetFunctionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetFunctionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFunctionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -743,9 +757,9 @@ where
                 crate::error::GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetFunctionCodeSigningConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -772,10 +786,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetFunctionConcurrencyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -802,10 +816,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::GetFunctionConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -823,9 +837,9 @@ where
                 crate::error::GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -852,10 +866,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetFunctionUrlConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -878,9 +892,11 @@ where
                 crate::error::GetLayerVersionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetLayerVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLayerVersionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -907,10 +923,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetLayerVersionByArnErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -937,10 +953,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetLayerVersionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -963,9 +979,11 @@ where
                 crate::error::GetPolicyErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -988,9 +1006,9 @@ where
                 crate::error::GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetProvisionedConcurrencyConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1079,9 +1097,11 @@ where
                 crate::error::InvokeErrorKind::UnsupportedMediaTypeException(inner) => {
                     Error::UnsupportedMediaTypeException(inner)
                 }
-                crate::error::InvokeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InvokeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1107,9 +1127,11 @@ where
                 crate::error::InvokeAsyncErrorKind::ServiceException(inner) => {
                     Error::ServiceException(inner)
                 }
-                crate::error::InvokeAsyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InvokeAsyncErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1132,9 +1154,11 @@ where
                 crate::error::ListAliasesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListAliasesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAliasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1155,10 +1179,10 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::ListCodeSigningConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1185,10 +1209,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEventSourceMappingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1210,9 +1234,9 @@ where
                 crate::error::ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListFunctionEventInvokeConfigsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListFunctionEventInvokeConfigsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFunctionEventInvokeConfigsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1232,9 +1256,11 @@ where
                 crate::error::ListFunctionsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListFunctionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFunctionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1255,9 +1281,9 @@ where
                 crate::error::ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListFunctionsByCodeSigningConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-                crate::error::ListFunctionsByCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFunctionsByCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1284,10 +1310,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListFunctionUrlConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1307,9 +1333,11 @@ where
                 crate::error::ListLayersErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListLayersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLayersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1335,10 +1363,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListLayerVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1360,9 +1388,9 @@ where
                 crate::error::ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListProvisionedConcurrencyConfigsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListProvisionedConcurrencyConfigsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListProvisionedConcurrencyConfigsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1385,9 +1413,11 @@ where
                 crate::error::ListTagsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1414,10 +1444,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListVersionsByFunctionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1446,10 +1476,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::PublishLayerVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1481,9 +1511,11 @@ where
                 crate::error::PublishVersionErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::PublishVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PublishVersionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1503,9 +1535,9 @@ where
                 crate::error::PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutFunctionCodeSigningConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::PutFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutFunctionCodeSigningConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1535,10 +1567,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::PutFunctionConcurrencyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1557,9 +1589,9 @@ where
                 crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::PutFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1582,9 +1614,9 @@ where
                 crate::error::PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutProvisionedConcurrencyConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::PutProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutProvisionedConcurrencyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1603,9 +1635,9 @@ where
                 crate::error::RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::RemoveLayerVersionPermissionErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::RemoveLayerVersionPermissionErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::RemoveLayerVersionPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveLayerVersionPermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1634,10 +1666,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::RemovePermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1663,9 +1695,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1691,9 +1725,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1722,9 +1758,11 @@ where
                 crate::error::UpdateAliasErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1748,10 +1786,10 @@ where
                     Error::ServiceException(inner)
                 }
                 crate::error::UpdateCodeSigningConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1784,10 +1822,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateEventSourceMappingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1831,10 +1869,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFunctionCodeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1857,9 +1895,9 @@ where
                 crate::error::UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateFunctionConfigurationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::UpdateFunctionConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::UpdateFunctionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFunctionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1882,9 +1920,9 @@ where
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::UpdateFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFunctionEventInvokeConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1914,10 +1952,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateFunctionUrlConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

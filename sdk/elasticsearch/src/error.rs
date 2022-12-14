@@ -735,7 +735,7 @@ pub enum AcceptInboundCrossClusterSearchConnectionErrorKind {
     /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptInboundCrossClusterSearchConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -773,7 +773,9 @@ impl AcceptInboundCrossClusterSearchConnectionError {
     /// Creates the `AcceptInboundCrossClusterSearchConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -782,7 +784,9 @@ impl AcceptInboundCrossClusterSearchConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -840,9 +844,7 @@ impl std::error::Error for AcceptInboundCrossClusterSearchConnectionError {
             AcceptInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(
                 _inner,
             ) => Some(_inner),
-            AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -869,7 +871,7 @@ pub enum AddTagsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -899,7 +901,7 @@ impl AddTagsError {
     /// Creates the `AddTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -908,7 +910,7 @@ impl AddTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -956,7 +958,7 @@ impl std::error::Error for AddTagsError {
             AddTagsErrorKind::InternalException(_inner) => Some(_inner),
             AddTagsErrorKind::LimitExceededException(_inner) => Some(_inner),
             AddTagsErrorKind::ValidationException(_inner) => Some(_inner),
-            AddTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -987,7 +989,7 @@ pub enum AssociatePackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociatePackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1019,7 +1021,7 @@ impl AssociatePackageError {
     /// Creates the `AssociatePackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociatePackageErrorKind::Unhandled(err.into()),
+            kind: AssociatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1028,7 +1030,7 @@ impl AssociatePackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociatePackageErrorKind::Unhandled(err.into()),
+            kind: AssociatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1095,7 +1097,7 @@ impl std::error::Error for AssociatePackageError {
             AssociatePackageErrorKind::InternalException(_inner) => Some(_inner),
             AssociatePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociatePackageErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociatePackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociatePackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1122,7 +1124,7 @@ pub enum CancelElasticsearchServiceSoftwareUpdateErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelElasticsearchServiceSoftwareUpdateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1163,7 +1165,9 @@ impl CancelElasticsearchServiceSoftwareUpdateError {
     /// Creates the `CancelElasticsearchServiceSoftwareUpdateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(err.into()),
+            kind: CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1172,7 +1176,9 @@ impl CancelElasticsearchServiceSoftwareUpdateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(err.into()),
+            kind: CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1240,9 +1246,7 @@ impl std::error::Error for CancelElasticsearchServiceSoftwareUpdateError {
             CancelElasticsearchServiceSoftwareUpdateErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1275,7 +1279,7 @@ pub enum CreateElasticsearchDomainErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateElasticsearchDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1310,7 +1314,9 @@ impl CreateElasticsearchDomainError {
     /// Creates the `CreateElasticsearchDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: CreateElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1319,7 +1325,9 @@ impl CreateElasticsearchDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: CreateElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1405,7 +1413,7 @@ impl std::error::Error for CreateElasticsearchDomainError {
                 Some(_inner)
             }
             CreateElasticsearchDomainErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1432,7 +1440,7 @@ pub enum CreateOutboundCrossClusterSearchConnectionErrorKind {
     /// <p>An exception for creating a resource that already exists. Gives http status code of 400.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateOutboundCrossClusterSearchConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,7 +1481,9 @@ impl CreateOutboundCrossClusterSearchConnectionError {
     /// Creates the `CreateOutboundCrossClusterSearchConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1482,7 +1492,9 @@ impl CreateOutboundCrossClusterSearchConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1550,9 +1562,7 @@ impl std::error::Error for CreateOutboundCrossClusterSearchConnectionError {
             CreateOutboundCrossClusterSearchConnectionErrorKind::ResourceAlreadyExistsException(
                 _inner,
             ) => Some(_inner),
-            CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1585,7 +1595,7 @@ pub enum CreatePackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1618,7 +1628,7 @@ impl CreatePackageError {
     /// Creates the `CreatePackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePackageErrorKind::Unhandled(err.into()),
+            kind: CreatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1627,7 +1637,7 @@ impl CreatePackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePackageErrorKind::Unhandled(err.into()),
+            kind: CreatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1696,7 +1706,7 @@ impl std::error::Error for CreatePackageError {
             CreatePackageErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreatePackageErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreatePackageErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1723,7 +1733,7 @@ pub enum DeleteElasticsearchDomainErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteElasticsearchDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1753,7 +1763,9 @@ impl DeleteElasticsearchDomainError {
     /// Creates the `DeleteElasticsearchDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1762,7 +1774,9 @@ impl DeleteElasticsearchDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: DeleteElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1822,7 +1836,7 @@ impl std::error::Error for DeleteElasticsearchDomainError {
             DeleteElasticsearchDomainErrorKind::InternalException(_inner) => Some(_inner),
             DeleteElasticsearchDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteElasticsearchDomainErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1847,7 +1861,7 @@ pub enum DeleteElasticsearchServiceRoleErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteElasticsearchServiceRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1879,7 +1893,9 @@ impl DeleteElasticsearchServiceRoleError {
     /// Creates the `DeleteElasticsearchServiceRoleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteElasticsearchServiceRoleErrorKind::Unhandled(err.into()),
+            kind: DeleteElasticsearchServiceRoleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1888,7 +1904,9 @@ impl DeleteElasticsearchServiceRoleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteElasticsearchServiceRoleErrorKind::Unhandled(err.into()),
+            kind: DeleteElasticsearchServiceRoleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1940,7 +1958,7 @@ impl std::error::Error for DeleteElasticsearchServiceRoleError {
             DeleteElasticsearchServiceRoleErrorKind::BaseException(_inner) => Some(_inner),
             DeleteElasticsearchServiceRoleErrorKind::InternalException(_inner) => Some(_inner),
             DeleteElasticsearchServiceRoleErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteElasticsearchServiceRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteElasticsearchServiceRoleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1963,7 +1981,7 @@ pub enum DeleteInboundCrossClusterSearchConnectionErrorKind {
     /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInboundCrossClusterSearchConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1998,7 +2016,9 @@ impl DeleteInboundCrossClusterSearchConnectionError {
     /// Creates the `DeleteInboundCrossClusterSearchConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2007,7 +2027,9 @@ impl DeleteInboundCrossClusterSearchConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2055,9 +2077,7 @@ impl std::error::Error for DeleteInboundCrossClusterSearchConnectionError {
             DeleteInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(
                 _inner,
             ) => Some(_inner),
-            DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2080,7 +2100,7 @@ pub enum DeleteOutboundCrossClusterSearchConnectionErrorKind {
     /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteOutboundCrossClusterSearchConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2115,7 +2135,9 @@ impl DeleteOutboundCrossClusterSearchConnectionError {
     /// Creates the `DeleteOutboundCrossClusterSearchConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2124,7 +2146,9 @@ impl DeleteOutboundCrossClusterSearchConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2172,9 +2196,7 @@ impl std::error::Error for DeleteOutboundCrossClusterSearchConnectionError {
             DeleteOutboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(
                 _inner,
             ) => Some(_inner),
-            DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2205,7 +2227,7 @@ pub enum DeletePackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2237,7 +2259,7 @@ impl DeletePackageError {
     /// Creates the `DeletePackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePackageErrorKind::Unhandled(err.into()),
+            kind: DeletePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2246,7 +2268,7 @@ impl DeletePackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePackageErrorKind::Unhandled(err.into()),
+            kind: DeletePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2307,7 +2329,7 @@ impl std::error::Error for DeletePackageError {
             DeletePackageErrorKind::InternalException(_inner) => Some(_inner),
             DeletePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePackageErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2334,7 +2356,7 @@ pub enum DescribeDomainAutoTunesErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDomainAutoTunesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2364,7 +2386,9 @@ impl DescribeDomainAutoTunesError {
     /// Creates the `DescribeDomainAutoTunesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDomainAutoTunesErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainAutoTunesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2373,7 +2397,9 @@ impl DescribeDomainAutoTunesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDomainAutoTunesErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainAutoTunesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2433,7 +2459,7 @@ impl std::error::Error for DescribeDomainAutoTunesError {
             DescribeDomainAutoTunesErrorKind::InternalException(_inner) => Some(_inner),
             DescribeDomainAutoTunesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDomainAutoTunesErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeDomainAutoTunesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDomainAutoTunesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2460,7 +2486,7 @@ pub enum DescribeDomainChangeProgressErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDomainChangeProgressError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2492,7 +2518,9 @@ impl DescribeDomainChangeProgressError {
     /// Creates the `DescribeDomainChangeProgressError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDomainChangeProgressErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainChangeProgressErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2501,7 +2529,9 @@ impl DescribeDomainChangeProgressError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDomainChangeProgressErrorKind::Unhandled(err.into()),
+            kind: DescribeDomainChangeProgressErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2563,7 +2593,7 @@ impl std::error::Error for DescribeDomainChangeProgressError {
                 Some(_inner)
             }
             DescribeDomainChangeProgressErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeDomainChangeProgressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDomainChangeProgressErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2590,7 +2620,7 @@ pub enum DescribeElasticsearchDomainErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeElasticsearchDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2622,7 +2652,9 @@ impl DescribeElasticsearchDomainError {
     /// Creates the `DescribeElasticsearchDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2631,7 +2663,9 @@ impl DescribeElasticsearchDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2691,7 +2725,7 @@ impl std::error::Error for DescribeElasticsearchDomainError {
             DescribeElasticsearchDomainErrorKind::InternalException(_inner) => Some(_inner),
             DescribeElasticsearchDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeElasticsearchDomainErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2718,7 +2752,7 @@ pub enum DescribeElasticsearchDomainConfigErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeElasticsearchDomainConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2755,7 +2789,9 @@ impl DescribeElasticsearchDomainConfigError {
     /// Creates the `DescribeElasticsearchDomainConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeElasticsearchDomainConfigErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2764,7 +2800,9 @@ impl DescribeElasticsearchDomainConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeElasticsearchDomainConfigErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2826,7 +2864,7 @@ impl std::error::Error for DescribeElasticsearchDomainConfigError {
                 Some(_inner)
             }
             DescribeElasticsearchDomainConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeElasticsearchDomainConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeElasticsearchDomainConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2851,7 +2889,7 @@ pub enum DescribeElasticsearchDomainsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeElasticsearchDomainsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2880,7 +2918,9 @@ impl DescribeElasticsearchDomainsError {
     /// Creates the `DescribeElasticsearchDomainsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeElasticsearchDomainsErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2889,7 +2929,9 @@ impl DescribeElasticsearchDomainsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeElasticsearchDomainsErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchDomainsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2941,7 +2983,7 @@ impl std::error::Error for DescribeElasticsearchDomainsError {
             DescribeElasticsearchDomainsErrorKind::BaseException(_inner) => Some(_inner),
             DescribeElasticsearchDomainsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeElasticsearchDomainsErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeElasticsearchDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeElasticsearchDomainsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2972,7 +3014,7 @@ pub enum DescribeElasticsearchInstanceTypeLimitsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeElasticsearchInstanceTypeLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3019,7 +3061,9 @@ impl DescribeElasticsearchInstanceTypeLimitsError {
     /// Creates the `DescribeElasticsearchInstanceTypeLimitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3028,7 +3072,9 @@ impl DescribeElasticsearchInstanceTypeLimitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3114,9 +3160,7 @@ impl std::error::Error for DescribeElasticsearchInstanceTypeLimitsError {
             DescribeElasticsearchInstanceTypeLimitsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3139,7 +3183,7 @@ pub enum DescribeInboundCrossClusterSearchConnectionsErrorKind {
     /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInboundCrossClusterSearchConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3178,7 +3222,9 @@ impl DescribeInboundCrossClusterSearchConnectionsError {
     /// Creates the `DescribeInboundCrossClusterSearchConnectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3187,7 +3233,9 @@ impl DescribeInboundCrossClusterSearchConnectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3238,7 +3286,7 @@ impl std::error::Error for DescribeInboundCrossClusterSearchConnectionsError {
             Some(_inner)
             ,
             DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -3262,7 +3310,7 @@ pub enum DescribeOutboundCrossClusterSearchConnectionsErrorKind {
     /// <p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeOutboundCrossClusterSearchConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3301,7 +3349,9 @@ impl DescribeOutboundCrossClusterSearchConnectionsError {
     /// Creates the `DescribeOutboundCrossClusterSearchConnectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3310,7 +3360,9 @@ impl DescribeOutboundCrossClusterSearchConnectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(err.into()),
+            kind: DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3361,7 +3413,7 @@ impl std::error::Error for DescribeOutboundCrossClusterSearchConnectionsError {
             Some(_inner)
             ,
             DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -3391,7 +3443,7 @@ pub enum DescribePackagesErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePackagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3422,7 +3474,7 @@ impl DescribePackagesError {
     /// Creates the `DescribePackagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePackagesErrorKind::Unhandled(err.into()),
+            kind: DescribePackagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3431,7 +3483,7 @@ impl DescribePackagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePackagesErrorKind::Unhandled(err.into()),
+            kind: DescribePackagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3493,7 +3545,7 @@ impl std::error::Error for DescribePackagesError {
             DescribePackagesErrorKind::InternalException(_inner) => Some(_inner),
             DescribePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribePackagesErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribePackagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePackagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3520,7 +3572,7 @@ pub enum DescribeReservedElasticsearchInstanceOfferingsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReservedElasticsearchInstanceOfferingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3565,7 +3617,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsError {
     /// Creates the `DescribeReservedElasticsearchInstanceOfferingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(err.into()),
+            kind: DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3574,7 +3628,9 @@ impl DescribeReservedElasticsearchInstanceOfferingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(err.into()),
+            kind: DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3643,7 +3699,7 @@ impl std::error::Error for DescribeReservedElasticsearchInstanceOfferingsError {
                 _inner,
             ) => Some(_inner),
             DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -3671,7 +3727,7 @@ pub enum DescribeReservedElasticsearchInstancesErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeReservedElasticsearchInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3712,7 +3768,9 @@ impl DescribeReservedElasticsearchInstancesError {
     /// Creates the `DescribeReservedElasticsearchInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeReservedElasticsearchInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeReservedElasticsearchInstancesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3721,7 +3779,9 @@ impl DescribeReservedElasticsearchInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeReservedElasticsearchInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeReservedElasticsearchInstancesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3789,9 +3849,7 @@ impl std::error::Error for DescribeReservedElasticsearchInstancesError {
             DescribeReservedElasticsearchInstancesErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribeReservedElasticsearchInstancesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeReservedElasticsearchInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3822,7 +3880,7 @@ pub enum DissociatePackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DissociatePackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3854,7 +3912,7 @@ impl DissociatePackageError {
     /// Creates the `DissociatePackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DissociatePackageErrorKind::Unhandled(err.into()),
+            kind: DissociatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3863,7 +3921,7 @@ impl DissociatePackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DissociatePackageErrorKind::Unhandled(err.into()),
+            kind: DissociatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3930,7 +3988,7 @@ impl std::error::Error for DissociatePackageError {
             DissociatePackageErrorKind::InternalException(_inner) => Some(_inner),
             DissociatePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DissociatePackageErrorKind::ValidationException(_inner) => Some(_inner),
-            DissociatePackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DissociatePackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3959,7 +4017,7 @@ pub enum GetCompatibleElasticsearchVersionsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCompatibleElasticsearchVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3999,7 +4057,9 @@ impl GetCompatibleElasticsearchVersionsError {
     /// Creates the `GetCompatibleElasticsearchVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCompatibleElasticsearchVersionsErrorKind::Unhandled(err.into()),
+            kind: GetCompatibleElasticsearchVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4008,7 +4068,9 @@ impl GetCompatibleElasticsearchVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCompatibleElasticsearchVersionsErrorKind::Unhandled(err.into()),
+            kind: GetCompatibleElasticsearchVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4082,7 +4144,7 @@ impl std::error::Error for GetCompatibleElasticsearchVersionsError {
             GetCompatibleElasticsearchVersionsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetCompatibleElasticsearchVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCompatibleElasticsearchVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4111,7 +4173,7 @@ pub enum GetPackageVersionHistoryErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPackageVersionHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4142,7 +4204,9 @@ impl GetPackageVersionHistoryError {
     /// Creates the `GetPackageVersionHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPackageVersionHistoryErrorKind::Unhandled(err.into()),
+            kind: GetPackageVersionHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4151,7 +4215,9 @@ impl GetPackageVersionHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPackageVersionHistoryErrorKind::Unhandled(err.into()),
+            kind: GetPackageVersionHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4219,7 +4285,7 @@ impl std::error::Error for GetPackageVersionHistoryError {
             GetPackageVersionHistoryErrorKind::InternalException(_inner) => Some(_inner),
             GetPackageVersionHistoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetPackageVersionHistoryErrorKind::ValidationException(_inner) => Some(_inner),
-            GetPackageVersionHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPackageVersionHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4248,7 +4314,7 @@ pub enum GetUpgradeHistoryErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUpgradeHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4279,7 +4345,7 @@ impl GetUpgradeHistoryError {
     /// Creates the `GetUpgradeHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUpgradeHistoryErrorKind::Unhandled(err.into()),
+            kind: GetUpgradeHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4288,7 +4354,7 @@ impl GetUpgradeHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUpgradeHistoryErrorKind::Unhandled(err.into()),
+            kind: GetUpgradeHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4350,7 +4416,7 @@ impl std::error::Error for GetUpgradeHistoryError {
             GetUpgradeHistoryErrorKind::InternalException(_inner) => Some(_inner),
             GetUpgradeHistoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetUpgradeHistoryErrorKind::ValidationException(_inner) => Some(_inner),
-            GetUpgradeHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUpgradeHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4379,7 +4445,7 @@ pub enum GetUpgradeStatusErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUpgradeStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4410,7 +4476,7 @@ impl GetUpgradeStatusError {
     /// Creates the `GetUpgradeStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUpgradeStatusErrorKind::Unhandled(err.into()),
+            kind: GetUpgradeStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4419,7 +4485,7 @@ impl GetUpgradeStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUpgradeStatusErrorKind::Unhandled(err.into()),
+            kind: GetUpgradeStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4481,7 +4547,7 @@ impl std::error::Error for GetUpgradeStatusError {
             GetUpgradeStatusErrorKind::InternalException(_inner) => Some(_inner),
             GetUpgradeStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetUpgradeStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            GetUpgradeStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUpgradeStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4504,7 +4570,7 @@ pub enum ListDomainNamesErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4532,7 +4598,7 @@ impl ListDomainNamesError {
     /// Creates the `ListDomainNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainNamesErrorKind::Unhandled(err.into()),
+            kind: ListDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4541,7 +4607,7 @@ impl ListDomainNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainNamesErrorKind::Unhandled(err.into()),
+            kind: ListDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4579,7 +4645,7 @@ impl std::error::Error for ListDomainNamesError {
         match &self.kind {
             ListDomainNamesErrorKind::BaseException(_inner) => Some(_inner),
             ListDomainNamesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDomainNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4608,7 +4674,7 @@ pub enum ListDomainsForPackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainsForPackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4639,7 +4705,9 @@ impl ListDomainsForPackageError {
     /// Creates the `ListDomainsForPackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainsForPackageErrorKind::Unhandled(err.into()),
+            kind: ListDomainsForPackageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4648,7 +4716,9 @@ impl ListDomainsForPackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainsForPackageErrorKind::Unhandled(err.into()),
+            kind: ListDomainsForPackageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4713,7 +4783,7 @@ impl std::error::Error for ListDomainsForPackageError {
             ListDomainsForPackageErrorKind::InternalException(_inner) => Some(_inner),
             ListDomainsForPackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDomainsForPackageErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDomainsForPackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainsForPackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4740,7 +4810,7 @@ pub enum ListElasticsearchInstanceTypesErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListElasticsearchInstanceTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4775,7 +4845,9 @@ impl ListElasticsearchInstanceTypesError {
     /// Creates the `ListElasticsearchInstanceTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListElasticsearchInstanceTypesErrorKind::Unhandled(err.into()),
+            kind: ListElasticsearchInstanceTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4784,7 +4856,9 @@ impl ListElasticsearchInstanceTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListElasticsearchInstanceTypesErrorKind::Unhandled(err.into()),
+            kind: ListElasticsearchInstanceTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4846,7 +4920,7 @@ impl std::error::Error for ListElasticsearchInstanceTypesError {
                 Some(_inner)
             }
             ListElasticsearchInstanceTypesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListElasticsearchInstanceTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListElasticsearchInstanceTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4873,7 +4947,7 @@ pub enum ListElasticsearchVersionsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListElasticsearchVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4903,7 +4977,9 @@ impl ListElasticsearchVersionsError {
     /// Creates the `ListElasticsearchVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListElasticsearchVersionsErrorKind::Unhandled(err.into()),
+            kind: ListElasticsearchVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4912,7 +4988,9 @@ impl ListElasticsearchVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListElasticsearchVersionsErrorKind::Unhandled(err.into()),
+            kind: ListElasticsearchVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4972,7 +5050,7 @@ impl std::error::Error for ListElasticsearchVersionsError {
             ListElasticsearchVersionsErrorKind::InternalException(_inner) => Some(_inner),
             ListElasticsearchVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListElasticsearchVersionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListElasticsearchVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListElasticsearchVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5001,7 +5079,7 @@ pub enum ListPackagesForDomainErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPackagesForDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5032,7 +5110,9 @@ impl ListPackagesForDomainError {
     /// Creates the `ListPackagesForDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPackagesForDomainErrorKind::Unhandled(err.into()),
+            kind: ListPackagesForDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5041,7 +5121,9 @@ impl ListPackagesForDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPackagesForDomainErrorKind::Unhandled(err.into()),
+            kind: ListPackagesForDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5106,7 +5188,7 @@ impl std::error::Error for ListPackagesForDomainError {
             ListPackagesForDomainErrorKind::InternalException(_inner) => Some(_inner),
             ListPackagesForDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListPackagesForDomainErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPackagesForDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPackagesForDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5133,7 +5215,7 @@ pub enum ListTagsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5163,7 +5245,7 @@ impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5172,7 +5254,7 @@ impl ListTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5220,7 +5302,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::InternalException(_inner) => Some(_inner),
             ListTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5251,7 +5333,7 @@ pub enum PurchaseReservedElasticsearchInstanceOfferingErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PurchaseReservedElasticsearchInstanceOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5302,7 +5384,9 @@ impl PurchaseReservedElasticsearchInstanceOfferingError {
     /// Creates the `PurchaseReservedElasticsearchInstanceOfferingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(err.into()),
+            kind: PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5311,7 +5395,9 @@ impl PurchaseReservedElasticsearchInstanceOfferingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(err.into()),
+            kind: PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5402,7 +5488,7 @@ impl std::error::Error for PurchaseReservedElasticsearchInstanceOfferingError {
             Some(_inner)
             ,
             PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -5426,7 +5512,7 @@ pub enum RejectInboundCrossClusterSearchConnectionErrorKind {
     /// <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectInboundCrossClusterSearchConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5461,7 +5547,9 @@ impl RejectInboundCrossClusterSearchConnectionError {
     /// Creates the `RejectInboundCrossClusterSearchConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5470,7 +5558,9 @@ impl RejectInboundCrossClusterSearchConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(err.into()),
+            kind: RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5518,9 +5608,7 @@ impl std::error::Error for RejectInboundCrossClusterSearchConnectionError {
             RejectInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(
                 _inner,
             ) => Some(_inner),
-            RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5545,7 +5633,7 @@ pub enum RemoveTagsErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5574,7 +5662,7 @@ impl RemoveTagsError {
     /// Creates the `RemoveTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5583,7 +5671,7 @@ impl RemoveTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5626,7 +5714,7 @@ impl std::error::Error for RemoveTagsError {
             RemoveTagsErrorKind::BaseException(_inner) => Some(_inner),
             RemoveTagsErrorKind::InternalException(_inner) => Some(_inner),
             RemoveTagsErrorKind::ValidationException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5653,7 +5741,7 @@ pub enum StartElasticsearchServiceSoftwareUpdateErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartElasticsearchServiceSoftwareUpdateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5694,7 +5782,9 @@ impl StartElasticsearchServiceSoftwareUpdateError {
     /// Creates the `StartElasticsearchServiceSoftwareUpdateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(err.into()),
+            kind: StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5703,7 +5793,9 @@ impl StartElasticsearchServiceSoftwareUpdateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(err.into()),
+            kind: StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5769,9 +5861,7 @@ impl std::error::Error for StartElasticsearchServiceSoftwareUpdateError {
             StartElasticsearchServiceSoftwareUpdateErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5802,7 +5892,7 @@ pub enum UpdateElasticsearchDomainConfigErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateElasticsearchDomainConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5841,7 +5931,9 @@ impl UpdateElasticsearchDomainConfigError {
     /// Creates the `UpdateElasticsearchDomainConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateElasticsearchDomainConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateElasticsearchDomainConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5850,7 +5942,9 @@ impl UpdateElasticsearchDomainConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateElasticsearchDomainConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateElasticsearchDomainConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5930,7 +6024,7 @@ impl std::error::Error for UpdateElasticsearchDomainConfigError {
                 Some(_inner)
             }
             UpdateElasticsearchDomainConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateElasticsearchDomainConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateElasticsearchDomainConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5961,7 +6055,7 @@ pub enum UpdatePackageErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5993,7 +6087,7 @@ impl UpdatePackageError {
     /// Creates the `UpdatePackageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePackageErrorKind::Unhandled(err.into()),
+            kind: UpdatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6002,7 +6096,7 @@ impl UpdatePackageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePackageErrorKind::Unhandled(err.into()),
+            kind: UpdatePackageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6066,7 +6160,7 @@ impl std::error::Error for UpdatePackageError {
             UpdatePackageErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdatePackageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePackageErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePackageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6097,7 +6191,7 @@ pub enum UpgradeElasticsearchDomainErrorKind {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpgradeElasticsearchDomainError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6133,7 +6227,9 @@ impl UpgradeElasticsearchDomainError {
     /// Creates the `UpgradeElasticsearchDomainError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpgradeElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: UpgradeElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6142,7 +6238,9 @@ impl UpgradeElasticsearchDomainError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpgradeElasticsearchDomainErrorKind::Unhandled(err.into()),
+            kind: UpgradeElasticsearchDomainErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6220,7 +6318,32 @@ impl std::error::Error for UpgradeElasticsearchDomainError {
             }
             UpgradeElasticsearchDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpgradeElasticsearchDomainErrorKind::ValidationException(_inner) => Some(_inner),
-            UpgradeElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpgradeElasticsearchDomainErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

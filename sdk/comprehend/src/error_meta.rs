@@ -36,7 +36,7 @@ pub enum Error {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -75,9 +75,9 @@ where
                 crate::error::BatchDetectDominantLanguageErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::BatchDetectDominantLanguageErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::BatchDetectDominantLanguageErrorKind::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
-                crate::error::BatchDetectDominantLanguageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDetectDominantLanguageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -106,10 +106,10 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::BatchDetectEntitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -139,10 +139,10 @@ where
                     inner,
                 ) => Error::UnsupportedLanguageException(inner),
                 crate::error::BatchDetectKeyPhrasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -172,10 +172,10 @@ where
                     inner,
                 ) => Error::UnsupportedLanguageException(inner),
                 crate::error::BatchDetectSentimentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,10 +204,10 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::BatchDetectSyntaxErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -226,9 +226,9 @@ where
                 crate::error::BatchDetectTargetedSentimentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::BatchDetectTargetedSentimentErrorKind::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
                 crate::error::BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(inner) => Error::UnsupportedLanguageException(inner),
-                crate::error::BatchDetectTargetedSentimentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDetectTargetedSentimentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -254,10 +254,10 @@ where
                     Error::TextSizeLimitExceededException(inner)
                 }
                 crate::error::ClassifyDocumentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -283,10 +283,10 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::ContainsPiiEntitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +325,10 @@ where
                     inner,
                 ) => Error::UnsupportedLanguageException(inner),
                 crate::error::CreateDocumentClassifierErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -363,9 +363,11 @@ where
                 crate::error::CreateEndpointErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::CreateEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -404,10 +406,10 @@ where
                     inner,
                 ) => Error::UnsupportedLanguageException(inner),
                 crate::error::CreateEntityRecognizerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -440,10 +442,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteDocumentClassifierErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -469,9 +471,11 @@ where
                 crate::error::DeleteEndpointErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -504,10 +508,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteEntityRecognizerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -531,10 +535,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -556,9 +560,9 @@ where
                 crate::error::DescribeDocumentClassificationJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeDocumentClassificationJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::DescribeDocumentClassificationJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeDocumentClassificationJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDocumentClassificationJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -585,10 +589,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeDocumentClassifierErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -614,9 +618,9 @@ where
                 crate::error::DescribeDominantLanguageDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeDominantLanguageDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::DescribeDominantLanguageDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -642,10 +646,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -672,10 +676,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeEntitiesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -702,10 +706,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeEntityRecognizerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -732,10 +736,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeEventsDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,10 +770,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -791,9 +795,9 @@ where
                 crate::error::DescribePiiEntitiesDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribePiiEntitiesDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::DescribePiiEntitiesDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribePiiEntitiesDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePiiEntitiesDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -817,10 +821,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeResourcePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -847,10 +851,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeSentimentDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -876,9 +880,9 @@ where
                 crate::error::DescribeTargetedSentimentDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeTargetedSentimentDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -905,10 +909,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeTopicsDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -932,10 +936,10 @@ where
                     inner,
                 ) => Error::TextSizeLimitExceededException(inner),
                 crate::error::DetectDominantLanguageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -961,9 +965,11 @@ where
                 crate::error::DetectEntitiesErrorKind::UnsupportedLanguageException(inner) => {
                     Error::UnsupportedLanguageException(inner)
                 }
-                crate::error::DetectEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectEntitiesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -989,10 +995,10 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::DetectKeyPhrasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1018,10 +1024,10 @@ where
                     Error::UnsupportedLanguageException(inner)
                 }
                 crate::error::DetectPiiEntitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1044,9 +1050,11 @@ where
                 crate::error::DetectSentimentErrorKind::UnsupportedLanguageException(inner) => {
                     Error::UnsupportedLanguageException(inner)
                 }
-                crate::error::DetectSentimentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectSentimentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1069,9 +1077,11 @@ where
                 crate::error::DetectSyntaxErrorKind::UnsupportedLanguageException(inner) => {
                     Error::UnsupportedLanguageException(inner)
                 }
-                crate::error::DetectSyntaxErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectSyntaxErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1098,10 +1108,10 @@ where
                     inner,
                 ) => Error::UnsupportedLanguageException(inner),
                 crate::error::DetectTargetedSentimentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1139,9 +1149,11 @@ where
                 crate::error::ImportModelErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::ImportModelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ImportModelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1172,10 +1184,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListDocumentClassificationJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1202,10 +1214,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListDocumentClassifiersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1226,9 +1238,9 @@ where
                 crate::error::ListDocumentClassifierSummariesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ListDocumentClassifierSummariesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListDocumentClassifierSummariesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDocumentClassifierSummariesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1250,9 +1262,9 @@ where
                 crate::error::ListDominantLanguageDetectionJobsErrorKind::InvalidFilterException(inner) => Error::InvalidFilterException(inner),
                 crate::error::ListDominantLanguageDetectionJobsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListDominantLanguageDetectionJobsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListDominantLanguageDetectionJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDominantLanguageDetectionJobsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1272,9 +1284,11 @@ where
                 crate::error::ListEndpointsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListEndpointsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1301,10 +1315,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListEntitiesDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1331,10 +1345,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEntityRecognizersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1358,10 +1372,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListEntityRecognizerSummariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1388,10 +1402,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEventsDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1418,10 +1432,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListKeyPhrasesDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1448,10 +1462,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListPiiEntitiesDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1478,10 +1492,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::ListSentimentDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1504,10 +1518,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1530,9 +1544,9 @@ where
                 crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidFilterException(inner) => Error::InvalidFilterException(inner),
                 crate::error::ListTargetedSentimentDetectionJobsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListTargetedSentimentDetectionJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTargetedSentimentDetectionJobsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1559,10 +1573,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTopicsDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1585,10 +1599,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1613,9 +1627,9 @@ where
                 crate::error::StartDocumentClassificationJobErrorKind::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
                 crate::error::StartDocumentClassificationJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::StartDocumentClassificationJobErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::StartDocumentClassificationJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDocumentClassificationJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1638,9 +1652,9 @@ where
                 crate::error::StartDominantLanguageDetectionJobErrorKind::KmsKeyValidationException(inner) => Error::KmsKeyValidationException(inner),
                 crate::error::StartDominantLanguageDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::StartDominantLanguageDetectionJobErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::StartDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1676,10 +1690,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::StartEntitiesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1709,10 +1723,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::StartEventsDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1742,10 +1756,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::StartKeyPhrasesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1775,10 +1789,10 @@ where
                     inner,
                 ) => Error::TooManyTagsException(inner),
                 crate::error::StartPiiEntitiesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1808,10 +1822,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::StartSentimentDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1835,9 +1849,9 @@ where
                 crate::error::StartTargetedSentimentDetectionJobErrorKind::KmsKeyValidationException(inner) => Error::KmsKeyValidationException(inner),
                 crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-                crate::error::StartTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1867,10 +1881,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::StartTopicsDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1891,9 +1905,9 @@ where
                 crate::error::StopDominantLanguageDetectionJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::StopDominantLanguageDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StopDominantLanguageDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
-                crate::error::StopDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopDominantLanguageDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1917,10 +1931,10 @@ where
                     Error::JobNotFoundException(inner)
                 }
                 crate::error::StopEntitiesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1944,10 +1958,10 @@ where
                     Error::JobNotFoundException(inner)
                 }
                 crate::error::StopEventsDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1971,10 +1985,10 @@ where
                     Error::JobNotFoundException(inner)
                 }
                 crate::error::StopKeyPhrasesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1998,10 +2012,10 @@ where
                     Error::JobNotFoundException(inner)
                 }
                 crate::error::StopPiiEntitiesDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2025,10 +2039,10 @@ where
                     Error::JobNotFoundException(inner)
                 }
                 crate::error::StopSentimentDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2049,9 +2063,9 @@ where
                 crate::error::StopTargetedSentimentDetectionJobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::StopTargetedSentimentDetectionJobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
-                crate::error::StopTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopTargetedSentimentDetectionJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2073,9 +2087,9 @@ where
                 crate::error::StopTrainingDocumentClassifierErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::StopTrainingDocumentClassifierErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StopTrainingDocumentClassifierErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::StopTrainingDocumentClassifierErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopTrainingDocumentClassifierErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2102,10 +2116,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::StopTrainingEntityRecognizerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2131,9 +2145,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2159,9 +2175,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyTagKeysException(inner) => {
                     Error::TooManyTagKeysException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2193,9 +2211,11 @@ where
                 crate::error::UpdateEndpointErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

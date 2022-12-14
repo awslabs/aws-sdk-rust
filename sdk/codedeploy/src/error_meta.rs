@@ -259,7 +259,7 @@ pub enum Error {
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -394,9 +394,9 @@ where
                 crate::error::AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
                 crate::error::AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
                 crate::error::AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(inner) => Error::TagRequiredException(inner),
-                crate::error::AddTagsToOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddTagsToOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -416,9 +416,9 @@ where
                 crate::error::BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
                 crate::error::BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
-                crate::error::BatchGetApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -445,10 +445,10 @@ where
                     inner,
                 ) => Error::InvalidApplicationNameException(inner),
                 crate::error::BatchGetApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -469,9 +469,9 @@ where
                 crate::error::BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
                 crate::error::BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-                crate::error::BatchGetDeploymentGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetDeploymentGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +492,9 @@ where
                 crate::error::BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(inner) => Error::InvalidComputePlatformException(inner),
                 crate::error::BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
                 crate::error::BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-                crate::error::BatchGetDeploymentInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetDeploymentInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -517,10 +517,10 @@ where
                     Error::InvalidDeploymentIdException(inner)
                 }
                 crate::error::BatchGetDeploymentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -543,9 +543,9 @@ where
                 crate::error::BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(inner) => Error::InstanceDoesNotExistException(inner),
                 crate::error::BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
                 crate::error::BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(inner) => Error::InvalidDeploymentTargetIdException(inner),
-                crate::error::BatchGetDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -562,9 +562,9 @@ where
                 crate::error::BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(inner) => Error::BatchLimitExceededException(inner),
                 crate::error::BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
                 crate::error::BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-                crate::error::BatchGetOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -585,9 +585,9 @@ where
                 crate::error::ContinueDeploymentErrorKind::InvalidDeploymentStatusException(inner) => Error::InvalidDeploymentStatusException(inner),
                 crate::error::ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(inner) => Error::InvalidDeploymentWaitTypeException(inner),
                 crate::error::ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-                crate::error::ContinueDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ContinueDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -619,10 +619,10 @@ where
                     Error::InvalidTagsToAddException(inner)
                 }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -661,9 +661,9 @@ where
                 crate::error::CreateDeploymentErrorKind::RevisionDoesNotExistException(inner) => Error::RevisionDoesNotExistException(inner),
                 crate::error::CreateDeploymentErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
                 crate::error::CreateDeploymentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -684,9 +684,9 @@ where
                 crate::error::CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
                 crate::error::CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(inner) => Error::InvalidMinimumHealthyHostValueException(inner),
                 crate::error::CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
-                crate::error::CreateDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -733,9 +733,9 @@ where
                 crate::error::CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
                 crate::error::CreateDeploymentGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
-                crate::error::CreateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -758,10 +758,10 @@ where
                     Error::InvalidRoleException(inner)
                 }
                 crate::error::DeleteApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -779,9 +779,9 @@ where
                 crate::error::DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(inner) => Error::DeploymentConfigNameRequiredException(inner),
                 crate::error::DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
                 crate::error::DeleteDeploymentConfigErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-                crate::error::DeleteDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -800,9 +800,9 @@ where
                 crate::error::DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
                 crate::error::DeleteDeploymentGroupErrorKind::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-                crate::error::DeleteDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -821,9 +821,9 @@ where
                 crate::error::DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(inner) => Error::InvalidGitHubAccountTokenNameException(inner),
                 crate::error::DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::DeleteGitHubAccountTokenErrorKind::ResourceValidationException(inner) => Error::ResourceValidationException(inner),
-                crate::error::DeleteGitHubAccountTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGitHubAccountTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -838,10 +838,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteResourcesByExternalIdErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -857,9 +857,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
                 crate::error::DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-                crate::error::DeregisterOnPremisesInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterOnPremisesInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -879,9 +879,11 @@ where
                 crate::error::GetApplicationErrorKind::InvalidApplicationNameException(inner) => {
                     Error::InvalidApplicationNameException(inner)
                 }
-                crate::error::GetApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -914,10 +916,10 @@ where
                     Error::RevisionRequiredException(inner)
                 }
                 crate::error::GetApplicationRevisionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -937,9 +939,11 @@ where
                 crate::error::GetDeploymentErrorKind::InvalidDeploymentIdException(inner) => {
                     Error::InvalidDeploymentIdException(inner)
                 }
-                crate::error::GetDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -956,9 +960,9 @@ where
                 crate::error::GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(inner) => Error::DeploymentConfigNameRequiredException(inner),
                 crate::error::GetDeploymentConfigErrorKind::InvalidComputePlatformException(inner) => Error::InvalidComputePlatformException(inner),
                 crate::error::GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-                crate::error::GetDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -978,9 +982,9 @@ where
                 crate::error::GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
                 crate::error::GetDeploymentGroupErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-                crate::error::GetDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1016,10 +1020,10 @@ where
                     inner,
                 ) => Error::InvalidInstanceNameException(inner),
                 crate::error::GetDeploymentInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1040,9 +1044,9 @@ where
                 crate::error::GetDeploymentTargetErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
                 crate::error::GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(inner) => Error::InvalidDeploymentTargetIdException(inner),
                 crate::error::GetDeploymentTargetErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-                crate::error::GetDeploymentTargetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentTargetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1066,10 +1070,10 @@ where
                     inner,
                 ) => Error::InvalidInstanceNameException(inner),
                 crate::error::GetOnPremisesInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1093,9 +1097,9 @@ where
                 crate::error::ListApplicationRevisionsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListApplicationRevisionsErrorKind::InvalidSortByException(inner) => Error::InvalidSortByException(inner),
                 crate::error::ListApplicationRevisionsErrorKind::InvalidSortOrderException(inner) => Error::InvalidSortOrderException(inner),
-                crate::error::ListApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1112,10 +1116,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1133,10 +1137,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListDeploymentConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1163,10 +1167,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListDeploymentGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1190,9 +1194,9 @@ where
                 crate::error::ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(inner) => Error::InvalidInstanceTypeException(inner),
                 crate::error::ListDeploymentInstancesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(inner) => Error::InvalidTargetFilterNameException(inner),
-                crate::error::ListDeploymentInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDeploymentInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1236,9 +1240,11 @@ where
                 crate::error::ListDeploymentsErrorKind::InvalidTimeRangeException(inner) => {
                     Error::InvalidTimeRangeException(inner)
                 }
-                crate::error::ListDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDeploymentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1260,9 +1266,9 @@ where
                 crate::error::ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(inner) => Error::InvalidInstanceStatusException(inner),
                 crate::error::ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(inner) => Error::InvalidInstanceTypeException(inner),
                 crate::error::ListDeploymentTargetsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1279,9 +1285,9 @@ where
                 crate::error::ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
                 crate::error::ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(inner) => Error::ResourceValidationException(inner),
-                crate::error::ListGitHubAccountTokenNamesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGitHubAccountTokenNamesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1298,9 +1304,9 @@ where
                 crate::error::ListOnPremisesInstancesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(inner) => Error::InvalidRegistrationStatusException(inner),
                 crate::error::ListOnPremisesInstancesErrorKind::InvalidTagFilterException(inner) => Error::InvalidTagFilterException(inner),
-                crate::error::ListOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1323,10 +1329,10 @@ where
                     Error::ResourceArnRequiredException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1355,9 +1361,9 @@ where
                 crate::error::PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionStatusException(inner) => Error::InvalidLifecycleEventHookExecutionStatusException(inner),
                 crate::error::PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException(inner) => Error::LifecycleEventAlreadyCompletedException(inner),
                 crate::error::PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-                crate::error::PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1377,9 +1383,9 @@ where
                 crate::error::RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
                 crate::error::RegisterApplicationRevisionErrorKind::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
                 crate::error::RegisterApplicationRevisionErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
-                crate::error::RegisterApplicationRevisionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterApplicationRevisionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1403,9 +1409,9 @@ where
                 crate::error::RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(inner) => Error::InvalidIamUserArnException(inner),
                 crate::error::RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
                 crate::error::RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(inner) => Error::MultipleIamArnsProvidedException(inner),
-                crate::error::RegisterOnPremisesInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterOnPremisesInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1430,9 +1436,9 @@ where
                 crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
                 crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
                 crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(inner) => Error::TagRequiredException(inner),
-                crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1457,9 +1463,9 @@ where
                 crate::error::SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
                 crate::error::SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
                 crate::error::SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-                crate::error::SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1476,9 +1482,9 @@ where
                 crate::error::StopDeploymentErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
                 crate::error::StopDeploymentErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
                 crate::error::StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-                crate::error::StopDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1513,9 +1519,11 @@ where
                 crate::error::TagResourceErrorKind::TagRequiredException(inner) => {
                     Error::TagRequiredException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1550,9 +1558,11 @@ where
                 crate::error::UntagResourceErrorKind::TagRequiredException(inner) => {
                     Error::TagRequiredException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1578,10 +1588,10 @@ where
                     inner,
                 ) => Error::InvalidApplicationNameException(inner),
                 crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1626,9 +1636,9 @@ where
                 crate::error::UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
                 crate::error::UpdateDeploymentGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
-                crate::error::UpdateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

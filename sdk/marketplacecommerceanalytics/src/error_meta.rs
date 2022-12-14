@@ -6,7 +6,7 @@ pub enum Error {
     /// This exception is thrown when an internal service error occurs.
     MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26,9 +26,11 @@ where
                 crate::error::GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException(
                     inner,
                 ) => Error::MarketplaceCommerceAnalyticsException(inner),
-                crate::error::GenerateDataSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateDataSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -43,9 +45,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
-                crate::error::StartSupportDataExportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartSupportDataExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

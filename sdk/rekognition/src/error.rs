@@ -2234,7 +2234,7 @@ pub enum CompareFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompareFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2268,7 +2268,7 @@ impl CompareFacesError {
     /// Creates the `CompareFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CompareFacesErrorKind::Unhandled(err.into()),
+            kind: CompareFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2277,7 +2277,7 @@ impl CompareFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CompareFacesErrorKind::Unhandled(err.into()),
+            kind: CompareFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2357,7 +2357,7 @@ impl std::error::Error for CompareFacesError {
             CompareFacesErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             CompareFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             CompareFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CompareFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CompareFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2395,7 +2395,7 @@ pub enum CopyProjectVersionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyProjectVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2432,7 +2432,7 @@ impl CopyProjectVersionError {
     /// Creates the `CopyProjectVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CopyProjectVersionErrorKind::Unhandled(err.into()),
+            kind: CopyProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2441,7 +2441,7 @@ impl CopyProjectVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CopyProjectVersionErrorKind::Unhandled(err.into()),
+            kind: CopyProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2543,7 +2543,7 @@ impl std::error::Error for CopyProjectVersionError {
             CopyProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CopyProjectVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CopyProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CopyProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CopyProjectVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2577,7 +2577,7 @@ pub enum CreateCollectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2612,7 +2612,7 @@ impl CreateCollectionError {
     /// Creates the `CreateCollectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCollectionErrorKind::Unhandled(err.into()),
+            kind: CreateCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2621,7 +2621,7 @@ impl CreateCollectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCollectionErrorKind::Unhandled(err.into()),
+            kind: CreateCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2707,7 +2707,7 @@ impl std::error::Error for CreateCollectionError {
             CreateCollectionErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateCollectionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCollectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2744,7 +2744,7 @@ pub enum CreateDatasetErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2779,7 +2779,7 @@ impl CreateDatasetError {
     /// Creates the `CreateDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+            kind: CreateDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2788,7 +2788,7 @@ impl CreateDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+            kind: CreateDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2879,7 +2879,7 @@ impl std::error::Error for CreateDatasetError {
             CreateDatasetErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2912,7 +2912,7 @@ pub enum CreateProjectErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2945,7 +2945,7 @@ impl CreateProjectError {
     /// Creates the `CreateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2954,7 +2954,7 @@ impl CreateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3029,7 +3029,7 @@ impl std::error::Error for CreateProjectError {
             CreateProjectErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             CreateProjectErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3067,7 +3067,7 @@ pub enum CreateProjectVersionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProjectVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3104,7 +3104,9 @@ impl CreateProjectVersionError {
     /// Creates the `CreateProjectVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProjectVersionErrorKind::Unhandled(err.into()),
+            kind: CreateProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3113,7 +3115,9 @@ impl CreateProjectVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProjectVersionErrorKind::Unhandled(err.into()),
+            kind: CreateProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3215,7 +3219,7 @@ impl std::error::Error for CreateProjectVersionError {
             CreateProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateProjectVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProjectVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3251,7 +3255,7 @@ pub enum CreateStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3287,7 +3291,9 @@ impl CreateStreamProcessorError {
     /// Creates the `CreateStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: CreateStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3296,7 +3302,9 @@ impl CreateStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: CreateStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3390,7 +3398,7 @@ impl std::error::Error for CreateStreamProcessorError {
             CreateStreamProcessorErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateStreamProcessorErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3421,7 +3429,7 @@ pub enum DeleteCollectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3455,7 +3463,7 @@ impl DeleteCollectionError {
     /// Creates the `DeleteCollectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCollectionErrorKind::Unhandled(err.into()),
+            kind: DeleteCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3464,7 +3472,7 @@ impl DeleteCollectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCollectionErrorKind::Unhandled(err.into()),
+            kind: DeleteCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3542,7 +3550,7 @@ impl std::error::Error for DeleteCollectionError {
             }
             DeleteCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCollectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3577,7 +3585,7 @@ pub enum DeleteDatasetErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3611,7 +3619,7 @@ impl DeleteDatasetError {
     /// Creates the `DeleteDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            kind: DeleteDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3620,7 +3628,7 @@ impl DeleteDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            kind: DeleteDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3703,7 +3711,7 @@ impl std::error::Error for DeleteDatasetError {
             DeleteDatasetErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3734,7 +3742,7 @@ pub enum DeleteFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3766,7 +3774,7 @@ impl DeleteFacesError {
     /// Creates the `DeleteFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFacesErrorKind::Unhandled(err.into()),
+            kind: DeleteFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3775,7 +3783,7 @@ impl DeleteFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFacesErrorKind::Unhandled(err.into()),
+            kind: DeleteFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3842,7 +3850,7 @@ impl std::error::Error for DeleteFacesError {
             DeleteFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DeleteFacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3875,7 +3883,7 @@ pub enum DeleteProjectErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3908,7 +3916,7 @@ impl DeleteProjectError {
     /// Creates the `DeleteProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3917,7 +3925,7 @@ impl DeleteProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3992,7 +4000,7 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4025,7 +4033,7 @@ pub enum DeleteProjectPolicyErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4060,7 +4068,7 @@ impl DeleteProjectPolicyError {
     /// Creates the `DeleteProjectPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4069,7 +4077,7 @@ impl DeleteProjectPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4155,7 +4163,7 @@ impl std::error::Error for DeleteProjectPolicyError {
             }
             DeleteProjectPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProjectPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4188,7 +4196,7 @@ pub enum DeleteProjectVersionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4223,7 +4231,9 @@ impl DeleteProjectVersionError {
     /// Creates the `DeleteProjectVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4232,7 +4242,9 @@ impl DeleteProjectVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4318,7 +4330,7 @@ impl std::error::Error for DeleteProjectVersionError {
             DeleteProjectVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4351,7 +4363,7 @@ pub enum DeleteStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4386,7 +4398,9 @@ impl DeleteStreamProcessorError {
     /// Creates the `DeleteStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: DeleteStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4395,7 +4409,9 @@ impl DeleteStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: DeleteStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4481,7 +4497,7 @@ impl std::error::Error for DeleteStreamProcessorError {
             DeleteStreamProcessorErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteStreamProcessorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4512,7 +4528,7 @@ pub enum DescribeCollectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4546,7 +4562,7 @@ impl DescribeCollectionError {
     /// Creates the `DescribeCollectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCollectionErrorKind::Unhandled(err.into()),
+            kind: DescribeCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4555,7 +4571,7 @@ impl DescribeCollectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCollectionErrorKind::Unhandled(err.into()),
+            kind: DescribeCollectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4633,7 +4649,7 @@ impl std::error::Error for DescribeCollectionError {
             }
             DescribeCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCollectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4664,7 +4680,7 @@ pub enum DescribeDatasetErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4698,7 +4714,7 @@ impl DescribeDatasetError {
     /// Creates the `DescribeDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+            kind: DescribeDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4707,7 +4723,7 @@ impl DescribeDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+            kind: DescribeDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4779,7 +4795,7 @@ impl std::error::Error for DescribeDatasetError {
             }
             DescribeDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4810,7 +4826,7 @@ pub enum DescribeProjectsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4844,7 +4860,7 @@ impl DescribeProjectsError {
     /// Creates the `DescribeProjectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProjectsErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4853,7 +4869,7 @@ impl DescribeProjectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProjectsErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4931,7 +4947,7 @@ impl std::error::Error for DescribeProjectsError {
                 Some(_inner)
             }
             DescribeProjectsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProjectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4964,7 +4980,7 @@ pub enum DescribeProjectVersionsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProjectVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5001,7 +5017,9 @@ impl DescribeProjectVersionsError {
     /// Creates the `DescribeProjectVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProjectVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5010,7 +5028,9 @@ impl DescribeProjectVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProjectVersionsErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5098,7 +5118,7 @@ impl std::error::Error for DescribeProjectVersionsError {
             }
             DescribeProjectVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeProjectVersionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeProjectVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProjectVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5129,7 +5149,7 @@ pub enum DescribeStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5163,7 +5183,9 @@ impl DescribeStreamProcessorError {
     /// Creates the `DescribeStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5172,7 +5194,9 @@ impl DescribeStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5250,7 +5274,7 @@ impl std::error::Error for DescribeStreamProcessorError {
             }
             DescribeStreamProcessorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5291,7 +5315,7 @@ pub enum DetectCustomLabelsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectCustomLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5330,7 +5354,7 @@ impl DetectCustomLabelsError {
     /// Creates the `DetectCustomLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectCustomLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectCustomLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5339,7 +5363,7 @@ impl DetectCustomLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectCustomLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectCustomLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5457,7 +5481,7 @@ impl std::error::Error for DetectCustomLabelsError {
             DetectCustomLabelsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetectCustomLabelsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             DetectCustomLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectCustomLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectCustomLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5492,7 +5516,7 @@ pub enum DetectFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5526,7 +5550,7 @@ impl DetectFacesError {
     /// Creates the `DetectFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectFacesErrorKind::Unhandled(err.into()),
+            kind: DetectFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5535,7 +5559,7 @@ impl DetectFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectFacesErrorKind::Unhandled(err.into()),
+            kind: DetectFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5615,7 +5639,7 @@ impl std::error::Error for DetectFacesError {
             DetectFacesErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             DetectFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DetectFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5650,7 +5674,7 @@ pub enum DetectLabelsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5684,7 +5708,7 @@ impl DetectLabelsError {
     /// Creates the `DetectLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5693,7 +5717,7 @@ impl DetectLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5773,7 +5797,7 @@ impl std::error::Error for DetectLabelsError {
             DetectLabelsErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             DetectLabelsErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DetectLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5810,7 +5834,7 @@ pub enum DetectModerationLabelsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectModerationLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5849,7 +5873,9 @@ impl DetectModerationLabelsError {
     /// Creates the `DetectModerationLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectModerationLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectModerationLabelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5858,7 +5884,9 @@ impl DetectModerationLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectModerationLabelsErrorKind::Unhandled(err.into()),
+            kind: DetectModerationLabelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5962,7 +5990,7 @@ impl std::error::Error for DetectModerationLabelsError {
                 Some(_inner)
             }
             DetectModerationLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectModerationLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectModerationLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5997,7 +6025,7 @@ pub enum DetectProtectiveEquipmentErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectProtectiveEquipmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6035,7 +6063,9 @@ impl DetectProtectiveEquipmentError {
     /// Creates the `DetectProtectiveEquipmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectProtectiveEquipmentErrorKind::Unhandled(err.into()),
+            kind: DetectProtectiveEquipmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6044,7 +6074,9 @@ impl DetectProtectiveEquipmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectProtectiveEquipmentErrorKind::Unhandled(err.into()),
+            kind: DetectProtectiveEquipmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6138,7 +6170,7 @@ impl std::error::Error for DetectProtectiveEquipmentError {
                 Some(_inner)
             }
             DetectProtectiveEquipmentErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectProtectiveEquipmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectProtectiveEquipmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6173,7 +6205,7 @@ pub enum DetectTextErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6207,7 +6239,7 @@ impl DetectTextError {
     /// Creates the `DetectTextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectTextErrorKind::Unhandled(err.into()),
+            kind: DetectTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6216,7 +6248,7 @@ impl DetectTextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectTextErrorKind::Unhandled(err.into()),
+            kind: DetectTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6293,7 +6325,7 @@ impl std::error::Error for DetectTextError {
             DetectTextErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
             DetectTextErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DetectTextErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DetectTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6326,7 +6358,7 @@ pub enum DistributeDatasetEntriesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DistributeDatasetEntriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6361,7 +6393,9 @@ impl DistributeDatasetEntriesError {
     /// Creates the `DistributeDatasetEntriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DistributeDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: DistributeDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6370,7 +6404,9 @@ impl DistributeDatasetEntriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DistributeDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: DistributeDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6456,7 +6492,7 @@ impl std::error::Error for DistributeDatasetEntriesError {
             DistributeDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DistributeDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             DistributeDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DistributeDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DistributeDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6487,7 +6523,7 @@ pub enum GetCelebrityInfoErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCelebrityInfoError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6521,7 +6557,7 @@ impl GetCelebrityInfoError {
     /// Creates the `GetCelebrityInfoError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCelebrityInfoErrorKind::Unhandled(err.into()),
+            kind: GetCelebrityInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6530,7 +6566,7 @@ impl GetCelebrityInfoError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCelebrityInfoErrorKind::Unhandled(err.into()),
+            kind: GetCelebrityInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6608,7 +6644,7 @@ impl std::error::Error for GetCelebrityInfoError {
             }
             GetCelebrityInfoErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCelebrityInfoErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetCelebrityInfoErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCelebrityInfoErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6641,7 +6677,7 @@ pub enum GetCelebrityRecognitionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCelebrityRecognitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6678,7 +6714,9 @@ impl GetCelebrityRecognitionError {
     /// Creates the `GetCelebrityRecognitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCelebrityRecognitionErrorKind::Unhandled(err.into()),
+            kind: GetCelebrityRecognitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6687,7 +6725,9 @@ impl GetCelebrityRecognitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCelebrityRecognitionErrorKind::Unhandled(err.into()),
+            kind: GetCelebrityRecognitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6775,7 +6815,7 @@ impl std::error::Error for GetCelebrityRecognitionError {
             }
             GetCelebrityRecognitionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCelebrityRecognitionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetCelebrityRecognitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCelebrityRecognitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6808,7 +6848,7 @@ pub enum GetContentModerationErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContentModerationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6843,7 +6883,9 @@ impl GetContentModerationError {
     /// Creates the `GetContentModerationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContentModerationErrorKind::Unhandled(err.into()),
+            kind: GetContentModerationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6852,7 +6894,9 @@ impl GetContentModerationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContentModerationErrorKind::Unhandled(err.into()),
+            kind: GetContentModerationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6938,7 +6982,7 @@ impl std::error::Error for GetContentModerationError {
             }
             GetContentModerationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetContentModerationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetContentModerationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContentModerationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6971,7 +7015,7 @@ pub enum GetFaceDetectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFaceDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7006,7 +7050,7 @@ impl GetFaceDetectionError {
     /// Creates the `GetFaceDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFaceDetectionErrorKind::Unhandled(err.into()),
+            kind: GetFaceDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7015,7 +7059,7 @@ impl GetFaceDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFaceDetectionErrorKind::Unhandled(err.into()),
+            kind: GetFaceDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7101,7 +7145,7 @@ impl std::error::Error for GetFaceDetectionError {
             }
             GetFaceDetectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFaceDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetFaceDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFaceDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7134,7 +7178,7 @@ pub enum GetFaceSearchErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFaceSearchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7167,7 +7211,7 @@ impl GetFaceSearchError {
     /// Creates the `GetFaceSearchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFaceSearchErrorKind::Unhandled(err.into()),
+            kind: GetFaceSearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7176,7 +7220,7 @@ impl GetFaceSearchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFaceSearchErrorKind::Unhandled(err.into()),
+            kind: GetFaceSearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7251,7 +7295,7 @@ impl std::error::Error for GetFaceSearchError {
             GetFaceSearchErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             GetFaceSearchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFaceSearchErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetFaceSearchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFaceSearchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7284,7 +7328,7 @@ pub enum GetLabelDetectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLabelDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7319,7 +7363,7 @@ impl GetLabelDetectionError {
     /// Creates the `GetLabelDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLabelDetectionErrorKind::Unhandled(err.into()),
+            kind: GetLabelDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7328,7 +7372,7 @@ impl GetLabelDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLabelDetectionErrorKind::Unhandled(err.into()),
+            kind: GetLabelDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7414,7 +7458,7 @@ impl std::error::Error for GetLabelDetectionError {
             }
             GetLabelDetectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLabelDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLabelDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLabelDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7447,7 +7491,7 @@ pub enum GetPersonTrackingErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPersonTrackingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7482,7 +7526,7 @@ impl GetPersonTrackingError {
     /// Creates the `GetPersonTrackingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPersonTrackingErrorKind::Unhandled(err.into()),
+            kind: GetPersonTrackingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7491,7 +7535,7 @@ impl GetPersonTrackingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPersonTrackingErrorKind::Unhandled(err.into()),
+            kind: GetPersonTrackingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7577,7 +7621,7 @@ impl std::error::Error for GetPersonTrackingError {
             }
             GetPersonTrackingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetPersonTrackingErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetPersonTrackingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPersonTrackingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7610,7 +7654,7 @@ pub enum GetSegmentDetectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSegmentDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7645,7 +7689,7 @@ impl GetSegmentDetectionError {
     /// Creates the `GetSegmentDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSegmentDetectionErrorKind::Unhandled(err.into()),
+            kind: GetSegmentDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7654,7 +7698,7 @@ impl GetSegmentDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSegmentDetectionErrorKind::Unhandled(err.into()),
+            kind: GetSegmentDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7740,7 +7784,7 @@ impl std::error::Error for GetSegmentDetectionError {
             }
             GetSegmentDetectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSegmentDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetSegmentDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSegmentDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7773,7 +7817,7 @@ pub enum GetTextDetectionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7808,7 +7852,7 @@ impl GetTextDetectionError {
     /// Creates the `GetTextDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTextDetectionErrorKind::Unhandled(err.into()),
+            kind: GetTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7817,7 +7861,7 @@ impl GetTextDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTextDetectionErrorKind::Unhandled(err.into()),
+            kind: GetTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7903,7 +7947,7 @@ impl std::error::Error for GetTextDetectionError {
             }
             GetTextDetectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7943,7 +7987,7 @@ pub enum IndexFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IndexFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7979,7 +8023,7 @@ impl IndexFacesError {
     /// Creates the `IndexFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: IndexFacesErrorKind::Unhandled(err.into()),
+            kind: IndexFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7988,7 +8032,7 @@ impl IndexFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: IndexFacesErrorKind::Unhandled(err.into()),
+            kind: IndexFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8081,7 +8125,7 @@ impl std::error::Error for IndexFacesError {
             IndexFacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             IndexFacesErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             IndexFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            IndexFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            IndexFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8114,7 +8158,7 @@ pub enum ListCollectionsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCollectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8149,7 +8193,7 @@ impl ListCollectionsError {
     /// Creates the `ListCollectionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCollectionsErrorKind::Unhandled(err.into()),
+            kind: ListCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8158,7 +8202,7 @@ impl ListCollectionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCollectionsErrorKind::Unhandled(err.into()),
+            kind: ListCollectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8238,7 +8282,7 @@ impl std::error::Error for ListCollectionsError {
             }
             ListCollectionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListCollectionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListCollectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCollectionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8275,7 +8319,7 @@ pub enum ListDatasetEntriesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDatasetEntriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8312,7 +8356,7 @@ impl ListDatasetEntriesError {
     /// Creates the `ListDatasetEntriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: ListDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8321,7 +8365,7 @@ impl ListDatasetEntriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: ListDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8423,7 +8467,7 @@ impl std::error::Error for ListDatasetEntriesError {
             ListDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             ListDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8460,7 +8504,7 @@ pub enum ListDatasetLabelsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDatasetLabelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8497,7 +8541,7 @@ impl ListDatasetLabelsError {
     /// Creates the `ListDatasetLabelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDatasetLabelsErrorKind::Unhandled(err.into()),
+            kind: ListDatasetLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8506,7 +8550,7 @@ impl ListDatasetLabelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDatasetLabelsErrorKind::Unhandled(err.into()),
+            kind: ListDatasetLabelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8608,7 +8652,7 @@ impl std::error::Error for ListDatasetLabelsError {
             ListDatasetLabelsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDatasetLabelsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             ListDatasetLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDatasetLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDatasetLabelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8641,7 +8685,7 @@ pub enum ListFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8674,7 +8718,7 @@ impl ListFacesError {
     /// Creates the `ListFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFacesErrorKind::Unhandled(err.into()),
+            kind: ListFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8683,7 +8727,7 @@ impl ListFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFacesErrorKind::Unhandled(err.into()),
+            kind: ListFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8752,7 +8796,7 @@ impl std::error::Error for ListFacesError {
             ListFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             ListFacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8785,7 +8829,7 @@ pub enum ListProjectPoliciesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProjectPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8820,7 +8864,7 @@ impl ListProjectPoliciesError {
     /// Creates the `ListProjectPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProjectPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListProjectPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8829,7 +8873,7 @@ impl ListProjectPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProjectPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListProjectPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8915,7 +8959,7 @@ impl std::error::Error for ListProjectPoliciesError {
             }
             ListProjectPoliciesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListProjectPoliciesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListProjectPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProjectPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8946,7 +8990,7 @@ pub enum ListStreamProcessorsErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStreamProcessorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8980,7 +9024,9 @@ impl ListStreamProcessorsError {
     /// Creates the `ListStreamProcessorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListStreamProcessorsErrorKind::Unhandled(err.into()),
+            kind: ListStreamProcessorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8989,7 +9035,9 @@ impl ListStreamProcessorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListStreamProcessorsErrorKind::Unhandled(err.into()),
+            kind: ListStreamProcessorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9067,7 +9115,7 @@ impl std::error::Error for ListStreamProcessorsError {
                 Some(_inner)
             }
             ListStreamProcessorsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListStreamProcessorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListStreamProcessorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9098,7 +9146,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9132,7 +9180,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9141,7 +9189,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9219,7 +9267,7 @@ impl std::error::Error for ListTagsForResourceError {
             }
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9261,7 +9309,7 @@ pub enum PutProjectPolicyErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutProjectPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9300,7 +9348,7 @@ impl PutProjectPolicyError {
     /// Creates the `PutProjectPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutProjectPolicyErrorKind::Unhandled(err.into()),
+            kind: PutProjectPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9309,7 +9357,7 @@ impl PutProjectPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutProjectPolicyErrorKind::Unhandled(err.into()),
+            kind: PutProjectPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9427,7 +9475,7 @@ impl std::error::Error for PutProjectPolicyError {
             PutProjectPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutProjectPolicyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             PutProjectPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutProjectPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9462,7 +9510,7 @@ pub enum RecognizeCelebritiesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RecognizeCelebritiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9498,7 +9546,9 @@ impl RecognizeCelebritiesError {
     /// Creates the `RecognizeCelebritiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RecognizeCelebritiesErrorKind::Unhandled(err.into()),
+            kind: RecognizeCelebritiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9507,7 +9557,9 @@ impl RecognizeCelebritiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RecognizeCelebritiesErrorKind::Unhandled(err.into()),
+            kind: RecognizeCelebritiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9601,7 +9653,7 @@ impl std::error::Error for RecognizeCelebritiesError {
                 Some(_inner)
             }
             RecognizeCelebritiesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RecognizeCelebritiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RecognizeCelebritiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9632,7 +9684,7 @@ pub enum SearchFacesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchFacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9664,7 +9716,7 @@ impl SearchFacesError {
     /// Creates the `SearchFacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchFacesErrorKind::Unhandled(err.into()),
+            kind: SearchFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9673,7 +9725,7 @@ impl SearchFacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchFacesErrorKind::Unhandled(err.into()),
+            kind: SearchFacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9740,7 +9792,7 @@ impl std::error::Error for SearchFacesError {
             SearchFacesErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             SearchFacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchFacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SearchFacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchFacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9777,7 +9829,7 @@ pub enum SearchFacesByImageErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchFacesByImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9814,7 +9866,7 @@ impl SearchFacesByImageError {
     /// Creates the `SearchFacesByImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SearchFacesByImageErrorKind::Unhandled(err.into()),
+            kind: SearchFacesByImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9823,7 +9875,7 @@ impl SearchFacesByImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SearchFacesByImageErrorKind::Unhandled(err.into()),
+            kind: SearchFacesByImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9925,7 +9977,7 @@ impl std::error::Error for SearchFacesByImageError {
             }
             SearchFacesByImageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SearchFacesByImageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SearchFacesByImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SearchFacesByImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9962,7 +10014,7 @@ pub enum StartCelebrityRecognitionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartCelebrityRecognitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10001,7 +10053,9 @@ impl StartCelebrityRecognitionError {
     /// Creates the `StartCelebrityRecognitionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartCelebrityRecognitionErrorKind::Unhandled(err.into()),
+            kind: StartCelebrityRecognitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10010,7 +10064,9 @@ impl StartCelebrityRecognitionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartCelebrityRecognitionErrorKind::Unhandled(err.into()),
+            kind: StartCelebrityRecognitionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10114,7 +10170,7 @@ impl std::error::Error for StartCelebrityRecognitionError {
             }
             StartCelebrityRecognitionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartCelebrityRecognitionErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartCelebrityRecognitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartCelebrityRecognitionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10151,7 +10207,7 @@ pub enum StartContentModerationErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartContentModerationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10190,7 +10246,9 @@ impl StartContentModerationError {
     /// Creates the `StartContentModerationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartContentModerationErrorKind::Unhandled(err.into()),
+            kind: StartContentModerationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10199,7 +10257,9 @@ impl StartContentModerationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartContentModerationErrorKind::Unhandled(err.into()),
+            kind: StartContentModerationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10303,7 +10363,7 @@ impl std::error::Error for StartContentModerationError {
             }
             StartContentModerationErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartContentModerationErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartContentModerationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartContentModerationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10340,7 +10400,7 @@ pub enum StartFaceDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFaceDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10379,7 +10439,7 @@ impl StartFaceDetectionError {
     /// Creates the `StartFaceDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFaceDetectionErrorKind::Unhandled(err.into()),
+            kind: StartFaceDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10388,7 +10448,7 @@ impl StartFaceDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFaceDetectionErrorKind::Unhandled(err.into()),
+            kind: StartFaceDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10492,7 +10552,7 @@ impl std::error::Error for StartFaceDetectionError {
             }
             StartFaceDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartFaceDetectionErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartFaceDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFaceDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10531,7 +10591,7 @@ pub enum StartFaceSearchErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFaceSearchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10569,7 +10629,7 @@ impl StartFaceSearchError {
     /// Creates the `StartFaceSearchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFaceSearchErrorKind::Unhandled(err.into()),
+            kind: StartFaceSearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10578,7 +10638,7 @@ impl StartFaceSearchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFaceSearchErrorKind::Unhandled(err.into()),
+            kind: StartFaceSearchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10682,7 +10742,7 @@ impl std::error::Error for StartFaceSearchError {
             StartFaceSearchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartFaceSearchErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartFaceSearchErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartFaceSearchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFaceSearchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10719,7 +10779,7 @@ pub enum StartLabelDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartLabelDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10758,7 +10818,7 @@ impl StartLabelDetectionError {
     /// Creates the `StartLabelDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartLabelDetectionErrorKind::Unhandled(err.into()),
+            kind: StartLabelDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10767,7 +10827,7 @@ impl StartLabelDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartLabelDetectionErrorKind::Unhandled(err.into()),
+            kind: StartLabelDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10871,7 +10931,7 @@ impl std::error::Error for StartLabelDetectionError {
             }
             StartLabelDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartLabelDetectionErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartLabelDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartLabelDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10908,7 +10968,7 @@ pub enum StartPersonTrackingErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartPersonTrackingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10947,7 +11007,7 @@ impl StartPersonTrackingError {
     /// Creates the `StartPersonTrackingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartPersonTrackingErrorKind::Unhandled(err.into()),
+            kind: StartPersonTrackingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10956,7 +11016,7 @@ impl StartPersonTrackingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartPersonTrackingErrorKind::Unhandled(err.into()),
+            kind: StartPersonTrackingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11060,7 +11120,7 @@ impl std::error::Error for StartPersonTrackingError {
             }
             StartPersonTrackingErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartPersonTrackingErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartPersonTrackingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartPersonTrackingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11095,7 +11155,7 @@ pub enum StartProjectVersionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartProjectVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11131,7 +11191,7 @@ impl StartProjectVersionError {
     /// Creates the `StartProjectVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartProjectVersionErrorKind::Unhandled(err.into()),
+            kind: StartProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11140,7 +11200,7 @@ impl StartProjectVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartProjectVersionErrorKind::Unhandled(err.into()),
+            kind: StartProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11234,7 +11294,7 @@ impl std::error::Error for StartProjectVersionError {
             StartProjectVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StartProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartProjectVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11271,7 +11331,7 @@ pub enum StartSegmentDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSegmentDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11310,7 +11370,9 @@ impl StartSegmentDetectionError {
     /// Creates the `StartSegmentDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSegmentDetectionErrorKind::Unhandled(err.into()),
+            kind: StartSegmentDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11319,7 +11381,9 @@ impl StartSegmentDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSegmentDetectionErrorKind::Unhandled(err.into()),
+            kind: StartSegmentDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11423,7 +11487,7 @@ impl std::error::Error for StartSegmentDetectionError {
             }
             StartSegmentDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartSegmentDetectionErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartSegmentDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSegmentDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11456,7 +11520,7 @@ pub enum StartStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11491,7 +11555,9 @@ impl StartStreamProcessorError {
     /// Creates the `StartStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: StartStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11500,7 +11566,9 @@ impl StartStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: StartStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11586,7 +11654,7 @@ impl std::error::Error for StartStreamProcessorError {
             StartStreamProcessorErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StartStreamProcessorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11623,7 +11691,7 @@ pub enum StartTextDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11662,7 +11730,7 @@ impl StartTextDetectionError {
     /// Creates the `StartTextDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartTextDetectionErrorKind::Unhandled(err.into()),
+            kind: StartTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11671,7 +11739,7 @@ impl StartTextDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartTextDetectionErrorKind::Unhandled(err.into()),
+            kind: StartTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11775,7 +11843,7 @@ impl std::error::Error for StartTextDetectionError {
             }
             StartTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartTextDetectionErrorKind::VideoTooLargeException(_inner) => Some(_inner),
-            StartTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11808,7 +11876,7 @@ pub enum StopProjectVersionErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopProjectVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11843,7 +11911,7 @@ impl StopProjectVersionError {
     /// Creates the `StopProjectVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopProjectVersionErrorKind::Unhandled(err.into()),
+            kind: StopProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11852,7 +11920,7 @@ impl StopProjectVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopProjectVersionErrorKind::Unhandled(err.into()),
+            kind: StopProjectVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11938,7 +12006,7 @@ impl std::error::Error for StopProjectVersionError {
             StopProjectVersionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StopProjectVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopProjectVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopProjectVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopProjectVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11971,7 +12039,7 @@ pub enum StopStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12006,7 +12074,7 @@ impl StopStreamProcessorError {
     /// Creates the `StopStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: StopStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12015,7 +12083,7 @@ impl StopStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: StopStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12101,7 +12169,7 @@ impl std::error::Error for StopStreamProcessorError {
             StopStreamProcessorErrorKind::ResourceInUseException(_inner) => Some(_inner),
             StopStreamProcessorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12135,7 +12203,7 @@ pub enum TagResourceErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12168,7 +12236,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12177,7 +12245,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12252,7 +12320,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12283,7 +12351,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12315,7 +12383,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12324,7 +12392,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12391,7 +12459,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12426,7 +12494,7 @@ pub enum UpdateDatasetEntriesErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDatasetEntriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12462,7 +12530,9 @@ impl UpdateDatasetEntriesError {
     /// Creates the `UpdateDatasetEntriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: UpdateDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12471,7 +12541,9 @@ impl UpdateDatasetEntriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDatasetEntriesErrorKind::Unhandled(err.into()),
+            kind: UpdateDatasetEntriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12565,7 +12637,7 @@ impl std::error::Error for UpdateDatasetEntriesError {
             UpdateDatasetEntriesErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12596,7 +12668,7 @@ pub enum UpdateStreamProcessorErrorKind {
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateStreamProcessorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12630,7 +12702,9 @@ impl UpdateStreamProcessorError {
     /// Creates the `UpdateStreamProcessorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: UpdateStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12639,7 +12713,9 @@ impl UpdateStreamProcessorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateStreamProcessorErrorKind::Unhandled(err.into()),
+            kind: UpdateStreamProcessorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12717,7 +12793,32 @@ impl std::error::Error for UpdateStreamProcessorError {
             }
             UpdateStreamProcessorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateStreamProcessorErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateStreamProcessorErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

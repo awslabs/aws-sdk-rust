@@ -673,7 +673,7 @@ pub enum CompleteSnapshotErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompleteSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -705,7 +705,7 @@ impl CompleteSnapshotError {
     /// Creates the `CompleteSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CompleteSnapshotErrorKind::Unhandled(err.into()),
+            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -714,7 +714,7 @@ impl CompleteSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CompleteSnapshotErrorKind::Unhandled(err.into()),
+            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -790,7 +790,7 @@ impl std::error::Error for CompleteSnapshotError {
             CompleteSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CompleteSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CompleteSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CompleteSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -821,7 +821,7 @@ pub enum GetSnapshotBlockErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSnapshotBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -853,7 +853,7 @@ impl GetSnapshotBlockError {
     /// Creates the `GetSnapshotBlockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSnapshotBlockErrorKind::Unhandled(err.into()),
+            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -862,7 +862,7 @@ impl GetSnapshotBlockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSnapshotBlockErrorKind::Unhandled(err.into()),
+            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -938,7 +938,7 @@ impl std::error::Error for GetSnapshotBlockError {
             GetSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             GetSnapshotBlockErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -969,7 +969,7 @@ pub enum ListChangedBlocksErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChangedBlocksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1001,7 +1001,7 @@ impl ListChangedBlocksError {
     /// Creates the `ListChangedBlocksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChangedBlocksErrorKind::Unhandled(err.into()),
+            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1010,7 +1010,7 @@ impl ListChangedBlocksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChangedBlocksErrorKind::Unhandled(err.into()),
+            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1086,7 +1086,7 @@ impl std::error::Error for ListChangedBlocksError {
             ListChangedBlocksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListChangedBlocksErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListChangedBlocksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChangedBlocksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1117,7 +1117,7 @@ pub enum ListSnapshotBlocksErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSnapshotBlocksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1149,7 +1149,7 @@ impl ListSnapshotBlocksError {
     /// Creates the `ListSnapshotBlocksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSnapshotBlocksErrorKind::Unhandled(err.into()),
+            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1158,7 +1158,7 @@ impl ListSnapshotBlocksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSnapshotBlocksErrorKind::Unhandled(err.into()),
+            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1234,7 +1234,7 @@ impl std::error::Error for ListSnapshotBlocksError {
             ListSnapshotBlocksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListSnapshotBlocksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSnapshotBlocksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1265,7 +1265,7 @@ pub enum PutSnapshotBlockErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSnapshotBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1297,7 +1297,7 @@ impl PutSnapshotBlockError {
     /// Creates the `PutSnapshotBlockError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSnapshotBlockErrorKind::Unhandled(err.into()),
+            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1306,7 +1306,7 @@ impl PutSnapshotBlockError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSnapshotBlockErrorKind::Unhandled(err.into()),
+            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1382,7 +1382,7 @@ impl std::error::Error for PutSnapshotBlockError {
             PutSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             PutSnapshotBlockErrorKind::ValidationException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1417,7 +1417,7 @@ pub enum StartSnapshotErrorKind {
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1451,7 +1451,7 @@ impl StartSnapshotError {
     /// Creates the `StartSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSnapshotErrorKind::Unhandled(err.into()),
+            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1460,7 +1460,7 @@ impl StartSnapshotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSnapshotErrorKind::Unhandled(err.into()),
+            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1543,7 +1543,32 @@ impl std::error::Error for StartSnapshotError {
             StartSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

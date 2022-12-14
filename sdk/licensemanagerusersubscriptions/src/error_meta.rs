@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,11 @@ where
                 crate::error::AssociateUserErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::AssociateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -85,9 +87,9 @@ where
                 crate::error::DeregisterIdentityProviderErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::DeregisterIdentityProviderErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeregisterIdentityProviderErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeregisterIdentityProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterIdentityProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,10 +124,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociateUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -161,10 +163,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListIdentityProvidersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -196,9 +198,11 @@ where
                 crate::error::ListInstancesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -234,10 +238,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListProductSubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -273,10 +277,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListUserAssociationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -312,10 +316,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::RegisterIdentityProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -351,10 +355,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartProductSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -390,10 +394,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StopProductSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

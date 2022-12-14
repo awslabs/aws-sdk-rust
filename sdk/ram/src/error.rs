@@ -1472,7 +1472,7 @@ pub enum AcceptResourceShareInvitationErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptResourceShareInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,7 +1533,9 @@ impl AcceptResourceShareInvitationError {
     /// Creates the `AcceptResourceShareInvitationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AcceptResourceShareInvitationErrorKind::Unhandled(err.into()),
+            kind: AcceptResourceShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1542,7 +1544,9 @@ impl AcceptResourceShareInvitationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AcceptResourceShareInvitationErrorKind::Unhandled(err.into()),
+            kind: AcceptResourceShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1675,7 +1679,7 @@ impl std::error::Error for AcceptResourceShareInvitationError {
             Some(_inner)
             ,
             AcceptResourceShareInvitationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -1717,7 +1721,7 @@ pub enum AssociateResourceShareErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateResourceShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1762,7 +1766,9 @@ impl AssociateResourceShareError {
     /// Creates the `AssociateResourceShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateResourceShareErrorKind::Unhandled(err.into()),
+            kind: AssociateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1771,7 +1777,9 @@ impl AssociateResourceShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateResourceShareErrorKind::Unhandled(err.into()),
+            kind: AssociateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1893,7 +1901,7 @@ impl std::error::Error for AssociateResourceShareError {
             AssociateResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             AssociateResourceShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            AssociateResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateResourceShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1926,7 +1934,7 @@ pub enum AssociateResourceSharePermissionErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateResourceSharePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1976,7 +1984,9 @@ impl AssociateResourceSharePermissionError {
     /// Creates the `AssociateResourceSharePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateResourceSharePermissionErrorKind::Unhandled(err.into()),
+            kind: AssociateResourceSharePermissionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1985,7 +1995,9 @@ impl AssociateResourceSharePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateResourceSharePermissionErrorKind::Unhandled(err.into()),
+            kind: AssociateResourceSharePermissionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2083,7 +2095,7 @@ impl std::error::Error for AssociateResourceSharePermissionError {
             AssociateResourceSharePermissionErrorKind::UnknownResourceException(_inner) => {
                 Some(_inner)
             }
-            AssociateResourceSharePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateResourceSharePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2124,7 +2136,7 @@ pub enum CreateResourceShareErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateResourceShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2165,7 +2177,7 @@ impl CreateResourceShareError {
     /// Creates the `CreateResourceShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateResourceShareErrorKind::Unhandled(err.into()),
+            kind: CreateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2174,7 +2186,7 @@ impl CreateResourceShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateResourceShareErrorKind::Unhandled(err.into()),
+            kind: CreateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2294,7 +2306,7 @@ impl std::error::Error for CreateResourceShareError {
             CreateResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateResourceShareErrorKind::TagPolicyViolationException(_inner) => Some(_inner),
             CreateResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            CreateResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateResourceShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2331,7 +2343,7 @@ pub enum DeleteResourceShareErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourceShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2368,7 +2380,7 @@ impl DeleteResourceShareError {
     /// Creates the `DeleteResourceShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourceShareErrorKind::Unhandled(err.into()),
+            kind: DeleteResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2377,7 +2389,7 @@ impl DeleteResourceShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourceShareErrorKind::Unhandled(err.into()),
+            kind: DeleteResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2479,7 +2491,7 @@ impl std::error::Error for DeleteResourceShareError {
             DeleteResourceShareErrorKind::ServerInternalException(_inner) => Some(_inner),
             DeleteResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            DeleteResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourceShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2518,7 +2530,7 @@ pub enum DisassociateResourceShareErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateResourceShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2566,7 +2578,9 @@ impl DisassociateResourceShareError {
     /// Creates the `DisassociateResourceShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateResourceShareErrorKind::Unhandled(err.into()),
+            kind: DisassociateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2575,7 +2589,9 @@ impl DisassociateResourceShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateResourceShareErrorKind::Unhandled(err.into()),
+            kind: DisassociateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2691,7 +2707,7 @@ impl std::error::Error for DisassociateResourceShareError {
             DisassociateResourceShareErrorKind::ServerInternalException(_inner) => Some(_inner),
             DisassociateResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DisassociateResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            DisassociateResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateResourceShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2726,7 +2742,7 @@ pub enum DisassociateResourceSharePermissionErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateResourceSharePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2779,7 +2795,9 @@ impl DisassociateResourceSharePermissionError {
     /// Creates the `DisassociateResourceSharePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateResourceSharePermissionErrorKind::Unhandled(err.into()),
+            kind: DisassociateResourceSharePermissionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2788,7 +2806,9 @@ impl DisassociateResourceSharePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateResourceSharePermissionErrorKind::Unhandled(err.into()),
+            kind: DisassociateResourceSharePermissionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2896,9 +2916,7 @@ impl std::error::Error for DisassociateResourceSharePermissionError {
             DisassociateResourceSharePermissionErrorKind::UnknownResourceException(_inner) => {
                 Some(_inner)
             }
-            DisassociateResourceSharePermissionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateResourceSharePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2923,7 +2941,7 @@ pub enum EnableSharingWithAwsOrganizationErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableSharingWithAwsOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2961,7 +2979,9 @@ impl EnableSharingWithAwsOrganizationError {
     /// Creates the `EnableSharingWithAwsOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableSharingWithAwsOrganizationErrorKind::Unhandled(err.into()),
+            kind: EnableSharingWithAwsOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2970,7 +2990,9 @@ impl EnableSharingWithAwsOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableSharingWithAwsOrganizationErrorKind::Unhandled(err.into()),
+            kind: EnableSharingWithAwsOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3028,7 +3050,7 @@ impl std::error::Error for EnableSharingWithAwsOrganizationError {
             EnableSharingWithAwsOrganizationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            EnableSharingWithAwsOrganizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableSharingWithAwsOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3059,7 +3081,7 @@ pub enum GetPermissionErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3091,7 +3113,7 @@ impl GetPermissionError {
     /// Creates the `GetPermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPermissionErrorKind::Unhandled(err.into()),
+            kind: GetPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3100,7 +3122,7 @@ impl GetPermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPermissionErrorKind::Unhandled(err.into()),
+            kind: GetPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3173,7 +3195,7 @@ impl std::error::Error for GetPermissionError {
             GetPermissionErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetPermissionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetPermissionErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            GetPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3204,7 +3226,7 @@ pub enum GetResourcePoliciesErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3236,7 +3258,7 @@ impl GetResourcePoliciesError {
     /// Creates the `GetResourcePoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcePoliciesErrorKind::Unhandled(err.into()),
+            kind: GetResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3245,7 +3267,7 @@ impl GetResourcePoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcePoliciesErrorKind::Unhandled(err.into()),
+            kind: GetResourcePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3321,7 +3343,7 @@ impl std::error::Error for GetResourcePoliciesError {
             GetResourcePoliciesErrorKind::ResourceArnNotFoundException(_inner) => Some(_inner),
             GetResourcePoliciesErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetResourcePoliciesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3354,7 +3376,7 @@ pub enum GetResourceShareAssociationsErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceShareAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3397,7 +3419,9 @@ impl GetResourceShareAssociationsError {
     /// Creates the `GetResourceShareAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceShareAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetResourceShareAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3406,7 +3430,9 @@ impl GetResourceShareAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceShareAssociationsErrorKind::Unhandled(err.into()),
+            kind: GetResourceShareAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3498,7 +3524,7 @@ impl std::error::Error for GetResourceShareAssociationsError {
                 Some(_inner)
             }
             GetResourceShareAssociationsErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            GetResourceShareAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceShareAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3535,7 +3561,7 @@ pub enum GetResourceShareInvitationsErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceShareInvitationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3579,7 +3605,9 @@ impl GetResourceShareInvitationsError {
     /// Creates the `GetResourceShareInvitationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceShareInvitationsErrorKind::Unhandled(err.into()),
+            kind: GetResourceShareInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3588,7 +3616,9 @@ impl GetResourceShareInvitationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceShareInvitationsErrorKind::Unhandled(err.into()),
+            kind: GetResourceShareInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3686,7 +3716,7 @@ impl std::error::Error for GetResourceShareInvitationsError {
                 Some(_inner)
             }
             GetResourceShareInvitationsErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            GetResourceShareInvitationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceShareInvitationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3717,7 +3747,7 @@ pub enum GetResourceSharesErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3749,7 +3779,7 @@ impl GetResourceSharesError {
     /// Creates the `GetResourceSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceSharesErrorKind::Unhandled(err.into()),
+            kind: GetResourceSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3758,7 +3788,7 @@ impl GetResourceSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceSharesErrorKind::Unhandled(err.into()),
+            kind: GetResourceSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3834,7 +3864,7 @@ impl std::error::Error for GetResourceSharesError {
             GetResourceSharesErrorKind::ServerInternalException(_inner) => Some(_inner),
             GetResourceSharesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetResourceSharesErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            GetResourceSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3875,7 +3905,7 @@ pub enum ListPendingInvitationResourcesErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPendingInvitationResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3933,7 +3963,9 @@ impl ListPendingInvitationResourcesError {
     /// Creates the `ListPendingInvitationResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPendingInvitationResourcesErrorKind::Unhandled(err.into()),
+            kind: ListPendingInvitationResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3942,7 +3974,9 @@ impl ListPendingInvitationResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPendingInvitationResourcesErrorKind::Unhandled(err.into()),
+            kind: ListPendingInvitationResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4058,7 +4092,7 @@ impl std::error::Error for ListPendingInvitationResourcesError {
             Some(_inner)
             ,
             ListPendingInvitationResourcesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4088,7 +4122,7 @@ pub enum ListPermissionsErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4119,7 +4153,7 @@ impl ListPermissionsError {
     /// Creates the `ListPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4128,7 +4162,7 @@ impl ListPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4196,7 +4230,7 @@ impl std::error::Error for ListPermissionsError {
             ListPermissionsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             ListPermissionsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListPermissionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4229,7 +4263,7 @@ pub enum ListPermissionVersionsErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4264,7 +4298,9 @@ impl ListPermissionVersionsError {
     /// Creates the `ListPermissionVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionVersionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4273,7 +4309,9 @@ impl ListPermissionVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionVersionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4357,7 +4395,7 @@ impl std::error::Error for ListPermissionVersionsError {
             ListPermissionVersionsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListPermissionVersionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListPermissionVersionsErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            ListPermissionVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPermissionVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4388,7 +4426,7 @@ pub enum ListPrincipalsErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPrincipalsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4420,7 +4458,7 @@ impl ListPrincipalsError {
     /// Creates the `ListPrincipalsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPrincipalsErrorKind::Unhandled(err.into()),
+            kind: ListPrincipalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4429,7 +4467,7 @@ impl ListPrincipalsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPrincipalsErrorKind::Unhandled(err.into()),
+            kind: ListPrincipalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4505,7 +4543,7 @@ impl std::error::Error for ListPrincipalsError {
             ListPrincipalsErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListPrincipalsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListPrincipalsErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            ListPrincipalsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPrincipalsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4538,7 +4576,7 @@ pub enum ListResourcesErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4571,7 +4609,7 @@ impl ListResourcesError {
     /// Creates the `ListResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourcesErrorKind::Unhandled(err.into()),
+            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4580,7 +4618,7 @@ impl ListResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourcesErrorKind::Unhandled(err.into()),
+            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4661,7 +4699,7 @@ impl std::error::Error for ListResourcesError {
             ListResourcesErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListResourcesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListResourcesErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            ListResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4694,7 +4732,7 @@ pub enum ListResourceSharePermissionsErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceSharePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4737,7 +4775,9 @@ impl ListResourceSharePermissionsError {
     /// Creates the `ListResourceSharePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourceSharePermissionsErrorKind::Unhandled(err.into()),
+            kind: ListResourceSharePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4746,7 +4786,9 @@ impl ListResourceSharePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourceSharePermissionsErrorKind::Unhandled(err.into()),
+            kind: ListResourceSharePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4838,7 +4880,7 @@ impl std::error::Error for ListResourceSharePermissionsError {
                 Some(_inner)
             }
             ListResourceSharePermissionsErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            ListResourceSharePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourceSharePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4865,7 +4907,7 @@ pub enum ListResourceTypesErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4895,7 +4937,7 @@ impl ListResourceTypesError {
     /// Creates the `ListResourceTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourceTypesErrorKind::Unhandled(err.into()),
+            kind: ListResourceTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4904,7 +4946,7 @@ impl ListResourceTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourceTypesErrorKind::Unhandled(err.into()),
+            kind: ListResourceTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4964,7 +5006,7 @@ impl std::error::Error for ListResourceTypesError {
             ListResourceTypesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListResourceTypesErrorKind::ServerInternalException(_inner) => Some(_inner),
             ListResourceTypesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListResourceTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourceTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4999,7 +5041,7 @@ pub enum PromoteResourceShareCreatedFromPolicyErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PromoteResourceShareCreatedFromPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5052,7 +5094,9 @@ impl PromoteResourceShareCreatedFromPolicyError {
     /// Creates the `PromoteResourceShareCreatedFromPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(err.into()),
+            kind: PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5061,7 +5105,9 @@ impl PromoteResourceShareCreatedFromPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(err.into()),
+            kind: PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5169,9 +5215,7 @@ impl std::error::Error for PromoteResourceShareCreatedFromPolicyError {
             PromoteResourceShareCreatedFromPolicyErrorKind::UnknownResourceException(_inner) => {
                 Some(_inner)
             }
-            PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PromoteResourceShareCreatedFromPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5216,7 +5260,7 @@ pub enum RejectResourceShareInvitationErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectResourceShareInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5277,7 +5321,9 @@ impl RejectResourceShareInvitationError {
     /// Creates the `RejectResourceShareInvitationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectResourceShareInvitationErrorKind::Unhandled(err.into()),
+            kind: RejectResourceShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5286,7 +5332,9 @@ impl RejectResourceShareInvitationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectResourceShareInvitationErrorKind::Unhandled(err.into()),
+            kind: RejectResourceShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5419,7 +5467,7 @@ impl std::error::Error for RejectResourceShareInvitationError {
             Some(_inner)
             ,
             RejectResourceShareInvitationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -5455,7 +5503,7 @@ pub enum TagResourceErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5489,7 +5537,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5498,7 +5546,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5584,7 +5632,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::TagLimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::TagPolicyViolationException(_inner) => Some(_inner),
             TagResourceErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5609,7 +5657,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5638,7 +5686,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5647,7 +5695,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5699,7 +5747,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5736,7 +5784,7 @@ pub enum UpdateResourceShareErrorKind {
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateResourceShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5775,7 +5823,7 @@ impl UpdateResourceShareError {
     /// Creates the `UpdateResourceShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateResourceShareErrorKind::Unhandled(err.into()),
+            kind: UpdateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5784,7 +5832,7 @@ impl UpdateResourceShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateResourceShareErrorKind::Unhandled(err.into()),
+            kind: UpdateResourceShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5886,7 +5934,32 @@ impl std::error::Error for UpdateResourceShareError {
             UpdateResourceShareErrorKind::ServerInternalException(_inner) => Some(_inner),
             UpdateResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
-            UpdateResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateResourceShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

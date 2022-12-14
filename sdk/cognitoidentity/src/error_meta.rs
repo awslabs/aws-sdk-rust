@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -76,10 +76,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -102,10 +102,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -134,10 +134,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,10 +166,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,10 +199,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -224,9 +224,9 @@ where
                 crate::error::GetCredentialsForIdentityErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::GetCredentialsForIdentityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetCredentialsForIdentityErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetCredentialsForIdentityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCredentialsForIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -261,9 +261,11 @@ where
                 crate::error::GetIdErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetIdErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetIdErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +298,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetIdentityPoolRolesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -331,9 +333,11 @@ where
                 crate::error::GetOpenIdTokenErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetOpenIdTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetOpenIdTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,9 +363,9 @@ where
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -391,10 +395,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::GetPrincipalTagAttributeMapErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -420,9 +424,11 @@ where
                 crate::error::ListIdentitiesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListIdentitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListIdentitiesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -451,10 +457,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListIdentityPoolsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -483,10 +489,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -519,10 +525,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::LookupDeveloperIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -555,10 +561,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::MergeDeveloperIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -594,10 +600,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::SetIdentityPoolRolesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -627,10 +633,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::SetPrincipalTagAttributeMapErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -656,9 +662,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -691,10 +699,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UnlinkDeveloperIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -726,9 +734,11 @@ where
                 crate::error::UnlinkIdentityErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UnlinkIdentityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UnlinkIdentityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,9 +764,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -794,10 +806,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71,9 +71,11 @@ where
                 crate::error::CreateAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::CreateAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -96,9 +98,9 @@ where
                 crate::error::CreateReplicationJobErrorKind::ServerCannotBeReplicatedException(inner) => Error::ServerCannotBeReplicatedException(inner),
                 crate::error::CreateReplicationJobErrorKind::TemporarilyUnavailableException(inner) => Error::TemporarilyUnavailableException(inner),
                 crate::error::CreateReplicationJobErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::CreateReplicationJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReplicationJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,9 +126,11 @@ where
                 crate::error::DeleteAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::DeleteAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,9 +149,9 @@ where
                 crate::error::DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::DeleteAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -170,9 +174,9 @@ where
                 crate::error::DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::DeleteAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -195,9 +199,9 @@ where
                 crate::error::DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::DeleteAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -227,10 +231,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::DeleteReplicationJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -256,10 +260,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::DeleteServerCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -286,10 +290,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::DisassociateConnectorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -318,10 +322,10 @@ where
                     Error::UnauthorizedOperationException(inner)
                 }
                 crate::error::GenerateChangeSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -350,10 +354,10 @@ where
                     Error::UnauthorizedOperationException(inner)
                 }
                 crate::error::GenerateTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -377,9 +381,11 @@ where
                 crate::error::GetAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::GetAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -398,9 +404,9 @@ where
                 crate::error::GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::GetAppLaunchConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::GetAppLaunchConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::GetAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -423,9 +429,9 @@ where
                 crate::error::GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::GetAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::GetAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -444,9 +450,9 @@ where
                 crate::error::GetAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::GetAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::GetAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::GetAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -465,9 +471,9 @@ where
                 crate::error::GetAppValidationOutputErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::GetAppValidationOutputErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::GetAppValidationOutputErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::GetAppValidationOutputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppValidationOutputErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -481,9 +487,11 @@ where
                 crate::error::GetConnectorsErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::GetConnectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetConnectorsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -506,10 +514,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::GetReplicationJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -532,10 +540,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::GetReplicationRunsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -558,9 +566,11 @@ where
                 crate::error::GetServersErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::GetServersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -589,10 +599,10 @@ where
                     Error::UnauthorizedOperationException(inner)
                 }
                 crate::error::ImportAppCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -621,10 +631,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::ImportServerCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -650,9 +660,11 @@ where
                 crate::error::LaunchAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::LaunchAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::LaunchAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -678,9 +690,11 @@ where
                 crate::error::ListAppsErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::ListAppsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAppsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -699,9 +713,9 @@ where
                 crate::error::NotifyAppValidationOutputErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::NotifyAppValidationOutputErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::NotifyAppValidationOutputErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::NotifyAppValidationOutputErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::NotifyAppValidationOutputErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -720,9 +734,9 @@ where
                 crate::error::PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::PutAppLaunchConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::PutAppLaunchConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::PutAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAppLaunchConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -745,9 +759,9 @@ where
                 crate::error::PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::PutAppReplicationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::PutAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAppReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,9 +780,9 @@ where
                 crate::error::PutAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::PutAppValidationConfigurationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::PutAppValidationConfigurationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::PutAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAppValidationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -797,10 +811,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::StartAppReplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -819,9 +833,9 @@ where
                 crate::error::StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::StartOnDemandAppReplicationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::StartOnDemandAppReplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartOnDemandAppReplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -841,9 +855,9 @@ where
                 crate::error::StartOnDemandReplicationRunErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException(inner) => Error::ReplicationRunLimitExceededException(inner),
                 crate::error::StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-                crate::error::StartOnDemandReplicationRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartOnDemandReplicationRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -872,10 +886,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::StopAppReplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -901,9 +915,11 @@ where
                 crate::error::TerminateAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::TerminateAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TerminateAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -929,9 +945,11 @@ where
                 crate::error::UpdateAppErrorKind::UnauthorizedOperationException(inner) => {
                     Error::UnauthorizedOperationException(inner)
                 }
-                crate::error::UpdateAppErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAppErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -970,10 +988,10 @@ where
                     inner,
                 ) => Error::UnauthorizedOperationException(inner),
                 crate::error::UpdateReplicationJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

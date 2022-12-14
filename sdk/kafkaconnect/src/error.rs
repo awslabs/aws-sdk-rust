@@ -550,7 +550,7 @@ pub enum CreateConnectorErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -584,7 +584,7 @@ impl CreateConnectorError {
     /// Creates the `CreateConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+            kind: CreateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -593,7 +593,7 @@ impl CreateConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+            kind: CreateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -673,7 +673,7 @@ impl std::error::Error for CreateConnectorError {
             CreateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateConnectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateConnectorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -708,7 +708,7 @@ pub enum CreateCustomPluginErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomPluginError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -742,7 +742,7 @@ impl CreateCustomPluginError {
     /// Creates the `CreateCustomPluginError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomPluginErrorKind::Unhandled(err.into()),
+            kind: CreateCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -751,7 +751,7 @@ impl CreateCustomPluginError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomPluginErrorKind::Unhandled(err.into()),
+            kind: CreateCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -843,7 +843,7 @@ impl std::error::Error for CreateCustomPluginError {
             CreateCustomPluginErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateCustomPluginErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateCustomPluginErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateCustomPluginErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomPluginErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -878,7 +878,7 @@ pub enum CreateWorkerConfigurationErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkerConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -916,7 +916,9 @@ impl CreateWorkerConfigurationError {
     /// Creates the `CreateWorkerConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkerConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateWorkerConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -925,7 +927,9 @@ impl CreateWorkerConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkerConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateWorkerConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1019,7 +1023,7 @@ impl std::error::Error for CreateWorkerConfigurationError {
             CreateWorkerConfigurationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorkerConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateWorkerConfigurationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateWorkerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkerConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1052,7 +1056,7 @@ pub enum DeleteConnectorErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1085,7 +1089,7 @@ impl DeleteConnectorError {
     /// Creates the `DeleteConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1094,7 +1098,7 @@ impl DeleteConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1169,7 +1173,7 @@ impl std::error::Error for DeleteConnectorError {
             DeleteConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteConnectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteConnectorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1202,7 +1206,7 @@ pub enum DeleteCustomPluginErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomPluginError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1235,7 +1239,7 @@ impl DeleteCustomPluginError {
     /// Creates the `DeleteCustomPluginError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomPluginErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1244,7 +1248,7 @@ impl DeleteCustomPluginError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomPluginErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1328,7 +1332,7 @@ impl std::error::Error for DeleteCustomPluginError {
             DeleteCustomPluginErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteCustomPluginErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteCustomPluginErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteCustomPluginErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomPluginErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1361,7 +1365,7 @@ pub enum DescribeConnectorErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,7 +1398,7 @@ impl DescribeConnectorError {
     /// Creates the `DescribeConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1403,7 +1407,7 @@ impl DescribeConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1484,7 +1488,7 @@ impl std::error::Error for DescribeConnectorError {
             DescribeConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeConnectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeConnectorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1517,7 +1521,7 @@ pub enum DescribeCustomPluginErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomPluginError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1550,7 +1554,9 @@ impl DescribeCustomPluginError {
     /// Creates the `DescribeCustomPluginError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomPluginErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1559,7 +1565,9 @@ impl DescribeCustomPluginError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomPluginErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomPluginErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1643,7 +1651,7 @@ impl std::error::Error for DescribeCustomPluginError {
             DescribeCustomPluginErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeCustomPluginErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeCustomPluginErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeCustomPluginErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomPluginErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1676,7 +1684,7 @@ pub enum DescribeWorkerConfigurationErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorkerConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1713,7 +1721,9 @@ impl DescribeWorkerConfigurationError {
     /// Creates the `DescribeWorkerConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorkerConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkerConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1722,7 +1732,9 @@ impl DescribeWorkerConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorkerConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkerConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1810,7 +1822,7 @@ impl std::error::Error for DescribeWorkerConfigurationError {
             }
             DescribeWorkerConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeWorkerConfigurationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DescribeWorkerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorkerConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1843,7 +1855,7 @@ pub enum ListConnectorsErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConnectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1876,7 +1888,7 @@ impl ListConnectorsError {
     /// Creates the `ListConnectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+            kind: ListConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1885,7 +1897,7 @@ impl ListConnectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+            kind: ListConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1960,7 +1972,7 @@ impl std::error::Error for ListConnectorsError {
             ListConnectorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListConnectorsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListConnectorsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListConnectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConnectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1993,7 +2005,7 @@ pub enum ListCustomPluginsErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomPluginsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2026,7 +2038,7 @@ impl ListCustomPluginsError {
     /// Creates the `ListCustomPluginsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomPluginsErrorKind::Unhandled(err.into()),
+            kind: ListCustomPluginsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2035,7 +2047,7 @@ impl ListCustomPluginsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomPluginsErrorKind::Unhandled(err.into()),
+            kind: ListCustomPluginsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2116,7 +2128,7 @@ impl std::error::Error for ListCustomPluginsError {
             ListCustomPluginsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListCustomPluginsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListCustomPluginsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListCustomPluginsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomPluginsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2149,7 +2161,7 @@ pub enum ListWorkerConfigurationsErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkerConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2184,7 +2196,9 @@ impl ListWorkerConfigurationsError {
     /// Creates the `ListWorkerConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkerConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListWorkerConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2193,7 +2207,9 @@ impl ListWorkerConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkerConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListWorkerConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2277,7 +2293,7 @@ impl std::error::Error for ListWorkerConfigurationsError {
             ListWorkerConfigurationsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListWorkerConfigurationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListWorkerConfigurationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListWorkerConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkerConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2310,7 +2326,7 @@ pub enum UpdateConnectorErrorKind {
     /// <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2343,7 +2359,7 @@ impl UpdateConnectorError {
     /// Creates the `UpdateConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2352,7 +2368,7 @@ impl UpdateConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2427,7 +2443,32 @@ impl std::error::Error for UpdateConnectorError {
             UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

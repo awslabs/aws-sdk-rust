@@ -2352,7 +2352,7 @@ pub enum AddFacetToObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddFacetToObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2387,7 +2387,7 @@ impl AddFacetToObjectError {
     /// Creates the `AddFacetToObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddFacetToObjectErrorKind::Unhandled(err.into()),
+            kind: AddFacetToObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2396,7 +2396,7 @@ impl AddFacetToObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddFacetToObjectErrorKind::Unhandled(err.into()),
+            kind: AddFacetToObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2496,7 +2496,7 @@ impl std::error::Error for AddFacetToObjectError {
             AddFacetToObjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AddFacetToObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             AddFacetToObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            AddFacetToObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddFacetToObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2533,7 +2533,7 @@ pub enum ApplySchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ApplySchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2568,7 +2568,7 @@ impl ApplySchemaError {
     /// Creates the `ApplySchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ApplySchemaErrorKind::Unhandled(err.into()),
+            kind: ApplySchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2577,7 +2577,7 @@ impl ApplySchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ApplySchemaErrorKind::Unhandled(err.into()),
+            kind: ApplySchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2665,7 +2665,7 @@ impl std::error::Error for ApplySchemaError {
             ApplySchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ApplySchemaErrorKind::SchemaAlreadyExistsException(_inner) => Some(_inner),
             ApplySchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            ApplySchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ApplySchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2706,7 +2706,7 @@ pub enum AttachObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2743,7 +2743,7 @@ impl AttachObjectError {
     /// Creates the `AttachObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachObjectErrorKind::Unhandled(err.into()),
+            kind: AttachObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2752,7 +2752,7 @@ impl AttachObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachObjectErrorKind::Unhandled(err.into()),
+            kind: AttachObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2856,7 +2856,7 @@ impl std::error::Error for AttachObjectError {
             AttachObjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AttachObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             AttachObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            AttachObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2893,7 +2893,7 @@ pub enum AttachPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2928,7 +2928,7 @@ impl AttachPolicyError {
     /// Creates the `AttachPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachPolicyErrorKind::Unhandled(err.into()),
+            kind: AttachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2937,7 +2937,7 @@ impl AttachPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachPolicyErrorKind::Unhandled(err.into()),
+            kind: AttachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3022,7 +3022,7 @@ impl std::error::Error for AttachPolicyError {
             AttachPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AttachPolicyErrorKind::RetryableConflictException(_inner) => Some(_inner),
             AttachPolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            AttachPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3065,7 +3065,7 @@ pub enum AttachToIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachToIndexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3103,7 +3103,7 @@ impl AttachToIndexError {
     /// Creates the `AttachToIndexError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachToIndexErrorKind::Unhandled(err.into()),
+            kind: AttachToIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3112,7 +3112,7 @@ impl AttachToIndexError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachToIndexErrorKind::Unhandled(err.into()),
+            kind: AttachToIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3224,7 +3224,7 @@ impl std::error::Error for AttachToIndexError {
             AttachToIndexErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AttachToIndexErrorKind::RetryableConflictException(_inner) => Some(_inner),
             AttachToIndexErrorKind::ValidationException(_inner) => Some(_inner),
-            AttachToIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachToIndexErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3263,7 +3263,7 @@ pub enum AttachTypedLinkErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachTypedLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3299,7 +3299,7 @@ impl AttachTypedLinkError {
     /// Creates the `AttachTypedLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachTypedLinkErrorKind::Unhandled(err.into()),
+            kind: AttachTypedLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3308,7 +3308,7 @@ impl AttachTypedLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachTypedLinkErrorKind::Unhandled(err.into()),
+            kind: AttachTypedLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3410,7 +3410,7 @@ impl std::error::Error for AttachTypedLinkError {
             AttachTypedLinkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AttachTypedLinkErrorKind::RetryableConflictException(_inner) => Some(_inner),
             AttachTypedLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            AttachTypedLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachTypedLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3443,7 +3443,7 @@ pub enum BatchReadErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchReadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3476,7 +3476,7 @@ impl BatchReadError {
     /// Creates the `BatchReadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchReadErrorKind::Unhandled(err.into()),
+            kind: BatchReadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3485,7 +3485,7 @@ impl BatchReadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchReadErrorKind::Unhandled(err.into()),
+            kind: BatchReadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3554,7 +3554,7 @@ impl std::error::Error for BatchReadError {
             BatchReadErrorKind::LimitExceededException(_inner) => Some(_inner),
             BatchReadErrorKind::RetryableConflictException(_inner) => Some(_inner),
             BatchReadErrorKind::ValidationException(_inner) => Some(_inner),
-            BatchReadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchReadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3589,7 +3589,7 @@ pub enum BatchWriteErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchWriteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3623,7 +3623,7 @@ impl BatchWriteError {
     /// Creates the `BatchWriteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchWriteErrorKind::Unhandled(err.into()),
+            kind: BatchWriteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3632,7 +3632,7 @@ impl BatchWriteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchWriteErrorKind::Unhandled(err.into()),
+            kind: BatchWriteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3706,7 +3706,7 @@ impl std::error::Error for BatchWriteError {
             BatchWriteErrorKind::LimitExceededException(_inner) => Some(_inner),
             BatchWriteErrorKind::RetryableConflictException(_inner) => Some(_inner),
             BatchWriteErrorKind::ValidationException(_inner) => Some(_inner),
-            BatchWriteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchWriteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3741,7 +3741,7 @@ pub enum CreateDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3775,7 +3775,7 @@ impl CreateDirectoryError {
     /// Creates the `CreateDirectoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDirectoryErrorKind::Unhandled(err.into()),
+            kind: CreateDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3784,7 +3784,7 @@ impl CreateDirectoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDirectoryErrorKind::Unhandled(err.into()),
+            kind: CreateDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3870,7 +3870,7 @@ impl std::error::Error for CreateDirectoryError {
             CreateDirectoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDirectoryErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateDirectoryErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateDirectoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3909,7 +3909,7 @@ pub enum CreateFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3945,7 +3945,7 @@ impl CreateFacetError {
     /// Creates the `CreateFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFacetErrorKind::Unhandled(err.into()),
+            kind: CreateFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3954,7 +3954,7 @@ impl CreateFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFacetErrorKind::Unhandled(err.into()),
+            kind: CreateFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4047,7 +4047,7 @@ impl std::error::Error for CreateFacetError {
             CreateFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4088,7 +4088,7 @@ pub enum CreateIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateIndexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4125,7 +4125,7 @@ impl CreateIndexError {
     /// Creates the `CreateIndexError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateIndexErrorKind::Unhandled(err.into()),
+            kind: CreateIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4134,7 +4134,7 @@ impl CreateIndexError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateIndexErrorKind::Unhandled(err.into()),
+            kind: CreateIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4238,7 +4238,7 @@ impl std::error::Error for CreateIndexError {
             CreateIndexErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateIndexErrorKind::UnsupportedIndexTypeException(_inner) => Some(_inner),
             CreateIndexErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateIndexErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4279,7 +4279,7 @@ pub enum CreateObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4316,7 +4316,7 @@ impl CreateObjectError {
     /// Creates the `CreateObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateObjectErrorKind::Unhandled(err.into()),
+            kind: CreateObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4325,7 +4325,7 @@ impl CreateObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateObjectErrorKind::Unhandled(err.into()),
+            kind: CreateObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4429,7 +4429,7 @@ impl std::error::Error for CreateObjectError {
             CreateObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateObjectErrorKind::UnsupportedIndexTypeException(_inner) => Some(_inner),
             CreateObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4462,7 +4462,7 @@ pub enum CreateSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4495,7 +4495,7 @@ impl CreateSchemaError {
     /// Creates the `CreateSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSchemaErrorKind::Unhandled(err.into()),
+            kind: CreateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4504,7 +4504,7 @@ impl CreateSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSchemaErrorKind::Unhandled(err.into()),
+            kind: CreateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4576,7 +4576,7 @@ impl std::error::Error for CreateSchemaError {
             CreateSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateSchemaErrorKind::SchemaAlreadyExistsException(_inner) => Some(_inner),
             CreateSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4615,7 +4615,7 @@ pub enum CreateTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTypedLinkFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4651,7 +4651,9 @@ impl CreateTypedLinkFacetError {
     /// Creates the `CreateTypedLinkFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: CreateTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4660,7 +4662,9 @@ impl CreateTypedLinkFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: CreateTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4768,7 +4772,7 @@ impl std::error::Error for CreateTypedLinkFacetError {
             CreateTypedLinkFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTypedLinkFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             CreateTypedLinkFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4805,7 +4809,7 @@ pub enum DeleteDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4840,7 +4844,7 @@ impl DeleteDirectoryError {
     /// Creates the `DeleteDirectoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDirectoryErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4849,7 +4853,7 @@ impl DeleteDirectoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDirectoryErrorKind::Unhandled(err.into()),
+            kind: DeleteDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4943,7 +4947,7 @@ impl std::error::Error for DeleteDirectoryError {
             DeleteDirectoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDirectoryErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DeleteDirectoryErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteDirectoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4980,7 +4984,7 @@ pub enum DeleteFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5015,7 +5019,7 @@ impl DeleteFacetError {
     /// Creates the `DeleteFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFacetErrorKind::Unhandled(err.into()),
+            kind: DeleteFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5024,7 +5028,7 @@ impl DeleteFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFacetErrorKind::Unhandled(err.into()),
+            kind: DeleteFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5106,7 +5110,7 @@ impl std::error::Error for DeleteFacetError {
             DeleteFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DeleteFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5143,7 +5147,7 @@ pub enum DeleteObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5178,7 +5182,7 @@ impl DeleteObjectError {
     /// Creates the `DeleteObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteObjectErrorKind::Unhandled(err.into()),
+            kind: DeleteObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5187,7 +5191,7 @@ impl DeleteObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteObjectErrorKind::Unhandled(err.into()),
+            kind: DeleteObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5275,7 +5279,7 @@ impl std::error::Error for DeleteObjectError {
             DeleteObjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DeleteObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5310,7 +5314,7 @@ pub enum DeleteSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5344,7 +5348,7 @@ impl DeleteSchemaError {
     /// Creates the `DeleteSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSchemaErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5353,7 +5357,7 @@ impl DeleteSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSchemaErrorKind::Unhandled(err.into()),
+            kind: DeleteSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5433,7 +5437,7 @@ impl std::error::Error for DeleteSchemaError {
             DeleteSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DeleteSchemaErrorKind::StillContainsLinksException(_inner) => Some(_inner),
             DeleteSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5468,7 +5472,7 @@ pub enum DeleteTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTypedLinkFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5502,7 +5506,9 @@ impl DeleteTypedLinkFacetError {
     /// Creates the `DeleteTypedLinkFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: DeleteTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5511,7 +5517,9 @@ impl DeleteTypedLinkFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: DeleteTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5603,7 +5611,7 @@ impl std::error::Error for DeleteTypedLinkFacetError {
             DeleteTypedLinkFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTypedLinkFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DeleteTypedLinkFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5642,7 +5650,7 @@ pub enum DetachFromIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachFromIndexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5678,7 +5686,7 @@ impl DetachFromIndexError {
     /// Creates the `DetachFromIndexError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachFromIndexErrorKind::Unhandled(err.into()),
+            kind: DetachFromIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5687,7 +5695,7 @@ impl DetachFromIndexError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachFromIndexErrorKind::Unhandled(err.into()),
+            kind: DetachFromIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5786,7 +5794,7 @@ impl std::error::Error for DetachFromIndexError {
             DetachFromIndexErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetachFromIndexErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DetachFromIndexErrorKind::ValidationException(_inner) => Some(_inner),
-            DetachFromIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachFromIndexErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5823,7 +5831,7 @@ pub enum DetachObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5858,7 +5866,7 @@ impl DetachObjectError {
     /// Creates the `DetachObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachObjectErrorKind::Unhandled(err.into()),
+            kind: DetachObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5867,7 +5875,7 @@ impl DetachObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachObjectErrorKind::Unhandled(err.into()),
+            kind: DetachObjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5952,7 +5960,7 @@ impl std::error::Error for DetachObjectError {
             DetachObjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetachObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DetachObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            DetachObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5989,7 +5997,7 @@ pub enum DetachPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6024,7 +6032,7 @@ impl DetachPolicyError {
     /// Creates the `DetachPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachPolicyErrorKind::Unhandled(err.into()),
+            kind: DetachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6033,7 +6041,7 @@ impl DetachPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachPolicyErrorKind::Unhandled(err.into()),
+            kind: DetachPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6118,7 +6126,7 @@ impl std::error::Error for DetachPolicyError {
             DetachPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetachPolicyErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DetachPolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            DetachPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6155,7 +6163,7 @@ pub enum DetachTypedLinkErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachTypedLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6190,7 +6198,7 @@ impl DetachTypedLinkError {
     /// Creates the `DetachTypedLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachTypedLinkErrorKind::Unhandled(err.into()),
+            kind: DetachTypedLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6199,7 +6207,7 @@ impl DetachTypedLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachTypedLinkErrorKind::Unhandled(err.into()),
+            kind: DetachTypedLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6293,7 +6301,7 @@ impl std::error::Error for DetachTypedLinkError {
             DetachTypedLinkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetachTypedLinkErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DetachTypedLinkErrorKind::ValidationException(_inner) => Some(_inner),
-            DetachTypedLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachTypedLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6328,7 +6336,7 @@ pub enum DisableDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6362,7 +6370,7 @@ impl DisableDirectoryError {
     /// Creates the `DisableDirectoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableDirectoryErrorKind::Unhandled(err.into()),
+            kind: DisableDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6371,7 +6379,7 @@ impl DisableDirectoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableDirectoryErrorKind::Unhandled(err.into()),
+            kind: DisableDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6463,7 +6471,7 @@ impl std::error::Error for DisableDirectoryError {
             DisableDirectoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisableDirectoryErrorKind::RetryableConflictException(_inner) => Some(_inner),
             DisableDirectoryErrorKind::ValidationException(_inner) => Some(_inner),
-            DisableDirectoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6498,7 +6506,7 @@ pub enum EnableDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6532,7 +6540,7 @@ impl EnableDirectoryError {
     /// Creates the `EnableDirectoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableDirectoryErrorKind::Unhandled(err.into()),
+            kind: EnableDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6541,7 +6549,7 @@ impl EnableDirectoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableDirectoryErrorKind::Unhandled(err.into()),
+            kind: EnableDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6627,7 +6635,7 @@ impl std::error::Error for EnableDirectoryError {
             EnableDirectoryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             EnableDirectoryErrorKind::RetryableConflictException(_inner) => Some(_inner),
             EnableDirectoryErrorKind::ValidationException(_inner) => Some(_inner),
-            EnableDirectoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6660,7 +6668,7 @@ pub enum GetAppliedSchemaVersionErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppliedSchemaVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6693,7 +6701,9 @@ impl GetAppliedSchemaVersionError {
     /// Creates the `GetAppliedSchemaVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppliedSchemaVersionErrorKind::Unhandled(err.into()),
+            kind: GetAppliedSchemaVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6702,7 +6712,9 @@ impl GetAppliedSchemaVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppliedSchemaVersionErrorKind::Unhandled(err.into()),
+            kind: GetAppliedSchemaVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6786,7 +6798,7 @@ impl std::error::Error for GetAppliedSchemaVersionError {
             GetAppliedSchemaVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAppliedSchemaVersionErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetAppliedSchemaVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAppliedSchemaVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppliedSchemaVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6817,7 +6829,7 @@ pub enum GetDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6849,7 +6861,7 @@ impl GetDirectoryError {
     /// Creates the `GetDirectoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDirectoryErrorKind::Unhandled(err.into()),
+            kind: GetDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6858,7 +6870,7 @@ impl GetDirectoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDirectoryErrorKind::Unhandled(err.into()),
+            kind: GetDirectoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6922,7 +6934,7 @@ impl std::error::Error for GetDirectoryError {
             GetDirectoryErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetDirectoryErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetDirectoryErrorKind::ValidationException(_inner) => Some(_inner),
-            GetDirectoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDirectoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6957,7 +6969,7 @@ pub enum GetFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6991,7 +7003,7 @@ impl GetFacetError {
     /// Creates the `GetFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFacetErrorKind::Unhandled(err.into()),
+            kind: GetFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7000,7 +7012,7 @@ impl GetFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFacetErrorKind::Unhandled(err.into()),
+            kind: GetFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7068,7 +7080,7 @@ impl std::error::Error for GetFacetError {
             GetFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            GetFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7105,7 +7117,7 @@ pub enum GetLinkAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLinkAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7140,7 +7152,7 @@ impl GetLinkAttributesError {
     /// Creates the `GetLinkAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLinkAttributesErrorKind::Unhandled(err.into()),
+            kind: GetLinkAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7149,7 +7161,7 @@ impl GetLinkAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLinkAttributesErrorKind::Unhandled(err.into()),
+            kind: GetLinkAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7249,7 +7261,7 @@ impl std::error::Error for GetLinkAttributesError {
             GetLinkAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLinkAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetLinkAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLinkAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLinkAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7286,7 +7298,7 @@ pub enum GetObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetObjectAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7321,7 +7333,7 @@ impl GetObjectAttributesError {
     /// Creates the `GetObjectAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: GetObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7330,7 +7342,7 @@ impl GetObjectAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: GetObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7430,7 +7442,7 @@ impl std::error::Error for GetObjectAttributesError {
             GetObjectAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetObjectAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetObjectAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            GetObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7465,7 +7477,7 @@ pub enum GetObjectInformationErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetObjectInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7499,7 +7511,9 @@ impl GetObjectInformationError {
     /// Creates the `GetObjectInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetObjectInformationErrorKind::Unhandled(err.into()),
+            kind: GetObjectInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7508,7 +7522,9 @@ impl GetObjectInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetObjectInformationErrorKind::Unhandled(err.into()),
+            kind: GetObjectInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7600,7 +7616,7 @@ impl std::error::Error for GetObjectInformationError {
             GetObjectInformationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetObjectInformationErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetObjectInformationErrorKind::ValidationException(_inner) => Some(_inner),
-            GetObjectInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetObjectInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7633,7 +7649,7 @@ pub enum GetSchemaAsJsonErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSchemaAsJsonError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7666,7 +7682,7 @@ impl GetSchemaAsJsonError {
     /// Creates the `GetSchemaAsJsonError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSchemaAsJsonErrorKind::Unhandled(err.into()),
+            kind: GetSchemaAsJsonErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7675,7 +7691,7 @@ impl GetSchemaAsJsonError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSchemaAsJsonErrorKind::Unhandled(err.into()),
+            kind: GetSchemaAsJsonErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7753,7 +7769,7 @@ impl std::error::Error for GetSchemaAsJsonError {
             GetSchemaAsJsonErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSchemaAsJsonErrorKind::RetryableConflictException(_inner) => Some(_inner),
             GetSchemaAsJsonErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSchemaAsJsonErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSchemaAsJsonErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7790,7 +7806,7 @@ pub enum GetTypedLinkFacetInformationErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTypedLinkFacetInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7833,7 +7849,9 @@ impl GetTypedLinkFacetInformationError {
     /// Creates the `GetTypedLinkFacetInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTypedLinkFacetInformationErrorKind::Unhandled(err.into()),
+            kind: GetTypedLinkFacetInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7842,7 +7860,9 @@ impl GetTypedLinkFacetInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTypedLinkFacetInformationErrorKind::Unhandled(err.into()),
+            kind: GetTypedLinkFacetInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7948,7 +7968,7 @@ impl std::error::Error for GetTypedLinkFacetInformationError {
                 Some(_inner)
             }
             GetTypedLinkFacetInformationErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTypedLinkFacetInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTypedLinkFacetInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7983,7 +8003,7 @@ pub enum ListAppliedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppliedSchemaArnsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8017,7 +8037,9 @@ impl ListAppliedSchemaArnsError {
     /// Creates the `ListAppliedSchemaArnsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppliedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListAppliedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8026,7 +8048,9 @@ impl ListAppliedSchemaArnsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppliedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListAppliedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8118,7 +8142,7 @@ impl std::error::Error for ListAppliedSchemaArnsError {
             ListAppliedSchemaArnsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAppliedSchemaArnsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListAppliedSchemaArnsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAppliedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppliedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8153,7 +8177,7 @@ pub enum ListAttachedIndicesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAttachedIndicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8187,7 +8211,7 @@ impl ListAttachedIndicesError {
     /// Creates the `ListAttachedIndicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAttachedIndicesErrorKind::Unhandled(err.into()),
+            kind: ListAttachedIndicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8196,7 +8220,7 @@ impl ListAttachedIndicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAttachedIndicesErrorKind::Unhandled(err.into()),
+            kind: ListAttachedIndicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8288,7 +8312,7 @@ impl std::error::Error for ListAttachedIndicesError {
             ListAttachedIndicesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAttachedIndicesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListAttachedIndicesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAttachedIndicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAttachedIndicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8323,7 +8347,7 @@ pub enum ListDevelopmentSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDevelopmentSchemaArnsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8357,7 +8381,9 @@ impl ListDevelopmentSchemaArnsError {
     /// Creates the `ListDevelopmentSchemaArnsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDevelopmentSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListDevelopmentSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8366,7 +8392,9 @@ impl ListDevelopmentSchemaArnsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDevelopmentSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListDevelopmentSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8458,7 +8486,7 @@ impl std::error::Error for ListDevelopmentSchemaArnsError {
             ListDevelopmentSchemaArnsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDevelopmentSchemaArnsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListDevelopmentSchemaArnsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDevelopmentSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDevelopmentSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8491,7 +8519,7 @@ pub enum ListDirectoriesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDirectoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8524,7 +8552,7 @@ impl ListDirectoriesError {
     /// Creates the `ListDirectoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDirectoriesErrorKind::Unhandled(err.into()),
+            kind: ListDirectoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8533,7 +8561,7 @@ impl ListDirectoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDirectoriesErrorKind::Unhandled(err.into()),
+            kind: ListDirectoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8611,7 +8639,7 @@ impl std::error::Error for ListDirectoriesError {
             ListDirectoriesErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListDirectoriesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListDirectoriesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDirectoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDirectoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8648,7 +8676,7 @@ pub enum ListFacetAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFacetAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8683,7 +8711,7 @@ impl ListFacetAttributesError {
     /// Creates the `ListFacetAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFacetAttributesErrorKind::Unhandled(err.into()),
+            kind: ListFacetAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8692,7 +8720,7 @@ impl ListFacetAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFacetAttributesErrorKind::Unhandled(err.into()),
+            kind: ListFacetAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8792,7 +8820,7 @@ impl std::error::Error for ListFacetAttributesError {
             ListFacetAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFacetAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListFacetAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFacetAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFacetAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8827,7 +8855,7 @@ pub enum ListFacetNamesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFacetNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8861,7 +8889,7 @@ impl ListFacetNamesError {
     /// Creates the `ListFacetNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFacetNamesErrorKind::Unhandled(err.into()),
+            kind: ListFacetNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8870,7 +8898,7 @@ impl ListFacetNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFacetNamesErrorKind::Unhandled(err.into()),
+            kind: ListFacetNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8956,7 +8984,7 @@ impl std::error::Error for ListFacetNamesError {
             ListFacetNamesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFacetNamesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListFacetNamesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListFacetNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFacetNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8995,7 +9023,7 @@ pub enum ListIncomingTypedLinksErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIncomingTypedLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9031,7 +9059,9 @@ impl ListIncomingTypedLinksError {
     /// Creates the `ListIncomingTypedLinksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIncomingTypedLinksErrorKind::Unhandled(err.into()),
+            kind: ListIncomingTypedLinksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9040,7 +9070,9 @@ impl ListIncomingTypedLinksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIncomingTypedLinksErrorKind::Unhandled(err.into()),
+            kind: ListIncomingTypedLinksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9148,7 +9180,7 @@ impl std::error::Error for ListIncomingTypedLinksError {
             ListIncomingTypedLinksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListIncomingTypedLinksErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListIncomingTypedLinksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListIncomingTypedLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIncomingTypedLinksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9189,7 +9221,7 @@ pub enum ListIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIndexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9226,7 +9258,7 @@ impl ListIndexError {
     /// Creates the `ListIndexError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIndexErrorKind::Unhandled(err.into()),
+            kind: ListIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9235,7 +9267,7 @@ impl ListIndexError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIndexErrorKind::Unhandled(err.into()),
+            kind: ListIndexErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9324,7 +9356,7 @@ impl std::error::Error for ListIndexError {
             ListIndexErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListIndexErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListIndexErrorKind::ValidationException(_inner) => Some(_inner),
-            ListIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIndexErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9355,7 +9387,7 @@ pub enum ListManagedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListManagedSchemaArnsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9387,7 +9419,9 @@ impl ListManagedSchemaArnsError {
     /// Creates the `ListManagedSchemaArnsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListManagedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListManagedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9396,7 +9430,9 @@ impl ListManagedSchemaArnsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListManagedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListManagedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9472,7 +9508,7 @@ impl std::error::Error for ListManagedSchemaArnsError {
             ListManagedSchemaArnsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListManagedSchemaArnsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListManagedSchemaArnsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListManagedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListManagedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9511,7 +9547,7 @@ pub enum ListObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9547,7 +9583,9 @@ impl ListObjectAttributesError {
     /// Creates the `ListObjectAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: ListObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9556,7 +9594,9 @@ impl ListObjectAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: ListObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9664,7 +9704,7 @@ impl std::error::Error for ListObjectAttributesError {
             ListObjectAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListObjectAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListObjectAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9703,7 +9743,7 @@ pub enum ListObjectChildrenErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectChildrenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9739,7 +9779,7 @@ impl ListObjectChildrenError {
     /// Creates the `ListObjectChildrenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectChildrenErrorKind::Unhandled(err.into()),
+            kind: ListObjectChildrenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9748,7 +9788,7 @@ impl ListObjectChildrenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectChildrenErrorKind::Unhandled(err.into()),
+            kind: ListObjectChildrenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9853,7 +9893,7 @@ impl std::error::Error for ListObjectChildrenError {
             ListObjectChildrenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListObjectChildrenErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListObjectChildrenErrorKind::ValidationException(_inner) => Some(_inner),
-            ListObjectChildrenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectChildrenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9890,7 +9930,7 @@ pub enum ListObjectParentPathsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectParentPathsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9925,7 +9965,9 @@ impl ListObjectParentPathsError {
     /// Creates the `ListObjectParentPathsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectParentPathsErrorKind::Unhandled(err.into()),
+            kind: ListObjectParentPathsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9934,7 +9976,9 @@ impl ListObjectParentPathsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectParentPathsErrorKind::Unhandled(err.into()),
+            kind: ListObjectParentPathsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10034,7 +10078,7 @@ impl std::error::Error for ListObjectParentPathsError {
             ListObjectParentPathsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListObjectParentPathsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListObjectParentPathsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListObjectParentPathsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectParentPathsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10073,7 +10117,7 @@ pub enum ListObjectParentsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectParentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10109,7 +10153,7 @@ impl ListObjectParentsError {
     /// Creates the `ListObjectParentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectParentsErrorKind::Unhandled(err.into()),
+            kind: ListObjectParentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10118,7 +10162,7 @@ impl ListObjectParentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectParentsErrorKind::Unhandled(err.into()),
+            kind: ListObjectParentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10226,7 +10270,7 @@ impl std::error::Error for ListObjectParentsError {
             ListObjectParentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListObjectParentsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListObjectParentsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListObjectParentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectParentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10263,7 +10307,7 @@ pub enum ListObjectPoliciesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListObjectPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10298,7 +10342,7 @@ impl ListObjectPoliciesError {
     /// Creates the `ListObjectPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListObjectPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListObjectPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10307,7 +10351,7 @@ impl ListObjectPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListObjectPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListObjectPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10407,7 +10451,7 @@ impl std::error::Error for ListObjectPoliciesError {
             ListObjectPoliciesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListObjectPoliciesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListObjectPoliciesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListObjectPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListObjectPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10446,7 +10490,7 @@ pub enum ListOutgoingTypedLinksErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOutgoingTypedLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10482,7 +10526,9 @@ impl ListOutgoingTypedLinksError {
     /// Creates the `ListOutgoingTypedLinksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListOutgoingTypedLinksErrorKind::Unhandled(err.into()),
+            kind: ListOutgoingTypedLinksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10491,7 +10537,9 @@ impl ListOutgoingTypedLinksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListOutgoingTypedLinksErrorKind::Unhandled(err.into()),
+            kind: ListOutgoingTypedLinksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10599,7 +10647,7 @@ impl std::error::Error for ListOutgoingTypedLinksError {
             ListOutgoingTypedLinksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListOutgoingTypedLinksErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListOutgoingTypedLinksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListOutgoingTypedLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListOutgoingTypedLinksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10638,7 +10686,7 @@ pub enum ListPolicyAttachmentsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPolicyAttachmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10674,7 +10722,9 @@ impl ListPolicyAttachmentsError {
     /// Creates the `ListPolicyAttachmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPolicyAttachmentsErrorKind::Unhandled(err.into()),
+            kind: ListPolicyAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10683,7 +10733,9 @@ impl ListPolicyAttachmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPolicyAttachmentsErrorKind::Unhandled(err.into()),
+            kind: ListPolicyAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10791,7 +10843,7 @@ impl std::error::Error for ListPolicyAttachmentsError {
             ListPolicyAttachmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListPolicyAttachmentsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListPolicyAttachmentsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPolicyAttachmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPolicyAttachmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10826,7 +10878,7 @@ pub enum ListPublishedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPublishedSchemaArnsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10860,7 +10912,9 @@ impl ListPublishedSchemaArnsError {
     /// Creates the `ListPublishedSchemaArnsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPublishedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListPublishedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10869,7 +10923,9 @@ impl ListPublishedSchemaArnsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPublishedSchemaArnsErrorKind::Unhandled(err.into()),
+            kind: ListPublishedSchemaArnsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10961,7 +11017,7 @@ impl std::error::Error for ListPublishedSchemaArnsError {
             ListPublishedSchemaArnsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListPublishedSchemaArnsErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListPublishedSchemaArnsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPublishedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPublishedSchemaArnsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10996,7 +11052,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11030,7 +11086,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11039,7 +11095,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11131,7 +11187,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11168,7 +11224,7 @@ pub enum ListTypedLinkFacetAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTypedLinkFacetAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11211,7 +11267,9 @@ impl ListTypedLinkFacetAttributesError {
     /// Creates the `ListTypedLinkFacetAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTypedLinkFacetAttributesErrorKind::Unhandled(err.into()),
+            kind: ListTypedLinkFacetAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11220,7 +11278,9 @@ impl ListTypedLinkFacetAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTypedLinkFacetAttributesErrorKind::Unhandled(err.into()),
+            kind: ListTypedLinkFacetAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11326,7 +11386,7 @@ impl std::error::Error for ListTypedLinkFacetAttributesError {
                 Some(_inner)
             }
             ListTypedLinkFacetAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTypedLinkFacetAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTypedLinkFacetAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11361,7 +11421,7 @@ pub enum ListTypedLinkFacetNamesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTypedLinkFacetNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11395,7 +11455,9 @@ impl ListTypedLinkFacetNamesError {
     /// Creates the `ListTypedLinkFacetNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTypedLinkFacetNamesErrorKind::Unhandled(err.into()),
+            kind: ListTypedLinkFacetNamesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11404,7 +11466,9 @@ impl ListTypedLinkFacetNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTypedLinkFacetNamesErrorKind::Unhandled(err.into()),
+            kind: ListTypedLinkFacetNamesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11496,7 +11560,7 @@ impl std::error::Error for ListTypedLinkFacetNamesError {
             ListTypedLinkFacetNamesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTypedLinkFacetNamesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             ListTypedLinkFacetNamesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTypedLinkFacetNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTypedLinkFacetNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11533,7 +11597,7 @@ pub enum LookupPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for LookupPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11568,7 +11632,7 @@ impl LookupPolicyError {
     /// Creates the `LookupPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: LookupPolicyErrorKind::Unhandled(err.into()),
+            kind: LookupPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11577,7 +11641,7 @@ impl LookupPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: LookupPolicyErrorKind::Unhandled(err.into()),
+            kind: LookupPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11665,7 +11729,7 @@ impl std::error::Error for LookupPolicyError {
             LookupPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             LookupPolicyErrorKind::RetryableConflictException(_inner) => Some(_inner),
             LookupPolicyErrorKind::ValidationException(_inner) => Some(_inner),
-            LookupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            LookupPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11700,7 +11764,7 @@ pub enum PublishSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11734,7 +11798,7 @@ impl PublishSchemaError {
     /// Creates the `PublishSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishSchemaErrorKind::Unhandled(err.into()),
+            kind: PublishSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11743,7 +11807,7 @@ impl PublishSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishSchemaErrorKind::Unhandled(err.into()),
+            kind: PublishSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11826,7 +11890,7 @@ impl std::error::Error for PublishSchemaError {
             PublishSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             PublishSchemaErrorKind::SchemaAlreadyPublishedException(_inner) => Some(_inner),
             PublishSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            PublishSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11861,7 +11925,7 @@ pub enum PutSchemaFromJsonErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSchemaFromJsonError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11895,7 +11959,7 @@ impl PutSchemaFromJsonError {
     /// Creates the `PutSchemaFromJsonError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSchemaFromJsonErrorKind::Unhandled(err.into()),
+            kind: PutSchemaFromJsonErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11904,7 +11968,7 @@ impl PutSchemaFromJsonError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSchemaFromJsonErrorKind::Unhandled(err.into()),
+            kind: PutSchemaFromJsonErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11996,7 +12060,7 @@ impl std::error::Error for PutSchemaFromJsonError {
             PutSchemaFromJsonErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutSchemaFromJsonErrorKind::RetryableConflictException(_inner) => Some(_inner),
             PutSchemaFromJsonErrorKind::ValidationException(_inner) => Some(_inner),
-            PutSchemaFromJsonErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSchemaFromJsonErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12033,7 +12097,7 @@ pub enum RemoveFacetFromObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveFacetFromObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12068,7 +12132,9 @@ impl RemoveFacetFromObjectError {
     /// Creates the `RemoveFacetFromObjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveFacetFromObjectErrorKind::Unhandled(err.into()),
+            kind: RemoveFacetFromObjectErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12077,7 +12143,9 @@ impl RemoveFacetFromObjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveFacetFromObjectErrorKind::Unhandled(err.into()),
+            kind: RemoveFacetFromObjectErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12177,7 +12245,7 @@ impl std::error::Error for RemoveFacetFromObjectError {
             RemoveFacetFromObjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RemoveFacetFromObjectErrorKind::RetryableConflictException(_inner) => Some(_inner),
             RemoveFacetFromObjectErrorKind::ValidationException(_inner) => Some(_inner),
-            RemoveFacetFromObjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveFacetFromObjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12212,7 +12280,7 @@ pub enum TagResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12246,7 +12314,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12255,7 +12323,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12335,7 +12403,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::RetryableConflictException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12370,7 +12438,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12404,7 +12472,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12413,7 +12481,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12496,7 +12564,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12537,7 +12605,7 @@ pub enum UpdateFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12574,7 +12642,7 @@ impl UpdateFacetError {
     /// Creates the `UpdateFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFacetErrorKind::Unhandled(err.into()),
+            kind: UpdateFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12583,7 +12651,7 @@ impl UpdateFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFacetErrorKind::Unhandled(err.into()),
+            kind: UpdateFacetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12681,7 +12749,7 @@ impl std::error::Error for UpdateFacetError {
             UpdateFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpdateFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12718,7 +12786,7 @@ pub enum UpdateLinkAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLinkAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12753,7 +12821,9 @@ impl UpdateLinkAttributesError {
     /// Creates the `UpdateLinkAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLinkAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateLinkAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12762,7 +12832,9 @@ impl UpdateLinkAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLinkAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateLinkAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12862,7 +12934,7 @@ impl std::error::Error for UpdateLinkAttributesError {
             UpdateLinkAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateLinkAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpdateLinkAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateLinkAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLinkAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12901,7 +12973,7 @@ pub enum UpdateObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateObjectAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12937,7 +13009,9 @@ impl UpdateObjectAttributesError {
     /// Creates the `UpdateObjectAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12946,7 +13020,9 @@ impl UpdateObjectAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateObjectAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateObjectAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13054,7 +13130,7 @@ impl std::error::Error for UpdateObjectAttributesError {
             UpdateObjectAttributesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateObjectAttributesErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpdateObjectAttributesErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateObjectAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13087,7 +13163,7 @@ pub enum UpdateSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13120,7 +13196,7 @@ impl UpdateSchemaError {
     /// Creates the `UpdateSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSchemaErrorKind::Unhandled(err.into()),
+            kind: UpdateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13129,7 +13205,7 @@ impl UpdateSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSchemaErrorKind::Unhandled(err.into()),
+            kind: UpdateSchemaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13201,7 +13277,7 @@ impl std::error::Error for UpdateSchemaError {
             UpdateSchemaErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpdateSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13242,7 +13318,7 @@ pub enum UpdateTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTypedLinkFacetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13279,7 +13355,9 @@ impl UpdateTypedLinkFacetError {
     /// Creates the `UpdateTypedLinkFacetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: UpdateTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13288,7 +13366,9 @@ impl UpdateTypedLinkFacetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTypedLinkFacetErrorKind::Unhandled(err.into()),
+            kind: UpdateTypedLinkFacetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13404,7 +13484,7 @@ impl std::error::Error for UpdateTypedLinkFacetError {
             UpdateTypedLinkFacetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTypedLinkFacetErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpdateTypedLinkFacetErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTypedLinkFacetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13441,7 +13521,7 @@ pub enum UpgradeAppliedSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpgradeAppliedSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13476,7 +13556,9 @@ impl UpgradeAppliedSchemaError {
     /// Creates the `UpgradeAppliedSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpgradeAppliedSchemaErrorKind::Unhandled(err.into()),
+            kind: UpgradeAppliedSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13485,7 +13567,9 @@ impl UpgradeAppliedSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpgradeAppliedSchemaErrorKind::Unhandled(err.into()),
+            kind: UpgradeAppliedSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13585,7 +13669,7 @@ impl std::error::Error for UpgradeAppliedSchemaError {
             UpgradeAppliedSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpgradeAppliedSchemaErrorKind::SchemaAlreadyExistsException(_inner) => Some(_inner),
             UpgradeAppliedSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            UpgradeAppliedSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpgradeAppliedSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13622,7 +13706,7 @@ pub enum UpgradePublishedSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpgradePublishedSchemaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13657,7 +13741,9 @@ impl UpgradePublishedSchemaError {
     /// Creates the `UpgradePublishedSchemaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpgradePublishedSchemaErrorKind::Unhandled(err.into()),
+            kind: UpgradePublishedSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13666,7 +13752,9 @@ impl UpgradePublishedSchemaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpgradePublishedSchemaErrorKind::Unhandled(err.into()),
+            kind: UpgradePublishedSchemaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13766,7 +13854,32 @@ impl std::error::Error for UpgradePublishedSchemaError {
             UpgradePublishedSchemaErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpgradePublishedSchemaErrorKind::RetryableConflictException(_inner) => Some(_inner),
             UpgradePublishedSchemaErrorKind::ValidationException(_inner) => Some(_inner),
-            UpgradePublishedSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpgradePublishedSchemaErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

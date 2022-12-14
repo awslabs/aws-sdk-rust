@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,9 @@ where
                 crate::error::CreateSlackChannelConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::CreateSlackChannelConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -81,10 +81,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteAccountAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -107,9 +107,9 @@ where
                 crate::error::DeleteSlackChannelConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteSlackChannelConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +132,9 @@ where
                 crate::error::DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +148,11 @@ where
                 crate::error::GetAccountAliasErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::GetAccountAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAccountAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -175,10 +177,10 @@ where
                     inner,
                 ) => Error::InternalServerException(inner),
                 crate::error::ListSlackChannelConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -198,9 +200,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-                crate::error::ListSlackWorkspaceConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListSlackWorkspaceConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -220,9 +222,11 @@ where
                 crate::error::PutAccountAliasErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PutAccountAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAccountAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -245,9 +249,9 @@ where
                 crate::error::UpdateSlackChannelConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateSlackChannelConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateSlackChannelConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -1385,7 +1385,7 @@ pub enum BatchCreateAttendeeErrorKind {
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchCreateAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1420,7 +1420,7 @@ impl BatchCreateAttendeeError {
     /// Creates the `BatchCreateAttendeeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchCreateAttendeeErrorKind::Unhandled(err.into()),
+            kind: BatchCreateAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1429,7 +1429,7 @@ impl BatchCreateAttendeeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchCreateAttendeeErrorKind::Unhandled(err.into()),
+            kind: BatchCreateAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1529,7 +1529,7 @@ impl std::error::Error for BatchCreateAttendeeError {
             BatchCreateAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             BatchCreateAttendeeErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            BatchCreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchCreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1560,7 +1560,7 @@ pub enum BatchUpdateAttendeeCapabilitiesExceptErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchUpdateAttendeeCapabilitiesExceptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1607,7 +1607,9 @@ impl BatchUpdateAttendeeCapabilitiesExceptError {
     /// Creates the `BatchUpdateAttendeeCapabilitiesExceptError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(err.into()),
+            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1616,7 +1618,9 @@ impl BatchUpdateAttendeeCapabilitiesExceptError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(err.into()),
+            kind: BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1704,9 +1708,7 @@ impl std::error::Error for BatchUpdateAttendeeCapabilitiesExceptError {
             BatchUpdateAttendeeCapabilitiesExceptErrorKind::UnauthorizedException(_inner) => {
                 Some(_inner)
             }
-            BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            BatchUpdateAttendeeCapabilitiesExceptErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1743,7 +1745,7 @@ pub enum CreateAttendeeErrorKind {
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1778,7 +1780,7 @@ impl CreateAttendeeError {
     /// Creates the `CreateAttendeeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAttendeeErrorKind::Unhandled(err.into()),
+            kind: CreateAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1787,7 +1789,7 @@ impl CreateAttendeeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAttendeeErrorKind::Unhandled(err.into()),
+            kind: CreateAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1875,7 +1877,7 @@ impl std::error::Error for CreateAttendeeError {
             CreateAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateAttendeeErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            CreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAttendeeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1908,7 +1910,7 @@ pub enum CreateMeetingErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMeetingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1941,7 +1943,7 @@ impl CreateMeetingError {
     /// Creates the `CreateMeetingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMeetingErrorKind::Unhandled(err.into()),
+            kind: CreateMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1950,7 +1952,7 @@ impl CreateMeetingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMeetingErrorKind::Unhandled(err.into()),
+            kind: CreateMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2022,7 +2024,7 @@ impl std::error::Error for CreateMeetingError {
             CreateMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMeetingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2055,7 +2057,7 @@ pub enum CreateMeetingWithAttendeesErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMeetingWithAttendeesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2090,7 +2092,9 @@ impl CreateMeetingWithAttendeesError {
     /// Creates the `CreateMeetingWithAttendeesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMeetingWithAttendeesErrorKind::Unhandled(err.into()),
+            kind: CreateMeetingWithAttendeesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2099,7 +2103,9 @@ impl CreateMeetingWithAttendeesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMeetingWithAttendeesErrorKind::Unhandled(err.into()),
+            kind: CreateMeetingWithAttendeesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2185,7 +2191,7 @@ impl std::error::Error for CreateMeetingWithAttendeesError {
             }
             CreateMeetingWithAttendeesErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMeetingWithAttendeesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateMeetingWithAttendeesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMeetingWithAttendeesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2218,7 +2224,7 @@ pub enum DeleteAttendeeErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2251,7 +2257,7 @@ impl DeleteAttendeeError {
     /// Creates the `DeleteAttendeeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAttendeeErrorKind::Unhandled(err.into()),
+            kind: DeleteAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2260,7 +2266,7 @@ impl DeleteAttendeeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAttendeeErrorKind::Unhandled(err.into()),
+            kind: DeleteAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2332,7 +2338,7 @@ impl std::error::Error for DeleteAttendeeError {
             DeleteAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAttendeeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2365,7 +2371,7 @@ pub enum DeleteMeetingErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMeetingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2398,7 +2404,7 @@ impl DeleteMeetingError {
     /// Creates the `DeleteMeetingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMeetingErrorKind::Unhandled(err.into()),
+            kind: DeleteMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2407,7 +2413,7 @@ impl DeleteMeetingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMeetingErrorKind::Unhandled(err.into()),
+            kind: DeleteMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2476,7 +2482,7 @@ impl std::error::Error for DeleteMeetingError {
             DeleteMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMeetingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2509,7 +2515,7 @@ pub enum GetAttendeeErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAttendeeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2542,7 +2548,7 @@ impl GetAttendeeError {
     /// Creates the `GetAttendeeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAttendeeErrorKind::Unhandled(err.into()),
+            kind: GetAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2551,7 +2557,7 @@ impl GetAttendeeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAttendeeErrorKind::Unhandled(err.into()),
+            kind: GetAttendeeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2617,7 +2623,7 @@ impl std::error::Error for GetAttendeeError {
             GetAttendeeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetAttendeeErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetAttendeeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetAttendeeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAttendeeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2650,7 +2656,7 @@ pub enum GetMeetingErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMeetingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2683,7 +2689,7 @@ impl GetMeetingError {
     /// Creates the `GetMeetingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMeetingErrorKind::Unhandled(err.into()),
+            kind: GetMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2692,7 +2698,7 @@ impl GetMeetingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMeetingErrorKind::Unhandled(err.into()),
+            kind: GetMeetingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2758,7 +2764,7 @@ impl std::error::Error for GetMeetingError {
             GetMeetingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetMeetingErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetMeetingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetMeetingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMeetingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2791,7 +2797,7 @@ pub enum ListAttendeesErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAttendeesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2824,7 +2830,7 @@ impl ListAttendeesError {
     /// Creates the `ListAttendeesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAttendeesErrorKind::Unhandled(err.into()),
+            kind: ListAttendeesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2833,7 +2839,7 @@ impl ListAttendeesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAttendeesErrorKind::Unhandled(err.into()),
+            kind: ListAttendeesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2902,7 +2908,7 @@ impl std::error::Error for ListAttendeesError {
             ListAttendeesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAttendeesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAttendeesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListAttendeesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAttendeesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2923,7 +2929,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The resource that you want to tag couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2950,7 +2956,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2959,7 +2965,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2995,7 +3001,7 @@ impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3032,7 +3038,7 @@ pub enum StartMeetingTranscriptionErrorKind {
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartMeetingTranscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3071,7 +3077,9 @@ impl StartMeetingTranscriptionError {
     /// Creates the `StartMeetingTranscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartMeetingTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3080,7 +3088,9 @@ impl StartMeetingTranscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StartMeetingTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3182,7 +3192,7 @@ impl std::error::Error for StartMeetingTranscriptionError {
             StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
-            StartMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3217,7 +3227,7 @@ pub enum StopMeetingTranscriptionErrorKind {
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopMeetingTranscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3253,7 +3263,9 @@ impl StopMeetingTranscriptionError {
     /// Creates the `StopMeetingTranscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StopMeetingTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3262,7 +3274,9 @@ impl StopMeetingTranscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            kind: StopMeetingTranscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3354,7 +3368,7 @@ impl std::error::Error for StopMeetingTranscriptionError {
             StopMeetingTranscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
-            StopMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3379,7 +3393,7 @@ pub enum TagResourceErrorKind {
     /// <p>Too many tags were added to the specified resource.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3408,7 +3422,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3417,7 +3431,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3463,7 +3477,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3486,7 +3500,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The resource that you want to tag couldn't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3514,7 +3528,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3523,7 +3537,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3564,7 +3578,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3595,7 +3609,7 @@ pub enum UpdateAttendeeCapabilitiesErrorKind {
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAttendeeCapabilitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3629,7 +3643,9 @@ impl UpdateAttendeeCapabilitiesError {
     /// Creates the `UpdateAttendeeCapabilitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(err.into()),
+            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3638,7 +3654,9 @@ impl UpdateAttendeeCapabilitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(err.into()),
+            kind: UpdateAttendeeCapabilitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3716,7 +3734,32 @@ impl std::error::Error for UpdateAttendeeCapabilitiesError {
                 Some(_inner)
             }
             UpdateAttendeeCapabilitiesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateAttendeeCapabilitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAttendeeCapabilitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

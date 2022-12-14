@@ -12,7 +12,7 @@ pub enum Error {
     /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,10 +45,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::AssociateMemberAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -75,10 +75,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::AssociateS3ResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -99,10 +99,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DisassociateMemberAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -126,10 +126,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DisassociateS3ResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,10 +149,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::ListMemberAccountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -172,9 +172,11 @@ where
                 crate::error::ListS3ResourcesErrorKind::InvalidInputException(inner) => {
                     Error::InvalidInputException(inner)
                 }
-                crate::error::ListS3ResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListS3ResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -197,10 +199,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::UpdateS3ResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

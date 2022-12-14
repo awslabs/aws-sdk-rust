@@ -769,7 +769,7 @@ pub enum DeleteSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -800,7 +800,7 @@ impl DeleteSessionError {
     /// Creates the `DeleteSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -809,7 +809,7 @@ impl DeleteSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSessionErrorKind::Unhandled(err.into()),
+            kind: DeleteSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -868,7 +868,7 @@ impl std::error::Error for DeleteSessionError {
             DeleteSessionErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -895,7 +895,7 @@ pub enum GetSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -925,7 +925,7 @@ impl GetSessionError {
     /// Creates the `GetSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSessionErrorKind::Unhandled(err.into()),
+            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -934,7 +934,7 @@ impl GetSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSessionErrorKind::Unhandled(err.into()),
+            kind: GetSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -982,7 +982,7 @@ impl std::error::Error for GetSessionError {
             GetSessionErrorKind::InternalFailureException(_inner) => Some(_inner),
             GetSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1028,7 +1028,7 @@ pub enum PostContentErrorKind {
     /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1065,7 +1065,7 @@ impl PostContentError {
     /// Creates the `PostContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostContentErrorKind::Unhandled(err.into()),
+            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1074,7 +1074,7 @@ impl PostContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostContentErrorKind::Unhandled(err.into()),
+            kind: PostContentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1166,7 +1166,7 @@ impl std::error::Error for PostContentError {
             PostContentErrorKind::NotFoundException(_inner) => Some(_inner),
             PostContentErrorKind::RequestTimeoutException(_inner) => Some(_inner),
             PostContentErrorKind::UnsupportedMediaTypeException(_inner) => Some(_inner),
-            PostContentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostContentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1206,7 +1206,7 @@ pub enum PostTextErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1240,7 +1240,7 @@ impl PostTextError {
     /// Creates the `PostTextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostTextErrorKind::Unhandled(err.into()),
+            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1249,7 +1249,7 @@ impl PostTextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostTextErrorKind::Unhandled(err.into()),
+            kind: PostTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1317,7 +1317,7 @@ impl std::error::Error for PostTextError {
             PostTextErrorKind::LimitExceededException(_inner) => Some(_inner),
             PostTextErrorKind::LoopDetectedException(_inner) => Some(_inner),
             PostTextErrorKind::NotFoundException(_inner) => Some(_inner),
-            PostTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1357,7 +1357,7 @@ pub enum PutSessionErrorKind {
     /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSessionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1391,7 +1391,7 @@ impl PutSessionError {
     /// Creates the `PutSessionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSessionErrorKind::Unhandled(err.into()),
+            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1400,7 +1400,7 @@ impl PutSessionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSessionErrorKind::Unhandled(err.into()),
+            kind: PutSessionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1471,7 +1471,32 @@ impl std::error::Error for PutSessionError {
             PutSessionErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutSessionErrorKind::NotAcceptableException(_inner) => Some(_inner),
             PutSessionErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSessionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

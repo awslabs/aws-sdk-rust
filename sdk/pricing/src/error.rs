@@ -349,7 +349,7 @@ pub enum DescribeServicesErrorKind {
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,7 +380,7 @@ impl DescribeServicesError {
     /// Creates the `DescribeServicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeServicesErrorKind::Unhandled(err.into()),
+            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -389,7 +389,7 @@ impl DescribeServicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeServicesErrorKind::Unhandled(err.into()),
+            kind: DescribeServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -454,7 +454,7 @@ impl std::error::Error for DescribeServicesError {
             DescribeServicesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             DescribeServicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeServicesErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeServicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -483,7 +483,7 @@ pub enum GetAttributeValuesErrorKind {
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAttributeValuesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -514,7 +514,7 @@ impl GetAttributeValuesError {
     /// Creates the `GetAttributeValuesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAttributeValuesErrorKind::Unhandled(err.into()),
+            kind: GetAttributeValuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -523,7 +523,7 @@ impl GetAttributeValuesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAttributeValuesErrorKind::Unhandled(err.into()),
+            kind: GetAttributeValuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -591,7 +591,7 @@ impl std::error::Error for GetAttributeValuesError {
             GetAttributeValuesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             GetAttributeValuesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetAttributeValuesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetAttributeValuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAttributeValuesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -620,7 +620,7 @@ pub enum GetProductsErrorKind {
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetProductsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -651,7 +651,7 @@ impl GetProductsError {
     /// Creates the `GetProductsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetProductsErrorKind::Unhandled(err.into()),
+            kind: GetProductsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -660,7 +660,7 @@ impl GetProductsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetProductsErrorKind::Unhandled(err.into()),
+            kind: GetProductsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -722,7 +722,32 @@ impl std::error::Error for GetProductsError {
             GetProductsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             GetProductsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetProductsErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetProductsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetProductsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

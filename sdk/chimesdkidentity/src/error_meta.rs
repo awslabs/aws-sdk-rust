@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71,10 +71,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::CreateAppInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -113,10 +113,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::CreateAppInstanceAdminErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -155,10 +155,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::CreateAppInstanceUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,10 +193,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::DeleteAppInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -235,10 +235,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DeleteAppInstanceAdminErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -277,10 +277,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DeleteAppInstanceUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -304,9 +304,9 @@ where
                 crate::error::DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::DeregisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -338,10 +338,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::DescribeAppInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -374,10 +374,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DescribeAppInstanceAdminErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -410,10 +410,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::DescribeAppInstanceUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -437,9 +437,9 @@ where
                 crate::error::DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::DescribeAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -463,9 +463,9 @@ where
                 crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::GetAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -501,10 +501,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::ListAppInstanceAdminsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -536,10 +536,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::ListAppInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -559,9 +559,9 @@ where
                 crate::error::ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::ListAppInstanceUserEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -594,10 +594,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::ListAppInstanceUsersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,10 +629,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -656,9 +656,9 @@ where
                 crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::PutAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -684,9 +684,9 @@ where
                 crate::error::RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::RegisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -718,9 +718,11 @@ where
                 crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
                     Error::UnauthorizedClientException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -749,9 +751,11 @@ where
                 crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
                     Error::UnauthorizedClientException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -786,10 +790,10 @@ where
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::UpdateAppInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -828,10 +832,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::UpdateAppInstanceUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -852,9 +856,9 @@ where
                 crate::error::UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
                 crate::error::UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-                crate::error::UpdateAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

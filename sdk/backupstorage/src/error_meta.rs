@@ -24,7 +24,7 @@ pub enum Error {
     /// Increased rate over throttling limits. Can be retried with exponential backoff.
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71,9 +71,11 @@ where
                 crate::error::DeleteObjectErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -105,9 +107,11 @@ where
                 crate::error::GetChunkErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::GetChunkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetChunkErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,10 +149,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetObjectMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -177,9 +181,11 @@ where
                 crate::error::ListChunksErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListChunksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChunksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -214,9 +220,11 @@ where
                 crate::error::ListObjectsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListObjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListObjectsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -255,10 +263,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::NotifyObjectCompleteErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -293,9 +301,11 @@ where
                 crate::error::PutChunkErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::PutChunkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutChunkErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -330,9 +340,11 @@ where
                 crate::error::PutObjectErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::PutObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -367,9 +379,11 @@ where
                 crate::error::StartObjectErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::StartObjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartObjectErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

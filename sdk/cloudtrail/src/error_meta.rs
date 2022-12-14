@@ -160,7 +160,7 @@ pub enum Error {
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -277,9 +277,11 @@ where
                 crate::error::AddTagsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -317,9 +319,11 @@ where
                 crate::error::CancelQueryErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::CancelQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelQueryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,9 +349,9 @@ where
                 crate::error::CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
                 crate::error::CreateEventDataStoreErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
                 crate::error::CreateEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::CreateEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -387,9 +391,9 @@ where
                 crate::error::CreateTrailErrorKind::TrailAlreadyExistsException(inner) => Error::TrailAlreadyExistsException(inner),
                 crate::error::CreateTrailErrorKind::TrailNotProvidedException(inner) => Error::TrailNotProvidedException(inner),
                 crate::error::CreateTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::CreateTrailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTrailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -412,9 +416,9 @@ where
                 crate::error::DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(inner) => Error::NotOrganizationMasterAccountException(inner),
                 crate::error::DeleteEventDataStoreErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DeleteEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DeleteEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -433,9 +437,9 @@ where
                 crate::error::DeleteTrailErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DeleteTrailErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::DeleteTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DeleteTrailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTrailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,9 +471,11 @@ where
                 crate::error::DescribeQueryErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::DescribeQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeQueryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -489,9 +495,11 @@ where
                 crate::error::DescribeTrailsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::DescribeTrailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTrailsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -514,9 +522,11 @@ where
                 crate::error::GetChannelErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::GetChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -545,10 +555,10 @@ where
                     Error::UnsupportedOperationException(inner)
                 }
                 crate::error::GetEventDataStoreErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -574,10 +584,10 @@ where
                     Error::UnsupportedOperationException(inner)
                 }
                 crate::error::GetEventSelectorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -600,9 +610,11 @@ where
                 crate::error::GetImportErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::GetImportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetImportErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -631,10 +643,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::GetInsightSelectorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -672,9 +684,11 @@ where
                 crate::error::GetQueryResultsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::GetQueryResultsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetQueryResultsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,9 +711,11 @@ where
                 crate::error::GetTrailErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::GetTrailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTrailErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -722,9 +738,11 @@ where
                 crate::error::GetTrailStatusErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::GetTrailStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTrailStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -744,9 +762,11 @@ where
                 crate::error::ListChannelsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChannelsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -772,10 +792,10 @@ where
                     inner,
                 ) => Error::UnsupportedOperationException(inner),
                 crate::error::ListEventDataStoresErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -798,10 +818,10 @@ where
                     Error::UnsupportedOperationException(inner)
                 }
                 crate::error::ListImportFailuresErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -827,9 +847,11 @@ where
                 crate::error::ListImportsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListImportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListImportsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -852,9 +874,11 @@ where
                 crate::error::ListPublicKeysErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListPublicKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPublicKeysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -895,9 +919,11 @@ where
                 crate::error::ListQueriesErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListQueriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListQueriesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -935,9 +961,11 @@ where
                 crate::error::ListTagsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -954,9 +982,11 @@ where
                 crate::error::ListTrailsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::ListTrailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTrailsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -988,9 +1018,11 @@ where
                 crate::error::LookupEventsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::LookupEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::LookupEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1011,9 +1043,9 @@ where
                 crate::error::PutEventSelectorsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::PutEventSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::PutEventSelectorsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::PutEventSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutEventSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1037,9 +1069,9 @@ where
                 crate::error::PutInsightSelectorsErrorKind::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
                 crate::error::PutInsightSelectorsErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::PutInsightSelectorsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::PutInsightSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutInsightSelectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1080,9 +1112,11 @@ where
                 crate::error::RemoveTagsErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1108,9 +1142,9 @@ where
                 crate::error::RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
                 crate::error::RestoreEventDataStoreErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
                 crate::error::RestoreEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::RestoreEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RestoreEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1154,9 +1188,11 @@ where
                 crate::error::StartImportErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::StartImportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartImportErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1174,9 +1210,9 @@ where
                 crate::error::StartLoggingErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::StartLoggingErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::StartLoggingErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::StartLoggingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartLoggingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1211,9 +1247,11 @@ where
                 crate::error::StartQueryErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::StartQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartQueryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1236,9 +1274,11 @@ where
                 crate::error::StopImportErrorKind::UnsupportedOperationException(inner) => {
                     Error::UnsupportedOperationException(inner)
                 }
-                crate::error::StopImportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopImportErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1256,9 +1296,9 @@ where
                 crate::error::StopLoggingErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::StopLoggingErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::StopLoggingErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::StopLoggingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopLoggingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1284,9 +1324,9 @@ where
                 crate::error::UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
                 crate::error::UpdateEventDataStoreErrorKind::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
                 crate::error::UpdateEventDataStoreErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::UpdateEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateEventDataStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1325,9 +1365,9 @@ where
                 crate::error::UpdateTrailErrorKind::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
                 crate::error::UpdateTrailErrorKind::TrailNotProvidedException(inner) => Error::TrailNotProvidedException(inner),
                 crate::error::UpdateTrailErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::UpdateTrailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateTrailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

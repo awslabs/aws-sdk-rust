@@ -29,7 +29,7 @@ pub enum Error {
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -67,10 +67,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::DescribeReportCreationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -97,10 +97,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetComplianceSummaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -123,9 +123,11 @@ where
                 crate::error::GetResourcesErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +150,11 @@ where
                 crate::error::GetTagKeysErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetTagKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTagKeysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -173,9 +177,11 @@ where
                 crate::error::GetTagValuesErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::GetTagValuesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTagValuesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,10 +210,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::StartReportCreationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -227,9 +233,11 @@ where
                 crate::error::TagResourcesErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::TagResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -249,9 +257,11 @@ where
                 crate::error::UntagResourcesErrorKind::ThrottledException(inner) => {
                     Error::ThrottledException(inner)
                 }
-                crate::error::UntagResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

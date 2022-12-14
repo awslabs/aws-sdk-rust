@@ -12087,7 +12087,7 @@ pub enum AssociateApprovalRuleTemplateWithRepositoryErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateApprovalRuleTemplateWithRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12156,7 +12156,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
     /// Creates the `AssociateApprovalRuleTemplateWithRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(err.into()),
+            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -12165,7 +12167,9 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(err.into()),
+            kind: AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -12302,7 +12306,7 @@ impl std::error::Error for AssociateApprovalRuleTemplateWithRepositoryError {
             Some(_inner)
             ,
             AssociateApprovalRuleTemplateWithRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -12350,7 +12354,7 @@ pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind {
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12414,7 +12418,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -12425,7 +12429,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         Self {
             meta: err.clone(),
             kind: BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -12525,7 +12529,7 @@ impl std::error::Error for BatchAssociateApprovalRuleTemplateWithRepositoriesErr
             Some(_inner)
             ,
             BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -12595,7 +12599,7 @@ pub enum BatchDescribeMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDescribeMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12680,7 +12684,9 @@ impl BatchDescribeMergeConflictsError {
     /// Creates the `BatchDescribeMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12689,7 +12695,9 @@ impl BatchDescribeMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12923,7 +12931,7 @@ impl std::error::Error for BatchDescribeMergeConflictsError {
             BatchDescribeMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            BatchDescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12970,7 +12978,7 @@ pub enum BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind {
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13034,7 +13042,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -13045,7 +13053,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
         Self {
             meta: err.clone(),
             kind: BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -13145,7 +13153,7 @@ impl std::error::Error for BatchDisassociateApprovalRuleTemplateFromRepositories
             Some(_inner)
             ,
             BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -13189,7 +13197,7 @@ pub enum BatchGetCommitsErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetCommitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13227,7 +13235,7 @@ impl BatchGetCommitsError {
     /// Creates the `BatchGetCommitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetCommitsErrorKind::Unhandled(err.into()),
+            kind: BatchGetCommitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13236,7 +13244,7 @@ impl BatchGetCommitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetCommitsErrorKind::Unhandled(err.into()),
+            kind: BatchGetCommitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13346,7 +13354,7 @@ impl std::error::Error for BatchGetCommitsError {
             BatchGetCommitsErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             BatchGetCommitsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             BatchGetCommitsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            BatchGetCommitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetCommitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13385,7 +13393,7 @@ pub enum BatchGetRepositoriesErrorKind {
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13429,7 +13437,9 @@ impl BatchGetRepositoriesError {
     /// Creates the `BatchGetRepositoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetRepositoriesErrorKind::Unhandled(err.into()),
+            kind: BatchGetRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13438,7 +13448,9 @@ impl BatchGetRepositoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetRepositoriesErrorKind::Unhandled(err.into()),
+            kind: BatchGetRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13538,7 +13550,7 @@ impl std::error::Error for BatchGetRepositoriesError {
                 Some(_inner)
             }
             BatchGetRepositoriesErrorKind::RepositoryNamesRequiredException(_inner) => Some(_inner),
-            BatchGetRepositoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetRepositoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13583,7 +13595,7 @@ pub enum CreateApprovalRuleTemplateErrorKind {
     /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
     NumberOfRuleTemplatesExceededException(crate::error::NumberOfRuleTemplatesExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13632,7 +13644,9 @@ impl CreateApprovalRuleTemplateError {
     /// Creates the `CreateApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13641,7 +13655,9 @@ impl CreateApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13740,7 +13756,7 @@ impl std::error::Error for CreateApprovalRuleTemplateError {
             Some(_inner)
             ,
             CreateApprovalRuleTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -13792,7 +13808,7 @@ pub enum CreateBranchErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13834,7 +13850,7 @@ impl CreateBranchError {
     /// Creates the `CreateBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13843,7 +13859,7 @@ impl CreateBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBranchErrorKind::Unhandled(err.into()),
+            kind: CreateBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13983,7 +13999,7 @@ impl std::error::Error for CreateBranchError {
             CreateBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             CreateBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             CreateBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14090,7 +14106,7 @@ pub enum CreateCommitErrorKind {
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14164,7 +14180,7 @@ impl CreateCommitError {
     /// Creates the `CreateCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCommitErrorKind::Unhandled(err.into()),
+            kind: CreateCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14173,7 +14189,7 @@ impl CreateCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCommitErrorKind::Unhandled(err.into()),
+            kind: CreateCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14501,7 +14517,7 @@ impl std::error::Error for CreateCommitError {
             CreateCommitErrorKind::RestrictedSourceFileException(_inner) => Some(_inner),
             CreateCommitErrorKind::SamePathRequestException(_inner) => Some(_inner),
             CreateCommitErrorKind::SourceFileOrContentRequiredException(_inner) => Some(_inner),
-            CreateCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14578,7 +14594,7 @@ pub enum CreatePullRequestErrorKind {
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14641,7 +14657,7 @@ impl CreatePullRequestError {
     /// Creates the `CreatePullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePullRequestErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14650,7 +14666,7 @@ impl CreatePullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePullRequestErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14888,7 +14904,7 @@ impl std::error::Error for CreatePullRequestError {
             CreatePullRequestErrorKind::TargetRequiredException(_inner) => Some(_inner),
             CreatePullRequestErrorKind::TargetsRequiredException(_inner) => Some(_inner),
             CreatePullRequestErrorKind::TitleRequiredException(_inner) => Some(_inner),
-            CreatePullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14939,7 +14955,7 @@ pub enum CreatePullRequestApprovalRuleErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePullRequestApprovalRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15013,7 +15029,9 @@ impl CreatePullRequestApprovalRuleError {
     /// Creates the `CreatePullRequestApprovalRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15022,7 +15040,9 @@ impl CreatePullRequestApprovalRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: CreatePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15200,7 +15220,7 @@ impl std::error::Error for CreatePullRequestApprovalRuleError {
             CreatePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            CreatePullRequestApprovalRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePullRequestApprovalRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15251,7 +15271,7 @@ pub enum CreateRepositoryErrorKind {
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15295,7 +15315,7 @@ impl CreateRepositoryError {
     /// Creates the `CreateRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRepositoryErrorKind::Unhandled(err.into()),
+            kind: CreateRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15304,7 +15324,7 @@ impl CreateRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRepositoryErrorKind::Unhandled(err.into()),
+            kind: CreateRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15445,7 +15465,7 @@ impl std::error::Error for CreateRepositoryError {
             CreateRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             CreateRepositoryErrorKind::TagPolicyException(_inner) => Some(_inner),
             CreateRepositoryErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15548,7 +15568,7 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUnreferencedMergeCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15687,7 +15707,9 @@ impl CreateUnreferencedMergeCommitError {
     /// Creates the `CreateUnreferencedMergeCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(err.into()),
+            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15696,7 +15718,9 @@ impl CreateUnreferencedMergeCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(err.into()),
+            kind: CreateUnreferencedMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16082,7 +16106,7 @@ impl std::error::Error for CreateUnreferencedMergeCommitError {
             Some(_inner)
             ,
             CreateUnreferencedMergeCommitErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -16112,7 +16136,7 @@ pub enum DeleteApprovalRuleTemplateErrorKind {
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16147,7 +16171,9 @@ impl DeleteApprovalRuleTemplateError {
     /// Creates the `DeleteApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16156,7 +16182,9 @@ impl DeleteApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16214,7 +16242,7 @@ impl std::error::Error for DeleteApprovalRuleTemplateError {
             DeleteApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(
                 _inner,
             ) => Some(_inner),
-            DeleteApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16259,7 +16287,7 @@ pub enum DeleteBranchErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16298,7 +16326,7 @@ impl DeleteBranchError {
     /// Creates the `DeleteBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16307,7 +16335,7 @@ impl DeleteBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBranchErrorKind::Unhandled(err.into()),
+            kind: DeleteBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16423,7 +16451,7 @@ impl std::error::Error for DeleteBranchError {
             DeleteBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             DeleteBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             DeleteBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16450,7 +16478,7 @@ pub enum DeleteCommentContentErrorKind {
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCommentContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16480,7 +16508,9 @@ impl DeleteCommentContentError {
     /// Creates the `DeleteCommentContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCommentContentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentContentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16489,7 +16519,9 @@ impl DeleteCommentContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCommentContentErrorKind::Unhandled(err.into()),
+            kind: DeleteCommentContentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -16549,7 +16581,7 @@ impl std::error::Error for DeleteCommentContentError {
             DeleteCommentContentErrorKind::CommentDoesNotExistException(_inner) => Some(_inner),
             DeleteCommentContentErrorKind::CommentIdRequiredException(_inner) => Some(_inner),
             DeleteCommentContentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            DeleteCommentContentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCommentContentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16616,7 +16648,7 @@ pub enum DeleteFileErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16664,7 +16696,7 @@ impl DeleteFileError {
     /// Creates the `DeleteFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFileErrorKind::Unhandled(err.into()),
+            kind: DeleteFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16673,7 +16705,7 @@ impl DeleteFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFileErrorKind::Unhandled(err.into()),
+            kind: DeleteFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16868,7 +16900,7 @@ impl std::error::Error for DeleteFileError {
             DeleteFileErrorKind::PathRequiredException(_inner) => Some(_inner),
             DeleteFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             DeleteFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16915,7 +16947,7 @@ pub enum DeletePullRequestApprovalRuleErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePullRequestApprovalRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16982,7 +17014,9 @@ impl DeletePullRequestApprovalRuleError {
     /// Creates the `DeletePullRequestApprovalRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -16991,7 +17025,9 @@ impl DeletePullRequestApprovalRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(err.into()),
+            kind: DeletePullRequestApprovalRuleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17142,7 +17178,7 @@ impl std::error::Error for DeletePullRequestApprovalRuleError {
             Some(_inner)
             ,
             DeletePullRequestApprovalRuleErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -17180,7 +17216,7 @@ pub enum DeleteRepositoryErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17215,7 +17251,7 @@ impl DeleteRepositoryError {
     /// Creates the `DeleteRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRepositoryErrorKind::Unhandled(err.into()),
+            kind: DeleteRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -17224,7 +17260,7 @@ impl DeleteRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRepositoryErrorKind::Unhandled(err.into()),
+            kind: DeleteRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -17310,7 +17346,7 @@ impl std::error::Error for DeleteRepositoryError {
             DeleteRepositoryErrorKind::EncryptionKeyUnavailableException(_inner) => Some(_inner),
             DeleteRepositoryErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             DeleteRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            DeleteRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17383,7 +17419,7 @@ pub enum DescribeMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17460,7 +17496,9 @@ impl DescribeMergeConflictsError {
     /// Creates the `DescribeMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: DescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17469,7 +17507,9 @@ impl DescribeMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: DescribeMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17703,7 +17743,7 @@ impl std::error::Error for DescribeMergeConflictsError {
             DescribeMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            DescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -17750,7 +17790,7 @@ pub enum DescribePullRequestEventsErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePullRequestEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17809,7 +17849,9 @@ impl DescribePullRequestEventsError {
     /// Creates the `DescribePullRequestEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePullRequestEventsErrorKind::Unhandled(err.into()),
+            kind: DescribePullRequestEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -17818,7 +17860,9 @@ impl DescribePullRequestEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePullRequestEventsErrorKind::Unhandled(err.into()),
+            kind: DescribePullRequestEventsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -17970,7 +18014,7 @@ impl std::error::Error for DescribePullRequestEventsError {
             DescribePullRequestEventsErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            DescribePullRequestEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePullRequestEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18021,7 +18065,7 @@ pub enum DisassociateApprovalRuleTemplateFromRepositoryErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateApprovalRuleTemplateFromRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18087,7 +18131,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
     /// Creates the `DisassociateApprovalRuleTemplateFromRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(err.into()),
+            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18096,7 +18142,9 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(err.into()),
+            kind: DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18217,7 +18265,7 @@ impl std::error::Error for DisassociateApprovalRuleTemplateFromRepositoryError {
             Some(_inner)
             ,
             DisassociateApprovalRuleTemplateFromRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -18261,7 +18309,7 @@ pub enum EvaluatePullRequestApprovalRulesErrorKind {
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EvaluatePullRequestApprovalRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18323,7 +18371,9 @@ impl EvaluatePullRequestApprovalRulesError {
     /// Creates the `EvaluatePullRequestApprovalRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -18332,7 +18382,9 @@ impl EvaluatePullRequestApprovalRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: EvaluatePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -18470,7 +18522,7 @@ impl std::error::Error for EvaluatePullRequestApprovalRulesError {
             EvaluatePullRequestApprovalRulesErrorKind::RevisionNotCurrentException(_inner) => {
                 Some(_inner)
             }
-            EvaluatePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EvaluatePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18501,7 +18553,7 @@ pub enum GetApprovalRuleTemplateErrorKind {
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18536,7 +18588,9 @@ impl GetApprovalRuleTemplateError {
     /// Creates the `GetApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: GetApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -18545,7 +18599,9 @@ impl GetApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: GetApprovalRuleTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -18603,7 +18659,7 @@ impl std::error::Error for GetApprovalRuleTemplateError {
             GetApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(_inner) => {
                 Some(_inner)
             }
-            GetApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApprovalRuleTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18650,7 +18706,7 @@ pub enum GetBlobErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBlobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18688,7 +18744,7 @@ impl GetBlobError {
     /// Creates the `GetBlobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBlobErrorKind::Unhandled(err.into()),
+            kind: GetBlobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18697,7 +18753,7 @@ impl GetBlobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBlobErrorKind::Unhandled(err.into()),
+            kind: GetBlobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -18809,7 +18865,7 @@ impl std::error::Error for GetBlobError {
             GetBlobErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetBlobErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetBlobErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetBlobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBlobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -18854,7 +18910,7 @@ pub enum GetBranchErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18891,7 +18947,7 @@ impl GetBranchError {
     /// Creates the `GetBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -18900,7 +18956,7 @@ impl GetBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBranchErrorKind::Unhandled(err.into()),
+            kind: GetBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19016,7 +19072,7 @@ impl std::error::Error for GetBranchError {
             GetBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19055,7 +19111,7 @@ pub enum GetCommentErrorKind {
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19090,7 +19146,7 @@ impl GetCommentError {
     /// Creates the `GetCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentErrorKind::Unhandled(err.into()),
+            kind: GetCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19099,7 +19155,7 @@ impl GetCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentErrorKind::Unhandled(err.into()),
+            kind: GetCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19196,7 +19252,7 @@ impl std::error::Error for GetCommentError {
             GetCommentErrorKind::EncryptionKeyNotFoundException(_inner) => Some(_inner),
             GetCommentErrorKind::EncryptionKeyUnavailableException(_inner) => Some(_inner),
             GetCommentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            GetCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19229,7 +19285,7 @@ pub enum GetCommentReactionsErrorKind {
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
     InvalidReactionUserArnException(crate::error::InvalidReactionUserArnException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentReactionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19264,7 +19320,7 @@ impl GetCommentReactionsError {
     /// Creates the `GetCommentReactionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentReactionsErrorKind::Unhandled(err.into()),
+            kind: GetCommentReactionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -19273,7 +19329,7 @@ impl GetCommentReactionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentReactionsErrorKind::Unhandled(err.into()),
+            kind: GetCommentReactionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -19357,7 +19413,7 @@ impl std::error::Error for GetCommentReactionsError {
             GetCommentReactionsErrorKind::InvalidContinuationTokenException(_inner) => Some(_inner),
             GetCommentReactionsErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
             GetCommentReactionsErrorKind::InvalidReactionUserArnException(_inner) => Some(_inner),
-            GetCommentReactionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentReactionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19406,7 +19462,7 @@ pub enum GetCommentsForComparedCommitErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentsForComparedCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19471,7 +19527,9 @@ impl GetCommentsForComparedCommitError {
     /// Creates the `GetCommentsForComparedCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentsForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19480,7 +19538,9 @@ impl GetCommentsForComparedCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentsForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19636,7 +19696,7 @@ impl std::error::Error for GetCommentsForComparedCommitError {
             GetCommentsForComparedCommitErrorKind::RepositoryNameRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetCommentsForComparedCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentsForComparedCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -19695,7 +19755,7 @@ pub enum GetCommentsForPullRequestErrorKind {
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommentsForPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19766,7 +19826,9 @@ impl GetCommentsForPullRequestError {
     /// Creates the `GetCommentsForPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommentsForPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -19775,7 +19837,9 @@ impl GetCommentsForPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommentsForPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetCommentsForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -19965,7 +20029,7 @@ impl std::error::Error for GetCommentsForPullRequestError {
             GetCommentsForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException(
                 _inner,
             ) => Some(_inner),
-            GetCommentsForPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommentsForPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20010,7 +20074,7 @@ pub enum GetCommitErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20047,7 +20111,7 @@ impl GetCommitError {
     /// Creates the `GetCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20056,7 +20120,7 @@ impl GetCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCommitErrorKind::Unhandled(err.into()),
+            kind: GetCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20166,7 +20230,7 @@ impl std::error::Error for GetCommitError {
             GetCommitErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetCommitErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetCommitErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20221,7 +20285,7 @@ pub enum GetDifferencesErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDifferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20265,7 +20329,7 @@ impl GetDifferencesError {
     /// Creates the `GetDifferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDifferencesErrorKind::Unhandled(err.into()),
+            kind: GetDifferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20274,7 +20338,7 @@ impl GetDifferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDifferencesErrorKind::Unhandled(err.into()),
+            kind: GetDifferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20429,7 +20493,7 @@ impl std::error::Error for GetDifferencesError {
             GetDifferencesErrorKind::PathDoesNotExistException(_inner) => Some(_inner),
             GetDifferencesErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetDifferencesErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetDifferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDifferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20480,7 +20544,7 @@ pub enum GetFileErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20520,7 +20584,7 @@ impl GetFileError {
     /// Creates the `GetFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFileErrorKind::Unhandled(err.into()),
+            kind: GetFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20529,7 +20593,7 @@ impl GetFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFileErrorKind::Unhandled(err.into()),
+            kind: GetFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20651,7 +20715,7 @@ impl std::error::Error for GetFileError {
             GetFileErrorKind::PathRequiredException(_inner) => Some(_inner),
             GetFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20700,7 +20764,7 @@ pub enum GetFolderErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFolderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20739,7 +20803,7 @@ impl GetFolderError {
     /// Creates the `GetFolderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20748,7 +20812,7 @@ impl GetFolderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFolderErrorKind::Unhandled(err.into()),
+            kind: GetFolderErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -20871,7 +20935,7 @@ impl std::error::Error for GetFolderError {
             GetFolderErrorKind::PathRequiredException(_inner) => Some(_inner),
             GetFolderErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetFolderErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetFolderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFolderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -20922,7 +20986,7 @@ pub enum GetMergeCommitErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20965,7 +21029,7 @@ impl GetMergeCommitError {
     /// Creates the `GetMergeCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeCommitErrorKind::Unhandled(err.into()),
+            kind: GetMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -20974,7 +21038,7 @@ impl GetMergeCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeCommitErrorKind::Unhandled(err.into()),
+            kind: GetMergeCommitErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21110,7 +21174,7 @@ impl std::error::Error for GetMergeCommitError {
             GetMergeCommitErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetMergeCommitErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeCommitErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetMergeCommitErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeCommitErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21183,7 +21247,7 @@ pub enum GetMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeConflictsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21245,7 +21309,7 @@ impl GetMergeConflictsError {
     /// Creates the `GetMergeConflictsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: GetMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21254,7 +21318,7 @@ impl GetMergeConflictsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeConflictsErrorKind::Unhandled(err.into()),
+            kind: GetMergeConflictsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21470,7 +21534,7 @@ impl std::error::Error for GetMergeConflictsError {
             GetMergeConflictsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeConflictsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             GetMergeConflictsErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            GetMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeConflictsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21529,7 +21593,7 @@ pub enum GetMergeOptionsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMergeOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21579,7 +21643,7 @@ impl GetMergeOptionsError {
     /// Creates the `GetMergeOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMergeOptionsErrorKind::Unhandled(err.into()),
+            kind: GetMergeOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21588,7 +21652,7 @@ impl GetMergeOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMergeOptionsErrorKind::Unhandled(err.into()),
+            kind: GetMergeOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21752,7 +21816,7 @@ impl std::error::Error for GetMergeOptionsError {
             GetMergeOptionsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetMergeOptionsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             GetMergeOptionsErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            GetMergeOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMergeOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21789,7 +21853,7 @@ pub enum GetPullRequestErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -21825,7 +21889,7 @@ impl GetPullRequestError {
     /// Creates the `GetPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -21834,7 +21898,7 @@ impl GetPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -21928,7 +21992,7 @@ impl std::error::Error for GetPullRequestError {
             GetPullRequestErrorKind::InvalidPullRequestIdException(_inner) => Some(_inner),
             GetPullRequestErrorKind::PullRequestDoesNotExistException(_inner) => Some(_inner),
             GetPullRequestErrorKind::PullRequestIdRequiredException(_inner) => Some(_inner),
-            GetPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -21969,7 +22033,7 @@ pub enum GetPullRequestApprovalStatesErrorKind {
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestApprovalStatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22025,7 +22089,9 @@ impl GetPullRequestApprovalStatesError {
     /// Creates the `GetPullRequestApprovalStatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22034,7 +22100,9 @@ impl GetPullRequestApprovalStatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestApprovalStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22162,7 +22230,7 @@ impl std::error::Error for GetPullRequestApprovalStatesError {
             GetPullRequestApprovalStatesErrorKind::RevisionIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetPullRequestApprovalStatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestApprovalStatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22203,7 +22271,7 @@ pub enum GetPullRequestOverrideStateErrorKind {
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPullRequestOverrideStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22259,7 +22327,9 @@ impl GetPullRequestOverrideStateError {
     /// Creates the `GetPullRequestOverrideStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPullRequestOverrideStateErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestOverrideStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22268,7 +22338,9 @@ impl GetPullRequestOverrideStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPullRequestOverrideStateErrorKind::Unhandled(err.into()),
+            kind: GetPullRequestOverrideStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22396,7 +22468,7 @@ impl std::error::Error for GetPullRequestOverrideStateError {
             GetPullRequestOverrideStateErrorKind::RevisionIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            GetPullRequestOverrideStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPullRequestOverrideStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22435,7 +22507,7 @@ pub enum GetRepositoryErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22471,7 +22543,7 @@ impl GetRepositoryError {
     /// Creates the `GetRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRepositoryErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -22480,7 +22552,7 @@ impl GetRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRepositoryErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -22574,7 +22646,7 @@ impl std::error::Error for GetRepositoryError {
             GetRepositoryErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetRepositoryErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetRepositoryErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetRepositoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRepositoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22613,7 +22685,7 @@ pub enum GetRepositoryTriggersErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22657,7 +22729,9 @@ impl GetRepositoryTriggersError {
     /// Creates the `GetRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22666,7 +22740,9 @@ impl GetRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: GetRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22764,7 +22840,7 @@ impl std::error::Error for GetRepositoryTriggersError {
             GetRepositoryTriggersErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             GetRepositoryTriggersErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            GetRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22787,7 +22863,7 @@ pub enum ListApprovalRuleTemplatesErrorKind {
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListApprovalRuleTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22817,7 +22893,9 @@ impl ListApprovalRuleTemplatesError {
     /// Creates the `ListApprovalRuleTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -22826,7 +22904,9 @@ impl ListApprovalRuleTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListApprovalRuleTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -22872,7 +22952,7 @@ impl std::error::Error for ListApprovalRuleTemplatesError {
                 Some(_inner)
             }
             ListApprovalRuleTemplatesErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
-            ListApprovalRuleTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListApprovalRuleTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -22915,7 +22995,7 @@ pub enum ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssociatedApprovalRuleTemplatesForRepositoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -22978,7 +23058,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
     /// Creates the `ListAssociatedApprovalRuleTemplatesForRepositoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -22987,7 +23069,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -23091,7 +23175,7 @@ impl std::error::Error for ListAssociatedApprovalRuleTemplatesForRepositoryError
             Some(_inner)
             ,
             ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -23133,7 +23217,7 @@ pub enum ListBranchesErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBranchesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23170,7 +23254,7 @@ impl ListBranchesError {
     /// Creates the `ListBranchesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23179,7 +23263,7 @@ impl ListBranchesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBranchesErrorKind::Unhandled(err.into()),
+            kind: ListBranchesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23279,7 +23363,7 @@ impl std::error::Error for ListBranchesError {
             ListBranchesErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             ListBranchesErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListBranchesErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBranchesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23328,7 +23412,7 @@ pub enum ListPullRequestsErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPullRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23369,7 +23453,7 @@ impl ListPullRequestsError {
     /// Creates the `ListPullRequestsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPullRequestsErrorKind::Unhandled(err.into()),
+            kind: ListPullRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23378,7 +23462,7 @@ impl ListPullRequestsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPullRequestsErrorKind::Unhandled(err.into()),
+            kind: ListPullRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23512,7 +23596,7 @@ impl std::error::Error for ListPullRequestsError {
             ListPullRequestsErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             ListPullRequestsErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListPullRequestsErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            ListPullRequestsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPullRequestsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23537,7 +23621,7 @@ pub enum ListRepositoriesErrorKind {
     /// <p>The specified sort by value is not valid.</p>
     InvalidSortByException(crate::error::InvalidSortByException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRepositoriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23566,7 +23650,7 @@ impl ListRepositoriesError {
     /// Creates the `ListRepositoriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRepositoriesErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23575,7 +23659,7 @@ impl ListRepositoriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRepositoriesErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23627,7 +23711,7 @@ impl std::error::Error for ListRepositoriesError {
             ListRepositoriesErrorKind::InvalidContinuationTokenException(_inner) => Some(_inner),
             ListRepositoriesErrorKind::InvalidOrderException(_inner) => Some(_inner),
             ListRepositoriesErrorKind::InvalidSortByException(_inner) => Some(_inner),
-            ListRepositoriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRepositoriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -23674,7 +23758,7 @@ pub enum ListRepositoriesForApprovalRuleTemplateErrorKind {
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRepositoriesForApprovalRuleTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23735,7 +23819,9 @@ impl ListRepositoriesForApprovalRuleTemplateError {
     /// Creates the `ListRepositoriesForApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -23744,7 +23830,9 @@ impl ListRepositoriesForApprovalRuleTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(err.into()),
+            kind: ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -23861,7 +23949,7 @@ impl std::error::Error for ListRepositoriesForApprovalRuleTemplateError {
             Some(_inner)
             ,
             ListRepositoriesForApprovalRuleTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -23891,7 +23979,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23921,7 +24009,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -23930,7 +24018,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -23990,7 +24078,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidResourceArnException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceArnRequiredException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24051,7 +24139,7 @@ pub enum MergeBranchesByFastForwardErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesByFastForwardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24130,7 +24218,9 @@ impl MergeBranchesByFastForwardError {
     /// Creates the `MergeBranchesByFastForwardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24139,7 +24229,9 @@ impl MergeBranchesByFastForwardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24351,7 +24443,7 @@ impl std::error::Error for MergeBranchesByFastForwardError {
             MergeBranchesByFastForwardErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            MergeBranchesByFastForwardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesByFastForwardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -24460,7 +24552,7 @@ pub enum MergeBranchesBySquashErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesBySquashError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24567,7 +24659,9 @@ impl MergeBranchesBySquashError {
     /// Creates the `MergeBranchesBySquashError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesBySquashErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -24576,7 +24670,9 @@ impl MergeBranchesBySquashError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesBySquashErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -24950,7 +25046,7 @@ impl std::error::Error for MergeBranchesBySquashError {
             MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             MergeBranchesBySquashErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             MergeBranchesBySquashErrorKind::TipsDivergenceExceededException(_inner) => Some(_inner),
-            MergeBranchesBySquashErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesBySquashErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -25059,7 +25155,7 @@ pub enum MergeBranchesByThreeWayErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergeBranchesByThreeWayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25172,7 +25268,9 @@ impl MergeBranchesByThreeWayError {
     /// Creates the `MergeBranchesByThreeWayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergeBranchesByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -25181,7 +25279,9 @@ impl MergeBranchesByThreeWayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergeBranchesByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergeBranchesByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -25569,7 +25669,7 @@ impl std::error::Error for MergeBranchesByThreeWayError {
             MergeBranchesByThreeWayErrorKind::TipsDivergenceExceededException(_inner) => {
                 Some(_inner)
             }
-            MergeBranchesByThreeWayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MergeBranchesByThreeWayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -25636,7 +25736,7 @@ pub enum MergePullRequestByFastForwardErrorKind {
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestByFastForwardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25724,7 +25824,9 @@ impl MergePullRequestByFastForwardError {
     /// Creates the `MergePullRequestByFastForwardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -25733,7 +25835,9 @@ impl MergePullRequestByFastForwardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestByFastForwardErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByFastForwardErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -25956,7 +26060,7 @@ impl std::error::Error for MergePullRequestByFastForwardError {
             Some(_inner)
             ,
             MergePullRequestByFastForwardErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -26070,7 +26174,7 @@ pub enum MergePullRequestBySquashErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestBySquashError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26212,7 +26316,9 @@ impl MergePullRequestBySquashError {
     /// Creates the `MergePullRequestBySquashError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestBySquashErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -26221,7 +26327,9 @@ impl MergePullRequestBySquashError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestBySquashErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestBySquashErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -26630,7 +26738,7 @@ impl std::error::Error for MergePullRequestBySquashError {
             Some(_inner)
             ,
             MergePullRequestBySquashErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -26744,7 +26852,7 @@ pub enum MergePullRequestByThreeWayErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MergePullRequestByThreeWayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26886,7 +26994,9 @@ impl MergePullRequestByThreeWayError {
     /// Creates the `MergePullRequestByThreeWayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MergePullRequestByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -26895,7 +27005,9 @@ impl MergePullRequestByThreeWayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MergePullRequestByThreeWayErrorKind::Unhandled(err.into()),
+            kind: MergePullRequestByThreeWayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -27306,7 +27418,7 @@ impl std::error::Error for MergePullRequestByThreeWayError {
             Some(_inner)
             ,
             MergePullRequestByThreeWayErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -27358,7 +27470,7 @@ pub enum OverridePullRequestApprovalRulesErrorKind {
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for OverridePullRequestApprovalRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27432,7 +27544,9 @@ impl OverridePullRequestApprovalRulesError {
     /// Creates the `OverridePullRequestApprovalRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -27441,7 +27555,9 @@ impl OverridePullRequestApprovalRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(err.into()),
+            kind: OverridePullRequestApprovalRulesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -27619,7 +27735,7 @@ impl std::error::Error for OverridePullRequestApprovalRulesError {
             OverridePullRequestApprovalRulesErrorKind::RevisionNotCurrentException(_inner) => {
                 Some(_inner)
             }
-            OverridePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            OverridePullRequestApprovalRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -27692,7 +27808,7 @@ pub enum PostCommentForComparedCommitErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentForComparedCommitError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27789,7 +27905,9 @@ impl PostCommentForComparedCommitError {
     /// Creates the `PostCommentForComparedCommitError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: PostCommentForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -27798,7 +27916,9 @@ impl PostCommentForComparedCommitError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentForComparedCommitErrorKind::Unhandled(err.into()),
+            kind: PostCommentForComparedCommitErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -28059,7 +28179,7 @@ impl std::error::Error for PostCommentForComparedCommitError {
             Some(_inner)
             ,
             PostCommentForComparedCommitErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -28143,7 +28263,7 @@ pub enum PostCommentForPullRequestErrorKind {
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentForPullRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28240,7 +28360,9 @@ impl PostCommentForPullRequestError {
     /// Creates the `PostCommentForPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentForPullRequestErrorKind::Unhandled(err.into()),
+            kind: PostCommentForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -28249,7 +28371,9 @@ impl PostCommentForPullRequestError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentForPullRequestErrorKind::Unhandled(err.into()),
+            kind: PostCommentForPullRequestErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -28535,7 +28659,7 @@ impl std::error::Error for PostCommentForPullRequestError {
             PostCommentForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException(
                 _inner,
             ) => Some(_inner),
-            PostCommentForPullRequestErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostCommentForPullRequestErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28572,7 +28696,7 @@ pub enum PostCommentReplyErrorKind {
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PostCommentReplyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28610,7 +28734,7 @@ impl PostCommentReplyError {
     /// Creates the `PostCommentReplyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PostCommentReplyErrorKind::Unhandled(err.into()),
+            kind: PostCommentReplyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -28619,7 +28743,7 @@ impl PostCommentReplyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PostCommentReplyErrorKind::Unhandled(err.into()),
+            kind: PostCommentReplyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -28715,7 +28839,7 @@ impl std::error::Error for PostCommentReplyError {
             }
             PostCommentReplyErrorKind::InvalidClientRequestTokenException(_inner) => Some(_inner),
             PostCommentReplyErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            PostCommentReplyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PostCommentReplyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28748,7 +28872,7 @@ pub enum PutCommentReactionErrorKind {
     /// <p>A reaction value is required. </p>
     ReactionValueRequiredException(crate::error::ReactionValueRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutCommentReactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28781,7 +28905,7 @@ impl PutCommentReactionError {
     /// Creates the `PutCommentReactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutCommentReactionErrorKind::Unhandled(err.into()),
+            kind: PutCommentReactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -28790,7 +28914,7 @@ impl PutCommentReactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutCommentReactionErrorKind::Unhandled(err.into()),
+            kind: PutCommentReactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -28874,7 +28998,7 @@ impl std::error::Error for PutCommentReactionError {
             PutCommentReactionErrorKind::InvalidReactionValueException(_inner) => Some(_inner),
             PutCommentReactionErrorKind::ReactionLimitExceededException(_inner) => Some(_inner),
             PutCommentReactionErrorKind::ReactionValueRequiredException(_inner) => Some(_inner),
-            PutCommentReactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutCommentReactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -28963,7 +29087,7 @@ pub enum PutFileErrorKind {
     /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
     SameFileContentException(crate::error::SameFileContentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29019,7 +29143,7 @@ impl PutFileError {
     /// Creates the `PutFileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFileErrorKind::Unhandled(err.into()),
+            kind: PutFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -29028,7 +29152,7 @@ impl PutFileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFileErrorKind::Unhandled(err.into()),
+            kind: PutFileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -29269,7 +29393,7 @@ impl std::error::Error for PutFileError {
             PutFileErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             PutFileErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
             PutFileErrorKind::SameFileContentException(_inner) => Some(_inner),
-            PutFileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29348,7 +29472,7 @@ pub enum PutRepositoryTriggersErrorKind {
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29431,7 +29555,9 @@ impl PutRepositoryTriggersError {
     /// Creates the `PutRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: PutRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -29440,7 +29566,9 @@ impl PutRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: PutRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -29668,7 +29796,7 @@ impl std::error::Error for PutRepositoryTriggersError {
             PutRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException(_inner) => {
                 Some(_inner)
             }
-            PutRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29707,7 +29835,7 @@ pub enum TagResourceErrorKind {
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29742,7 +29870,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -29751,7 +29879,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -29842,7 +29970,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             TagResourceErrorKind::TagsMapRequiredException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -29921,7 +30049,7 @@ pub enum TestRepositoryTriggersErrorKind {
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestRepositoryTriggersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30010,7 +30138,9 @@ impl TestRepositoryTriggersError {
     /// Creates the `TestRepositoryTriggersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: TestRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -30019,7 +30149,9 @@ impl TestRepositoryTriggersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestRepositoryTriggersErrorKind::Unhandled(err.into()),
+            kind: TestRepositoryTriggersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -30251,7 +30383,7 @@ impl std::error::Error for TestRepositoryTriggersError {
             TestRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException(_inner) => {
                 Some(_inner)
             }
-            TestRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestRepositoryTriggersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -30290,7 +30422,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30325,7 +30457,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -30334,7 +30466,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -30428,7 +30560,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::TagKeysListRequiredException(_inner) => Some(_inner),
             UntagResourceErrorKind::TagPolicyException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -30469,7 +30601,7 @@ pub enum UpdateApprovalRuleTemplateContentErrorKind {
     /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
     InvalidRuleContentSha256Exception(crate::error::InvalidRuleContentSha256Exception),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30518,7 +30650,9 @@ impl UpdateApprovalRuleTemplateContentError {
     /// Creates the `UpdateApprovalRuleTemplateContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -30527,7 +30661,9 @@ impl UpdateApprovalRuleTemplateContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -30619,7 +30755,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateContentError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateContentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30655,7 +30791,7 @@ pub enum UpdateApprovalRuleTemplateDescriptionErrorKind {
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30698,7 +30834,9 @@ impl UpdateApprovalRuleTemplateDescriptionError {
     /// Creates the `UpdateApprovalRuleTemplateDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -30707,7 +30845,9 @@ impl UpdateApprovalRuleTemplateDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -30764,7 +30904,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateDescriptionError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateDescriptionErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30800,7 +30940,7 @@ pub enum UpdateApprovalRuleTemplateNameErrorKind {
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30843,7 +30983,9 @@ impl UpdateApprovalRuleTemplateNameError {
     /// Creates the `UpdateApprovalRuleTemplateNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -30852,7 +30994,9 @@ impl UpdateApprovalRuleTemplateNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(err.into()),
+            kind: UpdateApprovalRuleTemplateNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -30923,7 +31067,7 @@ impl std::error::Error for UpdateApprovalRuleTemplateNameError {
             Some(_inner)
             ,
             UpdateApprovalRuleTemplateNameErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -30959,7 +31103,7 @@ pub enum UpdateCommentErrorKind {
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCommentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30994,7 +31138,7 @@ impl UpdateCommentError {
     /// Creates the `UpdateCommentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCommentErrorKind::Unhandled(err.into()),
+            kind: UpdateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -31003,7 +31147,7 @@ impl UpdateCommentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCommentErrorKind::Unhandled(err.into()),
+            kind: UpdateCommentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -31089,7 +31233,7 @@ impl std::error::Error for UpdateCommentError {
             UpdateCommentErrorKind::CommentIdRequiredException(_inner) => Some(_inner),
             UpdateCommentErrorKind::CommentNotCreatedByCallerException(_inner) => Some(_inner),
             UpdateCommentErrorKind::InvalidCommentIdException(_inner) => Some(_inner),
-            UpdateCommentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCommentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -31134,7 +31278,7 @@ pub enum UpdateDefaultBranchErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDefaultBranchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31177,7 +31321,7 @@ impl UpdateDefaultBranchError {
     /// Creates the `UpdateDefaultBranchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDefaultBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateDefaultBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -31186,7 +31330,7 @@ impl UpdateDefaultBranchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDefaultBranchErrorKind::Unhandled(err.into()),
+            kind: UpdateDefaultBranchErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -31306,7 +31450,7 @@ impl std::error::Error for UpdateDefaultBranchError {
             UpdateDefaultBranchErrorKind::InvalidRepositoryNameException(_inner) => Some(_inner),
             UpdateDefaultBranchErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             UpdateDefaultBranchErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            UpdateDefaultBranchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDefaultBranchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -31361,7 +31505,7 @@ pub enum UpdatePullRequestApprovalRuleContentErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalRuleContentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31440,7 +31584,9 @@ impl UpdatePullRequestApprovalRuleContentError {
     /// Creates the `UpdatePullRequestApprovalRuleContentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -31449,7 +31595,9 @@ impl UpdatePullRequestApprovalRuleContentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -31637,7 +31785,7 @@ impl std::error::Error for UpdatePullRequestApprovalRuleContentError {
             Some(_inner)
             ,
             UpdatePullRequestApprovalRuleContentErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -31695,7 +31843,7 @@ pub enum UpdatePullRequestApprovalStateErrorKind {
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -31774,7 +31922,9 @@ impl UpdatePullRequestApprovalStateError {
     /// Creates the `UpdatePullRequestApprovalStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -31783,7 +31933,9 @@ impl UpdatePullRequestApprovalStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestApprovalStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -31974,7 +32126,7 @@ impl std::error::Error for UpdatePullRequestApprovalStateError {
             Some(_inner)
             ,
             UpdatePullRequestApprovalStateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -32004,7 +32156,7 @@ pub enum UpdatePullRequestDescriptionErrorKind {
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32045,7 +32197,9 @@ impl UpdatePullRequestDescriptionError {
     /// Creates the `UpdatePullRequestDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32054,7 +32208,9 @@ impl UpdatePullRequestDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32132,7 +32288,7 @@ impl std::error::Error for UpdatePullRequestDescriptionError {
             UpdatePullRequestDescriptionErrorKind::PullRequestIdRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdatePullRequestDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32175,7 +32331,7 @@ pub enum UpdatePullRequestStatusErrorKind {
     /// <p>A pull request status is required, but none was provided.</p>
     PullRequestStatusRequiredException(crate::error::PullRequestStatusRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32234,7 +32390,9 @@ impl UpdatePullRequestStatusError {
     /// Creates the `UpdatePullRequestStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32243,7 +32401,9 @@ impl UpdatePullRequestStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32379,7 +32539,7 @@ impl std::error::Error for UpdatePullRequestStatusError {
             UpdatePullRequestStatusErrorKind::PullRequestStatusRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdatePullRequestStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32410,7 +32570,7 @@ pub enum UpdatePullRequestTitleErrorKind {
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePullRequestTitleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32448,7 +32608,9 @@ impl UpdatePullRequestTitleError {
     /// Creates the `UpdatePullRequestTitleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePullRequestTitleErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestTitleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32457,7 +32619,9 @@ impl UpdatePullRequestTitleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePullRequestTitleErrorKind::Unhandled(err.into()),
+            kind: UpdatePullRequestTitleErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32537,7 +32701,7 @@ impl std::error::Error for UpdatePullRequestTitleError {
             }
             UpdatePullRequestTitleErrorKind::PullRequestIdRequiredException(_inner) => Some(_inner),
             UpdatePullRequestTitleErrorKind::TitleRequiredException(_inner) => Some(_inner),
-            UpdatePullRequestTitleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePullRequestTitleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32578,7 +32742,7 @@ pub enum UpdateRepositoryDescriptionErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRepositoryDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32631,7 +32795,9 @@ impl UpdateRepositoryDescriptionError {
     /// Creates the `UpdateRepositoryDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32640,7 +32806,9 @@ impl UpdateRepositoryDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32758,7 +32926,7 @@ impl std::error::Error for UpdateRepositoryDescriptionError {
             UpdateRepositoryDescriptionErrorKind::RepositoryNameRequiredException(_inner) => {
                 Some(_inner)
             }
-            UpdateRepositoryDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRepositoryDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -32787,7 +32955,7 @@ pub enum UpdateRepositoryNameErrorKind {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRepositoryNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32817,7 +32985,9 @@ impl UpdateRepositoryNameError {
     /// Creates the `UpdateRepositoryNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRepositoryNameErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -32826,7 +32996,9 @@ impl UpdateRepositoryNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRepositoryNameErrorKind::Unhandled(err.into()),
+            kind: UpdateRepositoryNameErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -32886,7 +33058,32 @@ impl std::error::Error for UpdateRepositoryNameError {
             UpdateRepositoryNameErrorKind::RepositoryDoesNotExistException(_inner) => Some(_inner),
             UpdateRepositoryNameErrorKind::RepositoryNameExistsException(_inner) => Some(_inner),
             UpdateRepositoryNameErrorKind::RepositoryNameRequiredException(_inner) => Some(_inner),
-            UpdateRepositoryNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRepositoryNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

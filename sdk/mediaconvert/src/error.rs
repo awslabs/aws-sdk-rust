@@ -416,7 +416,7 @@ pub enum AssociateCertificateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -448,7 +448,9 @@ impl AssociateCertificateError {
     /// Creates the `AssociateCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateCertificateErrorKind::Unhandled(err.into()),
+            kind: AssociateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -457,7 +459,9 @@ impl AssociateCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateCertificateErrorKind::Unhandled(err.into()),
+            kind: AssociateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -533,7 +537,7 @@ impl std::error::Error for AssociateCertificateError {
             AssociateCertificateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             AssociateCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             AssociateCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AssociateCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -564,7 +568,7 @@ pub enum CancelJobErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -596,7 +600,7 @@ impl CancelJobError {
     /// Creates the `CancelJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelJobErrorKind::Unhandled(err.into()),
+            kind: CancelJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -605,7 +609,7 @@ impl CancelJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelJobErrorKind::Unhandled(err.into()),
+            kind: CancelJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -666,7 +670,7 @@ impl std::error::Error for CancelJobError {
             CancelJobErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CancelJobErrorKind::NotFoundException(_inner) => Some(_inner),
             CancelJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CancelJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -697,7 +701,7 @@ pub enum CreateJobErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -729,7 +733,7 @@ impl CreateJobError {
     /// Creates the `CreateJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateJobErrorKind::Unhandled(err.into()),
+            kind: CreateJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -738,7 +742,7 @@ impl CreateJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateJobErrorKind::Unhandled(err.into()),
+            kind: CreateJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -799,7 +803,7 @@ impl std::error::Error for CreateJobError {
             CreateJobErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateJobErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -830,7 +834,7 @@ pub enum CreateJobTemplateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateJobTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -862,7 +866,7 @@ impl CreateJobTemplateError {
     /// Creates the `CreateJobTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateJobTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -871,7 +875,7 @@ impl CreateJobTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateJobTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -941,7 +945,7 @@ impl std::error::Error for CreateJobTemplateError {
             CreateJobTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateJobTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateJobTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -972,7 +976,7 @@ pub enum CreatePresetErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,7 +1008,7 @@ impl CreatePresetError {
     /// Creates the `CreatePresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePresetErrorKind::Unhandled(err.into()),
+            kind: CreatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1013,7 +1017,7 @@ impl CreatePresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePresetErrorKind::Unhandled(err.into()),
+            kind: CreatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1077,7 +1081,7 @@ impl std::error::Error for CreatePresetError {
             CreatePresetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreatePresetErrorKind::NotFoundException(_inner) => Some(_inner),
             CreatePresetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreatePresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1108,7 +1112,7 @@ pub enum CreateQueueErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1140,7 +1144,7 @@ impl CreateQueueError {
     /// Creates the `CreateQueueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateQueueErrorKind::Unhandled(err.into()),
+            kind: CreateQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1149,7 +1153,7 @@ impl CreateQueueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateQueueErrorKind::Unhandled(err.into()),
+            kind: CreateQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1213,7 +1217,7 @@ impl std::error::Error for CreateQueueError {
             CreateQueueErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             CreateQueueErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateQueueErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateQueueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1244,7 +1248,7 @@ pub enum DeleteJobTemplateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteJobTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1276,7 +1280,7 @@ impl DeleteJobTemplateError {
     /// Creates the `DeleteJobTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteJobTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1285,7 +1289,7 @@ impl DeleteJobTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteJobTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1355,7 +1359,7 @@ impl std::error::Error for DeleteJobTemplateError {
             DeleteJobTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DeleteJobTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteJobTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1386,7 +1390,7 @@ pub enum DeletePolicyErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1418,7 +1422,7 @@ impl DeletePolicyError {
     /// Creates the `DeletePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1427,7 +1431,7 @@ impl DeletePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1491,7 +1495,7 @@ impl std::error::Error for DeletePolicyError {
             DeletePolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DeletePolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeletePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1522,7 +1526,7 @@ pub enum DeletePresetErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1554,7 +1558,7 @@ impl DeletePresetError {
     /// Creates the `DeletePresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePresetErrorKind::Unhandled(err.into()),
+            kind: DeletePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1563,7 +1567,7 @@ impl DeletePresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePresetErrorKind::Unhandled(err.into()),
+            kind: DeletePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1627,7 +1631,7 @@ impl std::error::Error for DeletePresetError {
             DeletePresetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DeletePresetErrorKind::NotFoundException(_inner) => Some(_inner),
             DeletePresetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeletePresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1658,7 +1662,7 @@ pub enum DeleteQueueErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1690,7 +1694,7 @@ impl DeleteQueueError {
     /// Creates the `DeleteQueueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteQueueErrorKind::Unhandled(err.into()),
+            kind: DeleteQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1699,7 +1703,7 @@ impl DeleteQueueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteQueueErrorKind::Unhandled(err.into()),
+            kind: DeleteQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1763,7 +1767,7 @@ impl std::error::Error for DeleteQueueError {
             DeleteQueueErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DeleteQueueErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteQueueErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteQueueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1794,7 +1798,7 @@ pub enum DescribeEndpointsErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1826,7 +1830,7 @@ impl DescribeEndpointsError {
     /// Creates the `DescribeEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1835,7 +1839,7 @@ impl DescribeEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1905,7 +1909,7 @@ impl std::error::Error for DescribeEndpointsError {
             DescribeEndpointsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DescribeEndpointsErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeEndpointsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1936,7 +1940,7 @@ pub enum DisassociateCertificateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1968,7 +1972,9 @@ impl DisassociateCertificateError {
     /// Creates the `DisassociateCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateCertificateErrorKind::Unhandled(err.into()),
+            kind: DisassociateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1977,7 +1983,9 @@ impl DisassociateCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateCertificateErrorKind::Unhandled(err.into()),
+            kind: DisassociateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2053,7 +2061,7 @@ impl std::error::Error for DisassociateCertificateError {
             DisassociateCertificateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             DisassociateCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             DisassociateCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DisassociateCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2084,7 +2092,7 @@ pub enum GetJobErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2116,7 +2124,7 @@ impl GetJobError {
     /// Creates the `GetJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetJobErrorKind::Unhandled(err.into()),
+            kind: GetJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2125,7 +2133,7 @@ impl GetJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetJobErrorKind::Unhandled(err.into()),
+            kind: GetJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2183,7 +2191,7 @@ impl std::error::Error for GetJobError {
             GetJobErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetJobErrorKind::NotFoundException(_inner) => Some(_inner),
             GetJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2214,7 +2222,7 @@ pub enum GetJobTemplateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetJobTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2246,7 +2254,7 @@ impl GetJobTemplateError {
     /// Creates the `GetJobTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetJobTemplateErrorKind::Unhandled(err.into()),
+            kind: GetJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2255,7 +2263,7 @@ impl GetJobTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetJobTemplateErrorKind::Unhandled(err.into()),
+            kind: GetJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2319,7 +2327,7 @@ impl std::error::Error for GetJobTemplateError {
             GetJobTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetJobTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetJobTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2350,7 +2358,7 @@ pub enum GetPolicyErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2382,7 +2390,7 @@ impl GetPolicyError {
     /// Creates the `GetPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2391,7 +2399,7 @@ impl GetPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2452,7 +2460,7 @@ impl std::error::Error for GetPolicyError {
             GetPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2483,7 +2491,7 @@ pub enum GetPresetErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2515,7 +2523,7 @@ impl GetPresetError {
     /// Creates the `GetPresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPresetErrorKind::Unhandled(err.into()),
+            kind: GetPresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2524,7 +2532,7 @@ impl GetPresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPresetErrorKind::Unhandled(err.into()),
+            kind: GetPresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2585,7 +2593,7 @@ impl std::error::Error for GetPresetError {
             GetPresetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetPresetErrorKind::NotFoundException(_inner) => Some(_inner),
             GetPresetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetPresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2616,7 +2624,7 @@ pub enum GetQueueErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2648,7 +2656,7 @@ impl GetQueueError {
     /// Creates the `GetQueueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetQueueErrorKind::Unhandled(err.into()),
+            kind: GetQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2657,7 +2665,7 @@ impl GetQueueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetQueueErrorKind::Unhandled(err.into()),
+            kind: GetQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2718,7 +2726,7 @@ impl std::error::Error for GetQueueError {
             GetQueueErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetQueueErrorKind::NotFoundException(_inner) => Some(_inner),
             GetQueueErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetQueueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2749,7 +2757,7 @@ pub enum ListJobsErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2781,7 +2789,7 @@ impl ListJobsError {
     /// Creates the `ListJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJobsErrorKind::Unhandled(err.into()),
+            kind: ListJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2790,7 +2798,7 @@ impl ListJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJobsErrorKind::Unhandled(err.into()),
+            kind: ListJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2851,7 +2859,7 @@ impl std::error::Error for ListJobsError {
             ListJobsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListJobsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2882,7 +2890,7 @@ pub enum ListJobTemplatesErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJobTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2914,7 +2922,7 @@ impl ListJobTemplatesError {
     /// Creates the `ListJobTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJobTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListJobTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2923,7 +2931,7 @@ impl ListJobTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJobTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListJobTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2990,7 +2998,7 @@ impl std::error::Error for ListJobTemplatesError {
             ListJobTemplatesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListJobTemplatesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListJobTemplatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListJobTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJobTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3021,7 +3029,7 @@ pub enum ListPresetsErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPresetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3053,7 +3061,7 @@ impl ListPresetsError {
     /// Creates the `ListPresetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPresetsErrorKind::Unhandled(err.into()),
+            kind: ListPresetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3062,7 +3070,7 @@ impl ListPresetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPresetsErrorKind::Unhandled(err.into()),
+            kind: ListPresetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3126,7 +3134,7 @@ impl std::error::Error for ListPresetsError {
             ListPresetsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListPresetsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListPresetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListPresetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPresetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3157,7 +3165,7 @@ pub enum ListQueuesErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListQueuesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3189,7 +3197,7 @@ impl ListQueuesError {
     /// Creates the `ListQueuesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListQueuesErrorKind::Unhandled(err.into()),
+            kind: ListQueuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3198,7 +3206,7 @@ impl ListQueuesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListQueuesErrorKind::Unhandled(err.into()),
+            kind: ListQueuesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3259,7 +3267,7 @@ impl std::error::Error for ListQueuesError {
             ListQueuesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListQueuesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListQueuesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListQueuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListQueuesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3290,7 +3298,7 @@ pub enum ListTagsForResourceErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3322,7 +3330,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3331,7 +3339,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3407,7 +3415,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3438,7 +3446,7 @@ pub enum PutPolicyErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3470,7 +3478,7 @@ impl PutPolicyError {
     /// Creates the `PutPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3479,7 +3487,7 @@ impl PutPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3540,7 +3548,7 @@ impl std::error::Error for PutPolicyError {
             PutPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             PutPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             PutPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3571,7 +3579,7 @@ pub enum TagResourceErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3603,7 +3611,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3612,7 +3620,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3676,7 +3684,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3707,7 +3715,7 @@ pub enum UntagResourceErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3739,7 +3747,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3748,7 +3756,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3812,7 +3820,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3843,7 +3851,7 @@ pub enum UpdateJobTemplateErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateJobTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3875,7 +3883,7 @@ impl UpdateJobTemplateError {
     /// Creates the `UpdateJobTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateJobTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3884,7 +3892,7 @@ impl UpdateJobTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateJobTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateJobTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3954,7 +3962,7 @@ impl std::error::Error for UpdateJobTemplateError {
             UpdateJobTemplateErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdateJobTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateJobTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateJobTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3985,7 +3993,7 @@ pub enum UpdatePresetErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4017,7 +4025,7 @@ impl UpdatePresetError {
     /// Creates the `UpdatePresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePresetErrorKind::Unhandled(err.into()),
+            kind: UpdatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4026,7 +4034,7 @@ impl UpdatePresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePresetErrorKind::Unhandled(err.into()),
+            kind: UpdatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4090,7 +4098,7 @@ impl std::error::Error for UpdatePresetError {
             UpdatePresetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdatePresetErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdatePresetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdatePresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4121,7 +4129,7 @@ pub enum UpdateQueueErrorKind {
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4153,7 +4161,7 @@ impl UpdateQueueError {
     /// Creates the `UpdateQueueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateQueueErrorKind::Unhandled(err.into()),
+            kind: UpdateQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4162,7 +4170,7 @@ impl UpdateQueueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateQueueErrorKind::Unhandled(err.into()),
+            kind: UpdateQueueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4226,7 +4234,32 @@ impl std::error::Error for UpdateQueueError {
             UpdateQueueErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdateQueueErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateQueueErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateQueueErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -18,7 +18,7 @@ pub enum Error {
     /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -51,9 +51,9 @@ where
                 crate::error::AssociateExternalConnectionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::AssociateExternalConnectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateExternalConnectionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AssociateExternalConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateExternalConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -88,10 +88,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CopyPackageVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -123,9 +123,11 @@ where
                 crate::error::CreateDomainErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -160,10 +162,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,9 +191,11 @@ where
                 crate::error::DeleteDomainErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -224,10 +228,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::DeleteDomainPermissionsPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -260,10 +264,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeletePackageVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -295,10 +299,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,9 +326,9 @@ where
                 crate::error::DeleteRepositoryPermissionsPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteRepositoryPermissionsPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteRepositoryPermissionsPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -350,9 +354,11 @@ where
                 crate::error::DescribeDomainErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -378,9 +384,11 @@ where
                 crate::error::DescribePackageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribePackageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePackageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -413,10 +421,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribePackageVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -445,10 +453,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -473,9 +481,9 @@ where
                 crate::error::DisassociateExternalConnectionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::DisassociateExternalConnectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisassociateExternalConnectionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DisassociateExternalConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateExternalConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -508,10 +516,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisposePackageVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -541,10 +549,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetAuthorizationTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -574,10 +582,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDomainPermissionsPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -610,10 +618,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPackageVersionAssetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -643,10 +651,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPackageVersionReadmeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,10 +684,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetRepositoryEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -702,9 +710,9 @@ where
                 crate::error::GetRepositoryPermissionsPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetRepositoryPermissionsPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetRepositoryPermissionsPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -727,9 +735,11 @@ where
                 crate::error::ListDomainsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDomainsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -755,9 +765,11 @@ where
                 crate::error::ListPackagesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListPackagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPackagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -787,10 +799,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPackageVersionAssetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -813,9 +825,9 @@ where
                 crate::error::ListPackageVersionDependenciesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPackageVersionDependenciesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListPackageVersionDependenciesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListPackageVersionDependenciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPackageVersionDependenciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -844,10 +856,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPackageVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -873,10 +885,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRepositoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -906,10 +918,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRepositoriesInDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -935,10 +947,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -959,9 +971,9 @@ where
                 crate::error::PutDomainPermissionsPolicyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::PutDomainPermissionsPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutDomainPermissionsPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutDomainPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutDomainPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -991,10 +1003,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::PutPackageOriginConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1019,9 +1031,9 @@ where
                 crate::error::PutRepositoryPermissionsPolicyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::PutRepositoryPermissionsPolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutRepositoryPermissionsPolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRepositoryPermissionsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1047,9 +1059,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1072,9 +1086,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1107,10 +1123,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePackageVersionsStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1145,10 +1161,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

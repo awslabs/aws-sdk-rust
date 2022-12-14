@@ -414,7 +414,7 @@ pub enum CreateConfigurationSetErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -445,7 +445,9 @@ impl CreateConfigurationSetError {
     /// Creates the `CreateConfigurationSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -454,7 +456,9 @@ impl CreateConfigurationSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -522,7 +526,7 @@ impl std::error::Error for CreateConfigurationSetError {
             CreateConfigurationSetErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             CreateConfigurationSetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -553,7 +557,7 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -600,7 +604,9 @@ impl CreateConfigurationSetEventDestinationError {
     /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -609,7 +615,9 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -697,9 +705,7 @@ impl std::error::Error for CreateConfigurationSetEventDestinationError {
             CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -726,7 +732,7 @@ pub enum DeleteConfigurationSetErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -756,7 +762,9 @@ impl DeleteConfigurationSetError {
     /// Creates the `DeleteConfigurationSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -765,7 +773,9 @@ impl DeleteConfigurationSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -825,7 +835,7 @@ impl std::error::Error for DeleteConfigurationSetError {
             DeleteConfigurationSetErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DeleteConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -852,7 +862,7 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -893,7 +903,9 @@ impl DeleteConfigurationSetEventDestinationError {
     /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -902,7 +914,9 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -970,9 +984,7 @@ impl std::error::Error for DeleteConfigurationSetEventDestinationError {
             DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -999,7 +1011,7 @@ pub enum GetConfigurationSetEventDestinationsErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,7 +1052,9 @@ impl GetConfigurationSetEventDestinationsError {
     /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1049,7 +1063,9 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1117,9 +1133,7 @@ impl std::error::Error for GetConfigurationSetEventDestinationsError {
             GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1144,7 +1158,7 @@ pub enum ListConfigurationSetsErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1173,7 +1187,9 @@ impl ListConfigurationSetsError {
     /// Creates the `ListConfigurationSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConfigurationSetsErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1182,7 +1198,9 @@ impl ListConfigurationSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConfigurationSetsErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1234,7 +1252,7 @@ impl std::error::Error for ListConfigurationSetsError {
             ListConfigurationSetsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListConfigurationSetsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1259,7 +1277,7 @@ pub enum SendVoiceMessageErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendVoiceMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1288,7 +1306,7 @@ impl SendVoiceMessageError {
     /// Creates the `SendVoiceMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendVoiceMessageErrorKind::Unhandled(err.into()),
+            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1297,7 +1315,7 @@ impl SendVoiceMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendVoiceMessageErrorKind::Unhandled(err.into()),
+            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1349,7 +1367,7 @@ impl std::error::Error for SendVoiceMessageError {
             SendVoiceMessageErrorKind::BadRequestException(_inner) => Some(_inner),
             SendVoiceMessageErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             SendVoiceMessageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SendVoiceMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendVoiceMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1376,7 +1394,7 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1417,7 +1435,9 @@ impl UpdateConfigurationSetEventDestinationError {
     /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1426,7 +1446,9 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1494,9 +1516,32 @@ impl std::error::Error for UpdateConfigurationSetEventDestinationError {
             UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

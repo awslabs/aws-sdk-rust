@@ -56,7 +56,7 @@ pub enum Error {
     /// <p>An upgrade dependency is preventing the database migration.</p>
     UpgradeDependencyFailureFault(crate::error::UpgradeDependencyFailureFault),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -103,10 +103,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,10 +124,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::ApplyPendingMaintenanceActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,9 +149,9 @@ where
                 crate::error::CancelReplicationTaskAssessmentRunErrorKind::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
                 crate::error::CancelReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
                 crate::error::CancelReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::CancelReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -183,9 +183,11 @@ where
                 crate::error::CreateEndpointErrorKind::S3AccessDeniedFault(inner) => {
                     Error::S3AccessDeniedFault(inner)
                 }
-                crate::error::CreateEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -230,10 +232,10 @@ where
                     Error::SnsNoAuthorizationFault(inner)
                 }
                 crate::error::CreateEventSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,10 +265,10 @@ where
                     inner,
                 ) => Error::S3ResourceNotFoundFault(inner),
                 crate::error::CreateFleetAdvisorCollectorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -290,9 +292,9 @@ where
                 crate::error::CreateReplicationInstanceErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
                 crate::error::CreateReplicationInstanceErrorKind::ResourceQuotaExceededFault(inner) => Error::ResourceQuotaExceededFault(inner),
                 crate::error::CreateReplicationInstanceErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
-                crate::error::CreateReplicationInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReplicationInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -312,9 +314,9 @@ where
                 crate::error::CreateReplicationSubnetGroupErrorKind::ResourceAlreadyExistsFault(inner) => Error::ResourceAlreadyExistsFault(inner),
                 crate::error::CreateReplicationSubnetGroupErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
                 crate::error::CreateReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault(inner) => Error::ResourceQuotaExceededFault(inner),
-                crate::error::CreateReplicationSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReplicationSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -347,10 +349,10 @@ where
                     Error::ResourceQuotaExceededFault(inner)
                 }
                 crate::error::CreateReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -370,10 +372,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -396,10 +398,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -416,9 +418,11 @@ where
                 crate::error::DeleteEndpointErrorKind::ResourceNotFoundFault(inner) => {
                     Error::ResourceNotFoundFault(inner)
                 }
-                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,10 +443,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteEventSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -463,10 +467,10 @@ where
                     inner,
                 ) => Error::InvalidResourceStateFault(inner),
                 crate::error::DeleteFleetAdvisorCollectorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -487,10 +491,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DeleteFleetAdvisorDatabasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -511,10 +515,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteReplicationInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -535,10 +539,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DeleteReplicationSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -559,10 +563,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DeleteReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -584,9 +588,9 @@ where
                 crate::error::DeleteReplicationTaskAssessmentRunErrorKind::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
                 crate::error::DeleteReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
                 crate::error::DeleteReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DeleteReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -601,10 +605,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeAccountAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,9 +633,9 @@ where
                 crate::error::DescribeApplicableIndividualAssessmentsErrorKind::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
                 crate::error::DescribeApplicableIndividualAssessmentsErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
                 crate::error::DescribeApplicableIndividualAssessmentsErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DescribeApplicableIndividualAssessmentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeApplicableIndividualAssessmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -649,10 +653,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -669,10 +673,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeConnectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -689,10 +693,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeEndpointsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -707,10 +711,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEndpointSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -725,10 +729,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEndpointTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -743,10 +747,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEventCategoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -757,9 +761,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -777,10 +783,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeEventSubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +805,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeFleetAdvisorCollectorsErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
-                crate::error::DescribeFleetAdvisorCollectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetAdvisorCollectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -819,10 +825,10 @@ where
                     inner,
                 ) => Error::InvalidResourceStateFault(inner),
                 crate::error::DescribeFleetAdvisorDatabasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -841,9 +847,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
-                crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetAdvisorLsaAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -866,9 +872,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
-                crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFleetAdvisorSchemaObjectSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -886,10 +892,10 @@ where
                     inner,
                 ) => Error::InvalidResourceStateFault(inner),
                 crate::error::DescribeFleetAdvisorSchemasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -912,10 +918,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeOrderableReplicationInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -937,10 +943,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DescribePendingMaintenanceActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -961,10 +967,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DescribeRefreshSchemasStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -982,10 +988,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DescribeReplicationInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1009,9 +1015,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeReplicationInstanceTaskLogsErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
                 crate::error::DescribeReplicationInstanceTaskLogsErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DescribeReplicationInstanceTaskLogsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationInstanceTaskLogsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1033,10 +1039,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundFault(inner),
                 crate::error::DescribeReplicationSubnetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1059,9 +1065,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeReplicationTaskAssessmentResultsErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DescribeReplicationTaskAssessmentResultsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationTaskAssessmentResultsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1084,9 +1090,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeReplicationTaskAssessmentRunsErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DescribeReplicationTaskAssessmentRunsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationTaskAssessmentRunsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1109,9 +1115,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeReplicationTaskIndividualAssessmentsErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::DescribeReplicationTaskIndividualAssessmentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationTaskIndividualAssessmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1129,10 +1135,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeReplicationTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1149,9 +1155,11 @@ where
                 crate::error::DescribeSchemasErrorKind::ResourceNotFoundFault(inner) => {
                     Error::ResourceNotFoundFault(inner)
                 }
-                crate::error::DescribeSchemasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeSchemasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1172,10 +1180,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::DescribeTableStatisticsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1198,10 +1206,10 @@ where
                     Error::ResourceQuotaExceededFault(inner)
                 }
                 crate::error::ImportCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1218,10 +1226,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1247,9 +1255,11 @@ where
                 crate::error::ModifyEndpointErrorKind::ResourceNotFoundFault(inner) => {
                     Error::ResourceNotFoundFault(inner)
                 }
-                crate::error::ModifyEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1291,10 +1301,10 @@ where
                     Error::SnsNoAuthorizationFault(inner)
                 }
                 crate::error::ModifyEventSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1315,9 +1325,9 @@ where
                 crate::error::ModifyReplicationInstanceErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
                 crate::error::ModifyReplicationInstanceErrorKind::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
                 crate::error::ModifyReplicationInstanceErrorKind::UpgradeDependencyFailureFault(inner) => Error::UpgradeDependencyFailureFault(inner),
-                crate::error::ModifyReplicationInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyReplicationInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1337,9 +1347,9 @@ where
                 crate::error::ModifyReplicationSubnetGroupErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
                 crate::error::ModifyReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault(inner) => Error::ResourceQuotaExceededFault(inner),
                 crate::error::ModifyReplicationSubnetGroupErrorKind::SubnetAlreadyInUse(inner) => Error::SubnetAlreadyInUse(inner),
-                crate::error::ModifyReplicationSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyReplicationSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1366,10 +1376,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::ModifyReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1398,10 +1408,10 @@ where
                     Error::ResourceQuotaExceededFault(inner)
                 }
                 crate::error::MoveReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1422,10 +1432,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::RebootReplicationInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1448,9 +1458,11 @@ where
                 crate::error::RefreshSchemasErrorKind::ResourceQuotaExceededFault(inner) => {
                     Error::ResourceQuotaExceededFault(inner)
                 }
-                crate::error::RefreshSchemasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RefreshSchemasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1467,9 +1479,11 @@ where
                 crate::error::ReloadTablesErrorKind::ResourceNotFoundFault(inner) => {
                     Error::ResourceNotFoundFault(inner)
                 }
-                crate::error::ReloadTablesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ReloadTablesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1487,10 +1501,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1511,10 +1525,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::RunFleetAdvisorLsaAnalysisErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1538,10 +1552,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::StartReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1561,9 +1575,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartReplicationTaskAssessmentErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
                 crate::error::StartReplicationTaskAssessmentErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
-                crate::error::StartReplicationTaskAssessmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartReplicationTaskAssessmentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1593,9 +1607,9 @@ where
                 crate::error::StartReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
                 crate::error::StartReplicationTaskAssessmentRunErrorKind::S3AccessDeniedFault(inner) => Error::S3AccessDeniedFault(inner),
                 crate::error::StartReplicationTaskAssessmentRunErrorKind::S3ResourceNotFoundFault(inner) => Error::S3ResourceNotFoundFault(inner),
-                crate::error::StartReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartReplicationTaskAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1615,10 +1629,10 @@ where
                     Error::ResourceNotFoundFault(inner)
                 }
                 crate::error::StopReplicationTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1644,9 +1658,11 @@ where
                 crate::error::TestConnectionErrorKind::ResourceQuotaExceededFault(inner) => {
                     Error::ResourceQuotaExceededFault(inner)
                 }
-                crate::error::TestConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TestConnectionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1666,9 +1682,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateSubscriptionsToEventBridgeErrorKind::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
                 crate::error::UpdateSubscriptionsToEventBridgeErrorKind::InvalidResourceStateFault(inner) => Error::InvalidResourceStateFault(inner),
-                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateSubscriptionsToEventBridgeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

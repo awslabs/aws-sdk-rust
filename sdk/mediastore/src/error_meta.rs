@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,9 +47,11 @@ where
                 crate::error::CreateContainerErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateContainerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateContainerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -69,9 +71,11 @@ where
                 crate::error::DeleteContainerErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteContainerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteContainerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -98,10 +102,10 @@ where
                     Error::PolicyNotFoundException(inner)
                 }
                 crate::error::DeleteContainerPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -127,10 +131,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DeleteCorsPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -157,10 +161,10 @@ where
                     Error::PolicyNotFoundException(inner)
                 }
                 crate::error::DeleteLifecyclePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -186,10 +190,10 @@ where
                     Error::PolicyNotFoundException(inner)
                 }
                 crate::error::DeleteMetricPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,10 +213,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeContainerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -238,10 +242,10 @@ where
                     Error::PolicyNotFoundException(inner)
                 }
                 crate::error::GetContainerPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -264,9 +268,11 @@ where
                 crate::error::GetCorsPolicyErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::GetCorsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCorsPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -292,10 +298,10 @@ where
                     Error::PolicyNotFoundException(inner)
                 }
                 crate::error::GetLifecyclePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -318,9 +324,11 @@ where
                 crate::error::GetMetricPolicyErrorKind::PolicyNotFoundException(inner) => {
                     Error::PolicyNotFoundException(inner)
                 }
-                crate::error::GetMetricPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetricPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -334,9 +342,11 @@ where
                 crate::error::ListContainersErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::ListContainersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListContainersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,10 +369,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +395,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::PutContainerPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -408,9 +418,11 @@ where
                 crate::error::PutCorsPolicyErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::PutCorsPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutCorsPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -433,10 +445,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::PutLifecyclePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -456,9 +468,11 @@ where
                 crate::error::PutMetricPolicyErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::PutMetricPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMetricPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -481,10 +495,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::StartAccessLoggingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -507,10 +521,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::StopAccessLoggingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -530,9 +544,11 @@ where
                 crate::error::TagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -552,9 +568,11 @@ where
                 crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

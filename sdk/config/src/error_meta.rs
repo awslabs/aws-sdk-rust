@@ -168,7 +168,7 @@ pub enum Error {
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -246,9 +246,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchGetAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::BatchGetAggregateResourceConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchGetAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -264,9 +264,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchGetResourceConfigErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
                 crate::error::BatchGetResourceConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchGetResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -285,9 +285,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteAggregationAuthorizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DeleteAggregationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAggregationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -307,10 +307,10 @@ where
                     Error::ResourceInUseException(inner)
                 }
                 crate::error::DeleteConfigRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,9 +325,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteConfigurationAggregatorErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-                crate::error::DeleteConfigurationAggregatorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteConfigurationAggregatorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -342,9 +342,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-                crate::error::DeleteConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,10 +365,10 @@ where
                     Error::ResourceInUseException(inner)
                 }
                 crate::error::DeleteConformancePackErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -384,9 +384,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteDeliveryChannelErrorKind::LastDeliveryChannelDeleteFailedException(inner) => Error::LastDeliveryChannelDeleteFailedException(inner),
                 crate::error::DeleteDeliveryChannelErrorKind::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
-                crate::error::DeleteDeliveryChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDeliveryChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -407,10 +407,10 @@ where
                     Error::ResourceInUseException(inner)
                 }
                 crate::error::DeleteEvaluationResultsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -427,9 +427,9 @@ where
                 crate::error::DeleteOrganizationConfigRuleErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
                 crate::error::DeleteOrganizationConfigRuleErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
                 crate::error::DeleteOrganizationConfigRuleErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::DeleteOrganizationConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteOrganizationConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -450,9 +450,9 @@ where
                 crate::error::DeleteOrganizationConformancePackErrorKind::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
                 crate::error::DeleteOrganizationConformancePackErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
                 crate::error::DeleteOrganizationConformancePackErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::DeleteOrganizationConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteOrganizationConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -471,9 +471,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeletePendingAggregationRequestErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DeletePendingAggregationRequestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePendingAggregationRequestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -495,9 +495,9 @@ where
                 crate::error::DeleteRemediationConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteRemediationConfigurationErrorKind::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
                 crate::error::DeleteRemediationConfigurationErrorKind::RemediationInProgressException(inner) => Error::RemediationInProgressException(inner),
-                crate::error::DeleteRemediationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRemediationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -512,9 +512,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteRemediationExceptionsErrorKind::NoSuchRemediationExceptionException(inner) => Error::NoSuchRemediationExceptionException(inner),
-                crate::error::DeleteRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -530,9 +530,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteResourceConfigErrorKind::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
                 crate::error::DeleteResourceConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -548,9 +548,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteRetentionConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteRetentionConfigurationErrorKind::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
-                crate::error::DeleteRetentionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRetentionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -570,10 +570,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteStoredQueryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -590,9 +590,9 @@ where
                 crate::error::DeliverConfigSnapshotErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
                 crate::error::DeliverConfigSnapshotErrorKind::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
                 crate::error::DeliverConfigSnapshotErrorKind::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
-                crate::error::DeliverConfigSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeliverConfigSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -618,9 +618,9 @@ where
                 crate::error::DescribeAggregateComplianceByConfigRulesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeAggregateComplianceByConfigRulesErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::DescribeAggregateComplianceByConfigRulesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeAggregateComplianceByConfigRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAggregateComplianceByConfigRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,9 +646,9 @@ where
                 crate::error::DescribeAggregateComplianceByConformancePacksErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeAggregateComplianceByConformancePacksErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::DescribeAggregateComplianceByConformancePacksErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeAggregateComplianceByConformancePacksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAggregateComplianceByConformancePacksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -669,9 +669,9 @@ where
                 crate::error::DescribeAggregationAuthorizationsErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::DescribeAggregationAuthorizationsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeAggregationAuthorizationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeAggregationAuthorizationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAggregationAuthorizationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -692,9 +692,9 @@ where
                 crate::error::DescribeComplianceByConfigRuleErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeComplianceByConfigRuleErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeComplianceByConfigRuleErrorKind::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
-                crate::error::DescribeComplianceByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeComplianceByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -710,9 +710,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeComplianceByResourceErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeComplianceByResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeComplianceByResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeComplianceByResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -734,9 +734,9 @@ where
                 crate::error::DescribeConfigRuleEvaluationStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeConfigRuleEvaluationStatusErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeConfigRuleEvaluationStatusErrorKind::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
-                crate::error::DescribeConfigRuleEvaluationStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigRuleEvaluationStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,10 +756,10 @@ where
                     Error::NoSuchConfigRuleException(inner)
                 }
                 crate::error::DescribeConfigRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -781,9 +781,9 @@ where
                 crate::error::DescribeConfigurationAggregatorsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeConfigurationAggregatorsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeConfigurationAggregatorsErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-                crate::error::DescribeConfigurationAggregatorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigurationAggregatorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -809,9 +809,9 @@ where
                 crate::error::DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeConfigurationAggregatorSourcesStatusErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeConfigurationAggregatorSourcesStatusErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-                crate::error::DescribeConfigurationAggregatorSourcesStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigurationAggregatorSourcesStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -830,9 +830,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeConfigurationRecordersErrorKind::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-                crate::error::DescribeConfigurationRecordersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigurationRecordersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -855,9 +855,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeConfigurationRecorderStatusErrorKind::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-                crate::error::DescribeConfigurationRecorderStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigurationRecorderStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -880,9 +880,9 @@ where
                 crate::error::DescribeConformancePackComplianceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeConformancePackComplianceErrorKind::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
                 crate::error::DescribeConformancePackComplianceErrorKind::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-                crate::error::DescribeConformancePackComplianceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConformancePackComplianceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -909,10 +909,10 @@ where
                     inner,
                 ) => Error::NoSuchConformancePackException(inner),
                 crate::error::DescribeConformancePacksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -929,9 +929,9 @@ where
                 crate::error::DescribeConformancePackStatusErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::DescribeConformancePackStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeConformancePackStatusErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeConformancePackStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConformancePackStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -949,10 +949,10 @@ where
                     inner,
                 ) => Error::NoSuchDeliveryChannelException(inner),
                 crate::error::DescribeDeliveryChannelsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -967,9 +967,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeDeliveryChannelStatusErrorKind::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
-                crate::error::DescribeDeliveryChannelStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDeliveryChannelStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -991,9 +991,9 @@ where
                 crate::error::DescribeOrganizationConfigRulesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeOrganizationConfigRulesErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
                 crate::error::DescribeOrganizationConfigRulesErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::DescribeOrganizationConfigRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOrganizationConfigRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1019,9 +1019,9 @@ where
                 crate::error::DescribeOrganizationConfigRuleStatusesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeOrganizationConfigRuleStatusesErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
                 crate::error::DescribeOrganizationConfigRuleStatusesErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::DescribeOrganizationConfigRuleStatusesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOrganizationConfigRuleStatusesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1047,9 +1047,9 @@ where
                 crate::error::DescribeOrganizationConformancePacksErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeOrganizationConformancePacksErrorKind::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
                 crate::error::DescribeOrganizationConformancePacksErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::DescribeOrganizationConformancePacksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOrganizationConformancePacksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1075,9 +1075,9 @@ where
                 crate::error::DescribeOrganizationConformancePackStatusesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeOrganizationConformancePackStatusesErrorKind::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
                 crate::error::DescribeOrganizationConformancePackStatusesErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::DescribeOrganizationConformancePackStatusesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOrganizationConformancePackStatusesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1099,9 +1099,9 @@ where
                 crate::error::DescribePendingAggregationRequestsErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::DescribePendingAggregationRequestsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribePendingAggregationRequestsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribePendingAggregationRequestsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePendingAggregationRequestsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1120,10 +1120,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeRemediationConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1139,9 +1139,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeRemediationExceptionsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeRemediationExceptionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1163,9 +1163,9 @@ where
                 crate::error::DescribeRemediationExecutionStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeRemediationExecutionStatusErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeRemediationExecutionStatusErrorKind::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
-                crate::error::DescribeRemediationExecutionStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRemediationExecutionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1186,9 +1186,9 @@ where
                 crate::error::DescribeRetentionConfigurationsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::DescribeRetentionConfigurationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeRetentionConfigurationsErrorKind::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
-                crate::error::DescribeRetentionConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRetentionConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1214,9 +1214,9 @@ where
                 crate::error::GetAggregateComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetAggregateComplianceDetailsByConfigRuleErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::GetAggregateComplianceDetailsByConfigRuleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetAggregateComplianceDetailsByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAggregateComplianceDetailsByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1242,9 +1242,9 @@ where
                 crate::error::GetAggregateConfigRuleComplianceSummaryErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetAggregateConfigRuleComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::GetAggregateConfigRuleComplianceSummaryErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetAggregateConfigRuleComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAggregateConfigRuleComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1270,9 +1270,9 @@ where
                 crate::error::GetAggregateConformancePackComplianceSummaryErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetAggregateConformancePackComplianceSummaryErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::GetAggregateConformancePackComplianceSummaryErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetAggregateConformancePackComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAggregateConformancePackComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1298,9 +1298,9 @@ where
                 crate::error::GetAggregateDiscoveredResourceCountsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetAggregateDiscoveredResourceCountsErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::GetAggregateDiscoveredResourceCountsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetAggregateDiscoveredResourceCountsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAggregateDiscoveredResourceCountsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1318,9 +1318,9 @@ where
                 crate::error::GetAggregateResourceConfigErrorKind::OversizedConfigurationItemException(inner) => Error::OversizedConfigurationItemException(inner),
                 crate::error::GetAggregateResourceConfigErrorKind::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
                 crate::error::GetAggregateResourceConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1341,9 +1341,9 @@ where
                 crate::error::GetComplianceDetailsByConfigRuleErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetComplianceDetailsByConfigRuleErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::GetComplianceDetailsByConfigRuleErrorKind::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
-                crate::error::GetComplianceDetailsByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetComplianceDetailsByConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1362,9 +1362,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetComplianceDetailsByResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::GetComplianceDetailsByResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetComplianceDetailsByResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1383,10 +1383,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetComplianceSummaryByConfigRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1406,9 +1406,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetComplianceSummaryByResourceTypeErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::GetComplianceSummaryByResourceTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetComplianceSummaryByResourceTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1435,9 +1435,9 @@ where
                 crate::error::GetConformancePackComplianceDetailsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::GetConformancePackComplianceDetailsErrorKind::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
                 crate::error::GetConformancePackComplianceDetailsErrorKind::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-                crate::error::GetConformancePackComplianceDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetConformancePackComplianceDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1462,9 +1462,9 @@ where
                 crate::error::GetConformancePackComplianceSummaryErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::GetConformancePackComplianceSummaryErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetConformancePackComplianceSummaryErrorKind::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-                crate::error::GetConformancePackComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetConformancePackComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1481,10 +1481,10 @@ where
                     Error::NoSuchConfigRuleException(inner)
                 }
                 crate::error::GetCustomRulePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1508,10 +1508,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetDiscoveredResourceCountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1537,9 +1537,9 @@ where
                 crate::error::GetOrganizationConfigRuleDetailedStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetOrganizationConfigRuleDetailedStatusErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
                 crate::error::GetOrganizationConfigRuleDetailedStatusErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::GetOrganizationConfigRuleDetailedStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetOrganizationConfigRuleDetailedStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1565,9 +1565,9 @@ where
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
                 crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetOrganizationConformancePackDetailedStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1587,9 +1587,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetOrganizationCustomRulePolicyErrorKind::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
                 crate::error::GetOrganizationCustomRulePolicyErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-                crate::error::GetOrganizationCustomRulePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetOrganizationCustomRulePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1609,9 +1609,9 @@ where
                 crate::error::GetResourceConfigHistoryErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
                 crate::error::GetResourceConfigHistoryErrorKind::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
                 crate::error::GetResourceConfigHistoryErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetResourceConfigHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResourceConfigHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1628,9 +1628,11 @@ where
                 crate::error::GetStoredQueryErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetStoredQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetStoredQueryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1652,9 +1654,9 @@ where
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListAggregateDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAggregateDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1679,9 +1681,9 @@ where
                 crate::error::ListConformancePackComplianceScoresErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::ListConformancePackComplianceScoresErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListConformancePackComplianceScoresErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1699,9 +1701,9 @@ where
                 crate::error::ListDiscoveredResourcesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListDiscoveredResourcesErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
                 crate::error::ListDiscoveredResourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1721,10 +1723,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListStoredQueriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1750,10 +1752,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1768,9 +1770,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutAggregationAuthorizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::PutAggregationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutAggregationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1796,9 +1798,11 @@ where
                 crate::error::PutConfigRuleErrorKind::ResourceInUseException(inner) => {
                     Error::ResourceInUseException(inner)
                 }
-                crate::error::PutConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutConfigRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1818,9 +1822,9 @@ where
                 crate::error::PutConfigurationAggregatorErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
                 crate::error::PutConfigurationAggregatorErrorKind::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
                 crate::error::PutConfigurationAggregatorErrorKind::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
-                crate::error::PutConfigurationAggregatorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutConfigurationAggregatorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1838,9 +1842,9 @@ where
                 crate::error::PutConfigurationRecorderErrorKind::InvalidRecordingGroupException(inner) => Error::InvalidRecordingGroupException(inner),
                 crate::error::PutConfigurationRecorderErrorKind::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
                 crate::error::PutConfigurationRecorderErrorKind::MaxNumberOfConfigurationRecordersExceededException(inner) => Error::MaxNumberOfConfigurationRecordersExceededException(inner),
-                crate::error::PutConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1858,9 +1862,9 @@ where
                 crate::error::PutConformancePackErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::PutConformancePackErrorKind::MaxNumberOfConformancePacksExceededException(inner) => Error::MaxNumberOfConformancePacksExceededException(inner),
                 crate::error::PutConformancePackErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::PutConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1881,9 +1885,9 @@ where
                 crate::error::PutDeliveryChannelErrorKind::MaxNumberOfDeliveryChannelsExceededException(inner) => Error::MaxNumberOfDeliveryChannelsExceededException(inner),
                 crate::error::PutDeliveryChannelErrorKind::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
                 crate::error::PutDeliveryChannelErrorKind::NoSuchBucketException(inner) => Error::NoSuchBucketException(inner),
-                crate::error::PutDeliveryChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutDeliveryChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1903,9 +1907,11 @@ where
                 crate::error::PutEvaluationsErrorKind::NoSuchConfigRuleException(inner) => {
                     Error::NoSuchConfigRuleException(inner)
                 }
-                crate::error::PutEvaluationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutEvaluationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1926,10 +1932,10 @@ where
                     Error::NoSuchConfigRuleException(inner)
                 }
                 crate::error::PutExternalEvaluationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1951,9 +1957,9 @@ where
                 crate::error::PutOrganizationConfigRuleErrorKind::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
                 crate::error::PutOrganizationConfigRuleErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::PutOrganizationConfigRuleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutOrganizationConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutOrganizationConfigRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1979,9 +1985,9 @@ where
                 crate::error::PutOrganizationConformancePackErrorKind::OrganizationConformancePackTemplateValidationException(inner) => Error::OrganizationConformancePackTemplateValidationException(inner),
                 crate::error::PutOrganizationConformancePackErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::PutOrganizationConformancePackErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutOrganizationConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutOrganizationConformancePackErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1997,9 +2003,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutRemediationConfigurationsErrorKind::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
                 crate::error::PutRemediationConfigurationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::PutRemediationConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRemediationConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2015,9 +2021,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutRemediationExceptionsErrorKind::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
                 crate::error::PutRemediationExceptionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::PutRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRemediationExceptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2034,9 +2040,9 @@ where
                 crate::error::PutResourceConfigErrorKind::MaxActiveResourcesExceededException(inner) => Error::MaxActiveResourcesExceededException(inner),
                 crate::error::PutResourceConfigErrorKind::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
                 crate::error::PutResourceConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2052,9 +2058,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutRetentionConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::PutRetentionConfigurationErrorKind::MaxNumberOfRetentionConfigurationsExceededException(inner) => Error::MaxNumberOfRetentionConfigurationsExceededException(inner),
-                crate::error::PutRetentionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRetentionConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2074,9 +2080,11 @@ where
                 crate::error::PutStoredQueryErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PutStoredQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutStoredQueryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2094,9 +2102,9 @@ where
                 crate::error::SelectAggregateResourceConfigErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
                 crate::error::SelectAggregateResourceConfigErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::SelectAggregateResourceConfigErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-                crate::error::SelectAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SelectAggregateResourceConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2120,10 +2128,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::SelectResourceConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2141,9 +2149,9 @@ where
                 crate::error::StartConfigRulesEvaluationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::StartConfigRulesEvaluationErrorKind::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
                 crate::error::StartConfigRulesEvaluationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-                crate::error::StartConfigRulesEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartConfigRulesEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2159,9 +2167,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartConfigurationRecorderErrorKind::NoAvailableDeliveryChannelException(inner) => Error::NoAvailableDeliveryChannelException(inner),
                 crate::error::StartConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-                crate::error::StartConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2178,9 +2186,9 @@ where
                 crate::error::StartRemediationExecutionErrorKind::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
                 crate::error::StartRemediationExecutionErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::StartRemediationExecutionErrorKind::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
-                crate::error::StartRemediationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartRemediationExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2195,9 +2203,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StopConfigurationRecorderErrorKind::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-                crate::error::StopConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopConfigurationRecorderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2217,9 +2225,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2236,9 +2246,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

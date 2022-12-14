@@ -483,7 +483,7 @@ pub enum AssociateUserErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,7 +516,7 @@ impl AssociateUserError {
     /// Creates the `AssociateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateUserErrorKind::Unhandled(err.into()),
+            kind: AssociateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -525,7 +525,7 @@ impl AssociateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateUserErrorKind::Unhandled(err.into()),
+            kind: AssociateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -597,7 +597,7 @@ impl std::error::Error for AssociateUserError {
             AssociateUserErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             AssociateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateUserErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -630,7 +630,7 @@ pub enum DeregisterIdentityProviderErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterIdentityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -665,7 +665,9 @@ impl DeregisterIdentityProviderError {
     /// Creates the `DeregisterIdentityProviderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: DeregisterIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -674,7 +676,9 @@ impl DeregisterIdentityProviderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: DeregisterIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -760,7 +764,7 @@ impl std::error::Error for DeregisterIdentityProviderError {
             }
             DeregisterIdentityProviderErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeregisterIdentityProviderErrorKind::ValidationException(_inner) => Some(_inner),
-            DeregisterIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -793,7 +797,7 @@ pub enum DisassociateUserErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -826,7 +830,7 @@ impl DisassociateUserError {
     /// Creates the `DisassociateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateUserErrorKind::Unhandled(err.into()),
+            kind: DisassociateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -835,7 +839,7 @@ impl DisassociateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateUserErrorKind::Unhandled(err.into()),
+            kind: DisassociateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -916,7 +920,7 @@ impl std::error::Error for DisassociateUserError {
             DisassociateUserErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             DisassociateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateUserErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -949,7 +953,7 @@ pub enum ListIdentityProvidersErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIdentityProvidersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -982,7 +986,9 @@ impl ListIdentityProvidersError {
     /// Creates the `ListIdentityProvidersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIdentityProvidersErrorKind::Unhandled(err.into()),
+            kind: ListIdentityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -991,7 +997,9 @@ impl ListIdentityProvidersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIdentityProvidersErrorKind::Unhandled(err.into()),
+            kind: ListIdentityProvidersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1075,7 +1083,7 @@ impl std::error::Error for ListIdentityProvidersError {
             ListIdentityProvidersErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListIdentityProvidersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListIdentityProvidersErrorKind::ValidationException(_inner) => Some(_inner),
-            ListIdentityProvidersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIdentityProvidersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1108,7 +1116,7 @@ pub enum ListInstancesErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1141,7 +1149,7 @@ impl ListInstancesError {
     /// Creates the `ListInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListInstancesErrorKind::Unhandled(err.into()),
+            kind: ListInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1150,7 +1158,7 @@ impl ListInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListInstancesErrorKind::Unhandled(err.into()),
+            kind: ListInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1222,7 +1230,7 @@ impl std::error::Error for ListInstancesError {
             ListInstancesErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListInstancesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListInstancesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1255,7 +1263,7 @@ pub enum ListProductSubscriptionsErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProductSubscriptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1290,7 +1298,9 @@ impl ListProductSubscriptionsError {
     /// Creates the `ListProductSubscriptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProductSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: ListProductSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1299,7 +1309,9 @@ impl ListProductSubscriptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProductSubscriptionsErrorKind::Unhandled(err.into()),
+            kind: ListProductSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1385,7 +1397,7 @@ impl std::error::Error for ListProductSubscriptionsError {
             }
             ListProductSubscriptionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListProductSubscriptionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListProductSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProductSubscriptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1418,7 +1430,7 @@ pub enum ListUserAssociationsErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUserAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1451,7 +1463,9 @@ impl ListUserAssociationsError {
     /// Creates the `ListUserAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUserAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListUserAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1460,7 +1474,9 @@ impl ListUserAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUserAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListUserAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1544,7 +1560,7 @@ impl std::error::Error for ListUserAssociationsError {
             ListUserAssociationsErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListUserAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListUserAssociationsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListUserAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUserAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1577,7 +1593,7 @@ pub enum RegisterIdentityProviderErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterIdentityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1612,7 +1628,9 @@ impl RegisterIdentityProviderError {
     /// Creates the `RegisterIdentityProviderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: RegisterIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1621,7 +1639,9 @@ impl RegisterIdentityProviderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: RegisterIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1707,7 +1727,7 @@ impl std::error::Error for RegisterIdentityProviderError {
             }
             RegisterIdentityProviderErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterIdentityProviderErrorKind::ValidationException(_inner) => Some(_inner),
-            RegisterIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1740,7 +1760,7 @@ pub enum StartProductSubscriptionErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartProductSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1775,7 +1795,9 @@ impl StartProductSubscriptionError {
     /// Creates the `StartProductSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartProductSubscriptionErrorKind::Unhandled(err.into()),
+            kind: StartProductSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1784,7 +1806,9 @@ impl StartProductSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartProductSubscriptionErrorKind::Unhandled(err.into()),
+            kind: StartProductSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1870,7 +1894,7 @@ impl std::error::Error for StartProductSubscriptionError {
             }
             StartProductSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartProductSubscriptionErrorKind::ValidationException(_inner) => Some(_inner),
-            StartProductSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartProductSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1903,7 +1927,7 @@ pub enum StopProductSubscriptionErrorKind {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopProductSubscriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1938,7 +1962,9 @@ impl StopProductSubscriptionError {
     /// Creates the `StopProductSubscriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopProductSubscriptionErrorKind::Unhandled(err.into()),
+            kind: StopProductSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1947,7 +1973,9 @@ impl StopProductSubscriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopProductSubscriptionErrorKind::Unhandled(err.into()),
+            kind: StopProductSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2031,7 +2059,32 @@ impl std::error::Error for StopProductSubscriptionError {
             StopProductSubscriptionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StopProductSubscriptionErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopProductSubscriptionErrorKind::ValidationException(_inner) => Some(_inner),
-            StopProductSubscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopProductSubscriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

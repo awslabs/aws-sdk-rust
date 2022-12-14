@@ -393,7 +393,7 @@ pub enum BatchGetTracesErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetTracesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -421,7 +421,7 @@ impl BatchGetTracesError {
     /// Creates the `BatchGetTracesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetTracesErrorKind::Unhandled(err.into()),
+            kind: BatchGetTracesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -430,7 +430,7 @@ impl BatchGetTracesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetTracesErrorKind::Unhandled(err.into()),
+            kind: BatchGetTracesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -471,7 +471,7 @@ impl std::error::Error for BatchGetTracesError {
         match &self.kind {
             BatchGetTracesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchGetTracesErrorKind::ThrottledException(_inner) => Some(_inner),
-            BatchGetTracesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetTracesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -494,7 +494,7 @@ pub enum CreateGroupErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -522,7 +522,7 @@ impl CreateGroupError {
     /// Creates the `CreateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -531,7 +531,7 @@ impl CreateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -569,7 +569,7 @@ impl std::error::Error for CreateGroupError {
         match &self.kind {
             CreateGroupErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateGroupErrorKind::ThrottledException(_inner) => Some(_inner),
-            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -594,7 +594,7 @@ pub enum CreateSamplingRuleErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSamplingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -623,7 +623,7 @@ impl CreateSamplingRuleError {
     /// Creates the `CreateSamplingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: CreateSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -632,7 +632,7 @@ impl CreateSamplingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: CreateSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -684,7 +684,7 @@ impl std::error::Error for CreateSamplingRuleError {
             CreateSamplingRuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateSamplingRuleErrorKind::RuleLimitExceededException(_inner) => Some(_inner),
             CreateSamplingRuleErrorKind::ThrottledException(_inner) => Some(_inner),
-            CreateSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -707,7 +707,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,7 +735,7 @@ impl DeleteGroupError {
     /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -744,7 +744,7 @@ impl DeleteGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -782,7 +782,7 @@ impl std::error::Error for DeleteGroupError {
         match &self.kind {
             DeleteGroupErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteGroupErrorKind::ThrottledException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -805,7 +805,7 @@ pub enum DeleteSamplingRuleErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSamplingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -833,7 +833,7 @@ impl DeleteSamplingRuleError {
     /// Creates the `DeleteSamplingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -842,7 +842,7 @@ impl DeleteSamplingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -886,7 +886,7 @@ impl std::error::Error for DeleteSamplingRuleError {
         match &self.kind {
             DeleteSamplingRuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteSamplingRuleErrorKind::ThrottledException(_inner) => Some(_inner),
-            DeleteSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -909,7 +909,7 @@ pub enum GetEncryptionConfigErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEncryptionConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -937,7 +937,7 @@ impl GetEncryptionConfigError {
     /// Creates the `GetEncryptionConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEncryptionConfigErrorKind::Unhandled(err.into()),
+            kind: GetEncryptionConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -946,7 +946,7 @@ impl GetEncryptionConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEncryptionConfigErrorKind::Unhandled(err.into()),
+            kind: GetEncryptionConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -990,7 +990,7 @@ impl std::error::Error for GetEncryptionConfigError {
         match &self.kind {
             GetEncryptionConfigErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetEncryptionConfigErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetEncryptionConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEncryptionConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1013,7 +1013,7 @@ pub enum GetGroupErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1041,7 +1041,7 @@ impl GetGroupError {
     /// Creates the `GetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupErrorKind::Unhandled(err.into()),
+            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1050,7 +1050,7 @@ impl GetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupErrorKind::Unhandled(err.into()),
+            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1088,7 +1088,7 @@ impl std::error::Error for GetGroupError {
         match &self.kind {
             GetGroupErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetGroupErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1111,7 +1111,7 @@ pub enum GetGroupsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1139,7 +1139,7 @@ impl GetGroupsError {
     /// Creates the `GetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupsErrorKind::Unhandled(err.into()),
+            kind: GetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1148,7 +1148,7 @@ impl GetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupsErrorKind::Unhandled(err.into()),
+            kind: GetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1186,7 +1186,7 @@ impl std::error::Error for GetGroupsError {
         match &self.kind {
             GetGroupsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetGroupsErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1209,7 +1209,7 @@ pub enum GetInsightErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1237,7 +1237,7 @@ impl GetInsightError {
     /// Creates the `GetInsightError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightErrorKind::Unhandled(err.into()),
+            kind: GetInsightErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1246,7 +1246,7 @@ impl GetInsightError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightErrorKind::Unhandled(err.into()),
+            kind: GetInsightErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1284,7 +1284,7 @@ impl std::error::Error for GetInsightError {
         match &self.kind {
             GetInsightErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetInsightErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetInsightErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1307,7 +1307,7 @@ pub enum GetInsightEventsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1335,7 +1335,7 @@ impl GetInsightEventsError {
     /// Creates the `GetInsightEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightEventsErrorKind::Unhandled(err.into()),
+            kind: GetInsightEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1344,7 +1344,7 @@ impl GetInsightEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightEventsErrorKind::Unhandled(err.into()),
+            kind: GetInsightEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1385,7 +1385,7 @@ impl std::error::Error for GetInsightEventsError {
         match &self.kind {
             GetInsightEventsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetInsightEventsErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetInsightEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1408,7 +1408,7 @@ pub enum GetInsightImpactGraphErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightImpactGraphError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1436,7 +1436,9 @@ impl GetInsightImpactGraphError {
     /// Creates the `GetInsightImpactGraphError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightImpactGraphErrorKind::Unhandled(err.into()),
+            kind: GetInsightImpactGraphErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1445,7 +1447,9 @@ impl GetInsightImpactGraphError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightImpactGraphErrorKind::Unhandled(err.into()),
+            kind: GetInsightImpactGraphErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1489,7 +1493,7 @@ impl std::error::Error for GetInsightImpactGraphError {
         match &self.kind {
             GetInsightImpactGraphErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetInsightImpactGraphErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetInsightImpactGraphErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightImpactGraphErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1512,7 +1516,7 @@ pub enum GetInsightSummariesErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInsightSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,7 +1544,7 @@ impl GetInsightSummariesError {
     /// Creates the `GetInsightSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInsightSummariesErrorKind::Unhandled(err.into()),
+            kind: GetInsightSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1549,7 +1553,7 @@ impl GetInsightSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInsightSummariesErrorKind::Unhandled(err.into()),
+            kind: GetInsightSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1593,7 +1597,7 @@ impl std::error::Error for GetInsightSummariesError {
         match &self.kind {
             GetInsightSummariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetInsightSummariesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetInsightSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInsightSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1616,7 +1620,7 @@ pub enum GetSamplingRulesErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSamplingRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1644,7 +1648,7 @@ impl GetSamplingRulesError {
     /// Creates the `GetSamplingRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSamplingRulesErrorKind::Unhandled(err.into()),
+            kind: GetSamplingRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1653,7 +1657,7 @@ impl GetSamplingRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSamplingRulesErrorKind::Unhandled(err.into()),
+            kind: GetSamplingRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1694,7 +1698,7 @@ impl std::error::Error for GetSamplingRulesError {
         match &self.kind {
             GetSamplingRulesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetSamplingRulesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetSamplingRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSamplingRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1717,7 +1721,7 @@ pub enum GetSamplingStatisticSummariesErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSamplingStatisticSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1750,7 +1754,9 @@ impl GetSamplingStatisticSummariesError {
     /// Creates the `GetSamplingStatisticSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSamplingStatisticSummariesErrorKind::Unhandled(err.into()),
+            kind: GetSamplingStatisticSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1759,7 +1765,9 @@ impl GetSamplingStatisticSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSamplingStatisticSummariesErrorKind::Unhandled(err.into()),
+            kind: GetSamplingStatisticSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1803,7 +1811,7 @@ impl std::error::Error for GetSamplingStatisticSummariesError {
         match &self.kind {
             GetSamplingStatisticSummariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetSamplingStatisticSummariesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetSamplingStatisticSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSamplingStatisticSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1826,7 +1834,7 @@ pub enum GetSamplingTargetsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSamplingTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1854,7 +1862,7 @@ impl GetSamplingTargetsError {
     /// Creates the `GetSamplingTargetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSamplingTargetsErrorKind::Unhandled(err.into()),
+            kind: GetSamplingTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1863,7 +1871,7 @@ impl GetSamplingTargetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSamplingTargetsErrorKind::Unhandled(err.into()),
+            kind: GetSamplingTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1907,7 +1915,7 @@ impl std::error::Error for GetSamplingTargetsError {
         match &self.kind {
             GetSamplingTargetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetSamplingTargetsErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetSamplingTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSamplingTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1930,7 +1938,7 @@ pub enum GetServiceGraphErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetServiceGraphError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1958,7 +1966,7 @@ impl GetServiceGraphError {
     /// Creates the `GetServiceGraphError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetServiceGraphErrorKind::Unhandled(err.into()),
+            kind: GetServiceGraphErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1967,7 +1975,7 @@ impl GetServiceGraphError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetServiceGraphErrorKind::Unhandled(err.into()),
+            kind: GetServiceGraphErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2008,7 +2016,7 @@ impl std::error::Error for GetServiceGraphError {
         match &self.kind {
             GetServiceGraphErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetServiceGraphErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetServiceGraphErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetServiceGraphErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2031,7 +2039,7 @@ pub enum GetTimeSeriesServiceStatisticsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTimeSeriesServiceStatisticsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2064,7 +2072,9 @@ impl GetTimeSeriesServiceStatisticsError {
     /// Creates the `GetTimeSeriesServiceStatisticsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTimeSeriesServiceStatisticsErrorKind::Unhandled(err.into()),
+            kind: GetTimeSeriesServiceStatisticsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2073,7 +2083,9 @@ impl GetTimeSeriesServiceStatisticsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTimeSeriesServiceStatisticsErrorKind::Unhandled(err.into()),
+            kind: GetTimeSeriesServiceStatisticsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2119,7 +2131,7 @@ impl std::error::Error for GetTimeSeriesServiceStatisticsError {
                 Some(_inner)
             }
             GetTimeSeriesServiceStatisticsErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetTimeSeriesServiceStatisticsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTimeSeriesServiceStatisticsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2142,7 +2154,7 @@ pub enum GetTraceGraphErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTraceGraphError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2170,7 +2182,7 @@ impl GetTraceGraphError {
     /// Creates the `GetTraceGraphError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTraceGraphErrorKind::Unhandled(err.into()),
+            kind: GetTraceGraphErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2179,7 +2191,7 @@ impl GetTraceGraphError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTraceGraphErrorKind::Unhandled(err.into()),
+            kind: GetTraceGraphErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2220,7 +2232,7 @@ impl std::error::Error for GetTraceGraphError {
         match &self.kind {
             GetTraceGraphErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetTraceGraphErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetTraceGraphErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTraceGraphErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2243,7 +2255,7 @@ pub enum GetTraceSummariesErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTraceSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2271,7 +2283,7 @@ impl GetTraceSummariesError {
     /// Creates the `GetTraceSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTraceSummariesErrorKind::Unhandled(err.into()),
+            kind: GetTraceSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2280,7 +2292,7 @@ impl GetTraceSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTraceSummariesErrorKind::Unhandled(err.into()),
+            kind: GetTraceSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2324,7 +2336,7 @@ impl std::error::Error for GetTraceSummariesError {
         match &self.kind {
             GetTraceSummariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetTraceSummariesErrorKind::ThrottledException(_inner) => Some(_inner),
-            GetTraceSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTraceSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2349,7 +2361,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2378,7 +2390,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2387,7 +2399,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2439,7 +2451,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottledException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2462,7 +2474,7 @@ pub enum PutEncryptionConfigErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEncryptionConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2490,7 +2502,7 @@ impl PutEncryptionConfigError {
     /// Creates the `PutEncryptionConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEncryptionConfigErrorKind::Unhandled(err.into()),
+            kind: PutEncryptionConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2499,7 +2511,7 @@ impl PutEncryptionConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEncryptionConfigErrorKind::Unhandled(err.into()),
+            kind: PutEncryptionConfigErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2543,7 +2555,7 @@ impl std::error::Error for PutEncryptionConfigError {
         match &self.kind {
             PutEncryptionConfigErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutEncryptionConfigErrorKind::ThrottledException(_inner) => Some(_inner),
-            PutEncryptionConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutEncryptionConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2566,7 +2578,7 @@ pub enum PutTelemetryRecordsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutTelemetryRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2594,7 +2606,7 @@ impl PutTelemetryRecordsError {
     /// Creates the `PutTelemetryRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutTelemetryRecordsErrorKind::Unhandled(err.into()),
+            kind: PutTelemetryRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2603,7 +2615,7 @@ impl PutTelemetryRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutTelemetryRecordsErrorKind::Unhandled(err.into()),
+            kind: PutTelemetryRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2647,7 +2659,7 @@ impl std::error::Error for PutTelemetryRecordsError {
         match &self.kind {
             PutTelemetryRecordsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutTelemetryRecordsErrorKind::ThrottledException(_inner) => Some(_inner),
-            PutTelemetryRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutTelemetryRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2670,7 +2682,7 @@ pub enum PutTraceSegmentsErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutTraceSegmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2698,7 +2710,7 @@ impl PutTraceSegmentsError {
     /// Creates the `PutTraceSegmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutTraceSegmentsErrorKind::Unhandled(err.into()),
+            kind: PutTraceSegmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2707,7 +2719,7 @@ impl PutTraceSegmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutTraceSegmentsErrorKind::Unhandled(err.into()),
+            kind: PutTraceSegmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2748,7 +2760,7 @@ impl std::error::Error for PutTraceSegmentsError {
         match &self.kind {
             PutTraceSegmentsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutTraceSegmentsErrorKind::ThrottledException(_inner) => Some(_inner),
-            PutTraceSegmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutTraceSegmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2775,7 +2787,7 @@ pub enum TagResourceErrorKind {
     /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2805,7 +2817,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2814,7 +2826,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2865,7 +2877,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottledException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2890,7 +2902,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2919,7 +2931,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2928,7 +2940,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2977,7 +2989,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottledException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3000,7 +3012,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3028,7 +3040,7 @@ impl UpdateGroupError {
     /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3037,7 +3049,7 @@ impl UpdateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3075,7 +3087,7 @@ impl std::error::Error for UpdateGroupError {
         match &self.kind {
             UpdateGroupErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateGroupErrorKind::ThrottledException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3098,7 +3110,7 @@ pub enum UpdateSamplingRuleErrorKind {
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSamplingRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3126,7 +3138,7 @@ impl UpdateSamplingRuleError {
     /// Creates the `UpdateSamplingRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: UpdateSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3135,7 +3147,7 @@ impl UpdateSamplingRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSamplingRuleErrorKind::Unhandled(err.into()),
+            kind: UpdateSamplingRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3179,7 +3191,32 @@ impl std::error::Error for UpdateSamplingRuleError {
         match &self.kind {
             UpdateSamplingRuleErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateSamplingRuleErrorKind::ThrottledException(_inner) => Some(_inner),
-            UpdateSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSamplingRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

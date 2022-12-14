@@ -20,7 +20,7 @@ pub enum Error {
     /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,11 @@ where
                 crate::error::DeleteSessionErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }
-                crate::error::DeleteSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -90,9 +92,11 @@ where
                 crate::error::GetSessionErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::GetSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -127,9 +131,11 @@ where
                 crate::error::PutSessionErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }
-                crate::error::PutSessionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -164,9 +170,11 @@ where
                 crate::error::RecognizeTextErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }
-                crate::error::RecognizeTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RecognizeTextErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,10 +212,10 @@ where
                     Error::ConflictException(inner)
                 }
                 crate::error::RecognizeUtteranceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

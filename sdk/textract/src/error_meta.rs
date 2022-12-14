@@ -32,7 +32,7 @@ pub enum Error {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -92,9 +92,11 @@ where
                 crate::error::AnalyzeDocumentErrorKind::UnsupportedDocumentException(inner) => {
                     Error::UnsupportedDocumentException(inner)
                 }
-                crate::error::AnalyzeDocumentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AnalyzeDocumentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +134,11 @@ where
                 crate::error::AnalyzeExpenseErrorKind::UnsupportedDocumentException(inner) => {
                     Error::UnsupportedDocumentException(inner)
                 }
-                crate::error::AnalyzeExpenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AnalyzeExpenseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -172,9 +176,11 @@ where
                 crate::error::AnalyzeIDErrorKind::UnsupportedDocumentException(inner) => {
                     Error::UnsupportedDocumentException(inner)
                 }
-                crate::error::AnalyzeIDErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AnalyzeIDErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -196,9 +202,9 @@ where
                 crate::error::DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::DetectDocumentTextErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DetectDocumentTextErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-                crate::error::DetectDocumentTextErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetectDocumentTextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -219,9 +225,9 @@ where
                 crate::error::GetDocumentAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -243,9 +249,9 @@ where
                 crate::error::GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -266,9 +272,9 @@ where
                 crate::error::GetExpenseAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
                 crate::error::GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::GetExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -294,9 +300,9 @@ where
                 crate::error::StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::StartDocumentAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartDocumentAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-                crate::error::StartDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,9 +328,9 @@ where
                 crate::error::StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-                crate::error::StartDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -350,9 +356,9 @@ where
                 crate::error::StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
                 crate::error::StartExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartExpenseAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-                crate::error::StartExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

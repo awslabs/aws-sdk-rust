@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,10 +56,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -89,10 +89,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::CreateApplicationVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -110,9 +110,9 @@ where
                 crate::error::CreateCloudFormationChangeSetErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::CreateCloudFormationChangeSetErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
                 crate::error::CreateCloudFormationChangeSetErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::CreateCloudFormationChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCloudFormationChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -131,9 +131,9 @@ where
                 crate::error::CreateCloudFormationTemplateErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
                 crate::error::CreateCloudFormationTemplateErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::CreateCloudFormationTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::CreateCloudFormationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCloudFormationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -165,10 +165,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -194,9 +194,11 @@ where
                 crate::error::GetApplicationErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -226,10 +228,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetApplicationPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -259,10 +261,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::GetCloudFormationTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -281,9 +283,9 @@ where
                 crate::error::ListApplicationDependenciesErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
                 crate::error::ListApplicationDependenciesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::ListApplicationDependenciesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListApplicationDependenciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListApplicationDependenciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -309,10 +311,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -342,10 +344,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListApplicationVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -375,10 +377,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::PutApplicationPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -407,10 +409,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UnshareApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -442,10 +444,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

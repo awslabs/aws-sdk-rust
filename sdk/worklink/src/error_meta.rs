@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>You are not authorized to perform this action.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,11 @@ where
                 crate::error::AssociateDomainErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::AssociateDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -86,9 +88,9 @@ where
                 crate::error::AssociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::AssociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWebsiteAuthorizationProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -116,9 +118,9 @@ where
                 crate::error::AssociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::AssociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -147,9 +149,11 @@ where
                 crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -175,9 +179,11 @@ where
                 crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DeleteFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -200,9 +206,9 @@ where
                 crate::error::DescribeAuditStreamConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAuditStreamConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeAuditStreamConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeAuditStreamConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAuditStreamConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -229,9 +235,9 @@ where
                 crate::error::DescribeCompanyNetworkConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeCompanyNetworkConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeCompanyNetworkConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeCompanyNetworkConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCompanyNetworkConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -257,9 +263,11 @@ where
                 crate::error::DescribeDeviceErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DescribeDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -282,9 +290,9 @@ where
                 crate::error::DescribeDevicePolicyConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDevicePolicyConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeDevicePolicyConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeDevicePolicyConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDevicePolicyConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,9 +318,11 @@ where
                 crate::error::DescribeDomainErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::DescribeDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -342,10 +352,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DescribeFleetMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -372,9 +382,9 @@ where
                 crate::error::DescribeIdentityProviderConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeIdentityProviderConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeIdentityProviderConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeIdentityProviderConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeIdentityProviderConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -401,9 +411,9 @@ where
                 crate::error::DescribeWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeWebsiteCertificateAuthorityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -432,10 +442,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::DisassociateDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -463,9 +473,9 @@ where
                 crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWebsiteAuthorizationProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +502,9 @@ where
                 crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateWebsiteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -520,9 +530,11 @@ where
                 crate::error::ListDevicesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListDevicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDevicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -548,9 +560,11 @@ where
                 crate::error::ListDomainsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDomainsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -573,9 +587,11 @@ where
                 crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::ListFleetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFleetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -592,10 +608,10 @@ where
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -618,9 +634,9 @@ where
                 crate::error::ListWebsiteAuthorizationProvidersErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListWebsiteAuthorizationProvidersErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListWebsiteAuthorizationProvidersErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::ListWebsiteAuthorizationProvidersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWebsiteAuthorizationProvidersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -642,9 +658,9 @@ where
                 crate::error::ListWebsiteCertificateAuthoritiesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListWebsiteCertificateAuthoritiesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListWebsiteCertificateAuthoritiesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWebsiteCertificateAuthoritiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -673,10 +689,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::RestoreDomainAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -705,10 +721,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::RevokeDomainAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -734,9 +750,11 @@ where
                 crate::error::SignOutUserErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::SignOutUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SignOutUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -750,9 +768,11 @@ where
                 crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,9 +786,11 @@ where
                 crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -791,9 +813,9 @@ where
                 crate::error::UpdateAuditStreamConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateAuditStreamConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateAuditStreamConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::UpdateAuditStreamConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAuditStreamConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -816,9 +838,9 @@ where
                 crate::error::UpdateCompanyNetworkConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateCompanyNetworkConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateCompanyNetworkConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::UpdateCompanyNetworkConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCompanyNetworkConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -841,9 +863,9 @@ where
                 crate::error::UpdateDevicePolicyConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateDevicePolicyConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateDevicePolicyConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::UpdateDevicePolicyConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDevicePolicyConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -873,10 +895,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateDomainMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -905,10 +927,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::UpdateFleetMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -935,9 +957,9 @@ where
                 crate::error::UpdateIdentityProviderConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateIdentityProviderConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateIdentityProviderConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-                crate::error::UpdateIdentityProviderConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateIdentityProviderConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

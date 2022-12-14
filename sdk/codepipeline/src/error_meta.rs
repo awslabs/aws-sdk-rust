@@ -78,7 +78,7 @@ pub enum Error {
     /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -139,9 +139,11 @@ where
                 crate::error::AcknowledgeJobErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::AcknowledgeJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcknowledgeJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,10 +170,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AcknowledgeThirdPartyJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -201,10 +203,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateCustomActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -245,9 +247,11 @@ where
                 crate::error::CreatePipelineErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -268,10 +272,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteCustomActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -288,9 +292,11 @@ where
                 crate::error::DeletePipelineErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeletePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -307,9 +313,11 @@ where
                 crate::error::DeleteWebhookErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteWebhookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -329,9 +337,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeregisterWebhookWithThirdPartyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::DeregisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException(inner) => Error::WebhookNotFoundException(inner),
-                crate::error::DeregisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -355,10 +363,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisableStageTransitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -382,10 +390,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::EnableStageTransitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -402,9 +410,11 @@ where
                 crate::error::GetActionTypeErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetActionTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetActionTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -421,9 +431,11 @@ where
                 crate::error::GetJobDetailsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetJobDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetJobDetailsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -443,9 +455,11 @@ where
                 crate::error::GetPipelineErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetPipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -469,10 +483,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPipelineExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,10 +506,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPipelineStateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,10 +536,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetThirdPartyJobDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -552,10 +566,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListActionExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -572,9 +586,11 @@ where
                 crate::error::ListActionTypesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListActionTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListActionTypesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -598,10 +614,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPipelineExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -618,9 +634,11 @@ where
                 crate::error::ListPipelinesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListPipelinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPipelinesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,10 +664,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -666,9 +684,11 @@ where
                 crate::error::ListWebhooksErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListWebhooksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWebhooksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -685,9 +705,11 @@ where
                 crate::error::PollForJobsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PollForJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PollForJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -708,10 +730,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PollForThirdPartyJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -737,10 +759,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutActionRevisionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -772,10 +794,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutApprovalResultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -798,10 +820,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutJobFailureResultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -818,9 +840,9 @@ where
                 crate::error::PutJobSuccessResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException(inner) => Error::OutputVariablesSizeExceededException(inner),
                 crate::error::PutJobSuccessResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -838,9 +860,9 @@ where
                 crate::error::PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
                 crate::error::PutThirdPartyJobFailureResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::PutThirdPartyJobFailureResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutThirdPartyJobFailureResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutThirdPartyJobFailureResultErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -858,9 +880,9 @@ where
                 crate::error::PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
                 crate::error::PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException(inner) => Error::JobNotFoundException(inner),
                 crate::error::PutThirdPartyJobSuccessResultErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutThirdPartyJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutThirdPartyJobSuccessResultErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -879,9 +901,9 @@ where
                 crate::error::PutWebhookErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
                 crate::error::PutWebhookErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
                 crate::error::PutWebhookErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutWebhookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutWebhookErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -902,10 +924,10 @@ where
                     inner,
                 ) => Error::WebhookNotFoundException(inner),
                 crate::error::RegisterWebhookWithThirdPartyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -937,10 +959,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::RetryStageExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -964,10 +986,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartPipelineExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -986,9 +1008,9 @@ where
                 crate::error::StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException(inner) => Error::PipelineExecutionNotStoppableException(inner),
                 crate::error::StopPipelineExecutionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
                 crate::error::StopPipelineExecutionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StopPipelineExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopPipelineExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1017,9 +1039,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1045,9 +1069,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1070,10 +1096,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateActionTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1102,9 +1128,11 @@ where
                 crate::error::UpdatePipelineErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

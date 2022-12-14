@@ -2266,7 +2266,7 @@ pub enum CancelKeyDeletionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2297,7 +2297,7 @@ impl CancelKeyDeletionError {
     /// Creates the `CancelKeyDeletionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelKeyDeletionErrorKind::Unhandled(err.into()),
+            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2306,7 +2306,7 @@ impl CancelKeyDeletionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelKeyDeletionErrorKind::Unhandled(err.into()),
+            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2371,7 +2371,7 @@ impl std::error::Error for CancelKeyDeletionError {
             CancelKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
             CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             CancelKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2415,7 +2415,7 @@ pub enum ConnectCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2454,7 +2454,9 @@ impl ConnectCustomKeyStoreError {
     /// Creates the `ConnectCustomKeyStoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ConnectCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2463,7 +2465,9 @@ impl ConnectCustomKeyStoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ConnectCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2537,7 +2541,7 @@ impl std::error::Error for ConnectCustomKeyStoreError {
             }
             ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
             ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2571,7 +2575,7 @@ pub enum CreateAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2604,7 +2608,7 @@ impl CreateAliasError {
     /// Creates the `CreateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2613,7 +2617,7 @@ impl CreateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2685,7 +2689,7 @@ impl std::error::Error for CreateAliasError {
             CreateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             CreateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2729,7 +2733,7 @@ pub enum CreateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2770,7 +2774,9 @@ impl CreateCustomKeyStoreError {
     /// Creates the `CreateCustomKeyStoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2779,7 +2785,9 @@ impl CreateCustomKeyStoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2867,7 +2875,7 @@ impl std::error::Error for CreateCustomKeyStoreError {
             CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
             CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_inner) => Some(_inner),
             CreateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2903,7 +2911,7 @@ pub enum CreateGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2937,7 +2945,7 @@ impl CreateGrantError {
     /// Creates the `CreateGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGrantErrorKind::Unhandled(err.into()),
+            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2946,7 +2954,7 @@ impl CreateGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGrantErrorKind::Unhandled(err.into()),
+            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3023,7 +3031,7 @@ impl std::error::Error for CreateGrantError {
             CreateGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             CreateGrantErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3077,7 +3085,7 @@ pub enum CreateKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3115,7 +3123,7 @@ impl CreateKeyError {
     /// Creates the `CreateKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateKeyErrorKind::Unhandled(err.into()),
+            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3124,7 +3132,7 @@ impl CreateKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateKeyErrorKind::Unhandled(err.into()),
+            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3222,7 +3230,7 @@ impl std::error::Error for CreateKeyError {
             CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             CreateKeyErrorKind::TagException(_inner) => Some(_inner),
             CreateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            CreateKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3269,7 +3277,7 @@ pub enum DecryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3305,7 +3313,7 @@ impl DecryptError {
     /// Creates the `DecryptError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DecryptErrorKind::Unhandled(err.into()),
+            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3314,7 +3322,7 @@ impl DecryptError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DecryptErrorKind::Unhandled(err.into()),
+            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3392,7 +3400,7 @@ impl std::error::Error for DecryptError {
             DecryptErrorKind::KmsInternalException(_inner) => Some(_inner),
             DecryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             DecryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            DecryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DecryptErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3420,7 +3428,7 @@ pub enum DeleteAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3450,7 +3458,7 @@ impl DeleteAliasError {
     /// Creates the `DeleteAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3459,7 +3467,7 @@ impl DeleteAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3513,7 +3521,7 @@ impl std::error::Error for DeleteAliasError {
             DeleteAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
             DeleteAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             DeleteAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3546,7 +3554,7 @@ pub enum DeleteCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3578,7 +3586,9 @@ impl DeleteCustomKeyStoreError {
     /// Creates the `DeleteCustomKeyStoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3587,7 +3597,9 @@ impl DeleteCustomKeyStoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3649,7 +3661,7 @@ impl std::error::Error for DeleteCustomKeyStoreError {
             }
             DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
             DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3681,7 +3693,7 @@ pub enum DeleteImportedKeyMaterialErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteImportedKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3715,7 +3727,9 @@ impl DeleteImportedKeyMaterialError {
     /// Creates the `DeleteImportedKeyMaterialError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(err.into()),
+            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3724,7 +3738,9 @@ impl DeleteImportedKeyMaterialError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(err.into()),
+            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3802,7 +3818,7 @@ impl std::error::Error for DeleteImportedKeyMaterialError {
             DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) => {
                 Some(_inner)
             }
-            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3827,7 +3843,7 @@ pub enum DescribeCustomKeyStoresErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomKeyStoresError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3858,7 +3874,9 @@ impl DescribeCustomKeyStoresError {
     /// Creates the `DescribeCustomKeyStoresError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomKeyStoresErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3867,7 +3885,9 @@ impl DescribeCustomKeyStoresError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomKeyStoresErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3921,7 +3941,7 @@ impl std::error::Error for DescribeCustomKeyStoresError {
             }
             DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3948,7 +3968,7 @@ pub enum DescribeKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3978,7 +3998,7 @@ impl DescribeKeyError {
     /// Creates the `DescribeKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeKeyErrorKind::Unhandled(err.into()),
+            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3987,7 +4007,7 @@ impl DescribeKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeKeyErrorKind::Unhandled(err.into()),
+            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4038,7 +4058,7 @@ impl std::error::Error for DescribeKeyError {
             DescribeKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
             DescribeKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
             DescribeKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4068,7 +4088,7 @@ pub enum DisableKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4099,7 +4119,7 @@ impl DisableKeyError {
     /// Creates the `DisableKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableKeyErrorKind::Unhandled(err.into()),
+            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4108,7 +4128,7 @@ impl DisableKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableKeyErrorKind::Unhandled(err.into()),
+            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4164,7 +4184,7 @@ impl std::error::Error for DisableKeyError {
             DisableKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
             DisableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             DisableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            DisableKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4198,7 +4218,7 @@ pub enum DisableKeyRotationErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4231,7 +4251,7 @@ impl DisableKeyRotationError {
     /// Creates the `DisableKeyRotationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableKeyRotationErrorKind::Unhandled(err.into()),
+            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4240,7 +4260,7 @@ impl DisableKeyRotationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableKeyRotationErrorKind::Unhandled(err.into()),
+            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4324,7 +4344,7 @@ impl std::error::Error for DisableKeyRotationError {
             DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             DisableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
             DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4355,7 +4375,7 @@ pub enum DisconnectCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisconnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4388,7 +4408,9 @@ impl DisconnectCustomKeyStoreError {
     /// Creates the `DisconnectCustomKeyStoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4397,7 +4419,9 @@ impl DisconnectCustomKeyStoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4453,7 +4477,7 @@ impl std::error::Error for DisconnectCustomKeyStoreError {
                 Some(_inner)
             }
             DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4485,7 +4509,7 @@ pub enum EnableKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4517,7 +4541,7 @@ impl EnableKeyError {
     /// Creates the `EnableKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableKeyErrorKind::Unhandled(err.into()),
+            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4526,7 +4550,7 @@ impl EnableKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableKeyErrorKind::Unhandled(err.into()),
+            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4587,7 +4611,7 @@ impl std::error::Error for EnableKeyError {
             EnableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             EnableKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
             EnableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            EnableKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4621,7 +4645,7 @@ pub enum EnableKeyRotationErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4654,7 +4678,7 @@ impl EnableKeyRotationError {
     /// Creates the `EnableKeyRotationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableKeyRotationErrorKind::Unhandled(err.into()),
+            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4663,7 +4687,7 @@ impl EnableKeyRotationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableKeyRotationErrorKind::Unhandled(err.into()),
+            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4741,7 +4765,7 @@ impl std::error::Error for EnableKeyRotationError {
             EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             EnableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
             EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4783,7 +4807,7 @@ pub enum EncryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4817,7 +4841,7 @@ impl EncryptError {
     /// Creates the `EncryptError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EncryptErrorKind::Unhandled(err.into()),
+            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4826,7 +4850,7 @@ impl EncryptError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EncryptErrorKind::Unhandled(err.into()),
+            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4894,7 +4918,7 @@ impl std::error::Error for EncryptError {
             EncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
             EncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             EncryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            EncryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EncryptErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4936,7 +4960,7 @@ pub enum GenerateDataKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4970,7 +4994,7 @@ impl GenerateDataKeyError {
     /// Creates the `GenerateDataKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateDataKeyErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4979,7 +5003,7 @@ impl GenerateDataKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateDataKeyErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5065,7 +5089,7 @@ impl std::error::Error for GenerateDataKeyError {
             GenerateDataKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
             GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GenerateDataKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateDataKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5109,7 +5133,7 @@ pub enum GenerateDataKeyPairErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5144,7 +5168,7 @@ impl GenerateDataKeyPairError {
     /// Creates the `GenerateDataKeyPairError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateDataKeyPairErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5153,7 +5177,7 @@ impl GenerateDataKeyPairError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateDataKeyPairErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5253,7 +5277,7 @@ impl std::error::Error for GenerateDataKeyPairError {
             GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GenerateDataKeyPairErrorKind::NotFoundException(_inner) => Some(_inner),
             GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateDataKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5297,7 +5321,7 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyPairWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5353,7 +5377,9 @@ impl GenerateDataKeyPairWithoutPlaintextError {
     /// Creates the `GenerateDataKeyPairWithoutPlaintextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5362,7 +5388,9 @@ impl GenerateDataKeyPairWithoutPlaintextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5476,9 +5504,7 @@ impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
             GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5520,7 +5546,7 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5567,7 +5593,9 @@ impl GenerateDataKeyWithoutPlaintextError {
     /// Creates the `GenerateDataKeyWithoutPlaintextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5576,7 +5604,9 @@ impl GenerateDataKeyWithoutPlaintextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(err.into()),
+            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5678,7 +5708,7 @@ impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
                 Some(_inner)
             }
             GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5718,7 +5748,7 @@ pub enum GenerateMacErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateMacError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5751,7 +5781,7 @@ impl GenerateMacError {
     /// Creates the `GenerateMacError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateMacErrorKind::Unhandled(err.into()),
+            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5760,7 +5790,7 @@ impl GenerateMacError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateMacErrorKind::Unhandled(err.into()),
+            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5832,7 +5862,7 @@ impl std::error::Error for GenerateMacError {
             GenerateMacErrorKind::KmsInternalException(_inner) => Some(_inner),
             GenerateMacErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GenerateMacErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateMacErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateMacErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5865,7 +5895,7 @@ pub enum GenerateRandomErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateRandomError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5895,7 +5925,7 @@ impl GenerateRandomError {
     /// Creates the `GenerateRandomError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateRandomErrorKind::Unhandled(err.into()),
+            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5904,7 +5934,7 @@ impl GenerateRandomError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateRandomErrorKind::Unhandled(err.into()),
+            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5961,7 +5991,7 @@ impl std::error::Error for GenerateRandomError {
             GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
             GenerateRandomErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
             GenerateRandomErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateRandomErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5991,7 +6021,7 @@ pub enum GetKeyPolicyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6022,7 +6052,7 @@ impl GetKeyPolicyError {
     /// Creates the `GetKeyPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetKeyPolicyErrorKind::Unhandled(err.into()),
+            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6031,7 +6061,7 @@ impl GetKeyPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetKeyPolicyErrorKind::Unhandled(err.into()),
+            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6090,7 +6120,7 @@ impl std::error::Error for GetKeyPolicyError {
             GetKeyPolicyErrorKind::KmsInternalException(_inner) => Some(_inner),
             GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GetKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6122,7 +6152,7 @@ pub enum GetKeyRotationStatusErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyRotationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6154,7 +6184,9 @@ impl GetKeyRotationStatusError {
     /// Creates the `GetKeyRotationStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetKeyRotationStatusErrorKind::Unhandled(err.into()),
+            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6163,7 +6195,9 @@ impl GetKeyRotationStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetKeyRotationStatusErrorKind::Unhandled(err.into()),
+            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6239,7 +6273,7 @@ impl std::error::Error for GetKeyRotationStatusError {
             GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GetKeyRotationStatusErrorKind::NotFoundException(_inner) => Some(_inner),
             GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetKeyRotationStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6271,7 +6305,7 @@ pub enum GetParametersForImportErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetParametersForImportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6303,7 +6337,9 @@ impl GetParametersForImportError {
     /// Creates the `GetParametersForImportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetParametersForImportErrorKind::Unhandled(err.into()),
+            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6312,7 +6348,9 @@ impl GetParametersForImportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetParametersForImportErrorKind::Unhandled(err.into()),
+            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6388,7 +6426,7 @@ impl std::error::Error for GetParametersForImportError {
             GetParametersForImportErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GetParametersForImportErrorKind::NotFoundException(_inner) => Some(_inner),
             GetParametersForImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetParametersForImportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6434,7 +6472,7 @@ pub enum GetPublicKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,7 +6508,7 @@ impl GetPublicKeyError {
     /// Creates the `GetPublicKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPublicKeyErrorKind::Unhandled(err.into()),
+            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6479,7 +6517,7 @@ impl GetPublicKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPublicKeyErrorKind::Unhandled(err.into()),
+            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6575,7 +6613,7 @@ impl std::error::Error for GetPublicKeyError {
             GetPublicKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             GetPublicKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetPublicKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6616,7 +6654,7 @@ pub enum ImportKeyMaterialErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6652,7 +6690,7 @@ impl ImportKeyMaterialError {
     /// Creates the `ImportKeyMaterialError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportKeyMaterialErrorKind::Unhandled(err.into()),
+            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6661,7 +6699,7 @@ impl ImportKeyMaterialError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportKeyMaterialErrorKind::Unhandled(err.into()),
+            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6766,7 +6804,7 @@ impl std::error::Error for ImportKeyMaterialError {
             ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             ImportKeyMaterialErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6795,7 +6833,7 @@ pub enum ListAliasesErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6826,7 +6864,7 @@ impl ListAliasesError {
     /// Creates the `ListAliasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAliasesErrorKind::Unhandled(err.into()),
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6835,7 +6873,7 @@ impl ListAliasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAliasesErrorKind::Unhandled(err.into()),
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6891,7 +6929,7 @@ impl std::error::Error for ListAliasesError {
             ListAliasesErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             ListAliasesErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListAliasesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6925,7 +6963,7 @@ pub enum ListGrantsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6958,7 +6996,7 @@ impl ListGrantsError {
     /// Creates the `ListGrantsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGrantsErrorKind::Unhandled(err.into()),
+            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6967,7 +7005,7 @@ impl ListGrantsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGrantsErrorKind::Unhandled(err.into()),
+            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7033,7 +7071,7 @@ impl std::error::Error for ListGrantsError {
             ListGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListGrantsErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             ListGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGrantsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7063,7 +7101,7 @@ pub enum ListKeyPoliciesErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeyPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7094,7 +7132,7 @@ impl ListKeyPoliciesError {
     /// Creates the `ListKeyPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListKeyPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7103,7 +7141,7 @@ impl ListKeyPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListKeyPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7165,7 +7203,7 @@ impl std::error::Error for ListKeyPoliciesError {
             ListKeyPoliciesErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             ListKeyPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListKeyPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7190,7 +7228,7 @@ pub enum ListKeysErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7219,7 +7257,7 @@ impl ListKeysError {
     /// Creates the `ListKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListKeysErrorKind::Unhandled(err.into()),
+            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7228,7 +7266,7 @@ impl ListKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListKeysErrorKind::Unhandled(err.into()),
+            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7271,7 +7309,7 @@ impl std::error::Error for ListKeysError {
             ListKeysErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
             ListKeysErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             ListKeysErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7298,7 +7336,7 @@ pub enum ListResourceTagsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7328,7 +7366,7 @@ impl ListResourceTagsError {
     /// Creates the `ListResourceTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourceTagsErrorKind::Unhandled(err.into()),
+            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7337,7 +7375,7 @@ impl ListResourceTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourceTagsErrorKind::Unhandled(err.into()),
+            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7394,7 +7432,7 @@ impl std::error::Error for ListResourceTagsError {
             ListResourceTagsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             ListResourceTagsErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListResourceTagsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourceTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7423,7 +7461,7 @@ pub enum ListRetirableGrantsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRetirableGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7454,7 +7492,7 @@ impl ListRetirableGrantsError {
     /// Creates the `ListRetirableGrantsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRetirableGrantsErrorKind::Unhandled(err.into()),
+            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7463,7 +7501,7 @@ impl ListRetirableGrantsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRetirableGrantsErrorKind::Unhandled(err.into()),
+            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7531,7 +7569,7 @@ impl std::error::Error for ListRetirableGrantsError {
             ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             ListRetirableGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
             ListRetirableGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRetirableGrantsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7567,7 +7605,7 @@ pub enum PutKeyPolicyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7601,7 +7639,7 @@ impl PutKeyPolicyError {
     /// Creates the `PutKeyPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutKeyPolicyErrorKind::Unhandled(err.into()),
+            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7610,7 +7648,7 @@ impl PutKeyPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutKeyPolicyErrorKind::Unhandled(err.into()),
+            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7690,7 +7728,7 @@ impl std::error::Error for PutKeyPolicyError {
             PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             PutKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7737,7 +7775,7 @@ pub enum ReEncryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReEncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7773,7 +7811,7 @@ impl ReEncryptError {
     /// Creates the `ReEncryptError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReEncryptErrorKind::Unhandled(err.into()),
+            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7782,7 +7820,7 @@ impl ReEncryptError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReEncryptErrorKind::Unhandled(err.into()),
+            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7869,7 +7907,7 @@ impl std::error::Error for ReEncryptError {
             ReEncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
             ReEncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             ReEncryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            ReEncryptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReEncryptErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7909,7 +7947,7 @@ pub enum ReplicateKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReplicateKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7945,7 +7983,7 @@ impl ReplicateKeyError {
     /// Creates the `ReplicateKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReplicateKeyErrorKind::Unhandled(err.into()),
+            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7954,7 +7992,7 @@ impl ReplicateKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReplicateKeyErrorKind::Unhandled(err.into()),
+            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8041,7 +8079,7 @@ impl std::error::Error for ReplicateKeyError {
             ReplicateKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             ReplicateKeyErrorKind::TagException(_inner) => Some(_inner),
             ReplicateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReplicateKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8075,7 +8113,7 @@ pub enum RetireGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetireGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8108,7 +8146,7 @@ impl RetireGrantError {
     /// Creates the `RetireGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RetireGrantErrorKind::Unhandled(err.into()),
+            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8117,7 +8155,7 @@ impl RetireGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RetireGrantErrorKind::Unhandled(err.into()),
+            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8189,7 +8227,7 @@ impl std::error::Error for RetireGrantError {
             RetireGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
             RetireGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             RetireGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            RetireGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RetireGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8221,7 +8259,7 @@ pub enum RevokeGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8253,7 +8291,7 @@ impl RevokeGrantError {
     /// Creates the `RevokeGrantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeGrantErrorKind::Unhandled(err.into()),
+            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8262,7 +8300,7 @@ impl RevokeGrantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeGrantErrorKind::Unhandled(err.into()),
+            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8326,7 +8364,7 @@ impl std::error::Error for RevokeGrantError {
             RevokeGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
             RevokeGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             RevokeGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeGrantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8356,7 +8394,7 @@ pub enum ScheduleKeyDeletionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ScheduleKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8387,7 +8425,7 @@ impl ScheduleKeyDeletionError {
     /// Creates the `ScheduleKeyDeletionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ScheduleKeyDeletionErrorKind::Unhandled(err.into()),
+            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8396,7 +8434,7 @@ impl ScheduleKeyDeletionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ScheduleKeyDeletionErrorKind::Unhandled(err.into()),
+            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8464,7 +8502,7 @@ impl std::error::Error for ScheduleKeyDeletionError {
             ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
             ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             ScheduleKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8506,7 +8544,7 @@ pub enum SignErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8540,7 +8578,7 @@ impl SignError {
     /// Creates the `SignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SignErrorKind::Unhandled(err.into()),
+            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8549,7 +8587,7 @@ impl SignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SignErrorKind::Unhandled(err.into()),
+            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8617,7 +8655,7 @@ impl std::error::Error for SignError {
             SignErrorKind::KmsInternalException(_inner) => Some(_inner),
             SignErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             SignErrorKind::NotFoundException(_inner) => Some(_inner),
-            SignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8649,7 +8687,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8681,7 +8719,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8690,7 +8728,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8751,7 +8789,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TagException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8781,7 +8819,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8812,7 +8850,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8821,7 +8859,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8877,7 +8915,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TagException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8907,7 +8945,7 @@ pub enum UpdateAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8938,7 +8976,7 @@ impl UpdateAliasError {
     /// Creates the `UpdateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8947,7 +8985,7 @@ impl UpdateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9006,7 +9044,7 @@ impl std::error::Error for UpdateAliasError {
             UpdateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             UpdateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9058,7 +9096,7 @@ pub enum UpdateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9104,7 +9142,9 @@ impl UpdateCustomKeyStoreError {
     /// Creates the `UpdateCustomKeyStoreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9113,7 +9153,9 @@ impl UpdateCustomKeyStoreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomKeyStoreErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9213,7 +9255,7 @@ impl std::error::Error for UpdateCustomKeyStoreError {
             UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_inner) => Some(_inner),
             UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
             UpdateCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9243,7 +9285,7 @@ pub enum UpdateKeyDescriptionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateKeyDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9274,7 +9316,9 @@ impl UpdateKeyDescriptionError {
     /// Creates the `UpdateKeyDescriptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateKeyDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9283,7 +9327,9 @@ impl UpdateKeyDescriptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateKeyDescriptionErrorKind::Unhandled(err.into()),
+            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9351,7 +9397,7 @@ impl std::error::Error for UpdateKeyDescriptionError {
             UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) => Some(_inner),
             UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             UpdateKeyDescriptionErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9383,7 +9429,7 @@ pub enum UpdatePrimaryRegionErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePrimaryRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9415,7 +9461,7 @@ impl UpdatePrimaryRegionError {
     /// Creates the `UpdatePrimaryRegionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePrimaryRegionErrorKind::Unhandled(err.into()),
+            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9424,7 +9470,7 @@ impl UpdatePrimaryRegionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePrimaryRegionErrorKind::Unhandled(err.into()),
+            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9500,7 +9546,7 @@ impl std::error::Error for UpdatePrimaryRegionError {
             UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             UpdatePrimaryRegionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9544,7 +9590,7 @@ pub enum VerifyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9579,7 +9625,7 @@ impl VerifyError {
     /// Creates the `VerifyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: VerifyErrorKind::Unhandled(err.into()),
+            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9588,7 +9634,7 @@ impl VerifyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: VerifyErrorKind::Unhandled(err.into()),
+            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9661,7 +9707,7 @@ impl std::error::Error for VerifyError {
             VerifyErrorKind::KmsInvalidSignatureException(_inner) => Some(_inner),
             VerifyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             VerifyErrorKind::NotFoundException(_inner) => Some(_inner),
-            VerifyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            VerifyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9703,7 +9749,7 @@ pub enum VerifyMacErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifyMacError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9737,7 +9783,7 @@ impl VerifyMacError {
     /// Creates the `VerifyMacError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: VerifyMacErrorKind::Unhandled(err.into()),
+            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9746,7 +9792,7 @@ impl VerifyMacError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: VerifyMacErrorKind::Unhandled(err.into()),
+            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9817,7 +9863,32 @@ impl std::error::Error for VerifyMacError {
             VerifyMacErrorKind::KmsInvalidMacException(_inner) => Some(_inner),
             VerifyMacErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
             VerifyMacErrorKind::NotFoundException(_inner) => Some(_inner),
-            VerifyMacErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            VerifyMacErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

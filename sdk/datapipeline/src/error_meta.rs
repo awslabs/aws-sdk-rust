@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50,10 +50,10 @@ where
                     Error::PipelineNotFoundException(inner)
                 }
                 crate::error::ActivatePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -76,9 +76,11 @@ where
                 crate::error::AddTagsErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -95,9 +97,11 @@ where
                 crate::error::CreatePipelineErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::CreatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -123,10 +127,10 @@ where
                     Error::PipelineNotFoundException(inner)
                 }
                 crate::error::DeactivatePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,9 +150,11 @@ where
                 crate::error::DeletePipelineErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::DeletePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,9 +177,11 @@ where
                 crate::error::DescribeObjectsErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::DescribeObjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeObjectsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,10 +207,10 @@ where
                     Error::PipelineNotFoundException(inner)
                 }
                 crate::error::DescribePipelinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -231,10 +239,10 @@ where
                     Error::TaskNotFoundException(inner)
                 }
                 crate::error::EvaluateExpressionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -261,10 +269,10 @@ where
                     Error::PipelineNotFoundException(inner)
                 }
                 crate::error::GetPipelineDefinitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -281,9 +289,11 @@ where
                 crate::error::ListPipelinesErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::ListPipelinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPipelinesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -303,9 +313,11 @@ where
                 crate::error::PollForTaskErrorKind::TaskNotFoundException(inner) => {
                     Error::TaskNotFoundException(inner)
                 }
-                crate::error::PollForTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PollForTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -332,10 +344,10 @@ where
                     Error::PipelineNotFoundException(inner)
                 }
                 crate::error::PutPipelineDefinitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,9 +370,11 @@ where
                 crate::error::QueryObjectsErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::QueryObjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::QueryObjectsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -383,9 +397,11 @@ where
                 crate::error::RemoveTagsErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,10 +430,10 @@ where
                     Error::TaskNotFoundException(inner)
                 }
                 crate::error::ReportTaskProgressErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -438,10 +454,10 @@ where
                     inner,
                 ) => Error::InvalidRequestException(inner),
                 crate::error::ReportTaskRunnerHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -464,9 +480,11 @@ where
                 crate::error::SetStatusErrorKind::PipelineNotFoundException(inner) => {
                     Error::PipelineNotFoundException(inner)
                 }
-                crate::error::SetStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +510,11 @@ where
                 crate::error::SetTaskStatusErrorKind::TaskNotFoundException(inner) => {
                     Error::TaskNotFoundException(inner)
                 }
-                crate::error::SetTaskStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetTaskStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -521,10 +541,10 @@ where
                     inner,
                 ) => Error::PipelineNotFoundException(inner),
                 crate::error::ValidatePipelineDefinitionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

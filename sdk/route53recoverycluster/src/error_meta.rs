@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,9 +53,9 @@ where
                 crate::error::GetRoutingControlStateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetRoutingControlStateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetRoutingControlStateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -74,9 +74,9 @@ where
                 crate::error::ListRoutingControlsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListRoutingControlsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListRoutingControlsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListRoutingControlsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRoutingControlsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -97,9 +97,9 @@ where
                 crate::error::UpdateRoutingControlStateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateRoutingControlStateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateRoutingControlStateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -121,9 +121,9 @@ where
                 crate::error::UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateRoutingControlStatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoutingControlStatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

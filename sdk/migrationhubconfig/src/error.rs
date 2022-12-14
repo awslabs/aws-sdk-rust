@@ -438,7 +438,7 @@ pub enum CreateHomeRegionControlErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHomeRegionControlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -470,7 +470,9 @@ impl CreateHomeRegionControlError {
     /// Creates the `CreateHomeRegionControlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateHomeRegionControlErrorKind::Unhandled(err.into()),
+            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -479,7 +481,9 @@ impl CreateHomeRegionControlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateHomeRegionControlErrorKind::Unhandled(err.into()),
+            kind: CreateHomeRegionControlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -555,7 +559,7 @@ impl std::error::Error for CreateHomeRegionControlError {
             CreateHomeRegionControlErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateHomeRegionControlErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateHomeRegionControlErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateHomeRegionControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateHomeRegionControlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -584,7 +588,7 @@ pub enum DescribeHomeRegionControlsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHomeRegionControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -617,7 +621,9 @@ impl DescribeHomeRegionControlsError {
     /// Creates the `DescribeHomeRegionControlsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHomeRegionControlsErrorKind::Unhandled(err.into()),
+            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -626,7 +632,9 @@ impl DescribeHomeRegionControlsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHomeRegionControlsErrorKind::Unhandled(err.into()),
+            kind: DescribeHomeRegionControlsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -696,7 +704,7 @@ impl std::error::Error for DescribeHomeRegionControlsError {
                 Some(_inner)
             }
             DescribeHomeRegionControlsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHomeRegionControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -725,7 +733,7 @@ pub enum GetHomeRegionErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHomeRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -756,7 +764,7 @@ impl GetHomeRegionError {
     /// Creates the `GetHomeRegionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetHomeRegionErrorKind::Unhandled(err.into()),
+            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -765,7 +773,7 @@ impl GetHomeRegionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetHomeRegionErrorKind::Unhandled(err.into()),
+            kind: GetHomeRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -821,7 +829,32 @@ impl std::error::Error for GetHomeRegionError {
             GetHomeRegionErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetHomeRegionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetHomeRegionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetHomeRegionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetHomeRegionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

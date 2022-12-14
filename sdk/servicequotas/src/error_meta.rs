@@ -40,7 +40,7 @@ pub enum Error {
     /// <p>You've exceeded the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -84,9 +84,9 @@ where
                 crate::error::AssociateServiceQuotaTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::AssociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::AssociateServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::AssociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -117,9 +117,9 @@ where
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,9 +145,9 @@ where
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DisassociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -177,9 +177,9 @@ where
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetAssociationForServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAssociationForServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,10 +209,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::GetAWSDefaultServiceQuotaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -246,10 +246,10 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::GetRequestedServiceQuotaChangeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -275,9 +275,11 @@ where
                 crate::error::GetServiceQuotaErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::GetServiceQuotaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServiceQuotaErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -308,9 +310,9 @@ where
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -330,9 +332,9 @@ where
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListAWSDefaultServiceQuotasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAWSDefaultServiceQuotasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -360,9 +362,9 @@ where
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -390,9 +392,9 @@ where
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -422,9 +424,9 @@ where
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -456,10 +458,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListServiceQuotasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -485,9 +487,11 @@ where
                 crate::error::ListServicesErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListServicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListServicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -516,10 +520,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -551,9 +555,9 @@ where
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -576,9 +580,9 @@ where
                 crate::error::RequestServiceQuotaIncreaseErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::RequestServiceQuotaIncreaseErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::RequestServiceQuotaIncreaseErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::RequestServiceQuotaIncreaseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RequestServiceQuotaIncreaseErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -610,9 +614,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -638,9 +644,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

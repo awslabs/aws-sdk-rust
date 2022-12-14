@@ -3064,7 +3064,7 @@ pub enum AddLayerVersionPermissionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddLayerVersionPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3103,7 +3103,9 @@ impl AddLayerVersionPermissionError {
     /// Creates the `AddLayerVersionPermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddLayerVersionPermissionErrorKind::Unhandled(err.into()),
+            kind: AddLayerVersionPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3112,7 +3114,9 @@ impl AddLayerVersionPermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddLayerVersionPermissionErrorKind::Unhandled(err.into()),
+            kind: AddLayerVersionPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3200,7 +3204,7 @@ impl std::error::Error for AddLayerVersionPermissionError {
             AddLayerVersionPermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AddLayerVersionPermissionErrorKind::ServiceException(_inner) => Some(_inner),
             AddLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3233,7 +3237,7 @@ pub enum AddPermissionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3266,7 +3270,7 @@ impl AddPermissionError {
     /// Creates the `AddPermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddPermissionErrorKind::Unhandled(err.into()),
+            kind: AddPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3275,7 +3279,7 @@ impl AddPermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddPermissionErrorKind::Unhandled(err.into()),
+            kind: AddPermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3356,7 +3360,7 @@ impl std::error::Error for AddPermissionError {
             AddPermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AddPermissionErrorKind::ServiceException(_inner) => Some(_inner),
             AddPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddPermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3385,7 +3389,7 @@ pub enum CreateAliasErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3416,7 +3420,7 @@ impl CreateAliasError {
     /// Creates the `CreateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3425,7 +3429,7 @@ impl CreateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAliasErrorKind::Unhandled(err.into()),
+            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3490,7 +3494,7 @@ impl std::error::Error for CreateAliasError {
             CreateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAliasErrorKind::ServiceException(_inner) => Some(_inner),
             CreateAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3513,7 +3517,7 @@ pub enum CreateCodeSigningConfigErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,7 +3547,9 @@ impl CreateCodeSigningConfigError {
     /// Creates the `CreateCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: CreateCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3552,7 +3558,9 @@ impl CreateCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: CreateCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3598,7 +3606,7 @@ impl std::error::Error for CreateCodeSigningConfigError {
                 Some(_inner)
             }
             CreateCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
-            CreateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3627,7 +3635,7 @@ pub enum CreateEventSourceMappingErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3660,7 +3668,9 @@ impl CreateEventSourceMappingError {
     /// Creates the `CreateEventSourceMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: CreateEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3669,7 +3679,9 @@ impl CreateEventSourceMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: CreateEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3739,7 +3751,7 @@ impl std::error::Error for CreateEventSourceMappingError {
             CreateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
             CreateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3776,7 +3788,7 @@ pub enum CreateFunctionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3811,7 +3823,7 @@ impl CreateFunctionError {
     /// Creates the `CreateFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFunctionErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3820,7 +3832,7 @@ impl CreateFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFunctionErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3917,7 +3929,7 @@ impl std::error::Error for CreateFunctionError {
             CreateFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFunctionErrorKind::ServiceException(_inner) => Some(_inner),
             CreateFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3946,7 +3958,7 @@ pub enum CreateFunctionUrlConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFunctionUrlConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3979,7 +3991,9 @@ impl CreateFunctionUrlConfigError {
     /// Creates the `CreateFunctionUrlConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3988,7 +4002,9 @@ impl CreateFunctionUrlConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: CreateFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4058,7 +4074,7 @@ impl std::error::Error for CreateFunctionUrlConfigError {
             CreateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
             CreateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4085,7 +4101,7 @@ pub enum DeleteAliasErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4115,7 +4131,7 @@ impl DeleteAliasError {
     /// Creates the `DeleteAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4124,7 +4140,7 @@ impl DeleteAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAliasErrorKind::Unhandled(err.into()),
+            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4181,7 +4197,7 @@ impl std::error::Error for DeleteAliasError {
             DeleteAliasErrorKind::ResourceConflictException(_inner) => Some(_inner),
             DeleteAliasErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4208,7 +4224,7 @@ pub enum DeleteCodeSigningConfigErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4240,7 +4256,9 @@ impl DeleteCodeSigningConfigError {
     /// Creates the `DeleteCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4249,7 +4267,9 @@ impl DeleteCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4311,7 +4331,7 @@ impl std::error::Error for DeleteCodeSigningConfigError {
             DeleteCodeSigningConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
             DeleteCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
-            DeleteCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4340,7 +4360,7 @@ pub enum DeleteEventSourceMappingErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4373,7 +4393,9 @@ impl DeleteEventSourceMappingError {
     /// Creates the `DeleteEventSourceMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: DeleteEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4382,7 +4404,9 @@ impl DeleteEventSourceMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: DeleteEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4452,7 +4476,7 @@ impl std::error::Error for DeleteEventSourceMappingError {
             DeleteEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4481,7 +4505,7 @@ pub enum DeleteFunctionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4512,7 +4536,7 @@ impl DeleteFunctionError {
     /// Creates the `DeleteFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4521,7 +4545,7 @@ impl DeleteFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4586,7 +4610,7 @@ impl std::error::Error for DeleteFunctionError {
             DeleteFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFunctionErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4617,7 +4641,7 @@ pub enum DeleteFunctionCodeSigningConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4662,7 +4686,9 @@ impl DeleteFunctionCodeSigningConfigError {
     /// Creates the `DeleteFunctionCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionCodeSigningConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4671,7 +4697,9 @@ impl DeleteFunctionCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionCodeSigningConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4757,7 +4785,7 @@ impl std::error::Error for DeleteFunctionCodeSigningConfigError {
             DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4786,7 +4814,7 @@ pub enum DeleteFunctionConcurrencyErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4819,7 +4847,9 @@ impl DeleteFunctionConcurrencyError {
     /// Creates the `DeleteFunctionConcurrencyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4828,7 +4858,9 @@ impl DeleteFunctionConcurrencyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4898,7 +4930,7 @@ impl std::error::Error for DeleteFunctionConcurrencyError {
             DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4927,7 +4959,7 @@ pub enum DeleteFunctionEventInvokeConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4969,7 +5001,9 @@ impl DeleteFunctionEventInvokeConfigError {
     /// Creates the `DeleteFunctionEventInvokeConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionEventInvokeConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4978,7 +5012,9 @@ impl DeleteFunctionEventInvokeConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionEventInvokeConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5054,7 +5090,7 @@ impl std::error::Error for DeleteFunctionEventInvokeConfigError {
             DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5081,7 +5117,7 @@ pub enum DeleteFunctionUrlConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFunctionUrlConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5111,7 +5147,9 @@ impl DeleteFunctionUrlConfigError {
     /// Creates the `DeleteFunctionUrlConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5120,7 +5158,9 @@ impl DeleteFunctionUrlConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5180,7 +5220,7 @@ impl std::error::Error for DeleteFunctionUrlConfigError {
             DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5203,7 +5243,7 @@ pub enum DeleteLayerVersionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5231,7 +5271,7 @@ impl DeleteLayerVersionError {
     /// Creates the `DeleteLayerVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLayerVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5240,7 +5280,7 @@ impl DeleteLayerVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLayerVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5281,7 +5321,7 @@ impl std::error::Error for DeleteLayerVersionError {
         match &self.kind {
             DeleteLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLayerVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5310,7 +5350,7 @@ pub enum DeleteProvisionedConcurrencyConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5352,7 +5392,9 @@ impl DeleteProvisionedConcurrencyConfigError {
     /// Creates the `DeleteProvisionedConcurrencyConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5361,7 +5403,9 @@ impl DeleteProvisionedConcurrencyConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5437,7 +5481,7 @@ impl std::error::Error for DeleteProvisionedConcurrencyConfigError {
             DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5460,7 +5504,7 @@ pub enum GetAccountSettingsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5488,7 +5532,7 @@ impl GetAccountSettingsError {
     /// Creates the `GetAccountSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: GetAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5497,7 +5541,7 @@ impl GetAccountSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountSettingsErrorKind::Unhandled(err.into()),
+            kind: GetAccountSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5538,7 +5582,7 @@ impl std::error::Error for GetAccountSettingsError {
         match &self.kind {
             GetAccountSettingsErrorKind::ServiceException(_inner) => Some(_inner),
             GetAccountSettingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5565,7 +5609,7 @@ pub enum GetAliasErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5595,7 +5639,7 @@ impl GetAliasError {
     /// Creates the `GetAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAliasErrorKind::Unhandled(err.into()),
+            kind: GetAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5604,7 +5648,7 @@ impl GetAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAliasErrorKind::Unhandled(err.into()),
+            kind: GetAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5655,7 +5699,7 @@ impl std::error::Error for GetAliasError {
             GetAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAliasErrorKind::ServiceException(_inner) => Some(_inner),
             GetAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5680,7 +5724,7 @@ pub enum GetCodeSigningConfigErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5709,7 +5753,9 @@ impl GetCodeSigningConfigError {
     /// Creates the `GetCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: GetCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5718,7 +5764,9 @@ impl GetCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: GetCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5770,7 +5818,7 @@ impl std::error::Error for GetCodeSigningConfigError {
             GetCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             GetCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
-            GetCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5797,7 +5845,7 @@ pub enum GetEventSourceMappingErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5827,7 +5875,9 @@ impl GetEventSourceMappingError {
     /// Creates the `GetEventSourceMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: GetEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5836,7 +5886,9 @@ impl GetEventSourceMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: GetEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5896,7 +5948,7 @@ impl std::error::Error for GetEventSourceMappingError {
             GetEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
             GetEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5923,7 +5975,7 @@ pub enum GetFunctionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5953,7 +6005,7 @@ impl GetFunctionError {
     /// Creates the `GetFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionErrorKind::Unhandled(err.into()),
+            kind: GetFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5962,7 +6014,7 @@ impl GetFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionErrorKind::Unhandled(err.into()),
+            kind: GetFunctionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6019,7 +6071,7 @@ impl std::error::Error for GetFunctionError {
             GetFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFunctionErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6046,7 +6098,7 @@ pub enum GetFunctionCodeSigningConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6082,7 +6134,9 @@ impl GetFunctionCodeSigningConfigError {
     /// Creates the `GetFunctionCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6091,7 +6145,9 @@ impl GetFunctionCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6155,7 +6211,7 @@ impl std::error::Error for GetFunctionCodeSigningConfigError {
             }
             GetFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6182,7 +6238,7 @@ pub enum GetFunctionConcurrencyErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6214,7 +6270,9 @@ impl GetFunctionConcurrencyError {
     /// Creates the `GetFunctionConcurrencyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: GetFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6223,7 +6281,9 @@ impl GetFunctionConcurrencyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: GetFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6283,7 +6343,7 @@ impl std::error::Error for GetFunctionConcurrencyError {
             GetFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6310,7 +6370,7 @@ pub enum GetFunctionConfigurationErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6342,7 +6402,9 @@ impl GetFunctionConfigurationError {
     /// Creates the `GetFunctionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetFunctionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6351,7 +6413,9 @@ impl GetFunctionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetFunctionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6413,7 +6477,7 @@ impl std::error::Error for GetFunctionConfigurationError {
             GetFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFunctionConfigurationErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6440,7 +6504,7 @@ pub enum GetFunctionEventInvokeConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6476,7 +6540,9 @@ impl GetFunctionEventInvokeConfigError {
     /// Creates the `GetFunctionEventInvokeConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionEventInvokeConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6485,7 +6551,9 @@ impl GetFunctionEventInvokeConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionEventInvokeConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6549,7 +6617,7 @@ impl std::error::Error for GetFunctionEventInvokeConfigError {
             }
             GetFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6576,7 +6644,7 @@ pub enum GetFunctionUrlConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFunctionUrlConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6606,7 +6674,9 @@ impl GetFunctionUrlConfigError {
     /// Creates the `GetFunctionUrlConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6615,7 +6685,9 @@ impl GetFunctionUrlConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: GetFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6675,7 +6747,7 @@ impl std::error::Error for GetFunctionUrlConfigError {
             GetFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
             GetFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6702,7 +6774,7 @@ pub enum GetLayerVersionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6732,7 +6804,7 @@ impl GetLayerVersionError {
     /// Creates the `GetLayerVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLayerVersionErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6741,7 +6813,7 @@ impl GetLayerVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLayerVersionErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6798,7 +6870,7 @@ impl std::error::Error for GetLayerVersionError {
             GetLayerVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
             GetLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLayerVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6825,7 +6897,7 @@ pub enum GetLayerVersionByArnErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLayerVersionByArnError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6855,7 +6927,9 @@ impl GetLayerVersionByArnError {
     /// Creates the `GetLayerVersionByArnError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLayerVersionByArnErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionByArnErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6864,7 +6938,9 @@ impl GetLayerVersionByArnError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLayerVersionByArnErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionByArnErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6924,7 +7000,7 @@ impl std::error::Error for GetLayerVersionByArnError {
             GetLayerVersionByArnErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLayerVersionByArnErrorKind::ServiceException(_inner) => Some(_inner),
             GetLayerVersionByArnErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetLayerVersionByArnErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLayerVersionByArnErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6951,7 +7027,7 @@ pub enum GetLayerVersionPolicyErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLayerVersionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6981,7 +7057,9 @@ impl GetLayerVersionPolicyError {
     /// Creates the `GetLayerVersionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLayerVersionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6990,7 +7068,9 @@ impl GetLayerVersionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLayerVersionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetLayerVersionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7050,7 +7130,7 @@ impl std::error::Error for GetLayerVersionPolicyError {
             GetLayerVersionPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLayerVersionPolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetLayerVersionPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetLayerVersionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLayerVersionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7077,7 +7157,7 @@ pub enum GetPolicyErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7107,7 +7187,7 @@ impl GetPolicyError {
     /// Creates the `GetPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7116,7 +7196,7 @@ impl GetPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7167,7 +7247,7 @@ impl std::error::Error for GetPolicyError {
             GetPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetPolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7198,7 +7278,7 @@ pub enum GetProvisionedConcurrencyConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7244,7 +7324,9 @@ impl GetProvisionedConcurrencyConfigError {
     /// Creates the `GetProvisionedConcurrencyConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: GetProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7253,7 +7335,9 @@ impl GetProvisionedConcurrencyConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: GetProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7334,7 +7418,7 @@ impl std::error::Error for GetProvisionedConcurrencyConfigError {
             Some(_inner)
             ,
             GetProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -7406,7 +7490,7 @@ pub enum InvokeErrorKind {
     /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InvokeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7458,7 +7542,7 @@ impl InvokeError {
     /// Creates the `InvokeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InvokeErrorKind::Unhandled(err.into()),
+            kind: InvokeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7467,7 +7551,7 @@ impl InvokeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InvokeErrorKind::Unhandled(err.into()),
+            kind: InvokeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7643,7 +7727,7 @@ impl std::error::Error for InvokeError {
             InvokeErrorKind::SubnetIpAddressLimitReachedException(_inner) => Some(_inner),
             InvokeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             InvokeErrorKind::UnsupportedMediaTypeException(_inner) => Some(_inner),
-            InvokeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InvokeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7672,7 +7756,7 @@ pub enum InvokeAsyncErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InvokeAsyncError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7703,7 +7787,7 @@ impl InvokeAsyncError {
     /// Creates the `InvokeAsyncError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InvokeAsyncErrorKind::Unhandled(err.into()),
+            kind: InvokeAsyncErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7712,7 +7796,7 @@ impl InvokeAsyncError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InvokeAsyncErrorKind::Unhandled(err.into()),
+            kind: InvokeAsyncErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7774,7 +7858,7 @@ impl std::error::Error for InvokeAsyncError {
             InvokeAsyncErrorKind::ResourceConflictException(_inner) => Some(_inner),
             InvokeAsyncErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             InvokeAsyncErrorKind::ServiceException(_inner) => Some(_inner),
-            InvokeAsyncErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InvokeAsyncErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7801,7 +7885,7 @@ pub enum ListAliasesErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7831,7 +7915,7 @@ impl ListAliasesError {
     /// Creates the `ListAliasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAliasesErrorKind::Unhandled(err.into()),
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7840,7 +7924,7 @@ impl ListAliasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAliasesErrorKind::Unhandled(err.into()),
+            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7897,7 +7981,7 @@ impl std::error::Error for ListAliasesError {
             ListAliasesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAliasesErrorKind::ServiceException(_inner) => Some(_inner),
             ListAliasesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7920,7 +8004,7 @@ pub enum ListCodeSigningConfigsErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCodeSigningConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7950,7 +8034,9 @@ impl ListCodeSigningConfigsError {
     /// Creates the `ListCodeSigningConfigsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCodeSigningConfigsErrorKind::Unhandled(err.into()),
+            kind: ListCodeSigningConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7959,7 +8045,9 @@ impl ListCodeSigningConfigsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCodeSigningConfigsErrorKind::Unhandled(err.into()),
+            kind: ListCodeSigningConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8003,7 +8091,7 @@ impl std::error::Error for ListCodeSigningConfigsError {
         match &self.kind {
             ListCodeSigningConfigsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListCodeSigningConfigsErrorKind::ServiceException(_inner) => Some(_inner),
-            ListCodeSigningConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCodeSigningConfigsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8030,7 +8118,7 @@ pub enum ListEventSourceMappingsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEventSourceMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8062,7 +8150,9 @@ impl ListEventSourceMappingsError {
     /// Creates the `ListEventSourceMappingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEventSourceMappingsErrorKind::Unhandled(err.into()),
+            kind: ListEventSourceMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8071,7 +8161,9 @@ impl ListEventSourceMappingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEventSourceMappingsErrorKind::Unhandled(err.into()),
+            kind: ListEventSourceMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8133,7 +8225,7 @@ impl std::error::Error for ListEventSourceMappingsError {
             ListEventSourceMappingsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListEventSourceMappingsErrorKind::ServiceException(_inner) => Some(_inner),
             ListEventSourceMappingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEventSourceMappingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEventSourceMappingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8160,7 +8252,7 @@ pub enum ListFunctionEventInvokeConfigsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFunctionEventInvokeConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8199,7 +8291,9 @@ impl ListFunctionEventInvokeConfigsError {
     /// Creates the `ListFunctionEventInvokeConfigsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFunctionEventInvokeConfigsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionEventInvokeConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8208,7 +8302,9 @@ impl ListFunctionEventInvokeConfigsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFunctionEventInvokeConfigsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionEventInvokeConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8274,7 +8370,7 @@ impl std::error::Error for ListFunctionEventInvokeConfigsError {
             ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListFunctionEventInvokeConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFunctionEventInvokeConfigsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8299,7 +8395,7 @@ pub enum ListFunctionsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFunctionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8328,7 +8424,7 @@ impl ListFunctionsError {
     /// Creates the `ListFunctionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFunctionsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8337,7 +8433,7 @@ impl ListFunctionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFunctionsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8386,7 +8482,7 @@ impl std::error::Error for ListFunctionsError {
             ListFunctionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListFunctionsErrorKind::ServiceException(_inner) => Some(_inner),
             ListFunctionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListFunctionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFunctionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8411,7 +8507,7 @@ pub enum ListFunctionsByCodeSigningConfigErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFunctionsByCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8447,7 +8543,9 @@ impl ListFunctionsByCodeSigningConfigError {
     /// Creates the `ListFunctionsByCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFunctionsByCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsByCodeSigningConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8456,7 +8554,9 @@ impl ListFunctionsByCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFunctionsByCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: ListFunctionsByCodeSigningConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8512,7 +8612,7 @@ impl std::error::Error for ListFunctionsByCodeSigningConfigError {
                 Some(_inner)
             }
             ListFunctionsByCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
-            ListFunctionsByCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFunctionsByCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8539,7 +8639,7 @@ pub enum ListFunctionUrlConfigsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFunctionUrlConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8571,7 +8671,9 @@ impl ListFunctionUrlConfigsError {
     /// Creates the `ListFunctionUrlConfigsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFunctionUrlConfigsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionUrlConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8580,7 +8682,9 @@ impl ListFunctionUrlConfigsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFunctionUrlConfigsErrorKind::Unhandled(err.into()),
+            kind: ListFunctionUrlConfigsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8640,7 +8744,7 @@ impl std::error::Error for ListFunctionUrlConfigsError {
             ListFunctionUrlConfigsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFunctionUrlConfigsErrorKind::ServiceException(_inner) => Some(_inner),
             ListFunctionUrlConfigsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListFunctionUrlConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFunctionUrlConfigsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8665,7 +8769,7 @@ pub enum ListLayersErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLayersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8694,7 +8798,7 @@ impl ListLayersError {
     /// Creates the `ListLayersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLayersErrorKind::Unhandled(err.into()),
+            kind: ListLayersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8703,7 +8807,7 @@ impl ListLayersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLayersErrorKind::Unhandled(err.into()),
+            kind: ListLayersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8749,7 +8853,7 @@ impl std::error::Error for ListLayersError {
             ListLayersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListLayersErrorKind::ServiceException(_inner) => Some(_inner),
             ListLayersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListLayersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLayersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8776,7 +8880,7 @@ pub enum ListLayerVersionsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLayerVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8806,7 +8910,7 @@ impl ListLayerVersionsError {
     /// Creates the `ListLayerVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLayerVersionsErrorKind::Unhandled(err.into()),
+            kind: ListLayerVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8815,7 +8919,7 @@ impl ListLayerVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLayerVersionsErrorKind::Unhandled(err.into()),
+            kind: ListLayerVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8872,7 +8976,7 @@ impl std::error::Error for ListLayerVersionsError {
             ListLayerVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListLayerVersionsErrorKind::ServiceException(_inner) => Some(_inner),
             ListLayerVersionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListLayerVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLayerVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8899,7 +9003,7 @@ pub enum ListProvisionedConcurrencyConfigsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProvisionedConcurrencyConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8938,7 +9042,9 @@ impl ListProvisionedConcurrencyConfigsError {
     /// Creates the `ListProvisionedConcurrencyConfigsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProvisionedConcurrencyConfigsErrorKind::Unhandled(err.into()),
+            kind: ListProvisionedConcurrencyConfigsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8947,7 +9053,9 @@ impl ListProvisionedConcurrencyConfigsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProvisionedConcurrencyConfigsErrorKind::Unhandled(err.into()),
+            kind: ListProvisionedConcurrencyConfigsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9013,7 +9121,7 @@ impl std::error::Error for ListProvisionedConcurrencyConfigsError {
             ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListProvisionedConcurrencyConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProvisionedConcurrencyConfigsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9040,7 +9148,7 @@ pub enum ListTagsErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9070,7 +9178,7 @@ impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9079,7 +9187,7 @@ impl ListTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9130,7 +9238,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsErrorKind::ServiceException(_inner) => Some(_inner),
             ListTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9157,7 +9265,7 @@ pub enum ListVersionsByFunctionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVersionsByFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9189,7 +9297,9 @@ impl ListVersionsByFunctionError {
     /// Creates the `ListVersionsByFunctionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVersionsByFunctionErrorKind::Unhandled(err.into()),
+            kind: ListVersionsByFunctionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9198,7 +9308,9 @@ impl ListVersionsByFunctionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVersionsByFunctionErrorKind::Unhandled(err.into()),
+            kind: ListVersionsByFunctionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9258,7 +9370,7 @@ impl std::error::Error for ListVersionsByFunctionError {
             ListVersionsByFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListVersionsByFunctionErrorKind::ServiceException(_inner) => Some(_inner),
             ListVersionsByFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVersionsByFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVersionsByFunctionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9287,7 +9399,7 @@ pub enum PublishLayerVersionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9318,7 +9430,7 @@ impl PublishLayerVersionError {
     /// Creates the `PublishLayerVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishLayerVersionErrorKind::Unhandled(err.into()),
+            kind: PublishLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9327,7 +9439,7 @@ impl PublishLayerVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishLayerVersionErrorKind::Unhandled(err.into()),
+            kind: PublishLayerVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9395,7 +9507,7 @@ impl std::error::Error for PublishLayerVersionError {
             PublishLayerVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PublishLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
             PublishLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PublishLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishLayerVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9428,7 +9540,7 @@ pub enum PublishVersionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9461,7 +9573,7 @@ impl PublishVersionError {
     /// Creates the `PublishVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishVersionErrorKind::Unhandled(err.into()),
+            kind: PublishVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9470,7 +9582,7 @@ impl PublishVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishVersionErrorKind::Unhandled(err.into()),
+            kind: PublishVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9551,7 +9663,7 @@ impl std::error::Error for PublishVersionError {
             PublishVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PublishVersionErrorKind::ServiceException(_inner) => Some(_inner),
             PublishVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PublishVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9582,7 +9694,7 @@ pub enum PutFunctionCodeSigningConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9624,7 +9736,9 @@ impl PutFunctionCodeSigningConfigError {
     /// Creates the `PutFunctionCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: PutFunctionCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9633,7 +9747,9 @@ impl PutFunctionCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFunctionCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: PutFunctionCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9717,7 +9833,7 @@ impl std::error::Error for PutFunctionCodeSigningConfigError {
             }
             PutFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9746,7 +9862,7 @@ pub enum PutFunctionConcurrencyErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9779,7 +9895,9 @@ impl PutFunctionConcurrencyError {
     /// Creates the `PutFunctionConcurrencyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: PutFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9788,7 +9906,9 @@ impl PutFunctionConcurrencyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFunctionConcurrencyErrorKind::Unhandled(err.into()),
+            kind: PutFunctionConcurrencyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9856,7 +9976,7 @@ impl std::error::Error for PutFunctionConcurrencyError {
             PutFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
             PutFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9885,7 +10005,7 @@ pub enum PutFunctionEventInvokeConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9924,7 +10044,9 @@ impl PutFunctionEventInvokeConfigError {
     /// Creates the `PutFunctionEventInvokeConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: PutFunctionEventInvokeConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9933,7 +10055,9 @@ impl PutFunctionEventInvokeConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: PutFunctionEventInvokeConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10007,7 +10131,7 @@ impl std::error::Error for PutFunctionEventInvokeConfigError {
             }
             PutFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
             PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10036,7 +10160,7 @@ pub enum PutProvisionedConcurrencyConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10078,7 +10202,9 @@ impl PutProvisionedConcurrencyConfigError {
     /// Creates the `PutProvisionedConcurrencyConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: PutProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10087,7 +10213,9 @@ impl PutProvisionedConcurrencyConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutProvisionedConcurrencyConfigErrorKind::Unhandled(err.into()),
+            kind: PutProvisionedConcurrencyConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10163,7 +10291,7 @@ impl std::error::Error for PutProvisionedConcurrencyConfigError {
             PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10192,7 +10320,7 @@ pub enum RemoveLayerVersionPermissionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveLayerVersionPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10231,7 +10359,9 @@ impl RemoveLayerVersionPermissionError {
     /// Creates the `RemoveLayerVersionPermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveLayerVersionPermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveLayerVersionPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10240,7 +10370,9 @@ impl RemoveLayerVersionPermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveLayerVersionPermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveLayerVersionPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10314,7 +10446,7 @@ impl std::error::Error for RemoveLayerVersionPermissionError {
             }
             RemoveLayerVersionPermissionErrorKind::ServiceException(_inner) => Some(_inner),
             RemoveLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10343,7 +10475,7 @@ pub enum RemovePermissionErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemovePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10374,7 +10506,7 @@ impl RemovePermissionError {
     /// Creates the `RemovePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemovePermissionErrorKind::Unhandled(err.into()),
+            kind: RemovePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10383,7 +10515,7 @@ impl RemovePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemovePermissionErrorKind::Unhandled(err.into()),
+            kind: RemovePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10448,7 +10580,7 @@ impl std::error::Error for RemovePermissionError {
             RemovePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RemovePermissionErrorKind::ServiceException(_inner) => Some(_inner),
             RemovePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10477,7 +10609,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10508,7 +10640,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10517,7 +10649,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10582,7 +10714,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10611,7 +10743,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10642,7 +10774,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10651,7 +10783,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10716,7 +10848,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10747,7 +10879,7 @@ pub enum UpdateAliasErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10779,7 +10911,7 @@ impl UpdateAliasError {
     /// Creates the `UpdateAliasError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10788,7 +10920,7 @@ impl UpdateAliasError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAliasErrorKind::Unhandled(err.into()),
+            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10861,7 +10993,7 @@ impl std::error::Error for UpdateAliasError {
             UpdateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAliasErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10886,7 +11018,7 @@ pub enum UpdateCodeSigningConfigErrorKind {
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10917,7 +11049,9 @@ impl UpdateCodeSigningConfigError {
     /// Creates the `UpdateCodeSigningConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10926,7 +11060,9 @@ impl UpdateCodeSigningConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCodeSigningConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateCodeSigningConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10980,7 +11116,7 @@ impl std::error::Error for UpdateCodeSigningConfigError {
             }
             UpdateCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
-            UpdateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11011,7 +11147,7 @@ pub enum UpdateEventSourceMappingErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11045,7 +11181,9 @@ impl UpdateEventSourceMappingError {
     /// Creates the `UpdateEventSourceMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: UpdateEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11054,7 +11192,9 @@ impl UpdateEventSourceMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEventSourceMappingErrorKind::Unhandled(err.into()),
+            kind: UpdateEventSourceMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11132,7 +11272,7 @@ impl std::error::Error for UpdateEventSourceMappingError {
             UpdateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11171,7 +11311,7 @@ pub enum UpdateFunctionCodeErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFunctionCodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11209,7 +11349,7 @@ impl UpdateFunctionCodeError {
     /// Creates the `UpdateFunctionCodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFunctionCodeErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11218,7 +11358,7 @@ impl UpdateFunctionCodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFunctionCodeErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionCodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11323,7 +11463,7 @@ impl std::error::Error for UpdateFunctionCodeError {
             UpdateFunctionCodeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFunctionCodeErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateFunctionCodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFunctionCodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11360,7 +11500,7 @@ pub enum UpdateFunctionConfigurationErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFunctionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11409,7 +11549,9 @@ impl UpdateFunctionConfigurationError {
     /// Creates the `UpdateFunctionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFunctionConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11418,7 +11560,9 @@ impl UpdateFunctionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFunctionConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11528,7 +11672,7 @@ impl std::error::Error for UpdateFunctionConfigurationError {
             UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFunctionConfigurationErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11557,7 +11701,7 @@ pub enum UpdateFunctionEventInvokeConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11599,7 +11743,9 @@ impl UpdateFunctionEventInvokeConfigError {
     /// Creates the `UpdateFunctionEventInvokeConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionEventInvokeConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -11608,7 +11754,9 @@ impl UpdateFunctionEventInvokeConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFunctionEventInvokeConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionEventInvokeConfigErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -11684,7 +11832,7 @@ impl std::error::Error for UpdateFunctionEventInvokeConfigError {
             UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            UpdateFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11713,7 +11861,7 @@ pub enum UpdateFunctionUrlConfigErrorKind {
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFunctionUrlConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11746,7 +11894,9 @@ impl UpdateFunctionUrlConfigError {
     /// Creates the `UpdateFunctionUrlConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11755,7 +11905,9 @@ impl UpdateFunctionUrlConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(err.into()),
+            kind: UpdateFunctionUrlConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11825,7 +11977,32 @@ impl std::error::Error for UpdateFunctionUrlConfigError {
             UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateFunctionUrlConfigErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateFunctionUrlConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFunctionUrlConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

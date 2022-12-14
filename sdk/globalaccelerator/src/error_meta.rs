@@ -40,7 +40,7 @@ pub enum Error {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -84,9 +84,9 @@ where
                 crate::error::AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::AddCustomRoutingEndpointsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::AddCustomRoutingEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddCustomRoutingEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -115,10 +115,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::AdvertiseByoipCidrErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -135,9 +135,9 @@ where
                 crate::error::AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
                 crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::AllowCustomRoutingTrafficErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AllowCustomRoutingTrafficErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -160,10 +160,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateAcceleratorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -185,9 +185,9 @@ where
                 crate::error::CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::CreateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -213,9 +213,9 @@ where
                 crate::error::CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(inner) => Error::InvalidPortRangeException(inner),
                 crate::error::CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::CreateCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -234,9 +234,9 @@ where
                 crate::error::CreateCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(inner) => Error::InvalidPortRangeException(inner),
                 crate::error::CreateCustomRoutingListenerErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::CreateCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -271,10 +271,10 @@ where
                     Error::ListenerNotFoundException(inner)
                 }
                 crate::error::CreateEndpointGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -300,9 +300,11 @@ where
                 crate::error::CreateListenerErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateListenerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -331,10 +333,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::DeleteAcceleratorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -357,9 +359,9 @@ where
                 crate::error::DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(inner) => Error::AssociatedListenerFoundException(inner),
                 crate::error::DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DeleteCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -380,9 +382,9 @@ where
                 crate::error::DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
                 crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -400,9 +402,9 @@ where
                 crate::error::DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::DeleteCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -425,10 +427,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::DeleteEndpointGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -451,9 +453,11 @@ where
                 crate::error::DeleteListenerErrorKind::ListenerNotFoundException(inner) => {
                     Error::ListenerNotFoundException(inner)
                 }
-                crate::error::DeleteListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteListenerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -477,10 +481,10 @@ where
                     inner,
                 ) => Error::InvalidArgumentException(inner),
                 crate::error::DenyCustomRoutingTrafficErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -510,10 +514,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::DeprovisionByoipCidrErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -536,10 +540,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::DescribeAcceleratorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -556,9 +560,9 @@ where
                 crate::error::DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
                 crate::error::DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,9 +583,9 @@ where
                 crate::error::DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
                 crate::error::DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -606,9 +610,9 @@ where
                 crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
                 crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -630,9 +634,9 @@ where
                 crate::error::DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
                 crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -649,9 +653,9 @@ where
                 crate::error::DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::DescribeCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,10 +679,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::DescribeEndpointGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -701,10 +705,10 @@ where
                     Error::ListenerNotFoundException(inner)
                 }
                 crate::error::DescribeListenerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -727,10 +731,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListAcceleratorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -753,9 +757,11 @@ where
                 crate::error::ListByoipCidrsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListByoipCidrsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListByoipCidrsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -772,9 +778,9 @@ where
                 crate::error::ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListCustomRoutingAcceleratorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomRoutingAcceleratorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -796,9 +802,9 @@ where
                 crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::ListCustomRoutingEndpointGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomRoutingEndpointGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -816,9 +822,9 @@ where
                 crate::error::ListCustomRoutingListenersErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::ListCustomRoutingListenersErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListCustomRoutingListenersErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListCustomRoutingListenersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomRoutingListenersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -837,9 +843,9 @@ where
                 crate::error::ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListCustomRoutingPortMappingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomRoutingPortMappingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -865,9 +871,9 @@ where
                 crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-                crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -893,10 +899,10 @@ where
                     Error::ListenerNotFoundException(inner)
                 }
                 crate::error::ListEndpointGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -919,9 +925,11 @@ where
                 crate::error::ListListenersErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListListenersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListListenersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -944,10 +952,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -976,10 +984,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::ProvisionByoipCidrErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -999,9 +1007,9 @@ where
                 crate::error::RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(inner) => Error::EndpointNotFoundException(inner),
                 crate::error::RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::RemoveCustomRoutingEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveCustomRoutingEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1021,9 +1029,11 @@ where
                 crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1043,9 +1053,11 @@ where
                 crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1071,10 +1083,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::UpdateAcceleratorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1092,9 +1104,9 @@ where
                 crate::error::UpdateAcceleratorAttributesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::UpdateAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1115,9 +1127,9 @@ where
                 crate::error::UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
                 crate::error::UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::UpdateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1143,9 +1155,9 @@ where
                 crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-                crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1164,9 +1176,9 @@ where
                 crate::error::UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(inner) => Error::InvalidPortRangeException(inner),
                 crate::error::UpdateCustomRoutingListenerErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::UpdateCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1195,10 +1207,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::UpdateEndpointGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1224,9 +1236,11 @@ where
                 crate::error::UpdateListenerErrorKind::ListenerNotFoundException(inner) => {
                     Error::ListenerNotFoundException(inner)
                 }
-                crate::error::UpdateListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateListenerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1255,10 +1269,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::WithdrawByoipCidrErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

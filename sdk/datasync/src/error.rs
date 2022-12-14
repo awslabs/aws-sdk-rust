@@ -215,7 +215,7 @@ pub enum CancelTaskExecutionErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelTaskExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -243,7 +243,7 @@ impl CancelTaskExecutionError {
     /// Creates the `CancelTaskExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: CancelTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -252,7 +252,7 @@ impl CancelTaskExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: CancelTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -296,7 +296,7 @@ impl std::error::Error for CancelTaskExecutionError {
         match &self.kind {
             CancelTaskExecutionErrorKind::InternalException(_inner) => Some(_inner),
             CancelTaskExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CancelTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -319,7 +319,7 @@ pub enum CreateAgentErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -347,7 +347,7 @@ impl CreateAgentError {
     /// Creates the `CreateAgentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAgentErrorKind::Unhandled(err.into()),
+            kind: CreateAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -356,7 +356,7 @@ impl CreateAgentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAgentErrorKind::Unhandled(err.into()),
+            kind: CreateAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -394,7 +394,7 @@ impl std::error::Error for CreateAgentError {
         match &self.kind {
             CreateAgentErrorKind::InternalException(_inner) => Some(_inner),
             CreateAgentErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAgentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -417,7 +417,7 @@ pub enum CreateLocationEfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationEfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -445,7 +445,7 @@ impl CreateLocationEfsError {
     /// Creates the `CreateLocationEfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationEfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationEfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -454,7 +454,7 @@ impl CreateLocationEfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationEfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationEfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -495,7 +495,7 @@ impl std::error::Error for CreateLocationEfsError {
         match &self.kind {
             CreateLocationEfsErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationEfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationEfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationEfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -518,7 +518,7 @@ pub enum CreateLocationFsxLustreErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationFsxLustreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -546,7 +546,9 @@ impl CreateLocationFsxLustreError {
     /// Creates the `CreateLocationFsxLustreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationFsxLustreErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxLustreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -555,7 +557,9 @@ impl CreateLocationFsxLustreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationFsxLustreErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxLustreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -599,7 +603,7 @@ impl std::error::Error for CreateLocationFsxLustreError {
         match &self.kind {
             CreateLocationFsxLustreErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationFsxLustreErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationFsxLustreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationFsxLustreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -622,7 +626,7 @@ pub enum CreateLocationFsxOntapErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationFsxOntapError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -650,7 +654,9 @@ impl CreateLocationFsxOntapError {
     /// Creates the `CreateLocationFsxOntapError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationFsxOntapErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxOntapErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -659,7 +665,9 @@ impl CreateLocationFsxOntapError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationFsxOntapErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxOntapErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -703,7 +711,7 @@ impl std::error::Error for CreateLocationFsxOntapError {
         match &self.kind {
             CreateLocationFsxOntapErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationFsxOntapErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationFsxOntapErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationFsxOntapErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -726,7 +734,7 @@ pub enum CreateLocationFsxOpenZfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationFsxOpenZfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -754,7 +762,9 @@ impl CreateLocationFsxOpenZfsError {
     /// Creates the `CreateLocationFsxOpenZfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -763,7 +773,9 @@ impl CreateLocationFsxOpenZfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxOpenZfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -807,7 +819,7 @@ impl std::error::Error for CreateLocationFsxOpenZfsError {
         match &self.kind {
             CreateLocationFsxOpenZfsErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -830,7 +842,7 @@ pub enum CreateLocationFsxWindowsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationFsxWindowsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -858,7 +870,9 @@ impl CreateLocationFsxWindowsError {
     /// Creates the `CreateLocationFsxWindowsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationFsxWindowsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxWindowsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -867,7 +881,9 @@ impl CreateLocationFsxWindowsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationFsxWindowsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationFsxWindowsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -911,7 +927,7 @@ impl std::error::Error for CreateLocationFsxWindowsError {
         match &self.kind {
             CreateLocationFsxWindowsErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationFsxWindowsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationFsxWindowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationFsxWindowsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -934,7 +950,7 @@ pub enum CreateLocationHdfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationHdfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -962,7 +978,7 @@ impl CreateLocationHdfsError {
     /// Creates the `CreateLocationHdfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -971,7 +987,7 @@ impl CreateLocationHdfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1015,7 +1031,7 @@ impl std::error::Error for CreateLocationHdfsError {
         match &self.kind {
             CreateLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1038,7 +1054,7 @@ pub enum CreateLocationNfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationNfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1066,7 +1082,7 @@ impl CreateLocationNfsError {
     /// Creates the `CreateLocationNfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationNfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1075,7 +1091,7 @@ impl CreateLocationNfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationNfsErrorKind::Unhandled(err.into()),
+            kind: CreateLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1116,7 +1132,7 @@ impl std::error::Error for CreateLocationNfsError {
         match &self.kind {
             CreateLocationNfsErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationNfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationNfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationNfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1139,7 +1155,7 @@ pub enum CreateLocationObjectStorageErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationObjectStorageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1167,7 +1183,9 @@ impl CreateLocationObjectStorageError {
     /// Creates the `CreateLocationObjectStorageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: CreateLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1176,7 +1194,9 @@ impl CreateLocationObjectStorageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: CreateLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1220,7 +1240,7 @@ impl std::error::Error for CreateLocationObjectStorageError {
         match &self.kind {
             CreateLocationObjectStorageErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationObjectStorageErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1243,7 +1263,7 @@ pub enum CreateLocationS3ErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationS3Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1271,7 +1291,7 @@ impl CreateLocationS3Error {
     /// Creates the `CreateLocationS3Error::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationS3ErrorKind::Unhandled(err.into()),
+            kind: CreateLocationS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1280,7 +1300,7 @@ impl CreateLocationS3Error {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationS3ErrorKind::Unhandled(err.into()),
+            kind: CreateLocationS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1321,7 +1341,7 @@ impl std::error::Error for CreateLocationS3Error {
         match &self.kind {
             CreateLocationS3ErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationS3ErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationS3ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationS3ErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1344,7 +1364,7 @@ pub enum CreateLocationSmbErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLocationSmbError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1372,7 +1392,7 @@ impl CreateLocationSmbError {
     /// Creates the `CreateLocationSmbError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLocationSmbErrorKind::Unhandled(err.into()),
+            kind: CreateLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1381,7 +1401,7 @@ impl CreateLocationSmbError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLocationSmbErrorKind::Unhandled(err.into()),
+            kind: CreateLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1422,7 +1442,7 @@ impl std::error::Error for CreateLocationSmbError {
         match &self.kind {
             CreateLocationSmbErrorKind::InternalException(_inner) => Some(_inner),
             CreateLocationSmbErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateLocationSmbErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLocationSmbErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1445,7 +1465,7 @@ pub enum CreateTaskErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1473,7 +1493,7 @@ impl CreateTaskError {
     /// Creates the `CreateTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTaskErrorKind::Unhandled(err.into()),
+            kind: CreateTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1482,7 +1502,7 @@ impl CreateTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTaskErrorKind::Unhandled(err.into()),
+            kind: CreateTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1520,7 +1540,7 @@ impl std::error::Error for CreateTaskError {
         match &self.kind {
             CreateTaskErrorKind::InternalException(_inner) => Some(_inner),
             CreateTaskErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1543,7 +1563,7 @@ pub enum DeleteAgentErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1571,7 +1591,7 @@ impl DeleteAgentError {
     /// Creates the `DeleteAgentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAgentErrorKind::Unhandled(err.into()),
+            kind: DeleteAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1580,7 +1600,7 @@ impl DeleteAgentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAgentErrorKind::Unhandled(err.into()),
+            kind: DeleteAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1618,7 +1638,7 @@ impl std::error::Error for DeleteAgentError {
         match &self.kind {
             DeleteAgentErrorKind::InternalException(_inner) => Some(_inner),
             DeleteAgentErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAgentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1641,7 +1661,7 @@ pub enum DeleteLocationErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLocationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1669,7 +1689,7 @@ impl DeleteLocationError {
     /// Creates the `DeleteLocationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLocationErrorKind::Unhandled(err.into()),
+            kind: DeleteLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1678,7 +1698,7 @@ impl DeleteLocationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLocationErrorKind::Unhandled(err.into()),
+            kind: DeleteLocationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1719,7 +1739,7 @@ impl std::error::Error for DeleteLocationError {
         match &self.kind {
             DeleteLocationErrorKind::InternalException(_inner) => Some(_inner),
             DeleteLocationErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteLocationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLocationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1742,7 +1762,7 @@ pub enum DeleteTaskErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,7 +1790,7 @@ impl DeleteTaskError {
     /// Creates the `DeleteTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTaskErrorKind::Unhandled(err.into()),
+            kind: DeleteTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1779,7 +1799,7 @@ impl DeleteTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTaskErrorKind::Unhandled(err.into()),
+            kind: DeleteTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1817,7 +1837,7 @@ impl std::error::Error for DeleteTaskError {
         match &self.kind {
             DeleteTaskErrorKind::InternalException(_inner) => Some(_inner),
             DeleteTaskErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1840,7 +1860,7 @@ pub enum DescribeAgentErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1868,7 +1888,7 @@ impl DescribeAgentError {
     /// Creates the `DescribeAgentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAgentErrorKind::Unhandled(err.into()),
+            kind: DescribeAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1877,7 +1897,7 @@ impl DescribeAgentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAgentErrorKind::Unhandled(err.into()),
+            kind: DescribeAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1918,7 +1938,7 @@ impl std::error::Error for DescribeAgentError {
         match &self.kind {
             DescribeAgentErrorKind::InternalException(_inner) => Some(_inner),
             DescribeAgentErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAgentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1941,7 +1961,7 @@ pub enum DescribeLocationEfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationEfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1969,7 +1989,7 @@ impl DescribeLocationEfsError {
     /// Creates the `DescribeLocationEfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationEfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationEfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1978,7 +1998,7 @@ impl DescribeLocationEfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationEfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationEfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2022,7 +2042,7 @@ impl std::error::Error for DescribeLocationEfsError {
         match &self.kind {
             DescribeLocationEfsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationEfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationEfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationEfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2045,7 +2065,7 @@ pub enum DescribeLocationFsxLustreErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationFsxLustreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2073,7 +2093,9 @@ impl DescribeLocationFsxLustreError {
     /// Creates the `DescribeLocationFsxLustreError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationFsxLustreErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxLustreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2082,7 +2104,9 @@ impl DescribeLocationFsxLustreError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationFsxLustreErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxLustreErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2126,7 +2150,7 @@ impl std::error::Error for DescribeLocationFsxLustreError {
         match &self.kind {
             DescribeLocationFsxLustreErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxLustreErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationFsxLustreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationFsxLustreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2149,7 +2173,7 @@ pub enum DescribeLocationFsxOntapErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationFsxOntapError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2177,7 +2201,9 @@ impl DescribeLocationFsxOntapError {
     /// Creates the `DescribeLocationFsxOntapError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationFsxOntapErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxOntapErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2186,7 +2212,9 @@ impl DescribeLocationFsxOntapError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationFsxOntapErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxOntapErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2230,7 +2258,7 @@ impl std::error::Error for DescribeLocationFsxOntapError {
         match &self.kind {
             DescribeLocationFsxOntapErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxOntapErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationFsxOntapErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationFsxOntapErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2253,7 +2281,7 @@ pub enum DescribeLocationFsxOpenZfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationFsxOpenZfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,7 +2309,9 @@ impl DescribeLocationFsxOpenZfsError {
     /// Creates the `DescribeLocationFsxOpenZfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2290,7 +2320,9 @@ impl DescribeLocationFsxOpenZfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxOpenZfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2334,7 +2366,7 @@ impl std::error::Error for DescribeLocationFsxOpenZfsError {
         match &self.kind {
             DescribeLocationFsxOpenZfsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationFsxOpenZfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2357,7 +2389,7 @@ pub enum DescribeLocationFsxWindowsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationFsxWindowsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2385,7 +2417,9 @@ impl DescribeLocationFsxWindowsError {
     /// Creates the `DescribeLocationFsxWindowsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationFsxWindowsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxWindowsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2394,7 +2428,9 @@ impl DescribeLocationFsxWindowsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationFsxWindowsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationFsxWindowsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2438,7 +2474,7 @@ impl std::error::Error for DescribeLocationFsxWindowsError {
         match &self.kind {
             DescribeLocationFsxWindowsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationFsxWindowsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationFsxWindowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationFsxWindowsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2461,7 +2497,7 @@ pub enum DescribeLocationHdfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationHdfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2489,7 +2525,9 @@ impl DescribeLocationHdfsError {
     /// Creates the `DescribeLocationHdfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2498,7 +2536,9 @@ impl DescribeLocationHdfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2542,7 +2582,7 @@ impl std::error::Error for DescribeLocationHdfsError {
         match &self.kind {
             DescribeLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2565,7 +2605,7 @@ pub enum DescribeLocationNfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationNfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2593,7 +2633,7 @@ impl DescribeLocationNfsError {
     /// Creates the `DescribeLocationNfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationNfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2602,7 +2642,7 @@ impl DescribeLocationNfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationNfsErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2646,7 +2686,7 @@ impl std::error::Error for DescribeLocationNfsError {
         match &self.kind {
             DescribeLocationNfsErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationNfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationNfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationNfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2669,7 +2709,7 @@ pub enum DescribeLocationObjectStorageErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationObjectStorageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2702,7 +2742,9 @@ impl DescribeLocationObjectStorageError {
     /// Creates the `DescribeLocationObjectStorageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2711,7 +2753,9 @@ impl DescribeLocationObjectStorageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2755,7 +2799,7 @@ impl std::error::Error for DescribeLocationObjectStorageError {
         match &self.kind {
             DescribeLocationObjectStorageErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationObjectStorageErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2778,7 +2822,7 @@ pub enum DescribeLocationS3ErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationS3Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2806,7 +2850,7 @@ impl DescribeLocationS3Error {
     /// Creates the `DescribeLocationS3Error::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationS3ErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2815,7 +2859,7 @@ impl DescribeLocationS3Error {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationS3ErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationS3ErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2859,7 +2903,7 @@ impl std::error::Error for DescribeLocationS3Error {
         match &self.kind {
             DescribeLocationS3ErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationS3ErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationS3ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationS3ErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2882,7 +2926,7 @@ pub enum DescribeLocationSmbErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationSmbError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2910,7 +2954,7 @@ impl DescribeLocationSmbError {
     /// Creates the `DescribeLocationSmbError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLocationSmbErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2919,7 +2963,7 @@ impl DescribeLocationSmbError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLocationSmbErrorKind::Unhandled(err.into()),
+            kind: DescribeLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2963,7 +3007,7 @@ impl std::error::Error for DescribeLocationSmbError {
         match &self.kind {
             DescribeLocationSmbErrorKind::InternalException(_inner) => Some(_inner),
             DescribeLocationSmbErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeLocationSmbErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLocationSmbErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2986,7 +3030,7 @@ pub enum DescribeTaskErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3014,7 +3058,7 @@ impl DescribeTaskError {
     /// Creates the `DescribeTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTaskErrorKind::Unhandled(err.into()),
+            kind: DescribeTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3023,7 +3067,7 @@ impl DescribeTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTaskErrorKind::Unhandled(err.into()),
+            kind: DescribeTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3064,7 +3108,7 @@ impl std::error::Error for DescribeTaskError {
         match &self.kind {
             DescribeTaskErrorKind::InternalException(_inner) => Some(_inner),
             DescribeTaskErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3087,7 +3131,7 @@ pub enum DescribeTaskExecutionErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTaskExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3115,7 +3159,9 @@ impl DescribeTaskExecutionError {
     /// Creates the `DescribeTaskExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3124,7 +3170,9 @@ impl DescribeTaskExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3168,7 +3216,7 @@ impl std::error::Error for DescribeTaskExecutionError {
         match &self.kind {
             DescribeTaskExecutionErrorKind::InternalException(_inner) => Some(_inner),
             DescribeTaskExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DescribeTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3191,7 +3239,7 @@ pub enum ListAgentsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAgentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3219,7 +3267,7 @@ impl ListAgentsError {
     /// Creates the `ListAgentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAgentsErrorKind::Unhandled(err.into()),
+            kind: ListAgentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3228,7 +3276,7 @@ impl ListAgentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAgentsErrorKind::Unhandled(err.into()),
+            kind: ListAgentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3266,7 +3314,7 @@ impl std::error::Error for ListAgentsError {
         match &self.kind {
             ListAgentsErrorKind::InternalException(_inner) => Some(_inner),
             ListAgentsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListAgentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAgentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3289,7 +3337,7 @@ pub enum ListLocationsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLocationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3317,7 +3365,7 @@ impl ListLocationsError {
     /// Creates the `ListLocationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLocationsErrorKind::Unhandled(err.into()),
+            kind: ListLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3326,7 +3374,7 @@ impl ListLocationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLocationsErrorKind::Unhandled(err.into()),
+            kind: ListLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3367,7 +3415,7 @@ impl std::error::Error for ListLocationsError {
         match &self.kind {
             ListLocationsErrorKind::InternalException(_inner) => Some(_inner),
             ListLocationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLocationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3390,7 +3438,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3418,7 +3466,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3427,7 +3475,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3471,7 +3519,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::InternalException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3494,7 +3542,7 @@ pub enum ListTaskExecutionsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTaskExecutionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3522,7 +3570,7 @@ impl ListTaskExecutionsError {
     /// Creates the `ListTaskExecutionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTaskExecutionsErrorKind::Unhandled(err.into()),
+            kind: ListTaskExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3531,7 +3579,7 @@ impl ListTaskExecutionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTaskExecutionsErrorKind::Unhandled(err.into()),
+            kind: ListTaskExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3575,7 +3623,7 @@ impl std::error::Error for ListTaskExecutionsError {
         match &self.kind {
             ListTaskExecutionsErrorKind::InternalException(_inner) => Some(_inner),
             ListTaskExecutionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListTaskExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTaskExecutionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3598,7 +3646,7 @@ pub enum ListTasksErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3626,7 +3674,7 @@ impl ListTasksError {
     /// Creates the `ListTasksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTasksErrorKind::Unhandled(err.into()),
+            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3635,7 +3683,7 @@ impl ListTasksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTasksErrorKind::Unhandled(err.into()),
+            kind: ListTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3673,7 +3721,7 @@ impl std::error::Error for ListTasksError {
         match &self.kind {
             ListTasksErrorKind::InternalException(_inner) => Some(_inner),
             ListTasksErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListTasksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTasksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3696,7 +3744,7 @@ pub enum StartTaskExecutionErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTaskExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3724,7 +3772,7 @@ impl StartTaskExecutionError {
     /// Creates the `StartTaskExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: StartTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3733,7 +3781,7 @@ impl StartTaskExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: StartTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3777,7 +3825,7 @@ impl std::error::Error for StartTaskExecutionError {
         match &self.kind {
             StartTaskExecutionErrorKind::InternalException(_inner) => Some(_inner),
             StartTaskExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            StartTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3800,7 +3848,7 @@ pub enum TagResourceErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3828,7 +3876,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3837,7 +3885,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3875,7 +3923,7 @@ impl std::error::Error for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::InternalException(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3898,7 +3946,7 @@ pub enum UntagResourceErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3926,7 +3974,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3935,7 +3983,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3976,7 +4024,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::InternalException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3999,7 +4047,7 @@ pub enum UpdateAgentErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAgentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4027,7 +4075,7 @@ impl UpdateAgentError {
     /// Creates the `UpdateAgentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAgentErrorKind::Unhandled(err.into()),
+            kind: UpdateAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4036,7 +4084,7 @@ impl UpdateAgentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAgentErrorKind::Unhandled(err.into()),
+            kind: UpdateAgentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4074,7 +4122,7 @@ impl std::error::Error for UpdateAgentError {
         match &self.kind {
             UpdateAgentErrorKind::InternalException(_inner) => Some(_inner),
             UpdateAgentErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateAgentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAgentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4097,7 +4145,7 @@ pub enum UpdateLocationHdfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLocationHdfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4125,7 +4173,7 @@ impl UpdateLocationHdfsError {
     /// Creates the `UpdateLocationHdfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4134,7 +4182,7 @@ impl UpdateLocationHdfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLocationHdfsErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationHdfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4178,7 +4226,7 @@ impl std::error::Error for UpdateLocationHdfsError {
         match &self.kind {
             UpdateLocationHdfsErrorKind::InternalException(_inner) => Some(_inner),
             UpdateLocationHdfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLocationHdfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4201,7 +4249,7 @@ pub enum UpdateLocationNfsErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLocationNfsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4229,7 +4277,7 @@ impl UpdateLocationNfsError {
     /// Creates the `UpdateLocationNfsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLocationNfsErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4238,7 +4286,7 @@ impl UpdateLocationNfsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLocationNfsErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationNfsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4279,7 +4327,7 @@ impl std::error::Error for UpdateLocationNfsError {
         match &self.kind {
             UpdateLocationNfsErrorKind::InternalException(_inner) => Some(_inner),
             UpdateLocationNfsErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateLocationNfsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLocationNfsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4302,7 +4350,7 @@ pub enum UpdateLocationObjectStorageErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLocationObjectStorageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4330,7 +4378,9 @@ impl UpdateLocationObjectStorageError {
     /// Creates the `UpdateLocationObjectStorageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4339,7 +4389,9 @@ impl UpdateLocationObjectStorageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLocationObjectStorageErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationObjectStorageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4383,7 +4435,7 @@ impl std::error::Error for UpdateLocationObjectStorageError {
         match &self.kind {
             UpdateLocationObjectStorageErrorKind::InternalException(_inner) => Some(_inner),
             UpdateLocationObjectStorageErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLocationObjectStorageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4406,7 +4458,7 @@ pub enum UpdateLocationSmbErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLocationSmbError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4434,7 +4486,7 @@ impl UpdateLocationSmbError {
     /// Creates the `UpdateLocationSmbError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLocationSmbErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4443,7 +4495,7 @@ impl UpdateLocationSmbError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLocationSmbErrorKind::Unhandled(err.into()),
+            kind: UpdateLocationSmbErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4484,7 +4536,7 @@ impl std::error::Error for UpdateLocationSmbError {
         match &self.kind {
             UpdateLocationSmbErrorKind::InternalException(_inner) => Some(_inner),
             UpdateLocationSmbErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateLocationSmbErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLocationSmbErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4507,7 +4559,7 @@ pub enum UpdateTaskErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4535,7 +4587,7 @@ impl UpdateTaskError {
     /// Creates the `UpdateTaskError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTaskErrorKind::Unhandled(err.into()),
+            kind: UpdateTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4544,7 +4596,7 @@ impl UpdateTaskError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTaskErrorKind::Unhandled(err.into()),
+            kind: UpdateTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4582,7 +4634,7 @@ impl std::error::Error for UpdateTaskError {
         match &self.kind {
             UpdateTaskErrorKind::InternalException(_inner) => Some(_inner),
             UpdateTaskErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4605,7 +4657,7 @@ pub enum UpdateTaskExecutionErrorKind {
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTaskExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4633,7 +4685,7 @@ impl UpdateTaskExecutionError {
     /// Creates the `UpdateTaskExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: UpdateTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4642,7 +4694,7 @@ impl UpdateTaskExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTaskExecutionErrorKind::Unhandled(err.into()),
+            kind: UpdateTaskExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4686,7 +4738,32 @@ impl std::error::Error for UpdateTaskExecutionError {
         match &self.kind {
             UpdateTaskExecutionErrorKind::InternalException(_inner) => Some(_inner),
             UpdateTaskExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTaskExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

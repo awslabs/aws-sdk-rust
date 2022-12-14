@@ -436,7 +436,7 @@ pub enum CreateKeyspaceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateKeyspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -467,7 +467,7 @@ impl CreateKeyspaceError {
     /// Creates the `CreateKeyspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateKeyspaceErrorKind::Unhandled(err.into()),
+            kind: CreateKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -476,7 +476,7 @@ impl CreateKeyspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateKeyspaceErrorKind::Unhandled(err.into()),
+            kind: CreateKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -538,7 +538,7 @@ impl std::error::Error for CreateKeyspaceError {
             CreateKeyspaceErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateKeyspaceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateKeyspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateKeyspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateKeyspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -569,7 +569,7 @@ pub enum CreateTableErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -601,7 +601,7 @@ impl CreateTableError {
     /// Creates the `CreateTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTableErrorKind::Unhandled(err.into()),
+            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -610,7 +610,7 @@ impl CreateTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTableErrorKind::Unhandled(err.into()),
+            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -674,7 +674,7 @@ impl std::error::Error for CreateTableError {
             CreateTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateTableErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateTableErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -705,7 +705,7 @@ pub enum DeleteKeyspaceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteKeyspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -737,7 +737,7 @@ impl DeleteKeyspaceError {
     /// Creates the `DeleteKeyspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteKeyspaceErrorKind::Unhandled(err.into()),
+            kind: DeleteKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -746,7 +746,7 @@ impl DeleteKeyspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteKeyspaceErrorKind::Unhandled(err.into()),
+            kind: DeleteKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -816,7 +816,7 @@ impl std::error::Error for DeleteKeyspaceError {
             DeleteKeyspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteKeyspaceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             DeleteKeyspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteKeyspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteKeyspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -847,7 +847,7 @@ pub enum DeleteTableErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -879,7 +879,7 @@ impl DeleteTableError {
     /// Creates the `DeleteTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTableErrorKind::Unhandled(err.into()),
+            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -888,7 +888,7 @@ impl DeleteTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTableErrorKind::Unhandled(err.into()),
+            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -952,7 +952,7 @@ impl std::error::Error for DeleteTableError {
             DeleteTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTableErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             DeleteTableErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -981,7 +981,7 @@ pub enum GetKeyspaceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1012,7 +1012,7 @@ impl GetKeyspaceError {
     /// Creates the `GetKeyspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetKeyspaceErrorKind::Unhandled(err.into()),
+            kind: GetKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1021,7 +1021,7 @@ impl GetKeyspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetKeyspaceErrorKind::Unhandled(err.into()),
+            kind: GetKeyspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1080,7 +1080,7 @@ impl std::error::Error for GetKeyspaceError {
             GetKeyspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetKeyspaceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             GetKeyspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            GetKeyspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetKeyspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1109,7 +1109,7 @@ pub enum GetTableErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1140,7 +1140,7 @@ impl GetTableError {
     /// Creates the `GetTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTableErrorKind::Unhandled(err.into()),
+            kind: GetTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1149,7 +1149,7 @@ impl GetTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTableErrorKind::Unhandled(err.into()),
+            kind: GetTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1205,7 +1205,7 @@ impl std::error::Error for GetTableError {
             GetTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetTableErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             GetTableErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1234,7 +1234,7 @@ pub enum ListKeyspacesErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeyspacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1265,7 +1265,7 @@ impl ListKeyspacesError {
     /// Creates the `ListKeyspacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListKeyspacesErrorKind::Unhandled(err.into()),
+            kind: ListKeyspacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1274,7 +1274,7 @@ impl ListKeyspacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListKeyspacesErrorKind::Unhandled(err.into()),
+            kind: ListKeyspacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1336,7 +1336,7 @@ impl std::error::Error for ListKeyspacesError {
             ListKeyspacesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListKeyspacesErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListKeyspacesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListKeyspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListKeyspacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1365,7 +1365,7 @@ pub enum ListTablesErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1396,7 +1396,7 @@ impl ListTablesError {
     /// Creates the `ListTablesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1405,7 +1405,7 @@ impl ListTablesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1464,7 +1464,7 @@ impl std::error::Error for ListTablesError {
             ListTablesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTablesErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListTablesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTablesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1493,7 +1493,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1524,7 +1524,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1533,7 +1533,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1601,7 +1601,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1632,7 +1632,7 @@ pub enum RestoreTableErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1664,7 +1664,7 @@ impl RestoreTableError {
     /// Creates the `RestoreTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreTableErrorKind::Unhandled(err.into()),
+            kind: RestoreTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1673,7 +1673,7 @@ impl RestoreTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreTableErrorKind::Unhandled(err.into()),
+            kind: RestoreTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1740,7 +1740,7 @@ impl std::error::Error for RestoreTableError {
             RestoreTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestoreTableErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             RestoreTableErrorKind::ValidationException(_inner) => Some(_inner),
-            RestoreTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1769,7 +1769,7 @@ pub enum TagResourceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1800,7 +1800,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1809,7 +1809,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1868,7 +1868,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1899,7 +1899,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1931,7 +1931,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1940,7 +1940,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2007,7 +2007,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2038,7 +2038,7 @@ pub enum UpdateTableErrorKind {
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2070,7 +2070,7 @@ impl UpdateTableError {
     /// Creates the `UpdateTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTableErrorKind::Unhandled(err.into()),
+            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2079,7 +2079,7 @@ impl UpdateTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTableErrorKind::Unhandled(err.into()),
+            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2143,7 +2143,32 @@ impl std::error::Error for UpdateTableError {
             UpdateTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTableErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateTableErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

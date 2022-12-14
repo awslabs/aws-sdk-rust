@@ -753,7 +753,7 @@ pub enum AssociateLensesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateLensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -785,7 +785,7 @@ impl AssociateLensesError {
     /// Creates the `AssociateLensesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateLensesErrorKind::Unhandled(err.into()),
+            kind: AssociateLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -794,7 +794,7 @@ impl AssociateLensesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateLensesErrorKind::Unhandled(err.into()),
+            kind: AssociateLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -861,7 +861,7 @@ impl std::error::Error for AssociateLensesError {
             AssociateLensesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateLensesErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateLensesErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateLensesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateLensesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -894,7 +894,7 @@ pub enum CreateLensShareErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLensShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -927,7 +927,7 @@ impl CreateLensShareError {
     /// Creates the `CreateLensShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLensShareErrorKind::Unhandled(err.into()),
+            kind: CreateLensShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -936,7 +936,7 @@ impl CreateLensShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLensShareErrorKind::Unhandled(err.into()),
+            kind: CreateLensShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1011,7 +1011,7 @@ impl std::error::Error for CreateLensShareError {
             CreateLensShareErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateLensShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateLensShareErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLensShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLensShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1044,7 +1044,7 @@ pub enum CreateLensVersionErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLensVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1077,7 +1077,7 @@ impl CreateLensVersionError {
     /// Creates the `CreateLensVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLensVersionErrorKind::Unhandled(err.into()),
+            kind: CreateLensVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1086,7 +1086,7 @@ impl CreateLensVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLensVersionErrorKind::Unhandled(err.into()),
+            kind: CreateLensVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1167,7 +1167,7 @@ impl std::error::Error for CreateLensVersionError {
             CreateLensVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateLensVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateLensVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLensVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLensVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1200,7 +1200,7 @@ pub enum CreateMilestoneErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMilestoneError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1233,7 +1233,7 @@ impl CreateMilestoneError {
     /// Creates the `CreateMilestoneError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMilestoneErrorKind::Unhandled(err.into()),
+            kind: CreateMilestoneErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1242,7 +1242,7 @@ impl CreateMilestoneError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMilestoneErrorKind::Unhandled(err.into()),
+            kind: CreateMilestoneErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1317,7 +1317,7 @@ impl std::error::Error for CreateMilestoneError {
             CreateMilestoneErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateMilestoneErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMilestoneErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateMilestoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMilestoneErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1348,7 +1348,7 @@ pub enum CreateWorkloadErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkloadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1380,7 +1380,7 @@ impl CreateWorkloadError {
     /// Creates the `CreateWorkloadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkloadErrorKind::Unhandled(err.into()),
+            kind: CreateWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1389,7 +1389,7 @@ impl CreateWorkloadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkloadErrorKind::Unhandled(err.into()),
+            kind: CreateWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1456,7 +1456,7 @@ impl std::error::Error for CreateWorkloadError {
             CreateWorkloadErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateWorkloadErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateWorkloadErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateWorkloadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkloadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1489,7 +1489,7 @@ pub enum CreateWorkloadShareErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkloadShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1522,7 +1522,7 @@ impl CreateWorkloadShareError {
     /// Creates the `CreateWorkloadShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: CreateWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1531,7 +1531,7 @@ impl CreateWorkloadShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: CreateWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1615,7 +1615,7 @@ impl std::error::Error for CreateWorkloadShareError {
             CreateWorkloadShareErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateWorkloadShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateWorkloadShareErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1646,7 +1646,7 @@ pub enum DeleteLensErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1678,7 +1678,7 @@ impl DeleteLensError {
     /// Creates the `DeleteLensError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLensErrorKind::Unhandled(err.into()),
+            kind: DeleteLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1687,7 +1687,7 @@ impl DeleteLensError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLensErrorKind::Unhandled(err.into()),
+            kind: DeleteLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1748,7 +1748,7 @@ impl std::error::Error for DeleteLensError {
             DeleteLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLensErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteLensErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLensErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1779,7 +1779,7 @@ pub enum DeleteLensShareErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLensShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1811,7 +1811,7 @@ impl DeleteLensShareError {
     /// Creates the `DeleteLensShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLensShareErrorKind::Unhandled(err.into()),
+            kind: DeleteLensShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1820,7 +1820,7 @@ impl DeleteLensShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLensShareErrorKind::Unhandled(err.into()),
+            kind: DeleteLensShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1887,7 +1887,7 @@ impl std::error::Error for DeleteLensShareError {
             DeleteLensShareErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteLensShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteLensShareErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteLensShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLensShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1918,7 +1918,7 @@ pub enum DeleteWorkloadErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkloadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1950,7 +1950,7 @@ impl DeleteWorkloadError {
     /// Creates the `DeleteWorkloadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkloadErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1959,7 +1959,7 @@ impl DeleteWorkloadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkloadErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2026,7 +2026,7 @@ impl std::error::Error for DeleteWorkloadError {
             DeleteWorkloadErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorkloadErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteWorkloadErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteWorkloadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkloadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2057,7 +2057,7 @@ pub enum DeleteWorkloadShareErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkloadShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2089,7 +2089,7 @@ impl DeleteWorkloadShareError {
     /// Creates the `DeleteWorkloadShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2098,7 +2098,7 @@ impl DeleteWorkloadShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2174,7 +2174,7 @@ impl std::error::Error for DeleteWorkloadShareError {
             DeleteWorkloadShareErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorkloadShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteWorkloadShareErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2205,7 +2205,7 @@ pub enum DisassociateLensesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateLensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2237,7 +2237,7 @@ impl DisassociateLensesError {
     /// Creates the `DisassociateLensesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateLensesErrorKind::Unhandled(err.into()),
+            kind: DisassociateLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2246,7 +2246,7 @@ impl DisassociateLensesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateLensesErrorKind::Unhandled(err.into()),
+            kind: DisassociateLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2322,7 +2322,7 @@ impl std::error::Error for DisassociateLensesError {
             DisassociateLensesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateLensesErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateLensesErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateLensesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateLensesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2351,7 +2351,7 @@ pub enum ExportLensErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportLensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2382,7 +2382,7 @@ impl ExportLensError {
     /// Creates the `ExportLensError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportLensErrorKind::Unhandled(err.into()),
+            kind: ExportLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2391,7 +2391,7 @@ impl ExportLensError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportLensErrorKind::Unhandled(err.into()),
+            kind: ExportLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2447,7 +2447,7 @@ impl std::error::Error for ExportLensError {
             ExportLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExportLensErrorKind::ThrottlingException(_inner) => Some(_inner),
             ExportLensErrorKind::ValidationException(_inner) => Some(_inner),
-            ExportLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportLensErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2476,7 +2476,7 @@ pub enum GetAnswerErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAnswerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2507,7 +2507,7 @@ impl GetAnswerError {
     /// Creates the `GetAnswerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAnswerErrorKind::Unhandled(err.into()),
+            kind: GetAnswerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2516,7 +2516,7 @@ impl GetAnswerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAnswerErrorKind::Unhandled(err.into()),
+            kind: GetAnswerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2569,7 +2569,7 @@ impl std::error::Error for GetAnswerError {
             GetAnswerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAnswerErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetAnswerErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAnswerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAnswerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2598,7 +2598,7 @@ pub enum GetLensErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2629,7 +2629,7 @@ impl GetLensError {
     /// Creates the `GetLensError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLensErrorKind::Unhandled(err.into()),
+            kind: GetLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2638,7 +2638,7 @@ impl GetLensError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLensErrorKind::Unhandled(err.into()),
+            kind: GetLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2691,7 +2691,7 @@ impl std::error::Error for GetLensError {
             GetLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLensErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLensErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLensErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2720,7 +2720,7 @@ pub enum GetLensReviewErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLensReviewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2751,7 +2751,7 @@ impl GetLensReviewError {
     /// Creates the `GetLensReviewError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLensReviewErrorKind::Unhandled(err.into()),
+            kind: GetLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2760,7 +2760,7 @@ impl GetLensReviewError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLensReviewErrorKind::Unhandled(err.into()),
+            kind: GetLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2819,7 +2819,7 @@ impl std::error::Error for GetLensReviewError {
             GetLensReviewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLensReviewErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLensReviewErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLensReviewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLensReviewErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2848,7 +2848,7 @@ pub enum GetLensReviewReportErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLensReviewReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2879,7 +2879,7 @@ impl GetLensReviewReportError {
     /// Creates the `GetLensReviewReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLensReviewReportErrorKind::Unhandled(err.into()),
+            kind: GetLensReviewReportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2888,7 +2888,7 @@ impl GetLensReviewReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLensReviewReportErrorKind::Unhandled(err.into()),
+            kind: GetLensReviewReportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2956,7 +2956,7 @@ impl std::error::Error for GetLensReviewReportError {
             GetLensReviewReportErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLensReviewReportErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLensReviewReportErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLensReviewReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLensReviewReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2985,7 +2985,7 @@ pub enum GetLensVersionDifferenceErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLensVersionDifferenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3016,7 +3016,9 @@ impl GetLensVersionDifferenceError {
     /// Creates the `GetLensVersionDifferenceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLensVersionDifferenceErrorKind::Unhandled(err.into()),
+            kind: GetLensVersionDifferenceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3025,7 +3027,9 @@ impl GetLensVersionDifferenceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLensVersionDifferenceErrorKind::Unhandled(err.into()),
+            kind: GetLensVersionDifferenceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3093,7 +3097,7 @@ impl std::error::Error for GetLensVersionDifferenceError {
             GetLensVersionDifferenceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetLensVersionDifferenceErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetLensVersionDifferenceErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLensVersionDifferenceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLensVersionDifferenceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3122,7 +3126,7 @@ pub enum GetMilestoneErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMilestoneError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3153,7 +3157,7 @@ impl GetMilestoneError {
     /// Creates the `GetMilestoneError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMilestoneErrorKind::Unhandled(err.into()),
+            kind: GetMilestoneErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3162,7 +3166,7 @@ impl GetMilestoneError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMilestoneErrorKind::Unhandled(err.into()),
+            kind: GetMilestoneErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3221,7 +3225,7 @@ impl std::error::Error for GetMilestoneError {
             GetMilestoneErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetMilestoneErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetMilestoneErrorKind::ValidationException(_inner) => Some(_inner),
-            GetMilestoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMilestoneErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3250,7 +3254,7 @@ pub enum GetWorkloadErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWorkloadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3281,7 +3285,7 @@ impl GetWorkloadError {
     /// Creates the `GetWorkloadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWorkloadErrorKind::Unhandled(err.into()),
+            kind: GetWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3290,7 +3294,7 @@ impl GetWorkloadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWorkloadErrorKind::Unhandled(err.into()),
+            kind: GetWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3346,7 +3350,7 @@ impl std::error::Error for GetWorkloadError {
             GetWorkloadErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetWorkloadErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetWorkloadErrorKind::ValidationException(_inner) => Some(_inner),
-            GetWorkloadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWorkloadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3379,7 +3383,7 @@ pub enum ImportLensErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportLensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3412,7 +3416,7 @@ impl ImportLensError {
     /// Creates the `ImportLensError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportLensErrorKind::Unhandled(err.into()),
+            kind: ImportLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3421,7 +3425,7 @@ impl ImportLensError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportLensErrorKind::Unhandled(err.into()),
+            kind: ImportLensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3490,7 +3494,7 @@ impl std::error::Error for ImportLensError {
             ImportLensErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             ImportLensErrorKind::ThrottlingException(_inner) => Some(_inner),
             ImportLensErrorKind::ValidationException(_inner) => Some(_inner),
-            ImportLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportLensErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3519,7 +3523,7 @@ pub enum ListAnswersErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnswersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3550,7 +3554,7 @@ impl ListAnswersError {
     /// Creates the `ListAnswersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnswersErrorKind::Unhandled(err.into()),
+            kind: ListAnswersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3559,7 +3563,7 @@ impl ListAnswersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnswersErrorKind::Unhandled(err.into()),
+            kind: ListAnswersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3615,7 +3619,7 @@ impl std::error::Error for ListAnswersError {
             ListAnswersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAnswersErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAnswersErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAnswersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnswersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3642,7 +3646,7 @@ pub enum ListLensesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3672,7 +3676,7 @@ impl ListLensesError {
     /// Creates the `ListLensesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLensesErrorKind::Unhandled(err.into()),
+            kind: ListLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3681,7 +3685,7 @@ impl ListLensesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLensesErrorKind::Unhandled(err.into()),
+            kind: ListLensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3729,7 +3733,7 @@ impl std::error::Error for ListLensesError {
             ListLensesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListLensesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListLensesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLensesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLensesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3758,7 +3762,7 @@ pub enum ListLensReviewImprovementsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLensReviewImprovementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3789,7 +3793,9 @@ impl ListLensReviewImprovementsError {
     /// Creates the `ListLensReviewImprovementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLensReviewImprovementsErrorKind::Unhandled(err.into()),
+            kind: ListLensReviewImprovementsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3798,7 +3804,9 @@ impl ListLensReviewImprovementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLensReviewImprovementsErrorKind::Unhandled(err.into()),
+            kind: ListLensReviewImprovementsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3866,7 +3874,7 @@ impl std::error::Error for ListLensReviewImprovementsError {
             ListLensReviewImprovementsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListLensReviewImprovementsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListLensReviewImprovementsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLensReviewImprovementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLensReviewImprovementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3895,7 +3903,7 @@ pub enum ListLensReviewsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLensReviewsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3926,7 +3934,7 @@ impl ListLensReviewsError {
     /// Creates the `ListLensReviewsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLensReviewsErrorKind::Unhandled(err.into()),
+            kind: ListLensReviewsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3935,7 +3943,7 @@ impl ListLensReviewsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLensReviewsErrorKind::Unhandled(err.into()),
+            kind: ListLensReviewsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3997,7 +4005,7 @@ impl std::error::Error for ListLensReviewsError {
             ListLensReviewsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListLensReviewsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListLensReviewsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLensReviewsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLensReviewsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4026,7 +4034,7 @@ pub enum ListLensSharesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLensSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4057,7 +4065,7 @@ impl ListLensSharesError {
     /// Creates the `ListLensSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLensSharesErrorKind::Unhandled(err.into()),
+            kind: ListLensSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4066,7 +4074,7 @@ impl ListLensSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLensSharesErrorKind::Unhandled(err.into()),
+            kind: ListLensSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4128,7 +4136,7 @@ impl std::error::Error for ListLensSharesError {
             ListLensSharesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListLensSharesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListLensSharesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLensSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLensSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4157,7 +4165,7 @@ pub enum ListMilestonesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMilestonesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4188,7 +4196,7 @@ impl ListMilestonesError {
     /// Creates the `ListMilestonesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMilestonesErrorKind::Unhandled(err.into()),
+            kind: ListMilestonesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4197,7 +4205,7 @@ impl ListMilestonesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMilestonesErrorKind::Unhandled(err.into()),
+            kind: ListMilestonesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4259,7 +4267,7 @@ impl std::error::Error for ListMilestonesError {
             ListMilestonesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListMilestonesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListMilestonesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListMilestonesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMilestonesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4286,7 +4294,7 @@ pub enum ListNotificationsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNotificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4316,7 +4324,7 @@ impl ListNotificationsError {
     /// Creates the `ListNotificationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNotificationsErrorKind::Unhandled(err.into()),
+            kind: ListNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4325,7 +4333,7 @@ impl ListNotificationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNotificationsErrorKind::Unhandled(err.into()),
+            kind: ListNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4385,7 +4393,7 @@ impl std::error::Error for ListNotificationsError {
             ListNotificationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListNotificationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListNotificationsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListNotificationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNotificationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4412,7 +4420,7 @@ pub enum ListShareInvitationsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListShareInvitationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4442,7 +4450,9 @@ impl ListShareInvitationsError {
     /// Creates the `ListShareInvitationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListShareInvitationsErrorKind::Unhandled(err.into()),
+            kind: ListShareInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4451,7 +4461,9 @@ impl ListShareInvitationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListShareInvitationsErrorKind::Unhandled(err.into()),
+            kind: ListShareInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4511,7 +4523,7 @@ impl std::error::Error for ListShareInvitationsError {
             ListShareInvitationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListShareInvitationsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListShareInvitationsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListShareInvitationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListShareInvitationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4534,7 +4546,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4562,7 +4574,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4571,7 +4583,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4615,7 +4627,7 @@ impl std::error::Error for ListTagsForResourceError {
         match &self.kind {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4642,7 +4654,7 @@ pub enum ListWorkloadsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkloadsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4672,7 +4684,7 @@ impl ListWorkloadsError {
     /// Creates the `ListWorkloadsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkloadsErrorKind::Unhandled(err.into()),
+            kind: ListWorkloadsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4681,7 +4693,7 @@ impl ListWorkloadsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkloadsErrorKind::Unhandled(err.into()),
+            kind: ListWorkloadsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4732,7 +4744,7 @@ impl std::error::Error for ListWorkloadsError {
             ListWorkloadsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorkloadsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListWorkloadsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListWorkloadsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkloadsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4761,7 +4773,7 @@ pub enum ListWorkloadSharesErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkloadSharesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4792,7 +4804,7 @@ impl ListWorkloadSharesError {
     /// Creates the `ListWorkloadSharesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkloadSharesErrorKind::Unhandled(err.into()),
+            kind: ListWorkloadSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4801,7 +4813,7 @@ impl ListWorkloadSharesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkloadSharesErrorKind::Unhandled(err.into()),
+            kind: ListWorkloadSharesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4869,7 +4881,7 @@ impl std::error::Error for ListWorkloadSharesError {
             ListWorkloadSharesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListWorkloadSharesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListWorkloadSharesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListWorkloadSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkloadSharesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4892,7 +4904,7 @@ pub enum TagResourceErrorKind {
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4920,7 +4932,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4929,7 +4941,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4970,7 +4982,7 @@ impl std::error::Error for TagResourceError {
         match &self.kind {
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4993,7 +5005,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5021,7 +5033,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5030,7 +5042,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5074,7 +5086,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5105,7 +5117,7 @@ pub enum UpdateAnswerErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAnswerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5137,7 +5149,7 @@ impl UpdateAnswerError {
     /// Creates the `UpdateAnswerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAnswerErrorKind::Unhandled(err.into()),
+            kind: UpdateAnswerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5146,7 +5158,7 @@ impl UpdateAnswerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAnswerErrorKind::Unhandled(err.into()),
+            kind: UpdateAnswerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5210,7 +5222,7 @@ impl std::error::Error for UpdateAnswerError {
             UpdateAnswerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAnswerErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateAnswerErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAnswerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAnswerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5239,7 +5251,7 @@ pub enum UpdateGlobalSettingsErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5270,7 +5282,9 @@ impl UpdateGlobalSettingsError {
     /// Creates the `UpdateGlobalSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGlobalSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5279,7 +5293,9 @@ impl UpdateGlobalSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGlobalSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5347,7 +5363,7 @@ impl std::error::Error for UpdateGlobalSettingsError {
             UpdateGlobalSettingsErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateGlobalSettingsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateGlobalSettingsErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGlobalSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5378,7 +5394,7 @@ pub enum UpdateLensReviewErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLensReviewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5410,7 +5426,7 @@ impl UpdateLensReviewError {
     /// Creates the `UpdateLensReviewError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLensReviewErrorKind::Unhandled(err.into()),
+            kind: UpdateLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5419,7 +5435,7 @@ impl UpdateLensReviewError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLensReviewErrorKind::Unhandled(err.into()),
+            kind: UpdateLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5492,7 +5508,7 @@ impl std::error::Error for UpdateLensReviewError {
             UpdateLensReviewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateLensReviewErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateLensReviewErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateLensReviewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLensReviewErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5523,7 +5539,7 @@ pub enum UpdateShareInvitationErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateShareInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5555,7 +5571,9 @@ impl UpdateShareInvitationError {
     /// Creates the `UpdateShareInvitationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateShareInvitationErrorKind::Unhandled(err.into()),
+            kind: UpdateShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5564,7 +5582,9 @@ impl UpdateShareInvitationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateShareInvitationErrorKind::Unhandled(err.into()),
+            kind: UpdateShareInvitationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5640,7 +5660,7 @@ impl std::error::Error for UpdateShareInvitationError {
             UpdateShareInvitationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateShareInvitationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateShareInvitationErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateShareInvitationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateShareInvitationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5671,7 +5691,7 @@ pub enum UpdateWorkloadErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorkloadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5703,7 +5723,7 @@ impl UpdateWorkloadError {
     /// Creates the `UpdateWorkloadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorkloadErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5712,7 +5732,7 @@ impl UpdateWorkloadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorkloadErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkloadErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5779,7 +5799,7 @@ impl std::error::Error for UpdateWorkloadError {
             UpdateWorkloadErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorkloadErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateWorkloadErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateWorkloadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorkloadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5810,7 +5830,7 @@ pub enum UpdateWorkloadShareErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorkloadShareError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5842,7 +5862,7 @@ impl UpdateWorkloadShareError {
     /// Creates the `UpdateWorkloadShareError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5851,7 +5871,7 @@ impl UpdateWorkloadShareError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorkloadShareErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkloadShareErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5927,7 +5947,7 @@ impl std::error::Error for UpdateWorkloadShareError {
             UpdateWorkloadShareErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorkloadShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateWorkloadShareErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorkloadShareErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5958,7 +5978,7 @@ pub enum UpgradeLensReviewErrorKind {
     /// <p>The user input is not valid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpgradeLensReviewError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5990,7 +6010,7 @@ impl UpgradeLensReviewError {
     /// Creates the `UpgradeLensReviewError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpgradeLensReviewErrorKind::Unhandled(err.into()),
+            kind: UpgradeLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5999,7 +6019,7 @@ impl UpgradeLensReviewError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpgradeLensReviewErrorKind::Unhandled(err.into()),
+            kind: UpgradeLensReviewErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6072,7 +6092,32 @@ impl std::error::Error for UpgradeLensReviewError {
             UpgradeLensReviewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpgradeLensReviewErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpgradeLensReviewErrorKind::ValidationException(_inner) => Some(_inner),
-            UpgradeLensReviewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpgradeLensReviewErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

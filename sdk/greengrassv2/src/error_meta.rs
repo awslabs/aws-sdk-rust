@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54,10 +54,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::AssociateServiceRoleToAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -84,9 +84,9 @@ where
                 crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchAssociateClientDeviceWithCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -113,9 +113,9 @@ where
                 crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDisassociateClientDeviceFromCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -147,10 +147,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CancelDeploymentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,9 +171,9 @@ where
                 crate::error::CreateComponentVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::CreateComponentVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateComponentVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateComponentVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateComponentVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,10 +208,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateDeploymentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -240,9 +240,11 @@ where
                 crate::error::DeleteComponentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -274,10 +276,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteCoreDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -309,10 +311,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteDeploymentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -341,10 +343,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeComponentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -364,9 +366,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateServiceRoleFromAccountErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-                crate::error::DisassociateServiceRoleFromAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateServiceRoleFromAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -392,9 +394,11 @@ where
                 crate::error::GetComponentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetComponentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetComponentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -424,10 +428,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetComponentVersionArtifactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -447,10 +451,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetConnectivityInfoErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -476,9 +480,11 @@ where
                 crate::error::GetCoreDeviceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCoreDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -504,9 +510,11 @@ where
                 crate::error::GetDeploymentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -524,10 +532,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetServiceRoleForAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -554,9 +562,9 @@ where
                 crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListClientDevicesAssociatedWithCoreDeviceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -582,9 +590,11 @@ where
                 crate::error::ListComponentsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListComponentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListComponentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -614,10 +624,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListComponentVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -640,9 +650,11 @@ where
                 crate::error::ListCoreDevicesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListCoreDevicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCoreDevicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -665,9 +677,11 @@ where
                 crate::error::ListDeploymentsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDeploymentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,10 +711,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListEffectiveDeploymentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -730,10 +744,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListInstalledComponentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,10 +770,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -792,10 +806,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ResolveComponentCandidatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -815,9 +829,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -837,9 +853,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -860,10 +878,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateConnectivityInfoErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

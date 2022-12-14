@@ -1139,7 +1139,7 @@ pub enum BatchMeterUsageErrorKind {
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchMeterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1174,7 +1174,7 @@ impl BatchMeterUsageError {
     /// Creates the `BatchMeterUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchMeterUsageErrorKind::Unhandled(err.into()),
+            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1183,7 +1183,7 @@ impl BatchMeterUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchMeterUsageErrorKind::Unhandled(err.into()),
+            kind: BatchMeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1277,7 +1277,7 @@ impl std::error::Error for BatchMeterUsageError {
             BatchMeterUsageErrorKind::InvalidUsageDimensionException(_inner) => Some(_inner),
             BatchMeterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
             BatchMeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => Some(_inner),
-            BatchMeterUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchMeterUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1317,7 +1317,7 @@ pub enum MeterUsageErrorKind {
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for MeterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1353,7 +1353,7 @@ impl MeterUsageError {
     /// Creates the `MeterUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: MeterUsageErrorKind::Unhandled(err.into()),
+            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1362,7 +1362,7 @@ impl MeterUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: MeterUsageErrorKind::Unhandled(err.into()),
+            kind: MeterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1464,7 +1464,7 @@ impl std::error::Error for MeterUsageError {
             MeterUsageErrorKind::InvalidUsageDimensionException(_inner) => Some(_inner),
             MeterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
             MeterUsageErrorKind::TimestampOutOfBoundsException(_inner) => Some(_inner),
-            MeterUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            MeterUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1499,7 +1499,7 @@ pub enum RegisterUsageErrorKind {
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1533,7 +1533,7 @@ impl RegisterUsageError {
     /// Creates the `RegisterUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterUsageErrorKind::Unhandled(err.into()),
+            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1542,7 +1542,7 @@ impl RegisterUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterUsageErrorKind::Unhandled(err.into()),
+            kind: RegisterUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1628,7 +1628,7 @@ impl std::error::Error for RegisterUsageError {
             RegisterUsageErrorKind::InvalidRegionException(_inner) => Some(_inner),
             RegisterUsageErrorKind::PlatformNotSupportedException(_inner) => Some(_inner),
             RegisterUsageErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RegisterUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1657,7 +1657,7 @@ pub enum ResolveCustomerErrorKind {
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResolveCustomerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1688,7 +1688,7 @@ impl ResolveCustomerError {
     /// Creates the `ResolveCustomerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResolveCustomerErrorKind::Unhandled(err.into()),
+            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1697,7 +1697,7 @@ impl ResolveCustomerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResolveCustomerErrorKind::Unhandled(err.into()),
+            kind: ResolveCustomerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1762,7 +1762,32 @@ impl std::error::Error for ResolveCustomerError {
             ResolveCustomerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ResolveCustomerErrorKind::InvalidTokenException(_inner) => Some(_inner),
             ResolveCustomerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ResolveCustomerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResolveCustomerErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -81,7 +81,7 @@ pub enum GetDeploymentsErrorKind {
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -108,7 +108,7 @@ impl GetDeploymentsError {
     /// Creates the `GetDeploymentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -117,7 +117,7 @@ impl GetDeploymentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -153,7 +153,7 @@ impl std::error::Error for GetDeploymentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetDeploymentsErrorKind::InternalServiceException(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -174,7 +174,7 @@ pub enum GetDeviceRegistrationErrorKind {
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeviceRegistrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -201,7 +201,9 @@ impl GetDeviceRegistrationError {
     /// Creates the `GetDeviceRegistrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeviceRegistrationErrorKind::Unhandled(err.into()),
+            kind: GetDeviceRegistrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -210,7 +212,9 @@ impl GetDeviceRegistrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeviceRegistrationErrorKind::Unhandled(err.into()),
+            kind: GetDeviceRegistrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -246,7 +250,7 @@ impl std::error::Error for GetDeviceRegistrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetDeviceRegistrationErrorKind::InternalServiceException(_inner) => Some(_inner),
-            GetDeviceRegistrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeviceRegistrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -267,7 +271,7 @@ pub enum SendHeartbeatErrorKind {
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendHeartbeatError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -294,7 +298,7 @@ impl SendHeartbeatError {
     /// Creates the `SendHeartbeatError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendHeartbeatErrorKind::Unhandled(err.into()),
+            kind: SendHeartbeatErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -303,7 +307,7 @@ impl SendHeartbeatError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendHeartbeatErrorKind::Unhandled(err.into()),
+            kind: SendHeartbeatErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -339,7 +343,32 @@ impl std::error::Error for SendHeartbeatError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SendHeartbeatErrorKind::InternalServiceException(_inner) => Some(_inner),
-            SendHeartbeatErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendHeartbeatErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

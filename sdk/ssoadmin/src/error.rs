@@ -483,7 +483,7 @@ pub enum AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachCustomerManagedPolicyReferenceToPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -538,7 +538,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -549,7 +549,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetError {
         Self {
             meta: err.clone(),
             kind: AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -650,7 +650,7 @@ impl std::error::Error for AttachCustomerManagedPolicyReferenceToPermissionSetEr
             Some(_inner)
             ,
             AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -684,7 +684,7 @@ pub enum AttachManagedPolicyToPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachManagedPolicyToPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -732,7 +732,9 @@ impl AttachManagedPolicyToPermissionSetError {
     /// Creates the `AttachManagedPolicyToPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachManagedPolicyToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: AttachManagedPolicyToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -741,7 +743,9 @@ impl AttachManagedPolicyToPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachManagedPolicyToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: AttachManagedPolicyToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -837,7 +841,7 @@ impl std::error::Error for AttachManagedPolicyToPermissionSetError {
             AttachManagedPolicyToPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            AttachManagedPolicyToPermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachManagedPolicyToPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -870,7 +874,7 @@ pub enum CreateAccountAssignmentErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccountAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -905,7 +909,9 @@ impl CreateAccountAssignmentError {
     /// Creates the `CreateAccountAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccountAssignmentErrorKind::Unhandled(err.into()),
+            kind: CreateAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -914,7 +920,9 @@ impl CreateAccountAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccountAssignmentErrorKind::Unhandled(err.into()),
+            kind: CreateAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -998,7 +1006,7 @@ impl std::error::Error for CreateAccountAssignmentError {
             CreateAccountAssignmentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAccountAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateAccountAssignmentErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAccountAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccountAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1029,7 +1037,7 @@ pub enum CreateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInstanceAccessControlAttributeConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,7 +1088,9 @@ impl CreateInstanceAccessControlAttributeConfigurationError {
     /// Creates the `CreateInstanceAccessControlAttributeConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1089,7 +1099,9 @@ impl CreateInstanceAccessControlAttributeConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1180,7 +1192,7 @@ impl std::error::Error for CreateInstanceAccessControlAttributeConfigurationErro
             Some(_inner)
             ,
             CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -1214,7 +1226,7 @@ pub enum CreatePermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1247,7 +1259,7 @@ impl CreatePermissionSetError {
     /// Creates the `CreatePermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePermissionSetErrorKind::Unhandled(err.into()),
+            kind: CreatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1256,7 +1268,7 @@ impl CreatePermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePermissionSetErrorKind::Unhandled(err.into()),
+            kind: CreatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1340,7 +1352,7 @@ impl std::error::Error for CreatePermissionSetError {
             CreatePermissionSetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreatePermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreatePermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1371,7 +1383,7 @@ pub enum DeleteAccountAssignmentErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccountAssignmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1403,7 +1415,9 @@ impl DeleteAccountAssignmentError {
     /// Creates the `DeleteAccountAssignmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAccountAssignmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1412,7 +1426,9 @@ impl DeleteAccountAssignmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAccountAssignmentErrorKind::Unhandled(err.into()),
+            kind: DeleteAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1488,7 +1504,7 @@ impl std::error::Error for DeleteAccountAssignmentError {
             DeleteAccountAssignmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAccountAssignmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteAccountAssignmentErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAccountAssignmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAccountAssignmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1519,7 +1535,7 @@ pub enum DeleteInlinePolicyFromPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInlinePolicyFromPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1566,7 +1582,9 @@ impl DeleteInlinePolicyFromPermissionSetError {
     /// Creates the `DeleteInlinePolicyFromPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1575,7 +1593,9 @@ impl DeleteInlinePolicyFromPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1661,9 +1681,7 @@ impl std::error::Error for DeleteInlinePolicyFromPermissionSetError {
             DeleteInlinePolicyFromPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1694,7 +1712,7 @@ pub enum DeleteInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInstanceAccessControlAttributeConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1745,7 +1763,9 @@ impl DeleteInstanceAccessControlAttributeConfigurationError {
     /// Creates the `DeleteInstanceAccessControlAttributeConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1754,7 +1774,9 @@ impl DeleteInstanceAccessControlAttributeConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1845,7 +1867,7 @@ impl std::error::Error for DeleteInstanceAccessControlAttributeConfigurationErro
             Some(_inner)
             ,
             DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -1875,7 +1897,7 @@ pub enum DeletePermissionsBoundaryFromPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePermissionsBoundaryFromPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1919,7 +1941,9 @@ impl DeletePermissionsBoundaryFromPermissionSetError {
     /// Creates the `DeletePermissionsBoundaryFromPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1928,7 +1952,9 @@ impl DeletePermissionsBoundaryFromPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2006,9 +2032,7 @@ impl std::error::Error for DeletePermissionsBoundaryFromPermissionSetError {
             DeletePermissionsBoundaryFromPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2039,7 +2063,7 @@ pub enum DeletePermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2071,7 +2095,7 @@ impl DeletePermissionSetError {
     /// Creates the `DeletePermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2080,7 +2104,7 @@ impl DeletePermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePermissionSetErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2156,7 +2180,7 @@ impl std::error::Error for DeletePermissionSetError {
             DeletePermissionSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeletePermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2185,7 +2209,7 @@ pub enum DescribeAccountAssignmentCreationStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountAssignmentCreationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,7 +2253,9 @@ impl DescribeAccountAssignmentCreationStatusError {
     /// Creates the `DescribeAccountAssignmentCreationStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2238,7 +2264,9 @@ impl DescribeAccountAssignmentCreationStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2316,9 +2344,7 @@ impl std::error::Error for DescribeAccountAssignmentCreationStatusError {
             DescribeAccountAssignmentCreationStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2347,7 +2373,7 @@ pub enum DescribeAccountAssignmentDeletionStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountAssignmentDeletionStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2391,7 +2417,9 @@ impl DescribeAccountAssignmentDeletionStatusError {
     /// Creates the `DescribeAccountAssignmentDeletionStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2400,7 +2428,9 @@ impl DescribeAccountAssignmentDeletionStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2478,9 +2508,7 @@ impl std::error::Error for DescribeAccountAssignmentDeletionStatusError {
             DescribeAccountAssignmentDeletionStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2509,7 +2537,7 @@ pub enum DescribeInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInstanceAccessControlAttributeConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2558,7 +2586,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -2569,7 +2597,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationError {
         Self {
             meta: err.clone(),
             kind: DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -2653,7 +2681,7 @@ impl std::error::Error for DescribeInstanceAccessControlAttributeConfigurationEr
             Some(_inner)
             ,
             DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -2683,7 +2711,7 @@ pub enum DescribePermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2714,7 +2742,9 @@ impl DescribePermissionSetError {
     /// Creates the `DescribePermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePermissionSetErrorKind::Unhandled(err.into()),
+            kind: DescribePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2723,7 +2753,9 @@ impl DescribePermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePermissionSetErrorKind::Unhandled(err.into()),
+            kind: DescribePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2791,7 +2823,7 @@ impl std::error::Error for DescribePermissionSetError {
             DescribePermissionSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribePermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribePermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribePermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2820,7 +2852,7 @@ pub enum DescribePermissionSetProvisioningStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePermissionSetProvisioningStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2864,7 +2896,9 @@ impl DescribePermissionSetProvisioningStatusError {
     /// Creates the `DescribePermissionSetProvisioningStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePermissionSetProvisioningStatusErrorKind::Unhandled(err.into()),
+            kind: DescribePermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2873,7 +2907,9 @@ impl DescribePermissionSetProvisioningStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePermissionSetProvisioningStatusErrorKind::Unhandled(err.into()),
+            kind: DescribePermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2951,9 +2987,7 @@ impl std::error::Error for DescribePermissionSetProvisioningStatusError {
             DescribePermissionSetProvisioningStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribePermissionSetProvisioningStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribePermissionSetProvisioningStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2984,7 +3018,7 @@ pub enum DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachCustomerManagedPolicyReferenceFromPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3036,7 +3070,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -3047,7 +3081,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetError {
         Self {
             meta: err.clone(),
             kind: DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -3138,7 +3172,7 @@ impl std::error::Error for DetachCustomerManagedPolicyReferenceFromPermissionSet
             Some(_inner)
             ,
             DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -3170,7 +3204,7 @@ pub enum DetachManagedPolicyFromPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachManagedPolicyFromPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3217,7 +3251,9 @@ impl DetachManagedPolicyFromPermissionSetError {
     /// Creates the `DetachManagedPolicyFromPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3226,7 +3262,9 @@ impl DetachManagedPolicyFromPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(err.into()),
+            kind: DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3314,9 +3352,7 @@ impl std::error::Error for DetachManagedPolicyFromPermissionSetError {
             DetachManagedPolicyFromPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3345,7 +3381,7 @@ pub enum GetInlinePolicyForPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInlinePolicyForPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3385,7 +3421,9 @@ impl GetInlinePolicyForPermissionSetError {
     /// Creates the `GetInlinePolicyForPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInlinePolicyForPermissionSetErrorKind::Unhandled(err.into()),
+            kind: GetInlinePolicyForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3394,7 +3432,9 @@ impl GetInlinePolicyForPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInlinePolicyForPermissionSetErrorKind::Unhandled(err.into()),
+            kind: GetInlinePolicyForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3466,7 +3506,7 @@ impl std::error::Error for GetInlinePolicyForPermissionSetError {
             }
             GetInlinePolicyForPermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetInlinePolicyForPermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            GetInlinePolicyForPermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInlinePolicyForPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3495,7 +3535,7 @@ pub enum GetPermissionsBoundaryForPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPermissionsBoundaryForPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3539,7 +3579,9 @@ impl GetPermissionsBoundaryForPermissionSetError {
     /// Creates the `GetPermissionsBoundaryForPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(err.into()),
+            kind: GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3548,7 +3590,9 @@ impl GetPermissionsBoundaryForPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(err.into()),
+            kind: GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3626,9 +3670,7 @@ impl std::error::Error for GetPermissionsBoundaryForPermissionSetError {
             GetPermissionsBoundaryForPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3657,7 +3699,7 @@ pub enum ListAccountAssignmentCreationStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountAssignmentCreationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3701,7 +3743,9 @@ impl ListAccountAssignmentCreationStatusError {
     /// Creates the `ListAccountAssignmentCreationStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountAssignmentCreationStatusErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3710,7 +3754,9 @@ impl ListAccountAssignmentCreationStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountAssignmentCreationStatusErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3788,9 +3834,7 @@ impl std::error::Error for ListAccountAssignmentCreationStatusError {
             ListAccountAssignmentCreationStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListAccountAssignmentCreationStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAccountAssignmentCreationStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3819,7 +3863,7 @@ pub enum ListAccountAssignmentDeletionStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountAssignmentDeletionStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3863,7 +3907,9 @@ impl ListAccountAssignmentDeletionStatusError {
     /// Creates the `ListAccountAssignmentDeletionStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountAssignmentDeletionStatusErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3872,7 +3918,9 @@ impl ListAccountAssignmentDeletionStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountAssignmentDeletionStatusErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3950,9 +3998,7 @@ impl std::error::Error for ListAccountAssignmentDeletionStatusError {
             ListAccountAssignmentDeletionStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListAccountAssignmentDeletionStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAccountAssignmentDeletionStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3981,7 +4027,7 @@ pub enum ListAccountAssignmentsErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountAssignmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4012,7 +4058,9 @@ impl ListAccountAssignmentsError {
     /// Creates the `ListAccountAssignmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountAssignmentsErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4021,7 +4069,9 @@ impl ListAccountAssignmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountAssignmentsErrorKind::Unhandled(err.into()),
+            kind: ListAccountAssignmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4089,7 +4139,7 @@ impl std::error::Error for ListAccountAssignmentsError {
             ListAccountAssignmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccountAssignmentsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAccountAssignmentsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAccountAssignmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccountAssignmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4118,7 +4168,7 @@ pub enum ListAccountsForProvisionedPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccountsForProvisionedPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4162,7 +4212,9 @@ impl ListAccountsForProvisionedPermissionSetError {
     /// Creates the `ListAccountsForProvisionedPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4171,7 +4223,9 @@ impl ListAccountsForProvisionedPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4249,9 +4303,7 @@ impl std::error::Error for ListAccountsForProvisionedPermissionSetError {
             ListAccountsForProvisionedPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4280,7 +4332,7 @@ pub enum ListCustomerManagedPolicyReferencesInPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomerManagedPolicyReferencesInPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4329,7 +4381,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetError {
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
             kind: ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
             meta: Default::default(),
         }
@@ -4340,7 +4392,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetError {
         Self {
             meta: err.clone(),
             kind: ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(
-                err.into(),
+                crate::error::Unhandled::new(err.into()),
             ),
         }
     }
@@ -4422,7 +4474,7 @@ impl std::error::Error for ListCustomerManagedPolicyReferencesInPermissionSetErr
             Some(_inner)
             ,
             ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -4450,7 +4502,7 @@ pub enum ListInstancesErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4480,7 +4532,7 @@ impl ListInstancesError {
     /// Creates the `ListInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListInstancesErrorKind::Unhandled(err.into()),
+            kind: ListInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4489,7 +4541,7 @@ impl ListInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListInstancesErrorKind::Unhandled(err.into()),
+            kind: ListInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4540,7 +4592,7 @@ impl std::error::Error for ListInstancesError {
             ListInstancesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListInstancesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListInstancesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4569,7 +4621,7 @@ pub enum ListManagedPoliciesInPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListManagedPoliciesInPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4613,7 +4665,9 @@ impl ListManagedPoliciesInPermissionSetError {
     /// Creates the `ListManagedPoliciesInPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListManagedPoliciesInPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ListManagedPoliciesInPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4622,7 +4676,9 @@ impl ListManagedPoliciesInPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListManagedPoliciesInPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ListManagedPoliciesInPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4700,7 +4756,7 @@ impl std::error::Error for ListManagedPoliciesInPermissionSetError {
             ListManagedPoliciesInPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListManagedPoliciesInPermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListManagedPoliciesInPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4729,7 +4785,7 @@ pub enum ListPermissionSetProvisioningStatusErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionSetProvisioningStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4773,7 +4829,9 @@ impl ListPermissionSetProvisioningStatusError {
     /// Creates the `ListPermissionSetProvisioningStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionSetProvisioningStatusErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4782,7 +4840,9 @@ impl ListPermissionSetProvisioningStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionSetProvisioningStatusErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4860,9 +4920,7 @@ impl std::error::Error for ListPermissionSetProvisioningStatusError {
             ListPermissionSetProvisioningStatusErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListPermissionSetProvisioningStatusErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListPermissionSetProvisioningStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4891,7 +4949,7 @@ pub enum ListPermissionSetsErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4922,7 +4980,7 @@ impl ListPermissionSetsError {
     /// Creates the `ListPermissionSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionSetsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4931,7 +4989,7 @@ impl ListPermissionSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionSetsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4999,7 +5057,7 @@ impl std::error::Error for ListPermissionSetsError {
             ListPermissionSetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListPermissionSetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPermissionSetsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPermissionSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPermissionSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5028,7 +5086,7 @@ pub enum ListPermissionSetsProvisionedToAccountErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionSetsProvisionedToAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5072,7 +5130,9 @@ impl ListPermissionSetsProvisionedToAccountError {
     /// Creates the `ListPermissionSetsProvisionedToAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5081,7 +5141,9 @@ impl ListPermissionSetsProvisionedToAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(err.into()),
+            kind: ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5159,9 +5221,7 @@ impl std::error::Error for ListPermissionSetsProvisionedToAccountError {
             ListPermissionSetsProvisionedToAccountErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5190,7 +5250,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5221,7 +5281,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5230,7 +5290,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5298,7 +5358,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5329,7 +5389,7 @@ pub enum ProvisionPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ProvisionPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5361,7 +5421,9 @@ impl ProvisionPermissionSetError {
     /// Creates the `ProvisionPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ProvisionPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ProvisionPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5370,7 +5432,9 @@ impl ProvisionPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ProvisionPermissionSetErrorKind::Unhandled(err.into()),
+            kind: ProvisionPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5446,7 +5510,7 @@ impl std::error::Error for ProvisionPermissionSetError {
             ProvisionPermissionSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ProvisionPermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             ProvisionPermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            ProvisionPermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ProvisionPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5479,7 +5543,7 @@ pub enum PutInlinePolicyToPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutInlinePolicyToPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5521,7 +5585,9 @@ impl PutInlinePolicyToPermissionSetError {
     /// Creates the `PutInlinePolicyToPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutInlinePolicyToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: PutInlinePolicyToPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5530,7 +5596,9 @@ impl PutInlinePolicyToPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutInlinePolicyToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: PutInlinePolicyToPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5620,7 +5688,7 @@ impl std::error::Error for PutInlinePolicyToPermissionSetError {
             }
             PutInlinePolicyToPermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutInlinePolicyToPermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            PutInlinePolicyToPermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutInlinePolicyToPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5651,7 +5719,7 @@ pub enum PutPermissionsBoundaryToPermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutPermissionsBoundaryToPermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5698,7 +5766,9 @@ impl PutPermissionsBoundaryToPermissionSetError {
     /// Creates the `PutPermissionsBoundaryToPermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5707,7 +5777,9 @@ impl PutPermissionsBoundaryToPermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(err.into()),
+            kind: PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5795,9 +5867,7 @@ impl std::error::Error for PutPermissionsBoundaryToPermissionSetError {
             PutPermissionsBoundaryToPermissionSetErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5830,7 +5900,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5863,7 +5933,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5872,7 +5942,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5941,7 +6011,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5972,7 +6042,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6004,7 +6074,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6013,7 +6083,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6077,7 +6147,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6108,7 +6178,7 @@ pub enum UpdateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateInstanceAccessControlAttributeConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6159,7 +6229,9 @@ impl UpdateInstanceAccessControlAttributeConfigurationError {
     /// Creates the `UpdateInstanceAccessControlAttributeConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6168,7 +6240,9 @@ impl UpdateInstanceAccessControlAttributeConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6259,7 +6333,7 @@ impl std::error::Error for UpdateInstanceAccessControlAttributeConfigurationErro
             Some(_inner)
             ,
             UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
+                Some(_inner)
             }
         }
     }
@@ -6291,7 +6365,7 @@ pub enum UpdatePermissionSetErrorKind {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePermissionSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6323,7 +6397,7 @@ impl UpdatePermissionSetError {
     /// Creates the `UpdatePermissionSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePermissionSetErrorKind::Unhandled(err.into()),
+            kind: UpdatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6332,7 +6406,7 @@ impl UpdatePermissionSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePermissionSetErrorKind::Unhandled(err.into()),
+            kind: UpdatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6408,7 +6482,32 @@ impl std::error::Error for UpdatePermissionSetError {
             UpdatePermissionSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePermissionSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdatePermissionSetErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePermissionSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePermissionSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

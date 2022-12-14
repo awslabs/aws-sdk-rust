@@ -732,7 +732,7 @@ pub enum CreateMemberErrorKind {
     /// <p></p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -767,7 +767,7 @@ impl CreateMemberError {
     /// Creates the `CreateMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMemberErrorKind::Unhandled(err.into()),
+            kind: CreateMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -776,7 +776,7 @@ impl CreateMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMemberErrorKind::Unhandled(err.into()),
+            kind: CreateMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -867,7 +867,7 @@ impl std::error::Error for CreateMemberError {
             CreateMemberErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             CreateMemberErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateMemberErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -900,7 +900,7 @@ pub enum CreateNetworkErrorKind {
     /// <p></p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -933,7 +933,7 @@ impl CreateNetworkError {
     /// Creates the `CreateNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -942,7 +942,7 @@ impl CreateNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNetworkErrorKind::Unhandled(err.into()),
+            kind: CreateNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1017,7 +1017,7 @@ impl std::error::Error for CreateNetworkError {
             CreateNetworkErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             CreateNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateNetworkErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1054,7 +1054,7 @@ pub enum CreateNodeErrorKind {
     /// <p></p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1089,7 +1089,7 @@ impl CreateNodeError {
     /// Creates the `CreateNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateNodeErrorKind::Unhandled(err.into()),
+            kind: CreateNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1098,7 +1098,7 @@ impl CreateNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateNodeErrorKind::Unhandled(err.into()),
+            kind: CreateNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1186,7 +1186,7 @@ impl std::error::Error for CreateNodeError {
             CreateNodeErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             CreateNodeErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateNodeErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1219,7 +1219,7 @@ pub enum CreateProposalErrorKind {
     /// <p></p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1252,7 +1252,7 @@ impl CreateProposalError {
     /// Creates the `CreateProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProposalErrorKind::Unhandled(err.into()),
+            kind: CreateProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1261,7 +1261,7 @@ impl CreateProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProposalErrorKind::Unhandled(err.into()),
+            kind: CreateProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1339,7 +1339,7 @@ impl std::error::Error for CreateProposalError {
             CreateProposalErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             CreateProposalErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateProposalErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateProposalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProposalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1370,7 +1370,7 @@ pub enum DeleteMemberErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1402,7 +1402,7 @@ impl DeleteMemberError {
     /// Creates the `DeleteMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMemberErrorKind::Unhandled(err.into()),
+            kind: DeleteMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1411,7 +1411,7 @@ impl DeleteMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMemberErrorKind::Unhandled(err.into()),
+            kind: DeleteMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1481,7 +1481,7 @@ impl std::error::Error for DeleteMemberError {
             DeleteMemberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteMemberErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             DeleteMemberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1512,7 +1512,7 @@ pub enum DeleteNodeErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1544,7 +1544,7 @@ impl DeleteNodeError {
     /// Creates the `DeleteNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNodeErrorKind::Unhandled(err.into()),
+            kind: DeleteNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1553,7 +1553,7 @@ impl DeleteNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNodeErrorKind::Unhandled(err.into()),
+            kind: DeleteNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1620,7 +1620,7 @@ impl std::error::Error for DeleteNodeError {
             DeleteNodeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteNodeErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             DeleteNodeErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1649,7 +1649,7 @@ pub enum GetMemberErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1680,7 +1680,7 @@ impl GetMemberError {
     /// Creates the `GetMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMemberErrorKind::Unhandled(err.into()),
+            kind: GetMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1689,7 +1689,7 @@ impl GetMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMemberErrorKind::Unhandled(err.into()),
+            kind: GetMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1745,7 +1745,7 @@ impl std::error::Error for GetMemberError {
             GetMemberErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetMemberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetMemberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1774,7 +1774,7 @@ pub enum GetNetworkErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1805,7 +1805,7 @@ impl GetNetworkError {
     /// Creates the `GetNetworkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNetworkErrorKind::Unhandled(err.into()),
+            kind: GetNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1814,7 +1814,7 @@ impl GetNetworkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNetworkErrorKind::Unhandled(err.into()),
+            kind: GetNetworkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1873,7 +1873,7 @@ impl std::error::Error for GetNetworkError {
             GetNetworkErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetNetworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetNetworkErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetNetworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNetworkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1902,7 +1902,7 @@ pub enum GetNodeErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1933,7 +1933,7 @@ impl GetNodeError {
     /// Creates the `GetNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetNodeErrorKind::Unhandled(err.into()),
+            kind: GetNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1942,7 +1942,7 @@ impl GetNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetNodeErrorKind::Unhandled(err.into()),
+            kind: GetNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1998,7 +1998,7 @@ impl std::error::Error for GetNodeError {
             GetNodeErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetNodeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetNodeErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2027,7 +2027,7 @@ pub enum GetProposalErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,7 +2058,7 @@ impl GetProposalError {
     /// Creates the `GetProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetProposalErrorKind::Unhandled(err.into()),
+            kind: GetProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2067,7 +2067,7 @@ impl GetProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetProposalErrorKind::Unhandled(err.into()),
+            kind: GetProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2126,7 +2126,7 @@ impl std::error::Error for GetProposalError {
             GetProposalErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetProposalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetProposalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetProposalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetProposalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2157,7 +2157,7 @@ pub enum ListInvitationsErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListInvitationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,7 +2189,7 @@ impl ListInvitationsError {
     /// Creates the `ListInvitationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListInvitationsErrorKind::Unhandled(err.into()),
+            kind: ListInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2198,7 +2198,7 @@ impl ListInvitationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListInvitationsErrorKind::Unhandled(err.into()),
+            kind: ListInvitationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2271,7 +2271,7 @@ impl std::error::Error for ListInvitationsError {
             ListInvitationsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
             ListInvitationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListInvitationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListInvitationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListInvitationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2298,7 +2298,7 @@ pub enum ListMembersErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMembersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2328,7 +2328,7 @@ impl ListMembersError {
     /// Creates the `ListMembersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMembersErrorKind::Unhandled(err.into()),
+            kind: ListMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2337,7 +2337,7 @@ impl ListMembersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMembersErrorKind::Unhandled(err.into()),
+            kind: ListMembersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2388,7 +2388,7 @@ impl std::error::Error for ListMembersError {
             ListMembersErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListMembersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListMembersErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListMembersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMembersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2415,7 +2415,7 @@ pub enum ListNetworksErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNetworksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2445,7 +2445,7 @@ impl ListNetworksError {
     /// Creates the `ListNetworksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNetworksErrorKind::Unhandled(err.into()),
+            kind: ListNetworksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2454,7 +2454,7 @@ impl ListNetworksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNetworksErrorKind::Unhandled(err.into()),
+            kind: ListNetworksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2508,7 +2508,7 @@ impl std::error::Error for ListNetworksError {
             ListNetworksErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListNetworksErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListNetworksErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListNetworksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNetworksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2535,7 +2535,7 @@ pub enum ListNodesErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNodesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2565,7 +2565,7 @@ impl ListNodesError {
     /// Creates the `ListNodesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNodesErrorKind::Unhandled(err.into()),
+            kind: ListNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2574,7 +2574,7 @@ impl ListNodesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNodesErrorKind::Unhandled(err.into()),
+            kind: ListNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2625,7 +2625,7 @@ impl std::error::Error for ListNodesError {
             ListNodesErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListNodesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListNodesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListNodesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNodesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2654,7 +2654,7 @@ pub enum ListProposalsErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProposalsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2685,7 +2685,7 @@ impl ListProposalsError {
     /// Creates the `ListProposalsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProposalsErrorKind::Unhandled(err.into()),
+            kind: ListProposalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2694,7 +2694,7 @@ impl ListProposalsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProposalsErrorKind::Unhandled(err.into()),
+            kind: ListProposalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2756,7 +2756,7 @@ impl std::error::Error for ListProposalsError {
             ListProposalsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListProposalsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListProposalsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListProposalsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProposalsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2783,7 +2783,7 @@ pub enum ListProposalVotesErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProposalVotesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2813,7 +2813,7 @@ impl ListProposalVotesError {
     /// Creates the `ListProposalVotesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProposalVotesErrorKind::Unhandled(err.into()),
+            kind: ListProposalVotesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2822,7 +2822,7 @@ impl ListProposalVotesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProposalVotesErrorKind::Unhandled(err.into()),
+            kind: ListProposalVotesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2882,7 +2882,7 @@ impl std::error::Error for ListProposalVotesError {
             ListProposalVotesErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListProposalVotesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListProposalVotesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListProposalVotesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProposalVotesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2909,7 +2909,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The requested resource exists but is not in a status that can complete the operation.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2939,7 +2939,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2948,7 +2948,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3008,7 +3008,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3039,7 +3039,7 @@ pub enum RejectInvitationErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectInvitationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3071,7 +3071,7 @@ impl RejectInvitationError {
     /// Creates the `RejectInvitationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RejectInvitationErrorKind::Unhandled(err.into()),
+            kind: RejectInvitationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3080,7 +3080,7 @@ impl RejectInvitationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RejectInvitationErrorKind::Unhandled(err.into()),
+            kind: RejectInvitationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3156,7 +3156,7 @@ impl std::error::Error for RejectInvitationError {
             RejectInvitationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             RejectInvitationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RejectInvitationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RejectInvitationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RejectInvitationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3185,7 +3185,7 @@ pub enum TagResourceErrorKind {
     /// <p></p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3216,7 +3216,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3225,7 +3225,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3287,7 +3287,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3314,7 +3314,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The requested resource exists but is not in a status that can complete the operation.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3344,7 +3344,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3353,7 +3353,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3413,7 +3413,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3442,7 +3442,7 @@ pub enum UpdateMemberErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3473,7 +3473,7 @@ impl UpdateMemberError {
     /// Creates the `UpdateMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMemberErrorKind::Unhandled(err.into()),
+            kind: UpdateMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3482,7 +3482,7 @@ impl UpdateMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMemberErrorKind::Unhandled(err.into()),
+            kind: UpdateMemberErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3544,7 +3544,7 @@ impl std::error::Error for UpdateMemberError {
             UpdateMemberErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateMemberErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateMemberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3573,7 +3573,7 @@ pub enum UpdateNodeErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3604,7 +3604,7 @@ impl UpdateNodeError {
     /// Creates the `UpdateNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNodeErrorKind::Unhandled(err.into()),
+            kind: UpdateNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3613,7 +3613,7 @@ impl UpdateNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNodeErrorKind::Unhandled(err.into()),
+            kind: UpdateNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3672,7 +3672,7 @@ impl std::error::Error for UpdateNodeError {
             UpdateNodeErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateNodeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateNodeErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3703,7 +3703,7 @@ pub enum VoteOnProposalErrorKind {
     /// <p>The request or operation could not be performed because a service is throttling requests. The most common source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is exceeded. Request a limit increase or delete unused resources if possible.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VoteOnProposalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3735,7 +3735,7 @@ impl VoteOnProposalError {
     /// Creates the `VoteOnProposalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: VoteOnProposalErrorKind::Unhandled(err.into()),
+            kind: VoteOnProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3744,7 +3744,7 @@ impl VoteOnProposalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: VoteOnProposalErrorKind::Unhandled(err.into()),
+            kind: VoteOnProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3817,7 +3817,32 @@ impl std::error::Error for VoteOnProposalError {
             VoteOnProposalErrorKind::InvalidRequestException(_inner) => Some(_inner),
             VoteOnProposalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             VoteOnProposalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            VoteOnProposalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            VoteOnProposalErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -54,7 +54,7 @@ pub enum Error {
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -103,9 +103,11 @@ where
                 crate::error::CreateActivityErrorKind::TooManyTags(inner) => {
                     Error::TooManyTags(inner)
                 }
-                crate::error::CreateActivityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateActivityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,10 +151,10 @@ where
                     Error::TooManyTags(inner)
                 }
                 crate::error::CreateStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,9 +168,11 @@ where
                 crate::error::DeleteActivityErrorKind::InvalidArn(inner) => {
                     Error::InvalidArn(inner)
                 }
-                crate::error::DeleteActivityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteActivityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -185,10 +189,10 @@ where
                     Error::InvalidArn(inner)
                 }
                 crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,10 +212,10 @@ where
                     Error::InvalidArn(inner)
                 }
                 crate::error::DescribeActivityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -231,10 +235,10 @@ where
                     Error::InvalidArn(inner)
                 }
                 crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -255,10 +259,10 @@ where
                     Error::StateMachineDoesNotExist(inner)
                 }
                 crate::error::DescribeStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -283,10 +287,10 @@ where
                     Error::InvalidArn(inner)
                 }
                 crate::error::DescribeStateMachineForExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -306,9 +310,11 @@ where
                 crate::error::GetActivityTaskErrorKind::InvalidArn(inner) => {
                     Error::InvalidArn(inner)
                 }
-                crate::error::GetActivityTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetActivityTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -331,10 +337,10 @@ where
                     Error::InvalidToken(inner)
                 }
                 crate::error::GetExecutionHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -348,9 +354,11 @@ where
                 crate::error::ListActivitiesErrorKind::InvalidToken(inner) => {
                     Error::InvalidToken(inner)
                 }
-                crate::error::ListActivitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListActivitiesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -373,9 +381,11 @@ where
                 crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => {
                     Error::StateMachineTypeNotSupported(inner)
                 }
-                crate::error::ListExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListExecutionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -392,10 +402,10 @@ where
                     Error::InvalidToken(inner)
                 }
                 crate::error::ListStateMachinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -415,10 +425,10 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -438,9 +448,11 @@ where
                 crate::error::SendTaskFailureErrorKind::TaskTimedOut(inner) => {
                     Error::TaskTimedOut(inner)
                 }
-                crate::error::SendTaskFailureErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendTaskFailureErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -463,10 +475,10 @@ where
                     Error::TaskTimedOut(inner)
                 }
                 crate::error::SendTaskHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -489,9 +501,11 @@ where
                 crate::error::SendTaskSuccessErrorKind::TaskTimedOut(inner) => {
                     Error::TaskTimedOut(inner)
                 }
-                crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -523,9 +537,11 @@ where
                 crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => {
                     Error::StateMachineDoesNotExist(inner)
                 }
-                crate::error::StartExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartExecutionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -557,10 +573,10 @@ where
                     Error::StateMachineTypeNotSupported(inner)
                 }
                 crate::error::StartSyncExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,9 +591,11 @@ where
                     Error::ExecutionDoesNotExist(inner)
                 }
                 crate::error::StopExecutionErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
-                crate::error::StopExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopExecutionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -593,9 +611,11 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::TagResourceErrorKind::TooManyTags(inner) => Error::TooManyTags(inner),
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -610,9 +630,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -647,10 +669,10 @@ where
                     Error::StateMachineDoesNotExist(inner)
                 }
                 crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -27,7 +27,7 @@ pub enum Error {
     /// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
     WorkflowExecutionAlreadyStartedFault(crate::error::WorkflowExecutionAlreadyStartedFault),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,9 +58,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(inner) => Error::OperationNotPermittedFault(inner),
                 crate::error::CountClosedWorkflowExecutionsErrorKind::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
-                crate::error::CountClosedWorkflowExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CountClosedWorkflowExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -81,10 +81,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::CountOpenWorkflowExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -105,10 +105,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::CountPendingActivityTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -129,10 +129,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::CountPendingDecisionTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -156,10 +156,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::DeprecateActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,9 +179,11 @@ where
                 crate::error::DeprecateDomainErrorKind::UnknownResourceFault(inner) => {
                     Error::UnknownResourceFault(inner)
                 }
-                crate::error::DeprecateDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeprecateDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -205,10 +207,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::DeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -229,10 +231,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::DescribeActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -249,9 +251,11 @@ where
                 crate::error::DescribeDomainErrorKind::UnknownResourceFault(inner) => {
                     Error::UnknownResourceFault(inner)
                 }
-                crate::error::DescribeDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,10 +276,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::DescribeWorkflowExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +300,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::DescribeWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -320,10 +324,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::GetWorkflowExecutionHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -343,10 +347,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::ListActivityTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -367,10 +371,10 @@ where
                     inner,
                 ) => Error::UnknownResourceFault(inner),
                 crate::error::ListClosedWorkflowExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -384,9 +388,11 @@ where
                 crate::error::ListDomainsErrorKind::OperationNotPermittedFault(inner) => {
                     Error::OperationNotPermittedFault(inner)
                 }
-                crate::error::ListDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDomainsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -407,10 +413,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::ListOpenWorkflowExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -433,10 +439,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -456,10 +462,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::ListWorkflowTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -482,10 +488,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::PollForActivityTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -508,10 +514,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::PollForDecisionTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -532,10 +538,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::RecordActivityTaskHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -562,10 +568,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::RegisterActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -588,9 +594,11 @@ where
                 crate::error::RegisterDomainErrorKind::TooManyTagsFault(inner) => {
                     Error::TooManyTagsFault(inner)
                 }
-                crate::error::RegisterDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -617,10 +625,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::RegisterWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -640,9 +648,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault(inner) => Error::OperationNotPermittedFault(inner),
                 crate::error::RequestCancelWorkflowExecutionErrorKind::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
-                crate::error::RequestCancelWorkflowExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RequestCancelWorkflowExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -663,10 +671,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::RespondActivityTaskCanceledErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -687,10 +695,10 @@ where
                     inner,
                 ) => Error::UnknownResourceFault(inner),
                 crate::error::RespondActivityTaskCompletedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -711,10 +719,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::RespondActivityTaskFailedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -735,10 +743,10 @@ where
                     inner,
                 ) => Error::UnknownResourceFault(inner),
                 crate::error::RespondDecisionTaskCompletedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -759,10 +767,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::SignalWorkflowExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -782,9 +790,9 @@ where
                 crate::error::StartWorkflowExecutionErrorKind::TypeDeprecatedFault(inner) => Error::TypeDeprecatedFault(inner),
                 crate::error::StartWorkflowExecutionErrorKind::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
                 crate::error::StartWorkflowExecutionErrorKind::WorkflowExecutionAlreadyStartedFault(inner) => Error::WorkflowExecutionAlreadyStartedFault(inner),
-                crate::error::StartWorkflowExecutionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartWorkflowExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -807,9 +815,11 @@ where
                 crate::error::TagResourceErrorKind::UnknownResourceFault(inner) => {
                     Error::UnknownResourceFault(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -830,10 +840,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::TerminateWorkflowExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -857,10 +867,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::UndeprecateActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -883,10 +893,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::UndeprecateDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -910,10 +920,10 @@ where
                     Error::UnknownResourceFault(inner)
                 }
                 crate::error::UndeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -933,9 +943,11 @@ where
                 crate::error::UntagResourceErrorKind::UnknownResourceFault(inner) => {
                     Error::UnknownResourceFault(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

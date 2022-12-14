@@ -6,7 +6,7 @@ pub enum Error {
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26,9 +26,11 @@ where
                 crate::error::GetDeploymentsErrorKind::InternalServiceException(inner) => {
                     Error::InternalServiceException(inner)
                 }
-                crate::error::GetDeploymentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeploymentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -46,10 +48,10 @@ where
                     Error::InternalServiceException(inner)
                 }
                 crate::error::GetDeviceRegistrationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -63,9 +65,11 @@ where
                 crate::error::SendHeartbeatErrorKind::InternalServiceException(inner) => {
                     Error::InternalServiceException(inner)
                 }
-                crate::error::SendHeartbeatErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendHeartbeatErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

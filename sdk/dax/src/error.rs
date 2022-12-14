@@ -1802,7 +1802,7 @@ pub enum CreateClusterErrorKind {
     /// <p>You have exceeded the maximum number of tags for this DAX cluster.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1843,7 +1843,7 @@ impl CreateClusterError {
     /// Creates the `CreateClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateClusterErrorKind::Unhandled(err.into()),
+            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1852,7 +1852,7 @@ impl CreateClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateClusterErrorKind::Unhandled(err.into()),
+            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2000,7 +2000,7 @@ impl std::error::Error for CreateClusterError {
             CreateClusterErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateClusterErrorKind::SubnetGroupNotFoundFault(_inner) => Some(_inner),
             CreateClusterErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2031,7 +2031,7 @@ pub enum CreateParameterGroupErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2069,7 +2069,9 @@ impl CreateParameterGroupError {
     /// Creates the `CreateParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2078,7 +2080,9 @@ impl CreateParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateParameterGroupErrorKind::Unhandled(err.into()),
+            kind: CreateParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2156,7 +2160,7 @@ impl std::error::Error for CreateParameterGroupError {
             CreateParameterGroupErrorKind::ParameterGroupAlreadyExistsFault(_inner) => Some(_inner),
             CreateParameterGroupErrorKind::ParameterGroupQuotaExceededFault(_inner) => Some(_inner),
             CreateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            CreateParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2185,7 +2189,7 @@ pub enum CreateSubnetGroupErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2216,7 +2220,7 @@ impl CreateSubnetGroupError {
     /// Creates the `CreateSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2225,7 +2229,7 @@ impl CreateSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2290,7 +2294,7 @@ impl std::error::Error for CreateSubnetGroupError {
             CreateSubnetGroupErrorKind::SubnetGroupAlreadyExistsFault(_inner) => Some(_inner),
             CreateSubnetGroupErrorKind::SubnetGroupQuotaExceededFault(_inner) => Some(_inner),
             CreateSubnetGroupErrorKind::SubnetQuotaExceededFault(_inner) => Some(_inner),
-            CreateSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2321,7 +2325,7 @@ pub enum DecreaseReplicationFactorErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecreaseReplicationFactorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2359,7 +2363,9 @@ impl DecreaseReplicationFactorError {
     /// Creates the `DecreaseReplicationFactorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DecreaseReplicationFactorErrorKind::Unhandled(err.into()),
+            kind: DecreaseReplicationFactorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2368,7 +2374,9 @@ impl DecreaseReplicationFactorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DecreaseReplicationFactorErrorKind::Unhandled(err.into()),
+            kind: DecreaseReplicationFactorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2450,7 +2458,7 @@ impl std::error::Error for DecreaseReplicationFactorError {
             DecreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DecreaseReplicationFactorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DecreaseReplicationFactorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2479,7 +2487,7 @@ pub enum DeleteClusterErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2510,7 +2518,7 @@ impl DeleteClusterError {
     /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2519,7 +2527,7 @@ impl DeleteClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteClusterErrorKind::Unhandled(err.into()),
+            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2584,7 +2592,7 @@ impl std::error::Error for DeleteClusterError {
             DeleteClusterErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             DeleteClusterErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteClusterErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2613,7 +2621,7 @@ pub enum DeleteParameterGroupErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2646,7 +2654,9 @@ impl DeleteParameterGroupError {
     /// Creates the `DeleteParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2655,7 +2665,9 @@ impl DeleteParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteParameterGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2725,7 +2737,7 @@ impl std::error::Error for DeleteParameterGroupError {
             DeleteParameterGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault(_inner) => Some(_inner),
             DeleteParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DeleteParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2750,7 +2762,7 @@ pub enum DeleteSubnetGroupErrorKind {
     /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2779,7 +2791,7 @@ impl DeleteSubnetGroupError {
     /// Creates the `DeleteSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2788,7 +2800,7 @@ impl DeleteSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2840,7 +2852,7 @@ impl std::error::Error for DeleteSubnetGroupError {
             DeleteSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DeleteSubnetGroupErrorKind::SubnetGroupInUseFault(_inner) => Some(_inner),
             DeleteSubnetGroupErrorKind::SubnetGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2867,7 +2879,7 @@ pub enum DescribeClustersErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2899,7 +2911,7 @@ impl DescribeClustersError {
     /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2908,7 +2920,7 @@ impl DescribeClustersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeClustersErrorKind::Unhandled(err.into()),
+            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2968,7 +2980,7 @@ impl std::error::Error for DescribeClustersError {
             DescribeClustersErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             DescribeClustersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeClustersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2993,7 +3005,7 @@ pub enum DescribeDefaultParametersErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDefaultParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3028,7 +3040,9 @@ impl DescribeDefaultParametersError {
     /// Creates the `DescribeDefaultParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDefaultParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDefaultParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3037,7 +3051,9 @@ impl DescribeDefaultParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDefaultParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeDefaultParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3095,7 +3111,7 @@ impl std::error::Error for DescribeDefaultParametersError {
             DescribeDefaultParametersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDefaultParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDefaultParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3120,7 +3136,7 @@ pub enum DescribeEventsErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3149,7 +3165,7 @@ impl DescribeEventsError {
     /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3158,7 +3174,7 @@ impl DescribeEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventsErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3210,7 +3226,7 @@ impl std::error::Error for DescribeEventsError {
             DescribeEventsErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             DescribeEventsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeEventsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3237,7 +3253,7 @@ pub enum DescribeParameterGroupsErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3273,7 +3289,9 @@ impl DescribeParameterGroupsError {
     /// Creates the `DescribeParameterGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3282,7 +3300,9 @@ impl DescribeParameterGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeParameterGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3348,7 +3368,7 @@ impl std::error::Error for DescribeParameterGroupsError {
             DescribeParameterGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3375,7 +3395,7 @@ pub enum DescribeParametersErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3407,7 +3427,7 @@ impl DescribeParametersError {
     /// Creates the `DescribeParametersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3416,7 +3436,7 @@ impl DescribeParametersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeParametersErrorKind::Unhandled(err.into()),
+            kind: DescribeParametersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3478,7 +3498,7 @@ impl std::error::Error for DescribeParametersError {
             DescribeParametersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DescribeParametersErrorKind::ParameterGroupNotFoundFault(_inner) => Some(_inner),
             DescribeParametersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            DescribeParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeParametersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3501,7 +3521,7 @@ pub enum DescribeSubnetGroupsErrorKind {
     /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSubnetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3529,7 +3549,9 @@ impl DescribeSubnetGroupsError {
     /// Creates the `DescribeSubnetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSubnetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3538,7 +3560,9 @@ impl DescribeSubnetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSubnetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3582,7 +3606,7 @@ impl std::error::Error for DescribeSubnetGroupsError {
         match &self.kind {
             DescribeSubnetGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DescribeSubnetGroupsErrorKind::SubnetGroupNotFoundFault(_inner) => Some(_inner),
-            DescribeSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3619,7 +3643,7 @@ pub enum IncreaseReplicationFactorErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IncreaseReplicationFactorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3668,7 +3692,9 @@ impl IncreaseReplicationFactorError {
     /// Creates the `IncreaseReplicationFactorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: IncreaseReplicationFactorErrorKind::Unhandled(err.into()),
+            kind: IncreaseReplicationFactorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3677,7 +3703,9 @@ impl IncreaseReplicationFactorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: IncreaseReplicationFactorErrorKind::Unhandled(err.into()),
+            kind: IncreaseReplicationFactorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3789,7 +3817,7 @@ impl std::error::Error for IncreaseReplicationFactorError {
             IncreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            IncreaseReplicationFactorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            IncreaseReplicationFactorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3820,7 +3848,7 @@ pub enum ListTagsErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3852,7 +3880,7 @@ impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3861,7 +3889,7 @@ impl ListTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(err.into()),
+            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3928,7 +3956,7 @@ impl std::error::Error for ListTagsError {
             ListTagsErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ListTagsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3959,7 +3987,7 @@ pub enum RebootNodeErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RebootNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3991,7 +4019,7 @@ impl RebootNodeError {
     /// Creates the `RebootNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RebootNodeErrorKind::Unhandled(err.into()),
+            kind: RebootNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4000,7 +4028,7 @@ impl RebootNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RebootNodeErrorKind::Unhandled(err.into()),
+            kind: RebootNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4067,7 +4095,7 @@ impl std::error::Error for RebootNodeError {
             RebootNodeErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             RebootNodeErrorKind::NodeNotFoundFault(_inner) => Some(_inner),
             RebootNodeErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            RebootNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RebootNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4100,7 +4128,7 @@ pub enum TagResourceErrorKind {
     /// <p>You have exceeded the maximum number of tags for this DAX cluster.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4133,7 +4161,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4142,7 +4170,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4220,7 +4248,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             TagResourceErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4253,7 +4281,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The tag does not exist.</p>
     TagNotFoundFault(crate::error::TagNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4286,7 +4314,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4295,7 +4323,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4370,7 +4398,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             UntagResourceErrorKind::TagNotFoundFault(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4403,7 +4431,7 @@ pub enum UpdateClusterErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4436,7 +4464,7 @@ impl UpdateClusterError {
     /// Creates the `UpdateClusterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateClusterErrorKind::Unhandled(err.into()),
+            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4445,7 +4473,7 @@ impl UpdateClusterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateClusterErrorKind::Unhandled(err.into()),
+            kind: UpdateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4526,7 +4554,7 @@ impl std::error::Error for UpdateClusterError {
             UpdateClusterErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UpdateClusterErrorKind::ParameterGroupNotFoundFault(_inner) => Some(_inner),
             UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            UpdateClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateClusterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4555,7 +4583,7 @@ pub enum UpdateParameterGroupErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4588,7 +4616,9 @@ impl UpdateParameterGroupError {
     /// Creates the `UpdateParameterGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateParameterGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4597,7 +4627,9 @@ impl UpdateParameterGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateParameterGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4667,7 +4699,7 @@ impl std::error::Error for UpdateParameterGroupError {
             UpdateParameterGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault(_inner) => Some(_inner),
             UpdateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
-            UpdateParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateParameterGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4696,7 +4728,7 @@ pub enum UpdateSubnetGroupErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4727,7 +4759,7 @@ impl UpdateSubnetGroupError {
     /// Creates the `UpdateSubnetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4736,7 +4768,7 @@ impl UpdateSubnetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSubnetGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4798,7 +4830,32 @@ impl std::error::Error for UpdateSubnetGroupError {
             UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault(_inner) => Some(_inner),
             UpdateSubnetGroupErrorKind::SubnetInUse(_inner) => Some(_inner),
             UpdateSubnetGroupErrorKind::SubnetQuotaExceededFault(_inner) => Some(_inner),
-            UpdateSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

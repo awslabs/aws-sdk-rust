@@ -2429,7 +2429,7 @@ pub enum AddListenerCertificatesErrorKind {
     /// <p>You've reached the limit on the number of certificates per load balancer.</p>
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2458,7 +2458,9 @@ impl AddListenerCertificatesError {
     /// Creates the `AddListenerCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2467,7 +2469,9 @@ impl AddListenerCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: AddListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2519,7 +2523,7 @@ impl std::error::Error for AddListenerCertificatesError {
             AddListenerCertificatesErrorKind::CertificateNotFoundException(_inner) => Some(_inner),
             AddListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
             AddListenerCertificatesErrorKind::TooManyCertificatesException(_inner) => Some(_inner),
-            AddListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2550,7 +2554,7 @@ pub enum AddTagsErrorKind {
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2582,7 +2586,7 @@ impl AddTagsError {
     /// Creates the `AddTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2591,7 +2595,7 @@ impl AddTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsErrorKind::Unhandled(err.into()),
+            kind: AddTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2655,7 +2659,7 @@ impl std::error::Error for AddTagsError {
             AddTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
             AddTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AddTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2714,7 +2718,7 @@ pub enum CreateListenerErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2762,7 +2766,7 @@ impl CreateListenerError {
     /// Creates the `CreateListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateListenerErrorKind::Unhandled(err.into()),
+            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2771,7 +2775,7 @@ impl CreateListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateListenerErrorKind::Unhandled(err.into()),
+            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2944,7 +2948,7 @@ impl std::error::Error for CreateListenerError {
                 Some(_inner)
             }
             CreateListenerErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2989,7 +2993,7 @@ pub enum CreateLoadBalancerErrorKind {
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3034,7 +3038,7 @@ impl CreateLoadBalancerError {
     /// Creates the `CreateLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3043,7 +3047,7 @@ impl CreateLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: CreateLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3179,7 +3183,7 @@ impl std::error::Error for CreateLoadBalancerError {
             CreateLoadBalancerErrorKind::SubnetNotFoundException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_inner) => Some(_inner),
             CreateLoadBalancerErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3232,7 +3236,7 @@ pub enum CreateRuleErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3275,7 +3279,7 @@ impl CreateRuleError {
     /// Creates the `CreateRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRuleErrorKind::Unhandled(err.into()),
+            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3284,7 +3288,7 @@ impl CreateRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRuleErrorKind::Unhandled(err.into()),
+            kind: CreateRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3419,7 +3423,7 @@ impl std::error::Error for CreateRuleError {
                 Some(_inner)
             }
             CreateRuleErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            CreateRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3446,7 +3450,7 @@ pub enum CreateTargetGroupErrorKind {
     /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3478,7 +3482,7 @@ impl CreateTargetGroupError {
     /// Creates the `CreateTargetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTargetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3487,7 +3491,7 @@ impl CreateTargetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTargetGroupErrorKind::Unhandled(err.into()),
+            kind: CreateTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3549,7 +3553,7 @@ impl std::error::Error for CreateTargetGroupError {
             }
             CreateTargetGroupErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateTargetGroupErrorKind::TooManyTargetGroupsException(_inner) => Some(_inner),
-            CreateTargetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3572,7 +3576,7 @@ pub enum DeleteListenerErrorKind {
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3600,7 +3604,7 @@ impl DeleteListenerError {
     /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3609,7 +3613,7 @@ impl DeleteListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3653,7 +3657,7 @@ impl std::error::Error for DeleteListenerError {
         match &self.kind {
             DeleteListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
             DeleteListenerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3678,7 +3682,7 @@ pub enum DeleteLoadBalancerErrorKind {
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3707,7 +3711,7 @@ impl DeleteLoadBalancerError {
     /// Creates the `DeleteLoadBalancerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3716,7 +3720,7 @@ impl DeleteLoadBalancerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoadBalancerErrorKind::Unhandled(err.into()),
+            kind: DeleteLoadBalancerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3768,7 +3772,7 @@ impl std::error::Error for DeleteLoadBalancerError {
             DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
             DeleteLoadBalancerErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteLoadBalancerErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoadBalancerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3791,7 +3795,7 @@ pub enum DeleteRuleErrorKind {
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3819,7 +3823,7 @@ impl DeleteRuleError {
     /// Creates the `DeleteRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3828,7 +3832,7 @@ impl DeleteRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRuleErrorKind::Unhandled(err.into()),
+            kind: DeleteRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3869,7 +3873,7 @@ impl std::error::Error for DeleteRuleError {
         match &self.kind {
             DeleteRuleErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteRuleErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            DeleteRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3890,7 +3894,7 @@ pub enum DeleteTargetGroupErrorKind {
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3917,7 +3921,7 @@ impl DeleteTargetGroupError {
     /// Creates the `DeleteTargetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTargetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3926,7 +3930,7 @@ impl DeleteTargetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTargetGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3962,7 +3966,7 @@ impl std::error::Error for DeleteTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteTargetGroupErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            DeleteTargetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3985,7 +3989,7 @@ pub enum DeregisterTargetsErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4013,7 +4017,7 @@ impl DeregisterTargetsError {
     /// Creates the `DeregisterTargetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterTargetsErrorKind::Unhandled(err.into()),
+            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4022,7 +4026,7 @@ impl DeregisterTargetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterTargetsErrorKind::Unhandled(err.into()),
+            kind: DeregisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4066,7 +4070,7 @@ impl std::error::Error for DeregisterTargetsError {
         match &self.kind {
             DeregisterTargetsErrorKind::InvalidTargetException(_inner) => Some(_inner),
             DeregisterTargetsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DeregisterTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4085,7 +4089,7 @@ pub struct DescribeAccountLimitsError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4111,7 +4115,9 @@ impl DescribeAccountLimitsError {
     /// Creates the `DescribeAccountLimitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4120,7 +4126,9 @@ impl DescribeAccountLimitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4148,7 +4156,7 @@ impl DescribeAccountLimitsError {
 impl std::error::Error for DescribeAccountLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4169,7 +4177,7 @@ pub enum DescribeListenerCertificatesErrorKind {
     /// <p>The specified listener does not exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4198,7 +4206,9 @@ impl DescribeListenerCertificatesError {
     /// Creates the `DescribeListenerCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4207,7 +4217,9 @@ impl DescribeListenerCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: DescribeListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4245,7 +4257,7 @@ impl std::error::Error for DescribeListenerCertificatesError {
             DescribeListenerCertificatesErrorKind::ListenerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4270,7 +4282,7 @@ pub enum DescribeListenersErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4299,7 +4311,7 @@ impl DescribeListenersError {
     /// Creates the `DescribeListenersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeListenersErrorKind::Unhandled(err.into()),
+            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4308,7 +4320,7 @@ impl DescribeListenersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeListenersErrorKind::Unhandled(err.into()),
+            kind: DescribeListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4360,7 +4372,7 @@ impl std::error::Error for DescribeListenersError {
             DescribeListenersErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
             DescribeListenersErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
             DescribeListenersErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            DescribeListenersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4381,7 +4393,7 @@ pub enum DescribeLoadBalancerAttributesErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4413,7 +4425,9 @@ impl DescribeLoadBalancerAttributesError {
     /// Creates the `DescribeLoadBalancerAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4422,7 +4436,9 @@ impl DescribeLoadBalancerAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4460,7 +4476,7 @@ impl std::error::Error for DescribeLoadBalancerAttributesError {
             DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4481,7 +4497,7 @@ pub enum DescribeLoadBalancersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4508,7 +4524,9 @@ impl DescribeLoadBalancersError {
     /// Creates the `DescribeLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4517,7 +4535,9 @@ impl DescribeLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4553,7 +4573,7 @@ impl std::error::Error for DescribeLoadBalancersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4578,7 +4598,7 @@ pub enum DescribeRulesErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRulesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4607,7 +4627,7 @@ impl DescribeRulesError {
     /// Creates the `DescribeRulesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRulesErrorKind::Unhandled(err.into()),
+            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4616,7 +4636,7 @@ impl DescribeRulesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRulesErrorKind::Unhandled(err.into()),
+            kind: DescribeRulesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4665,7 +4685,7 @@ impl std::error::Error for DescribeRulesError {
             DescribeRulesErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
             DescribeRulesErrorKind::RuleNotFoundException(_inner) => Some(_inner),
             DescribeRulesErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            DescribeRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRulesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4686,7 +4706,7 @@ pub enum DescribeSSLPoliciesErrorKind {
     /// <p>The specified SSL policy does not exist.</p>
     SslPolicyNotFoundException(crate::error::SslPolicyNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSSLPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4713,7 +4733,7 @@ impl DescribeSSLPoliciesError {
     /// Creates the `DescribeSSLPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSSLPoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4722,7 +4742,7 @@ impl DescribeSSLPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSSLPoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribeSSLPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4758,7 +4778,7 @@ impl std::error::Error for DescribeSSLPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException(_inner) => Some(_inner),
-            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSSLPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4785,7 +4805,7 @@ pub enum DescribeTagsErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4815,7 +4835,7 @@ impl DescribeTagsError {
     /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4824,7 +4844,7 @@ impl DescribeTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4881,7 +4901,7 @@ impl std::error::Error for DescribeTagsError {
             DescribeTagsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
             DescribeTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
             DescribeTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4902,7 +4922,7 @@ pub enum DescribeTargetGroupAttributesErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetGroupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4934,7 +4954,9 @@ impl DescribeTargetGroupAttributesError {
     /// Creates the `DescribeTargetGroupAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4943,7 +4965,9 @@ impl DescribeTargetGroupAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4981,7 +5005,7 @@ impl std::error::Error for DescribeTargetGroupAttributesError {
             DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5004,7 +5028,7 @@ pub enum DescribeTargetGroupsErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5032,7 +5056,9 @@ impl DescribeTargetGroupsError {
     /// Creates the `DescribeTargetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5041,7 +5067,9 @@ impl DescribeTargetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5085,7 +5113,7 @@ impl std::error::Error for DescribeTargetGroupsError {
         match &self.kind {
             DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
             DescribeTargetGroupsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5110,7 +5138,7 @@ pub enum DescribeTargetHealthErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetHealthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5139,7 +5167,9 @@ impl DescribeTargetHealthError {
     /// Creates the `DescribeTargetHealthError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTargetHealthErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5148,7 +5178,9 @@ impl DescribeTargetHealthError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTargetHealthErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetHealthErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5200,7 +5232,7 @@ impl std::error::Error for DescribeTargetHealthError {
             DescribeTargetHealthErrorKind::HealthUnavailableException(_inner) => Some(_inner),
             DescribeTargetHealthErrorKind::InvalidTargetException(_inner) => Some(_inner),
             DescribeTargetHealthErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            DescribeTargetHealthErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTargetHealthErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5257,7 +5289,7 @@ pub enum ModifyListenerErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5304,7 +5336,7 @@ impl ModifyListenerError {
     /// Creates the `ModifyListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyListenerErrorKind::Unhandled(err.into()),
+            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5313,7 +5345,7 @@ impl ModifyListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyListenerErrorKind::Unhandled(err.into()),
+            kind: ModifyListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5481,7 +5513,7 @@ impl std::error::Error for ModifyListenerError {
                 Some(_inner)
             }
             ModifyListenerErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            ModifyListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5504,7 +5536,7 @@ pub enum ModifyLoadBalancerAttributesErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyLoadBalancerAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5536,7 +5568,9 @@ impl ModifyLoadBalancerAttributesError {
     /// Creates the `ModifyLoadBalancerAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5545,7 +5579,9 @@ impl ModifyLoadBalancerAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyLoadBalancerAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5593,7 +5629,7 @@ impl std::error::Error for ModifyLoadBalancerAttributesError {
             ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyLoadBalancerAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5638,7 +5674,7 @@ pub enum ModifyRuleErrorKind {
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyRuleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5677,7 +5713,7 @@ impl ModifyRuleError {
     /// Creates the `ModifyRuleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyRuleErrorKind::Unhandled(err.into()),
+            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5686,7 +5722,7 @@ impl ModifyRuleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyRuleErrorKind::Unhandled(err.into()),
+            kind: ModifyRuleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5795,7 +5831,7 @@ impl std::error::Error for ModifyRuleError {
                 Some(_inner)
             }
             ModifyRuleErrorKind::UnsupportedProtocolException(_inner) => Some(_inner),
-            ModifyRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyRuleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5818,7 +5854,7 @@ pub enum ModifyTargetGroupErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5848,7 +5884,7 @@ impl ModifyTargetGroupError {
     /// Creates the `ModifyTargetGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyTargetGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5857,7 +5893,7 @@ impl ModifyTargetGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyTargetGroupErrorKind::Unhandled(err.into()),
+            kind: ModifyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5903,7 +5939,7 @@ impl std::error::Error for ModifyTargetGroupError {
                 Some(_inner)
             }
             ModifyTargetGroupErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
-            ModifyTargetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyTargetGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5926,7 +5962,7 @@ pub enum ModifyTargetGroupAttributesErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyTargetGroupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5958,7 +5994,9 @@ impl ModifyTargetGroupAttributesError {
     /// Creates the `ModifyTargetGroupAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5967,7 +6005,9 @@ impl ModifyTargetGroupAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(err.into()),
+            kind: ModifyTargetGroupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6015,7 +6055,7 @@ impl std::error::Error for ModifyTargetGroupAttributesError {
             ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ModifyTargetGroupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6044,7 +6084,7 @@ pub enum RegisterTargetsErrorKind {
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6076,7 +6116,7 @@ impl RegisterTargetsError {
     /// Creates the `RegisterTargetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterTargetsErrorKind::Unhandled(err.into()),
+            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6085,7 +6125,7 @@ impl RegisterTargetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterTargetsErrorKind::Unhandled(err.into()),
+            kind: RegisterTargetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6147,7 +6187,7 @@ impl std::error::Error for RegisterTargetsError {
                 Some(_inner)
             }
             RegisterTargetsErrorKind::TooManyTargetsException(_inner) => Some(_inner),
-            RegisterTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterTargetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6170,7 +6210,7 @@ pub enum RemoveListenerCertificatesErrorKind {
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveListenerCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6200,7 +6240,9 @@ impl RemoveListenerCertificatesError {
     /// Creates the `RemoveListenerCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6209,7 +6251,9 @@ impl RemoveListenerCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveListenerCertificatesErrorKind::Unhandled(err.into()),
+            kind: RemoveListenerCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6255,7 +6299,7 @@ impl std::error::Error for RemoveListenerCertificatesError {
             RemoveListenerCertificatesErrorKind::OperationNotPermittedException(_inner) => {
                 Some(_inner)
             }
-            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveListenerCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6284,7 +6328,7 @@ pub enum RemoveTagsErrorKind {
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6315,7 +6359,7 @@ impl RemoveTagsError {
     /// Creates the `RemoveTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6324,7 +6368,7 @@ impl RemoveTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6386,7 +6430,7 @@ impl std::error::Error for RemoveTagsError {
             RemoveTagsErrorKind::RuleNotFoundException(_inner) => Some(_inner),
             RemoveTagsErrorKind::TargetGroupNotFoundException(_inner) => Some(_inner),
             RemoveTagsErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6411,7 +6455,7 @@ pub enum SetIpAddressTypeErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetIpAddressTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6442,7 +6486,7 @@ impl SetIpAddressTypeError {
     /// Creates the `SetIpAddressTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetIpAddressTypeErrorKind::Unhandled(err.into()),
+            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6451,7 +6495,7 @@ impl SetIpAddressTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetIpAddressTypeErrorKind::Unhandled(err.into()),
+            kind: SetIpAddressTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6503,7 +6547,7 @@ impl std::error::Error for SetIpAddressTypeError {
             SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_inner) => Some(_inner),
             SetIpAddressTypeErrorKind::InvalidSubnetException(_inner) => Some(_inner),
             SetIpAddressTypeErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            SetIpAddressTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetIpAddressTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6528,7 +6572,7 @@ pub enum SetRulePrioritiesErrorKind {
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetRulePrioritiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6557,7 +6601,7 @@ impl SetRulePrioritiesError {
     /// Creates the `SetRulePrioritiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetRulePrioritiesErrorKind::Unhandled(err.into()),
+            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6566,7 +6610,7 @@ impl SetRulePrioritiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetRulePrioritiesErrorKind::Unhandled(err.into()),
+            kind: SetRulePrioritiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6618,7 +6662,7 @@ impl std::error::Error for SetRulePrioritiesError {
             SetRulePrioritiesErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             SetRulePrioritiesErrorKind::PriorityInUseException(_inner) => Some(_inner),
             SetRulePrioritiesErrorKind::RuleNotFoundException(_inner) => Some(_inner),
-            SetRulePrioritiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetRulePrioritiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6643,7 +6687,7 @@ pub enum SetSecurityGroupsErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSecurityGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6674,7 +6718,7 @@ impl SetSecurityGroupsError {
     /// Creates the `SetSecurityGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetSecurityGroupsErrorKind::Unhandled(err.into()),
+            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6683,7 +6727,7 @@ impl SetSecurityGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetSecurityGroupsErrorKind::Unhandled(err.into()),
+            kind: SetSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6737,7 +6781,7 @@ impl std::error::Error for SetSecurityGroupsError {
             }
             SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_inner) => Some(_inner),
             SetSecurityGroupsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
-            SetSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6768,7 +6812,7 @@ pub enum SetSubnetsErrorKind {
     /// <p>The specified subnet does not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSubnetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6800,7 +6844,7 @@ impl SetSubnetsError {
     /// Creates the `SetSubnetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetSubnetsErrorKind::Unhandled(err.into()),
+            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6809,7 +6853,7 @@ impl SetSubnetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetSubnetsErrorKind::Unhandled(err.into()),
+            kind: SetSubnetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6879,7 +6923,32 @@ impl std::error::Error for SetSubnetsError {
             SetSubnetsErrorKind::InvalidSubnetException(_inner) => Some(_inner),
             SetSubnetsErrorKind::LoadBalancerNotFoundException(_inner) => Some(_inner),
             SetSubnetsErrorKind::SubnetNotFoundException(_inner) => Some(_inner),
-            SetSubnetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetSubnetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

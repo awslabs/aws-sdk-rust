@@ -42,7 +42,7 @@ pub enum Error {
     /// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -93,10 +93,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::CreateCertificateAuthorityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,9 +124,9 @@ where
                 crate::error::CreateCertificateAuthorityAuditReportErrorKind::RequestFailedException(inner) => Error::RequestFailedException(inner),
                 crate::error::CreateCertificateAuthorityAuditReportErrorKind::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
                 crate::error::CreateCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::CreateCertificateAuthorityAuditReportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCertificateAuthorityAuditReportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -158,10 +158,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreatePermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,9 +179,9 @@ where
                 crate::error::DeleteCertificateAuthorityErrorKind::InvalidArnException(inner) => Error::InvalidArnException(inner),
                 crate::error::DeleteCertificateAuthorityErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::DeleteCertificateAuthorityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -207,10 +207,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeletePermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,9 +239,11 @@ where
                 crate::error::DeletePolicyErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeletePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -262,10 +264,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeCertificateAuthorityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -290,9 +292,9 @@ where
                 crate::error::DescribeCertificateAuthorityAuditReportErrorKind::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
                 crate::error::DescribeCertificateAuthorityAuditReportErrorKind::InvalidArnException(inner) => Error::InvalidArnException(inner),
                 crate::error::DescribeCertificateAuthorityAuditReportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCertificateAuthorityAuditReportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -318,9 +320,11 @@ where
                 crate::error::GetCertificateErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCertificateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -342,9 +346,9 @@ where
                 crate::error::GetCertificateAuthorityCertificateErrorKind::InvalidArnException(inner) => Error::InvalidArnException(inner),
                 crate::error::GetCertificateAuthorityCertificateErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::GetCertificateAuthorityCertificateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetCertificateAuthorityCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCertificateAuthorityCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -374,10 +378,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::GetCertificateAuthorityCsrErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -400,9 +404,11 @@ where
                 crate::error::GetPolicyErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -433,9 +439,9 @@ where
                 crate::error::ImportCertificateAuthorityCertificateErrorKind::RequestFailedException(inner) => Error::RequestFailedException(inner),
                 crate::error::ImportCertificateAuthorityCertificateErrorKind::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
                 crate::error::ImportCertificateAuthorityCertificateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ImportCertificateAuthorityCertificateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ImportCertificateAuthorityCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,10 +473,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::IssueCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -488,10 +494,10 @@ where
                     inner,
                 ) => Error::InvalidNextTokenException(inner),
                 crate::error::ListCertificateAuthoritiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -517,9 +523,11 @@ where
                 crate::error::ListPermissionsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListPermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPermissionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -539,9 +547,11 @@ where
                 crate::error::ListTagsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -573,9 +583,11 @@ where
                 crate::error::PutPolicyErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -599,10 +611,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::RestoreCertificateAuthorityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -643,10 +655,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::RevokeCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,10 +688,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::TagCertificateAuthorityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -706,10 +718,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UntagCertificateAuthorityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -729,9 +741,9 @@ where
                 crate::error::UpdateCertificateAuthorityErrorKind::InvalidPolicyException(inner) => Error::InvalidPolicyException(inner),
                 crate::error::UpdateCertificateAuthorityErrorKind::InvalidStateException(inner) => Error::InvalidStateException(inner),
                 crate::error::UpdateCertificateAuthorityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCertificateAuthorityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

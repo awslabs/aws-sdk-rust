@@ -61,7 +61,7 @@ pub enum Error {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -110,9 +110,11 @@ where
                 crate::error::AssociateWebACLErrorKind::WafUnavailableEntityException(inner) => {
                     Error::WafUnavailableEntityException(inner)
                 }
-                crate::error::AssociateWebACLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateWebACLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +134,9 @@ where
                 crate::error::CheckCapacityErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::CheckCapacityErrorKind::WafSubscriptionNotFoundException(inner) => Error::WafSubscriptionNotFoundException(inner),
                 crate::error::CheckCapacityErrorKind::WafUnavailableEntityException(inner) => Error::WafUnavailableEntityException(inner),
-                crate::error::CheckCapacityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CheckCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -169,9 +171,11 @@ where
                 crate::error::CreateIPSetErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::CreateIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateIPSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,9 +197,9 @@ where
                 crate::error::CreateRegexPatternSetErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
                 crate::error::CreateRegexPatternSetErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
                 crate::error::CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,9 +243,11 @@ where
                 crate::error::CreateRuleGroupErrorKind::WafUnavailableEntityException(inner) => {
                     Error::WafUnavailableEntityException(inner)
                 }
-                crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -291,9 +297,11 @@ where
                 crate::error::CreateWebACLErrorKind::WafUnavailableEntityException(inner) => {
                     Error::WafUnavailableEntityException(inner)
                 }
-                crate::error::CreateWebACLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateWebACLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -316,9 +324,9 @@ where
                 crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -353,9 +361,11 @@ where
                 crate::error::DeleteIPSetErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteIPSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +395,10 @@ where
                     inner,
                 ) => Error::WafOptimisticLockException(inner),
                 crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -412,10 +422,10 @@ where
                     inner,
                 ) => Error::WafNonexistentItemException(inner),
                 crate::error::DeletePermissionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -437,9 +447,9 @@ where
                 crate::error::DeleteRegexPatternSetErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
                 crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
                 crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -474,9 +484,11 @@ where
                 crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -511,9 +523,11 @@ where
                 crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteWebACLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteWebACLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -533,9 +547,9 @@ where
                 crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
                 crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -561,10 +575,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::DisassociateWebACLErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -582,9 +596,9 @@ where
                 crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateMobileSdkReleaseUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -607,9 +621,11 @@ where
                 crate::error::GetIPSetErrorKind::WafNonexistentItemException(inner) => {
                     Error::WafNonexistentItemException(inner)
                 }
-                crate::error::GetIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetIPSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -636,10 +652,10 @@ where
                     inner,
                 ) => Error::WafNonexistentItemException(inner),
                 crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -665,10 +681,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetManagedRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -694,10 +710,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetMobileSdkReleaseErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -720,10 +736,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetPermissionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -745,9 +761,9 @@ where
                 crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRateBasedStatementManagedKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -773,10 +789,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetRegexPatternSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +815,11 @@ where
                 crate::error::GetRuleGroupErrorKind::WafNonexistentItemException(inner) => {
                     Error::WafNonexistentItemException(inner)
                 }
-                crate::error::GetRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRuleGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -824,10 +842,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::GetSampledRequestsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -850,9 +868,11 @@ where
                 crate::error::GetWebACLErrorKind::WafNonexistentItemException(inner) => {
                     Error::WafNonexistentItemException(inner)
                 }
-                crate::error::GetWebACLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetWebACLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -882,10 +902,10 @@ where
                     inner,
                 ) => Error::WafUnavailableEntityException(inner),
                 crate::error::GetWebACLForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -906,9 +926,9 @@ where
                 crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
                 crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::ListAvailableManagedRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAvailableManagedRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -934,9 +954,9 @@ where
                 crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -956,9 +976,11 @@ where
                 crate::error::ListIPSetsErrorKind::WafInvalidParameterException(inner) => {
                     Error::WafInvalidParameterException(inner)
                 }
-                crate::error::ListIPSetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListIPSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -982,10 +1004,10 @@ where
                     inner,
                 ) => Error::WafInvalidParameterException(inner),
                 crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1008,10 +1030,10 @@ where
                     Error::WafInvalidParameterException(inner)
                 }
                 crate::error::ListManagedRuleSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1035,10 +1057,10 @@ where
                     inner,
                 ) => Error::WafInvalidParameterException(inner),
                 crate::error::ListMobileSdkReleasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1062,10 +1084,10 @@ where
                     inner,
                 ) => Error::WafInvalidParameterException(inner),
                 crate::error::ListRegexPatternSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1092,10 +1114,10 @@ where
                     inner,
                 ) => Error::WafNonexistentItemException(inner),
                 crate::error::ListResourcesForWebACLErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1115,9 +1137,11 @@ where
                 crate::error::ListRuleGroupsErrorKind::WafInvalidParameterException(inner) => {
                     Error::WafInvalidParameterException(inner)
                 }
-                crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1136,9 +1160,9 @@ where
                 crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::ListTagsForResourceErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
                 crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1158,9 +1182,11 @@ where
                 crate::error::ListWebACLsErrorKind::WafInvalidParameterException(inner) => {
                     Error::WafInvalidParameterException(inner)
                 }
-                crate::error::ListWebACLsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListWebACLsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1182,9 +1208,9 @@ where
                 crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
                 crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1214,10 +1240,10 @@ where
                     inner,
                 ) => Error::WafOptimisticLockException(inner),
                 crate::error::PutManagedRuleSetVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1243,10 +1269,10 @@ where
                     Error::WafNonexistentItemException(inner)
                 }
                 crate::error::PutPermissionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1278,9 +1304,11 @@ where
                 crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1309,9 +1337,11 @@ where
                 crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException(
                     inner,
                 ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1343,9 +1373,11 @@ where
                 crate::error::UpdateIPSetErrorKind::WafOptimisticLockException(inner) => {
                     Error::WafOptimisticLockException(inner)
                 }
-                crate::error::UpdateIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateIPSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1372,9 +1404,9 @@ where
                 crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
                 crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1410,10 +1442,10 @@ where
                     Error::WafOptimisticLockException(inner)
                 }
                 crate::error::UpdateRegexPatternSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1454,9 +1486,11 @@ where
                 crate::error::UpdateRuleGroupErrorKind::WafUnavailableEntityException(inner) => {
                     Error::WafUnavailableEntityException(inner)
                 }
-                crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1503,9 +1537,11 @@ where
                 crate::error::UpdateWebACLErrorKind::WafUnavailableEntityException(inner) => {
                     Error::WafUnavailableEntityException(inner)
                 }
-                crate::error::UpdateWebACLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateWebACLErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

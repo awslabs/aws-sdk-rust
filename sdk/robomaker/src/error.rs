@@ -605,7 +605,7 @@ pub enum BatchDeleteWorldsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeleteWorldsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -634,7 +634,7 @@ impl BatchDeleteWorldsError {
     /// Creates the `BatchDeleteWorldsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDeleteWorldsErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -643,7 +643,7 @@ impl BatchDeleteWorldsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDeleteWorldsErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -695,7 +695,7 @@ impl std::error::Error for BatchDeleteWorldsError {
             BatchDeleteWorldsErrorKind::InternalServerException(_inner) => Some(_inner),
             BatchDeleteWorldsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             BatchDeleteWorldsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDeleteWorldsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDeleteWorldsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -722,7 +722,7 @@ pub enum BatchDescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDescribeSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -752,7 +752,9 @@ impl BatchDescribeSimulationJobError {
     /// Creates the `BatchDescribeSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -761,7 +763,9 @@ impl BatchDescribeSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: BatchDescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -821,7 +825,7 @@ impl std::error::Error for BatchDescribeSimulationJobError {
             BatchDescribeSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             BatchDescribeSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BatchDescribeSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -848,7 +852,7 @@ pub enum CancelDeploymentJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -878,7 +882,7 @@ impl CancelDeploymentJobError {
     /// Creates the `CancelDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CancelDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -887,7 +891,7 @@ impl CancelDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CancelDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -947,7 +951,7 @@ impl std::error::Error for CancelDeploymentJobError {
             CancelDeploymentJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -974,7 +978,7 @@ pub enum CancelSimulationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1004,7 +1008,7 @@ impl CancelSimulationJobError {
     /// Creates the `CancelSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1013,7 +1017,7 @@ impl CancelSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1073,7 +1077,7 @@ impl std::error::Error for CancelSimulationJobError {
             CancelSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1100,7 +1104,7 @@ pub enum CancelSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1130,7 +1134,9 @@ impl CancelSimulationJobBatchError {
     /// Creates the `CancelSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1139,7 +1145,9 @@ impl CancelSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: CancelSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1199,7 +1207,7 @@ impl std::error::Error for CancelSimulationJobBatchError {
             CancelSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelSimulationJobBatchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelSimulationJobBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1226,7 +1234,7 @@ pub enum CancelWorldExportJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1256,7 +1264,9 @@ impl CancelWorldExportJobError {
     /// Creates the `CancelWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1265,7 +1275,9 @@ impl CancelWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1325,7 +1337,7 @@ impl std::error::Error for CancelWorldExportJobError {
             CancelWorldExportJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1352,7 +1364,7 @@ pub enum CancelWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1382,7 +1394,9 @@ impl CancelWorldGenerationJobError {
     /// Creates the `CancelWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1391,7 +1405,9 @@ impl CancelWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CancelWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1451,7 +1467,7 @@ impl std::error::Error for CancelWorldGenerationJobError {
             CancelWorldGenerationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CancelWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1484,7 +1500,7 @@ pub enum CreateDeploymentJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1519,7 +1535,7 @@ impl CreateDeploymentJobError {
     /// Creates the `CreateDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1528,7 +1544,7 @@ impl CreateDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1614,7 +1630,7 @@ impl std::error::Error for CreateDeploymentJobError {
             CreateDeploymentJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1641,7 +1657,7 @@ pub enum CreateFleetErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1671,7 +1687,7 @@ impl CreateFleetError {
     /// Creates the `CreateFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1680,7 +1696,7 @@ impl CreateFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFleetErrorKind::Unhandled(err.into()),
+            kind: CreateFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1731,7 +1747,7 @@ impl std::error::Error for CreateFleetError {
             CreateFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateFleetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1760,7 +1776,7 @@ pub enum CreateRobotErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,7 +1807,7 @@ impl CreateRobotError {
     /// Creates the `CreateRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotErrorKind::Unhandled(err.into()),
+            kind: CreateRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1800,7 +1816,7 @@ impl CreateRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotErrorKind::Unhandled(err.into()),
+            kind: CreateRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1859,7 +1875,7 @@ impl std::error::Error for CreateRobotError {
             CreateRobotErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1890,7 +1906,7 @@ pub enum CreateRobotApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1926,7 +1942,9 @@ impl CreateRobotApplicationError {
     /// Creates the `CreateRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1935,7 +1953,9 @@ impl CreateRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2013,7 +2033,7 @@ impl std::error::Error for CreateRobotApplicationError {
             CreateRobotApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotApplicationErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2042,7 +2062,7 @@ pub enum CreateRobotApplicationVersionErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRobotApplicationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2082,7 +2102,9 @@ impl CreateRobotApplicationVersionError {
     /// Creates the `CreateRobotApplicationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRobotApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2091,7 +2113,9 @@ impl CreateRobotApplicationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRobotApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateRobotApplicationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2163,7 +2187,7 @@ impl std::error::Error for CreateRobotApplicationVersionError {
             }
             CreateRobotApplicationVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRobotApplicationVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateRobotApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRobotApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2194,7 +2218,7 @@ pub enum CreateSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2232,7 +2256,9 @@ impl CreateSimulationApplicationError {
     /// Creates the `CreateSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2241,7 +2267,9 @@ impl CreateSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2321,7 +2349,7 @@ impl std::error::Error for CreateSimulationApplicationError {
                 Some(_inner)
             }
             CreateSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2350,7 +2378,7 @@ pub enum CreateSimulationApplicationVersionErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationApplicationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2394,7 +2422,9 @@ impl CreateSimulationApplicationVersionError {
     /// Creates the `CreateSimulationApplicationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2403,7 +2433,9 @@ impl CreateSimulationApplicationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationApplicationVersionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2481,7 +2513,7 @@ impl std::error::Error for CreateSimulationApplicationVersionError {
             CreateSimulationApplicationVersionErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            CreateSimulationApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationApplicationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2514,7 +2546,7 @@ pub enum CreateSimulationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2549,7 +2581,7 @@ impl CreateSimulationJobError {
     /// Creates the `CreateSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2558,7 +2590,7 @@ impl CreateSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSimulationJobErrorKind::Unhandled(err.into()),
+            kind: CreateSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2644,7 +2676,7 @@ impl std::error::Error for CreateSimulationJobError {
             CreateSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateSimulationJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2675,7 +2707,7 @@ pub enum CreateWorldExportJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2709,7 +2741,9 @@ impl CreateWorldExportJobError {
     /// Creates the `CreateWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2718,7 +2752,9 @@ impl CreateWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2796,7 +2832,7 @@ impl std::error::Error for CreateWorldExportJobError {
             CreateWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldExportJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2829,7 +2865,7 @@ pub enum CreateWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2864,7 +2900,9 @@ impl CreateWorldGenerationJobError {
     /// Creates the `CreateWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2873,7 +2911,9 @@ impl CreateWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: CreateWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2959,7 +2999,7 @@ impl std::error::Error for CreateWorldGenerationJobError {
             CreateWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldGenerationJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2990,7 +3030,7 @@ pub enum CreateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3022,7 +3062,7 @@ impl CreateWorldTemplateError {
     /// Creates the `CreateWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3031,7 +3071,7 @@ impl CreateWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3107,7 +3147,7 @@ impl std::error::Error for CreateWorldTemplateError {
             CreateWorldTemplateErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3132,7 +3172,7 @@ pub enum DeleteFleetErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3161,7 +3201,7 @@ impl DeleteFleetError {
     /// Creates the `DeleteFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3170,7 +3210,7 @@ impl DeleteFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFleetErrorKind::Unhandled(err.into()),
+            kind: DeleteFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3216,7 +3256,7 @@ impl std::error::Error for DeleteFleetError {
             DeleteFleetErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3241,7 +3281,7 @@ pub enum DeleteRobotErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3270,7 +3310,7 @@ impl DeleteRobotError {
     /// Creates the `DeleteRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRobotErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3279,7 +3319,7 @@ impl DeleteRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRobotErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3325,7 +3365,7 @@ impl std::error::Error for DeleteRobotError {
             DeleteRobotErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3350,7 +3390,7 @@ pub enum DeleteRobotApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3379,7 +3419,9 @@ impl DeleteRobotApplicationError {
     /// Creates the `DeleteRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3388,7 +3430,9 @@ impl DeleteRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3440,7 +3484,7 @@ impl std::error::Error for DeleteRobotApplicationError {
             DeleteRobotApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteRobotApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3465,7 +3509,7 @@ pub enum DeleteSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,7 +3540,9 @@ impl DeleteSimulationApplicationError {
     /// Creates the `DeleteSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3505,7 +3551,9 @@ impl DeleteSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DeleteSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3557,7 +3605,7 @@ impl std::error::Error for DeleteSimulationApplicationError {
             DeleteSimulationApplicationErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteSimulationApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3584,7 +3632,7 @@ pub enum DeleteWorldTemplateErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3614,7 +3662,7 @@ impl DeleteWorldTemplateError {
     /// Creates the `DeleteWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3623,7 +3671,7 @@ impl DeleteWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3683,7 +3731,7 @@ impl std::error::Error for DeleteWorldTemplateError {
             DeleteWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3710,7 +3758,7 @@ pub enum DeregisterRobotErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,7 +3788,7 @@ impl DeregisterRobotError {
     /// Creates the `DeregisterRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterRobotErrorKind::Unhandled(err.into()),
+            kind: DeregisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3749,7 +3797,7 @@ impl DeregisterRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterRobotErrorKind::Unhandled(err.into()),
+            kind: DeregisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3806,7 +3854,7 @@ impl std::error::Error for DeregisterRobotError {
             DeregisterRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeregisterRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeregisterRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeregisterRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3833,7 +3881,7 @@ pub enum DescribeDeploymentJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3863,7 +3911,9 @@ impl DescribeDeploymentJobError {
     /// Creates the `DescribeDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3872,7 +3922,9 @@ impl DescribeDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3932,7 +3984,7 @@ impl std::error::Error for DescribeDeploymentJobError {
             DescribeDeploymentJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3959,7 +4011,7 @@ pub enum DescribeFleetErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeFleetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3989,7 +4041,7 @@ impl DescribeFleetError {
     /// Creates the `DescribeFleetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeFleetErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3998,7 +4050,7 @@ impl DescribeFleetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeFleetErrorKind::Unhandled(err.into()),
+            kind: DescribeFleetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4055,7 +4107,7 @@ impl std::error::Error for DescribeFleetError {
             DescribeFleetErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeFleetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeFleetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeFleetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4082,7 +4134,7 @@ pub enum DescribeRobotErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4112,7 +4164,7 @@ impl DescribeRobotError {
     /// Creates the `DescribeRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRobotErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4121,7 +4173,7 @@ impl DescribeRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRobotErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4178,7 +4230,7 @@ impl std::error::Error for DescribeRobotError {
             DescribeRobotErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4205,7 +4257,7 @@ pub enum DescribeRobotApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4235,7 +4287,9 @@ impl DescribeRobotApplicationError {
     /// Creates the `DescribeRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4244,7 +4298,9 @@ impl DescribeRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4304,7 +4360,7 @@ impl std::error::Error for DescribeRobotApplicationError {
             DescribeRobotApplicationErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeRobotApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4331,7 +4387,7 @@ pub enum DescribeSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4370,7 +4426,9 @@ impl DescribeSimulationApplicationError {
     /// Creates the `DescribeSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4379,7 +4437,9 @@ impl DescribeSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4443,7 +4503,7 @@ impl std::error::Error for DescribeSimulationApplicationError {
                 Some(_inner)
             }
             DescribeSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4470,7 +4530,7 @@ pub enum DescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4500,7 +4560,9 @@ impl DescribeSimulationJobError {
     /// Creates the `DescribeSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4509,7 +4571,9 @@ impl DescribeSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4569,7 +4633,7 @@ impl std::error::Error for DescribeSimulationJobError {
             DescribeSimulationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4594,7 +4658,7 @@ pub enum DescribeSimulationJobBatchErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4623,7 +4687,9 @@ impl DescribeSimulationJobBatchError {
     /// Creates the `DescribeSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4632,7 +4698,9 @@ impl DescribeSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: DescribeSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4684,7 +4752,7 @@ impl std::error::Error for DescribeSimulationJobBatchError {
             DescribeSimulationJobBatchErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSimulationJobBatchErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4711,7 +4779,7 @@ pub enum DescribeWorldErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4741,7 +4809,7 @@ impl DescribeWorldError {
     /// Creates the `DescribeWorldError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4750,7 +4818,7 @@ impl DescribeWorldError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4807,7 +4875,7 @@ impl std::error::Error for DescribeWorldError {
             DescribeWorldErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4834,7 +4902,7 @@ pub enum DescribeWorldExportJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldExportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4864,7 +4932,9 @@ impl DescribeWorldExportJobError {
     /// Creates the `DescribeWorldExportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4873,7 +4943,9 @@ impl DescribeWorldExportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldExportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldExportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4933,7 +5005,7 @@ impl std::error::Error for DescribeWorldExportJobError {
             DescribeWorldExportJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldExportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldExportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldExportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4960,7 +5032,7 @@ pub enum DescribeWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldGenerationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4990,7 +5062,9 @@ impl DescribeWorldGenerationJobError {
     /// Creates the `DescribeWorldGenerationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4999,7 +5073,9 @@ impl DescribeWorldGenerationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldGenerationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldGenerationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5059,7 +5135,7 @@ impl std::error::Error for DescribeWorldGenerationJobError {
             DescribeWorldGenerationJobErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldGenerationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldGenerationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldGenerationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5086,7 +5162,7 @@ pub enum DescribeWorldTemplateErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5116,7 +5192,9 @@ impl DescribeWorldTemplateError {
     /// Creates the `DescribeWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5125,7 +5203,9 @@ impl DescribeWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: DescribeWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5185,7 +5265,7 @@ impl std::error::Error for DescribeWorldTemplateError {
             DescribeWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5212,7 +5292,7 @@ pub enum GetWorldTemplateBodyErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWorldTemplateBodyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5242,7 +5322,9 @@ impl GetWorldTemplateBodyError {
     /// Creates the `GetWorldTemplateBodyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWorldTemplateBodyErrorKind::Unhandled(err.into()),
+            kind: GetWorldTemplateBodyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5251,7 +5333,9 @@ impl GetWorldTemplateBodyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWorldTemplateBodyErrorKind::Unhandled(err.into()),
+            kind: GetWorldTemplateBodyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5311,7 +5395,7 @@ impl std::error::Error for GetWorldTemplateBodyError {
             GetWorldTemplateBodyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetWorldTemplateBodyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetWorldTemplateBodyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetWorldTemplateBodyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWorldTemplateBodyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5338,7 +5422,7 @@ pub enum ListDeploymentJobsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeploymentJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5368,7 +5452,7 @@ impl ListDeploymentJobsError {
     /// Creates the `ListDeploymentJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDeploymentJobsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5377,7 +5461,7 @@ impl ListDeploymentJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDeploymentJobsErrorKind::Unhandled(err.into()),
+            kind: ListDeploymentJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5437,7 +5521,7 @@ impl std::error::Error for ListDeploymentJobsError {
             ListDeploymentJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListDeploymentJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDeploymentJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDeploymentJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDeploymentJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5464,7 +5548,7 @@ pub enum ListFleetsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFleetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5494,7 +5578,7 @@ impl ListFleetsError {
     /// Creates the `ListFleetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5503,7 +5587,7 @@ impl ListFleetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFleetsErrorKind::Unhandled(err.into()),
+            kind: ListFleetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5557,7 +5641,7 @@ impl std::error::Error for ListFleetsError {
             ListFleetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListFleetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListFleetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFleetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5582,7 +5666,7 @@ pub enum ListRobotApplicationsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRobotApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5611,7 +5695,9 @@ impl ListRobotApplicationsError {
     /// Creates the `ListRobotApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRobotApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListRobotApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5620,7 +5706,9 @@ impl ListRobotApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRobotApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListRobotApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5672,7 +5760,7 @@ impl std::error::Error for ListRobotApplicationsError {
             ListRobotApplicationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListRobotApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListRobotApplicationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRobotApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRobotApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5699,7 +5787,7 @@ pub enum ListRobotsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRobotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5729,7 +5817,7 @@ impl ListRobotsError {
     /// Creates the `ListRobotsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRobotsErrorKind::Unhandled(err.into()),
+            kind: ListRobotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5738,7 +5826,7 @@ impl ListRobotsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRobotsErrorKind::Unhandled(err.into()),
+            kind: ListRobotsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5792,7 +5880,7 @@ impl std::error::Error for ListRobotsError {
             ListRobotsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListRobotsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListRobotsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRobotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRobotsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5817,7 +5905,7 @@ pub enum ListSimulationApplicationsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationApplicationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5846,7 +5934,9 @@ impl ListSimulationApplicationsError {
     /// Creates the `ListSimulationApplicationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5855,7 +5945,9 @@ impl ListSimulationApplicationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationApplicationsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationApplicationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5907,7 +5999,7 @@ impl std::error::Error for ListSimulationApplicationsError {
             ListSimulationApplicationsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationApplicationsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSimulationApplicationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListSimulationApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationApplicationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5930,7 +6022,7 @@ pub enum ListSimulationJobBatchesErrorKind {
     /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationJobBatchesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5958,7 +6050,9 @@ impl ListSimulationJobBatchesError {
     /// Creates the `ListSimulationJobBatchesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationJobBatchesErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobBatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5967,7 +6061,9 @@ impl ListSimulationJobBatchesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationJobBatchesErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobBatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6011,7 +6107,7 @@ impl std::error::Error for ListSimulationJobBatchesError {
         match &self.kind {
             ListSimulationJobBatchesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationJobBatchesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListSimulationJobBatchesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationJobBatchesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6036,7 +6132,7 @@ pub enum ListSimulationJobsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSimulationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6065,7 +6161,7 @@ impl ListSimulationJobsError {
     /// Creates the `ListSimulationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSimulationJobsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6074,7 +6170,7 @@ impl ListSimulationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSimulationJobsErrorKind::Unhandled(err.into()),
+            kind: ListSimulationJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6126,7 +6222,7 @@ impl std::error::Error for ListSimulationJobsError {
             ListSimulationJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSimulationJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSimulationJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListSimulationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSimulationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6153,7 +6249,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6183,7 +6279,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6192,7 +6288,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6252,7 +6348,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6277,7 +6373,7 @@ pub enum ListWorldExportJobsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6306,7 +6402,7 @@ impl ListWorldExportJobsError {
     /// Creates the `ListWorldExportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6315,7 +6411,7 @@ impl ListWorldExportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldExportJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6367,7 +6463,7 @@ impl std::error::Error for ListWorldExportJobsError {
             ListWorldExportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldExportJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldExportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6392,7 +6488,7 @@ pub enum ListWorldGenerationJobsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldGenerationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6421,7 +6517,9 @@ impl ListWorldGenerationJobsError {
     /// Creates the `ListWorldGenerationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldGenerationJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldGenerationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6430,7 +6528,9 @@ impl ListWorldGenerationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldGenerationJobsErrorKind::Unhandled(err.into()),
+            kind: ListWorldGenerationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6482,7 +6582,7 @@ impl std::error::Error for ListWorldGenerationJobsError {
             ListWorldGenerationJobsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldGenerationJobsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldGenerationJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldGenerationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldGenerationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6507,7 +6607,7 @@ pub enum ListWorldsErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6536,7 +6636,7 @@ impl ListWorldsError {
     /// Creates the `ListWorldsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldsErrorKind::Unhandled(err.into()),
+            kind: ListWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6545,7 +6645,7 @@ impl ListWorldsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldsErrorKind::Unhandled(err.into()),
+            kind: ListWorldsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6591,7 +6691,7 @@ impl std::error::Error for ListWorldsError {
             ListWorldsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6616,7 +6716,7 @@ pub enum ListWorldTemplatesErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorldTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6645,7 +6745,7 @@ impl ListWorldTemplatesError {
     /// Creates the `ListWorldTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorldTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListWorldTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6654,7 +6754,7 @@ impl ListWorldTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorldTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListWorldTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6706,7 +6806,7 @@ impl std::error::Error for ListWorldTemplatesError {
             ListWorldTemplatesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorldTemplatesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListWorldTemplatesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorldTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorldTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6735,7 +6835,7 @@ pub enum RegisterRobotErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterRobotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6766,7 +6866,7 @@ impl RegisterRobotError {
     /// Creates the `RegisterRobotError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterRobotErrorKind::Unhandled(err.into()),
+            kind: RegisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6775,7 +6875,7 @@ impl RegisterRobotError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterRobotErrorKind::Unhandled(err.into()),
+            kind: RegisterRobotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6840,7 +6940,7 @@ impl std::error::Error for RegisterRobotError {
             RegisterRobotErrorKind::LimitExceededException(_inner) => Some(_inner),
             RegisterRobotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterRobotErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RegisterRobotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterRobotErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6869,7 +6969,7 @@ pub enum RestartSimulationJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestartSimulationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6900,7 +7000,9 @@ impl RestartSimulationJobError {
     /// Creates the `RestartSimulationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestartSimulationJobErrorKind::Unhandled(err.into()),
+            kind: RestartSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6909,7 +7011,9 @@ impl RestartSimulationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestartSimulationJobErrorKind::Unhandled(err.into()),
+            kind: RestartSimulationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6977,7 +7081,7 @@ impl std::error::Error for RestartSimulationJobError {
             RestartSimulationJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             RestartSimulationJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RestartSimulationJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RestartSimulationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestartSimulationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7006,7 +7110,7 @@ pub enum StartSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSimulationJobBatchError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7039,7 +7143,9 @@ impl StartSimulationJobBatchError {
     /// Creates the `StartSimulationJobBatchError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: StartSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7048,7 +7154,9 @@ impl StartSimulationJobBatchError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSimulationJobBatchErrorKind::Unhandled(err.into()),
+            kind: StartSimulationJobBatchErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7118,7 +7226,7 @@ impl std::error::Error for StartSimulationJobBatchError {
             StartSimulationJobBatchErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StartSimulationJobBatchErrorKind::LimitExceededException(_inner) => Some(_inner),
             StartSimulationJobBatchErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSimulationJobBatchErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7151,7 +7259,7 @@ pub enum SyncDeploymentJobErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SyncDeploymentJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7186,7 +7294,7 @@ impl SyncDeploymentJobError {
     /// Creates the `SyncDeploymentJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SyncDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: SyncDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7195,7 +7303,7 @@ impl SyncDeploymentJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SyncDeploymentJobErrorKind::Unhandled(err.into()),
+            kind: SyncDeploymentJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7281,7 +7389,7 @@ impl std::error::Error for SyncDeploymentJobError {
             SyncDeploymentJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             SyncDeploymentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SyncDeploymentJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SyncDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SyncDeploymentJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7308,7 +7416,7 @@ pub enum TagResourceErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7338,7 +7446,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7347,7 +7455,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7401,7 +7509,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7428,7 +7536,7 @@ pub enum UntagResourceErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7458,7 +7566,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7467,7 +7575,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7524,7 +7632,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7553,7 +7661,7 @@ pub enum UpdateRobotApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRobotApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7584,7 +7692,9 @@ impl UpdateRobotApplicationError {
     /// Creates the `UpdateRobotApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7593,7 +7703,9 @@ impl UpdateRobotApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRobotApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateRobotApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7661,7 +7773,7 @@ impl std::error::Error for UpdateRobotApplicationError {
             UpdateRobotApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateRobotApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRobotApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRobotApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7690,7 +7802,7 @@ pub enum UpdateSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSimulationApplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7725,7 +7837,9 @@ impl UpdateSimulationApplicationError {
     /// Creates the `UpdateSimulationApplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7734,7 +7848,9 @@ impl UpdateSimulationApplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSimulationApplicationErrorKind::Unhandled(err.into()),
+            kind: UpdateSimulationApplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7802,7 +7918,7 @@ impl std::error::Error for UpdateSimulationApplicationError {
             UpdateSimulationApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateSimulationApplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSimulationApplicationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSimulationApplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7829,7 +7945,7 @@ pub enum UpdateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorldTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7859,7 +7975,7 @@ impl UpdateWorldTemplateError {
     /// Creates the `UpdateWorldTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7868,7 +7984,7 @@ impl UpdateWorldTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorldTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateWorldTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7928,7 +8044,32 @@ impl std::error::Error for UpdateWorldTemplateError {
             UpdateWorldTemplateErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateWorldTemplateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorldTemplateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorldTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

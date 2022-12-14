@@ -484,7 +484,7 @@ pub enum InvokeEndpointErrorKind {
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InvokeEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,7 +516,7 @@ impl InvokeEndpointError {
     /// Creates the `InvokeEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InvokeEndpointErrorKind::Unhandled(err.into()),
+            kind: InvokeEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -525,7 +525,7 @@ impl InvokeEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InvokeEndpointErrorKind::Unhandled(err.into()),
+            kind: InvokeEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -589,7 +589,7 @@ impl std::error::Error for InvokeEndpointError {
             InvokeEndpointErrorKind::ModelNotReadyException(_inner) => Some(_inner),
             InvokeEndpointErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             InvokeEndpointErrorKind::ValidationError(_inner) => Some(_inner),
-            InvokeEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InvokeEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -614,7 +614,7 @@ pub enum InvokeEndpointAsyncErrorKind {
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::error::ValidationError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InvokeEndpointAsyncError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -643,7 +643,7 @@ impl InvokeEndpointAsyncError {
     /// Creates the `InvokeEndpointAsyncError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: InvokeEndpointAsyncErrorKind::Unhandled(err.into()),
+            kind: InvokeEndpointAsyncErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -652,7 +652,7 @@ impl InvokeEndpointAsyncError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: InvokeEndpointAsyncErrorKind::Unhandled(err.into()),
+            kind: InvokeEndpointAsyncErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -698,7 +698,32 @@ impl std::error::Error for InvokeEndpointAsyncError {
             InvokeEndpointAsyncErrorKind::InternalFailure(_inner) => Some(_inner),
             InvokeEndpointAsyncErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             InvokeEndpointAsyncErrorKind::ValidationError(_inner) => Some(_inner),
-            InvokeEndpointAsyncErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            InvokeEndpointAsyncErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -481,7 +481,7 @@ pub enum CreateDataIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDataIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -513,7 +513,9 @@ impl CreateDataIntegrationError {
     /// Creates the `CreateDataIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: CreateDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -522,7 +524,9 @@ impl CreateDataIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: CreateDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -598,7 +602,7 @@ impl std::error::Error for CreateDataIntegrationError {
             CreateDataIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateDataIntegrationErrorKind::ResourceQuotaExceededException(_inner) => Some(_inner),
             CreateDataIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -629,7 +633,7 @@ pub enum CreateEventIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEventIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -663,7 +667,9 @@ impl CreateEventIntegrationError {
     /// Creates the `CreateEventIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: CreateEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -672,7 +678,9 @@ impl CreateEventIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: CreateEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -748,7 +756,7 @@ impl std::error::Error for CreateEventIntegrationError {
             CreateEventIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateEventIntegrationErrorKind::ResourceQuotaExceededException(_inner) => Some(_inner),
             CreateEventIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -777,7 +785,7 @@ pub enum DeleteDataIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDataIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -808,7 +816,9 @@ impl DeleteDataIntegrationError {
     /// Creates the `DeleteDataIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -817,7 +827,9 @@ impl DeleteDataIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -885,7 +897,7 @@ impl std::error::Error for DeleteDataIntegrationError {
             DeleteDataIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteDataIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDataIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -914,7 +926,7 @@ pub enum DeleteEventIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEventIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -945,7 +957,9 @@ impl DeleteEventIntegrationError {
     /// Creates the `DeleteEventIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -954,7 +968,9 @@ impl DeleteEventIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1022,7 +1038,7 @@ impl std::error::Error for DeleteEventIntegrationError {
             DeleteEventIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteEventIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEventIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1051,7 +1067,7 @@ pub enum GetDataIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1082,7 +1098,7 @@ impl GetDataIntegrationError {
     /// Creates the `GetDataIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1091,7 +1107,7 @@ impl GetDataIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1159,7 +1175,7 @@ impl std::error::Error for GetDataIntegrationError {
             GetDataIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetDataIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetDataIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1188,7 +1204,7 @@ pub enum GetEventIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEventIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1219,7 +1235,7 @@ impl GetEventIntegrationError {
     /// Creates the `GetEventIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1228,7 +1244,7 @@ impl GetEventIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1296,7 +1312,7 @@ impl std::error::Error for GetEventIntegrationError {
             GetEventIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetEventIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetEventIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1325,7 +1341,7 @@ pub enum ListDataIntegrationAssociationsErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDataIntegrationAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1365,7 +1381,9 @@ impl ListDataIntegrationAssociationsError {
     /// Creates the `ListDataIntegrationAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDataIntegrationAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListDataIntegrationAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1374,7 +1392,9 @@ impl ListDataIntegrationAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDataIntegrationAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListDataIntegrationAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1446,7 +1466,7 @@ impl std::error::Error for ListDataIntegrationAssociationsError {
                 Some(_inner)
             }
             ListDataIntegrationAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDataIntegrationAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDataIntegrationAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1473,7 +1493,7 @@ pub enum ListDataIntegrationsErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDataIntegrationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1503,7 +1523,9 @@ impl ListDataIntegrationsError {
     /// Creates the `ListDataIntegrationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDataIntegrationsErrorKind::Unhandled(err.into()),
+            kind: ListDataIntegrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1512,7 +1534,9 @@ impl ListDataIntegrationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDataIntegrationsErrorKind::Unhandled(err.into()),
+            kind: ListDataIntegrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1572,7 +1596,7 @@ impl std::error::Error for ListDataIntegrationsError {
             ListDataIntegrationsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListDataIntegrationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListDataIntegrationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDataIntegrationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDataIntegrationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1601,7 +1625,7 @@ pub enum ListEventIntegrationAssociationsErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEventIntegrationAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1643,7 +1667,9 @@ impl ListEventIntegrationAssociationsError {
     /// Creates the `ListEventIntegrationAssociationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEventIntegrationAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListEventIntegrationAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1652,7 +1678,9 @@ impl ListEventIntegrationAssociationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEventIntegrationAssociationsErrorKind::Unhandled(err.into()),
+            kind: ListEventIntegrationAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1726,7 +1754,7 @@ impl std::error::Error for ListEventIntegrationAssociationsError {
                 Some(_inner)
             }
             ListEventIntegrationAssociationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListEventIntegrationAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEventIntegrationAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1753,7 +1781,7 @@ pub enum ListEventIntegrationsErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEventIntegrationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1783,7 +1811,9 @@ impl ListEventIntegrationsError {
     /// Creates the `ListEventIntegrationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEventIntegrationsErrorKind::Unhandled(err.into()),
+            kind: ListEventIntegrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1792,7 +1822,9 @@ impl ListEventIntegrationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEventIntegrationsErrorKind::Unhandled(err.into()),
+            kind: ListEventIntegrationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1852,7 +1884,7 @@ impl std::error::Error for ListEventIntegrationsError {
             ListEventIntegrationsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListEventIntegrationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEventIntegrationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListEventIntegrationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEventIntegrationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1879,7 +1911,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1909,7 +1941,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1918,7 +1950,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1978,7 +2010,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2005,7 +2037,7 @@ pub enum TagResourceErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2035,7 +2067,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2044,7 +2076,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2095,7 +2127,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2122,7 +2154,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2152,7 +2184,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2161,7 +2193,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2215,7 +2247,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2244,7 +2276,7 @@ pub enum UpdateDataIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,7 +2307,9 @@ impl UpdateDataIntegrationError {
     /// Creates the `UpdateDataIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2284,7 +2318,9 @@ impl UpdateDataIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateDataIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2352,7 +2388,7 @@ impl std::error::Error for UpdateDataIntegrationError {
             UpdateDataIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateDataIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2381,7 +2417,7 @@ pub enum UpdateEventIntegrationErrorKind {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEventIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2412,7 +2448,9 @@ impl UpdateEventIntegrationError {
     /// Creates the `UpdateEventIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2421,7 +2459,9 @@ impl UpdateEventIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEventIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateEventIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2489,7 +2529,32 @@ impl std::error::Error for UpdateEventIntegrationError {
             UpdateEventIntegrationErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateEventIntegrationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateEventIntegrationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEventIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

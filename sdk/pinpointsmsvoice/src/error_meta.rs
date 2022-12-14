@@ -16,7 +16,7 @@ pub enum Error {
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57,10 +57,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateConfigurationSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -88,9 +88,9 @@ where
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -117,10 +117,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteConfigurationSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,9 +146,9 @@ where
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,9 +174,9 @@ where
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::GetConfigurationSetEventDestinationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetConfigurationSetEventDestinationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -200,10 +200,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -226,10 +226,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::SendVoiceMessageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -255,9 +255,9 @@ where
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::UpdateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

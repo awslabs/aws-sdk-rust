@@ -58,7 +58,7 @@ pub enum Error {
     /// <p>You have exceeded the maximum number of tags for this DAX cluster.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -146,9 +146,11 @@ where
                 crate::error::CreateClusterErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
                 }
-                crate::error::CreateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,9 +170,9 @@ where
                 crate::error::CreateParameterGroupErrorKind::ParameterGroupAlreadyExistsFault(inner) => Error::ParameterGroupAlreadyExistsFault(inner),
                 crate::error::CreateParameterGroupErrorKind::ParameterGroupQuotaExceededFault(inner) => Error::ParameterGroupQuotaExceededFault(inner),
                 crate::error::CreateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::CreateParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,10 +201,10 @@ where
                     Error::SubnetQuotaExceededFault(inner)
                 }
                 crate::error::CreateSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -222,9 +224,9 @@ where
                 crate::error::DecreaseReplicationFactorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DecreaseReplicationFactorErrorKind::NodeNotFoundFault(inner) => Error::NodeNotFoundFault(inner),
                 crate::error::DecreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::DecreaseReplicationFactorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DecreaseReplicationFactorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -250,9 +252,11 @@ where
                 crate::error::DeleteClusterErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
-                crate::error::DeleteClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -271,9 +275,9 @@ where
                 crate::error::DeleteParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
                 crate::error::DeleteParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::DeleteParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,10 +300,10 @@ where
                     Error::SubnetGroupNotFoundFault(inner)
                 }
                 crate::error::DeleteSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +329,10 @@ where
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
                 crate::error::DescribeClustersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,9 +349,9 @@ where
                 crate::error::DescribeDefaultParametersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeDefaultParametersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeDefaultParametersErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::DescribeDefaultParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDefaultParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -367,9 +371,11 @@ where
                 crate::error::DescribeEventsErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
-                crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -387,9 +393,9 @@ where
                 crate::error::DescribeParameterGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
                 crate::error::DescribeParameterGroupsErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::DescribeParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -415,10 +421,10 @@ where
                     inner,
                 ) => Error::ServiceLinkedRoleNotFoundFault(inner),
                 crate::error::DescribeParametersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,10 +445,10 @@ where
                     Error::SubnetGroupNotFoundFault(inner)
                 }
                 crate::error::DescribeSubnetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -465,9 +471,9 @@ where
                 crate::error::IncreaseReplicationFactorErrorKind::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
                 crate::error::IncreaseReplicationFactorErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
                 crate::error::IncreaseReplicationFactorErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::IncreaseReplicationFactorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::IncreaseReplicationFactorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -496,9 +502,11 @@ where
                 crate::error::ListTagsErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -527,9 +535,11 @@ where
                 crate::error::RebootNodeErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
-                crate::error::RebootNodeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RebootNodeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -561,9 +571,11 @@ where
                 crate::error::TagResourceErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,9 +607,11 @@ where
                 crate::error::UntagResourceErrorKind::TagNotFoundFault(inner) => {
                     Error::TagNotFoundFault(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,9 +643,11 @@ where
                 crate::error::UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
                     Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
-                crate::error::UpdateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -650,9 +666,9 @@ where
                 crate::error::UpdateParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
                 crate::error::UpdateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::UpdateParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -681,10 +697,10 @@ where
                     Error::SubnetQuotaExceededFault(inner)
                 }
                 crate::error::UpdateSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

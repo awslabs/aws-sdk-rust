@@ -884,7 +884,7 @@ pub enum CreateEnvironmentEC2ErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEnvironmentEC2Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -917,7 +917,9 @@ impl CreateEnvironmentEC2Error {
     /// Creates the `CreateEnvironmentEC2Error::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEnvironmentEC2ErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -926,7 +928,9 @@ impl CreateEnvironmentEC2Error {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEnvironmentEC2ErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentEC2ErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1010,7 +1014,7 @@ impl std::error::Error for CreateEnvironmentEC2Error {
             CreateEnvironmentEC2ErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEnvironmentEC2ErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateEnvironmentEC2ErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEnvironmentEC2ErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1043,7 +1047,7 @@ pub enum CreateEnvironmentMembershipErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1078,7 +1082,9 @@ impl CreateEnvironmentMembershipError {
     /// Creates the `CreateEnvironmentMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1087,7 +1093,9 @@ impl CreateEnvironmentMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1173,7 +1181,7 @@ impl std::error::Error for CreateEnvironmentMembershipError {
             CreateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1206,7 +1214,7 @@ pub enum DeleteEnvironmentErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1239,7 +1247,7 @@ impl DeleteEnvironmentError {
     /// Creates the `DeleteEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1248,7 +1256,7 @@ impl DeleteEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEnvironmentErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1326,7 +1334,7 @@ impl std::error::Error for DeleteEnvironmentError {
             DeleteEnvironmentErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteEnvironmentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1359,7 +1367,7 @@ pub enum DeleteEnvironmentMembershipErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1394,7 +1402,9 @@ impl DeleteEnvironmentMembershipError {
     /// Creates the `DeleteEnvironmentMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1403,7 +1413,9 @@ impl DeleteEnvironmentMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1489,7 +1501,7 @@ impl std::error::Error for DeleteEnvironmentMembershipError {
             DeleteEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1522,7 +1534,7 @@ pub enum DescribeEnvironmentMembershipsErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentMembershipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1564,7 +1576,9 @@ impl DescribeEnvironmentMembershipsError {
     /// Creates the `DescribeEnvironmentMembershipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1573,7 +1587,9 @@ impl DescribeEnvironmentMembershipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1661,7 +1677,7 @@ impl std::error::Error for DescribeEnvironmentMembershipsError {
             DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEnvironmentMembershipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1694,7 +1710,7 @@ pub enum DescribeEnvironmentsErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1727,7 +1743,9 @@ impl DescribeEnvironmentsError {
     /// Creates the `DescribeEnvironmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1736,7 +1754,9 @@ impl DescribeEnvironmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1820,7 +1840,7 @@ impl std::error::Error for DescribeEnvironmentsError {
             DescribeEnvironmentsErrorKind::LimitExceededException(_inner) => Some(_inner),
             DescribeEnvironmentsErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeEnvironmentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1853,7 +1873,7 @@ pub enum DescribeEnvironmentStatusErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEnvironmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1888,7 +1908,9 @@ impl DescribeEnvironmentStatusError {
     /// Creates the `DescribeEnvironmentStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEnvironmentStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1897,7 +1919,9 @@ impl DescribeEnvironmentStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEnvironmentStatusErrorKind::Unhandled(err.into()),
+            kind: DescribeEnvironmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1983,7 +2007,7 @@ impl std::error::Error for DescribeEnvironmentStatusError {
             DescribeEnvironmentStatusErrorKind::LimitExceededException(_inner) => Some(_inner),
             DescribeEnvironmentStatusErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeEnvironmentStatusErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEnvironmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2016,7 +2040,7 @@ pub enum ListEnvironmentsErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2049,7 +2073,7 @@ impl ListEnvironmentsError {
     /// Creates the `ListEnvironmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2058,7 +2082,7 @@ impl ListEnvironmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEnvironmentsErrorKind::Unhandled(err.into()),
+            kind: ListEnvironmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2133,7 +2157,7 @@ impl std::error::Error for ListEnvironmentsError {
             ListEnvironmentsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListEnvironmentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2158,7 +2182,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2187,7 +2211,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2196,7 +2220,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2248,7 +2272,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2275,7 +2299,7 @@ pub enum TagResourceErrorKind {
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2305,7 +2329,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2314,7 +2338,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2368,7 +2392,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2395,7 +2419,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,7 +2449,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2434,7 +2458,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2488,7 +2512,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ConcurrentAccessException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2521,7 +2545,7 @@ pub enum UpdateEnvironmentErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2554,7 +2578,7 @@ impl UpdateEnvironmentError {
     /// Creates the `UpdateEnvironmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2563,7 +2587,7 @@ impl UpdateEnvironmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEnvironmentErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2641,7 +2665,7 @@ impl std::error::Error for UpdateEnvironmentError {
             UpdateEnvironmentErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateEnvironmentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEnvironmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2674,7 +2698,7 @@ pub enum UpdateEnvironmentMembershipErrorKind {
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnvironmentMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2709,7 +2733,9 @@ impl UpdateEnvironmentMembershipError {
     /// Creates the `UpdateEnvironmentMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2718,7 +2744,9 @@ impl UpdateEnvironmentMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(err.into()),
+            kind: UpdateEnvironmentMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2804,7 +2832,32 @@ impl std::error::Error for UpdateEnvironmentMembershipError {
             UpdateEnvironmentMembershipErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateEnvironmentMembershipErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateEnvironmentMembershipErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEnvironmentMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

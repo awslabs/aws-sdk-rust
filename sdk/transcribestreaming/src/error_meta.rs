@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,9 +47,9 @@ where
                 crate::error::StartMedicalStreamTranscriptionErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::StartMedicalStreamTranscriptionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::StartMedicalStreamTranscriptionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartMedicalStreamTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -79,10 +79,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::StartStreamTranscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -93,9 +93,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AudioStreamError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AudioStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AudioStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -114,9 +116,9 @@ where
                 crate::error::MedicalTranscriptResultStreamErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
                 crate::error::MedicalTranscriptResultStreamErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::MedicalTranscriptResultStreamErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::MedicalTranscriptResultStreamErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,10 +148,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::TranscriptResultStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

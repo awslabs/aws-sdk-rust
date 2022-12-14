@@ -412,7 +412,7 @@ pub enum DeleteHumanLoopErrorKind {
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,7 +442,7 @@ impl DeleteHumanLoopError {
     /// Creates the `DeleteHumanLoopError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHumanLoopErrorKind::Unhandled(err.into()),
+            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -451,7 +451,7 @@ impl DeleteHumanLoopError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHumanLoopErrorKind::Unhandled(err.into()),
+            kind: DeleteHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -505,7 +505,7 @@ impl std::error::Error for DeleteHumanLoopError {
             DeleteHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteHumanLoopErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -532,7 +532,7 @@ pub enum DescribeHumanLoopErrorKind {
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -562,7 +562,7 @@ impl DescribeHumanLoopError {
     /// Creates the `DescribeHumanLoopError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHumanLoopErrorKind::Unhandled(err.into()),
+            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -571,7 +571,7 @@ impl DescribeHumanLoopError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHumanLoopErrorKind::Unhandled(err.into()),
+            kind: DescribeHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -631,7 +631,7 @@ impl std::error::Error for DescribeHumanLoopError {
             DescribeHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeHumanLoopErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -658,7 +658,7 @@ pub enum ListHumanLoopsErrorKind {
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHumanLoopsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -688,7 +688,7 @@ impl ListHumanLoopsError {
     /// Creates the `ListHumanLoopsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHumanLoopsErrorKind::Unhandled(err.into()),
+            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -697,7 +697,7 @@ impl ListHumanLoopsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHumanLoopsErrorKind::Unhandled(err.into()),
+            kind: ListHumanLoopsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -751,7 +751,7 @@ impl std::error::Error for ListHumanLoopsError {
             ListHumanLoopsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListHumanLoopsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListHumanLoopsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListHumanLoopsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHumanLoopsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -780,7 +780,7 @@ pub enum StartHumanLoopErrorKind {
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -811,7 +811,7 @@ impl StartHumanLoopError {
     /// Creates the `StartHumanLoopError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartHumanLoopErrorKind::Unhandled(err.into()),
+            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -820,7 +820,7 @@ impl StartHumanLoopError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartHumanLoopErrorKind::Unhandled(err.into()),
+            kind: StartHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -879,7 +879,7 @@ impl std::error::Error for StartHumanLoopError {
             StartHumanLoopErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            StartHumanLoopErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -906,7 +906,7 @@ pub enum StopHumanLoopErrorKind {
     /// <p>The request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopHumanLoopError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -936,7 +936,7 @@ impl StopHumanLoopError {
     /// Creates the `StopHumanLoopError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopHumanLoopErrorKind::Unhandled(err.into()),
+            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -945,7 +945,7 @@ impl StopHumanLoopError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopHumanLoopErrorKind::Unhandled(err.into()),
+            kind: StopHumanLoopErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -999,7 +999,32 @@ impl std::error::Error for StopHumanLoopError {
             StopHumanLoopErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopHumanLoopErrorKind::ThrottlingException(_inner) => Some(_inner),
             StopHumanLoopErrorKind::ValidationException(_inner) => Some(_inner),
-            StopHumanLoopErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopHumanLoopErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

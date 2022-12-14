@@ -50,7 +50,7 @@ pub enum Error {
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -96,9 +96,9 @@ where
                 crate::error::AssociateDelegateToResourceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::AssociateDelegateToResourceErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::AssociateDelegateToResourceErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::AssociateDelegateToResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateDelegateToResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -120,9 +120,9 @@ where
                 crate::error::AssociateMemberToGroupErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::AssociateMemberToGroupErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::AssociateMemberToGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::AssociateMemberToGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateMemberToGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,10 +149,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::AssumeImpersonationRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,10 +179,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::CancelMailboxExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -220,9 +220,11 @@ where
                 crate::error::CreateAliasErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::CreateAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -245,9 +247,9 @@ where
                 crate::error::CreateAvailabilityConfigurationErrorKind::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
                 crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::CreateAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::CreateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -266,9 +268,9 @@ where
                 crate::error::CreateGroupErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::CreateGroupErrorKind::ReservedNameException(inner) => Error::ReservedNameException(inner),
                 crate::error::CreateGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -301,10 +303,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::CreateImpersonationRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,9 +324,9 @@ where
                 crate::error::CreateMobileDeviceAccessRuleErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::CreateMobileDeviceAccessRuleErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::CreateMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -353,10 +355,10 @@ where
                     Error::NameAvailabilityException(inner)
                 }
                 crate::error::CreateOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -374,9 +376,9 @@ where
                 crate::error::CreateResourceErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::CreateResourceErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::CreateResourceErrorKind::ReservedNameException(inner) => Error::ReservedNameException(inner),
-                crate::error::CreateResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -396,9 +398,9 @@ where
                 crate::error::CreateUserErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::CreateUserErrorKind::ReservedNameException(inner) => Error::ReservedNameException(inner),
                 crate::error::CreateUserErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -419,10 +421,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::DeleteAccessControlRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -448,9 +450,11 @@ where
                 crate::error::DeleteAliasErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::DeleteAliasErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -470,9 +474,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DeleteAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -494,9 +498,9 @@ where
                 crate::error::DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DeleteEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -514,9 +518,9 @@ where
                 crate::error::DeleteGroupErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteGroupErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::DeleteGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -540,10 +544,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::DeleteImpersonationRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -573,10 +577,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::DeleteMailboxPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -598,9 +602,9 @@ where
                 crate::error::DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -617,9 +621,9 @@ where
                 crate::error::DeleteMobileDeviceAccessRuleErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteMobileDeviceAccessRuleErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DeleteMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -642,10 +646,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::DeleteOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -668,9 +672,11 @@ where
                 crate::error::DeleteResourceErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::DeleteResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -694,10 +700,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::DeleteRetentionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -715,9 +721,9 @@ where
                 crate::error::DeleteUserErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeleteUserErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::DeleteUserErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -747,10 +753,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::DeregisterFromWorkMailErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -769,9 +775,9 @@ where
                 crate::error::DeregisterMailDomainErrorKind::MailDomainInUseException(inner) => Error::MailDomainInUseException(inner),
                 crate::error::DeregisterMailDomainErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DeregisterMailDomainErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DeregisterMailDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterMailDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -797,9 +803,9 @@ where
                 crate::error::DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -822,9 +828,11 @@ where
                 crate::error::DescribeGroupErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::DescribeGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -840,9 +848,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DescribeInboundDmarcSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeInboundDmarcSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -869,10 +877,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::DescribeMailboxExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -893,10 +901,10 @@ where
                     inner,
                 ) => Error::OrganizationNotFoundException(inner),
                 crate::error::DescribeOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -922,10 +930,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::DescribeResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -948,9 +956,11 @@ where
                 crate::error::DescribeUserErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::DescribeUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -973,9 +983,9 @@ where
                 crate::error::DisassociateDelegateFromResourceErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DisassociateDelegateFromResourceErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DisassociateDelegateFromResourceErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::DisassociateDelegateFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateDelegateFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -997,9 +1007,9 @@ where
                 crate::error::DisassociateMemberFromGroupErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::DisassociateMemberFromGroupErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::DisassociateMemberFromGroupErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::DisassociateMemberFromGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateMemberFromGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1029,10 +1039,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetAccessControlEffectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1059,10 +1069,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::GetDefaultRetentionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1089,10 +1099,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetImpersonationRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1112,9 +1122,9 @@ where
                 crate::error::GetImpersonationRoleEffectErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::GetImpersonationRoleEffectErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::GetImpersonationRoleEffectErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetImpersonationRoleEffectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetImpersonationRoleEffectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1137,10 +1147,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::GetMailboxDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1163,9 +1173,11 @@ where
                 crate::error::GetMailDomainErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::GetMailDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMailDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1182,9 +1194,9 @@ where
                 crate::error::GetMobileDeviceAccessEffectErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetMobileDeviceAccessEffectErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::GetMobileDeviceAccessEffectErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::GetMobileDeviceAccessEffectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMobileDeviceAccessEffectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1203,9 +1215,9 @@ where
                 crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1226,10 +1238,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::ListAccessControlRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1255,9 +1267,11 @@ where
                 crate::error::ListAliasesErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::ListAliasesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAliasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1277,9 +1291,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::ListAvailabilityConfigurationsErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::ListAvailabilityConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAvailabilityConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1308,10 +1322,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::ListGroupMembersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1334,9 +1348,11 @@ where
                 crate::error::ListGroupsErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::ListGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1360,10 +1376,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::ListImpersonationRolesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1387,10 +1403,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::ListMailboxExportJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1417,10 +1433,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::ListMailboxPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1440,9 +1456,11 @@ where
                 crate::error::ListMailDomainsErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::ListMailDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMailDomainsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1464,9 +1482,9 @@ where
                 crate::error::ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::ListMobileDeviceAccessOverridesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1483,9 +1501,9 @@ where
                 crate::error::ListMobileDeviceAccessRulesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListMobileDeviceAccessRulesErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::ListMobileDeviceAccessRulesErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::ListMobileDeviceAccessRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMobileDeviceAccessRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1502,10 +1520,10 @@ where
                     Error::InvalidParameterException(inner)
                 }
                 crate::error::ListOrganizationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1535,10 +1553,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::ListResourceDelegatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1558,9 +1576,11 @@ where
                 crate::error::ListResourcesErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::ListResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1577,10 +1597,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1600,9 +1620,11 @@ where
                 crate::error::ListUsersErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1635,10 +1657,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::PutAccessControlRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1660,9 +1682,9 @@ where
                 crate::error::PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::PutEmailMonitoringConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::PutEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutEmailMonitoringConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1683,10 +1705,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::PutInboundDmarcSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1716,10 +1738,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::PutMailboxPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1738,9 +1760,9 @@ where
                 crate::error::PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::PutMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1766,10 +1788,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::PutRetentionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1798,10 +1820,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::RegisterMailDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1825,9 +1847,9 @@ where
                 crate::error::RegisterToWorkMailErrorKind::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
                 crate::error::RegisterToWorkMailErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::RegisterToWorkMailErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::RegisterToWorkMailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterToWorkMailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1847,9 +1869,9 @@ where
                 crate::error::ResetPasswordErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::ResetPasswordErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::ResetPasswordErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::ResetPasswordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResetPasswordErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1879,10 +1901,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::StartMailboxExportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1902,9 +1924,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1922,9 +1946,9 @@ where
                 crate::error::TestAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::TestAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::TestAvailabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::TestAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TestAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1938,9 +1962,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1962,9 +1988,9 @@ where
                 crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::UpdateAvailabilityConfigurationErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::UpdateAvailabilityConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAvailabilityConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1994,10 +2020,10 @@ where
                     inner,
                 ) => Error::OrganizationStateException(inner),
                 crate::error::UpdateDefaultMailDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2033,10 +2059,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateImpersonationRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2065,10 +2091,10 @@ where
                     Error::OrganizationStateException(inner)
                 }
                 crate::error::UpdateMailboxQuotaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2086,9 +2112,9 @@ where
                 crate::error::UpdateMobileDeviceAccessRuleErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::UpdateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::UpdateMobileDeviceAccessRuleErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
-                crate::error::UpdateMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateMobileDeviceAccessRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2113,9 +2139,9 @@ where
                 crate::error::UpdatePrimaryEmailAddressErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
                 crate::error::UpdatePrimaryEmailAddressErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
                 crate::error::UpdatePrimaryEmailAddressErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::UpdatePrimaryEmailAddressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePrimaryEmailAddressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2156,9 +2182,11 @@ where
                 crate::error::UpdateResourceErrorKind::OrganizationStateException(inner) => {
                     Error::OrganizationStateException(inner)
                 }
-                crate::error::UpdateResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

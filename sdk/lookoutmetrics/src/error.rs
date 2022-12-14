@@ -711,7 +711,7 @@ pub enum ActivateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ActivateAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -743,7 +743,9 @@ impl ActivateAnomalyDetectorError {
     /// Creates the `ActivateAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ActivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: ActivateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -752,7 +754,9 @@ impl ActivateAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ActivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: ActivateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -828,7 +832,7 @@ impl std::error::Error for ActivateAnomalyDetectorError {
             ActivateAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ActivateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ActivateAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            ActivateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ActivateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -857,7 +861,7 @@ pub enum BackTestAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BackTestAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -888,7 +892,9 @@ impl BackTestAnomalyDetectorError {
     /// Creates the `BackTestAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BackTestAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: BackTestAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -897,7 +903,9 @@ impl BackTestAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BackTestAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: BackTestAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -965,7 +973,7 @@ impl std::error::Error for BackTestAnomalyDetectorError {
             BackTestAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BackTestAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             BackTestAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            BackTestAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BackTestAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -998,7 +1006,7 @@ pub enum CreateAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAlertError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1031,7 +1039,7 @@ impl CreateAlertError {
     /// Creates the `CreateAlertError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAlertErrorKind::Unhandled(err.into()),
+            kind: CreateAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1040,7 +1048,7 @@ impl CreateAlertError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAlertErrorKind::Unhandled(err.into()),
+            kind: CreateAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1112,7 +1120,7 @@ impl std::error::Error for CreateAlertError {
             CreateAlertErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAlertErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAlertErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAlertErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAlertErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1143,7 +1151,7 @@ pub enum CreateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1175,7 +1183,9 @@ impl CreateAnomalyDetectorError {
     /// Creates the `CreateAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: CreateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1184,7 +1194,9 @@ impl CreateAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: CreateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1260,7 +1272,7 @@ impl std::error::Error for CreateAnomalyDetectorError {
             CreateAnomalyDetectorErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1293,7 +1305,7 @@ pub enum CreateMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMetricSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1326,7 +1338,7 @@ impl CreateMetricSetError {
     /// Creates the `CreateMetricSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMetricSetErrorKind::Unhandled(err.into()),
+            kind: CreateMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1335,7 +1347,7 @@ impl CreateMetricSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMetricSetErrorKind::Unhandled(err.into()),
+            kind: CreateMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1413,7 +1425,7 @@ impl std::error::Error for CreateMetricSetError {
             CreateMetricSetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateMetricSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateMetricSetErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateMetricSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMetricSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1444,7 +1456,7 @@ pub enum DeactivateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeactivateAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1476,7 +1488,9 @@ impl DeactivateAnomalyDetectorError {
     /// Creates the `DeactivateAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1485,7 +1499,9 @@ impl DeactivateAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeactivateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1561,7 +1577,7 @@ impl std::error::Error for DeactivateAnomalyDetectorError {
             DeactivateAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeactivateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeactivateAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            DeactivateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeactivateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1590,7 +1606,7 @@ pub enum DeleteAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAlertError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1621,7 +1637,7 @@ impl DeleteAlertError {
     /// Creates the `DeleteAlertError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAlertErrorKind::Unhandled(err.into()),
+            kind: DeleteAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1630,7 +1646,7 @@ impl DeleteAlertError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAlertErrorKind::Unhandled(err.into()),
+            kind: DeleteAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1689,7 +1705,7 @@ impl std::error::Error for DeleteAlertError {
             DeleteAlertErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAlertErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAlertErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAlertErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAlertErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1720,7 +1736,7 @@ pub enum DeleteAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1752,7 +1768,9 @@ impl DeleteAnomalyDetectorError {
     /// Creates the `DeleteAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeleteAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1761,7 +1779,9 @@ impl DeleteAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DeleteAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1837,7 +1857,7 @@ impl std::error::Error for DeleteAnomalyDetectorError {
             DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1866,7 +1886,7 @@ pub enum DescribeAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAlertError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1897,7 +1917,7 @@ impl DescribeAlertError {
     /// Creates the `DescribeAlertError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAlertErrorKind::Unhandled(err.into()),
+            kind: DescribeAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1906,7 +1926,7 @@ impl DescribeAlertError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAlertErrorKind::Unhandled(err.into()),
+            kind: DescribeAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1968,7 +1988,7 @@ impl std::error::Error for DescribeAlertError {
             DescribeAlertErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAlertErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeAlertErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeAlertErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAlertErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1997,7 +2017,7 @@ pub enum DescribeAnomalyDetectionExecutionsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAnomalyDetectionExecutionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2041,7 +2061,9 @@ impl DescribeAnomalyDetectionExecutionsError {
     /// Creates the `DescribeAnomalyDetectionExecutionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2050,7 +2072,9 @@ impl DescribeAnomalyDetectionExecutionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2128,7 +2152,7 @@ impl std::error::Error for DescribeAnomalyDetectionExecutionsError {
             DescribeAnomalyDetectionExecutionsErrorKind::ValidationException(_inner) => {
                 Some(_inner)
             }
-            DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAnomalyDetectionExecutionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2157,7 +2181,7 @@ pub enum DescribeAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2188,7 +2212,9 @@ impl DescribeAnomalyDetectorError {
     /// Creates the `DescribeAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2197,7 +2223,9 @@ impl DescribeAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: DescribeAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2265,7 +2293,7 @@ impl std::error::Error for DescribeAnomalyDetectorError {
             DescribeAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2294,7 +2322,7 @@ pub enum DescribeMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMetricSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2325,7 +2353,7 @@ impl DescribeMetricSetError {
     /// Creates the `DescribeMetricSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMetricSetErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2334,7 +2362,7 @@ impl DescribeMetricSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMetricSetErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2402,7 +2430,7 @@ impl std::error::Error for DescribeMetricSetError {
             DescribeMetricSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeMetricSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DescribeMetricSetErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeMetricSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMetricSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2431,7 +2459,7 @@ pub enum DetectMetricSetConfigErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectMetricSetConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2462,7 +2490,9 @@ impl DetectMetricSetConfigError {
     /// Creates the `DetectMetricSetConfigError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectMetricSetConfigErrorKind::Unhandled(err.into()),
+            kind: DetectMetricSetConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2471,7 +2501,9 @@ impl DetectMetricSetConfigError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectMetricSetConfigErrorKind::Unhandled(err.into()),
+            kind: DetectMetricSetConfigErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2539,7 +2571,7 @@ impl std::error::Error for DetectMetricSetConfigError {
             DetectMetricSetConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DetectMetricSetConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DetectMetricSetConfigErrorKind::ValidationException(_inner) => Some(_inner),
-            DetectMetricSetConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectMetricSetConfigErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2568,7 +2600,7 @@ pub enum GetAnomalyGroupErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAnomalyGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2599,7 +2631,7 @@ impl GetAnomalyGroupError {
     /// Creates the `GetAnomalyGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAnomalyGroupErrorKind::Unhandled(err.into()),
+            kind: GetAnomalyGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2608,7 +2640,7 @@ impl GetAnomalyGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAnomalyGroupErrorKind::Unhandled(err.into()),
+            kind: GetAnomalyGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2673,7 +2705,7 @@ impl std::error::Error for GetAnomalyGroupError {
             GetAnomalyGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAnomalyGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAnomalyGroupErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAnomalyGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAnomalyGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2702,7 +2734,7 @@ pub enum GetDataQualityMetricsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataQualityMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2733,7 +2765,9 @@ impl GetDataQualityMetricsError {
     /// Creates the `GetDataQualityMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDataQualityMetricsErrorKind::Unhandled(err.into()),
+            kind: GetDataQualityMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2742,7 +2776,9 @@ impl GetDataQualityMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDataQualityMetricsErrorKind::Unhandled(err.into()),
+            kind: GetDataQualityMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2810,7 +2846,7 @@ impl std::error::Error for GetDataQualityMetricsError {
             GetDataQualityMetricsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetDataQualityMetricsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDataQualityMetricsErrorKind::ValidationException(_inner) => Some(_inner),
-            GetDataQualityMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDataQualityMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2839,7 +2875,7 @@ pub enum GetFeedbackErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFeedbackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,7 +2906,7 @@ impl GetFeedbackError {
     /// Creates the `GetFeedbackError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFeedbackErrorKind::Unhandled(err.into()),
+            kind: GetFeedbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2879,7 +2915,7 @@ impl GetFeedbackError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFeedbackErrorKind::Unhandled(err.into()),
+            kind: GetFeedbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2938,7 +2974,7 @@ impl std::error::Error for GetFeedbackError {
             GetFeedbackErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetFeedbackErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFeedbackErrorKind::ValidationException(_inner) => Some(_inner),
-            GetFeedbackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFeedbackErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2967,7 +3003,7 @@ pub enum GetSampleDataErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSampleDataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2998,7 +3034,7 @@ impl GetSampleDataError {
     /// Creates the `GetSampleDataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSampleDataErrorKind::Unhandled(err.into()),
+            kind: GetSampleDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3007,7 +3043,7 @@ impl GetSampleDataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSampleDataErrorKind::Unhandled(err.into()),
+            kind: GetSampleDataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3069,7 +3105,7 @@ impl std::error::Error for GetSampleDataError {
             GetSampleDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSampleDataErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSampleDataErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSampleDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSampleDataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3098,7 +3134,7 @@ pub enum ListAlertsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAlertsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3129,7 +3165,7 @@ impl ListAlertsError {
     /// Creates the `ListAlertsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAlertsErrorKind::Unhandled(err.into()),
+            kind: ListAlertsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3138,7 +3174,7 @@ impl ListAlertsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAlertsErrorKind::Unhandled(err.into()),
+            kind: ListAlertsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3194,7 +3230,7 @@ impl std::error::Error for ListAlertsError {
             ListAlertsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAlertsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAlertsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAlertsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAlertsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3223,7 +3259,7 @@ pub enum ListAnomalyDetectorsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnomalyDetectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3254,7 +3290,9 @@ impl ListAnomalyDetectorsError {
     /// Creates the `ListAnomalyDetectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnomalyDetectorsErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3263,7 +3301,9 @@ impl ListAnomalyDetectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnomalyDetectorsErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyDetectorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3331,7 +3371,7 @@ impl std::error::Error for ListAnomalyDetectorsError {
             ListAnomalyDetectorsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAnomalyDetectorsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAnomalyDetectorsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAnomalyDetectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnomalyDetectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3360,7 +3400,7 @@ pub enum ListAnomalyGroupRelatedMetricsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnomalyGroupRelatedMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3400,7 +3440,9 @@ impl ListAnomalyGroupRelatedMetricsError {
     /// Creates the `ListAnomalyGroupRelatedMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3409,7 +3451,9 @@ impl ListAnomalyGroupRelatedMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3483,7 +3527,7 @@ impl std::error::Error for ListAnomalyGroupRelatedMetricsError {
                 Some(_inner)
             }
             ListAnomalyGroupRelatedMetricsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3512,7 +3556,7 @@ pub enum ListAnomalyGroupSummariesErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnomalyGroupSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3543,7 +3587,9 @@ impl ListAnomalyGroupSummariesError {
     /// Creates the `ListAnomalyGroupSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnomalyGroupSummariesErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3552,7 +3598,9 @@ impl ListAnomalyGroupSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnomalyGroupSummariesErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3620,7 +3668,7 @@ impl std::error::Error for ListAnomalyGroupSummariesError {
             ListAnomalyGroupSummariesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAnomalyGroupSummariesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAnomalyGroupSummariesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAnomalyGroupSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnomalyGroupSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3649,7 +3697,7 @@ pub enum ListAnomalyGroupTimeSeriesErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAnomalyGroupTimeSeriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3680,7 +3728,9 @@ impl ListAnomalyGroupTimeSeriesError {
     /// Creates the `ListAnomalyGroupTimeSeriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAnomalyGroupTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3689,7 +3739,9 @@ impl ListAnomalyGroupTimeSeriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAnomalyGroupTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: ListAnomalyGroupTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3757,7 +3809,7 @@ impl std::error::Error for ListAnomalyGroupTimeSeriesError {
             ListAnomalyGroupTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAnomalyGroupTimeSeriesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAnomalyGroupTimeSeriesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListAnomalyGroupTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAnomalyGroupTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3786,7 +3838,7 @@ pub enum ListMetricSetsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMetricSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3817,7 +3869,7 @@ impl ListMetricSetsError {
     /// Creates the `ListMetricSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMetricSetsErrorKind::Unhandled(err.into()),
+            kind: ListMetricSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3826,7 +3878,7 @@ impl ListMetricSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMetricSetsErrorKind::Unhandled(err.into()),
+            kind: ListMetricSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3891,7 +3943,7 @@ impl std::error::Error for ListMetricSetsError {
             ListMetricSetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListMetricSetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListMetricSetsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListMetricSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMetricSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3916,7 +3968,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3945,7 +3997,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3954,7 +4006,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4006,7 +4058,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4035,7 +4087,7 @@ pub enum PutFeedbackErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutFeedbackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4066,7 +4118,7 @@ impl PutFeedbackError {
     /// Creates the `PutFeedbackError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutFeedbackErrorKind::Unhandled(err.into()),
+            kind: PutFeedbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4075,7 +4127,7 @@ impl PutFeedbackError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutFeedbackErrorKind::Unhandled(err.into()),
+            kind: PutFeedbackErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4134,7 +4186,7 @@ impl std::error::Error for PutFeedbackError {
             PutFeedbackErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutFeedbackErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutFeedbackErrorKind::ValidationException(_inner) => Some(_inner),
-            PutFeedbackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutFeedbackErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4159,7 +4211,7 @@ pub enum TagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4188,7 +4240,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4197,7 +4249,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4243,7 +4295,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4268,7 +4320,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4297,7 +4349,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4306,7 +4358,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4355,7 +4407,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4384,7 +4436,7 @@ pub enum UpdateAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAlertError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4415,7 +4467,7 @@ impl UpdateAlertError {
     /// Creates the `UpdateAlertError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAlertErrorKind::Unhandled(err.into()),
+            kind: UpdateAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4424,7 +4476,7 @@ impl UpdateAlertError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAlertErrorKind::Unhandled(err.into()),
+            kind: UpdateAlertErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4483,7 +4535,7 @@ impl std::error::Error for UpdateAlertError {
             UpdateAlertErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAlertErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAlertErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAlertErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAlertErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4512,7 +4564,7 @@ pub enum UpdateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAnomalyDetectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4543,7 +4595,9 @@ impl UpdateAnomalyDetectorError {
     /// Creates the `UpdateAnomalyDetectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: UpdateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4552,7 +4606,9 @@ impl UpdateAnomalyDetectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAnomalyDetectorErrorKind::Unhandled(err.into()),
+            kind: UpdateAnomalyDetectorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4620,7 +4676,7 @@ impl std::error::Error for UpdateAnomalyDetectorError {
             UpdateAnomalyDetectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAnomalyDetectorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAnomalyDetectorErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAnomalyDetectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4651,7 +4707,7 @@ pub enum UpdateMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMetricSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4683,7 +4739,7 @@ impl UpdateMetricSetError {
     /// Creates the `UpdateMetricSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMetricSetErrorKind::Unhandled(err.into()),
+            kind: UpdateMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4692,7 +4748,7 @@ impl UpdateMetricSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMetricSetErrorKind::Unhandled(err.into()),
+            kind: UpdateMetricSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4765,7 +4821,32 @@ impl std::error::Error for UpdateMetricSetError {
             UpdateMetricSetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateMetricSetErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateMetricSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMetricSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

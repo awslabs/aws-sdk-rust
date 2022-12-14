@@ -1198,7 +1198,7 @@ pub enum AddCustomRoutingEndpointsErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddCustomRoutingEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1237,7 +1237,9 @@ impl AddCustomRoutingEndpointsError {
     /// Creates the `AddCustomRoutingEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(err.into()),
+            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1246,7 +1248,9 @@ impl AddCustomRoutingEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(err.into()),
+            kind: AddCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1336,7 +1340,7 @@ impl std::error::Error for AddCustomRoutingEndpointsError {
             }
             AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             AddCustomRoutingEndpointsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1365,7 +1369,7 @@ pub enum AdvertiseByoipCidrErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AdvertiseByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1396,7 +1400,7 @@ impl AdvertiseByoipCidrError {
     /// Creates the `AdvertiseByoipCidrError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AdvertiseByoipCidrErrorKind::Unhandled(err.into()),
+            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1405,7 +1409,7 @@ impl AdvertiseByoipCidrError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AdvertiseByoipCidrErrorKind::Unhandled(err.into()),
+            kind: AdvertiseByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1473,7 +1477,7 @@ impl std::error::Error for AdvertiseByoipCidrError {
             AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
             AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             AdvertiseByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AdvertiseByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1498,7 +1502,7 @@ pub enum AllowCustomRoutingTrafficErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllowCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1531,7 +1535,9 @@ impl AllowCustomRoutingTrafficError {
     /// Creates the `AllowCustomRoutingTrafficError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(err.into()),
+            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1540,7 +1546,9 @@ impl AllowCustomRoutingTrafficError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(err.into()),
+            kind: AllowCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1596,7 +1604,7 @@ impl std::error::Error for AllowCustomRoutingTrafficError {
                 Some(_inner)
             }
             AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AllowCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1621,7 +1629,7 @@ pub enum CreateAcceleratorErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1650,7 +1658,7 @@ impl CreateAcceleratorError {
     /// Creates the `CreateAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAcceleratorErrorKind::Unhandled(err.into()),
+            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1659,7 +1667,7 @@ impl CreateAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAcceleratorErrorKind::Unhandled(err.into()),
+            kind: CreateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1711,7 +1719,7 @@ impl std::error::Error for CreateAcceleratorError {
             CreateAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             CreateAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             CreateAcceleratorErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1738,7 +1746,7 @@ pub enum CreateCustomRoutingAcceleratorErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1777,7 +1785,9 @@ impl CreateCustomRoutingAcceleratorError {
     /// Creates the `CreateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1786,7 +1796,9 @@ impl CreateCustomRoutingAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1850,7 +1862,7 @@ impl std::error::Error for CreateCustomRoutingAcceleratorError {
                 Some(_inner)
             }
             CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1885,7 +1897,7 @@ pub enum CreateCustomRoutingEndpointGroupErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1938,7 +1950,9 @@ impl CreateCustomRoutingEndpointGroupError {
     /// Creates the `CreateCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1947,7 +1961,9 @@ impl CreateCustomRoutingEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2055,7 +2071,7 @@ impl std::error::Error for CreateCustomRoutingEndpointGroupError {
             CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2084,7 +2100,7 @@ pub enum CreateCustomRoutingListenerErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2121,7 +2137,9 @@ impl CreateCustomRoutingListenerError {
     /// Creates the `CreateCustomRoutingListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2130,7 +2148,9 @@ impl CreateCustomRoutingListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: CreateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2202,7 +2222,7 @@ impl std::error::Error for CreateCustomRoutingListenerError {
             CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
             CreateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2235,7 +2255,7 @@ pub enum CreateEndpointGroupErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2270,7 +2290,7 @@ impl CreateEndpointGroupError {
     /// Creates the `CreateEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2279,7 +2299,7 @@ impl CreateEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2365,7 +2385,7 @@ impl std::error::Error for CreateEndpointGroupError {
             CreateEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             CreateEndpointGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEndpointGroupErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            CreateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2394,7 +2414,7 @@ pub enum CreateListenerErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,7 +2445,7 @@ impl CreateListenerError {
     /// Creates the `CreateListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateListenerErrorKind::Unhandled(err.into()),
+            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2434,7 +2454,7 @@ impl CreateListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateListenerErrorKind::Unhandled(err.into()),
+            kind: CreateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2502,7 +2522,7 @@ impl std::error::Error for CreateListenerError {
             CreateListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             CreateListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
             CreateListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2531,7 +2551,7 @@ pub enum DeleteAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,7 +2582,7 @@ impl DeleteAcceleratorError {
     /// Creates the `DeleteAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2571,7 +2591,7 @@ impl DeleteAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DeleteAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2639,7 +2659,7 @@ impl std::error::Error for DeleteAcceleratorError {
             DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_inner) => Some(_inner),
             DeleteAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DeleteAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2668,7 +2688,7 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2712,7 +2732,9 @@ impl DeleteCustomRoutingAcceleratorError {
     /// Creates the `DeleteCustomRoutingAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2721,7 +2743,9 @@ impl DeleteCustomRoutingAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2799,7 +2823,7 @@ impl std::error::Error for DeleteCustomRoutingAcceleratorError {
             DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2824,7 +2848,7 @@ pub enum DeleteCustomRoutingEndpointGroupErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2862,7 +2886,9 @@ impl DeleteCustomRoutingEndpointGroupError {
     /// Creates the `DeleteCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2871,7 +2897,9 @@ impl DeleteCustomRoutingEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2929,7 +2957,7 @@ impl std::error::Error for DeleteCustomRoutingEndpointGroupError {
             DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2956,7 +2984,7 @@ pub enum DeleteCustomRoutingListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2992,7 +3020,9 @@ impl DeleteCustomRoutingListenerError {
     /// Creates the `DeleteCustomRoutingListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3001,7 +3031,9 @@ impl DeleteCustomRoutingListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3065,7 +3097,7 @@ impl std::error::Error for DeleteCustomRoutingListenerError {
             }
             DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3090,7 +3122,7 @@ pub enum DeleteEndpointGroupErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3119,7 +3151,7 @@ impl DeleteEndpointGroupError {
     /// Creates the `DeleteEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3128,7 +3160,7 @@ impl DeleteEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3180,7 +3212,7 @@ impl std::error::Error for DeleteEndpointGroupError {
             DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
             DeleteEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DeleteEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeleteEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3207,7 +3239,7 @@ pub enum DeleteListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3237,7 +3269,7 @@ impl DeleteListenerError {
     /// Creates the `DeleteListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3246,7 +3278,7 @@ impl DeleteListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteListenerErrorKind::Unhandled(err.into()),
+            kind: DeleteListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3306,7 +3338,7 @@ impl std::error::Error for DeleteListenerError {
             DeleteListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DeleteListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DeleteListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3331,7 +3363,7 @@ pub enum DenyCustomRoutingTrafficErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DenyCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3364,7 +3396,9 @@ impl DenyCustomRoutingTrafficError {
     /// Creates the `DenyCustomRoutingTrafficError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(err.into()),
+            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3373,7 +3407,9 @@ impl DenyCustomRoutingTrafficError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(err.into()),
+            kind: DenyCustomRoutingTrafficErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3429,7 +3465,7 @@ impl std::error::Error for DenyCustomRoutingTrafficError {
                 Some(_inner)
             }
             DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DenyCustomRoutingTrafficErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3458,7 +3494,7 @@ pub enum DeprovisionByoipCidrErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeprovisionByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3489,7 +3525,9 @@ impl DeprovisionByoipCidrError {
     /// Creates the `DeprovisionByoipCidrError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeprovisionByoipCidrErrorKind::Unhandled(err.into()),
+            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3498,7 +3536,9 @@ impl DeprovisionByoipCidrError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeprovisionByoipCidrErrorKind::Unhandled(err.into()),
+            kind: DeprovisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3566,7 +3606,7 @@ impl std::error::Error for DeprovisionByoipCidrError {
             DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
             DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DeprovisionByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeprovisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3591,7 +3631,7 @@ pub enum DescribeAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3620,7 +3660,7 @@ impl DescribeAcceleratorError {
     /// Creates the `DescribeAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3629,7 +3669,7 @@ impl DescribeAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DescribeAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3681,7 +3721,7 @@ impl std::error::Error for DescribeAcceleratorError {
             DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
             DescribeAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DescribeAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DescribeAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3706,7 +3746,7 @@ pub enum DescribeAcceleratorAttributesErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3744,7 +3784,9 @@ impl DescribeAcceleratorAttributesError {
     /// Creates the `DescribeAcceleratorAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3753,7 +3795,9 @@ impl DescribeAcceleratorAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3811,7 +3855,7 @@ impl std::error::Error for DescribeAcceleratorAttributesError {
             DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3836,7 +3880,7 @@ pub enum DescribeCustomRoutingAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3874,7 +3918,9 @@ impl DescribeCustomRoutingAcceleratorError {
     /// Creates the `DescribeCustomRoutingAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3883,7 +3929,9 @@ impl DescribeCustomRoutingAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingAcceleratorErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3941,7 +3989,7 @@ impl std::error::Error for DescribeCustomRoutingAcceleratorError {
             DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3966,7 +4014,7 @@ pub enum DescribeCustomRoutingAcceleratorAttributesErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4004,7 +4052,9 @@ impl DescribeCustomRoutingAcceleratorAttributesError {
     /// Creates the `DescribeCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4013,7 +4063,9 @@ impl DescribeCustomRoutingAcceleratorAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4071,9 +4123,7 @@ impl std::error::Error for DescribeCustomRoutingAcceleratorAttributesError {
             DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(
                 _inner,
             ) => Some(_inner),
-            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4098,7 +4148,7 @@ pub enum DescribeCustomRoutingEndpointGroupErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4136,7 +4186,9 @@ impl DescribeCustomRoutingEndpointGroupError {
     /// Creates the `DescribeCustomRoutingEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4145,7 +4197,9 @@ impl DescribeCustomRoutingEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4203,7 +4257,7 @@ impl std::error::Error for DescribeCustomRoutingEndpointGroupError {
             DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4228,7 +4282,7 @@ pub enum DescribeCustomRoutingListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4266,7 +4320,9 @@ impl DescribeCustomRoutingListenerError {
     /// Creates the `DescribeCustomRoutingListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4275,7 +4331,9 @@ impl DescribeCustomRoutingListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: DescribeCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4333,7 +4391,7 @@ impl std::error::Error for DescribeCustomRoutingListenerError {
             DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4358,7 +4416,7 @@ pub enum DescribeEndpointGroupErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4387,7 +4445,9 @@ impl DescribeEndpointGroupError {
     /// Creates the `DescribeEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4396,7 +4456,9 @@ impl DescribeEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4448,7 +4510,7 @@ impl std::error::Error for DescribeEndpointGroupError {
             DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_inner) => Some(_inner),
             DescribeEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DescribeEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            DescribeEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4473,7 +4535,7 @@ pub enum DescribeListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4502,7 +4564,7 @@ impl DescribeListenerError {
     /// Creates the `DescribeListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeListenerErrorKind::Unhandled(err.into()),
+            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4511,7 +4573,7 @@ impl DescribeListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeListenerErrorKind::Unhandled(err.into()),
+            kind: DescribeListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4563,7 +4625,7 @@ impl std::error::Error for DescribeListenerError {
             DescribeListenerErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DescribeListenerErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            DescribeListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4588,7 +4650,7 @@ pub enum ListAcceleratorsErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAcceleratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4617,7 +4679,7 @@ impl ListAcceleratorsError {
     /// Creates the `ListAcceleratorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAcceleratorsErrorKind::Unhandled(err.into()),
+            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4626,7 +4688,7 @@ impl ListAcceleratorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAcceleratorsErrorKind::Unhandled(err.into()),
+            kind: ListAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4678,7 +4740,7 @@ impl std::error::Error for ListAcceleratorsError {
             ListAcceleratorsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListAcceleratorsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListAcceleratorsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4705,7 +4767,7 @@ pub enum ListByoipCidrsErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListByoipCidrsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4735,7 +4797,7 @@ impl ListByoipCidrsError {
     /// Creates the `ListByoipCidrsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListByoipCidrsErrorKind::Unhandled(err.into()),
+            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4744,7 +4806,7 @@ impl ListByoipCidrsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListByoipCidrsErrorKind::Unhandled(err.into()),
+            kind: ListByoipCidrsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4804,7 +4866,7 @@ impl std::error::Error for ListByoipCidrsError {
             ListByoipCidrsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListByoipCidrsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListByoipCidrsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListByoipCidrsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListByoipCidrsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4829,7 +4891,7 @@ pub enum ListCustomRoutingAcceleratorsErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingAcceleratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4867,7 +4929,9 @@ impl ListCustomRoutingAcceleratorsError {
     /// Creates the `ListCustomRoutingAcceleratorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4876,7 +4940,9 @@ impl ListCustomRoutingAcceleratorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingAcceleratorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4934,7 +5000,7 @@ impl std::error::Error for ListCustomRoutingAcceleratorsError {
             ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomRoutingAcceleratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4961,7 +5027,7 @@ pub enum ListCustomRoutingEndpointGroupsErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingEndpointGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5002,7 +5068,9 @@ impl ListCustomRoutingEndpointGroupsError {
     /// Creates the `ListCustomRoutingEndpointGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5011,7 +5079,9 @@ impl ListCustomRoutingEndpointGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingEndpointGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5079,7 +5149,7 @@ impl std::error::Error for ListCustomRoutingEndpointGroupsError {
             ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomRoutingEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5106,7 +5176,7 @@ pub enum ListCustomRoutingListenersErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5140,7 +5210,9 @@ impl ListCustomRoutingListenersError {
     /// Creates the `ListCustomRoutingListenersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomRoutingListenersErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5149,7 +5221,9 @@ impl ListCustomRoutingListenersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomRoutingListenersErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingListenersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5213,7 +5287,7 @@ impl std::error::Error for ListCustomRoutingListenersError {
             }
             ListCustomRoutingListenersErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListCustomRoutingListenersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomRoutingListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5242,7 +5316,7 @@ pub enum ListCustomRoutingPortMappingsErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5286,7 +5360,9 @@ impl ListCustomRoutingPortMappingsError {
     /// Creates the `ListCustomRoutingPortMappingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5295,7 +5371,9 @@ impl ListCustomRoutingPortMappingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingPortMappingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5373,7 +5451,7 @@ impl std::error::Error for ListCustomRoutingPortMappingsError {
             ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(_inner) => {
                 Some(_inner)
             }
-            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCustomRoutingPortMappingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5400,7 +5478,7 @@ pub enum ListCustomRoutingPortMappingsByDestinationErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsByDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5441,7 +5519,9 @@ impl ListCustomRoutingPortMappingsByDestinationError {
     /// Creates the `ListCustomRoutingPortMappingsByDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5450,7 +5530,9 @@ impl ListCustomRoutingPortMappingsByDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(err.into()),
+            kind: ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5518,9 +5600,7 @@ impl std::error::Error for ListCustomRoutingPortMappingsByDestinationError {
             ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(
                 _inner,
             ) => Some(_inner),
-            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5547,7 +5627,7 @@ pub enum ListEndpointGroupsErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5577,7 +5657,7 @@ impl ListEndpointGroupsError {
     /// Creates the `ListEndpointGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEndpointGroupsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5586,7 +5666,7 @@ impl ListEndpointGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEndpointGroupsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5646,7 +5726,7 @@ impl std::error::Error for ListEndpointGroupsError {
             ListEndpointGroupsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListEndpointGroupsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListEndpointGroupsErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            ListEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEndpointGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5673,7 +5753,7 @@ pub enum ListListenersErrorKind {
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListListenersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5703,7 +5783,7 @@ impl ListListenersError {
     /// Creates the `ListListenersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListListenersErrorKind::Unhandled(err.into()),
+            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5712,7 +5792,7 @@ impl ListListenersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListListenersErrorKind::Unhandled(err.into()),
+            kind: ListListenersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5772,7 +5852,7 @@ impl std::error::Error for ListListenersError {
             ListListenersErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListListenersErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListListenersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListListenersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListListenersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5797,7 +5877,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5826,7 +5906,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5835,7 +5915,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5887,7 +5967,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5916,7 +5996,7 @@ pub enum ProvisionByoipCidrErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ProvisionByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5947,7 +6027,7 @@ impl ProvisionByoipCidrError {
     /// Creates the `ProvisionByoipCidrError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ProvisionByoipCidrErrorKind::Unhandled(err.into()),
+            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5956,7 +6036,7 @@ impl ProvisionByoipCidrError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ProvisionByoipCidrErrorKind::Unhandled(err.into()),
+            kind: ProvisionByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6024,7 +6104,7 @@ impl std::error::Error for ProvisionByoipCidrError {
             ProvisionByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ProvisionByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ProvisionByoipCidrErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ProvisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ProvisionByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6055,7 +6135,7 @@ pub enum RemoveCustomRoutingEndpointsErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveCustomRoutingEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6095,7 +6175,9 @@ impl RemoveCustomRoutingEndpointsError {
     /// Creates the `RemoveCustomRoutingEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(err.into()),
+            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6104,7 +6186,9 @@ impl RemoveCustomRoutingEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(err.into()),
+            kind: RemoveCustomRoutingEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6186,7 +6270,7 @@ impl std::error::Error for RemoveCustomRoutingEndpointsError {
                 Some(_inner)
             }
             RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveCustomRoutingEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6211,7 +6295,7 @@ pub enum TagResourceErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6240,7 +6324,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6249,7 +6333,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6301,7 +6385,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6326,7 +6410,7 @@ pub enum UntagResourceErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6355,7 +6439,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6364,7 +6448,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6416,7 +6500,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6443,7 +6527,7 @@ pub enum UpdateAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6473,7 +6557,7 @@ impl UpdateAcceleratorError {
     /// Creates the `UpdateAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAcceleratorErrorKind::Unhandled(err.into()),
+            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6482,7 +6566,7 @@ impl UpdateAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAcceleratorErrorKind::Unhandled(err.into()),
+            kind: UpdateAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6542,7 +6626,7 @@ impl std::error::Error for UpdateAcceleratorError {
             UpdateAcceleratorErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6569,7 +6653,7 @@ pub enum UpdateAcceleratorAttributesErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6603,7 +6687,9 @@ impl UpdateAcceleratorAttributesError {
     /// Creates the `UpdateAcceleratorAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6612,7 +6698,9 @@ impl UpdateAcceleratorAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateAcceleratorAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6676,7 +6764,7 @@ impl std::error::Error for UpdateAcceleratorAttributesError {
                 Some(_inner)
             }
             UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6701,7 +6789,7 @@ pub enum UpdateCustomRoutingAcceleratorErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6739,7 +6827,9 @@ impl UpdateCustomRoutingAcceleratorError {
     /// Creates the `UpdateCustomRoutingAcceleratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6748,7 +6838,9 @@ impl UpdateCustomRoutingAcceleratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingAcceleratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6806,7 +6898,7 @@ impl std::error::Error for UpdateCustomRoutingAcceleratorError {
             UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCustomRoutingAcceleratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6833,7 +6925,7 @@ pub enum UpdateCustomRoutingAcceleratorAttributesErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6874,7 +6966,9 @@ impl UpdateCustomRoutingAcceleratorAttributesError {
     /// Creates the `UpdateCustomRoutingAcceleratorAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6883,7 +6977,9 @@ impl UpdateCustomRoutingAcceleratorAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6951,9 +7047,7 @@ impl std::error::Error for UpdateCustomRoutingAcceleratorAttributesError {
             UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6982,7 +7076,7 @@ pub enum UpdateCustomRoutingListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomRoutingListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7019,7 +7113,9 @@ impl UpdateCustomRoutingListenerError {
     /// Creates the `UpdateCustomRoutingListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7028,7 +7124,9 @@ impl UpdateCustomRoutingListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomRoutingListenerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7098,7 +7196,7 @@ impl std::error::Error for UpdateCustomRoutingListenerError {
             UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
             UpdateCustomRoutingListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCustomRoutingListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7127,7 +7225,7 @@ pub enum UpdateEndpointGroupErrorKind {
     /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEndpointGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7158,7 +7256,7 @@ impl UpdateEndpointGroupError {
     /// Creates the `UpdateEndpointGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7167,7 +7265,7 @@ impl UpdateEndpointGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEndpointGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateEndpointGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7235,7 +7333,7 @@ impl std::error::Error for UpdateEndpointGroupError {
             UpdateEndpointGroupErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             UpdateEndpointGroupErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             UpdateEndpointGroupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEndpointGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7264,7 +7362,7 @@ pub enum UpdateListenerErrorKind {
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateListenerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7295,7 +7393,7 @@ impl UpdateListenerError {
     /// Creates the `UpdateListenerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateListenerErrorKind::Unhandled(err.into()),
+            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7304,7 +7402,7 @@ impl UpdateListenerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateListenerErrorKind::Unhandled(err.into()),
+            kind: UpdateListenerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7372,7 +7470,7 @@ impl std::error::Error for UpdateListenerError {
             UpdateListenerErrorKind::InvalidPortRangeException(_inner) => Some(_inner),
             UpdateListenerErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateListenerErrorKind::ListenerNotFoundException(_inner) => Some(_inner),
-            UpdateListenerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateListenerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7401,7 +7499,7 @@ pub enum WithdrawByoipCidrErrorKind {
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for WithdrawByoipCidrError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7432,7 +7530,7 @@ impl WithdrawByoipCidrError {
     /// Creates the `WithdrawByoipCidrError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: WithdrawByoipCidrErrorKind::Unhandled(err.into()),
+            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7441,7 +7539,7 @@ impl WithdrawByoipCidrError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: WithdrawByoipCidrErrorKind::Unhandled(err.into()),
+            kind: WithdrawByoipCidrErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7509,7 +7607,32 @@ impl std::error::Error for WithdrawByoipCidrError {
             WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_inner) => Some(_inner),
             WithdrawByoipCidrErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             WithdrawByoipCidrErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            WithdrawByoipCidrErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            WithdrawByoipCidrErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -49,7 +49,7 @@ pub enum Error {
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -92,9 +92,11 @@ where
                 crate::error::DeleteLexiconErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DeleteLexiconErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLexiconErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -111,9 +113,11 @@ where
                 crate::error::DescribeVoicesErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DescribeVoicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeVoicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -130,9 +134,11 @@ where
                 crate::error::GetLexiconErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetLexiconErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLexiconErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -156,10 +162,10 @@ where
                     inner,
                 ) => Error::SynthesisTaskNotFoundException(inner),
                 crate::error::GetSpeechSynthesisTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -176,9 +182,11 @@ where
                 crate::error::ListLexiconsErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListLexiconsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLexiconsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,10 +207,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListSpeechSynthesisTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -234,9 +242,11 @@ where
                 crate::error::PutLexiconErrorKind::UnsupportedPlsLanguageException(inner) => {
                     Error::UnsupportedPlsLanguageException(inner)
                 }
-                crate::error::PutLexiconErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutLexiconErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -262,9 +272,9 @@ where
                 crate::error::StartSpeechSynthesisTaskErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
                 crate::error::StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
                 crate::error::StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
-                crate::error::StartSpeechSynthesisTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartSpeechSynthesisTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -286,9 +296,9 @@ where
                 crate::error::SynthesizeSpeechErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
                 crate::error::SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
                 crate::error::SynthesizeSpeechErrorKind::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
-                crate::error::SynthesizeSpeechErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SynthesizeSpeechErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

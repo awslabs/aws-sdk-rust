@@ -16,7 +16,7 @@ pub enum Error {
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,11 @@ where
                 crate::error::ConfigureLogsErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ConfigureLogsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -87,9 +89,11 @@ where
                 crate::error::CreateChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::CreateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -121,10 +125,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::CreateHarvestJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -157,10 +161,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::CreateOriginEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,9 +193,11 @@ where
                 crate::error::DeleteChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -224,10 +230,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::DeleteOriginEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -256,9 +262,11 @@ where
                 crate::error::DescribeChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -290,10 +298,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::DescribeHarvestJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,10 +334,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::DescribeOriginEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,9 +366,11 @@ where
                 crate::error::ListChannelsErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChannelsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -389,9 +399,11 @@ where
                 crate::error::ListHarvestJobsErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHarvestJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -423,10 +435,10 @@ where
                     Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ListOriginEndpointsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -440,10 +452,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -476,10 +488,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::RotateChannelCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -503,9 +515,9 @@ where
                 crate::error::RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -516,9 +528,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -529,9 +543,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -560,9 +576,11 @@ where
                 crate::error::UpdateChannelErrorKind::UnprocessableEntityException(inner) => {
                     Error::UnprocessableEntityException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,10 +613,10 @@ where
                     inner,
                 ) => Error::UnprocessableEntityException(inner),
                 crate::error::UpdateOriginEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

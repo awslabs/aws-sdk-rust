@@ -54,7 +54,7 @@ pub enum Error {
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -104,9 +104,9 @@ where
                 crate::error::AbortDocumentVersionUploadErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::AbortDocumentVersionUploadErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::AbortDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::AbortDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AbortDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -132,9 +132,11 @@ where
                 crate::error::ActivateUserErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::ActivateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ActivateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -152,9 +154,9 @@ where
                 crate::error::AddResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::AddResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::AddResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,9 +191,11 @@ where
                 crate::error::CreateCommentErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::CreateCommentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCommentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -212,9 +216,9 @@ where
                 crate::error::CreateCustomMetadataErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateCustomMetadataErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::CreateCustomMetadataErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::CreateCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,9 +256,11 @@ where
                 crate::error::CreateFolderErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::CreateFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -283,9 +289,11 @@ where
                 crate::error::CreateLabelsErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::CreateLabelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateLabelsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -306,9 +314,9 @@ where
                 crate::error::CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException(inner) => Error::TooManySubscriptionsException(inner),
                 crate::error::CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::CreateNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -334,9 +342,11 @@ where
                 crate::error::CreateUserErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -362,9 +372,11 @@ where
                 crate::error::DeactivateUserErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeactivateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeactivateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -396,9 +408,11 @@ where
                 crate::error::DeleteCommentErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeleteCommentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCommentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -418,9 +432,9 @@ where
                 crate::error::DeleteCustomMetadataErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteCustomMetadataErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::DeleteCustomMetadataErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeleteCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -455,9 +469,11 @@ where
                 crate::error::DeleteDocumentErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeleteDocumentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDocumentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +508,11 @@ where
                 crate::error::DeleteFolderErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::DeleteFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -515,9 +533,9 @@ where
                 crate::error::DeleteFolderContentsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteFolderContentsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::DeleteFolderContentsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeleteFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -543,9 +561,11 @@ where
                 crate::error::DeleteLabelsErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::DeleteLabelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLabelsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -567,9 +587,9 @@ where
                 crate::error::DeleteNotificationSubscriptionErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
                 crate::error::DeleteNotificationSubscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DeleteNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,9 +615,11 @@ where
                 crate::error::DeleteUserErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -626,10 +648,10 @@ where
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
                 crate::error::DescribeActivitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -661,10 +683,10 @@ where
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
                 crate::error::DescribeCommentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -685,9 +707,9 @@ where
                 crate::error::DescribeDocumentVersionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::DescribeDocumentVersionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeDocumentVersionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDocumentVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -707,9 +729,9 @@ where
                 crate::error::DescribeFolderContentsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
                 crate::error::DescribeFolderContentsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeFolderContentsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -732,9 +754,11 @@ where
                 crate::error::DescribeGroupsErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -755,9 +779,9 @@ where
                 crate::error::DescribeNotificationSubscriptionsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
                 crate::error::DescribeNotificationSubscriptionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeNotificationSubscriptionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeNotificationSubscriptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeNotificationSubscriptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -775,9 +799,9 @@ where
                 crate::error::DescribeResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -806,10 +830,10 @@ where
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
                 crate::error::DescribeRootFoldersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -841,9 +865,11 @@ where
                 crate::error::DescribeUsersErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::DescribeUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -869,9 +895,11 @@ where
                 crate::error::GetCurrentUserErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::GetCurrentUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCurrentUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -903,9 +931,11 @@ where
                 crate::error::GetDocumentErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::GetDocumentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDocumentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -931,9 +961,11 @@ where
                 crate::error::GetDocumentPathErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::GetDocumentPathErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDocumentPathErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -968,10 +1000,10 @@ where
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
                 crate::error::GetDocumentVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1003,9 +1035,11 @@ where
                 crate::error::GetFolderErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::GetFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1031,9 +1065,11 @@ where
                 crate::error::GetFolderPathErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::GetFolderPathErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFolderPathErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1059,9 +1095,11 @@ where
                 crate::error::GetResourcesErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::GetResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1086,9 +1124,9 @@ where
                 crate::error::InitiateDocumentVersionUploadErrorKind::StorageLimitWillExceedException(inner) => Error::StorageLimitWillExceedException(inner),
                 crate::error::InitiateDocumentVersionUploadErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::InitiateDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::InitiateDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InitiateDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1106,9 +1144,9 @@ where
                 crate::error::RemoveAllResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::RemoveAllResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::RemoveAllResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::RemoveAllResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveAllResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1126,9 +1164,9 @@ where
                 crate::error::RemoveResourcePermissionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::RemoveResourcePermissionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::RemoveResourcePermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveResourcePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1169,9 +1207,11 @@ where
                 crate::error::UpdateDocumentErrorKind::UnauthorizedResourceAccessException(
                     inner,
                 ) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::UpdateDocumentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDocumentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1193,9 +1233,9 @@ where
                 crate::error::UpdateDocumentVersionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::UpdateDocumentVersionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
                 crate::error::UpdateDocumentVersionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-                crate::error::UpdateDocumentVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDocumentVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1236,9 +1276,11 @@ where
                 crate::error::UpdateFolderErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::UpdateFolderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFolderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1273,9 +1315,11 @@ where
                 crate::error::UpdateUserErrorKind::UnauthorizedResourceAccessException(inner) => {
                     Error::UnauthorizedResourceAccessException(inner)
                 }
-                crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

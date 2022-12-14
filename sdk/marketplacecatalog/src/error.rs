@@ -546,7 +546,7 @@ pub enum CancelChangeSetErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -578,7 +578,7 @@ impl CancelChangeSetError {
     /// Creates the `CancelChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelChangeSetErrorKind::Unhandled(err.into()),
+            kind: CancelChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -587,7 +587,7 @@ impl CancelChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelChangeSetErrorKind::Unhandled(err.into()),
+            kind: CancelChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -657,7 +657,7 @@ impl std::error::Error for CancelChangeSetError {
             CancelChangeSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelChangeSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             CancelChangeSetErrorKind::ValidationException(_inner) => Some(_inner),
-            CancelChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -686,7 +686,7 @@ pub enum DescribeChangeSetErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -717,7 +717,7 @@ impl DescribeChangeSetError {
     /// Creates the `DescribeChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeChangeSetErrorKind::Unhandled(err.into()),
+            kind: DescribeChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -726,7 +726,7 @@ impl DescribeChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeChangeSetErrorKind::Unhandled(err.into()),
+            kind: DescribeChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -794,7 +794,7 @@ impl std::error::Error for DescribeChangeSetError {
             DescribeChangeSetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeChangeSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeChangeSetErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -825,7 +825,7 @@ pub enum DescribeEntityErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEntityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -857,7 +857,7 @@ impl DescribeEntityError {
     /// Creates the `DescribeEntityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEntityErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -866,7 +866,7 @@ impl DescribeEntityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEntityErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -936,7 +936,7 @@ impl std::error::Error for DescribeEntityError {
             DescribeEntityErrorKind::ResourceNotSupportedException(_inner) => Some(_inner),
             DescribeEntityErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeEntityErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeEntityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEntityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -963,7 +963,7 @@ pub enum ListChangeSetsErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChangeSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -993,7 +993,7 @@ impl ListChangeSetsError {
     /// Creates the `ListChangeSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListChangeSetsErrorKind::Unhandled(err.into()),
+            kind: ListChangeSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1002,7 +1002,7 @@ impl ListChangeSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListChangeSetsErrorKind::Unhandled(err.into()),
+            kind: ListChangeSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1056,7 +1056,7 @@ impl std::error::Error for ListChangeSetsError {
             ListChangeSetsErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListChangeSetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListChangeSetsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListChangeSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListChangeSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1085,7 +1085,7 @@ pub enum ListEntitiesErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1116,7 +1116,7 @@ impl ListEntitiesError {
     /// Creates the `ListEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEntitiesErrorKind::Unhandled(err.into()),
+            kind: ListEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1125,7 +1125,7 @@ impl ListEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEntitiesErrorKind::Unhandled(err.into()),
+            kind: ListEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1184,7 +1184,7 @@ impl std::error::Error for ListEntitiesError {
             ListEntitiesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListEntitiesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListEntitiesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1217,7 +1217,7 @@ pub enum StartChangeSetErrorKind {
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1250,7 +1250,7 @@ impl StartChangeSetError {
     /// Creates the `StartChangeSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartChangeSetErrorKind::Unhandled(err.into()),
+            kind: StartChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1259,7 +1259,7 @@ impl StartChangeSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartChangeSetErrorKind::Unhandled(err.into()),
+            kind: StartChangeSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1337,7 +1337,32 @@ impl std::error::Error for StartChangeSetError {
             StartChangeSetErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartChangeSetErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartChangeSetErrorKind::ValidationException(_inner) => Some(_inner),
-            StartChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartChangeSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

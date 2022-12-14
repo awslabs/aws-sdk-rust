@@ -33,7 +33,7 @@ pub enum Error {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -72,9 +72,9 @@ where
                 crate::error::CreateSignalingChannelErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::CreateSignalingChannelErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException(inner) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::CreateSignalingChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSignalingChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -106,9 +106,11 @@ where
                 crate::error::CreateStreamErrorKind::TagsPerResourceExceededLimitException(
                     inner,
                 ) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::CreateStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -141,10 +143,10 @@ where
                     Error::VersionMismatchException(inner)
                 }
                 crate::error::DeleteSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -173,9 +175,11 @@ where
                 crate::error::DeleteStreamErrorKind::VersionMismatchException(inner) => {
                     Error::VersionMismatchException(inner)
                 }
-                crate::error::DeleteStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -201,9 +205,9 @@ where
                 crate::error::DescribeImageGenerationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
                 crate::error::DescribeImageGenerationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -225,9 +229,9 @@ where
                 crate::error::DescribeNotificationConfigurationErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
                 crate::error::DescribeNotificationConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribeNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -254,10 +258,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -280,9 +284,11 @@ where
                 crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -305,9 +311,11 @@ where
                 crate::error::GetDataEndpointErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetDataEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDataEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -326,9 +334,9 @@ where
                 crate::error::GetSignalingChannelEndpointErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::GetSignalingChannelEndpointErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::GetSignalingChannelEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::GetSignalingChannelEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSignalingChannelEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -352,10 +360,10 @@ where
                     Error::InvalidArgumentException(inner)
                 }
                 crate::error::ListSignalingChannelsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -372,9 +380,11 @@ where
                 crate::error::ListStreamsErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
-                crate::error::ListStreamsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListStreamsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -400,10 +410,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -432,10 +442,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -461,9 +471,11 @@ where
                 crate::error::TagResourceErrorKind::TagsPerResourceExceededLimitException(
                     inner,
                 ) => Error::TagsPerResourceExceededLimitException(inner),
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +504,11 @@ where
                 crate::error::TagStreamErrorKind::TagsPerResourceExceededLimitException(inner) => {
                     Error::TagsPerResourceExceededLimitException(inner)
                 }
-                crate::error::TagStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -517,9 +531,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -545,9 +561,11 @@ where
                 crate::error::UntagStreamErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,10 +597,10 @@ where
                     Error::VersionMismatchException(inner)
                 }
                 crate::error::UpdateDataRetentionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -607,9 +625,9 @@ where
                 crate::error::UpdateImageGenerationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
                 crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateImageGenerationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -633,9 +651,9 @@ where
                 crate::error::UpdateNotificationConfigurationErrorKind::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
                 crate::error::UpdateNotificationConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
                 crate::error::UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::UpdateNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -668,10 +686,10 @@ where
                     Error::VersionMismatchException(inner)
                 }
                 crate::error::UpdateSignalingChannelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -700,9 +718,11 @@ where
                 crate::error::UpdateStreamErrorKind::VersionMismatchException(inner) => {
                     Error::VersionMismatchException(inner)
                 }
-                crate::error::UpdateStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

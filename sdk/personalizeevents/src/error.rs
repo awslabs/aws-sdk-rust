@@ -211,7 +211,7 @@ pub enum PutEventsErrorKind {
     /// <p>Provide a valid value for the field or parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -238,7 +238,7 @@ impl PutEventsError {
     /// Creates the `PutEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEventsErrorKind::Unhandled(err.into()),
+            kind: PutEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -247,7 +247,7 @@ impl PutEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEventsErrorKind::Unhandled(err.into()),
+            kind: PutEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -280,7 +280,7 @@ impl std::error::Error for PutEventsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutEventsErrorKind::InvalidInputException(_inner) => Some(_inner),
-            PutEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -305,7 +305,7 @@ pub enum PutItemsErrorKind {
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -334,7 +334,7 @@ impl PutItemsError {
     /// Creates the `PutItemsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutItemsErrorKind::Unhandled(err.into()),
+            kind: PutItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -343,7 +343,7 @@ impl PutItemsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutItemsErrorKind::Unhandled(err.into()),
+            kind: PutItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -386,7 +386,7 @@ impl std::error::Error for PutItemsError {
             PutItemsErrorKind::InvalidInputException(_inner) => Some(_inner),
             PutItemsErrorKind::ResourceInUseException(_inner) => Some(_inner),
             PutItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -411,7 +411,7 @@ pub enum PutUsersErrorKind {
     /// <p>Could not find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -440,7 +440,7 @@ impl PutUsersError {
     /// Creates the `PutUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutUsersErrorKind::Unhandled(err.into()),
+            kind: PutUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -449,7 +449,7 @@ impl PutUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutUsersErrorKind::Unhandled(err.into()),
+            kind: PutUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -492,7 +492,32 @@ impl std::error::Error for PutUsersError {
             PutUsersErrorKind::InvalidInputException(_inner) => Some(_inner),
             PutUsersErrorKind::ResourceInUseException(_inner) => Some(_inner),
             PutUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

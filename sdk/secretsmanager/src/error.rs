@@ -814,7 +814,7 @@ pub enum CancelRotateSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelRotateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -844,7 +844,7 @@ impl CancelRotateSecretError {
     /// Creates the `CancelRotateSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelRotateSecretErrorKind::Unhandled(err.into()),
+            kind: CancelRotateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -853,7 +853,7 @@ impl CancelRotateSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelRotateSecretErrorKind::Unhandled(err.into()),
+            kind: CancelRotateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -913,7 +913,7 @@ impl std::error::Error for CancelRotateSecretError {
             CancelRotateSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CancelRotateSecretErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CancelRotateSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CancelRotateSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelRotateSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -958,7 +958,7 @@ pub enum CreateSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -994,7 +994,7 @@ impl CreateSecretError {
     /// Creates the `CreateSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSecretErrorKind::Unhandled(err.into()),
+            kind: CreateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1003,7 +1003,7 @@ impl CreateSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSecretErrorKind::Unhandled(err.into()),
+            kind: CreateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1099,7 +1099,7 @@ impl std::error::Error for CreateSecretError {
             CreateSecretErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
             CreateSecretErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1132,7 +1132,7 @@ pub enum DeleteResourcePolicyErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1162,7 +1162,9 @@ impl DeleteResourcePolicyError {
     /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1171,7 +1173,9 @@ impl DeleteResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1231,7 +1235,7 @@ impl std::error::Error for DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1264,7 +1268,7 @@ pub enum DeleteSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1294,7 +1298,7 @@ impl DeleteSecretError {
     /// Creates the `DeleteSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSecretErrorKind::Unhandled(err.into()),
+            kind: DeleteSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1303,7 +1307,7 @@ impl DeleteSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSecretErrorKind::Unhandled(err.into()),
+            kind: DeleteSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1360,7 +1364,7 @@ impl std::error::Error for DeleteSecretError {
             DeleteSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteSecretErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1385,7 +1389,7 @@ pub enum DescribeSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1414,7 +1418,7 @@ impl DescribeSecretError {
     /// Creates the `DescribeSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSecretErrorKind::Unhandled(err.into()),
+            kind: DescribeSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1423,7 +1427,7 @@ impl DescribeSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSecretErrorKind::Unhandled(err.into()),
+            kind: DescribeSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1472,7 +1476,7 @@ impl std::error::Error for DescribeSecretError {
             DescribeSecretErrorKind::InternalServiceError(_inner) => Some(_inner),
             DescribeSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DescribeSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1503,7 +1507,7 @@ pub enum GetRandomPasswordErrorKind {
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRandomPasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1532,7 +1536,7 @@ impl GetRandomPasswordError {
     /// Creates the `GetRandomPasswordError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRandomPasswordErrorKind::Unhandled(err.into()),
+            kind: GetRandomPasswordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1541,7 +1545,7 @@ impl GetRandomPasswordError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRandomPasswordErrorKind::Unhandled(err.into()),
+            kind: GetRandomPasswordErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1593,7 +1597,7 @@ impl std::error::Error for GetRandomPasswordError {
             GetRandomPasswordErrorKind::InternalServiceError(_inner) => Some(_inner),
             GetRandomPasswordErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetRandomPasswordErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            GetRandomPasswordErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRandomPasswordErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1626,7 +1630,7 @@ pub enum GetResourcePolicyErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1656,7 +1660,7 @@ impl GetResourcePolicyError {
     /// Creates the `GetResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1665,7 +1669,7 @@ impl GetResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: GetResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1725,7 +1729,7 @@ impl std::error::Error for GetResourcePolicyError {
             GetResourcePolicyErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1760,7 +1764,7 @@ pub enum GetSecretValueErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSecretValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1791,7 +1795,7 @@ impl GetSecretValueError {
     /// Creates the `GetSecretValueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSecretValueErrorKind::Unhandled(err.into()),
+            kind: GetSecretValueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1800,7 +1804,7 @@ impl GetSecretValueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSecretValueErrorKind::Unhandled(err.into()),
+            kind: GetSecretValueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1862,7 +1866,7 @@ impl std::error::Error for GetSecretValueError {
             GetSecretValueErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetSecretValueErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetSecretValueErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetSecretValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSecretValueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1887,7 +1891,7 @@ pub enum ListSecretsErrorKind {
     /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSecretsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1916,7 +1920,7 @@ impl ListSecretsError {
     /// Creates the `ListSecretsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSecretsErrorKind::Unhandled(err.into()),
+            kind: ListSecretsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1925,7 +1929,7 @@ impl ListSecretsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSecretsErrorKind::Unhandled(err.into()),
+            kind: ListSecretsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1974,7 +1978,7 @@ impl std::error::Error for ListSecretsError {
             ListSecretsErrorKind::InternalServiceError(_inner) => Some(_inner),
             ListSecretsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListSecretsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListSecretsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSecretsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2001,7 +2005,7 @@ pub enum ListSecretVersionIdsErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSecretVersionIdsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2031,7 +2035,9 @@ impl ListSecretVersionIdsError {
     /// Creates the `ListSecretVersionIdsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSecretVersionIdsErrorKind::Unhandled(err.into()),
+            kind: ListSecretVersionIdsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2040,7 +2046,9 @@ impl ListSecretVersionIdsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSecretVersionIdsErrorKind::Unhandled(err.into()),
+            kind: ListSecretVersionIdsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2100,7 +2108,7 @@ impl std::error::Error for ListSecretVersionIdsError {
             ListSecretVersionIdsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListSecretVersionIdsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListSecretVersionIdsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListSecretVersionIdsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSecretVersionIdsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2137,7 +2145,7 @@ pub enum PutResourcePolicyErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2169,7 +2177,7 @@ impl PutResourcePolicyError {
     /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2178,7 +2186,7 @@ impl PutResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2254,7 +2262,7 @@ impl std::error::Error for PutResourcePolicyError {
             PutResourcePolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::PublicPolicyException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2295,7 +2303,7 @@ pub enum PutSecretValueErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSecretValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2329,7 +2337,7 @@ impl PutSecretValueError {
     /// Creates the `PutSecretValueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSecretValueErrorKind::Unhandled(err.into()),
+            kind: PutSecretValueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2338,7 +2346,7 @@ impl PutSecretValueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSecretValueErrorKind::Unhandled(err.into()),
+            kind: PutSecretValueErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2421,7 +2429,7 @@ impl std::error::Error for PutSecretValueError {
             PutSecretValueErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutSecretValueErrorKind::ResourceExistsException(_inner) => Some(_inner),
             PutSecretValueErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutSecretValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSecretValueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2454,7 +2462,7 @@ pub enum RemoveRegionsFromReplicationErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveRegionsFromReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2488,7 +2496,9 @@ impl RemoveRegionsFromReplicationError {
     /// Creates the `RemoveRegionsFromReplicationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(err.into()),
+            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2497,7 +2507,9 @@ impl RemoveRegionsFromReplicationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(err.into()),
+            kind: RemoveRegionsFromReplicationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2561,7 +2573,7 @@ impl std::error::Error for RemoveRegionsFromReplicationError {
             RemoveRegionsFromReplicationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            RemoveRegionsFromReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveRegionsFromReplicationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2594,7 +2606,7 @@ pub enum ReplicateSecretToRegionsErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReplicateSecretToRegionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2624,7 +2636,9 @@ impl ReplicateSecretToRegionsError {
     /// Creates the `ReplicateSecretToRegionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReplicateSecretToRegionsErrorKind::Unhandled(err.into()),
+            kind: ReplicateSecretToRegionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2633,7 +2647,9 @@ impl ReplicateSecretToRegionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReplicateSecretToRegionsErrorKind::Unhandled(err.into()),
+            kind: ReplicateSecretToRegionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2693,7 +2709,7 @@ impl std::error::Error for ReplicateSecretToRegionsError {
             ReplicateSecretToRegionsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ReplicateSecretToRegionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ReplicateSecretToRegionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ReplicateSecretToRegionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReplicateSecretToRegionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2726,7 +2742,7 @@ pub enum RestoreSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2756,7 +2772,7 @@ impl RestoreSecretError {
     /// Creates the `RestoreSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreSecretErrorKind::Unhandled(err.into()),
+            kind: RestoreSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2765,7 +2781,7 @@ impl RestoreSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreSecretErrorKind::Unhandled(err.into()),
+            kind: RestoreSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2822,7 +2838,7 @@ impl std::error::Error for RestoreSecretError {
             RestoreSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             RestoreSecretErrorKind::InvalidRequestException(_inner) => Some(_inner),
             RestoreSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RestoreSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2855,7 +2871,7 @@ pub enum RotateSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RotateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2885,7 +2901,7 @@ impl RotateSecretError {
     /// Creates the `RotateSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RotateSecretErrorKind::Unhandled(err.into()),
+            kind: RotateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2894,7 +2910,7 @@ impl RotateSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RotateSecretErrorKind::Unhandled(err.into()),
+            kind: RotateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2951,7 +2967,7 @@ impl std::error::Error for RotateSecretError {
             RotateSecretErrorKind::InvalidParameterException(_inner) => Some(_inner),
             RotateSecretErrorKind::InvalidRequestException(_inner) => Some(_inner),
             RotateSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RotateSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RotateSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2984,7 +3000,7 @@ pub enum StopReplicationToReplicaErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopReplicationToReplicaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3014,7 +3030,9 @@ impl StopReplicationToReplicaError {
     /// Creates the `StopReplicationToReplicaError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopReplicationToReplicaErrorKind::Unhandled(err.into()),
+            kind: StopReplicationToReplicaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3023,7 +3041,9 @@ impl StopReplicationToReplicaError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopReplicationToReplicaErrorKind::Unhandled(err.into()),
+            kind: StopReplicationToReplicaErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3083,7 +3103,7 @@ impl std::error::Error for StopReplicationToReplicaError {
             StopReplicationToReplicaErrorKind::InvalidParameterException(_inner) => Some(_inner),
             StopReplicationToReplicaErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopReplicationToReplicaErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StopReplicationToReplicaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopReplicationToReplicaErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3116,7 +3136,7 @@ pub enum TagResourceErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3146,7 +3166,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3155,7 +3175,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3209,7 +3229,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3242,7 +3262,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3272,7 +3292,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3281,7 +3301,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3338,7 +3358,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3383,7 +3403,7 @@ pub enum UpdateSecretErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSecretError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3419,7 +3439,7 @@ impl UpdateSecretError {
     /// Creates the `UpdateSecretError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSecretErrorKind::Unhandled(err.into()),
+            kind: UpdateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3428,7 +3448,7 @@ impl UpdateSecretError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSecretErrorKind::Unhandled(err.into()),
+            kind: UpdateSecretErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3524,7 +3544,7 @@ impl std::error::Error for UpdateSecretError {
             UpdateSecretErrorKind::PreconditionNotMetException(_inner) => Some(_inner),
             UpdateSecretErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateSecretErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateSecretErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSecretErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3559,7 +3579,7 @@ pub enum UpdateSecretVersionStageErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSecretVersionStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3590,7 +3610,9 @@ impl UpdateSecretVersionStageError {
     /// Creates the `UpdateSecretVersionStageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSecretVersionStageErrorKind::Unhandled(err.into()),
+            kind: UpdateSecretVersionStageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3599,7 +3621,9 @@ impl UpdateSecretVersionStageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSecretVersionStageErrorKind::Unhandled(err.into()),
+            kind: UpdateSecretVersionStageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3667,7 +3691,7 @@ impl std::error::Error for UpdateSecretVersionStageError {
             UpdateSecretVersionStageErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateSecretVersionStageErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateSecretVersionStageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateSecretVersionStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSecretVersionStageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3702,7 +3726,7 @@ pub enum ValidateResourcePolicyErrorKind {
     /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ValidateResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3735,7 +3759,9 @@ impl ValidateResourcePolicyError {
     /// Creates the `ValidateResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ValidateResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: ValidateResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3744,7 +3770,9 @@ impl ValidateResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ValidateResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: ValidateResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3814,7 +3842,32 @@ impl std::error::Error for ValidateResourcePolicyError {
                 Some(_inner)
             }
             ValidateResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ValidateResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ValidateResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

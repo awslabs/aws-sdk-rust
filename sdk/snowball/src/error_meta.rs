@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -64,9 +64,11 @@ where
                 crate::error::CancelClusterErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::CancelClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -86,9 +88,11 @@ where
                 crate::error::CancelJobErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::CancelJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -105,9 +109,11 @@ where
                 crate::error::CreateAddressErrorKind::UnsupportedAddressException(inner) => {
                     Error::UnsupportedAddressException(inner)
                 }
-                crate::error::CreateAddressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAddressErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -130,9 +136,11 @@ where
                 crate::error::CreateClusterErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::CreateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -158,9 +166,11 @@ where
                 crate::error::CreateJobErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::CreateJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,10 +188,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::CreateLongTermPricingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -200,9 +210,9 @@ where
                 crate::error::CreateReturnShippingLabelErrorKind::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
                 crate::error::CreateReturnShippingLabelErrorKind::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
                 crate::error::CreateReturnShippingLabelErrorKind::ReturnShippingLabelAlreadyExistsException(inner) => Error::ReturnShippingLabelAlreadyExistsException(inner),
-                crate::error::CreateReturnShippingLabelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReturnShippingLabelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -216,9 +226,11 @@ where
                 crate::error::DescribeAddressErrorKind::InvalidResourceException(inner) => {
                     Error::InvalidResourceException(inner)
                 }
-                crate::error::DescribeAddressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAddressErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -238,10 +250,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::DescribeAddressesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -255,9 +267,11 @@ where
                 crate::error::DescribeClusterErrorKind::InvalidResourceException(inner) => {
                     Error::InvalidResourceException(inner)
                 }
-                crate::error::DescribeClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -271,9 +285,11 @@ where
                 crate::error::DescribeJobErrorKind::InvalidResourceException(inner) => {
                     Error::InvalidResourceException(inner)
                 }
-                crate::error::DescribeJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -297,10 +313,10 @@ where
                     inner,
                 ) => Error::InvalidResourceException(inner),
                 crate::error::DescribeReturnShippingLabelErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -317,9 +333,11 @@ where
                 crate::error::GetJobManifestErrorKind::InvalidResourceException(inner) => {
                     Error::InvalidResourceException(inner)
                 }
-                crate::error::GetJobManifestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetJobManifestErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -339,10 +357,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::GetJobUnlockCodeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -356,10 +374,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSnowballUsageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -379,10 +397,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::GetSoftwareUpdatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -399,9 +417,11 @@ where
                 crate::error::ListClusterJobsErrorKind::InvalidResourceException(inner) => {
                     Error::InvalidResourceException(inner)
                 }
-                crate::error::ListClusterJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListClusterJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -415,9 +435,11 @@ where
                 crate::error::ListClustersErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListClustersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListClustersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -438,10 +460,10 @@ where
                     Error::InvalidNextTokenException(inner)
                 }
                 crate::error::ListCompatibleImagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -455,9 +477,11 @@ where
                 crate::error::ListJobsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
-                crate::error::ListJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -477,10 +501,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::ListLongTermPricingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -506,9 +530,11 @@ where
                 crate::error::UpdateClusterErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::UpdateClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateClusterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -537,9 +563,11 @@ where
                 crate::error::UpdateJobErrorKind::KmsRequestFailedException(inner) => {
                     Error::KmsRequestFailedException(inner)
                 }
-                crate::error::UpdateJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -560,10 +588,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::UpdateJobShipmentStateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -581,10 +609,10 @@ where
                     Error::InvalidResourceException(inner)
                 }
                 crate::error::UpdateLongTermPricingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

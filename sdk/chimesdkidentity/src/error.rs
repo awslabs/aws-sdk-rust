@@ -726,7 +726,7 @@ pub enum CreateAppInstanceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -760,7 +760,7 @@ impl CreateAppInstanceError {
     /// Creates the `CreateAppInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppInstanceErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -769,7 +769,7 @@ impl CreateAppInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppInstanceErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -858,7 +858,7 @@ impl std::error::Error for CreateAppInstanceError {
             CreateAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -893,7 +893,7 @@ pub enum CreateAppInstanceAdminErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -929,7 +929,9 @@ impl CreateAppInstanceAdminError {
     /// Creates the `CreateAppInstanceAdminError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -938,7 +940,9 @@ impl CreateAppInstanceAdminError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1030,7 +1034,7 @@ impl std::error::Error for CreateAppInstanceAdminError {
             CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1065,7 +1069,7 @@ pub enum CreateAppInstanceUserErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1099,7 +1103,9 @@ impl CreateAppInstanceUserError {
     /// Creates the `CreateAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1108,7 +1114,9 @@ impl CreateAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: CreateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1200,7 +1208,7 @@ impl std::error::Error for CreateAppInstanceUserError {
             CreateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
             CreateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            CreateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1233,7 +1241,7 @@ pub enum DeleteAppInstanceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1266,7 +1274,7 @@ impl DeleteAppInstanceError {
     /// Creates the `DeleteAppInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1275,7 +1283,7 @@ impl DeleteAppInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppInstanceErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1359,7 +1367,7 @@ impl std::error::Error for DeleteAppInstanceError {
             DeleteAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1394,7 +1402,7 @@ pub enum DeleteAppInstanceAdminErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1430,7 +1438,9 @@ impl DeleteAppInstanceAdminError {
     /// Creates the `DeleteAppInstanceAdminError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1439,7 +1449,9 @@ impl DeleteAppInstanceAdminError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1531,7 +1543,7 @@ impl std::error::Error for DeleteAppInstanceAdminError {
             DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1566,7 +1578,7 @@ pub enum DeleteAppInstanceUserErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1600,7 +1612,9 @@ impl DeleteAppInstanceUserError {
     /// Creates the `DeleteAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1609,7 +1623,9 @@ impl DeleteAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DeleteAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1701,7 +1717,7 @@ impl std::error::Error for DeleteAppInstanceUserError {
             DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DeleteAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1732,7 +1748,7 @@ pub enum DeregisterAppInstanceUserEndpointErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeregisterAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1777,7 +1793,9 @@ impl DeregisterAppInstanceUserEndpointError {
     /// Creates the `DeregisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1786,7 +1804,9 @@ impl DeregisterAppInstanceUserEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: DeregisterAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1870,7 +1890,7 @@ impl std::error::Error for DeregisterAppInstanceUserEndpointError {
             DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeregisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1901,7 +1921,7 @@ pub enum DescribeAppInstanceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1933,7 +1953,7 @@ impl DescribeAppInstanceError {
     /// Creates the `DescribeAppInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAppInstanceErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1942,7 +1962,7 @@ impl DescribeAppInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAppInstanceErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2018,7 +2038,7 @@ impl std::error::Error for DescribeAppInstanceError {
             DescribeAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2049,7 +2069,7 @@ pub enum DescribeAppInstanceAdminErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceAdminError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2081,7 +2101,9 @@ impl DescribeAppInstanceAdminError {
     /// Creates the `DescribeAppInstanceAdminError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2090,7 +2112,9 @@ impl DescribeAppInstanceAdminError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAppInstanceAdminErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceAdminErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2166,7 +2190,7 @@ impl std::error::Error for DescribeAppInstanceAdminError {
             DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAppInstanceAdminErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAppInstanceAdminErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2197,7 +2221,7 @@ pub enum DescribeAppInstanceUserErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,7 +2253,9 @@ impl DescribeAppInstanceUserError {
     /// Creates the `DescribeAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2238,7 +2264,9 @@ impl DescribeAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2314,7 +2342,7 @@ impl std::error::Error for DescribeAppInstanceUserError {
             DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
             DescribeAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2345,7 +2373,7 @@ pub enum DescribeAppInstanceUserEndpointErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2388,7 +2416,9 @@ impl DescribeAppInstanceUserEndpointError {
     /// Creates the `DescribeAppInstanceUserEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2397,7 +2427,9 @@ impl DescribeAppInstanceUserEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: DescribeAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2481,7 +2513,7 @@ impl std::error::Error for DescribeAppInstanceUserEndpointError {
             DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2512,7 +2544,7 @@ pub enum GetAppInstanceRetentionSettingsErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAppInstanceRetentionSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2555,7 +2587,9 @@ impl GetAppInstanceRetentionSettingsError {
     /// Creates the `GetAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(err.into()),
+            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2564,7 +2598,9 @@ impl GetAppInstanceRetentionSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(err.into()),
+            kind: GetAppInstanceRetentionSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2648,7 +2684,7 @@ impl std::error::Error for GetAppInstanceRetentionSettingsError {
             GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2681,7 +2717,7 @@ pub enum ListAppInstanceAdminsErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceAdminsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2714,7 +2750,9 @@ impl ListAppInstanceAdminsError {
     /// Creates the `ListAppInstanceAdminsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppInstanceAdminsErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2723,7 +2761,9 @@ impl ListAppInstanceAdminsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppInstanceAdminsErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceAdminsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2807,7 +2847,7 @@ impl std::error::Error for ListAppInstanceAdminsError {
             ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAppInstanceAdminsErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListAppInstanceAdminsErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppInstanceAdminsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2838,7 +2878,7 @@ pub enum ListAppInstancesErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2870,7 +2910,7 @@ impl ListAppInstancesError {
     /// Creates the `ListAppInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppInstancesErrorKind::Unhandled(err.into()),
+            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2879,7 +2919,7 @@ impl ListAppInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppInstancesErrorKind::Unhandled(err.into()),
+            kind: ListAppInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2952,7 +2992,7 @@ impl std::error::Error for ListAppInstancesError {
             ListAppInstancesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAppInstancesErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListAppInstancesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2983,7 +3023,7 @@ pub enum ListAppInstanceUserEndpointsErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceUserEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3021,7 +3061,9 @@ impl ListAppInstanceUserEndpointsError {
     /// Creates the `ListAppInstanceUserEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3030,7 +3072,9 @@ impl ListAppInstanceUserEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceUserEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3110,7 +3154,7 @@ impl std::error::Error for ListAppInstanceUserEndpointsError {
             ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppInstanceUserEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3141,7 +3185,7 @@ pub enum ListAppInstanceUsersErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAppInstanceUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3173,7 +3217,9 @@ impl ListAppInstanceUsersError {
     /// Creates the `ListAppInstanceUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAppInstanceUsersErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3182,7 +3228,9 @@ impl ListAppInstanceUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAppInstanceUsersErrorKind::Unhandled(err.into()),
+            kind: ListAppInstanceUsersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3258,7 +3306,7 @@ impl std::error::Error for ListAppInstanceUsersError {
             ListAppInstanceUsersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListAppInstanceUsersErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListAppInstanceUsersErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListAppInstanceUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAppInstanceUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3289,7 +3337,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3321,7 +3369,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3330,7 +3378,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3406,7 +3454,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3437,7 +3485,7 @@ pub enum PutAppInstanceRetentionSettingsErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAppInstanceRetentionSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3480,7 +3528,9 @@ impl PutAppInstanceRetentionSettingsError {
     /// Creates the `PutAppInstanceRetentionSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(err.into()),
+            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3489,7 +3539,9 @@ impl PutAppInstanceRetentionSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(err.into()),
+            kind: PutAppInstanceRetentionSettingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3573,7 +3625,7 @@ impl std::error::Error for PutAppInstanceRetentionSettingsError {
             PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAppInstanceRetentionSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3608,7 +3660,7 @@ pub enum RegisterAppInstanceUserEndpointErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3655,7 +3707,9 @@ impl RegisterAppInstanceUserEndpointError {
     /// Creates the `RegisterAppInstanceUserEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3664,7 +3718,9 @@ impl RegisterAppInstanceUserEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: RegisterAppInstanceUserEndpointErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3766,7 +3822,7 @@ impl std::error::Error for RegisterAppInstanceUserEndpointError {
             RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3799,7 +3855,7 @@ pub enum TagResourceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3832,7 +3888,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3841,7 +3897,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3916,7 +3972,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3947,7 +4003,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3979,7 +4035,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3988,7 +4044,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4058,7 +4114,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4091,7 +4147,7 @@ pub enum UpdateAppInstanceErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4124,7 +4180,7 @@ impl UpdateAppInstanceError {
     /// Creates the `UpdateAppInstanceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAppInstanceErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4133,7 +4189,7 @@ impl UpdateAppInstanceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAppInstanceErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4214,7 +4270,7 @@ impl std::error::Error for UpdateAppInstanceError {
             UpdateAppInstanceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateAppInstanceErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateAppInstanceErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAppInstanceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4249,7 +4305,7 @@ pub enum UpdateAppInstanceUserErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4283,7 +4339,9 @@ impl UpdateAppInstanceUserError {
     /// Creates the `UpdateAppInstanceUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4292,7 +4350,9 @@ impl UpdateAppInstanceUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAppInstanceUserErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceUserErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4384,7 +4444,7 @@ impl std::error::Error for UpdateAppInstanceUserError {
             UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateAppInstanceUserErrorKind::ThrottledClientException(_inner) => Some(_inner),
             UpdateAppInstanceUserErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
-            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAppInstanceUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4417,7 +4477,7 @@ pub enum UpdateAppInstanceUserEndpointErrorKind {
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAppInstanceUserEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4461,7 +4521,9 @@ impl UpdateAppInstanceUserEndpointError {
     /// Creates the `UpdateAppInstanceUserEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4470,7 +4532,9 @@ impl UpdateAppInstanceUserEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(err.into()),
+            kind: UpdateAppInstanceUserEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4560,7 +4624,32 @@ impl std::error::Error for UpdateAppInstanceUserEndpointError {
             UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(_inner) => {
                 Some(_inner)
             }
-            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAppInstanceUserEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

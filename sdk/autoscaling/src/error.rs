@@ -603,7 +603,7 @@ pub enum AttachInstancesErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -631,7 +631,7 @@ impl AttachInstancesError {
     /// Creates the `AttachInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachInstancesErrorKind::Unhandled(err.into()),
+            kind: AttachInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -640,7 +640,7 @@ impl AttachInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachInstancesErrorKind::Unhandled(err.into()),
+            kind: AttachInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -684,7 +684,7 @@ impl std::error::Error for AttachInstancesError {
         match &self.kind {
             AttachInstancesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             AttachInstancesErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            AttachInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -707,7 +707,7 @@ pub enum AttachLoadBalancersErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -735,7 +735,7 @@ impl AttachLoadBalancersError {
     /// Creates the `AttachLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -744,7 +744,7 @@ impl AttachLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -788,7 +788,7 @@ impl std::error::Error for AttachLoadBalancersError {
         match &self.kind {
             AttachLoadBalancersErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             AttachLoadBalancersErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            AttachLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -811,7 +811,7 @@ pub enum AttachLoadBalancerTargetGroupsErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AttachLoadBalancerTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -846,7 +846,9 @@ impl AttachLoadBalancerTargetGroupsError {
     /// Creates the `AttachLoadBalancerTargetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AttachLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -855,7 +857,9 @@ impl AttachLoadBalancerTargetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AttachLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: AttachLoadBalancerTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -903,7 +907,7 @@ impl std::error::Error for AttachLoadBalancerTargetGroupsError {
             AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure(_inner) => {
                 Some(_inner)
             }
-            AttachLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AttachLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -924,7 +928,7 @@ pub enum BatchDeleteScheduledActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDeleteScheduledActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -951,7 +955,9 @@ impl BatchDeleteScheduledActionError {
     /// Creates the `BatchDeleteScheduledActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDeleteScheduledActionErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteScheduledActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -960,7 +966,9 @@ impl BatchDeleteScheduledActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDeleteScheduledActionErrorKind::Unhandled(err.into()),
+            kind: BatchDeleteScheduledActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -996,7 +1004,7 @@ impl std::error::Error for BatchDeleteScheduledActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             BatchDeleteScheduledActionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            BatchDeleteScheduledActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDeleteScheduledActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1021,7 +1029,7 @@ pub enum BatchPutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchPutScheduledUpdateGroupActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1059,7 +1067,9 @@ impl BatchPutScheduledUpdateGroupActionError {
     /// Creates the `BatchPutScheduledUpdateGroupActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(err.into()),
+            kind: BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1068,7 +1078,9 @@ impl BatchPutScheduledUpdateGroupActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(err.into()),
+            kind: BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1122,7 +1134,7 @@ impl std::error::Error for BatchPutScheduledUpdateGroupActionError {
             BatchPutScheduledUpdateGroupActionErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1147,7 +1159,7 @@ pub enum CancelInstanceRefreshErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelInstanceRefreshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1178,7 +1190,9 @@ impl CancelInstanceRefreshError {
     /// Creates the `CancelInstanceRefreshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelInstanceRefreshErrorKind::Unhandled(err.into()),
+            kind: CancelInstanceRefreshErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1187,7 +1201,9 @@ impl CancelInstanceRefreshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelInstanceRefreshErrorKind::Unhandled(err.into()),
+            kind: CancelInstanceRefreshErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1241,7 +1257,7 @@ impl std::error::Error for CancelInstanceRefreshError {
             }
             CancelInstanceRefreshErrorKind::LimitExceededFault(_inner) => Some(_inner),
             CancelInstanceRefreshErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            CancelInstanceRefreshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelInstanceRefreshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1262,7 +1278,7 @@ pub enum CompleteLifecycleActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompleteLifecycleActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1289,7 +1305,9 @@ impl CompleteLifecycleActionError {
     /// Creates the `CompleteLifecycleActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CompleteLifecycleActionErrorKind::Unhandled(err.into()),
+            kind: CompleteLifecycleActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1298,7 +1316,9 @@ impl CompleteLifecycleActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CompleteLifecycleActionErrorKind::Unhandled(err.into()),
+            kind: CompleteLifecycleActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1334,7 +1354,7 @@ impl std::error::Error for CompleteLifecycleActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CompleteLifecycleActionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            CompleteLifecycleActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CompleteLifecycleActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1361,7 +1381,7 @@ pub enum CreateAutoScalingGroupErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAutoScalingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1391,7 +1411,9 @@ impl CreateAutoScalingGroupError {
     /// Creates the `CreateAutoScalingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: CreateAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1400,7 +1422,9 @@ impl CreateAutoScalingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: CreateAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1460,7 +1484,7 @@ impl std::error::Error for CreateAutoScalingGroupError {
             CreateAutoScalingGroupErrorKind::LimitExceededFault(_inner) => Some(_inner),
             CreateAutoScalingGroupErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             CreateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            CreateAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1485,7 +1509,7 @@ pub enum CreateLaunchConfigurationErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLaunchConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1514,7 +1538,9 @@ impl CreateLaunchConfigurationError {
     /// Creates the `CreateLaunchConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1523,7 +1549,9 @@ impl CreateLaunchConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1575,7 +1603,7 @@ impl std::error::Error for CreateLaunchConfigurationError {
             CreateLaunchConfigurationErrorKind::AlreadyExistsFault(_inner) => Some(_inner),
             CreateLaunchConfigurationErrorKind::LimitExceededFault(_inner) => Some(_inner),
             CreateLaunchConfigurationErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            CreateLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1602,7 +1630,7 @@ pub enum CreateOrUpdateTagsErrorKind {
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateOrUpdateTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1632,7 +1660,7 @@ impl CreateOrUpdateTagsError {
     /// Creates the `CreateOrUpdateTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateOrUpdateTagsErrorKind::Unhandled(err.into()),
+            kind: CreateOrUpdateTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1641,7 +1669,7 @@ impl CreateOrUpdateTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateOrUpdateTagsErrorKind::Unhandled(err.into()),
+            kind: CreateOrUpdateTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1701,7 +1729,7 @@ impl std::error::Error for CreateOrUpdateTagsError {
             CreateOrUpdateTagsErrorKind::LimitExceededFault(_inner) => Some(_inner),
             CreateOrUpdateTagsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             CreateOrUpdateTagsErrorKind::ResourceInUseFault(_inner) => Some(_inner),
-            CreateOrUpdateTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateOrUpdateTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1726,7 +1754,7 @@ pub enum DeleteAutoScalingGroupErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAutoScalingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1757,7 +1785,9 @@ impl DeleteAutoScalingGroupError {
     /// Creates the `DeleteAutoScalingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1766,7 +1796,9 @@ impl DeleteAutoScalingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1818,7 +1850,7 @@ impl std::error::Error for DeleteAutoScalingGroupError {
             DeleteAutoScalingGroupErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DeleteAutoScalingGroupErrorKind::ResourceInUseFault(_inner) => Some(_inner),
             DeleteAutoScalingGroupErrorKind::ScalingActivityInProgressFault(_inner) => Some(_inner),
-            DeleteAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1841,7 +1873,7 @@ pub enum DeleteLaunchConfigurationErrorKind {
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLaunchConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1869,7 +1901,9 @@ impl DeleteLaunchConfigurationError {
     /// Creates the `DeleteLaunchConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1878,7 +1912,9 @@ impl DeleteLaunchConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLaunchConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLaunchConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1922,7 +1958,7 @@ impl std::error::Error for DeleteLaunchConfigurationError {
         match &self.kind {
             DeleteLaunchConfigurationErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DeleteLaunchConfigurationErrorKind::ResourceInUseFault(_inner) => Some(_inner),
-            DeleteLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLaunchConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1943,7 +1979,7 @@ pub enum DeleteLifecycleHookErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLifecycleHookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1970,7 +2006,7 @@ impl DeleteLifecycleHookError {
     /// Creates the `DeleteLifecycleHookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLifecycleHookErrorKind::Unhandled(err.into()),
+            kind: DeleteLifecycleHookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1979,7 +2015,7 @@ impl DeleteLifecycleHookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLifecycleHookErrorKind::Unhandled(err.into()),
+            kind: DeleteLifecycleHookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2015,7 +2051,7 @@ impl std::error::Error for DeleteLifecycleHookError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteLifecycleHookErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DeleteLifecycleHookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLifecycleHookErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2036,7 +2072,7 @@ pub enum DeleteNotificationConfigurationErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNotificationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2068,7 +2104,9 @@ impl DeleteNotificationConfigurationError {
     /// Creates the `DeleteNotificationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2077,7 +2115,9 @@ impl DeleteNotificationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2115,7 +2155,7 @@ impl std::error::Error for DeleteNotificationConfigurationError {
             DeleteNotificationConfigurationErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DeleteNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2138,7 +2178,7 @@ pub enum DeletePolicyErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2166,7 +2206,7 @@ impl DeletePolicyError {
     /// Creates the `DeletePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2175,7 +2215,7 @@ impl DeletePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2219,7 +2259,7 @@ impl std::error::Error for DeletePolicyError {
         match &self.kind {
             DeletePolicyErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DeletePolicyErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2240,7 +2280,7 @@ pub enum DeleteScheduledActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteScheduledActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2267,7 +2307,9 @@ impl DeleteScheduledActionError {
     /// Creates the `DeleteScheduledActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteScheduledActionErrorKind::Unhandled(err.into()),
+            kind: DeleteScheduledActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2276,7 +2318,9 @@ impl DeleteScheduledActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteScheduledActionErrorKind::Unhandled(err.into()),
+            kind: DeleteScheduledActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2312,7 +2356,7 @@ impl std::error::Error for DeleteScheduledActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteScheduledActionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DeleteScheduledActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteScheduledActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2335,7 +2379,7 @@ pub enum DeleteTagsErrorKind {
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2363,7 +2407,7 @@ impl DeleteTagsError {
     /// Creates the `DeleteTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTagsErrorKind::Unhandled(err.into()),
+            kind: DeleteTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2372,7 +2416,7 @@ impl DeleteTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTagsErrorKind::Unhandled(err.into()),
+            kind: DeleteTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2410,7 +2454,7 @@ impl std::error::Error for DeleteTagsError {
         match &self.kind {
             DeleteTagsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DeleteTagsErrorKind::ResourceInUseFault(_inner) => Some(_inner),
-            DeleteTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2437,7 +2481,7 @@ pub enum DeleteWarmPoolErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWarmPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2467,7 +2511,7 @@ impl DeleteWarmPoolError {
     /// Creates the `DeleteWarmPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWarmPoolErrorKind::Unhandled(err.into()),
+            kind: DeleteWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2476,7 +2520,7 @@ impl DeleteWarmPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWarmPoolErrorKind::Unhandled(err.into()),
+            kind: DeleteWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2530,7 +2574,7 @@ impl std::error::Error for DeleteWarmPoolError {
             DeleteWarmPoolErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DeleteWarmPoolErrorKind::ResourceInUseFault(_inner) => Some(_inner),
             DeleteWarmPoolErrorKind::ScalingActivityInProgressFault(_inner) => Some(_inner),
-            DeleteWarmPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWarmPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2551,7 +2595,7 @@ pub enum DescribeAccountLimitsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2578,7 +2622,9 @@ impl DescribeAccountLimitsError {
     /// Creates the `DescribeAccountLimitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2587,7 +2633,9 @@ impl DescribeAccountLimitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccountLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeAccountLimitsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2623,7 +2671,7 @@ impl std::error::Error for DescribeAccountLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeAccountLimitsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccountLimitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2644,7 +2692,7 @@ pub enum DescribeAdjustmentTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAdjustmentTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2671,7 +2719,9 @@ impl DescribeAdjustmentTypesError {
     /// Creates the `DescribeAdjustmentTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAdjustmentTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeAdjustmentTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2680,7 +2730,9 @@ impl DescribeAdjustmentTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAdjustmentTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeAdjustmentTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2716,7 +2768,7 @@ impl std::error::Error for DescribeAdjustmentTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeAdjustmentTypesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeAdjustmentTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAdjustmentTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2739,7 +2791,7 @@ pub enum DescribeAutoScalingGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAutoScalingGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2767,7 +2819,9 @@ impl DescribeAutoScalingGroupsError {
     /// Creates the `DescribeAutoScalingGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAutoScalingGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2776,7 +2830,9 @@ impl DescribeAutoScalingGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAutoScalingGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2820,7 +2876,7 @@ impl std::error::Error for DescribeAutoScalingGroupsError {
         match &self.kind {
             DescribeAutoScalingGroupsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeAutoScalingGroupsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeAutoScalingGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAutoScalingGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2843,7 +2899,7 @@ pub enum DescribeAutoScalingInstancesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAutoScalingInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2871,7 +2927,9 @@ impl DescribeAutoScalingInstancesError {
     /// Creates the `DescribeAutoScalingInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAutoScalingInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2880,7 +2938,9 @@ impl DescribeAutoScalingInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAutoScalingInstancesErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2924,7 +2984,7 @@ impl std::error::Error for DescribeAutoScalingInstancesError {
         match &self.kind {
             DescribeAutoScalingInstancesErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeAutoScalingInstancesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeAutoScalingInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAutoScalingInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2945,7 +3005,7 @@ pub enum DescribeAutoScalingNotificationTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAutoScalingNotificationTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2977,7 +3037,9 @@ impl DescribeAutoScalingNotificationTypesError {
     /// Creates the `DescribeAutoScalingNotificationTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAutoScalingNotificationTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingNotificationTypesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2986,7 +3048,9 @@ impl DescribeAutoScalingNotificationTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAutoScalingNotificationTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeAutoScalingNotificationTypesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3024,9 +3088,7 @@ impl std::error::Error for DescribeAutoScalingNotificationTypesError {
             DescribeAutoScalingNotificationTypesErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DescribeAutoScalingNotificationTypesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeAutoScalingNotificationTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3049,7 +3111,7 @@ pub enum DescribeInstanceRefreshesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInstanceRefreshesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3077,7 +3139,9 @@ impl DescribeInstanceRefreshesError {
     /// Creates the `DescribeInstanceRefreshesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeInstanceRefreshesErrorKind::Unhandled(err.into()),
+            kind: DescribeInstanceRefreshesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3086,7 +3150,9 @@ impl DescribeInstanceRefreshesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeInstanceRefreshesErrorKind::Unhandled(err.into()),
+            kind: DescribeInstanceRefreshesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3130,7 +3196,7 @@ impl std::error::Error for DescribeInstanceRefreshesError {
         match &self.kind {
             DescribeInstanceRefreshesErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeInstanceRefreshesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeInstanceRefreshesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeInstanceRefreshesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3153,7 +3219,7 @@ pub enum DescribeLaunchConfigurationsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLaunchConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3181,7 +3247,9 @@ impl DescribeLaunchConfigurationsError {
     /// Creates the `DescribeLaunchConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLaunchConfigurationsErrorKind::Unhandled(err.into()),
+            kind: DescribeLaunchConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3190,7 +3258,9 @@ impl DescribeLaunchConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLaunchConfigurationsErrorKind::Unhandled(err.into()),
+            kind: DescribeLaunchConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3234,7 +3304,7 @@ impl std::error::Error for DescribeLaunchConfigurationsError {
         match &self.kind {
             DescribeLaunchConfigurationsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeLaunchConfigurationsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeLaunchConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLaunchConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3255,7 +3325,7 @@ pub enum DescribeLifecycleHooksErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLifecycleHooksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3282,7 +3352,9 @@ impl DescribeLifecycleHooksError {
     /// Creates the `DescribeLifecycleHooksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLifecycleHooksErrorKind::Unhandled(err.into()),
+            kind: DescribeLifecycleHooksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3291,7 +3363,9 @@ impl DescribeLifecycleHooksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLifecycleHooksErrorKind::Unhandled(err.into()),
+            kind: DescribeLifecycleHooksErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3327,7 +3401,7 @@ impl std::error::Error for DescribeLifecycleHooksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeLifecycleHooksErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeLifecycleHooksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLifecycleHooksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3348,7 +3422,7 @@ pub enum DescribeLifecycleHookTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLifecycleHookTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3375,7 +3449,9 @@ impl DescribeLifecycleHookTypesError {
     /// Creates the `DescribeLifecycleHookTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLifecycleHookTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeLifecycleHookTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3384,7 +3460,9 @@ impl DescribeLifecycleHookTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLifecycleHookTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeLifecycleHookTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3420,7 +3498,7 @@ impl std::error::Error for DescribeLifecycleHookTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeLifecycleHookTypesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeLifecycleHookTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLifecycleHookTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3443,7 +3521,7 @@ pub enum DescribeLoadBalancersErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3471,7 +3549,9 @@ impl DescribeLoadBalancersError {
     /// Creates the `DescribeLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3480,7 +3560,9 @@ impl DescribeLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3524,7 +3606,7 @@ impl std::error::Error for DescribeLoadBalancersError {
         match &self.kind {
             DescribeLoadBalancersErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeLoadBalancersErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3547,7 +3629,7 @@ pub enum DescribeLoadBalancerTargetGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoadBalancerTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3580,7 +3662,9 @@ impl DescribeLoadBalancerTargetGroupsError {
     /// Creates the `DescribeLoadBalancerTargetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3589,7 +3673,9 @@ impl DescribeLoadBalancerTargetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3635,7 +3721,7 @@ impl std::error::Error for DescribeLoadBalancerTargetGroupsError {
             DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3656,7 +3742,7 @@ pub enum DescribeMetricCollectionTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMetricCollectionTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3688,7 +3774,9 @@ impl DescribeMetricCollectionTypesError {
     /// Creates the `DescribeMetricCollectionTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMetricCollectionTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricCollectionTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3697,7 +3785,9 @@ impl DescribeMetricCollectionTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMetricCollectionTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeMetricCollectionTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3733,7 +3823,7 @@ impl std::error::Error for DescribeMetricCollectionTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeMetricCollectionTypesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeMetricCollectionTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMetricCollectionTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3756,7 +3846,7 @@ pub enum DescribeNotificationConfigurationsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3789,7 +3879,9 @@ impl DescribeNotificationConfigurationsError {
     /// Creates the `DescribeNotificationConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNotificationConfigurationsErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3798,7 +3890,9 @@ impl DescribeNotificationConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNotificationConfigurationsErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3844,7 +3938,7 @@ impl std::error::Error for DescribeNotificationConfigurationsError {
             DescribeNotificationConfigurationsErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DescribeNotificationConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNotificationConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3869,7 +3963,7 @@ pub enum DescribePoliciesErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3898,7 +3992,7 @@ impl DescribePoliciesError {
     /// Creates the `DescribePoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3907,7 +4001,7 @@ impl DescribePoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePoliciesErrorKind::Unhandled(err.into()),
+            kind: DescribePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3956,7 +4050,7 @@ impl std::error::Error for DescribePoliciesError {
             DescribePoliciesErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribePoliciesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DescribePoliciesErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            DescribePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3979,7 +4073,7 @@ pub enum DescribeScalingActivitiesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeScalingActivitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4007,7 +4101,9 @@ impl DescribeScalingActivitiesError {
     /// Creates the `DescribeScalingActivitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeScalingActivitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingActivitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4016,7 +4112,9 @@ impl DescribeScalingActivitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeScalingActivitiesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingActivitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4060,7 +4158,7 @@ impl std::error::Error for DescribeScalingActivitiesError {
         match &self.kind {
             DescribeScalingActivitiesErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeScalingActivitiesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeScalingActivitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeScalingActivitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4081,7 +4179,7 @@ pub enum DescribeScalingProcessTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeScalingProcessTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4108,7 +4206,9 @@ impl DescribeScalingProcessTypesError {
     /// Creates the `DescribeScalingProcessTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeScalingProcessTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingProcessTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4117,7 +4217,9 @@ impl DescribeScalingProcessTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeScalingProcessTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeScalingProcessTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4153,7 +4255,7 @@ impl std::error::Error for DescribeScalingProcessTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeScalingProcessTypesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeScalingProcessTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeScalingProcessTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4176,7 +4278,7 @@ pub enum DescribeScheduledActionsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeScheduledActionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4204,7 +4306,9 @@ impl DescribeScheduledActionsError {
     /// Creates the `DescribeScheduledActionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeScheduledActionsErrorKind::Unhandled(err.into()),
+            kind: DescribeScheduledActionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4213,7 +4317,9 @@ impl DescribeScheduledActionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeScheduledActionsErrorKind::Unhandled(err.into()),
+            kind: DescribeScheduledActionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4257,7 +4363,7 @@ impl std::error::Error for DescribeScheduledActionsError {
         match &self.kind {
             DescribeScheduledActionsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeScheduledActionsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeScheduledActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeScheduledActionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4280,7 +4386,7 @@ pub enum DescribeTagsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4308,7 +4414,7 @@ impl DescribeTagsError {
     /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4317,7 +4423,7 @@ impl DescribeTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(err.into()),
+            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4358,7 +4464,7 @@ impl std::error::Error for DescribeTagsError {
         match &self.kind {
             DescribeTagsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeTagsErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4379,7 +4485,7 @@ pub enum DescribeTerminationPolicyTypesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTerminationPolicyTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4411,7 +4517,9 @@ impl DescribeTerminationPolicyTypesError {
     /// Creates the `DescribeTerminationPolicyTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTerminationPolicyTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeTerminationPolicyTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4420,7 +4528,9 @@ impl DescribeTerminationPolicyTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTerminationPolicyTypesErrorKind::Unhandled(err.into()),
+            kind: DescribeTerminationPolicyTypesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4458,7 +4568,7 @@ impl std::error::Error for DescribeTerminationPolicyTypesError {
             DescribeTerminationPolicyTypesErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DescribeTerminationPolicyTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTerminationPolicyTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4483,7 +4593,7 @@ pub enum DescribeWarmPoolErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWarmPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4512,7 +4622,7 @@ impl DescribeWarmPoolError {
     /// Creates the `DescribeWarmPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWarmPoolErrorKind::Unhandled(err.into()),
+            kind: DescribeWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4521,7 +4631,7 @@ impl DescribeWarmPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWarmPoolErrorKind::Unhandled(err.into()),
+            kind: DescribeWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4567,7 +4677,7 @@ impl std::error::Error for DescribeWarmPoolError {
             DescribeWarmPoolErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeWarmPoolErrorKind::LimitExceededFault(_inner) => Some(_inner),
             DescribeWarmPoolErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DescribeWarmPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWarmPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4588,7 +4698,7 @@ pub enum DetachInstancesErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4615,7 +4725,7 @@ impl DetachInstancesError {
     /// Creates the `DetachInstancesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachInstancesErrorKind::Unhandled(err.into()),
+            kind: DetachInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4624,7 +4734,7 @@ impl DetachInstancesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachInstancesErrorKind::Unhandled(err.into()),
+            kind: DetachInstancesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4660,7 +4770,7 @@ impl std::error::Error for DetachInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DetachInstancesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DetachInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachInstancesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4681,7 +4791,7 @@ pub enum DetachLoadBalancersErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4708,7 +4818,7 @@ impl DetachLoadBalancersError {
     /// Creates the `DetachLoadBalancersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4717,7 +4827,7 @@ impl DetachLoadBalancersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachLoadBalancersErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4753,7 +4863,7 @@ impl std::error::Error for DetachLoadBalancersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DetachLoadBalancersErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DetachLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4774,7 +4884,7 @@ pub enum DetachLoadBalancerTargetGroupsErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetachLoadBalancerTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4806,7 +4916,9 @@ impl DetachLoadBalancerTargetGroupsError {
     /// Creates the `DetachLoadBalancerTargetGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetachLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancerTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4815,7 +4927,9 @@ impl DetachLoadBalancerTargetGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetachLoadBalancerTargetGroupsErrorKind::Unhandled(err.into()),
+            kind: DetachLoadBalancerTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4853,7 +4967,7 @@ impl std::error::Error for DetachLoadBalancerTargetGroupsError {
             DetachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            DetachLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetachLoadBalancerTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4874,7 +4988,7 @@ pub enum DisableMetricsCollectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableMetricsCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4901,7 +5015,9 @@ impl DisableMetricsCollectionError {
     /// Creates the `DisableMetricsCollectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableMetricsCollectionErrorKind::Unhandled(err.into()),
+            kind: DisableMetricsCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4910,7 +5026,9 @@ impl DisableMetricsCollectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableMetricsCollectionErrorKind::Unhandled(err.into()),
+            kind: DisableMetricsCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4946,7 +5064,7 @@ impl std::error::Error for DisableMetricsCollectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DisableMetricsCollectionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            DisableMetricsCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableMetricsCollectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4967,7 +5085,7 @@ pub enum EnableMetricsCollectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableMetricsCollectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4994,7 +5112,9 @@ impl EnableMetricsCollectionError {
     /// Creates the `EnableMetricsCollectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableMetricsCollectionErrorKind::Unhandled(err.into()),
+            kind: EnableMetricsCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5003,7 +5123,9 @@ impl EnableMetricsCollectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableMetricsCollectionErrorKind::Unhandled(err.into()),
+            kind: EnableMetricsCollectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5039,7 +5161,7 @@ impl std::error::Error for EnableMetricsCollectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnableMetricsCollectionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            EnableMetricsCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableMetricsCollectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5060,7 +5182,7 @@ pub enum EnterStandbyErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnterStandbyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5087,7 +5209,7 @@ impl EnterStandbyError {
     /// Creates the `EnterStandbyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnterStandbyErrorKind::Unhandled(err.into()),
+            kind: EnterStandbyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5096,7 +5218,7 @@ impl EnterStandbyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnterStandbyErrorKind::Unhandled(err.into()),
+            kind: EnterStandbyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5132,7 +5254,7 @@ impl std::error::Error for EnterStandbyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnterStandbyErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            EnterStandbyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnterStandbyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5155,7 +5277,7 @@ pub enum ExecutePolicyErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecutePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5183,7 +5305,7 @@ impl ExecutePolicyError {
     /// Creates the `ExecutePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecutePolicyErrorKind::Unhandled(err.into()),
+            kind: ExecutePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5192,7 +5314,7 @@ impl ExecutePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecutePolicyErrorKind::Unhandled(err.into()),
+            kind: ExecutePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5236,7 +5358,7 @@ impl std::error::Error for ExecutePolicyError {
         match &self.kind {
             ExecutePolicyErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             ExecutePolicyErrorKind::ScalingActivityInProgressFault(_inner) => Some(_inner),
-            ExecutePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecutePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5257,7 +5379,7 @@ pub enum ExitStandbyErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExitStandbyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5284,7 +5406,7 @@ impl ExitStandbyError {
     /// Creates the `ExitStandbyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExitStandbyErrorKind::Unhandled(err.into()),
+            kind: ExitStandbyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5293,7 +5415,7 @@ impl ExitStandbyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExitStandbyErrorKind::Unhandled(err.into()),
+            kind: ExitStandbyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5326,7 +5448,7 @@ impl std::error::Error for ExitStandbyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ExitStandbyErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            ExitStandbyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExitStandbyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5347,7 +5469,7 @@ pub enum GetPredictiveScalingForecastErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPredictiveScalingForecastError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5374,7 +5496,9 @@ impl GetPredictiveScalingForecastError {
     /// Creates the `GetPredictiveScalingForecastError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPredictiveScalingForecastErrorKind::Unhandled(err.into()),
+            kind: GetPredictiveScalingForecastErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5383,7 +5507,9 @@ impl GetPredictiveScalingForecastError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPredictiveScalingForecastErrorKind::Unhandled(err.into()),
+            kind: GetPredictiveScalingForecastErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5419,7 +5545,7 @@ impl std::error::Error for GetPredictiveScalingForecastError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetPredictiveScalingForecastErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            GetPredictiveScalingForecastErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPredictiveScalingForecastErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5442,7 +5568,7 @@ pub enum PutLifecycleHookErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLifecycleHookError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5470,7 +5596,7 @@ impl PutLifecycleHookError {
     /// Creates the `PutLifecycleHookError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutLifecycleHookErrorKind::Unhandled(err.into()),
+            kind: PutLifecycleHookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5479,7 +5605,7 @@ impl PutLifecycleHookError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutLifecycleHookErrorKind::Unhandled(err.into()),
+            kind: PutLifecycleHookErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5520,7 +5646,7 @@ impl std::error::Error for PutLifecycleHookError {
         match &self.kind {
             PutLifecycleHookErrorKind::LimitExceededFault(_inner) => Some(_inner),
             PutLifecycleHookErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            PutLifecycleHookErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutLifecycleHookErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5545,7 +5671,7 @@ pub enum PutNotificationConfigurationErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutNotificationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5576,7 +5702,9 @@ impl PutNotificationConfigurationError {
     /// Creates the `PutNotificationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutNotificationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5585,7 +5713,9 @@ impl PutNotificationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutNotificationConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5637,7 +5767,7 @@ impl std::error::Error for PutNotificationConfigurationError {
             PutNotificationConfigurationErrorKind::LimitExceededFault(_inner) => Some(_inner),
             PutNotificationConfigurationErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             PutNotificationConfigurationErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            PutNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5662,7 +5792,7 @@ pub enum PutScalingPolicyErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutScalingPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5691,7 +5821,7 @@ impl PutScalingPolicyError {
     /// Creates the `PutScalingPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutScalingPolicyErrorKind::Unhandled(err.into()),
+            kind: PutScalingPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5700,7 +5830,7 @@ impl PutScalingPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutScalingPolicyErrorKind::Unhandled(err.into()),
+            kind: PutScalingPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5749,7 +5879,7 @@ impl std::error::Error for PutScalingPolicyError {
             PutScalingPolicyErrorKind::LimitExceededFault(_inner) => Some(_inner),
             PutScalingPolicyErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             PutScalingPolicyErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            PutScalingPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutScalingPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5774,7 +5904,7 @@ pub enum PutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutScheduledUpdateGroupActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5808,7 +5938,9 @@ impl PutScheduledUpdateGroupActionError {
     /// Creates the `PutScheduledUpdateGroupActionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutScheduledUpdateGroupActionErrorKind::Unhandled(err.into()),
+            kind: PutScheduledUpdateGroupActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5817,7 +5949,9 @@ impl PutScheduledUpdateGroupActionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutScheduledUpdateGroupActionErrorKind::Unhandled(err.into()),
+            kind: PutScheduledUpdateGroupActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5869,7 +6003,7 @@ impl std::error::Error for PutScheduledUpdateGroupActionError {
             PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault(_inner) => Some(_inner),
             PutScheduledUpdateGroupActionErrorKind::LimitExceededFault(_inner) => Some(_inner),
             PutScheduledUpdateGroupActionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            PutScheduledUpdateGroupActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutScheduledUpdateGroupActionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5892,7 +6026,7 @@ pub enum PutWarmPoolErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutWarmPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5920,7 +6054,7 @@ impl PutWarmPoolError {
     /// Creates the `PutWarmPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutWarmPoolErrorKind::Unhandled(err.into()),
+            kind: PutWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5929,7 +6063,7 @@ impl PutWarmPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutWarmPoolErrorKind::Unhandled(err.into()),
+            kind: PutWarmPoolErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5967,7 +6101,7 @@ impl std::error::Error for PutWarmPoolError {
         match &self.kind {
             PutWarmPoolErrorKind::LimitExceededFault(_inner) => Some(_inner),
             PutWarmPoolErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            PutWarmPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutWarmPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5988,7 +6122,7 @@ pub enum RecordLifecycleActionHeartbeatErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RecordLifecycleActionHeartbeatError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6020,7 +6154,9 @@ impl RecordLifecycleActionHeartbeatError {
     /// Creates the `RecordLifecycleActionHeartbeatError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RecordLifecycleActionHeartbeatErrorKind::Unhandled(err.into()),
+            kind: RecordLifecycleActionHeartbeatErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6029,7 +6165,9 @@ impl RecordLifecycleActionHeartbeatError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RecordLifecycleActionHeartbeatErrorKind::Unhandled(err.into()),
+            kind: RecordLifecycleActionHeartbeatErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6067,7 +6205,7 @@ impl std::error::Error for RecordLifecycleActionHeartbeatError {
             RecordLifecycleActionHeartbeatErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }
-            RecordLifecycleActionHeartbeatErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RecordLifecycleActionHeartbeatErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6090,7 +6228,7 @@ pub enum ResumeProcessesErrorKind {
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResumeProcessesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6118,7 +6256,7 @@ impl ResumeProcessesError {
     /// Creates the `ResumeProcessesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResumeProcessesErrorKind::Unhandled(err.into()),
+            kind: ResumeProcessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6127,7 +6265,7 @@ impl ResumeProcessesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResumeProcessesErrorKind::Unhandled(err.into()),
+            kind: ResumeProcessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6168,7 +6306,7 @@ impl std::error::Error for ResumeProcessesError {
         match &self.kind {
             ResumeProcessesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             ResumeProcessesErrorKind::ResourceInUseFault(_inner) => Some(_inner),
-            ResumeProcessesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResumeProcessesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6191,7 +6329,7 @@ pub enum SetDesiredCapacityErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetDesiredCapacityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6219,7 +6357,7 @@ impl SetDesiredCapacityError {
     /// Creates the `SetDesiredCapacityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetDesiredCapacityErrorKind::Unhandled(err.into()),
+            kind: SetDesiredCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6228,7 +6366,7 @@ impl SetDesiredCapacityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetDesiredCapacityErrorKind::Unhandled(err.into()),
+            kind: SetDesiredCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6272,7 +6410,7 @@ impl std::error::Error for SetDesiredCapacityError {
         match &self.kind {
             SetDesiredCapacityErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             SetDesiredCapacityErrorKind::ScalingActivityInProgressFault(_inner) => Some(_inner),
-            SetDesiredCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetDesiredCapacityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6293,7 +6431,7 @@ pub enum SetInstanceHealthErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetInstanceHealthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6320,7 +6458,7 @@ impl SetInstanceHealthError {
     /// Creates the `SetInstanceHealthError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetInstanceHealthErrorKind::Unhandled(err.into()),
+            kind: SetInstanceHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6329,7 +6467,7 @@ impl SetInstanceHealthError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetInstanceHealthErrorKind::Unhandled(err.into()),
+            kind: SetInstanceHealthErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6365,7 +6503,7 @@ impl std::error::Error for SetInstanceHealthError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SetInstanceHealthErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            SetInstanceHealthErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetInstanceHealthErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6388,7 +6526,7 @@ pub enum SetInstanceProtectionErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetInstanceProtectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6416,7 +6554,9 @@ impl SetInstanceProtectionError {
     /// Creates the `SetInstanceProtectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetInstanceProtectionErrorKind::Unhandled(err.into()),
+            kind: SetInstanceProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6425,7 +6565,9 @@ impl SetInstanceProtectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetInstanceProtectionErrorKind::Unhandled(err.into()),
+            kind: SetInstanceProtectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6469,7 +6611,7 @@ impl std::error::Error for SetInstanceProtectionError {
         match &self.kind {
             SetInstanceProtectionErrorKind::LimitExceededFault(_inner) => Some(_inner),
             SetInstanceProtectionErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            SetInstanceProtectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetInstanceProtectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6494,7 +6636,7 @@ pub enum StartInstanceRefreshErrorKind {
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartInstanceRefreshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6523,7 +6665,9 @@ impl StartInstanceRefreshError {
     /// Creates the `StartInstanceRefreshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartInstanceRefreshErrorKind::Unhandled(err.into()),
+            kind: StartInstanceRefreshErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6532,7 +6676,9 @@ impl StartInstanceRefreshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartInstanceRefreshErrorKind::Unhandled(err.into()),
+            kind: StartInstanceRefreshErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6584,7 +6730,7 @@ impl std::error::Error for StartInstanceRefreshError {
             StartInstanceRefreshErrorKind::InstanceRefreshInProgressFault(_inner) => Some(_inner),
             StartInstanceRefreshErrorKind::LimitExceededFault(_inner) => Some(_inner),
             StartInstanceRefreshErrorKind::ResourceContentionFault(_inner) => Some(_inner),
-            StartInstanceRefreshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartInstanceRefreshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6607,7 +6753,7 @@ pub enum SuspendProcessesErrorKind {
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SuspendProcessesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6635,7 +6781,7 @@ impl SuspendProcessesError {
     /// Creates the `SuspendProcessesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SuspendProcessesErrorKind::Unhandled(err.into()),
+            kind: SuspendProcessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6644,7 +6790,7 @@ impl SuspendProcessesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SuspendProcessesErrorKind::Unhandled(err.into()),
+            kind: SuspendProcessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6685,7 +6831,7 @@ impl std::error::Error for SuspendProcessesError {
         match &self.kind {
             SuspendProcessesErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             SuspendProcessesErrorKind::ResourceInUseFault(_inner) => Some(_inner),
-            SuspendProcessesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SuspendProcessesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6708,7 +6854,7 @@ pub enum TerminateInstanceInAutoScalingGroupErrorKind {
     /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TerminateInstanceInAutoScalingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6743,7 +6889,9 @@ impl TerminateInstanceInAutoScalingGroupError {
     /// Creates the `TerminateInstanceInAutoScalingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6752,7 +6900,9 @@ impl TerminateInstanceInAutoScalingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6800,9 +6950,7 @@ impl std::error::Error for TerminateInstanceInAutoScalingGroupError {
             TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault(
                 _inner,
             ) => Some(_inner),
-            TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6827,7 +6975,7 @@ pub enum UpdateAutoScalingGroupErrorKind {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAutoScalingGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6858,7 +7006,9 @@ impl UpdateAutoScalingGroupError {
     /// Creates the `UpdateAutoScalingGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6867,7 +7017,9 @@ impl UpdateAutoScalingGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAutoScalingGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateAutoScalingGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6919,7 +7071,32 @@ impl std::error::Error for UpdateAutoScalingGroupError {
             UpdateAutoScalingGroupErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             UpdateAutoScalingGroupErrorKind::ScalingActivityInProgressFault(_inner) => Some(_inner),
             UpdateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure(_inner) => Some(_inner),
-            UpdateAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAutoScalingGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

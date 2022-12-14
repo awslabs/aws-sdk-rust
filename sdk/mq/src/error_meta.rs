@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>Returns information about an error.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,9 +53,11 @@ where
                 crate::error::CreateBrokerErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
-                crate::error::CreateBrokerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateBrokerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -81,10 +83,10 @@ where
                     Error::InternalServerErrorException(inner)
                 }
                 crate::error::CreateConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -107,9 +109,11 @@ where
                 crate::error::CreateTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::CreateTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -135,9 +139,11 @@ where
                 crate::error::CreateUserErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -160,9 +166,11 @@ where
                 crate::error::DeleteBrokerErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteBrokerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBrokerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -185,9 +193,11 @@ where
                 crate::error::DeleteTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -210,9 +220,11 @@ where
                 crate::error::DeleteUserErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -235,9 +247,11 @@ where
                 crate::error::DescribeBrokerErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DescribeBrokerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBrokerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -261,10 +275,10 @@ where
                     inner,
                 ) => Error::InternalServerErrorException(inner),
                 crate::error::DescribeBrokerEngineTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -281,9 +295,9 @@ where
                 crate::error::DescribeBrokerInstanceOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::DescribeBrokerInstanceOptionsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::DescribeBrokerInstanceOptionsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-                crate::error::DescribeBrokerInstanceOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBrokerInstanceOptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,10 +324,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::DescribeConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -331,9 +345,9 @@ where
                 crate::error::DescribeConfigurationRevisionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::DescribeConfigurationRevisionErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
                 crate::error::DescribeConfigurationRevisionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::DescribeConfigurationRevisionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeConfigurationRevisionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -356,9 +370,11 @@ where
                 crate::error::DescribeUserErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DescribeUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -378,9 +394,11 @@ where
                 crate::error::ListBrokersErrorKind::InternalServerErrorException(inner) => {
                     Error::InternalServerErrorException(inner)
                 }
-                crate::error::ListBrokersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBrokersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -407,10 +425,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListConfigurationRevisionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -433,10 +451,10 @@ where
                     Error::InternalServerErrorException(inner)
                 }
                 crate::error::ListConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -459,9 +477,11 @@ where
                 crate::error::ListTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -484,9 +504,11 @@ where
                 crate::error::ListUsersErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -509,9 +531,11 @@ where
                 crate::error::RebootBrokerErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::RebootBrokerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RebootBrokerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -537,9 +561,11 @@ where
                 crate::error::UpdateBrokerErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateBrokerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateBrokerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -568,10 +594,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -597,9 +623,11 @@ where
                 crate::error::UpdateUserErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

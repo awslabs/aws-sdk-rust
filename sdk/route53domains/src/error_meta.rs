@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,9 +53,9 @@ where
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-                crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -80,9 +80,9 @@ where
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-                crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -103,10 +103,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::CheckDomainAvailabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -127,10 +127,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::CheckDomainTransferabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -153,9 +153,11 @@ where
                 crate::error::DeleteDomainErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::DeleteDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,10 +180,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::DeleteTagsForDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -202,10 +204,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::DisableDomainAutoRenewErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -235,10 +237,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::DisableDomainTransferLockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -262,10 +264,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::EnableDomainAutoRenewErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -295,10 +297,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::EnableDomainTransferLockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,10 +324,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::GetContactReachabilityStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -342,9 +344,11 @@ where
                 crate::error::GetDomainDetailErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::GetDomainDetailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDomainDetailErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,10 +369,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::GetDomainSuggestionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +389,10 @@ where
                     Error::InvalidInput(inner)
                 }
                 crate::error::GetOperationDetailErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -402,9 +406,11 @@ where
                 crate::error::ListDomainsErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::ListDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDomainsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -418,9 +424,11 @@ where
                 crate::error::ListOperationsErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::ListOperationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOperationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -437,9 +445,11 @@ where
                 crate::error::ListPricesErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::ListPricesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPricesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -462,10 +472,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::ListTagsForDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -494,9 +504,11 @@ where
                 crate::error::RegisterDomainErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::RegisterDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -521,9 +533,9 @@ where
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-                crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -549,9 +561,11 @@ where
                 crate::error::RenewDomainErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::RenewDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RenewDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,10 +593,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::ResendContactReachabilityEmailErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -603,10 +617,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::RetrieveDomainAuthCodeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -635,9 +649,11 @@ where
                 crate::error::TransferDomainErrorKind::UnsupportedTld(inner) => {
                     Error::UnsupportedTld(inner)
                 }
-                crate::error::TransferDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TransferDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -659,9 +675,9 @@ where
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-                crate::error::TransferDomainToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TransferDomainToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -690,10 +706,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::UpdateDomainContactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -723,10 +739,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::UpdateDomainContactPrivacyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -756,10 +772,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::UpdateDomainNameserversErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -782,10 +798,10 @@ where
                     Error::UnsupportedTld(inner)
                 }
                 crate::error::UpdateTagsForDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +815,11 @@ where
                 crate::error::ViewBillingErrorKind::InvalidInput(inner) => {
                     Error::InvalidInput(inner)
                 }
-                crate::error::ViewBillingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ViewBillingErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

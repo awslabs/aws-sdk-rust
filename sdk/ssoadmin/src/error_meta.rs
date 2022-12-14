@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,9 +59,9 @@ where
                 crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -87,9 +87,9 @@ where
                 crate::error::AttachManagedPolicyToPermissionSetErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::AttachManagedPolicyToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AttachManagedPolicyToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::AttachManagedPolicyToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AttachManagedPolicyToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -125,10 +125,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreateAccountAssignmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -156,9 +156,9 @@ where
                 crate::error::CreateInstanceAccessControlAttributeConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateInstanceAccessControlAttributeConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateInstanceAccessControlAttributeConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,10 +193,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::CreatePermissionSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -229,10 +229,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteAccountAssignmentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -260,9 +260,9 @@ where
                 crate::error::DeleteInlinePolicyFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteInlinePolicyFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteInlinePolicyFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -290,9 +290,9 @@ where
                 crate::error::DeleteInstanceAccessControlAttributeConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteInstanceAccessControlAttributeConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteInstanceAccessControlAttributeConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -319,9 +319,9 @@ where
                 crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -353,10 +353,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeletePermissionSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -383,9 +383,9 @@ where
                 crate::error::DescribeAccountAssignmentCreationStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAccountAssignmentCreationStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeAccountAssignmentCreationStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -412,9 +412,9 @@ where
                 crate::error::DescribeAccountAssignmentDeletionStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeAccountAssignmentDeletionStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeAccountAssignmentDeletionStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -441,9 +441,9 @@ where
                 crate::error::DescribeInstanceAccessControlAttributeConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeInstanceAccessControlAttributeConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeInstanceAccessControlAttributeConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -473,10 +473,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribePermissionSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -503,9 +503,9 @@ where
                 crate::error::DescribePermissionSetProvisioningStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribePermissionSetProvisioningStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribePermissionSetProvisioningStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribePermissionSetProvisioningStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePermissionSetProvisioningStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -533,9 +533,9 @@ where
                 crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -563,9 +563,9 @@ where
                 crate::error::DetachManagedPolicyFromPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DetachManagedPolicyFromPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DetachManagedPolicyFromPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -588,9 +588,9 @@ where
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetInlinePolicyForPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetInlinePolicyForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetInlinePolicyForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -617,9 +617,9 @@ where
                 crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -646,9 +646,9 @@ where
                 crate::error::ListAccountAssignmentCreationStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListAccountAssignmentCreationStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListAccountAssignmentCreationStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListAccountAssignmentCreationStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccountAssignmentCreationStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,9 +675,9 @@ where
                 crate::error::ListAccountAssignmentDeletionStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListAccountAssignmentDeletionStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListAccountAssignmentDeletionStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListAccountAssignmentDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccountAssignmentDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -707,10 +707,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListAccountAssignmentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -737,9 +737,9 @@ where
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListAccountsForProvisionedPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,9 +766,9 @@ where
                 crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -791,9 +791,11 @@ where
                 crate::error::ListInstancesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -817,9 +819,9 @@ where
                 crate::error::ListManagedPoliciesInPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListManagedPoliciesInPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListManagedPoliciesInPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListManagedPoliciesInPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListManagedPoliciesInPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -846,9 +848,9 @@ where
                 crate::error::ListPermissionSetProvisioningStatusErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPermissionSetProvisioningStatusErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListPermissionSetProvisioningStatusErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListPermissionSetProvisioningStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPermissionSetProvisioningStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -877,10 +879,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPermissionSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -907,9 +909,9 @@ where
                 crate::error::ListPermissionSetsProvisionedToAccountErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListPermissionSetsProvisionedToAccountErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListPermissionSetsProvisionedToAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -938,10 +940,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -974,10 +976,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ProvisionPermissionSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1002,9 +1004,9 @@ where
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutInlinePolicyToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutInlinePolicyToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutInlinePolicyToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1032,9 +1034,9 @@ where
                 crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1066,9 +1068,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1097,9 +1101,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1127,9 +1133,9 @@ where
                 crate::error::UpdateInstanceAccessControlAttributeConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateInstanceAccessControlAttributeConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateInstanceAccessControlAttributeConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1161,10 +1167,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdatePermissionSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -49,7 +49,7 @@ pub enum Error {
     /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -93,9 +93,11 @@ where
                 crate::error::ActivateTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::ActivateTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ActivateTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -115,9 +117,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
                 crate::error::BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException(inner) => Error::TypeConfigurationNotFoundException(inner),
-                crate::error::BatchDescribeTypeConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchDescribeTypeConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -134,10 +136,10 @@ where
                     Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::CancelUpdateStackErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -155,10 +157,10 @@ where
                     inner,
                 ) => Error::TokenAlreadyExistsException(inner),
                 crate::error::ContinueUpdateRollbackErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,9 +180,11 @@ where
                 crate::error::CreateChangeSetErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateChangeSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -203,9 +207,11 @@ where
                 crate::error::CreateStackErrorKind::TokenAlreadyExistsException(inner) => {
                     Error::TokenAlreadyExistsException(inner)
                 }
-                crate::error::CreateStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateStackErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -238,10 +244,10 @@ where
                     Error::StaleRequestException(inner)
                 }
                 crate::error::CreateStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -261,9 +267,11 @@ where
                 crate::error::CreateStackSetErrorKind::NameAlreadyExistsException(inner) => {
                     Error::NameAlreadyExistsException(inner)
                 }
-                crate::error::CreateStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateStackSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -280,9 +288,11 @@ where
                 crate::error::DeactivateTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::DeactivateTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeactivateTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -296,9 +306,11 @@ where
                 crate::error::DeleteChangeSetErrorKind::InvalidChangeSetStatusException(inner) => {
                     Error::InvalidChangeSetStatusException(inner)
                 }
-                crate::error::DeleteChangeSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteChangeSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -312,9 +324,11 @@ where
                 crate::error::DeleteStackErrorKind::TokenAlreadyExistsException(inner) => {
                     Error::TokenAlreadyExistsException(inner)
                 }
-                crate::error::DeleteStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteStackErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -344,10 +358,10 @@ where
                     Error::StaleRequestException(inner)
                 }
                 crate::error::DeleteStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -364,9 +378,11 @@ where
                 crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException(inner) => {
                     Error::StackSetNotEmptyException(inner)
                 }
-                crate::error::DeleteStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteStackSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -383,9 +399,11 @@ where
                 crate::error::DeregisterTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::DeregisterTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -400,10 +418,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -420,10 +438,10 @@ where
                     Error::ChangeSetNotFoundException(inner)
                 }
                 crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -441,10 +459,10 @@ where
                     inner,
                 ) => Error::ChangeSetNotFoundException(inner),
                 crate::error::DescribeChangeSetHooksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -461,10 +479,10 @@ where
                     Error::CfnRegistryException(inner)
                 }
                 crate::error::DescribePublisherErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -483,10 +501,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStackDriftDetectionStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -500,10 +518,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStackEventsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -524,10 +542,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DescribeStackInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -542,10 +560,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStackResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -560,10 +578,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStackResourceDriftsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -578,10 +596,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStackResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -592,9 +610,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStacksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStacksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeStacksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -611,10 +631,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DescribeStackSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -635,10 +655,10 @@ where
                     inner,
                 ) => Error::StackSetNotFoundException(inner),
                 crate::error::DescribeStackSetOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -655,9 +675,11 @@ where
                 crate::error::DescribeTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::DescribeTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -675,10 +697,10 @@ where
                     Error::CfnRegistryException(inner)
                 }
                 crate::error::DescribeTypeRegistrationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -692,10 +714,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DetectStackDriftErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -710,10 +732,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DetectStackResourceDriftErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -736,10 +758,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::DetectStackSetDriftErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,10 +776,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EstimateTemplateCostErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -783,10 +805,10 @@ where
                     Error::TokenAlreadyExistsException(inner)
                 }
                 crate::error::ExecuteChangeSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -797,9 +819,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStackPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetStackPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetStackPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -813,9 +837,11 @@ where
                 crate::error::GetTemplateErrorKind::ChangeSetNotFoundException(inner) => {
                     Error::ChangeSetNotFoundException(inner)
                 }
-                crate::error::GetTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -832,10 +858,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::GetTemplateSummaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -856,9 +882,9 @@ where
                 crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException(inner) => Error::StackNotFoundException(inner),
                 crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException(inner) => Error::StackSetNotFoundException(inner),
                 crate::error::ImportStacksToStackSetErrorKind::StaleRequestException(inner) => Error::StaleRequestException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ImportStacksToStackSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -869,9 +895,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChangeSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListChangeSetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChangeSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -882,9 +910,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListExportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListExportsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -895,9 +925,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListImportsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -914,10 +946,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::ListStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -931,10 +963,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListStackResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -945,9 +977,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStacksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStacksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListStacksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -968,10 +1002,10 @@ where
                     inner,
                 ) => Error::StackSetNotFoundException(inner),
                 crate::error::ListStackSetOperationResultsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -989,10 +1023,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::ListStackSetOperationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1003,9 +1037,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStackSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStackSetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListStackSetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1023,10 +1059,10 @@ where
                     Error::CfnRegistryException(inner)
                 }
                 crate::error::ListTypeRegistrationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1040,9 +1076,11 @@ where
                 crate::error::ListTypesErrorKind::CfnRegistryException(inner) => {
                     Error::CfnRegistryException(inner)
                 }
-                crate::error::ListTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTypesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1059,10 +1097,10 @@ where
                     Error::CfnRegistryException(inner)
                 }
                 crate::error::ListTypeVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1079,9 +1117,11 @@ where
                 crate::error::PublishTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::PublishTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PublishTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1097,9 +1137,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RecordHandlerProgressErrorKind::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
                 crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(inner) => Error::OperationStatusCheckFailedException(inner),
-                crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1116,10 +1156,10 @@ where
                     Error::CfnRegistryException(inner)
                 }
                 crate::error::RegisterPublisherErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1133,9 +1173,11 @@ where
                 crate::error::RegisterTypeErrorKind::CfnRegistryException(inner) => {
                     Error::CfnRegistryException(inner)
                 }
-                crate::error::RegisterTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1149,9 +1191,11 @@ where
                 crate::error::RollbackStackErrorKind::TokenAlreadyExistsException(inner) => {
                     Error::TokenAlreadyExistsException(inner)
                 }
-                crate::error::RollbackStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RollbackStackErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1162,9 +1206,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetStackPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetStackPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetStackPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1185,10 +1231,10 @@ where
                     Error::TypeNotFoundException(inner)
                 }
                 crate::error::SetTypeConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1209,10 +1255,10 @@ where
                     Error::TypeNotFoundException(inner)
                 }
                 crate::error::SetTypeDefaultVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1223,9 +1269,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SignalResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SignalResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SignalResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1249,10 +1297,10 @@ where
                     Error::StackSetNotFoundException(inner)
                 }
                 crate::error::StopStackSetOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1269,9 +1317,11 @@ where
                 crate::error::TestTypeErrorKind::TypeNotFoundException(inner) => {
                     Error::TypeNotFoundException(inner)
                 }
-                crate::error::TestTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TestTypeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1288,9 +1338,11 @@ where
                 crate::error::UpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
                     Error::TokenAlreadyExistsException(inner)
                 }
-                crate::error::UpdateStackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateStackErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1323,10 +1375,10 @@ where
                     Error::StaleRequestException(inner)
                 }
                 crate::error::UpdateStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1355,9 +1407,11 @@ where
                 crate::error::UpdateStackSetErrorKind::StaleRequestException(inner) => {
                     Error::StaleRequestException(inner)
                 }
-                crate::error::UpdateStackSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateStackSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1372,10 +1426,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateTerminationProtectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1389,10 +1443,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ValidateTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -1315,7 +1315,7 @@ pub enum AnalyzeDocumentErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1353,7 +1353,7 @@ impl AnalyzeDocumentError {
     /// Creates the `AnalyzeDocumentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AnalyzeDocumentErrorKind::Unhandled(err.into()),
+            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1362,7 +1362,7 @@ impl AnalyzeDocumentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AnalyzeDocumentErrorKind::Unhandled(err.into()),
+            kind: AnalyzeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1466,7 +1466,7 @@ impl std::error::Error for AnalyzeDocumentError {
             }
             AnalyzeDocumentErrorKind::ThrottlingException(_inner) => Some(_inner),
             AnalyzeDocumentErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeDocumentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AnalyzeDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1503,7 +1503,7 @@ pub enum AnalyzeExpenseErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeExpenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1540,7 +1540,7 @@ impl AnalyzeExpenseError {
     /// Creates the `AnalyzeExpenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AnalyzeExpenseErrorKind::Unhandled(err.into()),
+            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1549,7 +1549,7 @@ impl AnalyzeExpenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AnalyzeExpenseErrorKind::Unhandled(err.into()),
+            kind: AnalyzeExpenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1640,7 +1640,7 @@ impl std::error::Error for AnalyzeExpenseError {
             AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             AnalyzeExpenseErrorKind::ThrottlingException(_inner) => Some(_inner),
             AnalyzeExpenseErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeExpenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AnalyzeExpenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1677,7 +1677,7 @@ pub enum AnalyzeIDErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AnalyzeIDError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1712,7 +1712,7 @@ impl AnalyzeIDError {
     /// Creates the `AnalyzeIDError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AnalyzeIDErrorKind::Unhandled(err.into()),
+            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1721,7 +1721,7 @@ impl AnalyzeIDError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AnalyzeIDErrorKind::Unhandled(err.into()),
+            kind: AnalyzeIDErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1800,7 +1800,7 @@ impl std::error::Error for AnalyzeIDError {
             AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             AnalyzeIDErrorKind::ThrottlingException(_inner) => Some(_inner),
             AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            AnalyzeIDErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AnalyzeIDErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1837,7 +1837,7 @@ pub enum DetectDocumentTextErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectDocumentTextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1874,7 +1874,7 @@ impl DetectDocumentTextError {
     /// Creates the `DetectDocumentTextError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectDocumentTextErrorKind::Unhandled(err.into()),
+            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1883,7 +1883,7 @@ impl DetectDocumentTextError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectDocumentTextErrorKind::Unhandled(err.into()),
+            kind: DetectDocumentTextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1985,7 +1985,7 @@ impl std::error::Error for DetectDocumentTextError {
             }
             DetectDocumentTextErrorKind::ThrottlingException(_inner) => Some(_inner),
             DetectDocumentTextErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            DetectDocumentTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectDocumentTextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2020,7 +2020,7 @@ pub enum GetDocumentAnalysisErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2056,7 +2056,7 @@ impl GetDocumentAnalysisError {
     /// Creates the `GetDocumentAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2065,7 +2065,7 @@ impl GetDocumentAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2159,7 +2159,7 @@ impl std::error::Error for GetDocumentAnalysisError {
                 Some(_inner)
             }
             GetDocumentAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2194,7 +2194,7 @@ pub enum GetDocumentTextDetectionErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2230,7 +2230,9 @@ impl GetDocumentTextDetectionError {
     /// Creates the `GetDocumentTextDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentTextDetectionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2239,7 +2241,9 @@ impl GetDocumentTextDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentTextDetectionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2333,7 +2337,7 @@ impl std::error::Error for GetDocumentTextDetectionError {
                 Some(_inner)
             }
             GetDocumentTextDetectionErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2368,7 +2372,7 @@ pub enum GetExpenseAnalysisErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExpenseAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2404,7 +2408,7 @@ impl GetExpenseAnalysisError {
     /// Creates the `GetExpenseAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetExpenseAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2413,7 +2417,7 @@ impl GetExpenseAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetExpenseAnalysisErrorKind::Unhandled(err.into()),
+            kind: GetExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2507,7 +2511,7 @@ impl std::error::Error for GetExpenseAnalysisError {
                 Some(_inner)
             }
             GetExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2550,7 +2554,7 @@ pub enum StartDocumentAnalysisErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDocumentAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2592,7 +2596,9 @@ impl StartDocumentAnalysisError {
     /// Creates the `StartDocumentAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDocumentAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2601,7 +2607,9 @@ impl StartDocumentAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDocumentAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartDocumentAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2729,7 +2737,7 @@ impl std::error::Error for StartDocumentAnalysisError {
             }
             StartDocumentAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartDocumentAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            StartDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDocumentAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2772,7 +2780,7 @@ pub enum StartDocumentTextDetectionErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDocumentTextDetectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2816,7 +2824,9 @@ impl StartDocumentTextDetectionError {
     /// Creates the `StartDocumentTextDetectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDocumentTextDetectionErrorKind::Unhandled(err.into()),
+            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2825,7 +2835,9 @@ impl StartDocumentTextDetectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDocumentTextDetectionErrorKind::Unhandled(err.into()),
+            kind: StartDocumentTextDetectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2955,7 +2967,7 @@ impl std::error::Error for StartDocumentTextDetectionError {
             StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(_inner) => {
                 Some(_inner)
             }
-            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDocumentTextDetectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2998,7 +3010,7 @@ pub enum StartExpenseAnalysisErrorKind {
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartExpenseAnalysisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3040,7 +3052,9 @@ impl StartExpenseAnalysisError {
     /// Creates the `StartExpenseAnalysisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartExpenseAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3049,7 +3063,9 @@ impl StartExpenseAnalysisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartExpenseAnalysisErrorKind::Unhandled(err.into()),
+            kind: StartExpenseAnalysisErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3177,7 +3193,32 @@ impl std::error::Error for StartExpenseAnalysisError {
             }
             StartExpenseAnalysisErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartExpenseAnalysisErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
-            StartExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartExpenseAnalysisErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

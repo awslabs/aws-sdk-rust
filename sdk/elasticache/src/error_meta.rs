@@ -149,7 +149,7 @@ pub enum Error {
     /// <p>The quota of users has been exceeded.</p>
     UserQuotaExceededFault(crate::error::UserQuotaExceededFault),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -271,10 +271,10 @@ where
                     Error::UserNotFoundFault(inner)
                 }
                 crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -298,9 +298,9 @@ where
                 crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
                 crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AuthorizeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -321,10 +321,10 @@ where
                     inner,
                 ) => Error::ServiceUpdateNotFoundFault(inner),
                 crate::error::BatchApplyUpdateActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,10 +345,10 @@ where
                     Error::ServiceUpdateNotFoundFault(inner)
                 }
                 crate::error::BatchStopUpdateActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -364,9 +364,9 @@ where
                 crate::error::CompleteMigrationErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
                 crate::error::CompleteMigrationErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
                 crate::error::CompleteMigrationErrorKind::ReplicationGroupNotUnderMigrationFault(inner) => Error::ReplicationGroupNotUnderMigrationFault(inner),
-                crate::error::CompleteMigrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CompleteMigrationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -398,9 +398,11 @@ where
                 crate::error::CopySnapshotErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
                 }
-                crate::error::CopySnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CopySnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -427,9 +429,9 @@ where
                 crate::error::CreateCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
                 crate::error::CreateCacheClusterErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
                 crate::error::CreateCacheClusterErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-                crate::error::CreateCacheClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCacheClusterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -449,9 +451,9 @@ where
                 crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::CreateCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::CreateCacheParameterGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-                crate::error::CreateCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -470,9 +472,9 @@ where
                 crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::CreateCacheSecurityGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::CreateCacheSecurityGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-                crate::error::CreateCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -492,9 +494,9 @@ where
                 crate::error::CreateCacheSubnetGroupErrorKind::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
                 crate::error::CreateCacheSubnetGroupErrorKind::SubnetNotAllowedFault(inner) => Error::SubnetNotAllowedFault(inner),
                 crate::error::CreateCacheSubnetGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-                crate::error::CreateCacheSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCacheSubnetGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -513,9 +515,9 @@ where
                 crate::error::CreateGlobalReplicationGroupErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
                 crate::error::CreateGlobalReplicationGroupErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
                 crate::error::CreateGlobalReplicationGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::CreateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -548,9 +550,9 @@ where
                 crate::error::CreateReplicationGroupErrorKind::ReplicationGroupAlreadyExistsFault(inner) => Error::ReplicationGroupAlreadyExistsFault(inner),
                 crate::error::CreateReplicationGroupErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
                 crate::error::CreateReplicationGroupErrorKind::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
-                crate::error::CreateReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -591,9 +593,11 @@ where
                 crate::error::CreateSnapshotErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
                 }
-                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -625,9 +629,11 @@ where
                 crate::error::CreateUserErrorKind::UserQuotaExceededFault(inner) => {
                     Error::UserQuotaExceededFault(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -662,9 +668,11 @@ where
                 crate::error::CreateUserGroupErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
-                crate::error::CreateUserGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -690,9 +698,9 @@ where
                 crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DecreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -718,9 +726,9 @@ where
                 crate::error::DecreaseReplicaCountErrorKind::NoOperationFault(inner) => Error::NoOperationFault(inner),
                 crate::error::DecreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
                 crate::error::DecreaseReplicaCountErrorKind::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
-                crate::error::DecreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DecreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -755,10 +763,10 @@ where
                     Error::SnapshotQuotaExceededFault(inner)
                 }
                 crate::error::DeleteCacheClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -776,9 +784,9 @@ where
                 crate::error::DeleteCacheParameterGroupErrorKind::InvalidCacheParameterGroupStateFault(inner) => Error::InvalidCacheParameterGroupStateFault(inner),
                 crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DeleteCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DeleteCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -796,9 +804,9 @@ where
                 crate::error::DeleteCacheSecurityGroupErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
                 crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DeleteCacheSecurityGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DeleteCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCacheSecurityGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -819,10 +827,10 @@ where
                     inner,
                 ) => Error::CacheSubnetGroupNotFoundFault(inner),
                 crate::error::DeleteCacheSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -839,9 +847,9 @@ where
                 crate::error::DeleteGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
                 crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::DeleteGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DeleteGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -862,9 +870,9 @@ where
                 crate::error::DeleteReplicationGroupErrorKind::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
                 crate::error::DeleteReplicationGroupErrorKind::SnapshotFeatureNotSupportedFault(inner) => Error::SnapshotFeatureNotSupportedFault(inner),
                 crate::error::DeleteReplicationGroupErrorKind::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
-                crate::error::DeleteReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -887,9 +895,11 @@ where
                 crate::error::DeleteSnapshotErrorKind::SnapshotNotFoundFault(inner) => {
                     Error::SnapshotNotFoundFault(inner)
                 }
-                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -915,9 +925,11 @@ where
                 crate::error::DeleteUserErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -940,9 +952,11 @@ where
                 crate::error::DeleteUserGroupErrorKind::UserGroupNotFoundFault(inner) => {
                     Error::UserGroupNotFoundFault(inner)
                 }
-                crate::error::DeleteUserGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -959,9 +973,9 @@ where
                 crate::error::DescribeCacheClustersErrorKind::CacheClusterNotFoundFault(inner) => Error::CacheClusterNotFoundFault(inner),
                 crate::error::DescribeCacheClustersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeCacheClustersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeCacheClustersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCacheClustersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -976,10 +990,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeCacheEngineVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -996,9 +1010,9 @@ where
                 crate::error::DescribeCacheParameterGroupsErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
                 crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeCacheParameterGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeCacheParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCacheParameterGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1015,9 +1029,9 @@ where
                 crate::error::DescribeCacheParametersErrorKind::CacheParameterGroupNotFoundFault(inner) => Error::CacheParameterGroupNotFoundFault(inner),
                 crate::error::DescribeCacheParametersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeCacheParametersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeCacheParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCacheParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1034,9 +1048,9 @@ where
                 crate::error::DescribeCacheSecurityGroupsErrorKind::CacheSecurityGroupNotFoundFault(inner) => Error::CacheSecurityGroupNotFoundFault(inner),
                 crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeCacheSecurityGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeCacheSecurityGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCacheSecurityGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1054,10 +1068,10 @@ where
                     inner,
                 ) => Error::CacheSubnetGroupNotFoundFault(inner),
                 crate::error::DescribeCacheSubnetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1077,9 +1091,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeEngineDefaultParametersErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeEngineDefaultParametersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEngineDefaultParametersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1096,9 +1110,11 @@ where
                 crate::error::DescribeEventsErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
                 }
-                crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEventsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1119,9 +1135,9 @@ where
                 crate::error::DescribeGlobalReplicationGroupsErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
                 crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeGlobalReplicationGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeGlobalReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeGlobalReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1138,9 +1154,9 @@ where
                 crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeReplicationGroupsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeReplicationGroupsErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-                crate::error::DescribeReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1157,9 +1173,9 @@ where
                 crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeReservedCacheNodesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeReservedCacheNodesErrorKind::ReservedCacheNodeNotFoundFault(inner) => Error::ReservedCacheNodeNotFoundFault(inner),
-                crate::error::DescribeReservedCacheNodesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReservedCacheNodesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1184,9 +1200,9 @@ where
                 crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeReservedCacheNodesOfferingsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeReservedCacheNodesOfferingsErrorKind::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
-                crate::error::DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReservedCacheNodesOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1203,9 +1219,9 @@ where
                 crate::error::DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeServiceUpdatesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeServiceUpdatesErrorKind::ServiceUpdateNotFoundFault(inner) => Error::ServiceUpdateNotFoundFault(inner),
-                crate::error::DescribeServiceUpdatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeServiceUpdatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1231,10 +1247,10 @@ where
                     Error::SnapshotNotFoundFault(inner)
                 }
                 crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1250,9 +1266,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeUpdateActionsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeUpdateActionsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeUpdateActionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUpdateActionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1275,10 +1291,10 @@ where
                     Error::UserGroupNotFoundFault(inner)
                 }
                 crate::error::DescribeUserGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1298,9 +1314,11 @@ where
                 crate::error::DescribeUsersErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
-                crate::error::DescribeUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1323,9 +1341,9 @@ where
                 crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DisassociateGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DisassociateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1347,9 +1365,9 @@ where
                 crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::FailoverGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::FailoverGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::FailoverGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1374,9 +1392,9 @@ where
                 crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
                 crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::IncreaseNodeGroupsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1402,9 +1420,9 @@ where
                 crate::error::IncreaseReplicaCountErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
                 crate::error::IncreaseReplicaCountErrorKind::NoOperationFault(inner) => Error::NoOperationFault(inner),
                 crate::error::IncreaseReplicaCountErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-                crate::error::IncreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::IncreaseReplicaCountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1426,9 +1444,9 @@ where
                 crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::ListAllowedNodeTypeModificationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListAllowedNodeTypeModificationsErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-                crate::error::ListAllowedNodeTypeModificationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAllowedNodeTypeModificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1475,10 +1493,10 @@ where
                     Error::UserNotFoundFault(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1502,9 +1520,9 @@ where
                 crate::error::ModifyCacheClusterErrorKind::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
                 crate::error::ModifyCacheClusterErrorKind::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
                 crate::error::ModifyCacheClusterErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
-                crate::error::ModifyCacheClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyCacheClusterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1523,9 +1541,9 @@ where
                 crate::error::ModifyCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::ModifyCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::ModifyCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1555,10 +1573,10 @@ where
                     Error::SubnetNotAllowedFault(inner)
                 }
                 crate::error::ModifyCacheSubnetGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1575,9 +1593,9 @@ where
                 crate::error::ModifyGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
                 crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::ModifyGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::ModifyGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1607,9 +1625,9 @@ where
                 crate::error::ModifyReplicationGroupErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
                 crate::error::ModifyReplicationGroupErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
                 crate::error::ModifyReplicationGroupErrorKind::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
-                crate::error::ModifyReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1641,9 +1659,9 @@ where
                 crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner),
                 crate::error::ModifyReplicationGroupShardConfigurationErrorKind::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
                 crate::error::ModifyReplicationGroupShardConfigurationErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-                crate::error::ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyReplicationGroupShardConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1669,9 +1687,11 @@ where
                 crate::error::ModifyUserErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
-                crate::error::ModifyUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1706,9 +1726,11 @@ where
                 crate::error::ModifyUserGroupErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
-                crate::error::ModifyUserGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ModifyUserGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1733,9 +1755,9 @@ where
                 crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodeQuotaExceededFault(inner) => Error::ReservedCacheNodeQuotaExceededFault(inner),
                 crate::error::PurchaseReservedCacheNodesOfferingErrorKind::ReservedCacheNodesOfferingNotFoundFault(inner) => Error::ReservedCacheNodesOfferingNotFoundFault(inner),
                 crate::error::PurchaseReservedCacheNodesOfferingErrorKind::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
-                crate::error::PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PurchaseReservedCacheNodesOfferingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1760,9 +1782,9 @@ where
                 crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::GlobalReplicationGroupNotFoundFault(inner) => Error::GlobalReplicationGroupNotFoundFault(inner),
                 crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RebalanceSlotsInGlobalReplicationGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1782,10 +1804,10 @@ where
                     Error::InvalidCacheClusterStateFault(inner)
                 }
                 crate::error::RebootCacheClusterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1811,9 +1833,9 @@ where
                 crate::error::RemoveTagsFromResourceErrorKind::TagNotFoundFault(inner) => Error::TagNotFoundFault(inner),
                 crate::error::RemoveTagsFromResourceErrorKind::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
                 crate::error::RemoveTagsFromResourceErrorKind::UserNotFoundFault(inner) => Error::UserNotFoundFault(inner),
-                crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveTagsFromResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1832,9 +1854,9 @@ where
                 crate::error::ResetCacheParameterGroupErrorKind::InvalidGlobalReplicationGroupStateFault(inner) => Error::InvalidGlobalReplicationGroupStateFault(inner),
                 crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::ResetCacheParameterGroupErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::ResetCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResetCacheParameterGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1857,9 +1879,9 @@ where
                 crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidCacheSecurityGroupStateFault(inner) => Error::InvalidCacheSecurityGroupStateFault(inner),
                 crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::RevokeCacheSecurityGroupIngressErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::RevokeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RevokeCacheSecurityGroupIngressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1874,9 +1896,9 @@ where
                 crate::error::StartMigrationErrorKind::InvalidReplicationGroupStateFault(inner) => Error::InvalidReplicationGroupStateFault(inner),
                 crate::error::StartMigrationErrorKind::ReplicationGroupAlreadyUnderMigrationFault(inner) => Error::ReplicationGroupAlreadyUnderMigrationFault(inner),
                 crate::error::StartMigrationErrorKind::ReplicationGroupNotFoundFault(inner) => Error::ReplicationGroupNotFoundFault(inner),
-                crate::error::StartMigrationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartMigrationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1914,9 +1936,11 @@ where
                 crate::error::TestFailoverErrorKind::TestFailoverNotAvailableFault(inner) => {
                     Error::TestFailoverNotAvailableFault(inner)
                 }
-                crate::error::TestFailoverErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TestFailoverErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

@@ -26,7 +26,7 @@ pub enum Error {
     /// <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -67,9 +67,9 @@ where
                 crate::error::AcceptInboundCrossClusterSearchConnectionErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::AcceptInboundCrossClusterSearchConnectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AcceptInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -90,9 +90,11 @@ where
                 crate::error::AddTagsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,10 +126,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AssociatePackageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -153,9 +155,9 @@ where
                 crate::error::CancelElasticsearchServiceSoftwareUpdateErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::CancelElasticsearchServiceSoftwareUpdateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CancelElasticsearchServiceSoftwareUpdateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -176,9 +178,9 @@ where
                 crate::error::CreateElasticsearchDomainErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateElasticsearchDomainErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::CreateElasticsearchDomainErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateElasticsearchDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateElasticsearchDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -204,9 +206,9 @@ where
                 crate::error::CreateOutboundCrossClusterSearchConnectionErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::CreateOutboundCrossClusterSearchConnectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateOutboundCrossClusterSearchConnectionErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-                crate::error::CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateOutboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -238,9 +240,11 @@ where
                 crate::error::CreatePackageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreatePackageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePackageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -267,10 +271,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteElasticsearchDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -298,10 +302,10 @@ where
                     inner,
                 ) => Error::ValidationException(inner),
                 crate::error::DeleteElasticsearchServiceRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,9 +329,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteInboundCrossClusterSearchConnectionErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::DeleteInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -351,9 +355,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteOutboundCrossClusterSearchConnectionErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::DeleteOutboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteOutboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -382,9 +386,11 @@ where
                 crate::error::DeletePackageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeletePackageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePackageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -411,10 +417,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeDomainAutoTunesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -441,10 +447,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeDomainChangeProgressErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -471,10 +477,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeElasticsearchDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -496,9 +502,9 @@ where
                 crate::error::DescribeElasticsearchDomainConfigErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::DescribeElasticsearchDomainConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeElasticsearchDomainConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeElasticsearchDomainConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeElasticsearchDomainConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,10 +528,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeElasticsearchDomainsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -553,9 +559,9 @@ where
                 crate::error::DescribeElasticsearchInstanceTypeLimitsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DescribeElasticsearchInstanceTypeLimitsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeElasticsearchInstanceTypeLimitsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeElasticsearchInstanceTypeLimitsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -579,9 +585,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeInboundCrossClusterSearchConnectionsErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::DescribeInboundCrossClusterSearchConnectionsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-                crate::error::DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeInboundCrossClusterSearchConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -605,9 +611,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeOutboundCrossClusterSearchConnectionsErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::DescribeOutboundCrossClusterSearchConnectionsErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-                crate::error::DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOutboundCrossClusterSearchConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -636,10 +642,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribePackagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -665,9 +671,9 @@ where
                 crate::error::DescribeReservedElasticsearchInstanceOfferingsErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::DescribeReservedElasticsearchInstanceOfferingsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeReservedElasticsearchInstanceOfferingsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReservedElasticsearchInstanceOfferingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -693,9 +699,9 @@ where
                 crate::error::DescribeReservedElasticsearchInstancesErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::DescribeReservedElasticsearchInstancesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeReservedElasticsearchInstancesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeReservedElasticsearchInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReservedElasticsearchInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -727,10 +733,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DissociatePackageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,9 +760,9 @@ where
                 crate::error::GetCompatibleElasticsearchVersionsErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::GetCompatibleElasticsearchVersionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetCompatibleElasticsearchVersionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetCompatibleElasticsearchVersionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCompatibleElasticsearchVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -786,10 +792,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetPackageVersionHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -818,10 +824,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetUpgradeHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -850,10 +856,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetUpgradeStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -870,9 +876,11 @@ where
                 crate::error::ListDomainNamesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListDomainNamesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDomainNamesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -902,10 +910,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDomainsForPackageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -927,9 +935,9 @@ where
                 crate::error::ListElasticsearchInstanceTypesErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::ListElasticsearchInstanceTypesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListElasticsearchInstanceTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListElasticsearchInstanceTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListElasticsearchInstanceTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -956,10 +964,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListElasticsearchVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -989,10 +997,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListPackagesForDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1015,9 +1023,11 @@ where
                 crate::error::ListTagsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1045,9 +1055,9 @@ where
                 crate::error::PurchaseReservedElasticsearchInstanceOfferingErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::PurchaseReservedElasticsearchInstanceOfferingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PurchaseReservedElasticsearchInstanceOfferingErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PurchaseReservedElasticsearchInstanceOfferingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1071,9 +1081,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RejectInboundCrossClusterSearchConnectionErrorKind::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
                 crate::error::RejectInboundCrossClusterSearchConnectionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RejectInboundCrossClusterSearchConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1093,9 +1103,11 @@ where
                 crate::error::RemoveTagsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1121,9 +1133,9 @@ where
                 crate::error::StartElasticsearchServiceSoftwareUpdateErrorKind::InternalException(inner) => Error::InternalException(inner),
                 crate::error::StartElasticsearchServiceSoftwareUpdateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::StartElasticsearchServiceSoftwareUpdateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartElasticsearchServiceSoftwareUpdateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1147,9 +1159,9 @@ where
                 crate::error::UpdateElasticsearchDomainConfigErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UpdateElasticsearchDomainConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateElasticsearchDomainConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateElasticsearchDomainConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateElasticsearchDomainConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1178,9 +1190,11 @@ where
                 crate::error::UpdatePackageErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdatePackageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePackageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1200,9 +1214,9 @@ where
                 crate::error::UpgradeElasticsearchDomainErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
                 crate::error::UpgradeElasticsearchDomainErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpgradeElasticsearchDomainErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpgradeElasticsearchDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpgradeElasticsearchDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

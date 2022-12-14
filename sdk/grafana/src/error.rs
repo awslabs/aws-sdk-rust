@@ -801,7 +801,7 @@ pub enum AssociateLicenseErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -840,7 +840,7 @@ impl AssociateLicenseError {
     /// Creates the `AssociateLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateLicenseErrorKind::Unhandled(err.into()),
+            kind: AssociateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -849,7 +849,7 @@ impl AssociateLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateLicenseErrorKind::Unhandled(err.into()),
+            kind: AssociateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -917,7 +917,7 @@ impl std::error::Error for AssociateLicenseError {
             AssociateLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateLicenseErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            AssociateLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -948,7 +948,7 @@ pub enum CreateWorkspaceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -988,7 +988,7 @@ impl CreateWorkspaceError {
     /// Creates the `CreateWorkspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkspaceErrorKind::Unhandled(err.into()),
+            kind: CreateWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -997,7 +997,7 @@ impl CreateWorkspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkspaceErrorKind::Unhandled(err.into()),
+            kind: CreateWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1064,7 +1064,7 @@ impl std::error::Error for CreateWorkspaceError {
             CreateWorkspaceErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateWorkspaceErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateWorkspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateWorkspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1097,7 +1097,7 @@ pub enum CreateWorkspaceApiKeyErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkspaceApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1138,7 +1138,9 @@ impl CreateWorkspaceApiKeyError {
     /// Creates the `CreateWorkspaceApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkspaceApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateWorkspaceApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1147,7 +1149,9 @@ impl CreateWorkspaceApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkspaceApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateWorkspaceApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1231,7 +1235,7 @@ impl std::error::Error for CreateWorkspaceApiKeyError {
             CreateWorkspaceApiKeyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateWorkspaceApiKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateWorkspaceApiKeyErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateWorkspaceApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkspaceApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1262,7 +1266,7 @@ pub enum DeleteWorkspaceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1302,7 +1306,7 @@ impl DeleteWorkspaceError {
     /// Creates the `DeleteWorkspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkspaceErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1311,7 +1315,7 @@ impl DeleteWorkspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkspaceErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1378,7 +1382,7 @@ impl std::error::Error for DeleteWorkspaceError {
             DeleteWorkspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorkspaceErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteWorkspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteWorkspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1409,7 +1413,7 @@ pub enum DeleteWorkspaceApiKeyErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkspaceApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1449,7 +1453,9 @@ impl DeleteWorkspaceApiKeyError {
     /// Creates the `DeleteWorkspaceApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkspaceApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkspaceApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1458,7 +1464,9 @@ impl DeleteWorkspaceApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkspaceApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkspaceApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1534,7 +1542,7 @@ impl std::error::Error for DeleteWorkspaceApiKeyError {
             DeleteWorkspaceApiKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorkspaceApiKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteWorkspaceApiKeyErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteWorkspaceApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkspaceApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1563,7 +1571,7 @@ pub enum DescribeWorkspaceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorkspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1602,7 +1610,7 @@ impl DescribeWorkspaceError {
     /// Creates the `DescribeWorkspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorkspaceErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1611,7 +1619,7 @@ impl DescribeWorkspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorkspaceErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1679,7 +1687,7 @@ impl std::error::Error for DescribeWorkspaceError {
             DescribeWorkspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorkspaceErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeWorkspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeWorkspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorkspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1708,7 +1716,7 @@ pub enum DescribeWorkspaceAuthenticationErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorkspaceAuthenticationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1756,7 +1764,9 @@ impl DescribeWorkspaceAuthenticationError {
     /// Creates the `DescribeWorkspaceAuthenticationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorkspaceAuthenticationErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkspaceAuthenticationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1765,7 +1775,9 @@ impl DescribeWorkspaceAuthenticationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorkspaceAuthenticationErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkspaceAuthenticationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1837,7 +1849,7 @@ impl std::error::Error for DescribeWorkspaceAuthenticationError {
             }
             DescribeWorkspaceAuthenticationErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeWorkspaceAuthenticationErrorKind::ValidationException(_inner) => Some(_inner),
-            DescribeWorkspaceAuthenticationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorkspaceAuthenticationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1866,7 +1878,7 @@ pub enum DisassociateLicenseErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1905,7 +1917,7 @@ impl DisassociateLicenseError {
     /// Creates the `DisassociateLicenseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateLicenseErrorKind::Unhandled(err.into()),
+            kind: DisassociateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1914,7 +1926,7 @@ impl DisassociateLicenseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateLicenseErrorKind::Unhandled(err.into()),
+            kind: DisassociateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1982,7 +1994,7 @@ impl std::error::Error for DisassociateLicenseError {
             DisassociateLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateLicenseErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            DisassociateLicenseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2011,7 +2023,7 @@ pub enum ListPermissionsErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2050,7 +2062,7 @@ impl ListPermissionsError {
     /// Creates the `ListPermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2059,7 +2071,7 @@ impl ListPermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPermissionsErrorKind::Unhandled(err.into()),
+            kind: ListPermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2121,7 +2133,7 @@ impl std::error::Error for ListPermissionsError {
             ListPermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListPermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListPermissionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2150,7 +2162,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,7 +2201,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2198,7 +2210,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2266,7 +2278,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2291,7 +2303,7 @@ pub enum ListWorkspacesErrorKind {
     /// <p>The request was denied because of request throttling. Retry the request.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkspacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2328,7 +2340,7 @@ impl ListWorkspacesError {
     /// Creates the `ListWorkspacesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkspacesErrorKind::Unhandled(err.into()),
+            kind: ListWorkspacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2337,7 +2349,7 @@ impl ListWorkspacesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkspacesErrorKind::Unhandled(err.into()),
+            kind: ListWorkspacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2386,7 +2398,7 @@ impl std::error::Error for ListWorkspacesError {
             ListWorkspacesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListWorkspacesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListWorkspacesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkspacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2415,7 +2427,7 @@ pub enum TagResourceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2452,7 +2464,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2461,7 +2473,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2517,7 +2529,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2546,7 +2558,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2585,7 +2597,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2594,7 +2606,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2653,7 +2665,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2682,7 +2694,7 @@ pub enum UpdatePermissionsErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2721,7 +2733,7 @@ impl UpdatePermissionsError {
     /// Creates the `UpdatePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2730,7 +2742,7 @@ impl UpdatePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePermissionsErrorKind::Unhandled(err.into()),
+            kind: UpdatePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2798,7 +2810,7 @@ impl std::error::Error for UpdatePermissionsError {
             UpdatePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePermissionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdatePermissionsErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2829,7 +2841,7 @@ pub enum UpdateWorkspaceErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorkspaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2869,7 +2881,7 @@ impl UpdateWorkspaceError {
     /// Creates the `UpdateWorkspaceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorkspaceErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2878,7 +2890,7 @@ impl UpdateWorkspaceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorkspaceErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkspaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2945,7 +2957,7 @@ impl std::error::Error for UpdateWorkspaceError {
             UpdateWorkspaceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateWorkspaceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateWorkspaceErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateWorkspaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorkspaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2976,7 +2988,7 @@ pub enum UpdateWorkspaceAuthenticationErrorKind {
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWorkspaceAuthenticationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3023,7 +3035,9 @@ impl UpdateWorkspaceAuthenticationError {
     /// Creates the `UpdateWorkspaceAuthenticationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWorkspaceAuthenticationErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkspaceAuthenticationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3032,7 +3046,9 @@ impl UpdateWorkspaceAuthenticationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWorkspaceAuthenticationErrorKind::Unhandled(err.into()),
+            kind: UpdateWorkspaceAuthenticationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3110,7 +3126,32 @@ impl std::error::Error for UpdateWorkspaceAuthenticationError {
             }
             UpdateWorkspaceAuthenticationErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateWorkspaceAuthenticationErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateWorkspaceAuthenticationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWorkspaceAuthenticationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

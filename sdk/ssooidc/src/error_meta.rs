@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -89,9 +89,11 @@ where
                 crate::error::CreateTokenErrorKind::UnsupportedGrantTypeException(inner) => {
                     Error::UnsupportedGrantTypeException(inner)
                 }
-                crate::error::CreateTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -114,9 +116,11 @@ where
                 crate::error::RegisterClientErrorKind::InvalidScopeException(inner) => {
                     Error::InvalidScopeException(inner)
                 }
-                crate::error::RegisterClientErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterClientErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -146,10 +150,10 @@ where
                     inner,
                 ) => Error::UnauthorizedClientException(inner),
                 crate::error::StartDeviceAuthorizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

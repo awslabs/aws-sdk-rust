@@ -481,7 +481,7 @@ pub enum CancelJobErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -513,7 +513,7 @@ impl CancelJobError {
     /// Creates the `CancelJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelJobErrorKind::Unhandled(err.into()),
+            kind: CancelJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -522,7 +522,7 @@ impl CancelJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelJobErrorKind::Unhandled(err.into()),
+            kind: CancelJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -583,7 +583,7 @@ impl std::error::Error for CancelJobError {
             CancelJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CancelJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelJobErrorKind::ValidationException(_inner) => Some(_inner),
-            CancelJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -614,7 +614,7 @@ pub enum CreateJobErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -646,7 +646,7 @@ impl CreateJobError {
     /// Creates the `CreateJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateJobErrorKind::Unhandled(err.into()),
+            kind: CreateJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -655,7 +655,7 @@ impl CreateJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateJobErrorKind::Unhandled(err.into()),
+            kind: CreateJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -716,7 +716,7 @@ impl std::error::Error for CreateJobError {
             CreateJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateJobErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -747,7 +747,7 @@ pub enum CreatePipelineErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -779,7 +779,7 @@ impl CreatePipelineError {
     /// Creates the `CreatePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePipelineErrorKind::Unhandled(err.into()),
+            kind: CreatePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -788,7 +788,7 @@ impl CreatePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePipelineErrorKind::Unhandled(err.into()),
+            kind: CreatePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -861,7 +861,7 @@ impl std::error::Error for CreatePipelineError {
             CreatePipelineErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreatePipelineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreatePipelineErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -890,7 +890,7 @@ pub enum CreatePresetErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -921,7 +921,7 @@ impl CreatePresetError {
     /// Creates the `CreatePresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePresetErrorKind::Unhandled(err.into()),
+            kind: CreatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -930,7 +930,7 @@ impl CreatePresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePresetErrorKind::Unhandled(err.into()),
+            kind: CreatePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -989,7 +989,7 @@ impl std::error::Error for CreatePresetError {
             CreatePresetErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreatePresetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreatePresetErrorKind::ValidationException(_inner) => Some(_inner),
-            CreatePresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1020,7 +1020,7 @@ pub enum DeletePipelineErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1052,7 +1052,7 @@ impl DeletePipelineError {
     /// Creates the `DeletePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePipelineErrorKind::Unhandled(err.into()),
+            kind: DeletePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1061,7 +1061,7 @@ impl DeletePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePipelineErrorKind::Unhandled(err.into()),
+            kind: DeletePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1134,7 +1134,7 @@ impl std::error::Error for DeletePipelineError {
             DeletePipelineErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeletePipelineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePipelineErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1163,7 +1163,7 @@ pub enum DeletePresetErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1194,7 +1194,7 @@ impl DeletePresetError {
     /// Creates the `DeletePresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePresetErrorKind::Unhandled(err.into()),
+            kind: DeletePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1203,7 +1203,7 @@ impl DeletePresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePresetErrorKind::Unhandled(err.into()),
+            kind: DeletePresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1265,7 +1265,7 @@ impl std::error::Error for DeletePresetError {
             DeletePresetErrorKind::InternalServiceException(_inner) => Some(_inner),
             DeletePresetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePresetErrorKind::ValidationException(_inner) => Some(_inner),
-            DeletePresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1294,7 +1294,7 @@ pub enum ListJobsByPipelineErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJobsByPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1325,7 +1325,7 @@ impl ListJobsByPipelineError {
     /// Creates the `ListJobsByPipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJobsByPipelineErrorKind::Unhandled(err.into()),
+            kind: ListJobsByPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1334,7 +1334,7 @@ impl ListJobsByPipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJobsByPipelineErrorKind::Unhandled(err.into()),
+            kind: ListJobsByPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1402,7 +1402,7 @@ impl std::error::Error for ListJobsByPipelineError {
             ListJobsByPipelineErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListJobsByPipelineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListJobsByPipelineErrorKind::ValidationException(_inner) => Some(_inner),
-            ListJobsByPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJobsByPipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1431,7 +1431,7 @@ pub enum ListJobsByStatusErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListJobsByStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1462,7 +1462,7 @@ impl ListJobsByStatusError {
     /// Creates the `ListJobsByStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListJobsByStatusErrorKind::Unhandled(err.into()),
+            kind: ListJobsByStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1471,7 +1471,7 @@ impl ListJobsByStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListJobsByStatusErrorKind::Unhandled(err.into()),
+            kind: ListJobsByStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1539,7 +1539,7 @@ impl std::error::Error for ListJobsByStatusError {
             ListJobsByStatusErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListJobsByStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListJobsByStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            ListJobsByStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListJobsByStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1566,7 +1566,7 @@ pub enum ListPipelinesErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPipelinesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1596,7 +1596,7 @@ impl ListPipelinesError {
     /// Creates the `ListPipelinesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPipelinesErrorKind::Unhandled(err.into()),
+            kind: ListPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1605,7 +1605,7 @@ impl ListPipelinesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPipelinesErrorKind::Unhandled(err.into()),
+            kind: ListPipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1659,7 +1659,7 @@ impl std::error::Error for ListPipelinesError {
             ListPipelinesErrorKind::IncompatibleVersionException(_inner) => Some(_inner),
             ListPipelinesErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListPipelinesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPipelinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPipelinesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1686,7 +1686,7 @@ pub enum ListPresetsErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPresetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1716,7 +1716,7 @@ impl ListPresetsError {
     /// Creates the `ListPresetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPresetsErrorKind::Unhandled(err.into()),
+            kind: ListPresetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1725,7 +1725,7 @@ impl ListPresetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPresetsErrorKind::Unhandled(err.into()),
+            kind: ListPresetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1779,7 +1779,7 @@ impl std::error::Error for ListPresetsError {
             ListPresetsErrorKind::IncompatibleVersionException(_inner) => Some(_inner),
             ListPresetsErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListPresetsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListPresetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPresetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1808,7 +1808,7 @@ pub enum ReadJobErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReadJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1839,7 +1839,7 @@ impl ReadJobError {
     /// Creates the `ReadJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReadJobErrorKind::Unhandled(err.into()),
+            kind: ReadJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1848,7 +1848,7 @@ impl ReadJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReadJobErrorKind::Unhandled(err.into()),
+            kind: ReadJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1904,7 +1904,7 @@ impl std::error::Error for ReadJobError {
             ReadJobErrorKind::InternalServiceException(_inner) => Some(_inner),
             ReadJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ReadJobErrorKind::ValidationException(_inner) => Some(_inner),
-            ReadJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReadJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1933,7 +1933,7 @@ pub enum ReadPipelineErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReadPipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1964,7 +1964,7 @@ impl ReadPipelineError {
     /// Creates the `ReadPipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReadPipelineErrorKind::Unhandled(err.into()),
+            kind: ReadPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1973,7 +1973,7 @@ impl ReadPipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReadPipelineErrorKind::Unhandled(err.into()),
+            kind: ReadPipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2035,7 +2035,7 @@ impl std::error::Error for ReadPipelineError {
             ReadPipelineErrorKind::InternalServiceException(_inner) => Some(_inner),
             ReadPipelineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ReadPipelineErrorKind::ValidationException(_inner) => Some(_inner),
-            ReadPipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReadPipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2064,7 +2064,7 @@ pub enum ReadPresetErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReadPresetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2095,7 +2095,7 @@ impl ReadPresetError {
     /// Creates the `ReadPresetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ReadPresetErrorKind::Unhandled(err.into()),
+            kind: ReadPresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2104,7 +2104,7 @@ impl ReadPresetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ReadPresetErrorKind::Unhandled(err.into()),
+            kind: ReadPresetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2163,7 +2163,7 @@ impl std::error::Error for ReadPresetError {
             ReadPresetErrorKind::InternalServiceException(_inner) => Some(_inner),
             ReadPresetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ReadPresetErrorKind::ValidationException(_inner) => Some(_inner),
-            ReadPresetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ReadPresetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2192,7 +2192,7 @@ pub enum TestRoleErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2223,7 +2223,7 @@ impl TestRoleError {
     /// Creates the `TestRoleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestRoleErrorKind::Unhandled(err.into()),
+            kind: TestRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2232,7 +2232,7 @@ impl TestRoleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestRoleErrorKind::Unhandled(err.into()),
+            kind: TestRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2288,7 +2288,7 @@ impl std::error::Error for TestRoleError {
             TestRoleErrorKind::InternalServiceException(_inner) => Some(_inner),
             TestRoleErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TestRoleErrorKind::ValidationException(_inner) => Some(_inner),
-            TestRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestRoleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2319,7 +2319,7 @@ pub enum UpdatePipelineErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2351,7 +2351,7 @@ impl UpdatePipelineError {
     /// Creates the `UpdatePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePipelineErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2360,7 +2360,7 @@ impl UpdatePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePipelineErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2433,7 +2433,7 @@ impl std::error::Error for UpdatePipelineError {
             UpdatePipelineErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdatePipelineErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePipelineErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2464,7 +2464,7 @@ pub enum UpdatePipelineNotificationsErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePipelineNotificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2500,7 +2500,9 @@ impl UpdatePipelineNotificationsError {
     /// Creates the `UpdatePipelineNotificationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePipelineNotificationsErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2509,7 +2511,9 @@ impl UpdatePipelineNotificationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePipelineNotificationsErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineNotificationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2587,7 +2591,7 @@ impl std::error::Error for UpdatePipelineNotificationsError {
             UpdatePipelineNotificationsErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdatePipelineNotificationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePipelineNotificationsErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePipelineNotificationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePipelineNotificationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2618,7 +2622,7 @@ pub enum UpdatePipelineStatusErrorKind {
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePipelineStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2650,7 +2654,9 @@ impl UpdatePipelineStatusError {
     /// Creates the `UpdatePipelineStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePipelineStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2659,7 +2665,9 @@ impl UpdatePipelineStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePipelineStatusErrorKind::Unhandled(err.into()),
+            kind: UpdatePipelineStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2735,7 +2743,32 @@ impl std::error::Error for UpdatePipelineStatusError {
             UpdatePipelineStatusErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdatePipelineStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePipelineStatusErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdatePipelineStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePipelineStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

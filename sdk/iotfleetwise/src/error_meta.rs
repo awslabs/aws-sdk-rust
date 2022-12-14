@@ -24,7 +24,7 @@ pub enum Error {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -69,10 +69,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::AssociateVehicleFleetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -101,10 +101,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchCreateVehicleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -130,10 +130,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::BatchUpdateVehicleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -165,9 +165,11 @@ where
                 crate::error::CreateCampaignErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::CreateCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateCampaignErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,9 +191,9 @@ where
                 crate::error::CreateDecoderManifestErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateDecoderManifestErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::CreateDecoderManifestErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-                crate::error::CreateDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -223,9 +225,11 @@ where
                 crate::error::CreateFleetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,10 +267,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::CreateModelManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -304,10 +308,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::CreateSignalCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -339,9 +343,11 @@ where
                 crate::error::CreateVehicleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::CreateVehicleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateVehicleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -367,9 +373,11 @@ where
                 crate::error::DeleteCampaignErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::DeleteCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteCampaignErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -399,10 +407,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteDecoderManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -425,9 +433,11 @@ where
                 crate::error::DeleteFleetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -456,10 +466,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteModelManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -488,10 +498,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DeleteSignalCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -514,9 +524,11 @@ where
                 crate::error::DeleteVehicleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DeleteVehicleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteVehicleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -546,10 +558,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociateVehicleFleetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,9 +587,11 @@ where
                 crate::error::GetCampaignErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::GetCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetCampaignErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -606,10 +620,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetDecoderManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -635,9 +649,11 @@ where
                 crate::error::GetFleetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -660,10 +676,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetLoggingOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -689,10 +705,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetModelManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -722,10 +738,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetRegisterAccountStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,10 +770,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetSignalCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -783,9 +799,11 @@ where
                 crate::error::GetVehicleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::GetVehicleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetVehicleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -814,10 +832,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::GetVehicleStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -839,9 +857,9 @@ where
                 crate::error::ImportDecoderManifestErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ImportDecoderManifestErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::ImportDecoderManifestErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-                crate::error::ImportDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ImportDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -879,10 +897,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ImportSignalCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -905,9 +923,11 @@ where
                 crate::error::ListCampaignsErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::ListCampaignsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCampaignsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -934,9 +954,9 @@ where
                 crate::error::ListDecoderManifestNetworkInterfacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListDecoderManifestNetworkInterfacesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListDecoderManifestNetworkInterfacesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListDecoderManifestNetworkInterfacesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDecoderManifestNetworkInterfacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -963,10 +983,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDecoderManifestsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -996,10 +1016,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListDecoderManifestSignalsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1025,9 +1045,11 @@ where
                 crate::error::ListFleetsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListFleetsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFleetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1057,10 +1079,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListFleetsForVehicleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1093,10 +1115,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListModelManifestNodesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1122,10 +1144,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListModelManifestsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1158,10 +1180,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListSignalCatalogNodesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1187,10 +1209,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListSignalCatalogsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1219,10 +1241,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1245,9 +1267,11 @@ where
                 crate::error::ListVehiclesErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListVehiclesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListVehiclesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1276,10 +1300,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListVehiclesInFleetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1311,10 +1335,10 @@ where
                     Error::InternalServerException(inner)
                 }
                 crate::error::PutLoggingOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1343,9 +1367,11 @@ where
                 crate::error::RegisterAccountErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::RegisterAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterAccountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1371,9 +1397,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1399,9 +1427,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1430,9 +1460,11 @@ where
                 crate::error::UpdateCampaignErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
-                crate::error::UpdateCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateCampaignErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1454,9 +1486,9 @@ where
                 crate::error::UpdateDecoderManifestErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateDecoderManifestErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::UpdateDecoderManifestErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-                crate::error::UpdateDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDecoderManifestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1485,9 +1517,11 @@ where
                 crate::error::UpdateFleetErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFleetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1522,10 +1556,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateModelManifestErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1563,10 +1597,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateSignalCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1595,9 +1629,11 @@ where
                 crate::error::UpdateVehicleErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UpdateVehicleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateVehicleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

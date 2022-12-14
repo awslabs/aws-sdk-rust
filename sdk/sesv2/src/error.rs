@@ -806,7 +806,7 @@ pub enum CreateConfigurationSetErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -840,7 +840,9 @@ impl CreateConfigurationSetError {
     /// Creates the `CreateConfigurationSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -849,7 +851,9 @@ impl CreateConfigurationSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -927,7 +931,7 @@ impl std::error::Error for CreateConfigurationSetError {
             CreateConfigurationSetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -956,7 +960,7 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1000,7 +1004,9 @@ impl CreateConfigurationSetEventDestinationError {
     /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1009,7 +1015,9 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1087,9 +1095,7 @@ impl std::error::Error for CreateConfigurationSetEventDestinationError {
             CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1116,7 +1122,7 @@ pub enum CreateContactErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1146,7 +1152,7 @@ impl CreateContactError {
     /// Creates the `CreateContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContactErrorKind::Unhandled(err.into()),
+            kind: CreateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1155,7 +1161,7 @@ impl CreateContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContactErrorKind::Unhandled(err.into()),
+            kind: CreateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1209,7 +1215,7 @@ impl std::error::Error for CreateContactError {
             CreateContactErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateContactErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1236,7 +1242,7 @@ pub enum CreateContactListErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1266,7 +1272,7 @@ impl CreateContactListError {
     /// Creates the `CreateContactListError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContactListErrorKind::Unhandled(err.into()),
+            kind: CreateContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1275,7 +1281,7 @@ impl CreateContactListError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContactListErrorKind::Unhandled(err.into()),
+            kind: CreateContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1335,7 +1341,7 @@ impl std::error::Error for CreateContactListError {
             CreateContactListErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateContactListErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContactListErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1364,7 +1370,7 @@ pub enum CreateCustomVerificationEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1408,7 +1414,9 @@ impl CreateCustomVerificationEmailTemplateError {
     /// Creates the `CreateCustomVerificationEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1417,7 +1425,9 @@ impl CreateCustomVerificationEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1495,9 +1505,7 @@ impl std::error::Error for CreateCustomVerificationEmailTemplateError {
             CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            CreateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            CreateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1526,7 +1534,7 @@ pub enum CreateDedicatedIpPoolErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDedicatedIpPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1559,7 +1567,9 @@ impl CreateDedicatedIpPoolError {
     /// Creates the `CreateDedicatedIpPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDedicatedIpPoolErrorKind::Unhandled(err.into()),
+            kind: CreateDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1568,7 +1578,9 @@ impl CreateDedicatedIpPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDedicatedIpPoolErrorKind::Unhandled(err.into()),
+            kind: CreateDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1636,7 +1648,7 @@ impl std::error::Error for CreateDedicatedIpPoolError {
             CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateDedicatedIpPoolErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1673,7 +1685,7 @@ pub enum CreateDeliverabilityTestReportErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeliverabilityTestReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1723,7 +1735,9 @@ impl CreateDeliverabilityTestReportError {
     /// Creates the `CreateDeliverabilityTestReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeliverabilityTestReportErrorKind::Unhandled(err.into()),
+            kind: CreateDeliverabilityTestReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1732,7 +1746,9 @@ impl CreateDeliverabilityTestReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeliverabilityTestReportErrorKind::Unhandled(err.into()),
+            kind: CreateDeliverabilityTestReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1840,7 +1856,7 @@ impl std::error::Error for CreateDeliverabilityTestReportError {
             CreateDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            CreateDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1871,7 +1887,7 @@ pub enum CreateEmailIdentityErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1903,7 +1919,7 @@ impl CreateEmailIdentityError {
     /// Creates the `CreateEmailIdentityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: CreateEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1912,7 +1928,7 @@ impl CreateEmailIdentityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: CreateEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1988,7 +2004,7 @@ impl std::error::Error for CreateEmailIdentityError {
             CreateEmailIdentityErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2017,7 +2033,7 @@ pub enum CreateEmailIdentityPolicyErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2048,7 +2064,9 @@ impl CreateEmailIdentityPolicyError {
     /// Creates the `CreateEmailIdentityPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2057,7 +2075,9 @@ impl CreateEmailIdentityPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2125,7 +2145,7 @@ impl std::error::Error for CreateEmailIdentityPolicyError {
             CreateEmailIdentityPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2152,7 +2172,7 @@ pub enum CreateEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2182,7 +2202,7 @@ impl CreateEmailTemplateError {
     /// Creates the `CreateEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2191,7 +2211,7 @@ impl CreateEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: CreateEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2251,7 +2271,7 @@ impl std::error::Error for CreateEmailTemplateError {
             CreateEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateEmailTemplateErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2276,7 +2296,7 @@ pub enum CreateImportJobErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2305,7 +2325,7 @@ impl CreateImportJobError {
     /// Creates the `CreateImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateImportJobErrorKind::Unhandled(err.into()),
+            kind: CreateImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2314,7 +2334,7 @@ impl CreateImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateImportJobErrorKind::Unhandled(err.into()),
+            kind: CreateImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2363,7 +2383,7 @@ impl std::error::Error for CreateImportJobError {
             CreateImportJobErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateImportJobErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateImportJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2390,7 +2410,7 @@ pub enum DeleteConfigurationSetErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2422,7 +2442,9 @@ impl DeleteConfigurationSetError {
     /// Creates the `DeleteConfigurationSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2431,7 +2453,9 @@ impl DeleteConfigurationSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2493,7 +2517,7 @@ impl std::error::Error for DeleteConfigurationSetError {
             }
             DeleteConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2518,7 +2542,7 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2556,7 +2580,9 @@ impl DeleteConfigurationSetEventDestinationError {
     /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2565,7 +2591,9 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2623,9 +2651,7 @@ impl std::error::Error for DeleteConfigurationSetEventDestinationError {
             DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2650,7 +2676,7 @@ pub enum DeleteContactErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2679,7 +2705,7 @@ impl DeleteContactError {
     /// Creates the `DeleteContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContactErrorKind::Unhandled(err.into()),
+            kind: DeleteContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2688,7 +2714,7 @@ impl DeleteContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContactErrorKind::Unhandled(err.into()),
+            kind: DeleteContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2734,7 +2760,7 @@ impl std::error::Error for DeleteContactError {
             DeleteContactErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteContactErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2761,7 +2787,7 @@ pub enum DeleteContactListErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2791,7 +2817,7 @@ impl DeleteContactListError {
     /// Creates the `DeleteContactListError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContactListErrorKind::Unhandled(err.into()),
+            kind: DeleteContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2800,7 +2826,7 @@ impl DeleteContactListError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContactListErrorKind::Unhandled(err.into()),
+            kind: DeleteContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2857,7 +2883,7 @@ impl std::error::Error for DeleteContactListError {
             DeleteContactListErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteContactListErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContactListErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2882,7 +2908,7 @@ pub enum DeleteCustomVerificationEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2920,7 +2946,9 @@ impl DeleteCustomVerificationEmailTemplateError {
     /// Creates the `DeleteCustomVerificationEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2929,7 +2957,9 @@ impl DeleteCustomVerificationEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2987,9 +3017,7 @@ impl std::error::Error for DeleteCustomVerificationEmailTemplateError {
             DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3016,7 +3044,7 @@ pub enum DeleteDedicatedIpPoolErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDedicatedIpPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3048,7 +3076,9 @@ impl DeleteDedicatedIpPoolError {
     /// Creates the `DeleteDedicatedIpPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDedicatedIpPoolErrorKind::Unhandled(err.into()),
+            kind: DeleteDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3057,7 +3087,9 @@ impl DeleteDedicatedIpPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDedicatedIpPoolErrorKind::Unhandled(err.into()),
+            kind: DeleteDedicatedIpPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3117,7 +3149,7 @@ impl std::error::Error for DeleteDedicatedIpPoolError {
             DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteDedicatedIpPoolErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDedicatedIpPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDedicatedIpPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3144,7 +3176,7 @@ pub enum DeleteEmailIdentityErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3174,7 +3206,7 @@ impl DeleteEmailIdentityError {
     /// Creates the `DeleteEmailIdentityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3183,7 +3215,7 @@ impl DeleteEmailIdentityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3243,7 +3275,7 @@ impl std::error::Error for DeleteEmailIdentityError {
             DeleteEmailIdentityErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3268,7 +3300,7 @@ pub enum DeleteEmailIdentityPolicyErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3297,7 +3329,9 @@ impl DeleteEmailIdentityPolicyError {
     /// Creates the `DeleteEmailIdentityPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3306,7 +3340,9 @@ impl DeleteEmailIdentityPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3358,7 +3394,7 @@ impl std::error::Error for DeleteEmailIdentityPolicyError {
             DeleteEmailIdentityPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3383,7 +3419,7 @@ pub enum DeleteEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3412,7 +3448,7 @@ impl DeleteEmailTemplateError {
     /// Creates the `DeleteEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3421,7 +3457,7 @@ impl DeleteEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: DeleteEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3473,7 +3509,7 @@ impl std::error::Error for DeleteEmailTemplateError {
             DeleteEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3498,7 +3534,7 @@ pub enum DeleteSuppressedDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3527,7 +3563,9 @@ impl DeleteSuppressedDestinationError {
     /// Creates the `DeleteSuppressedDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3536,7 +3574,9 @@ impl DeleteSuppressedDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: DeleteSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3588,7 +3628,7 @@ impl std::error::Error for DeleteSuppressedDestinationError {
             DeleteSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteSuppressedDestinationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3611,7 +3651,7 @@ pub enum GetAccountErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3639,7 +3679,7 @@ impl GetAccountError {
     /// Creates the `GetAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountErrorKind::Unhandled(err.into()),
+            kind: GetAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3648,7 +3688,7 @@ impl GetAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountErrorKind::Unhandled(err.into()),
+            kind: GetAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3686,7 +3726,7 @@ impl std::error::Error for GetAccountError {
         match &self.kind {
             GetAccountErrorKind::BadRequestException(_inner) => Some(_inner),
             GetAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3711,7 +3751,7 @@ pub enum GetBlacklistReportsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBlacklistReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,7 +3780,7 @@ impl GetBlacklistReportsError {
     /// Creates the `GetBlacklistReportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBlacklistReportsErrorKind::Unhandled(err.into()),
+            kind: GetBlacklistReportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3749,7 +3789,7 @@ impl GetBlacklistReportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBlacklistReportsErrorKind::Unhandled(err.into()),
+            kind: GetBlacklistReportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3801,7 +3841,7 @@ impl std::error::Error for GetBlacklistReportsError {
             GetBlacklistReportsErrorKind::BadRequestException(_inner) => Some(_inner),
             GetBlacklistReportsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBlacklistReportsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetBlacklistReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBlacklistReportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3826,7 +3866,7 @@ pub enum GetConfigurationSetErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3855,7 +3895,7 @@ impl GetConfigurationSetError {
     /// Creates the `GetConfigurationSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3864,7 +3904,7 @@ impl GetConfigurationSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigurationSetErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3916,7 +3956,7 @@ impl std::error::Error for GetConfigurationSetError {
             GetConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
             GetConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
             GetConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3941,7 +3981,7 @@ pub enum GetConfigurationSetEventDestinationsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3979,7 +4019,9 @@ impl GetConfigurationSetEventDestinationsError {
     /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3988,7 +4030,9 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(err.into()),
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4046,9 +4090,7 @@ impl std::error::Error for GetConfigurationSetEventDestinationsError {
             GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4073,7 +4115,7 @@ pub enum GetContactErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4102,7 +4144,7 @@ impl GetContactError {
     /// Creates the `GetContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContactErrorKind::Unhandled(err.into()),
+            kind: GetContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4111,7 +4153,7 @@ impl GetContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContactErrorKind::Unhandled(err.into()),
+            kind: GetContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4154,7 +4196,7 @@ impl std::error::Error for GetContactError {
             GetContactErrorKind::BadRequestException(_inner) => Some(_inner),
             GetContactErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4179,7 +4221,7 @@ pub enum GetContactListErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4208,7 +4250,7 @@ impl GetContactListError {
     /// Creates the `GetContactListError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContactListErrorKind::Unhandled(err.into()),
+            kind: GetContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4217,7 +4259,7 @@ impl GetContactListError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContactListErrorKind::Unhandled(err.into()),
+            kind: GetContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4263,7 +4305,7 @@ impl std::error::Error for GetContactListError {
             GetContactListErrorKind::BadRequestException(_inner) => Some(_inner),
             GetContactListErrorKind::NotFoundException(_inner) => Some(_inner),
             GetContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContactListErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4288,7 +4330,7 @@ pub enum GetCustomVerificationEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4324,7 +4366,9 @@ impl GetCustomVerificationEmailTemplateError {
     /// Creates the `GetCustomVerificationEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: GetCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4333,7 +4377,9 @@ impl GetCustomVerificationEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: GetCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4389,7 +4435,7 @@ impl std::error::Error for GetCustomVerificationEmailTemplateError {
             GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            GetCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4414,7 +4460,7 @@ pub enum GetDedicatedIpErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDedicatedIpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4443,7 +4489,7 @@ impl GetDedicatedIpError {
     /// Creates the `GetDedicatedIpError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDedicatedIpErrorKind::Unhandled(err.into()),
+            kind: GetDedicatedIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4452,7 +4498,7 @@ impl GetDedicatedIpError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDedicatedIpErrorKind::Unhandled(err.into()),
+            kind: GetDedicatedIpErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4498,7 +4544,7 @@ impl std::error::Error for GetDedicatedIpError {
             GetDedicatedIpErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDedicatedIpErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDedicatedIpErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetDedicatedIpErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDedicatedIpErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4523,7 +4569,7 @@ pub enum GetDedicatedIpsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDedicatedIpsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4552,7 +4598,7 @@ impl GetDedicatedIpsError {
     /// Creates the `GetDedicatedIpsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDedicatedIpsErrorKind::Unhandled(err.into()),
+            kind: GetDedicatedIpsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4561,7 +4607,7 @@ impl GetDedicatedIpsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDedicatedIpsErrorKind::Unhandled(err.into()),
+            kind: GetDedicatedIpsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4607,7 +4653,7 @@ impl std::error::Error for GetDedicatedIpsError {
             GetDedicatedIpsErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDedicatedIpsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDedicatedIpsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetDedicatedIpsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDedicatedIpsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4632,7 +4678,7 @@ pub enum GetDeliverabilityDashboardOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeliverabilityDashboardOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4670,7 +4716,9 @@ impl GetDeliverabilityDashboardOptionsError {
     /// Creates the `GetDeliverabilityDashboardOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeliverabilityDashboardOptionsErrorKind::Unhandled(err.into()),
+            kind: GetDeliverabilityDashboardOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4679,7 +4727,9 @@ impl GetDeliverabilityDashboardOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeliverabilityDashboardOptionsErrorKind::Unhandled(err.into()),
+            kind: GetDeliverabilityDashboardOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4735,7 +4785,7 @@ impl std::error::Error for GetDeliverabilityDashboardOptionsError {
             GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            GetDeliverabilityDashboardOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeliverabilityDashboardOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4760,7 +4810,7 @@ pub enum GetDeliverabilityTestReportErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeliverabilityTestReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4789,7 +4839,9 @@ impl GetDeliverabilityTestReportError {
     /// Creates the `GetDeliverabilityTestReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeliverabilityTestReportErrorKind::Unhandled(err.into()),
+            kind: GetDeliverabilityTestReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4798,7 +4850,9 @@ impl GetDeliverabilityTestReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeliverabilityTestReportErrorKind::Unhandled(err.into()),
+            kind: GetDeliverabilityTestReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4850,7 +4904,7 @@ impl std::error::Error for GetDeliverabilityTestReportError {
             GetDeliverabilityTestReportErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDeliverabilityTestReportErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDeliverabilityTestReportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeliverabilityTestReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4875,7 +4929,7 @@ pub enum GetDomainDeliverabilityCampaignErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainDeliverabilityCampaignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4909,7 +4963,9 @@ impl GetDomainDeliverabilityCampaignError {
     /// Creates the `GetDomainDeliverabilityCampaignError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainDeliverabilityCampaignErrorKind::Unhandled(err.into()),
+            kind: GetDomainDeliverabilityCampaignErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4918,7 +4974,9 @@ impl GetDomainDeliverabilityCampaignError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainDeliverabilityCampaignErrorKind::Unhandled(err.into()),
+            kind: GetDomainDeliverabilityCampaignErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4972,7 +5030,7 @@ impl std::error::Error for GetDomainDeliverabilityCampaignError {
             GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            GetDomainDeliverabilityCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainDeliverabilityCampaignErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4997,7 +5055,7 @@ pub enum GetDomainStatisticsReportErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainStatisticsReportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5026,7 +5084,9 @@ impl GetDomainStatisticsReportError {
     /// Creates the `GetDomainStatisticsReportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainStatisticsReportErrorKind::Unhandled(err.into()),
+            kind: GetDomainStatisticsReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5035,7 +5095,9 @@ impl GetDomainStatisticsReportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainStatisticsReportErrorKind::Unhandled(err.into()),
+            kind: GetDomainStatisticsReportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5087,7 +5149,7 @@ impl std::error::Error for GetDomainStatisticsReportError {
             GetDomainStatisticsReportErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDomainStatisticsReportErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDomainStatisticsReportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetDomainStatisticsReportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainStatisticsReportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5112,7 +5174,7 @@ pub enum GetEmailIdentityErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEmailIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5141,7 +5203,7 @@ impl GetEmailIdentityError {
     /// Creates the `GetEmailIdentityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: GetEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5150,7 +5212,7 @@ impl GetEmailIdentityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEmailIdentityErrorKind::Unhandled(err.into()),
+            kind: GetEmailIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5199,7 +5261,7 @@ impl std::error::Error for GetEmailIdentityError {
             GetEmailIdentityErrorKind::BadRequestException(_inner) => Some(_inner),
             GetEmailIdentityErrorKind::NotFoundException(_inner) => Some(_inner),
             GetEmailIdentityErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEmailIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5224,7 +5286,7 @@ pub enum GetEmailIdentityPoliciesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEmailIdentityPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5253,7 +5315,9 @@ impl GetEmailIdentityPoliciesError {
     /// Creates the `GetEmailIdentityPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEmailIdentityPoliciesErrorKind::Unhandled(err.into()),
+            kind: GetEmailIdentityPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5262,7 +5326,9 @@ impl GetEmailIdentityPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEmailIdentityPoliciesErrorKind::Unhandled(err.into()),
+            kind: GetEmailIdentityPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5314,7 +5380,7 @@ impl std::error::Error for GetEmailIdentityPoliciesError {
             GetEmailIdentityPoliciesErrorKind::BadRequestException(_inner) => Some(_inner),
             GetEmailIdentityPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetEmailIdentityPoliciesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetEmailIdentityPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEmailIdentityPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5339,7 +5405,7 @@ pub enum GetEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5368,7 +5434,7 @@ impl GetEmailTemplateError {
     /// Creates the `GetEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: GetEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5377,7 +5443,7 @@ impl GetEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: GetEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5426,7 +5492,7 @@ impl std::error::Error for GetEmailTemplateError {
             GetEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             GetEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5451,7 +5517,7 @@ pub enum GetImportJobErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5480,7 +5546,7 @@ impl GetImportJobError {
     /// Creates the `GetImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImportJobErrorKind::Unhandled(err.into()),
+            kind: GetImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5489,7 +5555,7 @@ impl GetImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImportJobErrorKind::Unhandled(err.into()),
+            kind: GetImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5535,7 +5601,7 @@ impl std::error::Error for GetImportJobError {
             GetImportJobErrorKind::BadRequestException(_inner) => Some(_inner),
             GetImportJobErrorKind::NotFoundException(_inner) => Some(_inner),
             GetImportJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5560,7 +5626,7 @@ pub enum GetSuppressedDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5589,7 +5655,9 @@ impl GetSuppressedDestinationError {
     /// Creates the `GetSuppressedDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: GetSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5598,7 +5666,9 @@ impl GetSuppressedDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: GetSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5650,7 +5720,7 @@ impl std::error::Error for GetSuppressedDestinationError {
             GetSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetSuppressedDestinationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5673,7 +5743,7 @@ pub enum ListConfigurationSetsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5701,7 +5771,9 @@ impl ListConfigurationSetsError {
     /// Creates the `ListConfigurationSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConfigurationSetsErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5710,7 +5782,9 @@ impl ListConfigurationSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConfigurationSetsErrorKind::Unhandled(err.into()),
+            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5754,7 +5828,7 @@ impl std::error::Error for ListConfigurationSetsError {
         match &self.kind {
             ListConfigurationSetsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5777,7 +5851,7 @@ pub enum ListContactListsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContactListsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5805,7 +5879,7 @@ impl ListContactListsError {
     /// Creates the `ListContactListsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListContactListsErrorKind::Unhandled(err.into()),
+            kind: ListContactListsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5814,7 +5888,7 @@ impl ListContactListsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListContactListsErrorKind::Unhandled(err.into()),
+            kind: ListContactListsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5858,7 +5932,7 @@ impl std::error::Error for ListContactListsError {
         match &self.kind {
             ListContactListsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListContactListsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListContactListsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListContactListsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5883,7 +5957,7 @@ pub enum ListContactsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContactsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5912,7 +5986,7 @@ impl ListContactsError {
     /// Creates the `ListContactsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListContactsErrorKind::Unhandled(err.into()),
+            kind: ListContactsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5921,7 +5995,7 @@ impl ListContactsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListContactsErrorKind::Unhandled(err.into()),
+            kind: ListContactsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5967,7 +6041,7 @@ impl std::error::Error for ListContactsError {
             ListContactsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListContactsErrorKind::NotFoundException(_inner) => Some(_inner),
             ListContactsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListContactsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListContactsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5990,7 +6064,7 @@ pub enum ListCustomVerificationEmailTemplatesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCustomVerificationEmailTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6025,7 +6099,9 @@ impl ListCustomVerificationEmailTemplatesError {
     /// Creates the `ListCustomVerificationEmailTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCustomVerificationEmailTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListCustomVerificationEmailTemplatesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6034,7 +6110,9 @@ impl ListCustomVerificationEmailTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCustomVerificationEmailTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListCustomVerificationEmailTemplatesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6082,9 +6160,7 @@ impl std::error::Error for ListCustomVerificationEmailTemplatesError {
             ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListCustomVerificationEmailTemplatesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListCustomVerificationEmailTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6107,7 +6183,7 @@ pub enum ListDedicatedIpPoolsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDedicatedIpPoolsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6135,7 +6211,9 @@ impl ListDedicatedIpPoolsError {
     /// Creates the `ListDedicatedIpPoolsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDedicatedIpPoolsErrorKind::Unhandled(err.into()),
+            kind: ListDedicatedIpPoolsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6144,7 +6222,9 @@ impl ListDedicatedIpPoolsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDedicatedIpPoolsErrorKind::Unhandled(err.into()),
+            kind: ListDedicatedIpPoolsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6188,7 +6268,7 @@ impl std::error::Error for ListDedicatedIpPoolsError {
         match &self.kind {
             ListDedicatedIpPoolsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListDedicatedIpPoolsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListDedicatedIpPoolsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDedicatedIpPoolsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6213,7 +6293,7 @@ pub enum ListDeliverabilityTestReportsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeliverabilityTestReportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6247,7 +6327,9 @@ impl ListDeliverabilityTestReportsError {
     /// Creates the `ListDeliverabilityTestReportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDeliverabilityTestReportsErrorKind::Unhandled(err.into()),
+            kind: ListDeliverabilityTestReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6256,7 +6338,9 @@ impl ListDeliverabilityTestReportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDeliverabilityTestReportsErrorKind::Unhandled(err.into()),
+            kind: ListDeliverabilityTestReportsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6310,7 +6394,7 @@ impl std::error::Error for ListDeliverabilityTestReportsError {
             ListDeliverabilityTestReportsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListDeliverabilityTestReportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDeliverabilityTestReportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6335,7 +6419,7 @@ pub enum ListDomainDeliverabilityCampaignsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDomainDeliverabilityCampaignsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6371,7 +6455,9 @@ impl ListDomainDeliverabilityCampaignsError {
     /// Creates the `ListDomainDeliverabilityCampaignsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDomainDeliverabilityCampaignsErrorKind::Unhandled(err.into()),
+            kind: ListDomainDeliverabilityCampaignsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6380,7 +6466,9 @@ impl ListDomainDeliverabilityCampaignsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDomainDeliverabilityCampaignsErrorKind::Unhandled(err.into()),
+            kind: ListDomainDeliverabilityCampaignsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6434,7 +6522,7 @@ impl std::error::Error for ListDomainDeliverabilityCampaignsError {
             ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListDomainDeliverabilityCampaignsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDomainDeliverabilityCampaignsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6457,7 +6545,7 @@ pub enum ListEmailIdentitiesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEmailIdentitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6485,7 +6573,7 @@ impl ListEmailIdentitiesError {
     /// Creates the `ListEmailIdentitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEmailIdentitiesErrorKind::Unhandled(err.into()),
+            kind: ListEmailIdentitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6494,7 +6582,7 @@ impl ListEmailIdentitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEmailIdentitiesErrorKind::Unhandled(err.into()),
+            kind: ListEmailIdentitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6538,7 +6626,7 @@ impl std::error::Error for ListEmailIdentitiesError {
         match &self.kind {
             ListEmailIdentitiesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListEmailIdentitiesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEmailIdentitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEmailIdentitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6561,7 +6649,7 @@ pub enum ListEmailTemplatesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEmailTemplatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6589,7 +6677,7 @@ impl ListEmailTemplatesError {
     /// Creates the `ListEmailTemplatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEmailTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListEmailTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6598,7 +6686,7 @@ impl ListEmailTemplatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEmailTemplatesErrorKind::Unhandled(err.into()),
+            kind: ListEmailTemplatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6642,7 +6730,7 @@ impl std::error::Error for ListEmailTemplatesError {
         match &self.kind {
             ListEmailTemplatesErrorKind::BadRequestException(_inner) => Some(_inner),
             ListEmailTemplatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEmailTemplatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEmailTemplatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6665,7 +6753,7 @@ pub enum ListImportJobsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6693,7 +6781,7 @@ impl ListImportJobsError {
     /// Creates the `ListImportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6702,7 +6790,7 @@ impl ListImportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6743,7 +6831,7 @@ impl std::error::Error for ListImportJobsError {
         match &self.kind {
             ListImportJobsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListImportJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6768,7 +6856,7 @@ pub enum ListSuppressedDestinationsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSuppressedDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6797,7 +6885,9 @@ impl ListSuppressedDestinationsError {
     /// Creates the `ListSuppressedDestinationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSuppressedDestinationsErrorKind::Unhandled(err.into()),
+            kind: ListSuppressedDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6806,7 +6896,9 @@ impl ListSuppressedDestinationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSuppressedDestinationsErrorKind::Unhandled(err.into()),
+            kind: ListSuppressedDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6858,7 +6950,7 @@ impl std::error::Error for ListSuppressedDestinationsError {
             ListSuppressedDestinationsErrorKind::BadRequestException(_inner) => Some(_inner),
             ListSuppressedDestinationsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListSuppressedDestinationsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSuppressedDestinationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSuppressedDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6883,7 +6975,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6912,7 +7004,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6921,7 +7013,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6973,7 +7065,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6996,7 +7088,7 @@ pub enum PutAccountDedicatedIpWarmupAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountDedicatedIpWarmupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7031,7 +7123,9 @@ impl PutAccountDedicatedIpWarmupAttributesError {
     /// Creates the `PutAccountDedicatedIpWarmupAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7040,7 +7134,9 @@ impl PutAccountDedicatedIpWarmupAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7088,9 +7184,7 @@ impl std::error::Error for PutAccountDedicatedIpWarmupAttributesError {
             PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7115,7 +7209,7 @@ pub enum PutAccountDetailsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7144,7 +7238,7 @@ impl PutAccountDetailsError {
     /// Creates the `PutAccountDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountDetailsErrorKind::Unhandled(err.into()),
+            kind: PutAccountDetailsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7153,7 +7247,7 @@ impl PutAccountDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountDetailsErrorKind::Unhandled(err.into()),
+            kind: PutAccountDetailsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7202,7 +7296,7 @@ impl std::error::Error for PutAccountDetailsError {
             PutAccountDetailsErrorKind::BadRequestException(_inner) => Some(_inner),
             PutAccountDetailsErrorKind::ConflictException(_inner) => Some(_inner),
             PutAccountDetailsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutAccountDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAccountDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7225,7 +7319,7 @@ pub enum PutAccountSendingAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountSendingAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7253,7 +7347,9 @@ impl PutAccountSendingAttributesError {
     /// Creates the `PutAccountSendingAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountSendingAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountSendingAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7262,7 +7358,9 @@ impl PutAccountSendingAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountSendingAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountSendingAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7306,7 +7404,7 @@ impl std::error::Error for PutAccountSendingAttributesError {
         match &self.kind {
             PutAccountSendingAttributesErrorKind::BadRequestException(_inner) => Some(_inner),
             PutAccountSendingAttributesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutAccountSendingAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAccountSendingAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7329,7 +7427,7 @@ pub enum PutAccountSuppressionAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountSuppressionAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7362,7 +7460,9 @@ impl PutAccountSuppressionAttributesError {
     /// Creates the `PutAccountSuppressionAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountSuppressionAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountSuppressionAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7371,7 +7471,9 @@ impl PutAccountSuppressionAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountSuppressionAttributesErrorKind::Unhandled(err.into()),
+            kind: PutAccountSuppressionAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7417,7 +7519,7 @@ impl std::error::Error for PutAccountSuppressionAttributesError {
             PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutAccountSuppressionAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAccountSuppressionAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7442,7 +7544,7 @@ pub enum PutConfigurationSetDeliveryOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConfigurationSetDeliveryOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7478,7 +7580,9 @@ impl PutConfigurationSetDeliveryOptionsError {
     /// Creates the `PutConfigurationSetDeliveryOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7487,7 +7591,9 @@ impl PutConfigurationSetDeliveryOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7543,7 +7649,7 @@ impl std::error::Error for PutConfigurationSetDeliveryOptionsError {
             PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7568,7 +7674,7 @@ pub enum PutConfigurationSetReputationOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConfigurationSetReputationOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7606,7 +7712,9 @@ impl PutConfigurationSetReputationOptionsError {
     /// Creates the `PutConfigurationSetReputationOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutConfigurationSetReputationOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetReputationOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7615,7 +7723,9 @@ impl PutConfigurationSetReputationOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutConfigurationSetReputationOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetReputationOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7673,9 +7783,7 @@ impl std::error::Error for PutConfigurationSetReputationOptionsError {
             PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutConfigurationSetReputationOptionsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutConfigurationSetReputationOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7700,7 +7808,7 @@ pub enum PutConfigurationSetSendingOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConfigurationSetSendingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7736,7 +7844,9 @@ impl PutConfigurationSetSendingOptionsError {
     /// Creates the `PutConfigurationSetSendingOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutConfigurationSetSendingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetSendingOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7745,7 +7855,9 @@ impl PutConfigurationSetSendingOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutConfigurationSetSendingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetSendingOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7799,7 +7911,7 @@ impl std::error::Error for PutConfigurationSetSendingOptionsError {
             PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutConfigurationSetSendingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutConfigurationSetSendingOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7824,7 +7936,7 @@ pub enum PutConfigurationSetSuppressionOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConfigurationSetSuppressionOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7862,7 +7974,9 @@ impl PutConfigurationSetSuppressionOptionsError {
     /// Creates the `PutConfigurationSetSuppressionOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7871,7 +7985,9 @@ impl PutConfigurationSetSuppressionOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7929,9 +8045,7 @@ impl std::error::Error for PutConfigurationSetSuppressionOptionsError {
             PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7956,7 +8070,7 @@ pub enum PutConfigurationSetTrackingOptionsErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConfigurationSetTrackingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7992,7 +8106,9 @@ impl PutConfigurationSetTrackingOptionsError {
     /// Creates the `PutConfigurationSetTrackingOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutConfigurationSetTrackingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetTrackingOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8001,7 +8117,9 @@ impl PutConfigurationSetTrackingOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutConfigurationSetTrackingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutConfigurationSetTrackingOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8057,7 +8175,7 @@ impl std::error::Error for PutConfigurationSetTrackingOptionsError {
             PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutConfigurationSetTrackingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutConfigurationSetTrackingOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8082,7 +8200,7 @@ pub enum PutDedicatedIpInPoolErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDedicatedIpInPoolError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8111,7 +8229,9 @@ impl PutDedicatedIpInPoolError {
     /// Creates the `PutDedicatedIpInPoolError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDedicatedIpInPoolErrorKind::Unhandled(err.into()),
+            kind: PutDedicatedIpInPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8120,7 +8240,9 @@ impl PutDedicatedIpInPoolError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDedicatedIpInPoolErrorKind::Unhandled(err.into()),
+            kind: PutDedicatedIpInPoolErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8172,7 +8294,7 @@ impl std::error::Error for PutDedicatedIpInPoolError {
             PutDedicatedIpInPoolErrorKind::BadRequestException(_inner) => Some(_inner),
             PutDedicatedIpInPoolErrorKind::NotFoundException(_inner) => Some(_inner),
             PutDedicatedIpInPoolErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutDedicatedIpInPoolErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDedicatedIpInPoolErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8197,7 +8319,7 @@ pub enum PutDedicatedIpWarmupAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDedicatedIpWarmupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8231,7 +8353,9 @@ impl PutDedicatedIpWarmupAttributesError {
     /// Creates the `PutDedicatedIpWarmupAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDedicatedIpWarmupAttributesErrorKind::Unhandled(err.into()),
+            kind: PutDedicatedIpWarmupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8240,7 +8364,9 @@ impl PutDedicatedIpWarmupAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDedicatedIpWarmupAttributesErrorKind::Unhandled(err.into()),
+            kind: PutDedicatedIpWarmupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8294,7 +8420,7 @@ impl std::error::Error for PutDedicatedIpWarmupAttributesError {
             PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDedicatedIpWarmupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8323,7 +8449,7 @@ pub enum PutDeliverabilityDashboardOptionErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDeliverabilityDashboardOptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8363,7 +8489,9 @@ impl PutDeliverabilityDashboardOptionError {
     /// Creates the `PutDeliverabilityDashboardOptionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDeliverabilityDashboardOptionErrorKind::Unhandled(err.into()),
+            kind: PutDeliverabilityDashboardOptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8372,7 +8500,9 @@ impl PutDeliverabilityDashboardOptionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDeliverabilityDashboardOptionErrorKind::Unhandled(err.into()),
+            kind: PutDeliverabilityDashboardOptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8446,7 +8576,7 @@ impl std::error::Error for PutDeliverabilityDashboardOptionError {
             PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutDeliverabilityDashboardOptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDeliverabilityDashboardOptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8471,7 +8601,7 @@ pub enum PutEmailIdentityConfigurationSetAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEmailIdentityConfigurationSetAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8509,7 +8639,9 @@ impl PutEmailIdentityConfigurationSetAttributesError {
     /// Creates the `PutEmailIdentityConfigurationSetAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8518,7 +8650,9 @@ impl PutEmailIdentityConfigurationSetAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8576,9 +8710,7 @@ impl std::error::Error for PutEmailIdentityConfigurationSetAttributesError {
             PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException(
                 _inner,
             ) => Some(_inner),
-            PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8603,7 +8735,7 @@ pub enum PutEmailIdentityDkimAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEmailIdentityDkimAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8637,7 +8769,9 @@ impl PutEmailIdentityDkimAttributesError {
     /// Creates the `PutEmailIdentityDkimAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEmailIdentityDkimAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityDkimAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8646,7 +8780,9 @@ impl PutEmailIdentityDkimAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEmailIdentityDkimAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityDkimAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8700,7 +8836,7 @@ impl std::error::Error for PutEmailIdentityDkimAttributesError {
             PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityDkimAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutEmailIdentityDkimAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8725,7 +8861,7 @@ pub enum PutEmailIdentityDkimSigningAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEmailIdentityDkimSigningAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8763,7 +8899,9 @@ impl PutEmailIdentityDkimSigningAttributesError {
     /// Creates the `PutEmailIdentityDkimSigningAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8772,7 +8910,9 @@ impl PutEmailIdentityDkimSigningAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8830,9 +8970,7 @@ impl std::error::Error for PutEmailIdentityDkimSigningAttributesError {
             PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8857,7 +8995,7 @@ pub enum PutEmailIdentityFeedbackAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEmailIdentityFeedbackAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8893,7 +9031,9 @@ impl PutEmailIdentityFeedbackAttributesError {
     /// Creates the `PutEmailIdentityFeedbackAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8902,7 +9042,9 @@ impl PutEmailIdentityFeedbackAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8958,7 +9100,7 @@ impl std::error::Error for PutEmailIdentityFeedbackAttributesError {
             PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8983,7 +9125,7 @@ pub enum PutEmailIdentityMailFromAttributesErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutEmailIdentityMailFromAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9019,7 +9161,9 @@ impl PutEmailIdentityMailFromAttributesError {
     /// Creates the `PutEmailIdentityMailFromAttributesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutEmailIdentityMailFromAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityMailFromAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9028,7 +9172,9 @@ impl PutEmailIdentityMailFromAttributesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutEmailIdentityMailFromAttributesErrorKind::Unhandled(err.into()),
+            kind: PutEmailIdentityMailFromAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9084,7 +9230,7 @@ impl std::error::Error for PutEmailIdentityMailFromAttributesError {
             PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            PutEmailIdentityMailFromAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutEmailIdentityMailFromAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9107,7 +9253,7 @@ pub enum PutSuppressedDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSuppressedDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9135,7 +9281,9 @@ impl PutSuppressedDestinationError {
     /// Creates the `PutSuppressedDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: PutSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9144,7 +9292,9 @@ impl PutSuppressedDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSuppressedDestinationErrorKind::Unhandled(err.into()),
+            kind: PutSuppressedDestinationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9188,7 +9338,7 @@ impl std::error::Error for PutSuppressedDestinationError {
         match &self.kind {
             PutSuppressedDestinationErrorKind::BadRequestException(_inner) => Some(_inner),
             PutSuppressedDestinationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSuppressedDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9223,7 +9373,7 @@ pub enum SendBulkEmailErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendBulkEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9257,7 +9407,7 @@ impl SendBulkEmailError {
     /// Creates the `SendBulkEmailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendBulkEmailErrorKind::Unhandled(err.into()),
+            kind: SendBulkEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9266,7 +9416,7 @@ impl SendBulkEmailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendBulkEmailErrorKind::Unhandled(err.into()),
+            kind: SendBulkEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9349,7 +9499,7 @@ impl std::error::Error for SendBulkEmailError {
             SendBulkEmailErrorKind::NotFoundException(_inner) => Some(_inner),
             SendBulkEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
             SendBulkEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SendBulkEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendBulkEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9382,7 +9532,7 @@ pub enum SendCustomVerificationEmailErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendCustomVerificationEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9417,7 +9567,9 @@ impl SendCustomVerificationEmailError {
     /// Creates the `SendCustomVerificationEmailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendCustomVerificationEmailErrorKind::Unhandled(err.into()),
+            kind: SendCustomVerificationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9426,7 +9578,9 @@ impl SendCustomVerificationEmailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendCustomVerificationEmailErrorKind::Unhandled(err.into()),
+            kind: SendCustomVerificationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9512,7 +9666,7 @@ impl std::error::Error for SendCustomVerificationEmailError {
             SendCustomVerificationEmailErrorKind::NotFoundException(_inner) => Some(_inner),
             SendCustomVerificationEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
             SendCustomVerificationEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SendCustomVerificationEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendCustomVerificationEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9547,7 +9701,7 @@ pub enum SendEmailErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9581,7 +9735,7 @@ impl SendEmailError {
     /// Creates the `SendEmailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendEmailErrorKind::Unhandled(err.into()),
+            kind: SendEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9590,7 +9744,7 @@ impl SendEmailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendEmailErrorKind::Unhandled(err.into()),
+            kind: SendEmailErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9661,7 +9815,7 @@ impl std::error::Error for SendEmailError {
             SendEmailErrorKind::NotFoundException(_inner) => Some(_inner),
             SendEmailErrorKind::SendingPausedException(_inner) => Some(_inner),
             SendEmailErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SendEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9688,7 +9842,7 @@ pub enum TagResourceErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9718,7 +9872,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9727,7 +9881,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9781,7 +9935,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9806,7 +9960,7 @@ pub enum TestRenderEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestRenderEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9835,7 +9989,9 @@ impl TestRenderEmailTemplateError {
     /// Creates the `TestRenderEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestRenderEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: TestRenderEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9844,7 +10000,9 @@ impl TestRenderEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestRenderEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: TestRenderEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9896,7 +10054,7 @@ impl std::error::Error for TestRenderEmailTemplateError {
             TestRenderEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             TestRenderEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             TestRenderEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TestRenderEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestRenderEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9923,7 +10081,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9953,7 +10111,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9962,7 +10120,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10016,7 +10174,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10041,7 +10199,7 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10079,7 +10237,9 @@ impl UpdateConfigurationSetEventDestinationError {
     /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10088,7 +10248,9 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(err.into()),
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10146,9 +10308,7 @@ impl std::error::Error for UpdateConfigurationSetEventDestinationError {
             UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10175,7 +10335,7 @@ pub enum UpdateContactErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10205,7 +10365,7 @@ impl UpdateContactError {
     /// Creates the `UpdateContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateContactErrorKind::Unhandled(err.into()),
+            kind: UpdateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10214,7 +10374,7 @@ impl UpdateContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateContactErrorKind::Unhandled(err.into()),
+            kind: UpdateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10268,7 +10428,7 @@ impl std::error::Error for UpdateContactError {
             UpdateContactErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UpdateContactErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10295,7 +10455,7 @@ pub enum UpdateContactListErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContactListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10325,7 +10485,7 @@ impl UpdateContactListError {
     /// Creates the `UpdateContactListError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateContactListErrorKind::Unhandled(err.into()),
+            kind: UpdateContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10334,7 +10494,7 @@ impl UpdateContactListError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateContactListErrorKind::Unhandled(err.into()),
+            kind: UpdateContactListErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10391,7 +10551,7 @@ impl std::error::Error for UpdateContactListError {
             UpdateContactListErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UpdateContactListErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateContactListErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateContactListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateContactListErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10416,7 +10576,7 @@ pub enum UpdateCustomVerificationEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomVerificationEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10454,7 +10614,9 @@ impl UpdateCustomVerificationEmailTemplateError {
     /// Creates the `UpdateCustomVerificationEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10463,7 +10625,9 @@ impl UpdateCustomVerificationEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10521,9 +10685,7 @@ impl std::error::Error for UpdateCustomVerificationEmailTemplateError {
             UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10548,7 +10710,7 @@ pub enum UpdateEmailIdentityPolicyErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEmailIdentityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10577,7 +10739,9 @@ impl UpdateEmailIdentityPolicyError {
     /// Creates the `UpdateEmailIdentityPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10586,7 +10750,9 @@ impl UpdateEmailIdentityPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEmailIdentityPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateEmailIdentityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10638,7 +10804,7 @@ impl std::error::Error for UpdateEmailIdentityPolicyError {
             UpdateEmailIdentityPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateEmailIdentityPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEmailIdentityPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10663,7 +10829,7 @@ pub enum UpdateEmailTemplateErrorKind {
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEmailTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10692,7 +10858,7 @@ impl UpdateEmailTemplateError {
     /// Creates the `UpdateEmailTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10701,7 +10867,7 @@ impl UpdateEmailTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEmailTemplateErrorKind::Unhandled(err.into()),
+            kind: UpdateEmailTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10753,7 +10919,32 @@ impl std::error::Error for UpdateEmailTemplateError {
             UpdateEmailTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateEmailTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateEmailTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEmailTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

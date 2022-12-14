@@ -938,7 +938,7 @@ pub enum CreateSignalingChannelErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSignalingChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -974,7 +974,9 @@ impl CreateSignalingChannelError {
     /// Creates the `CreateSignalingChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: CreateSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -983,7 +985,9 @@ impl CreateSignalingChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: CreateSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1063,7 +1067,7 @@ impl std::error::Error for CreateSignalingChannelError {
             CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException(_inner) => {
                 Some(_inner)
             }
-            CreateSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1097,7 +1101,7 @@ pub enum CreateStreamErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1130,7 +1134,7 @@ impl CreateStreamError {
     /// Creates the `CreateStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateStreamErrorKind::Unhandled(err.into()),
+            kind: CreateStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1139,7 +1143,7 @@ impl CreateStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateStreamErrorKind::Unhandled(err.into()),
+            kind: CreateStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1217,7 +1221,7 @@ impl std::error::Error for CreateStreamError {
             CreateStreamErrorKind::InvalidDeviceException(_inner) => Some(_inner),
             CreateStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateStreamErrorKind::TagsPerResourceExceededLimitException(_inner) => Some(_inner),
-            CreateStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1249,7 +1253,7 @@ pub enum DeleteSignalingChannelErrorKind {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSignalingChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1281,7 +1285,9 @@ impl DeleteSignalingChannelError {
     /// Creates the `DeleteSignalingChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: DeleteSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1290,7 +1296,9 @@ impl DeleteSignalingChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: DeleteSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1366,7 +1374,7 @@ impl std::error::Error for DeleteSignalingChannelError {
             DeleteSignalingChannelErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteSignalingChannelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSignalingChannelErrorKind::VersionMismatchException(_inner) => Some(_inner),
-            DeleteSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1398,7 +1406,7 @@ pub enum DeleteStreamErrorKind {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1430,7 +1438,7 @@ impl DeleteStreamError {
     /// Creates the `DeleteStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1439,7 +1447,7 @@ impl DeleteStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteStreamErrorKind::Unhandled(err.into()),
+            kind: DeleteStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1509,7 +1517,7 @@ impl std::error::Error for DeleteStreamError {
             DeleteStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteStreamErrorKind::VersionMismatchException(_inner) => Some(_inner),
-            DeleteStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1536,7 +1544,7 @@ pub enum DescribeImageGenerationConfigurationErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeImageGenerationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1577,7 +1585,9 @@ impl DescribeImageGenerationConfigurationError {
     /// Creates the `DescribeImageGenerationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1586,7 +1596,9 @@ impl DescribeImageGenerationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeImageGenerationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1654,9 +1666,7 @@ impl std::error::Error for DescribeImageGenerationConfigurationError {
             DescribeImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeImageGenerationConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeImageGenerationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1683,7 +1693,7 @@ pub enum DescribeNotificationConfigurationErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeNotificationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1724,7 +1734,9 @@ impl DescribeNotificationConfigurationError {
     /// Creates the `DescribeNotificationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1733,7 +1745,9 @@ impl DescribeNotificationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1801,7 +1815,7 @@ impl std::error::Error for DescribeNotificationConfigurationError {
             DescribeNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1828,7 +1842,7 @@ pub enum DescribeSignalingChannelErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSignalingChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1860,7 +1874,9 @@ impl DescribeSignalingChannelError {
     /// Creates the `DescribeSignalingChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: DescribeSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1869,7 +1885,9 @@ impl DescribeSignalingChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: DescribeSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1929,7 +1947,7 @@ impl std::error::Error for DescribeSignalingChannelError {
             DescribeSignalingChannelErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
             DescribeSignalingChannelErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeSignalingChannelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1956,7 +1974,7 @@ pub enum DescribeStreamErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1986,7 +2004,7 @@ impl DescribeStreamError {
     /// Creates the `DescribeStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1995,7 +2013,7 @@ impl DescribeStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2055,7 +2073,7 @@ impl std::error::Error for DescribeStreamError {
             DescribeStreamErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             DescribeStreamErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             DescribeStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2082,7 +2100,7 @@ pub enum GetDataEndpointErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2112,7 +2130,7 @@ impl GetDataEndpointError {
     /// Creates the `GetDataEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDataEndpointErrorKind::Unhandled(err.into()),
+            kind: GetDataEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2121,7 +2139,7 @@ impl GetDataEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDataEndpointErrorKind::Unhandled(err.into()),
+            kind: GetDataEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2181,7 +2199,7 @@ impl std::error::Error for GetDataEndpointError {
             GetDataEndpointErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetDataEndpointErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetDataEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetDataEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDataEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2211,7 +2229,7 @@ pub enum GetSignalingChannelEndpointErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSignalingChannelEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2246,7 +2264,9 @@ impl GetSignalingChannelEndpointError {
     /// Creates the `GetSignalingChannelEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSignalingChannelEndpointErrorKind::Unhandled(err.into()),
+            kind: GetSignalingChannelEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2255,7 +2275,9 @@ impl GetSignalingChannelEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSignalingChannelEndpointErrorKind::Unhandled(err.into()),
+            kind: GetSignalingChannelEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2325,7 +2347,7 @@ impl std::error::Error for GetSignalingChannelEndpointError {
             GetSignalingChannelEndpointErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetSignalingChannelEndpointErrorKind::ResourceInUseException(_inner) => Some(_inner),
             GetSignalingChannelEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetSignalingChannelEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSignalingChannelEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2350,7 +2372,7 @@ pub enum ListSignalingChannelsErrorKind {
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSignalingChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2379,7 +2401,9 @@ impl ListSignalingChannelsError {
     /// Creates the `ListSignalingChannelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSignalingChannelsErrorKind::Unhandled(err.into()),
+            kind: ListSignalingChannelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2388,7 +2412,9 @@ impl ListSignalingChannelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSignalingChannelsErrorKind::Unhandled(err.into()),
+            kind: ListSignalingChannelsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2440,7 +2466,7 @@ impl std::error::Error for ListSignalingChannelsError {
             ListSignalingChannelsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListSignalingChannelsErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
             ListSignalingChannelsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListSignalingChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSignalingChannelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2463,7 +2489,7 @@ pub enum ListStreamsErrorKind {
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2491,7 +2517,7 @@ impl ListStreamsError {
     /// Creates the `ListStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListStreamsErrorKind::Unhandled(err.into()),
+            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2500,7 +2526,7 @@ impl ListStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListStreamsErrorKind::Unhandled(err.into()),
+            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2544,7 +2570,7 @@ impl std::error::Error for ListStreamsError {
         match &self.kind {
             ListStreamsErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
             ListStreamsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
-            ListStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2571,7 +2597,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2601,7 +2627,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2610,7 +2636,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2670,7 +2696,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2699,7 +2725,7 @@ pub enum ListTagsForStreamErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2730,7 +2756,7 @@ impl ListTagsForStreamError {
     /// Creates the `ListTagsForStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForStreamErrorKind::Unhandled(err.into()),
+            kind: ListTagsForStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2739,7 +2765,7 @@ impl ListTagsForStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForStreamErrorKind::Unhandled(err.into()),
+            kind: ListTagsForStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2807,7 +2833,7 @@ impl std::error::Error for ListTagsForStreamError {
             ListTagsForStreamErrorKind::InvalidResourceFormatException(_inner) => Some(_inner),
             ListTagsForStreamErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             ListTagsForStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2836,7 +2862,7 @@ pub enum TagResourceErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2867,7 +2893,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2876,7 +2902,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2941,7 +2967,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TagsPerResourceExceededLimitException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2972,7 +2998,7 @@ pub enum TagStreamErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource. A Kinesis video stream can support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3004,7 +3030,7 @@ impl TagStreamError {
     /// Creates the `TagStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagStreamErrorKind::Unhandled(err.into()),
+            kind: TagStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3013,7 +3039,7 @@ impl TagStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagStreamErrorKind::Unhandled(err.into()),
+            kind: TagStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3080,7 +3106,7 @@ impl std::error::Error for TagStreamError {
             TagStreamErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             TagStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagStreamErrorKind::TagsPerResourceExceededLimitException(_inner) => Some(_inner),
-            TagStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3107,7 +3133,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3137,7 +3163,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3146,7 +3172,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3203,7 +3229,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ClientLimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3232,7 +3258,7 @@ pub enum UntagStreamErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3263,7 +3289,7 @@ impl UntagStreamError {
     /// Creates the `UntagStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagStreamErrorKind::Unhandled(err.into()),
+            kind: UntagStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3272,7 +3298,7 @@ impl UntagStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagStreamErrorKind::Unhandled(err.into()),
+            kind: UntagStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3337,7 +3363,7 @@ impl std::error::Error for UntagStreamError {
             UntagStreamErrorKind::InvalidResourceFormatException(_inner) => Some(_inner),
             UntagStreamErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             UntagStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3369,7 +3395,7 @@ pub enum UpdateDataRetentionErrorKind {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDataRetentionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3401,7 +3427,7 @@ impl UpdateDataRetentionError {
     /// Creates the `UpdateDataRetentionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDataRetentionErrorKind::Unhandled(err.into()),
+            kind: UpdateDataRetentionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3410,7 +3436,7 @@ impl UpdateDataRetentionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDataRetentionErrorKind::Unhandled(err.into()),
+            kind: UpdateDataRetentionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3486,7 +3512,7 @@ impl std::error::Error for UpdateDataRetentionError {
             UpdateDataRetentionErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateDataRetentionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDataRetentionErrorKind::VersionMismatchException(_inner) => Some(_inner),
-            UpdateDataRetentionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDataRetentionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3518,7 +3544,7 @@ pub enum UpdateImageGenerationConfigurationErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateImageGenerationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3565,7 +3591,9 @@ impl UpdateImageGenerationConfigurationError {
     /// Creates the `UpdateImageGenerationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3574,7 +3602,9 @@ impl UpdateImageGenerationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateImageGenerationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3662,7 +3692,7 @@ impl std::error::Error for UpdateImageGenerationConfigurationError {
             UpdateImageGenerationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            UpdateImageGenerationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateImageGenerationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3694,7 +3724,7 @@ pub enum UpdateNotificationConfigurationErrorKind {
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNotificationConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3741,7 +3771,9 @@ impl UpdateNotificationConfigurationError {
     /// Creates the `UpdateNotificationConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3750,7 +3782,9 @@ impl UpdateNotificationConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateNotificationConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateNotificationConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3836,7 +3870,7 @@ impl std::error::Error for UpdateNotificationConfigurationError {
             UpdateNotificationConfigurationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            UpdateNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateNotificationConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3868,7 +3902,7 @@ pub enum UpdateSignalingChannelErrorKind {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSignalingChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3900,7 +3934,9 @@ impl UpdateSignalingChannelError {
     /// Creates the `UpdateSignalingChannelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: UpdateSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3909,7 +3945,9 @@ impl UpdateSignalingChannelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateSignalingChannelErrorKind::Unhandled(err.into()),
+            kind: UpdateSignalingChannelErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3985,7 +4023,7 @@ impl std::error::Error for UpdateSignalingChannelError {
             UpdateSignalingChannelErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateSignalingChannelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateSignalingChannelErrorKind::VersionMismatchException(_inner) => Some(_inner),
-            UpdateSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateSignalingChannelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4017,7 +4055,7 @@ pub enum UpdateStreamErrorKind {
     /// <p>The stream version that you specified is not the latest version. To get the latest version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a> API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4049,7 +4087,7 @@ impl UpdateStreamError {
     /// Creates the `UpdateStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateStreamErrorKind::Unhandled(err.into()),
+            kind: UpdateStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4058,7 +4096,7 @@ impl UpdateStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateStreamErrorKind::Unhandled(err.into()),
+            kind: UpdateStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4128,7 +4166,32 @@ impl std::error::Error for UpdateStreamError {
             UpdateStreamErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateStreamErrorKind::VersionMismatchException(_inner) => Some(_inner),
-            UpdateStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

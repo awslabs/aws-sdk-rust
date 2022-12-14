@@ -39,7 +39,7 @@ pub enum Error {
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -99,9 +99,11 @@ where
                 crate::error::BatchMeterUsageErrorKind::TimestampOutOfBoundsException(inner) => {
                     Error::TimestampOutOfBoundsException(inner)
                 }
-                crate::error::BatchMeterUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchMeterUsageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -142,9 +144,11 @@ where
                 crate::error::MeterUsageErrorKind::TimestampOutOfBoundsException(inner) => {
                     Error::TimestampOutOfBoundsException(inner)
                 }
-                crate::error::MeterUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::MeterUsageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -179,9 +183,11 @@ where
                 crate::error::RegisterUsageErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::RegisterUsageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterUsageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -207,9 +213,11 @@ where
                 crate::error::ResolveCustomerErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ResolveCustomerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResolveCustomerErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

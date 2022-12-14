@@ -50,7 +50,7 @@ pub enum Error {
     /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -105,10 +105,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::BatchCheckLayerAvailabilityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -131,10 +131,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::BatchDeleteImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,10 +178,10 @@ where
                     Error::UploadNotFoundException(inner)
                 }
                 crate::error::CompleteLayerUploadErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -213,10 +213,10 @@ where
                     Error::TooManyTagsException(inner)
                 }
                 crate::error::CreateRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -242,10 +242,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::DeleteRepositoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,9 +263,9 @@ where
                 crate::error::DeleteRepositoryPolicyErrorKind::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
                 crate::error::DeleteRepositoryPolicyErrorKind::RepositoryPolicyNotFoundException(inner) => Error::RepositoryPolicyNotFoundException(inner),
                 crate::error::DeleteRepositoryPolicyErrorKind::ServerException(inner) => Error::ServerException(inner),
-                crate::error::DeleteRepositoryPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRepositoryPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -288,9 +288,11 @@ where
                 crate::error::DescribeImagesErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
                 }
-                crate::error::DescribeImagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeImagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -313,10 +315,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::DescribeImageTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -339,10 +341,10 @@ where
                     Error::UnsupportedCommandException(inner)
                 }
                 crate::error::DescribeRegistriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -366,10 +368,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::DescribeRepositoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -390,10 +392,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::GetAuthorizationTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -414,10 +416,10 @@ where
                     inner,
                 ) => Error::UnsupportedCommandException(inner),
                 crate::error::GetRegistryCatalogDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -441,10 +443,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::GetRepositoryCatalogDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -470,10 +472,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::GetRepositoryPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -502,10 +504,10 @@ where
                     Error::UnsupportedCommandException(inner)
                 }
                 crate::error::InitiateLayerUploadErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -528,10 +530,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,9 +577,11 @@ where
                 crate::error::PutImageErrorKind::UnsupportedCommandException(inner) => {
                     Error::UnsupportedCommandException(inner)
                 }
-                crate::error::PutImageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutImageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -601,10 +605,10 @@ where
                     inner,
                 ) => Error::UnsupportedCommandException(inner),
                 crate::error::PutRegistryCatalogDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -628,10 +632,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::PutRepositoryCatalogDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -654,10 +658,10 @@ where
                     Error::ServerException(inner)
                 }
                 crate::error::SetRepositoryPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -683,9 +687,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -711,9 +717,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -748,9 +756,11 @@ where
                 crate::error::UploadLayerPartErrorKind::UploadNotFoundException(inner) => {
                     Error::UploadNotFoundException(inner)
                 }
-                crate::error::UploadLayerPartErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UploadLayerPartErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

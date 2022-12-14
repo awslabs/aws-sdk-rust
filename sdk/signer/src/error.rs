@@ -902,7 +902,7 @@ pub enum AddProfilePermissionErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddProfilePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -935,7 +935,9 @@ impl AddProfilePermissionError {
     /// Creates the `AddProfilePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddProfilePermissionErrorKind::Unhandled(err.into()),
+            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -944,7 +946,9 @@ impl AddProfilePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddProfilePermissionErrorKind::Unhandled(err.into()),
+            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1028,7 +1032,7 @@ impl std::error::Error for AddProfilePermissionError {
             AddProfilePermissionErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
             AddProfilePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             AddProfilePermissionErrorKind::ValidationException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1056,7 +1060,7 @@ pub enum CancelSigningProfileErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1086,7 +1090,9 @@ impl CancelSigningProfileError {
     /// Creates the `CancelSigningProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelSigningProfileErrorKind::Unhandled(err.into()),
+            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1095,7 +1101,9 @@ impl CancelSigningProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelSigningProfileErrorKind::Unhandled(err.into()),
+            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1155,7 +1163,7 @@ impl std::error::Error for CancelSigningProfileError {
             CancelSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             CancelSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CancelSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CancelSigningProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1183,7 +1191,7 @@ pub enum DescribeSigningJobErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSigningJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1213,7 +1221,7 @@ impl DescribeSigningJobError {
     /// Creates the `DescribeSigningJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSigningJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1222,7 +1230,7 @@ impl DescribeSigningJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSigningJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1282,7 +1290,7 @@ impl std::error::Error for DescribeSigningJobError {
             DescribeSigningJobErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             DescribeSigningJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeSigningJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeSigningJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSigningJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1310,7 +1318,7 @@ pub enum GetSigningPlatformErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSigningPlatformError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1340,7 +1348,7 @@ impl GetSigningPlatformError {
     /// Creates the `GetSigningPlatformError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSigningPlatformErrorKind::Unhandled(err.into()),
+            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1349,7 +1357,7 @@ impl GetSigningPlatformError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSigningPlatformErrorKind::Unhandled(err.into()),
+            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1409,7 +1417,7 @@ impl std::error::Error for GetSigningPlatformError {
             GetSigningPlatformErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             GetSigningPlatformErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSigningPlatformErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetSigningPlatformErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSigningPlatformErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1437,7 +1445,7 @@ pub enum GetSigningProfileErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1467,7 +1475,7 @@ impl GetSigningProfileError {
     /// Creates the `GetSigningProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSigningProfileErrorKind::Unhandled(err.into()),
+            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1476,7 +1484,7 @@ impl GetSigningProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSigningProfileErrorKind::Unhandled(err.into()),
+            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1536,7 +1544,7 @@ impl std::error::Error for GetSigningProfileError {
             GetSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             GetSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetSigningProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1566,7 +1574,7 @@ pub enum ListProfilePermissionsErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProfilePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1597,7 +1605,9 @@ impl ListProfilePermissionsError {
     /// Creates the `ListProfilePermissionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProfilePermissionsErrorKind::Unhandled(err.into()),
+            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1606,7 +1616,9 @@ impl ListProfilePermissionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProfilePermissionsErrorKind::Unhandled(err.into()),
+            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1674,7 +1686,7 @@ impl std::error::Error for ListProfilePermissionsError {
             ListProfilePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListProfilePermissionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListProfilePermissionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProfilePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1702,7 +1714,7 @@ pub enum ListSigningJobsErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1732,7 +1744,7 @@ impl ListSigningJobsError {
     /// Creates the `ListSigningJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSigningJobsErrorKind::Unhandled(err.into()),
+            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1741,7 +1753,7 @@ impl ListSigningJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSigningJobsErrorKind::Unhandled(err.into()),
+            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1798,7 +1810,7 @@ impl std::error::Error for ListSigningJobsError {
             ListSigningJobsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListSigningJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListSigningJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSigningJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSigningJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1826,7 +1838,7 @@ pub enum ListSigningPlatformsErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningPlatformsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1856,7 +1868,9 @@ impl ListSigningPlatformsError {
     /// Creates the `ListSigningPlatformsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSigningPlatformsErrorKind::Unhandled(err.into()),
+            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1865,7 +1879,9 @@ impl ListSigningPlatformsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSigningPlatformsErrorKind::Unhandled(err.into()),
+            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1925,7 +1941,7 @@ impl std::error::Error for ListSigningPlatformsError {
             ListSigningPlatformsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListSigningPlatformsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListSigningPlatformsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSigningPlatformsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSigningPlatformsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1951,7 +1967,7 @@ pub enum ListSigningProfilesErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1980,7 +1996,7 @@ impl ListSigningProfilesError {
     /// Creates the `ListSigningProfilesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSigningProfilesErrorKind::Unhandled(err.into()),
+            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1989,7 +2005,7 @@ impl ListSigningProfilesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSigningProfilesErrorKind::Unhandled(err.into()),
+            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2041,7 +2057,7 @@ impl std::error::Error for ListSigningProfilesError {
             ListSigningProfilesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListSigningProfilesErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListSigningProfilesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSigningProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSigningProfilesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2069,7 +2085,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2099,7 +2115,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2108,7 +2124,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2168,7 +2184,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2198,7 +2214,7 @@ pub enum PutSigningProfileErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2229,7 +2245,7 @@ impl PutSigningProfileError {
     /// Creates the `PutSigningProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutSigningProfileErrorKind::Unhandled(err.into()),
+            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2238,7 +2254,7 @@ impl PutSigningProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutSigningProfileErrorKind::Unhandled(err.into()),
+            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2306,7 +2322,7 @@ impl std::error::Error for PutSigningProfileError {
             PutSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutSigningProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2338,7 +2354,7 @@ pub enum RemoveProfilePermissionErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveProfilePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2372,7 +2388,9 @@ impl RemoveProfilePermissionError {
     /// Creates the `RemoveProfilePermissionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveProfilePermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2381,7 +2399,9 @@ impl RemoveProfilePermissionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveProfilePermissionErrorKind::Unhandled(err.into()),
+            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2457,7 +2477,7 @@ impl std::error::Error for RemoveProfilePermissionError {
             RemoveProfilePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RemoveProfilePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RemoveProfilePermissionErrorKind::ValidationException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2487,7 +2507,7 @@ pub enum RevokeSignatureErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeSignatureError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2518,7 +2538,7 @@ impl RevokeSignatureError {
     /// Creates the `RevokeSignatureError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeSignatureErrorKind::Unhandled(err.into()),
+            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2527,7 +2547,7 @@ impl RevokeSignatureError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeSignatureErrorKind::Unhandled(err.into()),
+            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2592,7 +2612,7 @@ impl std::error::Error for RevokeSignatureError {
             RevokeSignatureErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RevokeSignatureErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RevokeSignatureErrorKind::ValidationException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeSignatureErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2622,7 +2642,7 @@ pub enum RevokeSigningProfileErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2653,7 +2673,9 @@ impl RevokeSigningProfileError {
     /// Creates the `RevokeSigningProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RevokeSigningProfileErrorKind::Unhandled(err.into()),
+            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2662,7 +2684,9 @@ impl RevokeSigningProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RevokeSigningProfileErrorKind::Unhandled(err.into()),
+            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2730,7 +2754,7 @@ impl std::error::Error for RevokeSigningProfileError {
             RevokeSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RevokeSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RevokeSigningProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RevokeSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2764,7 +2788,7 @@ pub enum StartSigningJobErrorKind {
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSigningJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2796,7 +2820,7 @@ impl StartSigningJobError {
     /// Creates the `StartSigningJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSigningJobErrorKind::Unhandled(err.into()),
+            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2805,7 +2829,7 @@ impl StartSigningJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSigningJobErrorKind::Unhandled(err.into()),
+            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2875,7 +2899,7 @@ impl std::error::Error for StartSigningJobError {
             StartSigningJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartSigningJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartSigningJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSigningJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2903,7 +2927,7 @@ pub enum TagResourceErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2933,7 +2957,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2942,7 +2966,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2996,7 +3020,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3024,7 +3048,7 @@ pub enum UntagResourceErrorKind {
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3054,7 +3078,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3063,7 +3087,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3117,7 +3141,32 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

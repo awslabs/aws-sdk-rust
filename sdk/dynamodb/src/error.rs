@@ -2217,7 +2217,7 @@ pub enum BatchExecuteStatementErrorKind {
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2245,7 +2245,9 @@ impl BatchExecuteStatementError {
     /// Creates the `BatchExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2254,7 +2256,9 @@ impl BatchExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: BatchExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2298,7 +2302,7 @@ impl std::error::Error for BatchExecuteStatementError {
         match &self.kind {
             BatchExecuteStatementErrorKind::InternalServerError(_inner) => Some(_inner),
             BatchExecuteStatementErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2327,7 +2331,7 @@ pub enum BatchGetItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2358,7 +2362,7 @@ impl BatchGetItemError {
     /// Creates the `BatchGetItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetItemErrorKind::Unhandled(err.into()),
+            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2367,7 +2371,7 @@ impl BatchGetItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetItemErrorKind::Unhandled(err.into()),
+            kind: BatchGetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2429,7 +2433,7 @@ impl std::error::Error for BatchGetItemError {
             BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             BatchGetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             BatchGetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            BatchGetItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2462,7 +2466,7 @@ pub enum BatchWriteItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchWriteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2498,7 +2502,7 @@ impl BatchWriteItemError {
     /// Creates the `BatchWriteItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchWriteItemErrorKind::Unhandled(err.into()),
+            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2507,7 +2511,7 @@ impl BatchWriteItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchWriteItemErrorKind::Unhandled(err.into()),
+            kind: BatchWriteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2579,7 +2583,7 @@ impl std::error::Error for BatchWriteItemError {
             BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             BatchWriteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             BatchWriteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchWriteItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2615,7 +2619,7 @@ pub enum CreateBackupErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2648,7 +2652,7 @@ impl CreateBackupError {
     /// Creates the `CreateBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBackupErrorKind::Unhandled(err.into()),
+            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2657,7 +2661,7 @@ impl CreateBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBackupErrorKind::Unhandled(err.into()),
+            kind: CreateBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2726,7 +2730,7 @@ impl std::error::Error for CreateBackupError {
             CreateBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateBackupErrorKind::TableInUseException(_inner) => Some(_inner),
             CreateBackupErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            CreateBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2758,7 +2762,7 @@ pub enum CreateGlobalTableErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2789,7 +2793,7 @@ impl CreateGlobalTableError {
     /// Creates the `CreateGlobalTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGlobalTableErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2798,7 +2802,7 @@ impl CreateGlobalTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGlobalTableErrorKind::Unhandled(err.into()),
+            kind: CreateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2866,7 +2870,7 @@ impl std::error::Error for CreateGlobalTableError {
             CreateGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             CreateGlobalTableErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2896,7 +2900,7 @@ pub enum CreateTableErrorKind {
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2926,7 +2930,7 @@ impl CreateTableError {
     /// Creates the `CreateTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateTableErrorKind::Unhandled(err.into()),
+            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2935,7 +2939,7 @@ impl CreateTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateTableErrorKind::Unhandled(err.into()),
+            kind: CreateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2986,7 +2990,7 @@ impl std::error::Error for CreateTableError {
             CreateTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             CreateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            CreateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3018,7 +3022,7 @@ pub enum DeleteBackupErrorKind {
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3049,7 +3053,7 @@ impl DeleteBackupError {
     /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBackupErrorKind::Unhandled(err.into()),
+            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3058,7 +3062,7 @@ impl DeleteBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBackupErrorKind::Unhandled(err.into()),
+            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3117,7 +3121,7 @@ impl std::error::Error for DeleteBackupError {
             DeleteBackupErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DeleteBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3154,7 +3158,7 @@ pub enum DeleteItemErrorKind {
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3188,7 +3192,7 @@ impl DeleteItemError {
     /// Creates the `DeleteItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteItemErrorKind::Unhandled(err.into()),
+            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3197,7 +3201,7 @@ impl DeleteItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteItemErrorKind::Unhandled(err.into()),
+            kind: DeleteItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3280,7 +3284,7 @@ impl std::error::Error for DeleteItemError {
             DeleteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             DeleteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            DeleteItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3312,7 +3316,7 @@ pub enum DeleteTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3343,7 +3347,7 @@ impl DeleteTableError {
     /// Creates the `DeleteTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTableErrorKind::Unhandled(err.into()),
+            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3352,7 +3356,7 @@ impl DeleteTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTableErrorKind::Unhandled(err.into()),
+            kind: DeleteTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3411,7 +3415,7 @@ impl std::error::Error for DeleteTableError {
             DeleteTableErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3436,7 +3440,7 @@ pub enum DescribeBackupErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3465,7 +3469,7 @@ impl DescribeBackupError {
     /// Creates the `DescribeBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBackupErrorKind::Unhandled(err.into()),
+            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3474,7 +3478,7 @@ impl DescribeBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBackupErrorKind::Unhandled(err.into()),
+            kind: DescribeBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3523,7 +3527,7 @@ impl std::error::Error for DescribeBackupError {
             DescribeBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
             DescribeBackupErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3548,7 +3552,7 @@ pub enum DescribeContinuousBackupsErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3577,7 +3581,9 @@ impl DescribeContinuousBackupsError {
     /// Creates the `DescribeContinuousBackupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeContinuousBackupsErrorKind::Unhandled(err.into()),
+            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3586,7 +3592,9 @@ impl DescribeContinuousBackupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeContinuousBackupsErrorKind::Unhandled(err.into()),
+            kind: DescribeContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3638,7 +3646,7 @@ impl std::error::Error for DescribeContinuousBackupsError {
             DescribeContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3661,7 +3669,7 @@ pub enum DescribeContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3691,7 +3699,9 @@ impl DescribeContributorInsightsError {
     /// Creates the `DescribeContributorInsightsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3700,7 +3710,9 @@ impl DescribeContributorInsightsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: DescribeContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3744,7 +3756,7 @@ impl std::error::Error for DescribeContributorInsightsError {
         match &self.kind {
             DescribeContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3763,7 +3775,7 @@ pub struct DescribeEndpointsError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointsErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3789,7 +3801,7 @@ impl DescribeEndpointsError {
     /// Creates the `DescribeEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3798,7 +3810,7 @@ impl DescribeEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEndpointsErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3826,7 +3838,7 @@ impl DescribeEndpointsError {
 impl std::error::Error for DescribeEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3854,7 +3866,7 @@ pub enum DescribeExportErrorKind {
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3883,7 +3895,7 @@ impl DescribeExportError {
     /// Creates the `DescribeExportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeExportErrorKind::Unhandled(err.into()),
+            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3892,7 +3904,7 @@ impl DescribeExportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeExportErrorKind::Unhandled(err.into()),
+            kind: DescribeExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3941,7 +3953,7 @@ impl std::error::Error for DescribeExportError {
             DescribeExportErrorKind::ExportNotFoundException(_inner) => Some(_inner),
             DescribeExportErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeExportErrorKind::LimitExceededException(_inner) => Some(_inner),
-            DescribeExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeExportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3966,7 +3978,7 @@ pub enum DescribeGlobalTableErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3995,7 +4007,7 @@ impl DescribeGlobalTableError {
     /// Creates the `DescribeGlobalTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGlobalTableErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4004,7 +4016,7 @@ impl DescribeGlobalTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGlobalTableErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4056,7 +4068,7 @@ impl std::error::Error for DescribeGlobalTableError {
             DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => Some(_inner),
             DescribeGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4081,7 +4093,7 @@ pub enum DescribeGlobalTableSettingsErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4112,7 +4124,9 @@ impl DescribeGlobalTableSettingsError {
     /// Creates the `DescribeGlobalTableSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4121,7 +4135,9 @@ impl DescribeGlobalTableSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(err.into()),
+            kind: DescribeGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4175,7 +4191,7 @@ impl std::error::Error for DescribeGlobalTableSettingsError {
             }
             DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4196,7 +4212,7 @@ pub enum DescribeImportErrorKind {
     /// <p> The specified import was not found. </p>
     ImportNotFoundException(crate::error::ImportNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeImportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4223,7 +4239,7 @@ impl DescribeImportError {
     /// Creates the `DescribeImportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeImportErrorKind::Unhandled(err.into()),
+            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4232,7 +4248,7 @@ impl DescribeImportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeImportErrorKind::Unhandled(err.into()),
+            kind: DescribeImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4268,7 +4284,7 @@ impl std::error::Error for DescribeImportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeImportErrorKind::ImportNotFoundException(_inner) => Some(_inner),
-            DescribeImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeImportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4293,7 +4309,7 @@ pub enum DescribeKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4331,7 +4347,9 @@ impl DescribeKinesisStreamingDestinationError {
     /// Creates the `DescribeKinesisStreamingDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4340,7 +4358,9 @@ impl DescribeKinesisStreamingDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: DescribeKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4398,9 +4418,7 @@ impl std::error::Error for DescribeKinesisStreamingDestinationError {
             DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4423,7 +4441,7 @@ pub enum DescribeLimitsErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4451,7 +4469,7 @@ impl DescribeLimitsError {
     /// Creates the `DescribeLimitsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4460,7 +4478,7 @@ impl DescribeLimitsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLimitsErrorKind::Unhandled(err.into()),
+            kind: DescribeLimitsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4501,7 +4519,7 @@ impl std::error::Error for DescribeLimitsError {
         match &self.kind {
             DescribeLimitsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeLimitsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            DescribeLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLimitsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4526,7 +4544,7 @@ pub enum DescribeTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4555,7 +4573,7 @@ impl DescribeTableError {
     /// Creates the `DescribeTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTableErrorKind::Unhandled(err.into()),
+            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4564,7 +4582,7 @@ impl DescribeTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTableErrorKind::Unhandled(err.into()),
+            kind: DescribeTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4613,7 +4631,7 @@ impl std::error::Error for DescribeTableError {
             DescribeTableErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4636,7 +4654,7 @@ pub enum DescribeTableReplicaAutoScalingErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4669,7 +4687,9 @@ impl DescribeTableReplicaAutoScalingError {
     /// Creates the `DescribeTableReplicaAutoScalingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(err.into()),
+            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4678,7 +4698,9 @@ impl DescribeTableReplicaAutoScalingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(err.into()),
+            kind: DescribeTableReplicaAutoScalingErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4724,7 +4746,7 @@ impl std::error::Error for DescribeTableReplicaAutoScalingError {
             DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4749,7 +4771,7 @@ pub enum DescribeTimeToLiveErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4778,7 +4800,7 @@ impl DescribeTimeToLiveError {
     /// Creates the `DescribeTimeToLiveError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTimeToLiveErrorKind::Unhandled(err.into()),
+            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4787,7 +4809,7 @@ impl DescribeTimeToLiveError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTimeToLiveErrorKind::Unhandled(err.into()),
+            kind: DescribeTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4839,7 +4861,7 @@ impl std::error::Error for DescribeTimeToLiveError {
             DescribeTimeToLiveErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4871,7 +4893,7 @@ pub enum DisableKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4915,7 +4937,9 @@ impl DisableKinesisStreamingDestinationError {
     /// Creates the `DisableKinesisStreamingDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4924,7 +4948,9 @@ impl DisableKinesisStreamingDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: DisableKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5002,7 +5028,7 @@ impl std::error::Error for DisableKinesisStreamingDestinationError {
             DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5034,7 +5060,7 @@ pub enum EnableKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKinesisStreamingDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5078,7 +5104,9 @@ impl EnableKinesisStreamingDestinationError {
     /// Creates the `EnableKinesisStreamingDestinationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5087,7 +5115,9 @@ impl EnableKinesisStreamingDestinationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(err.into()),
+            kind: EnableKinesisStreamingDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5163,7 +5193,7 @@ impl std::error::Error for EnableKinesisStreamingDestinationError {
             EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5200,7 +5230,7 @@ pub enum ExecuteStatementErrorKind {
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5238,7 +5268,7 @@ impl ExecuteStatementError {
     /// Creates the `ExecuteStatementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5247,7 +5277,7 @@ impl ExecuteStatementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteStatementErrorKind::Unhandled(err.into()),
+            kind: ExecuteStatementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5343,7 +5373,7 @@ impl std::error::Error for ExecuteStatementError {
             ExecuteStatementErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             ExecuteStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5460,7 +5490,7 @@ pub enum ExecuteTransactionErrorKind {
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExecuteTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5497,7 +5527,7 @@ impl ExecuteTransactionError {
     /// Creates the `ExecuteTransactionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExecuteTransactionErrorKind::Unhandled(err.into()),
+            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5506,7 +5536,7 @@ impl ExecuteTransactionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExecuteTransactionErrorKind::Unhandled(err.into()),
+            kind: ExecuteTransactionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5594,7 +5624,7 @@ impl std::error::Error for ExecuteTransactionError {
             ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ExecuteTransactionErrorKind::TransactionCanceledException(_inner) => Some(_inner),
             ExecuteTransactionErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExecuteTransactionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5628,7 +5658,7 @@ pub enum ExportTableToPointInTimeErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5662,7 +5692,9 @@ impl ExportTableToPointInTimeError {
     /// Creates the `ExportTableToPointInTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportTableToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5671,7 +5703,9 @@ impl ExportTableToPointInTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportTableToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: ExportTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5749,7 +5783,7 @@ impl std::error::Error for ExportTableToPointInTimeError {
                 Some(_inner)
             }
             ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5778,7 +5812,7 @@ pub enum GetItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5809,7 +5843,7 @@ impl GetItemError {
     /// Creates the `GetItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetItemErrorKind::Unhandled(err.into()),
+            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5818,7 +5852,7 @@ impl GetItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetItemErrorKind::Unhandled(err.into()),
+            kind: GetItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5874,7 +5908,7 @@ impl std::error::Error for GetItemError {
             GetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             GetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             GetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5902,7 +5936,7 @@ pub enum ImportTableErrorKind {
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5931,7 +5965,7 @@ impl ImportTableError {
     /// Creates the `ImportTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportTableErrorKind::Unhandled(err.into()),
+            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5940,7 +5974,7 @@ impl ImportTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportTableErrorKind::Unhandled(err.into()),
+            kind: ImportTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5983,7 +6017,7 @@ impl std::error::Error for ImportTableError {
             ImportTableErrorKind::ImportConflictException(_inner) => Some(_inner),
             ImportTableErrorKind::LimitExceededException(_inner) => Some(_inner),
             ImportTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            ImportTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6006,7 +6040,7 @@ pub enum ListBackupsErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6034,7 +6068,7 @@ impl ListBackupsError {
     /// Creates the `ListBackupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBackupsErrorKind::Unhandled(err.into()),
+            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6043,7 +6077,7 @@ impl ListBackupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBackupsErrorKind::Unhandled(err.into()),
+            kind: ListBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6084,7 +6118,7 @@ impl std::error::Error for ListBackupsError {
         match &self.kind {
             ListBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBackupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6107,7 +6141,7 @@ pub enum ListContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6135,7 +6169,9 @@ impl ListContributorInsightsError {
     /// Creates the `ListContributorInsightsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6144,7 +6180,9 @@ impl ListContributorInsightsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: ListContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6188,7 +6226,7 @@ impl std::error::Error for ListContributorInsightsError {
         match &self.kind {
             ListContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6214,7 +6252,7 @@ pub enum ListExportsErrorKind {
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6242,7 +6280,7 @@ impl ListExportsError {
     /// Creates the `ListExportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListExportsErrorKind::Unhandled(err.into()),
+            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6251,7 +6289,7 @@ impl ListExportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListExportsErrorKind::Unhandled(err.into()),
+            kind: ListExportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6289,7 +6327,7 @@ impl std::error::Error for ListExportsError {
         match &self.kind {
             ListExportsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListExportsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ListExportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListExportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6312,7 +6350,7 @@ pub enum ListGlobalTablesErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGlobalTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6340,7 +6378,7 @@ impl ListGlobalTablesError {
     /// Creates the `ListGlobalTablesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGlobalTablesErrorKind::Unhandled(err.into()),
+            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6349,7 +6387,7 @@ impl ListGlobalTablesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGlobalTablesErrorKind::Unhandled(err.into()),
+            kind: ListGlobalTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6393,7 +6431,7 @@ impl std::error::Error for ListGlobalTablesError {
         match &self.kind {
             ListGlobalTablesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListGlobalTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGlobalTablesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6417,7 +6455,7 @@ pub enum ListImportsErrorKind {
     /// <p>There is a soft account quota of 2,500 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6444,7 +6482,7 @@ impl ListImportsError {
     /// Creates the `ListImportsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImportsErrorKind::Unhandled(err.into()),
+            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6453,7 +6491,7 @@ impl ListImportsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImportsErrorKind::Unhandled(err.into()),
+            kind: ListImportsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6486,7 +6524,7 @@ impl std::error::Error for ListImportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListImportsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ListImportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImportsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6509,7 +6547,7 @@ pub enum ListTablesErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6537,7 +6575,7 @@ impl ListTablesError {
     /// Creates the `ListTablesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6546,7 +6584,7 @@ impl ListTablesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTablesErrorKind::Unhandled(err.into()),
+            kind: ListTablesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6584,7 +6622,7 @@ impl std::error::Error for ListTablesError {
         match &self.kind {
             ListTablesErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
-            ListTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTablesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6609,7 +6647,7 @@ pub enum ListTagsOfResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsOfResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6638,7 +6676,7 @@ impl ListTagsOfResourceError {
     /// Creates the `ListTagsOfResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsOfResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6647,7 +6685,7 @@ impl ListTagsOfResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsOfResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsOfResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6699,7 +6737,7 @@ impl std::error::Error for ListTagsOfResourceError {
             ListTagsOfResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsOfResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6736,7 +6774,7 @@ pub enum PutItemErrorKind {
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6770,7 +6808,7 @@ impl PutItemError {
     /// Creates the `PutItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutItemErrorKind::Unhandled(err.into()),
+            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6779,7 +6817,7 @@ impl PutItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutItemErrorKind::Unhandled(err.into()),
+            kind: PutItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6859,7 +6897,7 @@ impl std::error::Error for PutItemError {
             PutItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             PutItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            PutItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6888,7 +6926,7 @@ pub enum QueryErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for QueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6919,7 +6957,7 @@ impl QueryError {
     /// Creates the `QueryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: QueryErrorKind::Unhandled(err.into()),
+            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6928,7 +6966,7 @@ impl QueryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: QueryErrorKind::Unhandled(err.into()),
+            kind: QueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6984,7 +7022,7 @@ impl std::error::Error for QueryError {
             QueryErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             QueryErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             QueryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            QueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            QueryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7020,7 +7058,7 @@ pub enum RestoreTableFromBackupErrorKind {
     /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreTableFromBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7053,7 +7091,9 @@ impl RestoreTableFromBackupError {
     /// Creates the `RestoreTableFromBackupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreTableFromBackupErrorKind::Unhandled(err.into()),
+            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7062,7 +7102,9 @@ impl RestoreTableFromBackupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreTableFromBackupErrorKind::Unhandled(err.into()),
+            kind: RestoreTableFromBackupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7146,7 +7188,7 @@ impl std::error::Error for RestoreTableFromBackupError {
             RestoreTableFromBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
             RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
             RestoreTableFromBackupErrorKind::TableInUseException(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreTableFromBackupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7184,7 +7226,7 @@ pub enum RestoreTableToPointInTimeErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7224,7 +7266,9 @@ impl RestoreTableToPointInTimeError {
     /// Creates the `RestoreTableToPointInTimeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RestoreTableToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7233,7 +7277,9 @@ impl RestoreTableToPointInTimeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RestoreTableToPointInTimeErrorKind::Unhandled(err.into()),
+            kind: RestoreTableToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7327,7 +7373,7 @@ impl std::error::Error for RestoreTableToPointInTimeError {
             RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
             RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) => Some(_inner),
             RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7356,7 +7402,7 @@ pub enum ScanErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ScanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7387,7 +7433,7 @@ impl ScanError {
     /// Creates the `ScanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ScanErrorKind::Unhandled(err.into()),
+            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7396,7 +7442,7 @@ impl ScanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ScanErrorKind::Unhandled(err.into()),
+            kind: ScanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7452,7 +7498,7 @@ impl std::error::Error for ScanError {
             ScanErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             ScanErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             ScanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ScanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ScanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7484,7 +7530,7 @@ pub enum TagResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7515,7 +7561,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7524,7 +7570,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7583,7 +7629,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7698,7 +7744,7 @@ pub enum TransactGetItemsErrorKind {
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransactGetItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7732,7 +7778,7 @@ impl TransactGetItemsError {
     /// Creates the `TransactGetItemsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TransactGetItemsErrorKind::Unhandled(err.into()),
+            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7741,7 +7787,7 @@ impl TransactGetItemsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TransactGetItemsErrorKind::Unhandled(err.into()),
+            kind: TransactGetItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7819,7 +7865,7 @@ impl std::error::Error for TransactGetItemsError {
             TransactGetItemsErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             TransactGetItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TransactGetItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TransactGetItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7938,7 +7984,7 @@ pub enum TransactWriteItemsErrorKind {
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TransactWriteItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7976,7 +8022,7 @@ impl TransactWriteItemsError {
     /// Creates the `TransactWriteItemsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TransactWriteItemsErrorKind::Unhandled(err.into()),
+            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7985,7 +8031,7 @@ impl TransactWriteItemsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TransactWriteItemsErrorKind::Unhandled(err.into()),
+            kind: TransactWriteItemsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8081,7 +8127,7 @@ impl std::error::Error for TransactWriteItemsError {
             TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TransactWriteItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
             TransactWriteItemsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TransactWriteItemsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8113,7 +8159,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8144,7 +8190,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8153,7 +8199,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8218,7 +8264,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8245,7 +8291,7 @@ pub enum UpdateContinuousBackupsErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8277,7 +8323,9 @@ impl UpdateContinuousBackupsError {
     /// Creates the `UpdateContinuousBackupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateContinuousBackupsErrorKind::Unhandled(err.into()),
+            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8286,7 +8334,9 @@ impl UpdateContinuousBackupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateContinuousBackupsErrorKind::Unhandled(err.into()),
+            kind: UpdateContinuousBackupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8348,7 +8398,7 @@ impl std::error::Error for UpdateContinuousBackupsError {
             UpdateContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8371,7 +8421,7 @@ pub enum UpdateContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8399,7 +8449,9 @@ impl UpdateContributorInsightsError {
     /// Creates the `UpdateContributorInsightsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8408,7 +8460,9 @@ impl UpdateContributorInsightsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateContributorInsightsErrorKind::Unhandled(err.into()),
+            kind: UpdateContributorInsightsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8452,7 +8506,7 @@ impl std::error::Error for UpdateContributorInsightsError {
         match &self.kind {
             UpdateContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
             UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8483,7 +8537,7 @@ pub enum UpdateGlobalTableErrorKind {
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8515,7 +8569,7 @@ impl UpdateGlobalTableError {
     /// Creates the `UpdateGlobalTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGlobalTableErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8524,7 +8578,7 @@ impl UpdateGlobalTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGlobalTableErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8600,7 +8654,7 @@ impl std::error::Error for UpdateGlobalTableError {
             UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) => Some(_inner),
             UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
             UpdateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8636,7 +8690,7 @@ pub enum UpdateGlobalTableSettingsErrorKind {
     /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8671,7 +8725,9 @@ impl UpdateGlobalTableSettingsError {
     /// Creates the `UpdateGlobalTableSettingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8680,7 +8736,9 @@ impl UpdateGlobalTableSettingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(err.into()),
+            kind: UpdateGlobalTableSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8766,7 +8824,7 @@ impl std::error::Error for UpdateGlobalTableSettingsError {
             UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
             UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8803,7 +8861,7 @@ pub enum UpdateItemErrorKind {
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8837,7 +8895,7 @@ impl UpdateItemError {
     /// Creates the `UpdateItemError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateItemErrorKind::Unhandled(err.into()),
+            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8846,7 +8904,7 @@ impl UpdateItemError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateItemErrorKind::Unhandled(err.into()),
+            kind: UpdateItemErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8929,7 +8987,7 @@ impl std::error::Error for UpdateItemError {
             UpdateItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
             UpdateItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
-            UpdateItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateItemErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8961,7 +9019,7 @@ pub enum UpdateTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8992,7 +9050,7 @@ impl UpdateTableError {
     /// Creates the `UpdateTableError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTableErrorKind::Unhandled(err.into()),
+            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9001,7 +9059,7 @@ impl UpdateTableError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTableErrorKind::Unhandled(err.into()),
+            kind: UpdateTableErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9060,7 +9118,7 @@ impl std::error::Error for UpdateTableError {
             UpdateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTableErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9090,7 +9148,7 @@ pub enum UpdateTableReplicaAutoScalingErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9125,7 +9183,9 @@ impl UpdateTableReplicaAutoScalingError {
     /// Creates the `UpdateTableReplicaAutoScalingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(err.into()),
+            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9134,7 +9194,9 @@ impl UpdateTableReplicaAutoScalingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(err.into()),
+            kind: UpdateTableReplicaAutoScalingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9196,7 +9258,7 @@ impl std::error::Error for UpdateTableReplicaAutoScalingError {
             UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9228,7 +9290,7 @@ pub enum UpdateTimeToLiveErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9259,7 +9321,7 @@ impl UpdateTimeToLiveError {
     /// Creates the `UpdateTimeToLiveError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateTimeToLiveErrorKind::Unhandled(err.into()),
+            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9268,7 +9330,7 @@ impl UpdateTimeToLiveError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateTimeToLiveErrorKind::Unhandled(err.into()),
+            kind: UpdateTimeToLiveErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9336,7 +9398,32 @@ impl std::error::Error for UpdateTimeToLiveError {
             UpdateTimeToLiveErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

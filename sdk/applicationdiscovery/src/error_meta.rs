@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -63,9 +63,9 @@ where
                 crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::AssociateConfigurationItemsToApplicationErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::AssociateConfigurationItemsToApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateConfigurationItemsToApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -95,10 +95,10 @@ where
                     inner,
                 ) => Error::ServerInternalErrorException(inner),
                 crate::error::BatchDeleteImportDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -127,10 +127,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -159,9 +159,11 @@ where
                 crate::error::CreateTagsErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::CreateTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -190,10 +192,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::DeleteApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -222,9 +224,11 @@ where
                 crate::error::DeleteTagsErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::DeleteTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -250,9 +254,11 @@ where
                 crate::error::DescribeAgentsErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::DescribeAgentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAgentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -282,10 +288,10 @@ where
                     inner,
                 ) => Error::ServerInternalErrorException(inner),
                 crate::error::DescribeConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -306,9 +312,9 @@ where
                 crate::error::DescribeContinuousExportsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::DescribeContinuousExportsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeContinuousExportsErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::DescribeContinuousExportsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeContinuousExportsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -328,9 +334,9 @@ where
                 crate::error::DescribeExportConfigurationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DescribeExportConfigurationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeExportConfigurationsErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::DescribeExportConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeExportConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,10 +365,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::DescribeExportTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -391,10 +397,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::DescribeImportTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -423,9 +429,11 @@ where
                 crate::error::DescribeTagsErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::DescribeTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -452,9 +460,9 @@ where
                 crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateConfigurationItemsFromApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -487,10 +495,10 @@ where
                     inner,
                 ) => Error::ServerInternalErrorException(inner),
                 crate::error::ExportConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -519,10 +527,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::GetDiscoverySummaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -554,10 +562,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::ListConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -586,10 +594,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::ListServerNeighborsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -628,10 +636,10 @@ where
                     inner,
                 ) => Error::ServerInternalErrorException(inner),
                 crate::error::StartContinuousExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -650,9 +658,9 @@ where
                 crate::error::StartDataCollectionByAgentIdsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::StartDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::StartDataCollectionByAgentIdsErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::StartDataCollectionByAgentIdsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDataCollectionByAgentIdsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -681,9 +689,11 @@ where
                 crate::error::StartExportTaskErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::StartExportTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartExportTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -712,9 +722,11 @@ where
                 crate::error::StartImportTaskErrorKind::ServerInternalErrorException(inner) => {
                     Error::ServerInternalErrorException(inner)
                 }
-                crate::error::StartImportTaskErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartImportTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -753,10 +765,10 @@ where
                     inner,
                 ) => Error::ServerInternalErrorException(inner),
                 crate::error::StopContinuousExportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -775,9 +787,9 @@ where
                 crate::error::StopDataCollectionByAgentIdsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::StopDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::StopDataCollectionByAgentIdsErrorKind::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
-                crate::error::StopDataCollectionByAgentIdsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopDataCollectionByAgentIdsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -806,10 +818,10 @@ where
                     Error::ServerInternalErrorException(inner)
                 }
                 crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

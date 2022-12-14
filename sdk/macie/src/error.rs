@@ -414,7 +414,7 @@ pub enum AssociateMemberAccountErrorKind {
     /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateMemberAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -443,7 +443,9 @@ impl AssociateMemberAccountError {
     /// Creates the `AssociateMemberAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateMemberAccountErrorKind::Unhandled(err.into()),
+            kind: AssociateMemberAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -452,7 +454,9 @@ impl AssociateMemberAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateMemberAccountErrorKind::Unhandled(err.into()),
+            kind: AssociateMemberAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -504,7 +508,7 @@ impl std::error::Error for AssociateMemberAccountError {
             AssociateMemberAccountErrorKind::InternalException(_inner) => Some(_inner),
             AssociateMemberAccountErrorKind::InvalidInputException(_inner) => Some(_inner),
             AssociateMemberAccountErrorKind::LimitExceededException(_inner) => Some(_inner),
-            AssociateMemberAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateMemberAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -531,7 +535,7 @@ pub enum AssociateS3ResourcesErrorKind {
     /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateS3ResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -561,7 +565,9 @@ impl AssociateS3ResourcesError {
     /// Creates the `AssociateS3ResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: AssociateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -570,7 +576,9 @@ impl AssociateS3ResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: AssociateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -630,7 +638,7 @@ impl std::error::Error for AssociateS3ResourcesError {
             AssociateS3ResourcesErrorKind::InternalException(_inner) => Some(_inner),
             AssociateS3ResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
             AssociateS3ResourcesErrorKind::LimitExceededException(_inner) => Some(_inner),
-            AssociateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -653,7 +661,7 @@ pub enum DisassociateMemberAccountErrorKind {
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateMemberAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -681,7 +689,9 @@ impl DisassociateMemberAccountError {
     /// Creates the `DisassociateMemberAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateMemberAccountErrorKind::Unhandled(err.into()),
+            kind: DisassociateMemberAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -690,7 +700,9 @@ impl DisassociateMemberAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateMemberAccountErrorKind::Unhandled(err.into()),
+            kind: DisassociateMemberAccountErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -734,7 +746,7 @@ impl std::error::Error for DisassociateMemberAccountError {
         match &self.kind {
             DisassociateMemberAccountErrorKind::InternalException(_inner) => Some(_inner),
             DisassociateMemberAccountErrorKind::InvalidInputException(_inner) => Some(_inner),
-            DisassociateMemberAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateMemberAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -759,7 +771,7 @@ pub enum DisassociateS3ResourcesErrorKind {
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateS3ResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -788,7 +800,9 @@ impl DisassociateS3ResourcesError {
     /// Creates the `DisassociateS3ResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: DisassociateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -797,7 +811,9 @@ impl DisassociateS3ResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: DisassociateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -849,7 +865,7 @@ impl std::error::Error for DisassociateS3ResourcesError {
             DisassociateS3ResourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DisassociateS3ResourcesErrorKind::InternalException(_inner) => Some(_inner),
             DisassociateS3ResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
-            DisassociateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -872,7 +888,7 @@ pub enum ListMemberAccountsErrorKind {
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMemberAccountsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -900,7 +916,7 @@ impl ListMemberAccountsError {
     /// Creates the `ListMemberAccountsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMemberAccountsErrorKind::Unhandled(err.into()),
+            kind: ListMemberAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -909,7 +925,7 @@ impl ListMemberAccountsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMemberAccountsErrorKind::Unhandled(err.into()),
+            kind: ListMemberAccountsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -953,7 +969,7 @@ impl std::error::Error for ListMemberAccountsError {
         match &self.kind {
             ListMemberAccountsErrorKind::InternalException(_inner) => Some(_inner),
             ListMemberAccountsErrorKind::InvalidInputException(_inner) => Some(_inner),
-            ListMemberAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMemberAccountsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -978,7 +994,7 @@ pub enum ListS3ResourcesErrorKind {
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListS3ResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1007,7 +1023,7 @@ impl ListS3ResourcesError {
     /// Creates the `ListS3ResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: ListS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1016,7 +1032,7 @@ impl ListS3ResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: ListS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1065,7 +1081,7 @@ impl std::error::Error for ListS3ResourcesError {
             ListS3ResourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListS3ResourcesErrorKind::InternalException(_inner) => Some(_inner),
             ListS3ResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
-            ListS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1090,7 +1106,7 @@ pub enum UpdateS3ResourcesErrorKind {
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateS3ResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1119,7 +1135,7 @@ impl UpdateS3ResourcesError {
     /// Creates the `UpdateS3ResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: UpdateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1128,7 +1144,7 @@ impl UpdateS3ResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateS3ResourcesErrorKind::Unhandled(err.into()),
+            kind: UpdateS3ResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1177,7 +1193,32 @@ impl std::error::Error for UpdateS3ResourcesError {
             UpdateS3ResourcesErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateS3ResourcesErrorKind::InternalException(_inner) => Some(_inner),
             UpdateS3ResourcesErrorKind::InvalidInputException(_inner) => Some(_inner),
-            UpdateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateS3ResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

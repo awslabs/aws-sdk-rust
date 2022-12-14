@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>There was an error validating your request.</p>
     ValidationError(crate::error::ValidationError),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,9 +47,11 @@ where
                 crate::error::BatchGetRecordErrorKind::ValidationError(inner) => {
                     Error::ValidationError(inner)
                 }
-                crate::error::BatchGetRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchGetRecordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -72,9 +74,11 @@ where
                 crate::error::DeleteRecordErrorKind::ValidationError(inner) => {
                     Error::ValidationError(inner)
                 }
-                crate::error::DeleteRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRecordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -100,9 +104,11 @@ where
                 crate::error::GetRecordErrorKind::ValidationError(inner) => {
                     Error::ValidationError(inner)
                 }
-                crate::error::GetRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -125,9 +131,11 @@ where
                 crate::error::PutRecordErrorKind::ValidationError(inner) => {
                     Error::ValidationError(inner)
                 }
-                crate::error::PutRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRecordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

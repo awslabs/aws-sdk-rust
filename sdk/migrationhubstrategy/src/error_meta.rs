@@ -20,7 +20,7 @@ pub enum Error {
     /// <p> The request body isn't valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54,9 +54,9 @@ where
                 crate::error::GetApplicationComponentDetailsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetApplicationComponentDetailsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetApplicationComponentDetailsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetApplicationComponentDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetApplicationComponentDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -77,9 +77,9 @@ where
                 crate::error::GetApplicationComponentStrategiesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetApplicationComponentStrategiesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetApplicationComponentStrategiesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetApplicationComponentStrategiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetApplicationComponentStrategiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -102,9 +102,11 @@ where
                 crate::error::GetAssessmentErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::GetAssessmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAssessmentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -133,10 +135,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetImportFileTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -163,10 +165,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetPortfolioPreferencesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -189,10 +191,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetPortfolioSummaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -215,9 +217,9 @@ where
                 crate::error::GetRecommendationReportDetailsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetRecommendationReportDetailsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetRecommendationReportDetailsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::GetRecommendationReportDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecommendationReportDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -246,10 +248,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetServerDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -278,10 +280,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::GetServerStrategiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -299,9 +301,9 @@ where
                 crate::error::ListApplicationComponentsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ListApplicationComponentsErrorKind::ServiceLinkedRoleLockClientException(inner) => Error::ServiceLinkedRoleLockClientException(inner),
                 crate::error::ListApplicationComponentsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListApplicationComponentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListApplicationComponentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -324,9 +326,11 @@ where
                 crate::error::ListCollectorsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListCollectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCollectorsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -352,10 +356,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListImportFileTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -378,9 +382,11 @@ where
                 crate::error::ListServersErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::ListServersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListServersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -410,10 +416,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::PutPortfolioPreferencesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -436,9 +442,11 @@ where
                 crate::error::StartAssessmentErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::StartAssessmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartAssessmentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,10 +475,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartImportFileTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -497,9 +505,9 @@ where
                 crate::error::StartRecommendationReportGenerationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::StartRecommendationReportGenerationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartRecommendationReportGenerationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::StartRecommendationReportGenerationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartRecommendationReportGenerationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,9 +530,11 @@ where
                 crate::error::StopAssessmentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::StopAssessmentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopAssessmentErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -546,9 +556,9 @@ where
                 crate::error::UpdateApplicationComponentConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateApplicationComponentConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateApplicationComponentConfigErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateApplicationComponentConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateApplicationComponentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -574,10 +584,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateServerConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

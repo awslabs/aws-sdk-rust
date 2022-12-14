@@ -24,7 +24,7 @@ pub enum Error {
     /// <p>The request failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -68,10 +68,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateBackupPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -101,10 +101,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::CreateBackupSelectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -133,10 +133,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateBackupVaultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -162,9 +162,11 @@ where
                 crate::error::CreateFrameworkErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::CreateFrameworkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFrameworkErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -193,10 +195,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateReportPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -225,10 +227,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteBackupPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -255,10 +257,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteBackupSelectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -287,10 +289,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteBackupVaultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -308,9 +310,9 @@ where
                 crate::error::DeleteBackupVaultAccessPolicyErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::DeleteBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteBackupVaultAccessPolicyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::DeleteBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -334,9 +336,9 @@ where
                 crate::error::DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::DeleteBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -358,9 +360,9 @@ where
                 crate::error::DeleteBackupVaultNotificationsErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::DeleteBackupVaultNotificationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteBackupVaultNotificationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::DeleteBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -386,9 +388,11 @@ where
                 crate::error::DeleteFrameworkErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DeleteFrameworkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFrameworkErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -420,10 +424,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteRecoveryPointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -452,10 +456,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteReportPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -484,10 +488,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeBackupJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -513,10 +517,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeBackupVaultErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -539,9 +543,11 @@ where
                 crate::error::DescribeCopyJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DescribeCopyJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCopyJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -567,10 +573,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeFrameworkErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -591,10 +597,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeGlobalSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -612,9 +618,9 @@ where
                 crate::error::DescribeProtectedResourceErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::DescribeProtectedResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeProtectedResourceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::DescribeProtectedResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeProtectedResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -641,10 +647,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeRecoveryPointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -662,10 +668,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeRegionSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -688,10 +694,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeReportJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -717,10 +723,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeReportPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -749,10 +755,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeRestoreJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -772,9 +778,9 @@ where
                 crate::error::DisassociateRecoveryPointErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::DisassociateRecoveryPointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateRecoveryPointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::DisassociateRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -801,10 +807,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::ExportBackupPlanTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -827,9 +833,11 @@ where
                 crate::error::GetBackupPlanErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::GetBackupPlanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBackupPlanErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -859,10 +867,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::GetBackupPlanFromJSONErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -880,9 +888,9 @@ where
                 crate::error::GetBackupPlanFromTemplateErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::GetBackupPlanFromTemplateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetBackupPlanFromTemplateErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::GetBackupPlanFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBackupPlanFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -908,10 +916,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetBackupSelectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -929,9 +937,9 @@ where
                 crate::error::GetBackupVaultAccessPolicyErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::GetBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetBackupVaultAccessPolicyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::GetBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -949,9 +957,9 @@ where
                 crate::error::GetBackupVaultNotificationsErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::GetBackupVaultNotificationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetBackupVaultNotificationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::GetBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -973,9 +981,9 @@ where
                 crate::error::GetRecoveryPointRestoreMetadataErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::GetRecoveryPointRestoreMetadataErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetRecoveryPointRestoreMetadataErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::GetRecoveryPointRestoreMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecoveryPointRestoreMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -993,10 +1001,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::GetSupportedResourceTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1013,9 +1021,11 @@ where
                 crate::error::ListBackupJobsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListBackupJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBackupJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1038,9 +1048,11 @@ where
                 crate::error::ListBackupPlansErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListBackupPlansErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBackupPlansErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1067,10 +1079,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::ListBackupPlanTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1097,10 +1109,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::ListBackupPlanVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1127,10 +1139,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListBackupSelectionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1156,10 +1168,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListBackupVaultsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1176,9 +1188,11 @@ where
                 crate::error::ListCopyJobsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListCopyJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCopyJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1195,9 +1209,11 @@ where
                 crate::error::ListFrameworksErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListFrameworksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFrameworksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1218,10 +1234,10 @@ where
                     inner,
                 ) => Error::ServiceUnavailableException(inner),
                 crate::error::ListProtectedResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1243,9 +1259,9 @@ where
                 crate::error::ListRecoveryPointsByBackupVaultErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::ListRecoveryPointsByBackupVaultErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListRecoveryPointsByBackupVaultErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::ListRecoveryPointsByBackupVaultErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRecoveryPointsByBackupVaultErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1263,9 +1279,9 @@ where
                 crate::error::ListRecoveryPointsByResourceErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::ListRecoveryPointsByResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListRecoveryPointsByResourceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::ListRecoveryPointsByResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRecoveryPointsByResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1282,9 +1298,11 @@ where
                 crate::error::ListReportJobsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListReportJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListReportJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1301,9 +1319,11 @@ where
                 crate::error::ListReportPlansErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListReportPlansErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListReportPlansErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1326,9 +1346,11 @@ where
                 crate::error::ListRestoreJobsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListRestoreJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRestoreJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1351,9 +1373,11 @@ where
                 crate::error::ListTagsErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1371,9 +1395,9 @@ where
                 crate::error::PutBackupVaultAccessPolicyErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::PutBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutBackupVaultAccessPolicyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::PutBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1396,9 +1420,9 @@ where
                 crate::error::PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::PutBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1416,9 +1440,9 @@ where
                 crate::error::PutBackupVaultNotificationsErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::PutBackupVaultNotificationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutBackupVaultNotificationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::PutBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutBackupVaultNotificationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1447,9 +1471,11 @@ where
                 crate::error::StartBackupJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::StartBackupJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartBackupJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1478,9 +1504,11 @@ where
                 crate::error::StartCopyJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::StartCopyJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartCopyJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1503,9 +1531,11 @@ where
                 crate::error::StartReportJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::StartReportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartReportJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1528,9 +1558,11 @@ where
                 crate::error::StartRestoreJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::StartRestoreJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartRestoreJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1556,9 +1588,11 @@ where
                 crate::error::StopBackupJobErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::StopBackupJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopBackupJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1584,9 +1618,11 @@ where
                 crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1609,9 +1645,11 @@ where
                 crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1637,10 +1675,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::UpdateBackupPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1672,9 +1710,11 @@ where
                 crate::error::UpdateFrameworkErrorKind::ServiceUnavailableException(inner) => {
                     Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UpdateFrameworkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFrameworkErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1701,10 +1741,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::UpdateGlobalSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1723,9 +1763,9 @@ where
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateRecoveryPointLifecycleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::UpdateRecoveryPointLifecycleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRecoveryPointLifecycleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1749,10 +1789,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::UpdateRegionSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1781,10 +1821,10 @@ where
                     Error::ServiceUnavailableException(inner)
                 }
                 crate::error::UpdateReportPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

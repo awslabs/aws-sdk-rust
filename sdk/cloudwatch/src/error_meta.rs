@@ -30,7 +30,7 @@ pub enum Error {
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,11 @@ where
                 crate::error::DeleteAlarmsErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
                 }
-                crate::error::DeleteAlarmsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAlarmsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -83,9 +85,9 @@ where
                 crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::DeleteAnomalyDetectorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAnomalyDetectorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -108,10 +110,10 @@ where
                     Error::InvalidParameterValueException(inner)
                 }
                 crate::error::DeleteDashboardsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -131,10 +133,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteInsightRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -157,10 +159,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::DeleteMetricStreamErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,10 +180,10 @@ where
                     Error::InvalidNextToken(inner)
                 }
                 crate::error::DescribeAlarmHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -195,9 +197,11 @@ where
                 crate::error::DescribeAlarmsErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::DescribeAlarmsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAlarmsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -212,10 +216,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeAlarmsForMetricErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -233,9 +237,9 @@ where
                 crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
                 crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-                crate::error::DescribeAnomalyDetectorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAnomalyDetectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -253,10 +257,10 @@ where
                     Error::InvalidNextToken(inner)
                 }
                 crate::error::DescribeInsightRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -270,10 +274,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisableAlarmActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -293,10 +297,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::DisableInsightRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -310,10 +314,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EnableAlarmActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -336,10 +340,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::EnableInsightRulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,9 +363,11 @@ where
                 crate::error::GetDashboardErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
                 }
-                crate::error::GetDashboardErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDashboardErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +391,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetInsightRuleReportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -402,9 +408,11 @@ where
                 crate::error::GetMetricDataErrorKind::InvalidNextToken(inner) => {
                     Error::InvalidNextToken(inner)
                 }
-                crate::error::GetMetricDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetricDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -421,9 +429,9 @@ where
                 crate::error::GetMetricStatisticsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
                 crate::error::GetMetricStatisticsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::GetMetricStatisticsErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-                crate::error::GetMetricStatisticsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetricStatisticsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -449,9 +457,11 @@ where
                 crate::error::GetMetricStreamErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetMetricStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetricStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -466,10 +476,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMetricWidgetImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -486,9 +496,11 @@ where
                 crate::error::ListDashboardsErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
                 }
-                crate::error::ListDashboardsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDashboardsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -505,9 +517,9 @@ where
                 crate::error::ListManagedInsightRulesErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
                 crate::error::ListManagedInsightRulesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::ListManagedInsightRulesErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-                crate::error::ListManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -524,9 +536,11 @@ where
                 crate::error::ListMetricsErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
                 }
-                crate::error::ListMetricsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMetricsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -552,10 +566,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::ListMetricStreamsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -578,10 +592,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -610,10 +624,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::PutAnomalyDetectorErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -630,10 +644,10 @@ where
                     Error::LimitExceededFault(inner)
                 }
                 crate::error::PutCompositeAlarmErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -650,9 +664,11 @@ where
                 crate::error::PutDashboardErrorKind::InternalServiceFault(inner) => {
                     Error::InternalServiceFault(inner)
                 }
-                crate::error::PutDashboardErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutDashboardErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -672,9 +688,11 @@ where
                 crate::error::PutInsightRuleErrorKind::MissingRequiredParameterException(inner) => {
                     Error::MissingRequiredParameterException(inner)
                 }
-                crate::error::PutInsightRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutInsightRuleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -690,9 +708,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutManagedInsightRulesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
                 crate::error::PutManagedInsightRulesErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-                crate::error::PutManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutManagedInsightRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -706,9 +724,11 @@ where
                 crate::error::PutMetricAlarmErrorKind::LimitExceededFault(inner) => {
                     Error::LimitExceededFault(inner)
                 }
-                crate::error::PutMetricAlarmErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMetricAlarmErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -731,9 +751,11 @@ where
                 crate::error::PutMetricDataErrorKind::MissingRequiredParameterException(inner) => {
                     Error::MissingRequiredParameterException(inner)
                 }
-                crate::error::PutMetricDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMetricDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -759,9 +781,11 @@ where
                 crate::error::PutMetricStreamErrorKind::MissingRequiredParameterException(
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
-                crate::error::PutMetricStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutMetricStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -778,9 +802,11 @@ where
                 crate::error::SetAlarmStateErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
                 }
-                crate::error::SetAlarmStateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetAlarmStateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -803,10 +829,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::StartMetricStreamsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -829,10 +855,10 @@ where
                     inner,
                 ) => Error::MissingRequiredParameterException(inner),
                 crate::error::StopMetricStreamsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -855,9 +881,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -880,9 +908,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

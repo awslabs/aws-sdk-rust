@@ -44,7 +44,7 @@ pub enum Error {
     /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -105,10 +105,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateApprovedOriginErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -140,9 +140,11 @@ where
                 crate::error::AssociateBotErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::AssociateBotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateBotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -172,10 +174,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateDefaultVocabularyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,9 +201,9 @@ where
                 crate::error::AssociateInstanceStorageConfigErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::AssociateInstanceStorageConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateInstanceStorageConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::AssociateInstanceStorageConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateInstanceStorageConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -237,10 +239,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateLambdaFunctionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -272,9 +274,11 @@ where
                 crate::error::AssociateLexBotErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::AssociateLexBotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateLexBotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -297,9 +301,9 @@ where
                 crate::error::AssociatePhoneNumberContactFlowErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::AssociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociatePhoneNumberContactFlowErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::AssociatePhoneNumberContactFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociatePhoneNumberContactFlowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -332,10 +336,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateQueueQuickConnectsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -365,10 +369,10 @@ where
                     inner,
                 ) => Error::ThrottlingException(inner),
                 crate::error::AssociateRoutingProfileQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -404,10 +408,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::AssociateSecurityKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -439,10 +443,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ClaimPhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -477,10 +481,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateAgentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -518,10 +522,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateContactFlowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -545,9 +549,9 @@ where
                 crate::error::CreateContactFlowModuleErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateContactFlowModuleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateContactFlowModuleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::CreateContactFlowModuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateContactFlowModuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -583,10 +587,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateHoursOfOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -612,9 +616,11 @@ where
                 crate::error::CreateInstanceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateInstanceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -644,10 +650,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateIntegrationAssociationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -679,9 +685,11 @@ where
                 crate::error::CreateQueueErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -716,10 +724,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateQuickConnectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -755,10 +763,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateRoutingProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -794,10 +802,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateSecurityProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -829,10 +837,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateTaskTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -858,9 +866,11 @@ where
                 crate::error::CreateUseCaseErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateUseCaseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUseCaseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -892,9 +902,11 @@ where
                 crate::error::CreateUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -930,10 +942,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateUserHierarchyGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -968,10 +980,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateVocabularyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1003,10 +1015,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteContactFlowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1039,10 +1051,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteContactFlowModuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1072,10 +1084,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteHoursOfOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1095,9 +1107,11 @@ where
                 crate::error::DeleteInstanceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteInstanceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1124,10 +1138,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteIntegrationAssociationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1156,10 +1170,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteQuickConnectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1195,10 +1209,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteSecurityProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1227,10 +1241,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteTaskTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1253,9 +1267,11 @@ where
                 crate::error::DeleteUseCaseErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteUseCaseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUseCaseErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1281,9 +1297,11 @@ where
                 crate::error::DeleteUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1316,10 +1334,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteUserHierarchyGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1351,10 +1369,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteVocabularyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1383,10 +1401,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeAgentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1412,9 +1430,11 @@ where
                 crate::error::DescribeContactErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1446,10 +1466,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeContactFlowErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1482,10 +1502,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeContactFlowModuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1515,10 +1535,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeHoursOfOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1541,10 +1561,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DescribeInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1574,10 +1594,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeInstanceAttributeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1607,10 +1627,10 @@ where
                     inner,
                 ) => Error::ThrottlingException(inner),
                 crate::error::DescribeInstanceStorageConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1639,10 +1659,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribePhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1668,9 +1688,11 @@ where
                 crate::error::DescribeQueueErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeQueueErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1700,10 +1722,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeQuickConnectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1733,10 +1755,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeRoutingProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1766,10 +1788,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeSecurityProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1795,9 +1817,11 @@ where
                 crate::error::DescribeUserErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DescribeUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1827,10 +1851,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeUserHierarchyGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1853,9 +1877,9 @@ where
                 crate::error::DescribeUserHierarchyStructureErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeUserHierarchyStructureErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeUserHierarchyStructureErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeUserHierarchyStructureErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeUserHierarchyStructureErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1884,10 +1908,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeVocabularyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1917,10 +1941,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DisassociateApprovedOriginErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1943,9 +1967,11 @@ where
                 crate::error::DisassociateBotErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::DisassociateBotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateBotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1968,9 +1994,9 @@ where
                 crate::error::DisassociateInstanceStorageConfigErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DisassociateInstanceStorageConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateInstanceStorageConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociateInstanceStorageConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateInstanceStorageConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2000,10 +2026,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DisassociateLambdaFunctionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2032,10 +2058,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DisassociateLexBotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2059,9 +2085,9 @@ where
                 crate::error::DisassociatePhoneNumberContactFlowErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DisassociatePhoneNumberContactFlowErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociatePhoneNumberContactFlowErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociatePhoneNumberContactFlowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociatePhoneNumberContactFlowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2084,9 +2110,9 @@ where
                 crate::error::DisassociateQueueQuickConnectsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DisassociateQueueQuickConnectsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateQueueQuickConnectsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociateQueueQuickConnectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateQueueQuickConnectsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2109,9 +2135,9 @@ where
                 crate::error::DisassociateRoutingProfileQueuesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DisassociateRoutingProfileQueuesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisassociateRoutingProfileQueuesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DisassociateRoutingProfileQueuesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateRoutingProfileQueuesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2141,10 +2167,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DisassociateSecurityKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2168,10 +2194,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::GetContactAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2201,10 +2227,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetCurrentMetricDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2233,10 +2259,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetCurrentUserDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2268,10 +2294,10 @@ where
                     Error::UserNotFoundException(inner)
                 }
                 crate::error::GetFederationTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2297,9 +2323,11 @@ where
                 crate::error::GetMetricDataErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::GetMetricDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetMetricDataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2325,9 +2353,11 @@ where
                 crate::error::GetTaskTemplateErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::GetTaskTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetTaskTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2356,10 +2386,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListAgentStatusesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2388,10 +2418,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListApprovedOriginsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2414,9 +2444,11 @@ where
                 crate::error::ListBotsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListBotsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListBotsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2449,10 +2481,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListContactFlowModulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2481,10 +2513,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListContactFlowsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2514,10 +2546,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListContactReferencesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2544,10 +2576,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListDefaultVocabulariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2577,10 +2609,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListHoursOfOperationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2610,10 +2642,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListInstanceAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2630,9 +2662,11 @@ where
                 crate::error::ListInstancesErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
-                crate::error::ListInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2662,10 +2696,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListInstanceStorageConfigsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2692,10 +2726,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListIntegrationAssociationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2724,10 +2758,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListLambdaFunctionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2753,9 +2787,11 @@ where
                 crate::error::ListLexBotsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListLexBotsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListLexBotsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2784,10 +2820,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListPhoneNumbersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2816,10 +2852,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListPhoneNumbersV2ErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2845,9 +2881,11 @@ where
                 crate::error::ListPromptsErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListPromptsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPromptsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2877,10 +2915,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListQueueQuickConnectsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2906,9 +2944,11 @@ where
                 crate::error::ListQueuesErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListQueuesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListQueuesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2937,10 +2977,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListQuickConnectsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2970,10 +3010,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListRoutingProfileQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3002,10 +3042,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListRoutingProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3034,10 +3074,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListSecurityKeysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3060,9 +3100,9 @@ where
                 crate::error::ListSecurityProfilePermissionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::ListSecurityProfilePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::ListSecurityProfilePermissionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListSecurityProfilePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListSecurityProfilePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3092,10 +3132,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListSecurityProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3124,10 +3164,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3156,10 +3196,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListTaskTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3182,9 +3222,11 @@ where
                 crate::error::ListUseCasesErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListUseCasesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUseCasesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3214,10 +3256,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListUserHierarchyGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3243,9 +3285,11 @@ where
                 crate::error::ListUsersErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3274,9 +3318,11 @@ where
                 crate::error::PutUserStatusErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::PutUserStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutUserStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3311,10 +3357,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ReleasePhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3338,10 +3384,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::ResumeContactRecordingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3368,10 +3414,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SearchAvailablePhoneNumbersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3397,9 +3443,11 @@ where
                 crate::error::SearchQueuesErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::SearchQueuesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchQueuesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3429,10 +3477,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SearchRoutingProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3462,10 +3510,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SearchSecurityProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3491,9 +3539,11 @@ where
                 crate::error::SearchUsersErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::SearchUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3519,10 +3569,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SearchVocabulariesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3551,10 +3601,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StartChatContactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3581,10 +3631,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StartContactRecordingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3614,10 +3664,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StartContactStreamingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3638,9 +3688,9 @@ where
                 crate::error::StartOutboundVoiceContactErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::StartOutboundVoiceContactErrorKind::OutboundContactNotPermittedException(inner) => Error::OutboundContactNotPermittedException(inner),
                 crate::error::StartOutboundVoiceContactErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::StartOutboundVoiceContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartOutboundVoiceContactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3672,10 +3722,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::StartTaskContactErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3701,9 +3751,11 @@ where
                 crate::error::StopContactErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::StopContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3727,10 +3779,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StopContactRecordingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3757,10 +3809,10 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StopContactStreamingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3784,10 +3836,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::SuspendContactRecordingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3813,9 +3865,11 @@ where
                 crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3847,9 +3901,11 @@ where
                 crate::error::TransferContactErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::TransferContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TransferContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3875,9 +3931,11 @@ where
                 crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3912,10 +3970,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateAgentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3941,9 +3999,11 @@ where
                 crate::error::UpdateContactErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UpdateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3970,10 +4030,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateContactAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4006,10 +4066,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactFlowContentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4042,10 +4102,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactFlowMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4069,9 +4129,9 @@ where
                 crate::error::UpdateContactFlowModuleContentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateContactFlowModuleContentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateContactFlowModuleContentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateContactFlowModuleContentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateContactFlowModuleContentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4096,9 +4156,9 @@ where
                 crate::error::UpdateContactFlowModuleMetadataErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateContactFlowModuleMetadataErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateContactFlowModuleMetadataErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateContactFlowModuleMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateContactFlowModuleMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4131,10 +4191,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactFlowNameErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4167,10 +4227,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4203,10 +4263,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateHoursOfOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4236,10 +4296,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateInstanceAttributeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4269,10 +4329,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateInstanceStorageConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4307,10 +4367,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdatePhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4340,10 +4400,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateQueueHoursOfOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4373,10 +4433,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateQueueMaxContactsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4405,9 +4465,11 @@ where
                 crate::error::UpdateQueueNameErrorKind::ThrottlingException(inner) => {
                     Error::ThrottlingException(inner)
                 }
-                crate::error::UpdateQueueNameErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateQueueNameErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4430,9 +4492,9 @@ where
                 crate::error::UpdateQueueOutboundCallerConfigErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateQueueOutboundCallerConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateQueueOutboundCallerConfigErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateQueueOutboundCallerConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateQueueOutboundCallerConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4461,10 +4523,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateQueueStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4494,10 +4556,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateQuickConnectConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4527,10 +4589,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateQuickConnectNameErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4553,9 +4615,9 @@ where
                 crate::error::UpdateRoutingProfileConcurrencyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateRoutingProfileConcurrencyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateRoutingProfileConcurrencyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateRoutingProfileConcurrencyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoutingProfileConcurrencyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4582,9 +4644,9 @@ where
                 crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoutingProfileDefaultOutboundQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4617,10 +4679,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateRoutingProfileNameErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4650,10 +4712,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateRoutingProfileQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4683,10 +4745,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateSecurityProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4718,10 +4780,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateTaskTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4750,10 +4812,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserHierarchyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4786,10 +4848,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserHierarchyGroupNameErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4822,10 +4884,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserHierarchyStructureErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4855,10 +4917,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserIdentityInfoErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4888,10 +4950,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserPhoneConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4921,10 +4983,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserRoutingProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4954,10 +5016,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateUserSecurityProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

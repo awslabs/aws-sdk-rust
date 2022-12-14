@@ -349,7 +349,7 @@ pub enum CreateEndpointErrorKind {
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -380,7 +380,7 @@ impl CreateEndpointError {
     /// Creates the `CreateEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -389,7 +389,7 @@ impl CreateEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -451,7 +451,7 @@ impl std::error::Error for CreateEndpointError {
             CreateEndpointErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateEndpointErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -478,7 +478,7 @@ pub enum DeleteEndpointErrorKind {
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -508,7 +508,7 @@ impl DeleteEndpointError {
     /// Creates the `DeleteEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -517,7 +517,7 @@ impl DeleteEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -574,7 +574,7 @@ impl std::error::Error for DeleteEndpointError {
             DeleteEndpointErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -601,7 +601,7 @@ pub enum ListEndpointsErrorKind {
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -631,7 +631,7 @@ impl ListEndpointsError {
     /// Creates the `ListEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -640,7 +640,7 @@ impl ListEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -694,7 +694,7 @@ impl std::error::Error for ListEndpointsError {
             ListEndpointsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListEndpointsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListEndpointsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -721,7 +721,7 @@ pub enum ListSharedEndpointsErrorKind {
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSharedEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -751,7 +751,7 @@ impl ListSharedEndpointsError {
     /// Creates the `ListSharedEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSharedEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListSharedEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -760,7 +760,7 @@ impl ListSharedEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSharedEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListSharedEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -820,7 +820,32 @@ impl std::error::Error for ListSharedEndpointsError {
             ListSharedEndpointsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListSharedEndpointsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListSharedEndpointsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSharedEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSharedEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

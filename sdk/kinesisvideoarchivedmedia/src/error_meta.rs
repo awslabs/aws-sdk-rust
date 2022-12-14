@@ -23,7 +23,7 @@ pub enum Error {
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -75,9 +75,11 @@ where
                 crate::error::GetClipErrorKind::UnsupportedStreamMediaTypeException(inner) => {
                     Error::UnsupportedStreamMediaTypeException(inner)
                 }
-                crate::error::GetClipErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetClipErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -99,9 +101,9 @@ where
                 crate::error::GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
                 crate::error::GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(inner) => Error::UnsupportedStreamMediaTypeException(inner),
-                crate::error::GetDASHStreamingSessionURLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDASHStreamingSessionURLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -123,9 +125,9 @@ where
                 crate::error::GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
                 crate::error::GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(inner) => Error::UnsupportedStreamMediaTypeException(inner),
-                crate::error::GetHLSStreamingSessionURLErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetHLSStreamingSessionURLErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +150,11 @@ where
                 crate::error::GetImagesErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetImagesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetImagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -177,10 +181,10 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::GetMediaForFragmentListErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -203,9 +207,11 @@ where
                 crate::error::ListFragmentsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListFragmentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFragmentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

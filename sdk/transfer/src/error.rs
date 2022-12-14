@@ -724,7 +724,7 @@ pub enum CreateAccessErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -755,7 +755,7 @@ impl CreateAccessError {
     /// Creates the `CreateAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccessErrorKind::Unhandled(err.into()),
+            kind: CreateAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -764,7 +764,7 @@ impl CreateAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccessErrorKind::Unhandled(err.into()),
+            kind: CreateAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -829,7 +829,7 @@ impl std::error::Error for CreateAccessError {
             CreateAccessErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -858,7 +858,7 @@ pub enum CreateAgreementErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -889,7 +889,7 @@ impl CreateAgreementError {
     /// Creates the `CreateAgreementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAgreementErrorKind::Unhandled(err.into()),
+            kind: CreateAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -898,7 +898,7 @@ impl CreateAgreementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAgreementErrorKind::Unhandled(err.into()),
+            kind: CreateAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -966,7 +966,7 @@ impl std::error::Error for CreateAgreementError {
             CreateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -995,7 +995,7 @@ pub enum CreateConnectorErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1026,7 +1026,7 @@ impl CreateConnectorError {
     /// Creates the `CreateConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+            kind: CreateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1035,7 +1035,7 @@ impl CreateConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+            kind: CreateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1103,7 +1103,7 @@ impl std::error::Error for CreateConnectorError {
             CreateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1130,7 +1130,7 @@ pub enum CreateProfileErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1160,7 +1160,7 @@ impl CreateProfileError {
     /// Creates the `CreateProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProfileErrorKind::Unhandled(err.into()),
+            kind: CreateProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1169,7 +1169,7 @@ impl CreateProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProfileErrorKind::Unhandled(err.into()),
+            kind: CreateProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1226,7 +1226,7 @@ impl std::error::Error for CreateProfileError {
             CreateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1259,7 +1259,7 @@ pub enum CreateServerErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1292,7 +1292,7 @@ impl CreateServerError {
     /// Creates the `CreateServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateServerErrorKind::Unhandled(err.into()),
+            kind: CreateServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1301,7 +1301,7 @@ impl CreateServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateServerErrorKind::Unhandled(err.into()),
+            kind: CreateServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1376,7 +1376,7 @@ impl std::error::Error for CreateServerError {
             CreateServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1405,7 +1405,7 @@ pub enum CreateUserErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1436,7 +1436,7 @@ impl CreateUserError {
     /// Creates the `CreateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1445,7 +1445,7 @@ impl CreateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1504,7 +1504,7 @@ impl std::error::Error for CreateUserError {
             CreateUserErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1535,7 +1535,7 @@ pub enum CreateWorkflowErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWorkflowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1567,7 +1567,7 @@ impl CreateWorkflowError {
     /// Creates the `CreateWorkflowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWorkflowErrorKind::Unhandled(err.into()),
+            kind: CreateWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1576,7 +1576,7 @@ impl CreateWorkflowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWorkflowErrorKind::Unhandled(err.into()),
+            kind: CreateWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1646,7 +1646,7 @@ impl std::error::Error for CreateWorkflowError {
             CreateWorkflowErrorKind::ResourceExistsException(_inner) => Some(_inner),
             CreateWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateWorkflowErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWorkflowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1673,7 +1673,7 @@ pub enum DeleteAccessErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1703,7 +1703,7 @@ impl DeleteAccessError {
     /// Creates the `DeleteAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAccessErrorKind::Unhandled(err.into()),
+            kind: DeleteAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1712,7 +1712,7 @@ impl DeleteAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAccessErrorKind::Unhandled(err.into()),
+            kind: DeleteAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1769,7 +1769,7 @@ impl std::error::Error for DeleteAccessError {
             DeleteAccessErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1796,7 +1796,7 @@ pub enum DeleteAgreementErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1826,7 +1826,7 @@ impl DeleteAgreementError {
     /// Creates the `DeleteAgreementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAgreementErrorKind::Unhandled(err.into()),
+            kind: DeleteAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1835,7 +1835,7 @@ impl DeleteAgreementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAgreementErrorKind::Unhandled(err.into()),
+            kind: DeleteAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1895,7 +1895,7 @@ impl std::error::Error for DeleteAgreementError {
             DeleteAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1922,7 +1922,7 @@ pub enum DeleteCertificateErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1952,7 +1952,7 @@ impl DeleteCertificateError {
     /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1961,7 +1961,7 @@ impl DeleteCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2021,7 +2021,7 @@ impl std::error::Error for DeleteCertificateError {
             DeleteCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2048,7 +2048,7 @@ pub enum DeleteConnectorErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2078,7 +2078,7 @@ impl DeleteConnectorError {
     /// Creates the `DeleteConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2087,7 +2087,7 @@ impl DeleteConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+            kind: DeleteConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2147,7 +2147,7 @@ impl std::error::Error for DeleteConnectorError {
             DeleteConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2176,7 +2176,7 @@ pub enum DeleteHostKeyErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHostKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2207,7 +2207,7 @@ impl DeleteHostKeyError {
     /// Creates the `DeleteHostKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteHostKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2216,7 +2216,7 @@ impl DeleteHostKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteHostKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2278,7 +2278,7 @@ impl std::error::Error for DeleteHostKeyError {
             DeleteHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteHostKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2305,7 +2305,7 @@ pub enum DeleteProfileErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2335,7 +2335,7 @@ impl DeleteProfileError {
     /// Creates the `DeleteProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2344,7 +2344,7 @@ impl DeleteProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProfileErrorKind::Unhandled(err.into()),
+            kind: DeleteProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2401,7 +2401,7 @@ impl std::error::Error for DeleteProfileError {
             DeleteProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2430,7 +2430,7 @@ pub enum DeleteServerErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2461,7 +2461,7 @@ impl DeleteServerError {
     /// Creates the `DeleteServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteServerErrorKind::Unhandled(err.into()),
+            kind: DeleteServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2470,7 +2470,7 @@ impl DeleteServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteServerErrorKind::Unhandled(err.into()),
+            kind: DeleteServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2532,7 +2532,7 @@ impl std::error::Error for DeleteServerError {
             DeleteServerErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2561,7 +2561,7 @@ pub enum DeleteSshPublicKeyErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSshPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2592,7 +2592,7 @@ impl DeleteSshPublicKeyError {
     /// Creates the `DeleteSshPublicKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteSshPublicKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteSshPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2601,7 +2601,7 @@ impl DeleteSshPublicKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteSshPublicKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteSshPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2669,7 +2669,7 @@ impl std::error::Error for DeleteSshPublicKeyError {
             DeleteSshPublicKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteSshPublicKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteSshPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteSshPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteSshPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2696,7 +2696,7 @@ pub enum DeleteUserErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2726,7 +2726,7 @@ impl DeleteUserError {
     /// Creates the `DeleteUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2735,7 +2735,7 @@ impl DeleteUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2789,7 +2789,7 @@ impl std::error::Error for DeleteUserError {
             DeleteUserErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2818,7 +2818,7 @@ pub enum DeleteWorkflowErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWorkflowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2849,7 +2849,7 @@ impl DeleteWorkflowError {
     /// Creates the `DeleteWorkflowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2858,7 +2858,7 @@ impl DeleteWorkflowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWorkflowErrorKind::Unhandled(err.into()),
+            kind: DeleteWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2923,7 +2923,7 @@ impl std::error::Error for DeleteWorkflowError {
             DeleteWorkflowErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWorkflowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2950,7 +2950,7 @@ pub enum DescribeAccessErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2980,7 +2980,7 @@ impl DescribeAccessError {
     /// Creates the `DescribeAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccessErrorKind::Unhandled(err.into()),
+            kind: DescribeAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2989,7 +2989,7 @@ impl DescribeAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccessErrorKind::Unhandled(err.into()),
+            kind: DescribeAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3046,7 +3046,7 @@ impl std::error::Error for DescribeAccessError {
             DescribeAccessErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3073,7 +3073,7 @@ pub enum DescribeAgreementErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3103,7 +3103,7 @@ impl DescribeAgreementError {
     /// Creates the `DescribeAgreementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAgreementErrorKind::Unhandled(err.into()),
+            kind: DescribeAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3112,7 +3112,7 @@ impl DescribeAgreementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAgreementErrorKind::Unhandled(err.into()),
+            kind: DescribeAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3172,7 +3172,7 @@ impl std::error::Error for DescribeAgreementError {
             DescribeAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3199,7 +3199,7 @@ pub enum DescribeCertificateErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3229,7 +3229,7 @@ impl DescribeCertificateError {
     /// Creates the `DescribeCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3238,7 +3238,7 @@ impl DescribeCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3298,7 +3298,7 @@ impl std::error::Error for DescribeCertificateError {
             DescribeCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3325,7 +3325,7 @@ pub enum DescribeConnectorErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3355,7 +3355,7 @@ impl DescribeConnectorError {
     /// Creates the `DescribeConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3364,7 +3364,7 @@ impl DescribeConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+            kind: DescribeConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3424,7 +3424,7 @@ impl std::error::Error for DescribeConnectorError {
             DescribeConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3451,7 +3451,7 @@ pub enum DescribeExecutionErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3481,7 +3481,7 @@ impl DescribeExecutionError {
     /// Creates the `DescribeExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3490,7 +3490,7 @@ impl DescribeExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeExecutionErrorKind::Unhandled(err.into()),
+            kind: DescribeExecutionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3550,7 +3550,7 @@ impl std::error::Error for DescribeExecutionError {
             DescribeExecutionErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3577,7 +3577,7 @@ pub enum DescribeHostKeyErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHostKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3607,7 +3607,7 @@ impl DescribeHostKeyError {
     /// Creates the `DescribeHostKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeHostKeyErrorKind::Unhandled(err.into()),
+            kind: DescribeHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3616,7 +3616,7 @@ impl DescribeHostKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeHostKeyErrorKind::Unhandled(err.into()),
+            kind: DescribeHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3676,7 +3676,7 @@ impl std::error::Error for DescribeHostKeyError {
             DescribeHostKeyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeHostKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3703,7 +3703,7 @@ pub enum DescribeProfileErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3733,7 +3733,7 @@ impl DescribeProfileError {
     /// Creates the `DescribeProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProfileErrorKind::Unhandled(err.into()),
+            kind: DescribeProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3742,7 +3742,7 @@ impl DescribeProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProfileErrorKind::Unhandled(err.into()),
+            kind: DescribeProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3802,7 +3802,7 @@ impl std::error::Error for DescribeProfileError {
             DescribeProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3829,7 +3829,7 @@ pub enum DescribeSecurityPolicyErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSecurityPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3859,7 +3859,9 @@ impl DescribeSecurityPolicyError {
     /// Creates the `DescribeSecurityPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSecurityPolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeSecurityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3868,7 +3870,9 @@ impl DescribeSecurityPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSecurityPolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeSecurityPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3928,7 +3932,7 @@ impl std::error::Error for DescribeSecurityPolicyError {
             DescribeSecurityPolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeSecurityPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeSecurityPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeSecurityPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSecurityPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3955,7 +3959,7 @@ pub enum DescribeServerErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3985,7 +3989,7 @@ impl DescribeServerError {
     /// Creates the `DescribeServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeServerErrorKind::Unhandled(err.into()),
+            kind: DescribeServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3994,7 +3998,7 @@ impl DescribeServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeServerErrorKind::Unhandled(err.into()),
+            kind: DescribeServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4051,7 +4055,7 @@ impl std::error::Error for DescribeServerError {
             DescribeServerErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4078,7 +4082,7 @@ pub enum DescribeUserErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4108,7 +4112,7 @@ impl DescribeUserError {
     /// Creates the `DescribeUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4117,7 +4121,7 @@ impl DescribeUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4174,7 +4178,7 @@ impl std::error::Error for DescribeUserError {
             DescribeUserErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4201,7 +4205,7 @@ pub enum DescribeWorkflowErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeWorkflowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4231,7 +4235,7 @@ impl DescribeWorkflowError {
     /// Creates the `DescribeWorkflowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeWorkflowErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4240,7 +4244,7 @@ impl DescribeWorkflowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeWorkflowErrorKind::Unhandled(err.into()),
+            kind: DescribeWorkflowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4300,7 +4304,7 @@ impl std::error::Error for DescribeWorkflowError {
             DescribeWorkflowErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeWorkflowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeWorkflowErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DescribeWorkflowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeWorkflowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4327,7 +4331,7 @@ pub enum ImportCertificateErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4357,7 +4361,7 @@ impl ImportCertificateError {
     /// Creates the `ImportCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4366,7 +4370,7 @@ impl ImportCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4426,7 +4430,7 @@ impl std::error::Error for ImportCertificateError {
             ImportCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ImportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4457,7 +4461,7 @@ pub enum ImportHostKeyErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportHostKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4489,7 +4493,7 @@ impl ImportHostKeyError {
     /// Creates the `ImportHostKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportHostKeyErrorKind::Unhandled(err.into()),
+            kind: ImportHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4498,7 +4502,7 @@ impl ImportHostKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportHostKeyErrorKind::Unhandled(err.into()),
+            kind: ImportHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4568,7 +4572,7 @@ impl std::error::Error for ImportHostKeyError {
             ImportHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ImportHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ImportHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportHostKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4599,7 +4603,7 @@ pub enum ImportSshPublicKeyErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportSshPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4631,7 +4635,7 @@ impl ImportSshPublicKeyError {
     /// Creates the `ImportSshPublicKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportSshPublicKeyErrorKind::Unhandled(err.into()),
+            kind: ImportSshPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4640,7 +4644,7 @@ impl ImportSshPublicKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportSshPublicKeyErrorKind::Unhandled(err.into()),
+            kind: ImportSshPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4716,7 +4720,7 @@ impl std::error::Error for ImportSshPublicKeyError {
             ImportSshPublicKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportSshPublicKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ImportSshPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ImportSshPublicKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportSshPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4745,7 +4749,7 @@ pub enum ListAccessesErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccessesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4776,7 +4780,7 @@ impl ListAccessesError {
     /// Creates the `ListAccessesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccessesErrorKind::Unhandled(err.into()),
+            kind: ListAccessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4785,7 +4789,7 @@ impl ListAccessesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccessesErrorKind::Unhandled(err.into()),
+            kind: ListAccessesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4850,7 +4854,7 @@ impl std::error::Error for ListAccessesError {
             ListAccessesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAccessesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAccessesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListAccessesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccessesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4879,7 +4883,7 @@ pub enum ListAgreementsErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAgreementsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4910,7 +4914,7 @@ impl ListAgreementsError {
     /// Creates the `ListAgreementsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAgreementsErrorKind::Unhandled(err.into()),
+            kind: ListAgreementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4919,7 +4923,7 @@ impl ListAgreementsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAgreementsErrorKind::Unhandled(err.into()),
+            kind: ListAgreementsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4984,7 +4988,7 @@ impl std::error::Error for ListAgreementsError {
             ListAgreementsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAgreementsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAgreementsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListAgreementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAgreementsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5013,7 +5017,7 @@ pub enum ListCertificatesErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5044,7 +5048,7 @@ impl ListCertificatesError {
     /// Creates the `ListCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5053,7 +5057,7 @@ impl ListCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5121,7 +5125,7 @@ impl std::error::Error for ListCertificatesError {
             ListCertificatesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListCertificatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListCertificatesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5150,7 +5154,7 @@ pub enum ListConnectorsErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConnectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5181,7 +5185,7 @@ impl ListConnectorsError {
     /// Creates the `ListConnectorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+            kind: ListConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5190,7 +5194,7 @@ impl ListConnectorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+            kind: ListConnectorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5255,7 +5259,7 @@ impl std::error::Error for ListConnectorsError {
             ListConnectorsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListConnectorsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListConnectorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListConnectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListConnectorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5284,7 +5288,7 @@ pub enum ListExecutionsErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExecutionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5315,7 +5319,7 @@ impl ListExecutionsError {
     /// Creates the `ListExecutionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListExecutionsErrorKind::Unhandled(err.into()),
+            kind: ListExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5324,7 +5328,7 @@ impl ListExecutionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListExecutionsErrorKind::Unhandled(err.into()),
+            kind: ListExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5389,7 +5393,7 @@ impl std::error::Error for ListExecutionsError {
             ListExecutionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListExecutionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5418,7 +5422,7 @@ pub enum ListHostKeysErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListHostKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5449,7 +5453,7 @@ impl ListHostKeysError {
     /// Creates the `ListHostKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListHostKeysErrorKind::Unhandled(err.into()),
+            kind: ListHostKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5458,7 +5462,7 @@ impl ListHostKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListHostKeysErrorKind::Unhandled(err.into()),
+            kind: ListHostKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5523,7 +5527,7 @@ impl std::error::Error for ListHostKeysError {
             ListHostKeysErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListHostKeysErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListHostKeysErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListHostKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListHostKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5552,7 +5556,7 @@ pub enum ListProfilesErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5583,7 +5587,7 @@ impl ListProfilesError {
     /// Creates the `ListProfilesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProfilesErrorKind::Unhandled(err.into()),
+            kind: ListProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5592,7 +5596,7 @@ impl ListProfilesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProfilesErrorKind::Unhandled(err.into()),
+            kind: ListProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5657,7 +5661,7 @@ impl std::error::Error for ListProfilesError {
             ListProfilesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListProfilesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListProfilesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProfilesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5684,7 +5688,7 @@ pub enum ListSecurityPoliciesErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSecurityPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5714,7 +5718,9 @@ impl ListSecurityPoliciesError {
     /// Creates the `ListSecurityPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSecurityPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListSecurityPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5723,7 +5729,9 @@ impl ListSecurityPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSecurityPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListSecurityPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5783,7 +5791,7 @@ impl std::error::Error for ListSecurityPoliciesError {
             ListSecurityPoliciesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListSecurityPoliciesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListSecurityPoliciesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListSecurityPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSecurityPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5810,7 +5818,7 @@ pub enum ListServersErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListServersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5840,7 +5848,7 @@ impl ListServersError {
     /// Creates the `ListServersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListServersErrorKind::Unhandled(err.into()),
+            kind: ListServersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5849,7 +5857,7 @@ impl ListServersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListServersErrorKind::Unhandled(err.into()),
+            kind: ListServersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5903,7 +5911,7 @@ impl std::error::Error for ListServersError {
             ListServersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListServersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListServersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListServersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListServersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5930,7 +5938,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5960,7 +5968,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5969,7 +5977,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6029,7 +6037,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6058,7 +6066,7 @@ pub enum ListUsersErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6089,7 +6097,7 @@ impl ListUsersError {
     /// Creates the `ListUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6098,7 +6106,7 @@ impl ListUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6154,7 +6162,7 @@ impl std::error::Error for ListUsersError {
             ListUsersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListUsersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListUsersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6181,7 +6189,7 @@ pub enum ListWorkflowsErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWorkflowsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6211,7 +6219,7 @@ impl ListWorkflowsError {
     /// Creates the `ListWorkflowsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+            kind: ListWorkflowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6220,7 +6228,7 @@ impl ListWorkflowsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWorkflowsErrorKind::Unhandled(err.into()),
+            kind: ListWorkflowsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6277,7 +6285,7 @@ impl std::error::Error for ListWorkflowsError {
             ListWorkflowsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListWorkflowsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListWorkflowsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListWorkflowsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWorkflowsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6308,7 +6316,7 @@ pub enum SendWorkflowStepStateErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendWorkflowStepStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6340,7 +6348,9 @@ impl SendWorkflowStepStateError {
     /// Creates the `SendWorkflowStepStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendWorkflowStepStateErrorKind::Unhandled(err.into()),
+            kind: SendWorkflowStepStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6349,7 +6359,9 @@ impl SendWorkflowStepStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendWorkflowStepStateErrorKind::Unhandled(err.into()),
+            kind: SendWorkflowStepStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6425,7 +6437,7 @@ impl std::error::Error for SendWorkflowStepStateError {
             SendWorkflowStepStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SendWorkflowStepStateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             SendWorkflowStepStateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            SendWorkflowStepStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendWorkflowStepStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6454,7 +6466,7 @@ pub enum StartFileTransferErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartFileTransferError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6485,7 +6497,7 @@ impl StartFileTransferError {
     /// Creates the `StartFileTransferError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartFileTransferErrorKind::Unhandled(err.into()),
+            kind: StartFileTransferErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6494,7 +6506,7 @@ impl StartFileTransferError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartFileTransferErrorKind::Unhandled(err.into()),
+            kind: StartFileTransferErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6562,7 +6574,7 @@ impl std::error::Error for StartFileTransferError {
             StartFileTransferErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartFileTransferErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartFileTransferErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartFileTransferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartFileTransferErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6591,7 +6603,7 @@ pub enum StartServerErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6622,7 +6634,7 @@ impl StartServerError {
     /// Creates the `StartServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartServerErrorKind::Unhandled(err.into()),
+            kind: StartServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6631,7 +6643,7 @@ impl StartServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartServerErrorKind::Unhandled(err.into()),
+            kind: StartServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6690,7 +6702,7 @@ impl std::error::Error for StartServerError {
             StartServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StartServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StartServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6719,7 +6731,7 @@ pub enum StopServerErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6750,7 +6762,7 @@ impl StopServerError {
     /// Creates the `StopServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopServerErrorKind::Unhandled(err.into()),
+            kind: StopServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6759,7 +6771,7 @@ impl StopServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopServerErrorKind::Unhandled(err.into()),
+            kind: StopServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6818,7 +6830,7 @@ impl std::error::Error for StopServerError {
             StopServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             StopServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             StopServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StopServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6845,7 +6857,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6875,7 +6887,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6884,7 +6896,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6938,7 +6950,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6965,7 +6977,7 @@ pub enum TestIdentityProviderErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestIdentityProviderError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6995,7 +7007,9 @@ impl TestIdentityProviderError {
     /// Creates the `TestIdentityProviderError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: TestIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7004,7 +7018,9 @@ impl TestIdentityProviderError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestIdentityProviderErrorKind::Unhandled(err.into()),
+            kind: TestIdentityProviderErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7064,7 +7080,7 @@ impl std::error::Error for TestIdentityProviderError {
             TestIdentityProviderErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TestIdentityProviderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TestIdentityProviderErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            TestIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestIdentityProviderErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7091,7 +7107,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7121,7 +7137,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7130,7 +7146,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7187,7 +7203,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7216,7 +7232,7 @@ pub enum UpdateAccessErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAccessError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7247,7 +7263,7 @@ impl UpdateAccessError {
     /// Creates the `UpdateAccessError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAccessErrorKind::Unhandled(err.into()),
+            kind: UpdateAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7256,7 +7272,7 @@ impl UpdateAccessError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAccessErrorKind::Unhandled(err.into()),
+            kind: UpdateAccessErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7321,7 +7337,7 @@ impl std::error::Error for UpdateAccessError {
             UpdateAccessErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAccessErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7350,7 +7366,7 @@ pub enum UpdateAgreementErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7381,7 +7397,7 @@ impl UpdateAgreementError {
     /// Creates the `UpdateAgreementError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAgreementErrorKind::Unhandled(err.into()),
+            kind: UpdateAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7390,7 +7406,7 @@ impl UpdateAgreementError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAgreementErrorKind::Unhandled(err.into()),
+            kind: UpdateAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7458,7 +7474,7 @@ impl std::error::Error for UpdateAgreementError {
             UpdateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAgreementErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7485,7 +7501,7 @@ pub enum UpdateCertificateErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7515,7 +7531,7 @@ impl UpdateCertificateError {
     /// Creates the `UpdateCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCertificateErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7524,7 +7540,7 @@ impl UpdateCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCertificateErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7584,7 +7600,7 @@ impl std::error::Error for UpdateCertificateError {
             UpdateCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7613,7 +7629,7 @@ pub enum UpdateConnectorErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConnectorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7644,7 +7660,7 @@ impl UpdateConnectorError {
     /// Creates the `UpdateConnectorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7653,7 +7669,7 @@ impl UpdateConnectorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+            kind: UpdateConnectorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7721,7 +7737,7 @@ impl std::error::Error for UpdateConnectorError {
             UpdateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7750,7 +7766,7 @@ pub enum UpdateHostKeyErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateHostKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7781,7 +7797,7 @@ impl UpdateHostKeyError {
     /// Creates the `UpdateHostKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateHostKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7790,7 +7806,7 @@ impl UpdateHostKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateHostKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateHostKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7852,7 +7868,7 @@ impl std::error::Error for UpdateHostKeyError {
             UpdateHostKeyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateHostKeyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateHostKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateHostKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateHostKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7879,7 +7895,7 @@ pub enum UpdateProfileErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7909,7 +7925,7 @@ impl UpdateProfileError {
     /// Creates the `UpdateProfileError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7918,7 +7934,7 @@ impl UpdateProfileError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateProfileErrorKind::Unhandled(err.into()),
+            kind: UpdateProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7975,7 +7991,7 @@ impl std::error::Error for UpdateProfileError {
             UpdateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateProfileErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8010,7 +8026,7 @@ pub enum UpdateServerErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8044,7 +8060,7 @@ impl UpdateServerError {
     /// Creates the `UpdateServerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateServerErrorKind::Unhandled(err.into()),
+            kind: UpdateServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8053,7 +8069,7 @@ impl UpdateServerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateServerErrorKind::Unhandled(err.into()),
+            kind: UpdateServerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8133,7 +8149,7 @@ impl std::error::Error for UpdateServerError {
             UpdateServerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateServerErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateServerErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateServerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateServerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8162,7 +8178,7 @@ pub enum UpdateUserErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8193,7 +8209,7 @@ impl UpdateUserError {
     /// Creates the `UpdateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8202,7 +8218,7 @@ impl UpdateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8261,7 +8277,32 @@ impl std::error::Error for UpdateUserError {
             UpdateUserErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateUserErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

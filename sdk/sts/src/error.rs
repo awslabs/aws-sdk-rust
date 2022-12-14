@@ -552,7 +552,7 @@ pub enum AssumeRoleErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -582,7 +582,7 @@ impl AssumeRoleError {
     /// Creates the `AssumeRoleError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssumeRoleErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -591,7 +591,7 @@ impl AssumeRoleError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssumeRoleErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -645,7 +645,7 @@ impl std::error::Error for AssumeRoleError {
             AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
             AssumeRoleErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssumeRoleErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -678,7 +678,7 @@ pub enum AssumeRoleWithSAMLErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleWithSAMLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -710,7 +710,7 @@ impl AssumeRoleWithSAMLError {
     /// Creates the `AssumeRoleWithSAMLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssumeRoleWithSAMLErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -719,7 +719,7 @@ impl AssumeRoleWithSAMLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssumeRoleWithSAMLErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -795,7 +795,7 @@ impl std::error::Error for AssumeRoleWithSAMLError {
             AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
             AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -830,7 +830,7 @@ pub enum AssumeRoleWithWebIdentityErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleWithWebIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -876,7 +876,9 @@ impl AssumeRoleWithWebIdentityError {
     /// Creates the `AssumeRoleWithWebIdentityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -885,7 +887,9 @@ impl AssumeRoleWithWebIdentityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(err.into()),
+            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -977,7 +981,7 @@ impl std::error::Error for AssumeRoleWithWebIdentityError {
                 Some(_inner)
             }
             AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -998,7 +1002,7 @@ pub enum DecodeAuthorizationMessageErrorKind {
     /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
     InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecodeAuthorizationMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1027,7 +1031,9 @@ impl DecodeAuthorizationMessageError {
     /// Creates the `DecodeAuthorizationMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DecodeAuthorizationMessageErrorKind::Unhandled(err.into()),
+            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1036,7 +1042,9 @@ impl DecodeAuthorizationMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DecodeAuthorizationMessageErrorKind::Unhandled(err.into()),
+            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1074,7 +1082,7 @@ impl std::error::Error for DecodeAuthorizationMessageError {
             DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) => {
                 Some(_inner)
             }
-            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1093,7 +1101,7 @@ pub struct GetAccessKeyInfoError {
 #[derive(std::fmt::Debug)]
 pub enum GetAccessKeyInfoErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccessKeyInfoError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1119,7 +1127,7 @@ impl GetAccessKeyInfoError {
     /// Creates the `GetAccessKeyInfoError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccessKeyInfoErrorKind::Unhandled(err.into()),
+            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1128,7 +1136,7 @@ impl GetAccessKeyInfoError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccessKeyInfoErrorKind::Unhandled(err.into()),
+            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1156,7 +1164,7 @@ impl GetAccessKeyInfoError {
 impl std::error::Error for GetAccessKeyInfoError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccessKeyInfoErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccessKeyInfoErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1175,7 +1183,7 @@ pub struct GetCallerIdentityError {
 #[derive(std::fmt::Debug)]
 pub enum GetCallerIdentityErrorKind {
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCallerIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1201,7 +1209,7 @@ impl GetCallerIdentityError {
     /// Creates the `GetCallerIdentityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCallerIdentityErrorKind::Unhandled(err.into()),
+            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1210,7 +1218,7 @@ impl GetCallerIdentityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCallerIdentityErrorKind::Unhandled(err.into()),
+            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1238,7 +1246,7 @@ impl GetCallerIdentityError {
 impl std::error::Error for GetCallerIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCallerIdentityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCallerIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1264,7 +1272,7 @@ pub enum GetFederationTokenErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFederationTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1293,7 +1301,7 @@ impl GetFederationTokenError {
     /// Creates the `GetFederationTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFederationTokenErrorKind::Unhandled(err.into()),
+            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1302,7 +1310,7 @@ impl GetFederationTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFederationTokenErrorKind::Unhandled(err.into()),
+            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1354,7 +1362,7 @@ impl std::error::Error for GetFederationTokenError {
             GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
             GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
             GetFederationTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFederationTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1375,7 +1383,7 @@ pub enum GetSessionTokenErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1402,7 +1410,7 @@ impl GetSessionTokenError {
     /// Creates the `GetSessionTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSessionTokenErrorKind::Unhandled(err.into()),
+            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1411,7 +1419,7 @@ impl GetSessionTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSessionTokenErrorKind::Unhandled(err.into()),
+            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1447,7 +1455,32 @@ impl std::error::Error for GetSessionTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetSessionTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            GetSessionTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSessionTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -791,7 +791,7 @@ pub enum AssociateAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -824,7 +824,7 @@ impl AssociateAssetsError {
     /// Creates the `AssociateAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateAssetsErrorKind::Unhandled(err.into()),
+            kind: AssociateAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -833,7 +833,7 @@ impl AssociateAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateAssetsErrorKind::Unhandled(err.into()),
+            kind: AssociateAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -914,7 +914,7 @@ impl std::error::Error for AssociateAssetsError {
             AssociateAssetsErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             AssociateAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            AssociateAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -944,7 +944,7 @@ pub enum AssociateTimeSeriesToAssetPropertyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateTimeSeriesToAssetPropertyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -988,7 +988,9 @@ impl AssociateTimeSeriesToAssetPropertyError {
     /// Creates the `AssociateTimeSeriesToAssetPropertyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -997,7 +999,9 @@ impl AssociateTimeSeriesToAssetPropertyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1075,7 +1079,7 @@ impl std::error::Error for AssociateTimeSeriesToAssetPropertyError {
             AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1106,7 +1110,7 @@ pub enum BatchAssociateProjectAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchAssociateProjectAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1139,7 +1143,9 @@ impl BatchAssociateProjectAssetsError {
     /// Creates the `BatchAssociateProjectAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchAssociateProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1148,7 +1154,9 @@ impl BatchAssociateProjectAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchAssociateProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: BatchAssociateProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1216,7 +1224,7 @@ impl std::error::Error for BatchAssociateProjectAssetsError {
             BatchAssociateProjectAssetsErrorKind::LimitExceededException(_inner) => Some(_inner),
             BatchAssociateProjectAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BatchAssociateProjectAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchAssociateProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchAssociateProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1244,7 +1252,7 @@ pub enum BatchDisassociateProjectAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDisassociateProjectAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1283,7 +1291,9 @@ impl BatchDisassociateProjectAssetsError {
     /// Creates the `BatchDisassociateProjectAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDisassociateProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1292,7 +1302,9 @@ impl BatchDisassociateProjectAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDisassociateProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: BatchDisassociateProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1358,7 +1370,7 @@ impl std::error::Error for BatchDisassociateProjectAssetsError {
                 Some(_inner)
             }
             BatchDisassociateProjectAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchDisassociateProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDisassociateProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1386,7 +1398,7 @@ pub enum BatchGetAssetPropertyAggregatesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetAssetPropertyAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1425,7 +1437,9 @@ impl BatchGetAssetPropertyAggregatesError {
     /// Creates the `BatchGetAssetPropertyAggregatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1434,7 +1448,9 @@ impl BatchGetAssetPropertyAggregatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyAggregatesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1500,7 +1516,7 @@ impl std::error::Error for BatchGetAssetPropertyAggregatesError {
                 Some(_inner)
             }
             BatchGetAssetPropertyAggregatesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchGetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1528,7 +1544,7 @@ pub enum BatchGetAssetPropertyValueErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetAssetPropertyValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1560,7 +1576,9 @@ impl BatchGetAssetPropertyValueError {
     /// Creates the `BatchGetAssetPropertyValueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1569,7 +1587,9 @@ impl BatchGetAssetPropertyValueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1631,7 +1651,7 @@ impl std::error::Error for BatchGetAssetPropertyValueError {
                 Some(_inner)
             }
             BatchGetAssetPropertyValueErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchGetAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1659,7 +1679,7 @@ pub enum BatchGetAssetPropertyValueHistoryErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchGetAssetPropertyValueHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1700,7 +1720,9 @@ impl BatchGetAssetPropertyValueHistoryError {
     /// Creates the `BatchGetAssetPropertyValueHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1709,7 +1731,9 @@ impl BatchGetAssetPropertyValueHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+            kind: BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1775,7 +1799,7 @@ impl std::error::Error for BatchGetAssetPropertyValueHistoryError {
                 Some(_inner)
             }
             BatchGetAssetPropertyValueHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchGetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1810,7 +1834,7 @@ pub enum BatchPutAssetPropertyValueErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchPutAssetPropertyValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1847,7 +1871,9 @@ impl BatchPutAssetPropertyValueError {
     /// Creates the `BatchPutAssetPropertyValueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchPutAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: BatchPutAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1856,7 +1882,9 @@ impl BatchPutAssetPropertyValueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchPutAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: BatchPutAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1944,7 +1972,7 @@ impl std::error::Error for BatchPutAssetPropertyValueError {
                 Some(_inner)
             }
             BatchPutAssetPropertyValueErrorKind::ThrottlingException(_inner) => Some(_inner),
-            BatchPutAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchPutAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1975,7 +2003,7 @@ pub enum CreateAccessPolicyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAccessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2006,7 +2034,7 @@ impl CreateAccessPolicyError {
     /// Creates the `CreateAccessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2015,7 +2043,7 @@ impl CreateAccessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: CreateAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2083,7 +2111,7 @@ impl std::error::Error for CreateAccessPolicyError {
             CreateAccessPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAccessPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAccessPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2118,7 +2146,7 @@ pub enum CreateAssetErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2151,7 +2179,7 @@ impl CreateAssetError {
     /// Creates the `CreateAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssetErrorKind::Unhandled(err.into()),
+            kind: CreateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2160,7 +2188,7 @@ impl CreateAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssetErrorKind::Unhandled(err.into()),
+            kind: CreateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2235,7 +2263,7 @@ impl std::error::Error for CreateAssetError {
             CreateAssetErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateAssetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAssetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2270,7 +2298,7 @@ pub enum CreateAssetModelErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAssetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2303,7 +2331,7 @@ impl CreateAssetModelError {
     /// Creates the `CreateAssetModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAssetModelErrorKind::Unhandled(err.into()),
+            kind: CreateAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2312,7 +2340,7 @@ impl CreateAssetModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAssetModelErrorKind::Unhandled(err.into()),
+            kind: CreateAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2396,7 +2424,7 @@ impl std::error::Error for CreateAssetModelError {
             CreateAssetModelErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateAssetModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateAssetModelErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateAssetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAssetModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2431,7 +2459,7 @@ pub enum CreateBulkImportJobErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBulkImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2464,7 +2492,7 @@ impl CreateBulkImportJobError {
     /// Creates the `CreateBulkImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBulkImportJobErrorKind::Unhandled(err.into()),
+            kind: CreateBulkImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2473,7 +2501,7 @@ impl CreateBulkImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBulkImportJobErrorKind::Unhandled(err.into()),
+            kind: CreateBulkImportJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2557,7 +2585,7 @@ impl std::error::Error for CreateBulkImportJobError {
             CreateBulkImportJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateBulkImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateBulkImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2588,7 +2616,7 @@ pub enum CreateDashboardErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2619,7 +2647,7 @@ impl CreateDashboardError {
     /// Creates the `CreateDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDashboardErrorKind::Unhandled(err.into()),
+            kind: CreateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2628,7 +2656,7 @@ impl CreateDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDashboardErrorKind::Unhandled(err.into()),
+            kind: CreateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2693,7 +2721,7 @@ impl std::error::Error for CreateDashboardError {
             CreateDashboardErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2724,7 +2752,7 @@ pub enum CreateGatewayErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2755,7 +2783,7 @@ impl CreateGatewayError {
     /// Creates the `CreateGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2764,7 +2792,7 @@ impl CreateGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2829,7 +2857,7 @@ impl std::error::Error for CreateGatewayError {
             CreateGatewayErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateGatewayErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2860,7 +2888,7 @@ pub enum CreatePortalErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePortalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2891,7 +2919,7 @@ impl CreatePortalError {
     /// Creates the `CreatePortalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreatePortalErrorKind::Unhandled(err.into()),
+            kind: CreatePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2900,7 +2928,7 @@ impl CreatePortalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreatePortalErrorKind::Unhandled(err.into()),
+            kind: CreatePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2962,7 +2990,7 @@ impl std::error::Error for CreatePortalError {
             CreatePortalErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreatePortalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreatePortalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreatePortalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreatePortalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2993,7 +3021,7 @@ pub enum CreateProjectErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3024,7 +3052,7 @@ impl CreateProjectError {
     /// Creates the `CreateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3033,7 +3061,7 @@ impl CreateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateProjectErrorKind::Unhandled(err.into()),
+            kind: CreateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3098,7 +3126,7 @@ impl std::error::Error for CreateProjectError {
             CreateProjectErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3126,7 +3154,7 @@ pub enum DeleteAccessPolicyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3156,7 +3184,7 @@ impl DeleteAccessPolicyError {
     /// Creates the `DeleteAccessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3165,7 +3193,7 @@ impl DeleteAccessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3225,7 +3253,7 @@ impl std::error::Error for DeleteAccessPolicyError {
             DeleteAccessPolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteAccessPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAccessPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3255,7 +3283,7 @@ pub enum DeleteAssetErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3286,7 +3314,7 @@ impl DeleteAssetError {
     /// Creates the `DeleteAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssetErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3295,7 +3323,7 @@ impl DeleteAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssetErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3357,7 +3385,7 @@ impl std::error::Error for DeleteAssetError {
             DeleteAssetErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteAssetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAssetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3387,7 +3415,7 @@ pub enum DeleteAssetModelErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAssetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3418,7 +3446,7 @@ impl DeleteAssetModelError {
     /// Creates the `DeleteAssetModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAssetModelErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3427,7 +3455,7 @@ impl DeleteAssetModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAssetModelErrorKind::Unhandled(err.into()),
+            kind: DeleteAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3495,7 +3523,7 @@ impl std::error::Error for DeleteAssetModelError {
             DeleteAssetModelErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteAssetModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAssetModelErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteAssetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAssetModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3523,7 +3551,7 @@ pub enum DeleteDashboardErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3553,7 +3581,7 @@ impl DeleteDashboardError {
     /// Creates the `DeleteDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDashboardErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3562,7 +3590,7 @@ impl DeleteDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDashboardErrorKind::Unhandled(err.into()),
+            kind: DeleteDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3619,7 +3647,7 @@ impl std::error::Error for DeleteDashboardError {
             DeleteDashboardErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3647,7 +3675,7 @@ pub enum DeleteGatewayErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3677,7 +3705,7 @@ impl DeleteGatewayError {
     /// Creates the `DeleteGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3686,7 +3714,7 @@ impl DeleteGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3743,7 +3771,7 @@ impl std::error::Error for DeleteGatewayError {
             DeleteGatewayErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3773,7 +3801,7 @@ pub enum DeletePortalErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePortalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3804,7 +3832,7 @@ impl DeletePortalError {
     /// Creates the `DeletePortalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePortalErrorKind::Unhandled(err.into()),
+            kind: DeletePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3813,7 +3841,7 @@ impl DeletePortalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePortalErrorKind::Unhandled(err.into()),
+            kind: DeletePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3878,7 +3906,7 @@ impl std::error::Error for DeletePortalError {
             DeletePortalErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeletePortalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeletePortalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeletePortalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePortalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3906,7 +3934,7 @@ pub enum DeleteProjectErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3936,7 +3964,7 @@ impl DeleteProjectError {
     /// Creates the `DeleteProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3945,7 +3973,7 @@ impl DeleteProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteProjectErrorKind::Unhandled(err.into()),
+            kind: DeleteProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4002,7 +4030,7 @@ impl std::error::Error for DeleteProjectError {
             DeleteProjectErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4032,7 +4060,7 @@ pub enum DeleteTimeSeriesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTimeSeriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4063,7 +4091,7 @@ impl DeleteTimeSeriesError {
     /// Creates the `DeleteTimeSeriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: DeleteTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4072,7 +4100,7 @@ impl DeleteTimeSeriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: DeleteTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4140,7 +4168,7 @@ impl std::error::Error for DeleteTimeSeriesError {
             DeleteTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4168,7 +4196,7 @@ pub enum DescribeAccessPolicyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAccessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4198,7 +4226,9 @@ impl DescribeAccessPolicyError {
     /// Creates the `DescribeAccessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4207,7 +4237,9 @@ impl DescribeAccessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4267,7 +4299,7 @@ impl std::error::Error for DescribeAccessPolicyError {
             DescribeAccessPolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAccessPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAccessPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4295,7 +4327,7 @@ pub enum DescribeAssetErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4325,7 +4357,7 @@ impl DescribeAssetError {
     /// Creates the `DescribeAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAssetErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4334,7 +4366,7 @@ impl DescribeAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAssetErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4391,7 +4423,7 @@ impl std::error::Error for DescribeAssetError {
             DescribeAssetErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAssetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAssetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4419,7 +4451,7 @@ pub enum DescribeAssetModelErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAssetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4449,7 +4481,7 @@ impl DescribeAssetModelError {
     /// Creates the `DescribeAssetModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAssetModelErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4458,7 +4490,7 @@ impl DescribeAssetModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAssetModelErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4518,7 +4550,7 @@ impl std::error::Error for DescribeAssetModelError {
             DescribeAssetModelErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAssetModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAssetModelErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAssetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAssetModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4546,7 +4578,7 @@ pub enum DescribeAssetPropertyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAssetPropertyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4576,7 +4608,9 @@ impl DescribeAssetPropertyError {
     /// Creates the `DescribeAssetPropertyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetPropertyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4585,7 +4619,9 @@ impl DescribeAssetPropertyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: DescribeAssetPropertyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4645,7 +4681,7 @@ impl std::error::Error for DescribeAssetPropertyError {
             DescribeAssetPropertyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeAssetPropertyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAssetPropertyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4673,7 +4709,7 @@ pub enum DescribeBulkImportJobErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBulkImportJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4703,7 +4739,9 @@ impl DescribeBulkImportJobError {
     /// Creates the `DescribeBulkImportJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeBulkImportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeBulkImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4712,7 +4750,9 @@ impl DescribeBulkImportJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeBulkImportJobErrorKind::Unhandled(err.into()),
+            kind: DescribeBulkImportJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4772,7 +4812,7 @@ impl std::error::Error for DescribeBulkImportJobError {
             DescribeBulkImportJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeBulkImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeBulkImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4800,7 +4840,7 @@ pub enum DescribeDashboardErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4830,7 +4870,7 @@ impl DescribeDashboardError {
     /// Creates the `DescribeDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDashboardErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4839,7 +4879,7 @@ impl DescribeDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDashboardErrorKind::Unhandled(err.into()),
+            kind: DescribeDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4899,7 +4939,7 @@ impl std::error::Error for DescribeDashboardError {
             DescribeDashboardErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4925,7 +4965,7 @@ pub enum DescribeDefaultEncryptionConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDefaultEncryptionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4963,7 +5003,9 @@ impl DescribeDefaultEncryptionConfigurationError {
     /// Creates the `DescribeDefaultEncryptionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4972,7 +5014,9 @@ impl DescribeDefaultEncryptionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5030,9 +5074,7 @@ impl std::error::Error for DescribeDefaultEncryptionConfigurationError {
             DescribeDefaultEncryptionConfigurationErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeDefaultEncryptionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5060,7 +5102,7 @@ pub enum DescribeGatewayErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5090,7 +5132,7 @@ impl DescribeGatewayError {
     /// Creates the `DescribeGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGatewayErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5099,7 +5141,7 @@ impl DescribeGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGatewayErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5156,7 +5198,7 @@ impl std::error::Error for DescribeGatewayError {
             DescribeGatewayErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5184,7 +5226,7 @@ pub enum DescribeGatewayCapabilityConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGatewayCapabilityConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5225,7 +5267,9 @@ impl DescribeGatewayCapabilityConfigurationError {
     /// Creates the `DescribeGatewayCapabilityConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5234,7 +5278,9 @@ impl DescribeGatewayCapabilityConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5302,9 +5348,7 @@ impl std::error::Error for DescribeGatewayCapabilityConfigurationError {
             DescribeGatewayCapabilityConfigurationErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeGatewayCapabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5332,7 +5376,7 @@ pub enum DescribeLoggingOptionsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoggingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5362,7 +5406,9 @@ impl DescribeLoggingOptionsError {
     /// Creates the `DescribeLoggingOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeLoggingOptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeLoggingOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5371,7 +5417,9 @@ impl DescribeLoggingOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeLoggingOptionsErrorKind::Unhandled(err.into()),
+            kind: DescribeLoggingOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5431,7 +5479,7 @@ impl std::error::Error for DescribeLoggingOptionsError {
             DescribeLoggingOptionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeLoggingOptionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeLoggingOptionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeLoggingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeLoggingOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5459,7 +5507,7 @@ pub enum DescribePortalErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePortalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5489,7 +5537,7 @@ impl DescribePortalError {
     /// Creates the `DescribePortalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePortalErrorKind::Unhandled(err.into()),
+            kind: DescribePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5498,7 +5546,7 @@ impl DescribePortalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePortalErrorKind::Unhandled(err.into()),
+            kind: DescribePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5555,7 +5603,7 @@ impl std::error::Error for DescribePortalError {
             DescribePortalErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribePortalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribePortalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribePortalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePortalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5583,7 +5631,7 @@ pub enum DescribeProjectErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5613,7 +5661,7 @@ impl DescribeProjectError {
     /// Creates the `DescribeProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5622,7 +5670,7 @@ impl DescribeProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeProjectErrorKind::Unhandled(err.into()),
+            kind: DescribeProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5679,7 +5727,7 @@ impl std::error::Error for DescribeProjectError {
             DescribeProjectErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5712,7 +5760,7 @@ pub enum DescribeStorageConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStorageConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5750,7 +5798,9 @@ impl DescribeStorageConfigurationError {
     /// Creates the `DescribeStorageConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStorageConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeStorageConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5759,7 +5809,9 @@ impl DescribeStorageConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStorageConfigurationErrorKind::Unhandled(err.into()),
+            kind: DescribeStorageConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5839,7 +5891,7 @@ impl std::error::Error for DescribeStorageConfigurationError {
                 Some(_inner)
             }
             DescribeStorageConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5867,7 +5919,7 @@ pub enum DescribeTimeSeriesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTimeSeriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5897,7 +5949,7 @@ impl DescribeTimeSeriesError {
     /// Creates the `DescribeTimeSeriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: DescribeTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5906,7 +5958,7 @@ impl DescribeTimeSeriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: DescribeTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5966,7 +6018,7 @@ impl std::error::Error for DescribeTimeSeriesError {
             DescribeTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5996,7 +6048,7 @@ pub enum DisassociateAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6027,7 +6079,7 @@ impl DisassociateAssetsError {
     /// Creates the `DisassociateAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateAssetsErrorKind::Unhandled(err.into()),
+            kind: DisassociateAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6036,7 +6088,7 @@ impl DisassociateAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateAssetsErrorKind::Unhandled(err.into()),
+            kind: DisassociateAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6104,7 +6156,7 @@ impl std::error::Error for DisassociateAssetsError {
             DisassociateAssetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DisassociateAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DisassociateAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6134,7 +6186,7 @@ pub enum DisassociateTimeSeriesFromAssetPropertyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateTimeSeriesFromAssetPropertyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6178,7 +6230,9 @@ impl DisassociateTimeSeriesFromAssetPropertyError {
     /// Creates the `DisassociateTimeSeriesFromAssetPropertyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6187,7 +6241,9 @@ impl DisassociateTimeSeriesFromAssetPropertyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6265,9 +6321,7 @@ impl std::error::Error for DisassociateTimeSeriesFromAssetPropertyError {
             DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6297,7 +6351,7 @@ pub enum GetAssetPropertyAggregatesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssetPropertyAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6330,7 +6384,9 @@ impl GetAssetPropertyAggregatesError {
     /// Creates the `GetAssetPropertyAggregatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6339,7 +6395,9 @@ impl GetAssetPropertyAggregatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssetPropertyAggregatesErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6409,7 +6467,7 @@ impl std::error::Error for GetAssetPropertyAggregatesError {
                 Some(_inner)
             }
             GetAssetPropertyAggregatesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssetPropertyAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6439,7 +6497,7 @@ pub enum GetAssetPropertyValueErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssetPropertyValueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6470,7 +6528,9 @@ impl GetAssetPropertyValueError {
     /// Creates the `GetAssetPropertyValueError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6479,7 +6539,9 @@ impl GetAssetPropertyValueError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssetPropertyValueErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyValueErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6547,7 +6609,7 @@ impl std::error::Error for GetAssetPropertyValueError {
             GetAssetPropertyValueErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAssetPropertyValueErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetAssetPropertyValueErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssetPropertyValueErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6577,7 +6639,7 @@ pub enum GetAssetPropertyValueHistoryErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAssetPropertyValueHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6614,7 +6676,9 @@ impl GetAssetPropertyValueHistoryError {
     /// Creates the `GetAssetPropertyValueHistoryError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyValueHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6623,7 +6687,9 @@ impl GetAssetPropertyValueHistoryError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAssetPropertyValueHistoryErrorKind::Unhandled(err.into()),
+            kind: GetAssetPropertyValueHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6695,7 +6761,7 @@ impl std::error::Error for GetAssetPropertyValueHistoryError {
                 Some(_inner)
             }
             GetAssetPropertyValueHistoryErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAssetPropertyValueHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6725,7 +6791,7 @@ pub enum GetInterpolatedAssetPropertyValuesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInterpolatedAssetPropertyValuesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6769,7 +6835,9 @@ impl GetInterpolatedAssetPropertyValuesError {
     /// Creates the `GetInterpolatedAssetPropertyValuesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(err.into()),
+            kind: GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6778,7 +6846,9 @@ impl GetInterpolatedAssetPropertyValuesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(err.into()),
+            kind: GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6856,7 +6926,7 @@ impl std::error::Error for GetInterpolatedAssetPropertyValuesError {
             GetInterpolatedAssetPropertyValuesErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInterpolatedAssetPropertyValuesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6882,7 +6952,7 @@ pub enum ListAccessPoliciesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAccessPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6911,7 +6981,7 @@ impl ListAccessPoliciesError {
     /// Creates the `ListAccessPoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAccessPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListAccessPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6920,7 +6990,7 @@ impl ListAccessPoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAccessPoliciesErrorKind::Unhandled(err.into()),
+            kind: ListAccessPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6972,7 +7042,7 @@ impl std::error::Error for ListAccessPoliciesError {
             ListAccessPoliciesErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListAccessPoliciesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAccessPoliciesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAccessPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAccessPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6998,7 +7068,7 @@ pub enum ListAssetModelsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssetModelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7027,7 +7097,7 @@ impl ListAssetModelsError {
     /// Creates the `ListAssetModelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssetModelsErrorKind::Unhandled(err.into()),
+            kind: ListAssetModelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7036,7 +7106,7 @@ impl ListAssetModelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssetModelsErrorKind::Unhandled(err.into()),
+            kind: ListAssetModelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7085,7 +7155,7 @@ impl std::error::Error for ListAssetModelsError {
             ListAssetModelsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListAssetModelsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAssetModelsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAssetModelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssetModelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7113,7 +7183,7 @@ pub enum ListAssetRelationshipsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssetRelationshipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7143,7 +7213,9 @@ impl ListAssetRelationshipsError {
     /// Creates the `ListAssetRelationshipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssetRelationshipsErrorKind::Unhandled(err.into()),
+            kind: ListAssetRelationshipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7152,7 +7224,9 @@ impl ListAssetRelationshipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssetRelationshipsErrorKind::Unhandled(err.into()),
+            kind: ListAssetRelationshipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7212,7 +7286,7 @@ impl std::error::Error for ListAssetRelationshipsError {
             ListAssetRelationshipsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAssetRelationshipsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAssetRelationshipsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAssetRelationshipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssetRelationshipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7240,7 +7314,7 @@ pub enum ListAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7270,7 +7344,7 @@ impl ListAssetsError {
     /// Creates the `ListAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7279,7 +7353,7 @@ impl ListAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7330,7 +7404,7 @@ impl std::error::Error for ListAssetsError {
             ListAssetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7358,7 +7432,7 @@ pub enum ListAssociatedAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssociatedAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7388,7 +7462,9 @@ impl ListAssociatedAssetsError {
     /// Creates the `ListAssociatedAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAssociatedAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7397,7 +7473,9 @@ impl ListAssociatedAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAssociatedAssetsErrorKind::Unhandled(err.into()),
+            kind: ListAssociatedAssetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7457,7 +7535,7 @@ impl std::error::Error for ListAssociatedAssetsError {
             ListAssociatedAssetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListAssociatedAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAssociatedAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListAssociatedAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAssociatedAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7485,7 +7563,7 @@ pub enum ListBulkImportJobsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBulkImportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7515,7 +7593,7 @@ impl ListBulkImportJobsError {
     /// Creates the `ListBulkImportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListBulkImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListBulkImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7524,7 +7602,7 @@ impl ListBulkImportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListBulkImportJobsErrorKind::Unhandled(err.into()),
+            kind: ListBulkImportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7584,7 +7662,7 @@ impl std::error::Error for ListBulkImportJobsError {
             ListBulkImportJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListBulkImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListBulkImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListBulkImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListBulkImportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7610,7 +7688,7 @@ pub enum ListDashboardsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDashboardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7639,7 +7717,7 @@ impl ListDashboardsError {
     /// Creates the `ListDashboardsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7648,7 +7726,7 @@ impl ListDashboardsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDashboardsErrorKind::Unhandled(err.into()),
+            kind: ListDashboardsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7697,7 +7775,7 @@ impl std::error::Error for ListDashboardsError {
             ListDashboardsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListDashboardsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListDashboardsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDashboardsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7723,7 +7801,7 @@ pub enum ListGatewaysErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7752,7 +7830,7 @@ impl ListGatewaysError {
     /// Creates the `ListGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7761,7 +7839,7 @@ impl ListGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7810,7 +7888,7 @@ impl std::error::Error for ListGatewaysError {
             ListGatewaysErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListGatewaysErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListGatewaysErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7836,7 +7914,7 @@ pub enum ListPortalsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPortalsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7865,7 +7943,7 @@ impl ListPortalsError {
     /// Creates the `ListPortalsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPortalsErrorKind::Unhandled(err.into()),
+            kind: ListPortalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7874,7 +7952,7 @@ impl ListPortalsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPortalsErrorKind::Unhandled(err.into()),
+            kind: ListPortalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7920,7 +7998,7 @@ impl std::error::Error for ListPortalsError {
             ListPortalsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListPortalsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListPortalsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListPortalsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPortalsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7946,7 +8024,7 @@ pub enum ListProjectAssetsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProjectAssetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7975,7 +8053,7 @@ impl ListProjectAssetsError {
     /// Creates the `ListProjectAssetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: ListProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7984,7 +8062,7 @@ impl ListProjectAssetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProjectAssetsErrorKind::Unhandled(err.into()),
+            kind: ListProjectAssetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8036,7 +8114,7 @@ impl std::error::Error for ListProjectAssetsError {
             ListProjectAssetsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListProjectAssetsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListProjectAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProjectAssetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8062,7 +8140,7 @@ pub enum ListProjectsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8091,7 +8169,7 @@ impl ListProjectsError {
     /// Creates the `ListProjectsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8100,7 +8178,7 @@ impl ListProjectsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListProjectsErrorKind::Unhandled(err.into()),
+            kind: ListProjectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8149,7 +8227,7 @@ impl std::error::Error for ListProjectsError {
             ListProjectsErrorKind::InternalFailureException(_inner) => Some(_inner),
             ListProjectsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListProjectsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListProjectsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8184,7 +8262,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8217,7 +8295,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8226,7 +8304,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8310,7 +8388,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8338,7 +8416,7 @@ pub enum ListTimeSeriesErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTimeSeriesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8368,7 +8446,7 @@ impl ListTimeSeriesError {
     /// Creates the `ListTimeSeriesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: ListTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8377,7 +8455,7 @@ impl ListTimeSeriesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTimeSeriesErrorKind::Unhandled(err.into()),
+            kind: ListTimeSeriesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8434,7 +8512,7 @@ impl std::error::Error for ListTimeSeriesError {
             ListTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8465,7 +8543,7 @@ pub enum PutDefaultEncryptionConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDefaultEncryptionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8509,7 +8587,9 @@ impl PutDefaultEncryptionConfigurationError {
     /// Creates the `PutDefaultEncryptionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutDefaultEncryptionConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutDefaultEncryptionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8518,7 +8598,9 @@ impl PutDefaultEncryptionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutDefaultEncryptionConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutDefaultEncryptionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8594,7 +8676,7 @@ impl std::error::Error for PutDefaultEncryptionConfigurationError {
                 Some(_inner)
             }
             PutDefaultEncryptionConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutDefaultEncryptionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutDefaultEncryptionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8624,7 +8706,7 @@ pub enum PutLoggingOptionsErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLoggingOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8655,7 +8737,7 @@ impl PutLoggingOptionsError {
     /// Creates the `PutLoggingOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutLoggingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutLoggingOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8664,7 +8746,7 @@ impl PutLoggingOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutLoggingOptionsErrorKind::Unhandled(err.into()),
+            kind: PutLoggingOptionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8732,7 +8814,7 @@ impl std::error::Error for PutLoggingOptionsError {
             PutLoggingOptionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutLoggingOptionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutLoggingOptionsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutLoggingOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutLoggingOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8767,7 +8849,7 @@ pub enum PutStorageConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutStorageConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8804,7 +8886,9 @@ impl PutStorageConfigurationError {
     /// Creates the `PutStorageConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutStorageConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutStorageConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8813,7 +8897,9 @@ impl PutStorageConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutStorageConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutStorageConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8899,7 +8985,7 @@ impl std::error::Error for PutStorageConfigurationError {
             }
             PutStorageConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutStorageConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8936,7 +9022,7 @@ pub enum TagResourceErrorKind {
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8970,7 +9056,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8979,7 +9065,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9056,7 +9142,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9091,7 +9177,7 @@ pub enum UntagResourceErrorKind {
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9124,7 +9210,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9133,7 +9219,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9211,7 +9297,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9239,7 +9325,7 @@ pub enum UpdateAccessPolicyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAccessPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9269,7 +9355,7 @@ impl UpdateAccessPolicyError {
     /// Creates the `UpdateAccessPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9278,7 +9364,7 @@ impl UpdateAccessPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAccessPolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateAccessPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9338,7 +9424,7 @@ impl std::error::Error for UpdateAccessPolicyError {
             UpdateAccessPolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateAccessPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAccessPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9370,7 +9456,7 @@ pub enum UpdateAssetErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9402,7 +9488,7 @@ impl UpdateAssetError {
     /// Creates the `UpdateAssetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssetErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9411,7 +9497,7 @@ impl UpdateAssetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssetErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9481,7 +9567,7 @@ impl std::error::Error for UpdateAssetError {
             UpdateAssetErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             UpdateAssetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssetErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9516,7 +9602,7 @@ pub enum UpdateAssetModelErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9549,7 +9635,7 @@ impl UpdateAssetModelError {
     /// Creates the `UpdateAssetModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssetModelErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9558,7 +9644,7 @@ impl UpdateAssetModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssetModelErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9642,7 +9728,7 @@ impl std::error::Error for UpdateAssetModelError {
             UpdateAssetModelErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             UpdateAssetModelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssetModelErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAssetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssetModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9672,7 +9758,7 @@ pub enum UpdateAssetPropertyErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAssetPropertyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9703,7 +9789,7 @@ impl UpdateAssetPropertyError {
     /// Creates the `UpdateAssetPropertyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetPropertyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9712,7 +9798,7 @@ impl UpdateAssetPropertyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAssetPropertyErrorKind::Unhandled(err.into()),
+            kind: UpdateAssetPropertyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9780,7 +9866,7 @@ impl std::error::Error for UpdateAssetPropertyError {
             UpdateAssetPropertyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateAssetPropertyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAssetPropertyErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9808,7 +9894,7 @@ pub enum UpdateDashboardErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDashboardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9838,7 +9924,7 @@ impl UpdateDashboardError {
     /// Creates the `UpdateDashboardError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDashboardErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9847,7 +9933,7 @@ impl UpdateDashboardError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDashboardErrorKind::Unhandled(err.into()),
+            kind: UpdateDashboardErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9904,7 +9990,7 @@ impl std::error::Error for UpdateDashboardError {
             UpdateDashboardErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateDashboardErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDashboardErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateDashboardErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDashboardErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9934,7 +10020,7 @@ pub enum UpdateGatewayErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9965,7 +10051,7 @@ impl UpdateGatewayError {
     /// Creates the `UpdateGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9974,7 +10060,7 @@ impl UpdateGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10039,7 +10125,7 @@ impl std::error::Error for UpdateGatewayError {
             UpdateGatewayErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateGatewayErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateGatewayErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10072,7 +10158,7 @@ pub enum UpdateGatewayCapabilityConfigurationErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayCapabilityConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10119,7 +10205,9 @@ impl UpdateGatewayCapabilityConfigurationError {
     /// Creates the `UpdateGatewayCapabilityConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10128,7 +10216,9 @@ impl UpdateGatewayCapabilityConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10216,9 +10306,7 @@ impl std::error::Error for UpdateGatewayCapabilityConfigurationError {
             UpdateGatewayCapabilityConfigurationErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateGatewayCapabilityConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10248,7 +10336,7 @@ pub enum UpdatePortalErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePortalError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10279,7 +10367,7 @@ impl UpdatePortalError {
     /// Creates the `UpdatePortalError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdatePortalErrorKind::Unhandled(err.into()),
+            kind: UpdatePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10288,7 +10376,7 @@ impl UpdatePortalError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdatePortalErrorKind::Unhandled(err.into()),
+            kind: UpdatePortalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10353,7 +10441,7 @@ impl std::error::Error for UpdatePortalError {
             UpdatePortalErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdatePortalErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdatePortalErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdatePortalErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdatePortalErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10381,7 +10469,7 @@ pub enum UpdateProjectErrorKind {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10411,7 +10499,7 @@ impl UpdateProjectError {
     /// Creates the `UpdateProjectError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10420,7 +10508,7 @@ impl UpdateProjectError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateProjectErrorKind::Unhandled(err.into()),
+            kind: UpdateProjectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10477,7 +10565,32 @@ impl std::error::Error for UpdateProjectError {
             UpdateProjectErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateProjectErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateProjectErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,9 +62,9 @@ where
                 crate::error::DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DeleteRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -90,9 +90,9 @@ where
                 crate::error::DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeRecommendationExportJobsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::DescribeRecommendationExportJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeRecommendationExportJobsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,9 +122,9 @@ where
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -150,9 +150,9 @@ where
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ExportEBSVolumeRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportEBSVolumeRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -178,9 +178,9 @@ where
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ExportEC2InstanceRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportEC2InstanceRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -210,9 +210,9 @@ where
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ExportLambdaFunctionRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExportLambdaFunctionRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,9 +239,9 @@ where
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetAutoScalingGroupRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAutoScalingGroupRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -263,9 +263,9 @@ where
                 crate::error::GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetEBSVolumeRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEBSVolumeRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEBSVolumeRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -287,9 +287,9 @@ where
                 crate::error::GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetEC2InstanceRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEC2InstanceRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEC2InstanceRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -319,9 +319,9 @@ where
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -351,9 +351,9 @@ where
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEffectiveRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -385,10 +385,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetEnrollmentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -416,9 +416,9 @@ where
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -444,9 +444,9 @@ where
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetLambdaFunctionRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLambdaFunctionRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -468,9 +468,9 @@ where
                 crate::error::GetRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -491,9 +491,9 @@ where
                 crate::error::GetRecommendationSummariesErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::GetRecommendationSummariesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRecommendationSummariesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -515,9 +515,9 @@ where
                 crate::error::PutRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::PutRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::PutRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -550,10 +550,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateEnrollmentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

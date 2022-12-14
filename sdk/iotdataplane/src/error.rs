@@ -680,7 +680,7 @@ pub enum DeleteThingShadowErrorKind {
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteThingShadowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -716,7 +716,7 @@ impl DeleteThingShadowError {
     /// Creates the `DeleteThingShadowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteThingShadowErrorKind::Unhandled(err.into()),
+            kind: DeleteThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -725,7 +725,7 @@ impl DeleteThingShadowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteThingShadowErrorKind::Unhandled(err.into()),
+            kind: DeleteThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -819,7 +819,7 @@ impl std::error::Error for DeleteThingShadowError {
             DeleteThingShadowErrorKind::UnsupportedDocumentEncodingException(_inner) => {
                 Some(_inner)
             }
-            DeleteThingShadowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteThingShadowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -852,7 +852,7 @@ pub enum GetRetainedMessageErrorKind {
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRetainedMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -885,7 +885,7 @@ impl GetRetainedMessageError {
     /// Creates the `GetRetainedMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRetainedMessageErrorKind::Unhandled(err.into()),
+            kind: GetRetainedMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -894,7 +894,7 @@ impl GetRetainedMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRetainedMessageErrorKind::Unhandled(err.into()),
+            kind: GetRetainedMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -978,7 +978,7 @@ impl std::error::Error for GetRetainedMessageError {
             GetRetainedMessageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetRetainedMessageErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetRetainedMessageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRetainedMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRetainedMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1013,7 +1013,7 @@ pub enum GetThingShadowErrorKind {
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetThingShadowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1047,7 +1047,7 @@ impl GetThingShadowError {
     /// Creates the `GetThingShadowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetThingShadowErrorKind::Unhandled(err.into()),
+            kind: GetThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1056,7 +1056,7 @@ impl GetThingShadowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetThingShadowErrorKind::Unhandled(err.into()),
+            kind: GetThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1145,7 +1145,7 @@ impl std::error::Error for GetThingShadowError {
             GetThingShadowErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetThingShadowErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetThingShadowErrorKind::UnsupportedDocumentEncodingException(_inner) => Some(_inner),
-            GetThingShadowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetThingShadowErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1178,7 +1178,7 @@ pub enum ListNamedShadowsForThingErrorKind {
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListNamedShadowsForThingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1211,7 +1211,9 @@ impl ListNamedShadowsForThingError {
     /// Creates the `ListNamedShadowsForThingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListNamedShadowsForThingErrorKind::Unhandled(err.into()),
+            kind: ListNamedShadowsForThingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1220,7 +1222,9 @@ impl ListNamedShadowsForThingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListNamedShadowsForThingErrorKind::Unhandled(err.into()),
+            kind: ListNamedShadowsForThingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1304,7 +1308,7 @@ impl std::error::Error for ListNamedShadowsForThingError {
             ListNamedShadowsForThingErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListNamedShadowsForThingErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListNamedShadowsForThingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListNamedShadowsForThingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListNamedShadowsForThingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1335,7 +1339,7 @@ pub enum ListRetainedMessagesErrorKind {
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRetainedMessagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1367,7 +1371,9 @@ impl ListRetainedMessagesError {
     /// Creates the `ListRetainedMessagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRetainedMessagesErrorKind::Unhandled(err.into()),
+            kind: ListRetainedMessagesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1376,7 +1382,9 @@ impl ListRetainedMessagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRetainedMessagesErrorKind::Unhandled(err.into()),
+            kind: ListRetainedMessagesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1452,7 +1460,7 @@ impl std::error::Error for ListRetainedMessagesError {
             ListRetainedMessagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListRetainedMessagesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListRetainedMessagesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListRetainedMessagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRetainedMessagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1479,7 +1487,7 @@ pub enum PublishErrorKind {
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1509,7 +1517,7 @@ impl PublishError {
     /// Creates the `PublishError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PublishErrorKind::Unhandled(err.into()),
+            kind: PublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1518,7 +1526,7 @@ impl PublishError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PublishErrorKind::Unhandled(err.into()),
+            kind: PublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1566,7 +1574,7 @@ impl std::error::Error for PublishError {
             PublishErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PublishErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
             PublishErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PublishErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1603,7 +1611,7 @@ pub enum UpdateThingShadowErrorKind {
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateThingShadowError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1640,7 +1648,7 @@ impl UpdateThingShadowError {
     /// Creates the `UpdateThingShadowError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateThingShadowErrorKind::Unhandled(err.into()),
+            kind: UpdateThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1649,7 +1657,7 @@ impl UpdateThingShadowError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateThingShadowErrorKind::Unhandled(err.into()),
+            kind: UpdateThingShadowErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1748,7 +1756,32 @@ impl std::error::Error for UpdateThingShadowError {
             UpdateThingShadowErrorKind::UnsupportedDocumentEncodingException(_inner) => {
                 Some(_inner)
             }
-            UpdateThingShadowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateThingShadowErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

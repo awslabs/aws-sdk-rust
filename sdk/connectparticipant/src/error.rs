@@ -416,7 +416,7 @@ pub enum CompleteAttachmentUploadErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompleteAttachmentUploadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -450,7 +450,9 @@ impl CompleteAttachmentUploadError {
     /// Creates the `CompleteAttachmentUploadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CompleteAttachmentUploadErrorKind::Unhandled(err.into()),
+            kind: CompleteAttachmentUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -459,7 +461,9 @@ impl CompleteAttachmentUploadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CompleteAttachmentUploadErrorKind::Unhandled(err.into()),
+            kind: CompleteAttachmentUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -537,7 +541,7 @@ impl std::error::Error for CompleteAttachmentUploadError {
             }
             CompleteAttachmentUploadErrorKind::ThrottlingException(_inner) => Some(_inner),
             CompleteAttachmentUploadErrorKind::ValidationException(_inner) => Some(_inner),
-            CompleteAttachmentUploadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CompleteAttachmentUploadErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -564,7 +568,7 @@ pub enum CreateParticipantConnectionErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateParticipantConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -594,7 +598,9 @@ impl CreateParticipantConnectionError {
     /// Creates the `CreateParticipantConnectionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateParticipantConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateParticipantConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -603,7 +609,9 @@ impl CreateParticipantConnectionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateParticipantConnectionErrorKind::Unhandled(err.into()),
+            kind: CreateParticipantConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -663,7 +671,7 @@ impl std::error::Error for CreateParticipantConnectionError {
             CreateParticipantConnectionErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateParticipantConnectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateParticipantConnectionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateParticipantConnectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateParticipantConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -690,7 +698,7 @@ pub enum DisconnectParticipantErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisconnectParticipantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -720,7 +728,9 @@ impl DisconnectParticipantError {
     /// Creates the `DisconnectParticipantError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisconnectParticipantErrorKind::Unhandled(err.into()),
+            kind: DisconnectParticipantErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -729,7 +739,9 @@ impl DisconnectParticipantError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisconnectParticipantErrorKind::Unhandled(err.into()),
+            kind: DisconnectParticipantErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -789,7 +801,7 @@ impl std::error::Error for DisconnectParticipantError {
             DisconnectParticipantErrorKind::InternalServerException(_inner) => Some(_inner),
             DisconnectParticipantErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisconnectParticipantErrorKind::ValidationException(_inner) => Some(_inner),
-            DisconnectParticipantErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisconnectParticipantErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -816,7 +828,7 @@ pub enum GetAttachmentErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAttachmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -846,7 +858,7 @@ impl GetAttachmentError {
     /// Creates the `GetAttachmentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -855,7 +867,7 @@ impl GetAttachmentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAttachmentErrorKind::Unhandled(err.into()),
+            kind: GetAttachmentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -906,7 +918,7 @@ impl std::error::Error for GetAttachmentError {
             GetAttachmentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetAttachmentErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetAttachmentErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAttachmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAttachmentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -933,7 +945,7 @@ pub enum GetTranscriptErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTranscriptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -963,7 +975,7 @@ impl GetTranscriptError {
     /// Creates the `GetTranscriptError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTranscriptErrorKind::Unhandled(err.into()),
+            kind: GetTranscriptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -972,7 +984,7 @@ impl GetTranscriptError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTranscriptErrorKind::Unhandled(err.into()),
+            kind: GetTranscriptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1023,7 +1035,7 @@ impl std::error::Error for GetTranscriptError {
             GetTranscriptErrorKind::InternalServerException(_inner) => Some(_inner),
             GetTranscriptErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetTranscriptErrorKind::ValidationException(_inner) => Some(_inner),
-            GetTranscriptErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTranscriptErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1050,7 +1062,7 @@ pub enum SendEventErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendEventError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,7 +1092,7 @@ impl SendEventError {
     /// Creates the `SendEventError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendEventErrorKind::Unhandled(err.into()),
+            kind: SendEventErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1089,7 +1101,7 @@ impl SendEventError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendEventErrorKind::Unhandled(err.into()),
+            kind: SendEventErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1137,7 +1149,7 @@ impl std::error::Error for SendEventError {
             SendEventErrorKind::InternalServerException(_inner) => Some(_inner),
             SendEventErrorKind::ThrottlingException(_inner) => Some(_inner),
             SendEventErrorKind::ValidationException(_inner) => Some(_inner),
-            SendEventErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendEventErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1164,7 +1176,7 @@ pub enum SendMessageErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1194,7 +1206,7 @@ impl SendMessageError {
     /// Creates the `SendMessageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendMessageErrorKind::Unhandled(err.into()),
+            kind: SendMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1203,7 +1215,7 @@ impl SendMessageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendMessageErrorKind::Unhandled(err.into()),
+            kind: SendMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1251,7 +1263,7 @@ impl std::error::Error for SendMessageError {
             SendMessageErrorKind::InternalServerException(_inner) => Some(_inner),
             SendMessageErrorKind::ThrottlingException(_inner) => Some(_inner),
             SendMessageErrorKind::ValidationException(_inner) => Some(_inner),
-            SendMessageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1280,7 +1292,7 @@ pub enum StartAttachmentUploadErrorKind {
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartAttachmentUploadError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1311,7 +1323,9 @@ impl StartAttachmentUploadError {
     /// Creates the `StartAttachmentUploadError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartAttachmentUploadErrorKind::Unhandled(err.into()),
+            kind: StartAttachmentUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1320,7 +1334,9 @@ impl StartAttachmentUploadError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartAttachmentUploadErrorKind::Unhandled(err.into()),
+            kind: StartAttachmentUploadErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1388,7 +1404,32 @@ impl std::error::Error for StartAttachmentUploadError {
             StartAttachmentUploadErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             StartAttachmentUploadErrorKind::ThrottlingException(_inner) => Some(_inner),
             StartAttachmentUploadErrorKind::ValidationException(_inner) => Some(_inner),
-            StartAttachmentUploadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartAttachmentUploadErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

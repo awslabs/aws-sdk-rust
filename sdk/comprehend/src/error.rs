@@ -1062,7 +1062,7 @@ pub enum BatchDetectDominantLanguageErrorKind {
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectDominantLanguageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1096,7 +1096,9 @@ impl BatchDetectDominantLanguageError {
     /// Creates the `BatchDetectDominantLanguageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectDominantLanguageErrorKind::Unhandled(err.into()),
+            kind: BatchDetectDominantLanguageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1105,7 +1107,9 @@ impl BatchDetectDominantLanguageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectDominantLanguageErrorKind::Unhandled(err.into()),
+            kind: BatchDetectDominantLanguageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1169,7 +1173,7 @@ impl std::error::Error for BatchDetectDominantLanguageError {
             BatchDetectDominantLanguageErrorKind::TextSizeLimitExceededException(_inner) => {
                 Some(_inner)
             }
-            BatchDetectDominantLanguageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectDominantLanguageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1198,7 +1202,7 @@ pub enum BatchDetectEntitiesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1229,7 +1233,7 @@ impl BatchDetectEntitiesError {
     /// Creates the `BatchDetectEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectEntitiesErrorKind::Unhandled(err.into()),
+            kind: BatchDetectEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1238,7 +1242,7 @@ impl BatchDetectEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectEntitiesErrorKind::Unhandled(err.into()),
+            kind: BatchDetectEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1306,7 +1310,7 @@ impl std::error::Error for BatchDetectEntitiesError {
             BatchDetectEntitiesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDetectEntitiesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             BatchDetectEntitiesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            BatchDetectEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1335,7 +1339,7 @@ pub enum BatchDetectKeyPhrasesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectKeyPhrasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1368,7 +1372,9 @@ impl BatchDetectKeyPhrasesError {
     /// Creates the `BatchDetectKeyPhrasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectKeyPhrasesErrorKind::Unhandled(err.into()),
+            kind: BatchDetectKeyPhrasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1377,7 +1383,9 @@ impl BatchDetectKeyPhrasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectKeyPhrasesErrorKind::Unhandled(err.into()),
+            kind: BatchDetectKeyPhrasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1445,7 +1453,7 @@ impl std::error::Error for BatchDetectKeyPhrasesError {
             BatchDetectKeyPhrasesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDetectKeyPhrasesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             BatchDetectKeyPhrasesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            BatchDetectKeyPhrasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectKeyPhrasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1474,7 +1482,7 @@ pub enum BatchDetectSentimentErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectSentimentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1505,7 +1513,9 @@ impl BatchDetectSentimentError {
     /// Creates the `BatchDetectSentimentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectSentimentErrorKind::Unhandled(err.into()),
+            kind: BatchDetectSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1514,7 +1524,9 @@ impl BatchDetectSentimentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectSentimentErrorKind::Unhandled(err.into()),
+            kind: BatchDetectSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1582,7 +1594,7 @@ impl std::error::Error for BatchDetectSentimentError {
             BatchDetectSentimentErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDetectSentimentErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             BatchDetectSentimentErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            BatchDetectSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectSentimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1611,7 +1623,7 @@ pub enum BatchDetectSyntaxErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectSyntaxError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1642,7 +1654,7 @@ impl BatchDetectSyntaxError {
     /// Creates the `BatchDetectSyntaxError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectSyntaxErrorKind::Unhandled(err.into()),
+            kind: BatchDetectSyntaxErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1651,7 +1663,7 @@ impl BatchDetectSyntaxError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectSyntaxErrorKind::Unhandled(err.into()),
+            kind: BatchDetectSyntaxErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1719,7 +1731,7 @@ impl std::error::Error for BatchDetectSyntaxError {
             BatchDetectSyntaxErrorKind::InvalidRequestException(_inner) => Some(_inner),
             BatchDetectSyntaxErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             BatchDetectSyntaxErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            BatchDetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1748,7 +1760,7 @@ pub enum BatchDetectTargetedSentimentErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BatchDetectTargetedSentimentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1785,7 +1797,9 @@ impl BatchDetectTargetedSentimentError {
     /// Creates the `BatchDetectTargetedSentimentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1794,7 +1808,9 @@ impl BatchDetectTargetedSentimentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            kind: BatchDetectTargetedSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1868,7 +1884,7 @@ impl std::error::Error for BatchDetectTargetedSentimentError {
             BatchDetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => {
                 Some(_inner)
             }
-            BatchDetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BatchDetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1895,7 +1911,7 @@ pub enum ClassifyDocumentErrorKind {
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ClassifyDocumentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1925,7 +1941,7 @@ impl ClassifyDocumentError {
     /// Creates the `ClassifyDocumentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ClassifyDocumentErrorKind::Unhandled(err.into()),
+            kind: ClassifyDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1934,7 +1950,7 @@ impl ClassifyDocumentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ClassifyDocumentErrorKind::Unhandled(err.into()),
+            kind: ClassifyDocumentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1994,7 +2010,7 @@ impl std::error::Error for ClassifyDocumentError {
             ClassifyDocumentErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ClassifyDocumentErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ClassifyDocumentErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
-            ClassifyDocumentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ClassifyDocumentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2021,7 +2037,7 @@ pub enum ContainsPiiEntitiesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ContainsPiiEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2051,7 +2067,7 @@ impl ContainsPiiEntitiesError {
     /// Creates the `ContainsPiiEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ContainsPiiEntitiesErrorKind::Unhandled(err.into()),
+            kind: ContainsPiiEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2060,7 +2076,7 @@ impl ContainsPiiEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ContainsPiiEntitiesErrorKind::Unhandled(err.into()),
+            kind: ContainsPiiEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2120,7 +2136,7 @@ impl std::error::Error for ContainsPiiEntitiesError {
             ContainsPiiEntitiesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ContainsPiiEntitiesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             ContainsPiiEntitiesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            ContainsPiiEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ContainsPiiEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2155,7 +2171,7 @@ pub enum CreateDocumentClassifierErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDocumentClassifierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2193,7 +2209,9 @@ impl CreateDocumentClassifierError {
     /// Creates the `CreateDocumentClassifierError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2202,7 +2220,9 @@ impl CreateDocumentClassifierError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2296,7 +2316,7 @@ impl std::error::Error for CreateDocumentClassifierError {
             CreateDocumentClassifierErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDocumentClassifierErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateDocumentClassifierErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            CreateDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2331,7 +2351,7 @@ pub enum CreateEndpointErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2365,7 +2385,7 @@ impl CreateEndpointError {
     /// Creates the `CreateEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2374,7 +2394,7 @@ impl CreateEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEndpointErrorKind::Unhandled(err.into()),
+            kind: CreateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2463,7 +2483,7 @@ impl std::error::Error for CreateEndpointError {
             CreateEndpointErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             CreateEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEndpointErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2498,7 +2518,7 @@ pub enum CreateEntityRecognizerErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateEntityRecognizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2534,7 +2554,9 @@ impl CreateEntityRecognizerError {
     /// Creates the `CreateEntityRecognizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: CreateEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2543,7 +2565,9 @@ impl CreateEntityRecognizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: CreateEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2635,7 +2659,7 @@ impl std::error::Error for CreateEntityRecognizerError {
             CreateEntityRecognizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEntityRecognizerErrorKind::TooManyTagsException(_inner) => Some(_inner),
             CreateEntityRecognizerErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            CreateEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2666,7 +2690,7 @@ pub enum DeleteDocumentClassifierErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDocumentClassifierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2700,7 +2724,9 @@ impl DeleteDocumentClassifierError {
     /// Creates the `DeleteDocumentClassifierError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2709,7 +2735,9 @@ impl DeleteDocumentClassifierError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2785,7 +2813,7 @@ impl std::error::Error for DeleteDocumentClassifierError {
             DeleteDocumentClassifierErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDocumentClassifierErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteDocumentClassifierErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2814,7 +2842,7 @@ pub enum DeleteEndpointErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2845,7 +2873,7 @@ impl DeleteEndpointError {
     /// Creates the `DeleteEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2854,7 +2882,7 @@ impl DeleteEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEndpointErrorKind::Unhandled(err.into()),
+            kind: DeleteEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2922,7 +2950,7 @@ impl std::error::Error for DeleteEndpointError {
             DeleteEndpointErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2953,7 +2981,7 @@ pub enum DeleteEntityRecognizerErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEntityRecognizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2985,7 +3013,9 @@ impl DeleteEntityRecognizerError {
     /// Creates the `DeleteEntityRecognizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: DeleteEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2994,7 +3024,9 @@ impl DeleteEntityRecognizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: DeleteEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3070,7 +3102,7 @@ impl std::error::Error for DeleteEntityRecognizerError {
             DeleteEntityRecognizerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteEntityRecognizerErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DeleteEntityRecognizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3095,7 +3127,7 @@ pub enum DeleteResourcePolicyErrorKind {
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3124,7 +3156,9 @@ impl DeleteResourcePolicyError {
     /// Creates the `DeleteResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3133,7 +3167,9 @@ impl DeleteResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3185,7 +3221,7 @@ impl std::error::Error for DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3212,7 +3248,7 @@ pub enum DescribeDocumentClassificationJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDocumentClassificationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3253,7 +3289,9 @@ impl DescribeDocumentClassificationJobError {
     /// Creates the `DescribeDocumentClassificationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDocumentClassificationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentClassificationJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3262,7 +3300,9 @@ impl DescribeDocumentClassificationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDocumentClassificationJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentClassificationJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3330,7 +3370,7 @@ impl std::error::Error for DescribeDocumentClassificationJobError {
             DescribeDocumentClassificationJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeDocumentClassificationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDocumentClassificationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3357,7 +3397,7 @@ pub enum DescribeDocumentClassifierErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDocumentClassifierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3387,7 +3427,9 @@ impl DescribeDocumentClassifierError {
     /// Creates the `DescribeDocumentClassifierError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3396,7 +3438,9 @@ impl DescribeDocumentClassifierError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: DescribeDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3456,7 +3500,7 @@ impl std::error::Error for DescribeDocumentClassifierError {
             DescribeDocumentClassifierErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeDocumentClassifierErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDocumentClassifierErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3483,7 +3527,7 @@ pub enum DescribeDominantLanguageDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDominantLanguageDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3524,7 +3568,9 @@ impl DescribeDominantLanguageDetectionJobError {
     /// Creates the `DescribeDominantLanguageDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3533,7 +3579,9 @@ impl DescribeDominantLanguageDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3601,9 +3649,7 @@ impl std::error::Error for DescribeDominantLanguageDetectionJobError {
             DescribeDominantLanguageDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3630,7 +3676,7 @@ pub enum DescribeEndpointErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3660,7 +3706,7 @@ impl DescribeEndpointError {
     /// Creates the `DescribeEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEndpointErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3669,7 +3715,7 @@ impl DescribeEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEndpointErrorKind::Unhandled(err.into()),
+            kind: DescribeEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3729,7 +3775,7 @@ impl std::error::Error for DescribeEndpointError {
             DescribeEndpointErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3756,7 +3802,7 @@ pub enum DescribeEntitiesDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3788,7 +3834,9 @@ impl DescribeEntitiesDetectionJobError {
     /// Creates the `DescribeEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3797,7 +3845,9 @@ impl DescribeEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3857,7 +3907,7 @@ impl std::error::Error for DescribeEntitiesDetectionJobError {
             DescribeEntitiesDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeEntitiesDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
             DescribeEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3884,7 +3934,7 @@ pub enum DescribeEntityRecognizerErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEntityRecognizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3914,7 +3964,9 @@ impl DescribeEntityRecognizerError {
     /// Creates the `DescribeEntityRecognizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3923,7 +3975,9 @@ impl DescribeEntityRecognizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: DescribeEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3983,7 +4037,7 @@ impl std::error::Error for DescribeEntityRecognizerError {
             DescribeEntityRecognizerErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeEntityRecognizerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeEntityRecognizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4010,7 +4064,7 @@ pub enum DescribeEventsDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4040,7 +4094,9 @@ impl DescribeEventsDetectionJobError {
     /// Creates the `DescribeEventsDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4049,7 +4105,9 @@ impl DescribeEventsDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4109,7 +4167,7 @@ impl std::error::Error for DescribeEventsDetectionJobError {
             DescribeEventsDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeEventsDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
             DescribeEventsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4136,7 +4194,7 @@ pub enum DescribeKeyPhrasesDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeKeyPhrasesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4175,7 +4233,9 @@ impl DescribeKeyPhrasesDetectionJobError {
     /// Creates the `DescribeKeyPhrasesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4184,7 +4244,9 @@ impl DescribeKeyPhrasesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4250,7 +4312,7 @@ impl std::error::Error for DescribeKeyPhrasesDetectionJobError {
             DescribeKeyPhrasesDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4277,7 +4339,7 @@ pub enum DescribePiiEntitiesDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribePiiEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4316,7 +4378,9 @@ impl DescribePiiEntitiesDetectionJobError {
     /// Creates the `DescribePiiEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribePiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribePiiEntitiesDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4325,7 +4389,9 @@ impl DescribePiiEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribePiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribePiiEntitiesDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4391,7 +4457,7 @@ impl std::error::Error for DescribePiiEntitiesDetectionJobError {
             DescribePiiEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribePiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribePiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4416,7 +4482,7 @@ pub enum DescribeResourcePolicyErrorKind {
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4445,7 +4511,9 @@ impl DescribeResourcePolicyError {
     /// Creates the `DescribeResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4454,7 +4522,9 @@ impl DescribeResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: DescribeResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4506,7 +4576,7 @@ impl std::error::Error for DescribeResourcePolicyError {
             DescribeResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4533,7 +4603,7 @@ pub enum DescribeSentimentDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4572,7 +4642,9 @@ impl DescribeSentimentDetectionJobError {
     /// Creates the `DescribeSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4581,7 +4653,9 @@ impl DescribeSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4643,7 +4717,7 @@ impl std::error::Error for DescribeSentimentDetectionJobError {
             DescribeSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4670,7 +4744,7 @@ pub enum DescribeTargetedSentimentDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTargetedSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4711,7 +4785,9 @@ impl DescribeTargetedSentimentDetectionJobError {
     /// Creates the `DescribeTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4720,7 +4796,9 @@ impl DescribeTargetedSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4788,9 +4866,7 @@ impl std::error::Error for DescribeTargetedSentimentDetectionJobError {
             DescribeTargetedSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            DescribeTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4817,7 +4893,7 @@ pub enum DescribeTopicsDetectionJobErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTopicsDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4847,7 +4923,9 @@ impl DescribeTopicsDetectionJobError {
     /// Creates the `DescribeTopicsDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeTopicsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTopicsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4856,7 +4934,9 @@ impl DescribeTopicsDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeTopicsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: DescribeTopicsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4916,7 +4996,7 @@ impl std::error::Error for DescribeTopicsDetectionJobError {
             DescribeTopicsDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeTopicsDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
             DescribeTopicsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeTopicsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeTopicsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4941,7 +5021,7 @@ pub enum DetectDominantLanguageErrorKind {
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectDominantLanguageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4972,7 +5052,9 @@ impl DetectDominantLanguageError {
     /// Creates the `DetectDominantLanguageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectDominantLanguageErrorKind::Unhandled(err.into()),
+            kind: DetectDominantLanguageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4981,7 +5063,9 @@ impl DetectDominantLanguageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectDominantLanguageErrorKind::Unhandled(err.into()),
+            kind: DetectDominantLanguageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5033,7 +5117,7 @@ impl std::error::Error for DetectDominantLanguageError {
             DetectDominantLanguageErrorKind::InternalServerException(_inner) => Some(_inner),
             DetectDominantLanguageErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DetectDominantLanguageErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
-            DetectDominantLanguageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectDominantLanguageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5062,7 +5146,7 @@ pub enum DetectEntitiesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5093,7 +5177,7 @@ impl DetectEntitiesError {
     /// Creates the `DetectEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectEntitiesErrorKind::Unhandled(err.into()),
+            kind: DetectEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5102,7 +5186,7 @@ impl DetectEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectEntitiesErrorKind::Unhandled(err.into()),
+            kind: DetectEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5170,7 +5254,7 @@ impl std::error::Error for DetectEntitiesError {
             DetectEntitiesErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             DetectEntitiesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectEntitiesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5197,7 +5281,7 @@ pub enum DetectKeyPhrasesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectKeyPhrasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5227,7 +5311,7 @@ impl DetectKeyPhrasesError {
     /// Creates the `DetectKeyPhrasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectKeyPhrasesErrorKind::Unhandled(err.into()),
+            kind: DetectKeyPhrasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5236,7 +5320,7 @@ impl DetectKeyPhrasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectKeyPhrasesErrorKind::Unhandled(err.into()),
+            kind: DetectKeyPhrasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5296,7 +5380,7 @@ impl std::error::Error for DetectKeyPhrasesError {
             DetectKeyPhrasesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DetectKeyPhrasesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectKeyPhrasesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectKeyPhrasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectKeyPhrasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5323,7 +5407,7 @@ pub enum DetectPiiEntitiesErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectPiiEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5353,7 +5437,7 @@ impl DetectPiiEntitiesError {
     /// Creates the `DetectPiiEntitiesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectPiiEntitiesErrorKind::Unhandled(err.into()),
+            kind: DetectPiiEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5362,7 +5446,7 @@ impl DetectPiiEntitiesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectPiiEntitiesErrorKind::Unhandled(err.into()),
+            kind: DetectPiiEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5422,7 +5506,7 @@ impl std::error::Error for DetectPiiEntitiesError {
             DetectPiiEntitiesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DetectPiiEntitiesErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectPiiEntitiesErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectPiiEntitiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectPiiEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5449,7 +5533,7 @@ pub enum DetectSentimentErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectSentimentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5479,7 +5563,7 @@ impl DetectSentimentError {
     /// Creates the `DetectSentimentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectSentimentErrorKind::Unhandled(err.into()),
+            kind: DetectSentimentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5488,7 +5572,7 @@ impl DetectSentimentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectSentimentErrorKind::Unhandled(err.into()),
+            kind: DetectSentimentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5548,7 +5632,7 @@ impl std::error::Error for DetectSentimentError {
             DetectSentimentErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DetectSentimentErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectSentimentErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectSentimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5575,7 +5659,7 @@ pub enum DetectSyntaxErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectSyntaxError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5605,7 +5689,7 @@ impl DetectSyntaxError {
     /// Creates the `DetectSyntaxError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectSyntaxErrorKind::Unhandled(err.into()),
+            kind: DetectSyntaxErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5614,7 +5698,7 @@ impl DetectSyntaxError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectSyntaxErrorKind::Unhandled(err.into()),
+            kind: DetectSyntaxErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5674,7 +5758,7 @@ impl std::error::Error for DetectSyntaxError {
             DetectSyntaxErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
             DetectSyntaxErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectSyntaxErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5701,7 +5785,7 @@ pub enum DetectTargetedSentimentErrorKind {
     /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DetectTargetedSentimentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5733,7 +5817,9 @@ impl DetectTargetedSentimentError {
     /// Creates the `DetectTargetedSentimentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            kind: DetectTargetedSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5742,7 +5828,9 @@ impl DetectTargetedSentimentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DetectTargetedSentimentErrorKind::Unhandled(err.into()),
+            kind: DetectTargetedSentimentErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5804,7 +5892,7 @@ impl std::error::Error for DetectTargetedSentimentError {
                 Some(_inner)
             }
             DetectTargetedSentimentErrorKind::UnsupportedLanguageException(_inner) => Some(_inner),
-            DetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DetectTargetedSentimentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5841,7 +5929,7 @@ pub enum ImportModelErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5876,7 +5964,7 @@ impl ImportModelError {
     /// Creates the `ImportModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportModelErrorKind::Unhandled(err.into()),
+            kind: ImportModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5885,7 +5973,7 @@ impl ImportModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportModelErrorKind::Unhandled(err.into()),
+            kind: ImportModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5973,7 +6061,7 @@ impl std::error::Error for ImportModelError {
             ImportModelErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             ImportModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportModelErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            ImportModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6000,7 +6088,7 @@ pub enum ListDocumentClassificationJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDocumentClassificationJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6041,7 +6129,9 @@ impl ListDocumentClassificationJobsError {
     /// Creates the `ListDocumentClassificationJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDocumentClassificationJobsErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassificationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6050,7 +6140,9 @@ impl ListDocumentClassificationJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDocumentClassificationJobsErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassificationJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6116,7 +6208,7 @@ impl std::error::Error for ListDocumentClassificationJobsError {
             ListDocumentClassificationJobsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListDocumentClassificationJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDocumentClassificationJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6143,7 +6235,7 @@ pub enum ListDocumentClassifiersErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDocumentClassifiersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6173,7 +6265,9 @@ impl ListDocumentClassifiersError {
     /// Creates the `ListDocumentClassifiersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDocumentClassifiersErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassifiersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6182,7 +6276,9 @@ impl ListDocumentClassifiersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDocumentClassifiersErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassifiersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6242,7 +6338,7 @@ impl std::error::Error for ListDocumentClassifiersError {
             ListDocumentClassifiersErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListDocumentClassifiersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListDocumentClassifiersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListDocumentClassifiersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDocumentClassifiersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6267,7 +6363,7 @@ pub enum ListDocumentClassifierSummariesErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDocumentClassifierSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6305,7 +6401,9 @@ impl ListDocumentClassifierSummariesError {
     /// Creates the `ListDocumentClassifierSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6314,7 +6412,9 @@ impl ListDocumentClassifierSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(err.into()),
+            kind: ListDocumentClassifierSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6372,7 +6472,7 @@ impl std::error::Error for ListDocumentClassifierSummariesError {
             ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListDocumentClassifierSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDocumentClassifierSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6399,7 +6499,7 @@ pub enum ListDominantLanguageDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDominantLanguageDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6440,7 +6540,9 @@ impl ListDominantLanguageDetectionJobsError {
     /// Creates the `ListDominantLanguageDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDominantLanguageDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListDominantLanguageDetectionJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -6449,7 +6551,9 @@ impl ListDominantLanguageDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDominantLanguageDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListDominantLanguageDetectionJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -6517,7 +6621,7 @@ impl std::error::Error for ListDominantLanguageDetectionJobsError {
             ListDominantLanguageDetectionJobsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListDominantLanguageDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDominantLanguageDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6542,7 +6646,7 @@ pub enum ListEndpointsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6571,7 +6675,7 @@ impl ListEndpointsError {
     /// Creates the `ListEndpointsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6580,7 +6684,7 @@ impl ListEndpointsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEndpointsErrorKind::Unhandled(err.into()),
+            kind: ListEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6632,7 +6736,7 @@ impl std::error::Error for ListEndpointsError {
             ListEndpointsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListEndpointsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEndpointsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEndpointsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6659,7 +6763,7 @@ pub enum ListEntitiesDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEntitiesDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6689,7 +6793,9 @@ impl ListEntitiesDetectionJobsError {
     /// Creates the `ListEntitiesDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEntitiesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListEntitiesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6698,7 +6804,9 @@ impl ListEntitiesDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEntitiesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListEntitiesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6758,7 +6866,7 @@ impl std::error::Error for ListEntitiesDetectionJobsError {
             ListEntitiesDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListEntitiesDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEntitiesDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEntitiesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEntitiesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6785,7 +6893,7 @@ pub enum ListEntityRecognizersErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEntityRecognizersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6815,7 +6923,9 @@ impl ListEntityRecognizersError {
     /// Creates the `ListEntityRecognizersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEntityRecognizersErrorKind::Unhandled(err.into()),
+            kind: ListEntityRecognizersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6824,7 +6934,9 @@ impl ListEntityRecognizersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEntityRecognizersErrorKind::Unhandled(err.into()),
+            kind: ListEntityRecognizersErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6884,7 +6996,7 @@ impl std::error::Error for ListEntityRecognizersError {
             ListEntityRecognizersErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListEntityRecognizersErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEntityRecognizersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEntityRecognizersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEntityRecognizersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6909,7 +7021,7 @@ pub enum ListEntityRecognizerSummariesErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEntityRecognizerSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6947,7 +7059,9 @@ impl ListEntityRecognizerSummariesError {
     /// Creates the `ListEntityRecognizerSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(err.into()),
+            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6956,7 +7070,9 @@ impl ListEntityRecognizerSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(err.into()),
+            kind: ListEntityRecognizerSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7010,7 +7126,7 @@ impl std::error::Error for ListEntityRecognizerSummariesError {
             ListEntityRecognizerSummariesErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListEntityRecognizerSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEntityRecognizerSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7037,7 +7153,7 @@ pub enum ListEventsDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEventsDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7067,7 +7183,9 @@ impl ListEventsDetectionJobsError {
     /// Creates the `ListEventsDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListEventsDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListEventsDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7076,7 +7194,9 @@ impl ListEventsDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListEventsDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListEventsDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7136,7 +7256,7 @@ impl std::error::Error for ListEventsDetectionJobsError {
             ListEventsDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListEventsDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListEventsDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListEventsDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListEventsDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7163,7 +7283,7 @@ pub enum ListKeyPhrasesDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeyPhrasesDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7193,7 +7313,9 @@ impl ListKeyPhrasesDetectionJobsError {
     /// Creates the `ListKeyPhrasesDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListKeyPhrasesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListKeyPhrasesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7202,7 +7324,9 @@ impl ListKeyPhrasesDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListKeyPhrasesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListKeyPhrasesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7262,7 +7386,7 @@ impl std::error::Error for ListKeyPhrasesDetectionJobsError {
             ListKeyPhrasesDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListKeyPhrasesDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListKeyPhrasesDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListKeyPhrasesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListKeyPhrasesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7289,7 +7413,7 @@ pub enum ListPiiEntitiesDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPiiEntitiesDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7321,7 +7445,9 @@ impl ListPiiEntitiesDetectionJobsError {
     /// Creates the `ListPiiEntitiesDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListPiiEntitiesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListPiiEntitiesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7330,7 +7456,9 @@ impl ListPiiEntitiesDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListPiiEntitiesDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListPiiEntitiesDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7390,7 +7518,7 @@ impl std::error::Error for ListPiiEntitiesDetectionJobsError {
             ListPiiEntitiesDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListPiiEntitiesDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListPiiEntitiesDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListPiiEntitiesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListPiiEntitiesDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7417,7 +7545,7 @@ pub enum ListSentimentDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSentimentDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7447,7 +7575,9 @@ impl ListSentimentDetectionJobsError {
     /// Creates the `ListSentimentDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListSentimentDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7456,7 +7586,9 @@ impl ListSentimentDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListSentimentDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7516,7 +7648,7 @@ impl std::error::Error for ListSentimentDetectionJobsError {
             ListSentimentDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListSentimentDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListSentimentDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSentimentDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListSentimentDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7541,7 +7673,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7570,7 +7702,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7579,7 +7711,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7631,7 +7763,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7658,7 +7790,7 @@ pub enum ListTargetedSentimentDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTargetedSentimentDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7699,7 +7831,9 @@ impl ListTargetedSentimentDetectionJobsError {
     /// Creates the `ListTargetedSentimentDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7708,7 +7842,9 @@ impl ListTargetedSentimentDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListTargetedSentimentDetectionJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7776,7 +7912,7 @@ impl std::error::Error for ListTargetedSentimentDetectionJobsError {
             ListTargetedSentimentDetectionJobsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            ListTargetedSentimentDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTargetedSentimentDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7803,7 +7939,7 @@ pub enum ListTopicsDetectionJobsErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTopicsDetectionJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7833,7 +7969,9 @@ impl ListTopicsDetectionJobsError {
     /// Creates the `ListTopicsDetectionJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTopicsDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListTopicsDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7842,7 +7980,9 @@ impl ListTopicsDetectionJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTopicsDetectionJobsErrorKind::Unhandled(err.into()),
+            kind: ListTopicsDetectionJobsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7902,7 +8042,7 @@ impl std::error::Error for ListTopicsDetectionJobsError {
             ListTopicsDetectionJobsErrorKind::InvalidFilterException(_inner) => Some(_inner),
             ListTopicsDetectionJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTopicsDetectionJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTopicsDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTopicsDetectionJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7927,7 +8067,7 @@ pub enum PutResourcePolicyErrorKind {
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutResourcePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7956,7 +8096,7 @@ impl PutResourcePolicyError {
     /// Creates the `PutResourcePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7965,7 +8105,7 @@ impl PutResourcePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutResourcePolicyErrorKind::Unhandled(err.into()),
+            kind: PutResourcePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8017,7 +8157,7 @@ impl std::error::Error for PutResourcePolicyError {
             PutResourcePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             PutResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8050,7 +8190,7 @@ pub enum StartDocumentClassificationJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDocumentClassificationJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8098,7 +8238,9 @@ impl StartDocumentClassificationJobError {
     /// Creates the `StartDocumentClassificationJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDocumentClassificationJobErrorKind::Unhandled(err.into()),
+            kind: StartDocumentClassificationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8107,7 +8249,9 @@ impl StartDocumentClassificationJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDocumentClassificationJobErrorKind::Unhandled(err.into()),
+            kind: StartDocumentClassificationJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8203,7 +8347,7 @@ impl std::error::Error for StartDocumentClassificationJobError {
                 Some(_inner)
             }
             StartDocumentClassificationJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartDocumentClassificationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDocumentClassificationJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8232,7 +8376,7 @@ pub enum StartDominantLanguageDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDominantLanguageDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8276,7 +8420,9 @@ impl StartDominantLanguageDetectionJobError {
     /// Creates the `StartDominantLanguageDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8285,7 +8431,9 @@ impl StartDominantLanguageDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8363,7 +8511,7 @@ impl std::error::Error for StartDominantLanguageDetectionJobError {
             StartDominantLanguageDetectionJobErrorKind::TooManyTagsException(_inner) => {
                 Some(_inner)
             }
-            StartDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8396,7 +8544,7 @@ pub enum StartEntitiesDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8431,7 +8579,9 @@ impl StartEntitiesDetectionJobError {
     /// Creates the `StartEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8440,7 +8590,9 @@ impl StartEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8526,7 +8678,7 @@ impl std::error::Error for StartEntitiesDetectionJobError {
             }
             StartEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8555,7 +8707,7 @@ pub enum StartEventsDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartEventsDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8586,7 +8738,9 @@ impl StartEventsDetectionJobError {
     /// Creates the `StartEventsDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8595,7 +8749,9 @@ impl StartEventsDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8663,7 +8819,7 @@ impl std::error::Error for StartEventsDetectionJobError {
             StartEventsDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartEventsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartEventsDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8692,7 +8848,7 @@ pub enum StartKeyPhrasesDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartKeyPhrasesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8725,7 +8881,9 @@ impl StartKeyPhrasesDetectionJobError {
     /// Creates the `StartKeyPhrasesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8734,7 +8892,9 @@ impl StartKeyPhrasesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8802,7 +8962,7 @@ impl std::error::Error for StartKeyPhrasesDetectionJobError {
             StartKeyPhrasesDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartKeyPhrasesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartKeyPhrasesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8831,7 +8991,7 @@ pub enum StartPiiEntitiesDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartPiiEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8866,7 +9026,9 @@ impl StartPiiEntitiesDetectionJobError {
     /// Creates the `StartPiiEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartPiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartPiiEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8875,7 +9037,9 @@ impl StartPiiEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartPiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartPiiEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8945,7 +9109,7 @@ impl std::error::Error for StartPiiEntitiesDetectionJobError {
             }
             StartPiiEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartPiiEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8974,7 +9138,7 @@ pub enum StartSentimentDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9005,7 +9169,9 @@ impl StartSentimentDetectionJobError {
     /// Creates the `StartSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9014,7 +9180,9 @@ impl StartSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9082,7 +9250,7 @@ impl std::error::Error for StartSentimentDetectionJobError {
             StartSentimentDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9111,7 +9279,7 @@ pub enum StartTargetedSentimentDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTargetedSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9155,7 +9323,9 @@ impl StartTargetedSentimentDetectionJobError {
     /// Creates the `StartTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9164,7 +9334,9 @@ impl StartTargetedSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9242,7 +9414,7 @@ impl std::error::Error for StartTargetedSentimentDetectionJobError {
             StartTargetedSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => {
                 Some(_inner)
             }
-            StartTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9271,7 +9443,7 @@ pub enum StartTopicsDetectionJobErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartTopicsDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9302,7 +9474,9 @@ impl StartTopicsDetectionJobError {
     /// Creates the `StartTopicsDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartTopicsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartTopicsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9311,7 +9485,9 @@ impl StartTopicsDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartTopicsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StartTopicsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9379,7 +9555,7 @@ impl std::error::Error for StartTopicsDetectionJobError {
             StartTopicsDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartTopicsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartTopicsDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            StartTopicsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartTopicsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9404,7 +9580,7 @@ pub enum StopDominantLanguageDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopDominantLanguageDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9442,7 +9618,9 @@ impl StopDominantLanguageDetectionJobError {
     /// Creates the `StopDominantLanguageDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9451,7 +9629,9 @@ impl StopDominantLanguageDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopDominantLanguageDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopDominantLanguageDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9507,7 +9687,7 @@ impl std::error::Error for StopDominantLanguageDetectionJobError {
                 Some(_inner)
             }
             StopDominantLanguageDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9532,7 +9712,7 @@ pub enum StopEntitiesDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9561,7 +9741,9 @@ impl StopEntitiesDetectionJobError {
     /// Creates the `StopEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9570,7 +9752,9 @@ impl StopEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9622,7 +9806,7 @@ impl std::error::Error for StopEntitiesDetectionJobError {
             StopEntitiesDetectionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopEntitiesDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopEntitiesDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9647,7 +9831,7 @@ pub enum StopEventsDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopEventsDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9676,7 +9860,9 @@ impl StopEventsDetectionJobError {
     /// Creates the `StopEventsDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9685,7 +9871,9 @@ impl StopEventsDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopEventsDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopEventsDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9737,7 +9925,7 @@ impl std::error::Error for StopEventsDetectionJobError {
             StopEventsDetectionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopEventsDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopEventsDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9762,7 +9950,7 @@ pub enum StopKeyPhrasesDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopKeyPhrasesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9791,7 +9979,9 @@ impl StopKeyPhrasesDetectionJobError {
     /// Creates the `StopKeyPhrasesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9800,7 +9990,9 @@ impl StopKeyPhrasesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopKeyPhrasesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopKeyPhrasesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9852,7 +10044,7 @@ impl std::error::Error for StopKeyPhrasesDetectionJobError {
             StopKeyPhrasesDetectionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopKeyPhrasesDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopKeyPhrasesDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9877,7 +10069,7 @@ pub enum StopPiiEntitiesDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopPiiEntitiesDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9906,7 +10098,9 @@ impl StopPiiEntitiesDetectionJobError {
     /// Creates the `StopPiiEntitiesDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopPiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopPiiEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9915,7 +10109,9 @@ impl StopPiiEntitiesDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopPiiEntitiesDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopPiiEntitiesDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9967,7 +10163,7 @@ impl std::error::Error for StopPiiEntitiesDetectionJobError {
             StopPiiEntitiesDetectionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopPiiEntitiesDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopPiiEntitiesDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9992,7 +10188,7 @@ pub enum StopSentimentDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10021,7 +10217,9 @@ impl StopSentimentDetectionJobError {
     /// Creates the `StopSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10030,7 +10228,9 @@ impl StopSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopSentimentDetectionJobErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10082,7 +10282,7 @@ impl std::error::Error for StopSentimentDetectionJobError {
             StopSentimentDetectionJobErrorKind::InternalServerException(_inner) => Some(_inner),
             StopSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => Some(_inner),
-            StopSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10107,7 +10307,7 @@ pub enum StopTargetedSentimentDetectionJobErrorKind {
     /// <p>The specified job was not found. Check the job ID and try again.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopTargetedSentimentDetectionJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10145,7 +10345,9 @@ impl StopTargetedSentimentDetectionJobError {
     /// Creates the `StopTargetedSentimentDetectionJobError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -10154,7 +10356,9 @@ impl StopTargetedSentimentDetectionJobError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(err.into()),
+            kind: StopTargetedSentimentDetectionJobErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -10212,7 +10416,7 @@ impl std::error::Error for StopTargetedSentimentDetectionJobError {
             StopTargetedSentimentDetectionJobErrorKind::JobNotFoundException(_inner) => {
                 Some(_inner)
             }
-            StopTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopTargetedSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10239,7 +10443,7 @@ pub enum StopTrainingDocumentClassifierErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopTrainingDocumentClassifierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10280,7 +10484,9 @@ impl StopTrainingDocumentClassifierError {
     /// Creates the `StopTrainingDocumentClassifierError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopTrainingDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: StopTrainingDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10289,7 +10495,9 @@ impl StopTrainingDocumentClassifierError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopTrainingDocumentClassifierErrorKind::Unhandled(err.into()),
+            kind: StopTrainingDocumentClassifierErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10357,7 +10565,7 @@ impl std::error::Error for StopTrainingDocumentClassifierError {
             StopTrainingDocumentClassifierErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
-            StopTrainingDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopTrainingDocumentClassifierErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10384,7 +10592,7 @@ pub enum StopTrainingEntityRecognizerErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopTrainingEntityRecognizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10418,7 +10626,9 @@ impl StopTrainingEntityRecognizerError {
     /// Creates the `StopTrainingEntityRecognizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StopTrainingEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: StopTrainingEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -10427,7 +10637,9 @@ impl StopTrainingEntityRecognizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StopTrainingEntityRecognizerErrorKind::Unhandled(err.into()),
+            kind: StopTrainingEntityRecognizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -10489,7 +10701,7 @@ impl std::error::Error for StopTrainingEntityRecognizerError {
                 Some(_inner)
             }
             StopTrainingEntityRecognizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            StopTrainingEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StopTrainingEntityRecognizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10518,7 +10730,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10549,7 +10761,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10558,7 +10770,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10617,7 +10829,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10646,7 +10858,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
     TooManyTagKeysException(crate::error::TooManyTagKeysException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10677,7 +10889,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10686,7 +10898,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10754,7 +10966,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyTagKeysException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10787,7 +10999,7 @@ pub enum UpdateEndpointErrorKind {
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10820,7 +11032,7 @@ impl UpdateEndpointError {
     /// Creates the `UpdateEndpointError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEndpointErrorKind::Unhandled(err.into()),
+            kind: UpdateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10829,7 +11041,7 @@ impl UpdateEndpointError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEndpointErrorKind::Unhandled(err.into()),
+            kind: UpdateEndpointErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10913,7 +11125,32 @@ impl std::error::Error for UpdateEndpointError {
             UpdateEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateEndpointErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
             UpdateEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEndpointErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

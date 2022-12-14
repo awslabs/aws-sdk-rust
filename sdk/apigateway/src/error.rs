@@ -556,7 +556,7 @@ pub enum CreateApiKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -588,7 +588,7 @@ impl CreateApiKeyError {
     /// Creates the `CreateApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -597,7 +597,7 @@ impl CreateApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateApiKeyErrorKind::Unhandled(err.into()),
+            kind: CreateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -658,7 +658,7 @@ impl std::error::Error for CreateApiKeyError {
             CreateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -689,7 +689,7 @@ pub enum CreateAuthorizerErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -721,7 +721,7 @@ impl CreateAuthorizerError {
     /// Creates the `CreateAuthorizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateAuthorizerErrorKind::Unhandled(err.into()),
+            kind: CreateAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -730,7 +730,7 @@ impl CreateAuthorizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateAuthorizerErrorKind::Unhandled(err.into()),
+            kind: CreateAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -800,7 +800,7 @@ impl std::error::Error for CreateAuthorizerError {
             CreateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -831,7 +831,7 @@ pub enum CreateBasePathMappingErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -863,7 +863,9 @@ impl CreateBasePathMappingError {
     /// Creates the `CreateBasePathMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: CreateBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -872,7 +874,9 @@ impl CreateBasePathMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: CreateBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -948,7 +952,7 @@ impl std::error::Error for CreateBasePathMappingError {
             CreateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -981,7 +985,7 @@ pub enum CreateDeploymentErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1014,7 +1018,7 @@ impl CreateDeploymentError {
     /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1023,7 +1027,7 @@ impl CreateDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDeploymentErrorKind::Unhandled(err.into()),
+            kind: CreateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1101,7 +1105,7 @@ impl std::error::Error for CreateDeploymentError {
             CreateDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1132,7 +1136,7 @@ pub enum CreateDocumentationPartErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1164,7 +1168,9 @@ impl CreateDocumentationPartError {
     /// Creates the `CreateDocumentationPartError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1173,7 +1179,9 @@ impl CreateDocumentationPartError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1249,7 +1257,7 @@ impl std::error::Error for CreateDocumentationPartError {
             CreateDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1280,7 +1288,7 @@ pub enum CreateDocumentationVersionErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1312,7 +1320,9 @@ impl CreateDocumentationVersionError {
     /// Creates the `CreateDocumentationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1321,7 +1331,9 @@ impl CreateDocumentationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: CreateDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1397,7 +1409,7 @@ impl std::error::Error for CreateDocumentationVersionError {
             CreateDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1426,7 +1438,7 @@ pub enum CreateDomainNameErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1457,7 +1469,7 @@ impl CreateDomainNameError {
     /// Creates the `CreateDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDomainNameErrorKind::Unhandled(err.into()),
+            kind: CreateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1466,7 +1478,7 @@ impl CreateDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDomainNameErrorKind::Unhandled(err.into()),
+            kind: CreateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1531,7 +1543,7 @@ impl std::error::Error for CreateDomainNameError {
             CreateDomainNameErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1562,7 +1574,7 @@ pub enum CreateModelErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1594,7 +1606,7 @@ impl CreateModelError {
     /// Creates the `CreateModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateModelErrorKind::Unhandled(err.into()),
+            kind: CreateModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1603,7 +1615,7 @@ impl CreateModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateModelErrorKind::Unhandled(err.into()),
+            kind: CreateModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1664,7 +1676,7 @@ impl std::error::Error for CreateModelError {
             CreateModelErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1695,7 +1707,7 @@ pub enum CreateRequestValidatorErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1727,7 +1739,9 @@ impl CreateRequestValidatorError {
     /// Creates the `CreateRequestValidatorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: CreateRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1736,7 +1750,9 @@ impl CreateRequestValidatorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: CreateRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1812,7 +1828,7 @@ impl std::error::Error for CreateRequestValidatorError {
             CreateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1843,7 +1859,7 @@ pub enum CreateResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1875,7 +1891,7 @@ impl CreateResourceError {
     /// Creates the `CreateResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateResourceErrorKind::Unhandled(err.into()),
+            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1884,7 +1900,7 @@ impl CreateResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateResourceErrorKind::Unhandled(err.into()),
+            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1951,7 +1967,7 @@ impl std::error::Error for CreateResourceError {
             CreateResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1980,7 +1996,7 @@ pub enum CreateRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2011,7 +2027,7 @@ impl CreateRestApiError {
     /// Creates the `CreateRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRestApiErrorKind::Unhandled(err.into()),
+            kind: CreateRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2020,7 +2036,7 @@ impl CreateRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRestApiErrorKind::Unhandled(err.into()),
+            kind: CreateRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2079,7 +2095,7 @@ impl std::error::Error for CreateRestApiError {
             CreateRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2110,7 +2126,7 @@ pub enum CreateStageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2142,7 +2158,7 @@ impl CreateStageError {
     /// Creates the `CreateStageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateStageErrorKind::Unhandled(err.into()),
+            kind: CreateStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2151,7 +2167,7 @@ impl CreateStageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateStageErrorKind::Unhandled(err.into()),
+            kind: CreateStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2212,7 +2228,7 @@ impl std::error::Error for CreateStageError {
             CreateStageErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateStageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2243,7 +2259,7 @@ pub enum CreateUsagePlanErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,7 +2291,7 @@ impl CreateUsagePlanError {
     /// Creates the `CreateUsagePlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUsagePlanErrorKind::Unhandled(err.into()),
+            kind: CreateUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2284,7 +2300,7 @@ impl CreateUsagePlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUsagePlanErrorKind::Unhandled(err.into()),
+            kind: CreateUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2351,7 +2367,7 @@ impl std::error::Error for CreateUsagePlanError {
             CreateUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2382,7 +2398,7 @@ pub enum CreateUsagePlanKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2414,7 +2430,7 @@ impl CreateUsagePlanKeyError {
     /// Creates the `CreateUsagePlanKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: CreateUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2423,7 +2439,7 @@ impl CreateUsagePlanKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: CreateUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2499,7 +2515,7 @@ impl std::error::Error for CreateUsagePlanKeyError {
             CreateUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2528,7 +2544,7 @@ pub enum CreateVpcLinkErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2559,7 +2575,7 @@ impl CreateVpcLinkError {
     /// Creates the `CreateVpcLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVpcLinkErrorKind::Unhandled(err.into()),
+            kind: CreateVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2568,7 +2584,7 @@ impl CreateVpcLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVpcLinkErrorKind::Unhandled(err.into()),
+            kind: CreateVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2627,7 +2643,7 @@ impl std::error::Error for CreateVpcLinkError {
             CreateVpcLinkErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            CreateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2656,7 +2672,7 @@ pub enum DeleteApiKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2687,7 +2703,7 @@ impl DeleteApiKeyError {
     /// Creates the `DeleteApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2696,7 +2712,7 @@ impl DeleteApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteApiKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2752,7 +2768,7 @@ impl std::error::Error for DeleteApiKeyError {
             DeleteApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2781,7 +2797,7 @@ pub enum DeleteAuthorizerErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2812,7 +2828,7 @@ impl DeleteAuthorizerError {
     /// Creates the `DeleteAuthorizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAuthorizerErrorKind::Unhandled(err.into()),
+            kind: DeleteAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2821,7 +2837,7 @@ impl DeleteAuthorizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAuthorizerErrorKind::Unhandled(err.into()),
+            kind: DeleteAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2883,7 +2899,7 @@ impl std::error::Error for DeleteAuthorizerError {
             DeleteAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAuthorizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2912,7 +2928,7 @@ pub enum DeleteBasePathMappingErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2943,7 +2959,9 @@ impl DeleteBasePathMappingError {
     /// Creates the `DeleteBasePathMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: DeleteBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2952,7 +2970,9 @@ impl DeleteBasePathMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: DeleteBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3020,7 +3040,7 @@ impl std::error::Error for DeleteBasePathMappingError {
             DeleteBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3049,7 +3069,7 @@ pub enum DeleteClientCertificateErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3080,7 +3100,9 @@ impl DeleteClientCertificateError {
     /// Creates the `DeleteClientCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteClientCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3089,7 +3111,9 @@ impl DeleteClientCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteClientCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3157,7 +3181,7 @@ impl std::error::Error for DeleteClientCertificateError {
             DeleteClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteClientCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3188,7 +3212,7 @@ pub enum DeleteDeploymentErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3220,7 +3244,7 @@ impl DeleteDeploymentError {
     /// Creates the `DeleteDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDeploymentErrorKind::Unhandled(err.into()),
+            kind: DeleteDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3229,7 +3253,7 @@ impl DeleteDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDeploymentErrorKind::Unhandled(err.into()),
+            kind: DeleteDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3299,7 +3323,7 @@ impl std::error::Error for DeleteDeploymentError {
             DeleteDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3328,7 +3352,7 @@ pub enum DeleteDocumentationPartErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3359,7 +3383,9 @@ impl DeleteDocumentationPartError {
     /// Creates the `DeleteDocumentationPartError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3368,7 +3394,9 @@ impl DeleteDocumentationPartError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3436,7 +3464,7 @@ impl std::error::Error for DeleteDocumentationPartError {
             DeleteDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3465,7 +3493,7 @@ pub enum DeleteDocumentationVersionErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3496,7 +3524,9 @@ impl DeleteDocumentationVersionError {
     /// Creates the `DeleteDocumentationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3505,7 +3535,9 @@ impl DeleteDocumentationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: DeleteDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3573,7 +3605,7 @@ impl std::error::Error for DeleteDocumentationVersionError {
             DeleteDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3602,7 +3634,7 @@ pub enum DeleteDomainNameErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3633,7 +3665,7 @@ impl DeleteDomainNameError {
     /// Creates the `DeleteDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDomainNameErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3642,7 +3674,7 @@ impl DeleteDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDomainNameErrorKind::Unhandled(err.into()),
+            kind: DeleteDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3704,7 +3736,7 @@ impl std::error::Error for DeleteDomainNameError {
             DeleteDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3733,7 +3765,7 @@ pub enum DeleteGatewayResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3764,7 +3796,9 @@ impl DeleteGatewayResponseError {
     /// Creates the `DeleteGatewayResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3773,7 +3807,9 @@ impl DeleteGatewayResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3841,7 +3877,7 @@ impl std::error::Error for DeleteGatewayResponseError {
             DeleteGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3870,7 +3906,7 @@ pub enum DeleteIntegrationErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3901,7 +3937,7 @@ impl DeleteIntegrationError {
     /// Creates the `DeleteIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3910,7 +3946,7 @@ impl DeleteIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteIntegrationErrorKind::Unhandled(err.into()),
+            kind: DeleteIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3972,7 +4008,7 @@ impl std::error::Error for DeleteIntegrationError {
             DeleteIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4001,7 +4037,7 @@ pub enum DeleteIntegrationResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4032,7 +4068,9 @@ impl DeleteIntegrationResponseError {
     /// Creates the `DeleteIntegrationResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4041,7 +4079,9 @@ impl DeleteIntegrationResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4109,7 +4149,7 @@ impl std::error::Error for DeleteIntegrationResponseError {
             DeleteIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4136,7 +4176,7 @@ pub enum DeleteMethodErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4166,7 +4206,7 @@ impl DeleteMethodError {
     /// Creates the `DeleteMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMethodErrorKind::Unhandled(err.into()),
+            kind: DeleteMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4175,7 +4215,7 @@ impl DeleteMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMethodErrorKind::Unhandled(err.into()),
+            kind: DeleteMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4226,7 +4266,7 @@ impl std::error::Error for DeleteMethodError {
             DeleteMethodErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4255,7 +4295,7 @@ pub enum DeleteMethodResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4286,7 +4326,9 @@ impl DeleteMethodResponseError {
     /// Creates the `DeleteMethodResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMethodResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4295,7 +4337,9 @@ impl DeleteMethodResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMethodResponseErrorKind::Unhandled(err.into()),
+            kind: DeleteMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4363,7 +4407,7 @@ impl std::error::Error for DeleteMethodResponseError {
             DeleteMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMethodResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4392,7 +4436,7 @@ pub enum DeleteModelErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4423,7 +4467,7 @@ impl DeleteModelError {
     /// Creates the `DeleteModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteModelErrorKind::Unhandled(err.into()),
+            kind: DeleteModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4432,7 +4476,7 @@ impl DeleteModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteModelErrorKind::Unhandled(err.into()),
+            kind: DeleteModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4488,7 +4532,7 @@ impl std::error::Error for DeleteModelError {
             DeleteModelErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4517,7 +4561,7 @@ pub enum DeleteRequestValidatorErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4548,7 +4592,9 @@ impl DeleteRequestValidatorError {
     /// Creates the `DeleteRequestValidatorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: DeleteRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4557,7 +4603,9 @@ impl DeleteRequestValidatorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: DeleteRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4625,7 +4673,7 @@ impl std::error::Error for DeleteRequestValidatorError {
             DeleteRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4654,7 +4702,7 @@ pub enum DeleteResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4685,7 +4733,7 @@ impl DeleteResourceError {
     /// Creates the `DeleteResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteResourceErrorKind::Unhandled(err.into()),
+            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4694,7 +4742,7 @@ impl DeleteResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteResourceErrorKind::Unhandled(err.into()),
+            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4753,7 +4801,7 @@ impl std::error::Error for DeleteResourceError {
             DeleteResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4782,7 +4830,7 @@ pub enum DeleteRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4813,7 +4861,7 @@ impl DeleteRestApiError {
     /// Creates the `DeleteRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRestApiErrorKind::Unhandled(err.into()),
+            kind: DeleteRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4822,7 +4870,7 @@ impl DeleteRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRestApiErrorKind::Unhandled(err.into()),
+            kind: DeleteRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4878,7 +4926,7 @@ impl std::error::Error for DeleteRestApiError {
             DeleteRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4909,7 +4957,7 @@ pub enum DeleteStageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4941,7 +4989,7 @@ impl DeleteStageError {
     /// Creates the `DeleteStageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteStageErrorKind::Unhandled(err.into()),
+            kind: DeleteStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4950,7 +4998,7 @@ impl DeleteStageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteStageErrorKind::Unhandled(err.into()),
+            kind: DeleteStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5011,7 +5059,7 @@ impl std::error::Error for DeleteStageError {
             DeleteStageErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteStageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5040,7 +5088,7 @@ pub enum DeleteUsagePlanErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5071,7 +5119,7 @@ impl DeleteUsagePlanError {
     /// Creates the `DeleteUsagePlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUsagePlanErrorKind::Unhandled(err.into()),
+            kind: DeleteUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5080,7 +5128,7 @@ impl DeleteUsagePlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUsagePlanErrorKind::Unhandled(err.into()),
+            kind: DeleteUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5139,7 +5187,7 @@ impl std::error::Error for DeleteUsagePlanError {
             DeleteUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUsagePlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5168,7 +5216,7 @@ pub enum DeleteUsagePlanKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5199,7 +5247,7 @@ impl DeleteUsagePlanKeyError {
     /// Creates the `DeleteUsagePlanKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5208,7 +5256,7 @@ impl DeleteUsagePlanKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: DeleteUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5276,7 +5324,7 @@ impl std::error::Error for DeleteUsagePlanKeyError {
             DeleteUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5305,7 +5353,7 @@ pub enum DeleteVpcLinkErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5336,7 +5384,7 @@ impl DeleteVpcLinkError {
     /// Creates the `DeleteVpcLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVpcLinkErrorKind::Unhandled(err.into()),
+            kind: DeleteVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5345,7 +5393,7 @@ impl DeleteVpcLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVpcLinkErrorKind::Unhandled(err.into()),
+            kind: DeleteVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5401,7 +5449,7 @@ impl std::error::Error for DeleteVpcLinkError {
             DeleteVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            DeleteVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVpcLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5432,7 +5480,7 @@ pub enum FlushStageAuthorizersCacheErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FlushStageAuthorizersCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5464,7 +5512,9 @@ impl FlushStageAuthorizersCacheError {
     /// Creates the `FlushStageAuthorizersCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FlushStageAuthorizersCacheErrorKind::Unhandled(err.into()),
+            kind: FlushStageAuthorizersCacheErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5473,7 +5523,9 @@ impl FlushStageAuthorizersCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FlushStageAuthorizersCacheErrorKind::Unhandled(err.into()),
+            kind: FlushStageAuthorizersCacheErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5549,7 +5601,7 @@ impl std::error::Error for FlushStageAuthorizersCacheError {
             FlushStageAuthorizersCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            FlushStageAuthorizersCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FlushStageAuthorizersCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5580,7 +5632,7 @@ pub enum FlushStageCacheErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for FlushStageCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5612,7 +5664,7 @@ impl FlushStageCacheError {
     /// Creates the `FlushStageCacheError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: FlushStageCacheErrorKind::Unhandled(err.into()),
+            kind: FlushStageCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5621,7 +5673,7 @@ impl FlushStageCacheError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: FlushStageCacheErrorKind::Unhandled(err.into()),
+            kind: FlushStageCacheErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5688,7 +5740,7 @@ impl std::error::Error for FlushStageCacheError {
             FlushStageCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            FlushStageCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            FlushStageCacheErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5717,7 +5769,7 @@ pub enum GenerateClientCertificateErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5748,7 +5800,9 @@ impl GenerateClientCertificateError {
     /// Creates the `GenerateClientCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateClientCertificateErrorKind::Unhandled(err.into()),
+            kind: GenerateClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5757,7 +5811,9 @@ impl GenerateClientCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateClientCertificateErrorKind::Unhandled(err.into()),
+            kind: GenerateClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5825,7 +5881,7 @@ impl std::error::Error for GenerateClientCertificateError {
             GenerateClientCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GenerateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5852,7 +5908,7 @@ pub enum GetAccountErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5882,7 +5938,7 @@ impl GetAccountError {
     /// Creates the `GetAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountErrorKind::Unhandled(err.into()),
+            kind: GetAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5891,7 +5947,7 @@ impl GetAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountErrorKind::Unhandled(err.into()),
+            kind: GetAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5939,7 +5995,7 @@ impl std::error::Error for GetAccountError {
             GetAccountErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5966,7 +6022,7 @@ pub enum GetApiKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5996,7 +6052,7 @@ impl GetApiKeyError {
     /// Creates the `GetApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApiKeyErrorKind::Unhandled(err.into()),
+            kind: GetApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6005,7 +6061,7 @@ impl GetApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApiKeyErrorKind::Unhandled(err.into()),
+            kind: GetApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6053,7 +6109,7 @@ impl std::error::Error for GetApiKeyError {
             GetApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6080,7 +6136,7 @@ pub enum GetApiKeysErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6110,7 +6166,7 @@ impl GetApiKeysError {
     /// Creates the `GetApiKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetApiKeysErrorKind::Unhandled(err.into()),
+            kind: GetApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6119,7 +6175,7 @@ impl GetApiKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetApiKeysErrorKind::Unhandled(err.into()),
+            kind: GetApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6167,7 +6223,7 @@ impl std::error::Error for GetApiKeysError {
             GetApiKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApiKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetApiKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6194,7 +6250,7 @@ pub enum GetAuthorizerErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6224,7 +6280,7 @@ impl GetAuthorizerError {
     /// Creates the `GetAuthorizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAuthorizerErrorKind::Unhandled(err.into()),
+            kind: GetAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6233,7 +6289,7 @@ impl GetAuthorizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAuthorizerErrorKind::Unhandled(err.into()),
+            kind: GetAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6284,7 +6340,7 @@ impl std::error::Error for GetAuthorizerError {
             GetAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAuthorizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6311,7 +6367,7 @@ pub enum GetAuthorizersErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAuthorizersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6341,7 +6397,7 @@ impl GetAuthorizersError {
     /// Creates the `GetAuthorizersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAuthorizersErrorKind::Unhandled(err.into()),
+            kind: GetAuthorizersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6350,7 +6406,7 @@ impl GetAuthorizersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAuthorizersErrorKind::Unhandled(err.into()),
+            kind: GetAuthorizersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6404,7 +6460,7 @@ impl std::error::Error for GetAuthorizersError {
             GetAuthorizersErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAuthorizersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAuthorizersErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetAuthorizersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAuthorizersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6431,7 +6487,7 @@ pub enum GetBasePathMappingErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6461,7 +6517,7 @@ impl GetBasePathMappingError {
     /// Creates the `GetBasePathMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: GetBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6470,7 +6526,7 @@ impl GetBasePathMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: GetBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6530,7 +6586,7 @@ impl std::error::Error for GetBasePathMappingError {
             GetBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6557,7 +6613,7 @@ pub enum GetBasePathMappingsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBasePathMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6587,7 +6643,7 @@ impl GetBasePathMappingsError {
     /// Creates the `GetBasePathMappingsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBasePathMappingsErrorKind::Unhandled(err.into()),
+            kind: GetBasePathMappingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6596,7 +6652,7 @@ impl GetBasePathMappingsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBasePathMappingsErrorKind::Unhandled(err.into()),
+            kind: GetBasePathMappingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6656,7 +6712,7 @@ impl std::error::Error for GetBasePathMappingsError {
             GetBasePathMappingsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetBasePathMappingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBasePathMappingsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6683,7 +6739,7 @@ pub enum GetClientCertificateErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6713,7 +6769,9 @@ impl GetClientCertificateError {
     /// Creates the `GetClientCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetClientCertificateErrorKind::Unhandled(err.into()),
+            kind: GetClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6722,7 +6780,9 @@ impl GetClientCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetClientCertificateErrorKind::Unhandled(err.into()),
+            kind: GetClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6782,7 +6842,7 @@ impl std::error::Error for GetClientCertificateError {
             GetClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetClientCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6809,7 +6869,7 @@ pub enum GetClientCertificatesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetClientCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6839,7 +6899,9 @@ impl GetClientCertificatesError {
     /// Creates the `GetClientCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetClientCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetClientCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6848,7 +6910,9 @@ impl GetClientCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetClientCertificatesErrorKind::Unhandled(err.into()),
+            kind: GetClientCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6908,7 +6972,7 @@ impl std::error::Error for GetClientCertificatesError {
             GetClientCertificatesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetClientCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetClientCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6937,7 +7001,7 @@ pub enum GetDeploymentErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6968,7 +7032,7 @@ impl GetDeploymentError {
     /// Creates the `GetDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeploymentErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6977,7 +7041,7 @@ impl GetDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeploymentErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7036,7 +7100,7 @@ impl std::error::Error for GetDeploymentError {
             GetDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7065,7 +7129,7 @@ pub enum GetDeploymentsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7096,7 +7160,7 @@ impl GetDeploymentsError {
     /// Creates the `GetDeploymentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7105,7 +7169,7 @@ impl GetDeploymentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDeploymentsErrorKind::Unhandled(err.into()),
+            kind: GetDeploymentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7167,7 +7231,7 @@ impl std::error::Error for GetDeploymentsError {
             GetDeploymentsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDeploymentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDeploymentsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7194,7 +7258,7 @@ pub enum GetDocumentationPartErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7224,7 +7288,9 @@ impl GetDocumentationPartError {
     /// Creates the `GetDocumentationPartError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7233,7 +7299,9 @@ impl GetDocumentationPartError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7293,7 +7361,7 @@ impl std::error::Error for GetDocumentationPartError {
             GetDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7320,7 +7388,7 @@ pub enum GetDocumentationPartsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentationPartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7350,7 +7418,9 @@ impl GetDocumentationPartsError {
     /// Creates the `GetDocumentationPartsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentationPartsErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationPartsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7359,7 +7429,9 @@ impl GetDocumentationPartsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentationPartsErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationPartsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7419,7 +7491,7 @@ impl std::error::Error for GetDocumentationPartsError {
             GetDocumentationPartsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDocumentationPartsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDocumentationPartsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7444,7 +7516,7 @@ pub enum GetDocumentationVersionErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7473,7 +7545,9 @@ impl GetDocumentationVersionError {
     /// Creates the `GetDocumentationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7482,7 +7556,9 @@ impl GetDocumentationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7534,7 +7610,7 @@ impl std::error::Error for GetDocumentationVersionError {
             GetDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7561,7 +7637,7 @@ pub enum GetDocumentationVersionsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDocumentationVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7591,7 +7667,9 @@ impl GetDocumentationVersionsError {
     /// Creates the `GetDocumentationVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDocumentationVersionsErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7600,7 +7678,9 @@ impl GetDocumentationVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDocumentationVersionsErrorKind::Unhandled(err.into()),
+            kind: GetDocumentationVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7660,7 +7740,7 @@ impl std::error::Error for GetDocumentationVersionsError {
             GetDocumentationVersionsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDocumentationVersionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDocumentationVersionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDocumentationVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDocumentationVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7687,7 +7767,7 @@ pub enum GetDomainNameErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7717,7 +7797,7 @@ impl GetDomainNameError {
     /// Creates the `GetDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainNameErrorKind::Unhandled(err.into()),
+            kind: GetDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7726,7 +7806,7 @@ impl GetDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainNameErrorKind::Unhandled(err.into()),
+            kind: GetDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7777,7 +7857,7 @@ impl std::error::Error for GetDomainNameError {
             GetDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7804,7 +7884,7 @@ pub enum GetDomainNamesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDomainNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7834,7 +7914,7 @@ impl GetDomainNamesError {
     /// Creates the `GetDomainNamesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDomainNamesErrorKind::Unhandled(err.into()),
+            kind: GetDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7843,7 +7923,7 @@ impl GetDomainNamesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDomainNamesErrorKind::Unhandled(err.into()),
+            kind: GetDomainNamesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7897,7 +7977,7 @@ impl std::error::Error for GetDomainNamesError {
             GetDomainNamesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetDomainNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDomainNamesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7928,7 +8008,7 @@ pub enum GetExportErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7960,7 +8040,7 @@ impl GetExportError {
     /// Creates the `GetExportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetExportErrorKind::Unhandled(err.into()),
+            kind: GetExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7969,7 +8049,7 @@ impl GetExportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetExportErrorKind::Unhandled(err.into()),
+            kind: GetExportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8027,7 +8107,7 @@ impl std::error::Error for GetExportError {
             GetExportErrorKind::NotFoundException(_inner) => Some(_inner),
             GetExportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetExportErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetExportErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8054,7 +8134,7 @@ pub enum GetGatewayResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8084,7 +8164,7 @@ impl GetGatewayResponseError {
     /// Creates the `GetGatewayResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: GetGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8093,7 +8173,7 @@ impl GetGatewayResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: GetGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8153,7 +8233,7 @@ impl std::error::Error for GetGatewayResponseError {
             GetGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8180,7 +8260,7 @@ pub enum GetGatewayResponsesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGatewayResponsesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8210,7 +8290,7 @@ impl GetGatewayResponsesError {
     /// Creates the `GetGatewayResponsesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGatewayResponsesErrorKind::Unhandled(err.into()),
+            kind: GetGatewayResponsesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8219,7 +8299,7 @@ impl GetGatewayResponsesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGatewayResponsesErrorKind::Unhandled(err.into()),
+            kind: GetGatewayResponsesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8279,7 +8359,7 @@ impl std::error::Error for GetGatewayResponsesError {
             GetGatewayResponsesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGatewayResponsesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetGatewayResponsesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetGatewayResponsesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGatewayResponsesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8306,7 +8386,7 @@ pub enum GetIntegrationErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8336,7 +8416,7 @@ impl GetIntegrationError {
     /// Creates the `GetIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8345,7 +8425,7 @@ impl GetIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIntegrationErrorKind::Unhandled(err.into()),
+            kind: GetIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8399,7 +8479,7 @@ impl std::error::Error for GetIntegrationError {
             GetIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8426,7 +8506,7 @@ pub enum GetIntegrationResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8456,7 +8536,9 @@ impl GetIntegrationResponseError {
     /// Creates the `GetIntegrationResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: GetIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8465,7 +8547,9 @@ impl GetIntegrationResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: GetIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8525,7 +8609,7 @@ impl std::error::Error for GetIntegrationResponseError {
             GetIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8550,7 +8634,7 @@ pub enum GetMethodErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8579,7 +8663,7 @@ impl GetMethodError {
     /// Creates the `GetMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMethodErrorKind::Unhandled(err.into()),
+            kind: GetMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8588,7 +8672,7 @@ impl GetMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMethodErrorKind::Unhandled(err.into()),
+            kind: GetMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8631,7 +8715,7 @@ impl std::error::Error for GetMethodError {
             GetMethodErrorKind::NotFoundException(_inner) => Some(_inner),
             GetMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8656,7 +8740,7 @@ pub enum GetMethodResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8685,7 +8769,7 @@ impl GetMethodResponseError {
     /// Creates the `GetMethodResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMethodResponseErrorKind::Unhandled(err.into()),
+            kind: GetMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8694,7 +8778,7 @@ impl GetMethodResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMethodResponseErrorKind::Unhandled(err.into()),
+            kind: GetMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8743,7 +8827,7 @@ impl std::error::Error for GetMethodResponseError {
             GetMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             GetMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMethodResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8770,7 +8854,7 @@ pub enum GetModelErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8800,7 +8884,7 @@ impl GetModelError {
     /// Creates the `GetModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetModelErrorKind::Unhandled(err.into()),
+            kind: GetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8809,7 +8893,7 @@ impl GetModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetModelErrorKind::Unhandled(err.into()),
+            kind: GetModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8857,7 +8941,7 @@ impl std::error::Error for GetModelError {
             GetModelErrorKind::NotFoundException(_inner) => Some(_inner),
             GetModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8884,7 +8968,7 @@ pub enum GetModelsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetModelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8914,7 +8998,7 @@ impl GetModelsError {
     /// Creates the `GetModelsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetModelsErrorKind::Unhandled(err.into()),
+            kind: GetModelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8923,7 +9007,7 @@ impl GetModelsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetModelsErrorKind::Unhandled(err.into()),
+            kind: GetModelsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8971,7 +9055,7 @@ impl std::error::Error for GetModelsError {
             GetModelsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetModelsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetModelsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetModelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetModelsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8998,7 +9082,7 @@ pub enum GetModelTemplateErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetModelTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9028,7 +9112,7 @@ impl GetModelTemplateError {
     /// Creates the `GetModelTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetModelTemplateErrorKind::Unhandled(err.into()),
+            kind: GetModelTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9037,7 +9121,7 @@ impl GetModelTemplateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetModelTemplateErrorKind::Unhandled(err.into()),
+            kind: GetModelTemplateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9094,7 +9178,7 @@ impl std::error::Error for GetModelTemplateError {
             GetModelTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetModelTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetModelTemplateErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetModelTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetModelTemplateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9121,7 +9205,7 @@ pub enum GetRequestValidatorErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9151,7 +9235,7 @@ impl GetRequestValidatorError {
     /// Creates the `GetRequestValidatorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: GetRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9160,7 +9244,7 @@ impl GetRequestValidatorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: GetRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9220,7 +9304,7 @@ impl std::error::Error for GetRequestValidatorError {
             GetRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9247,7 +9331,7 @@ pub enum GetRequestValidatorsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRequestValidatorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9277,7 +9361,9 @@ impl GetRequestValidatorsError {
     /// Creates the `GetRequestValidatorsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRequestValidatorsErrorKind::Unhandled(err.into()),
+            kind: GetRequestValidatorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -9286,7 +9372,9 @@ impl GetRequestValidatorsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRequestValidatorsErrorKind::Unhandled(err.into()),
+            kind: GetRequestValidatorsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -9346,7 +9434,7 @@ impl std::error::Error for GetRequestValidatorsError {
             GetRequestValidatorsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRequestValidatorsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRequestValidatorsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRequestValidatorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRequestValidatorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9371,7 +9459,7 @@ pub enum GetResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9400,7 +9488,7 @@ impl GetResourceError {
     /// Creates the `GetResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourceErrorKind::Unhandled(err.into()),
+            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9409,7 +9497,7 @@ impl GetResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourceErrorKind::Unhandled(err.into()),
+            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9455,7 +9543,7 @@ impl std::error::Error for GetResourceError {
             GetResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             GetResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9482,7 +9570,7 @@ pub enum GetResourcesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9512,7 +9600,7 @@ impl GetResourcesError {
     /// Creates the `GetResourcesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9521,7 +9609,7 @@ impl GetResourcesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetResourcesErrorKind::Unhandled(err.into()),
+            kind: GetResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9572,7 +9660,7 @@ impl std::error::Error for GetResourcesError {
             GetResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetResourcesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9599,7 +9687,7 @@ pub enum GetRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9629,7 +9717,7 @@ impl GetRestApiError {
     /// Creates the `GetRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRestApiErrorKind::Unhandled(err.into()),
+            kind: GetRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9638,7 +9726,7 @@ impl GetRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRestApiErrorKind::Unhandled(err.into()),
+            kind: GetRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9686,7 +9774,7 @@ impl std::error::Error for GetRestApiError {
             GetRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9713,7 +9801,7 @@ pub enum GetRestApisErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRestApisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9743,7 +9831,7 @@ impl GetRestApisError {
     /// Creates the `GetRestApisError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRestApisErrorKind::Unhandled(err.into()),
+            kind: GetRestApisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9752,7 +9840,7 @@ impl GetRestApisError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRestApisErrorKind::Unhandled(err.into()),
+            kind: GetRestApisErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9803,7 +9891,7 @@ impl std::error::Error for GetRestApisError {
             GetRestApisErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRestApisErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRestApisErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetRestApisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRestApisErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9834,7 +9922,7 @@ pub enum GetSdkErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSdkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9866,7 +9954,7 @@ impl GetSdkError {
     /// Creates the `GetSdkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSdkErrorKind::Unhandled(err.into()),
+            kind: GetSdkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9875,7 +9963,7 @@ impl GetSdkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSdkErrorKind::Unhandled(err.into()),
+            kind: GetSdkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9933,7 +10021,7 @@ impl std::error::Error for GetSdkError {
             GetSdkErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetSdkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSdkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9960,7 +10048,7 @@ pub enum GetSdkTypeErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSdkTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9990,7 +10078,7 @@ impl GetSdkTypeError {
     /// Creates the `GetSdkTypeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSdkTypeErrorKind::Unhandled(err.into()),
+            kind: GetSdkTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -9999,7 +10087,7 @@ impl GetSdkTypeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSdkTypeErrorKind::Unhandled(err.into()),
+            kind: GetSdkTypeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10047,7 +10135,7 @@ impl std::error::Error for GetSdkTypeError {
             GetSdkTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetSdkTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSdkTypeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10074,7 +10162,7 @@ pub enum GetSdkTypesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSdkTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10104,7 +10192,7 @@ impl GetSdkTypesError {
     /// Creates the `GetSdkTypesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSdkTypesErrorKind::Unhandled(err.into()),
+            kind: GetSdkTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10113,7 +10201,7 @@ impl GetSdkTypesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSdkTypesErrorKind::Unhandled(err.into()),
+            kind: GetSdkTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10164,7 +10252,7 @@ impl std::error::Error for GetSdkTypesError {
             GetSdkTypesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetSdkTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSdkTypesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10195,7 +10283,7 @@ pub enum GetStageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10227,7 +10315,7 @@ impl GetStageError {
     /// Creates the `GetStageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetStageErrorKind::Unhandled(err.into()),
+            kind: GetStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10236,7 +10324,7 @@ impl GetStageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetStageErrorKind::Unhandled(err.into()),
+            kind: GetStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10294,7 +10382,7 @@ impl std::error::Error for GetStageError {
             GetStageErrorKind::NotFoundException(_inner) => Some(_inner),
             GetStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetStageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10325,7 +10413,7 @@ pub enum GetStagesErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetStagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10357,7 +10445,7 @@ impl GetStagesError {
     /// Creates the `GetStagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetStagesErrorKind::Unhandled(err.into()),
+            kind: GetStagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10366,7 +10454,7 @@ impl GetStagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetStagesErrorKind::Unhandled(err.into()),
+            kind: GetStagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10424,7 +10512,7 @@ impl std::error::Error for GetStagesError {
             GetStagesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetStagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetStagesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetStagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetStagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10451,7 +10539,7 @@ pub enum GetTagsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10481,7 +10569,7 @@ impl GetTagsError {
     /// Creates the `GetTagsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetTagsErrorKind::Unhandled(err.into()),
+            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10490,7 +10578,7 @@ impl GetTagsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetTagsErrorKind::Unhandled(err.into()),
+            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10538,7 +10626,7 @@ impl std::error::Error for GetTagsError {
             GetTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetTagsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetTagsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10565,7 +10653,7 @@ pub enum GetUsageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10595,7 +10683,7 @@ impl GetUsageError {
     /// Creates the `GetUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUsageErrorKind::Unhandled(err.into()),
+            kind: GetUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10604,7 +10692,7 @@ impl GetUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUsageErrorKind::Unhandled(err.into()),
+            kind: GetUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10652,7 +10740,7 @@ impl std::error::Error for GetUsageError {
             GetUsageErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10679,7 +10767,7 @@ pub enum GetUsagePlanErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10709,7 +10797,7 @@ impl GetUsagePlanError {
     /// Creates the `GetUsagePlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUsagePlanErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10718,7 +10806,7 @@ impl GetUsagePlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUsagePlanErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10769,7 +10857,7 @@ impl std::error::Error for GetUsagePlanError {
             GetUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUsagePlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10796,7 +10884,7 @@ pub enum GetUsagePlanKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10826,7 +10914,7 @@ impl GetUsagePlanKeyError {
     /// Creates the `GetUsagePlanKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10835,7 +10923,7 @@ impl GetUsagePlanKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUsagePlanKeyErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -10889,7 +10977,7 @@ impl std::error::Error for GetUsagePlanKeyError {
             GetUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -10916,7 +11004,7 @@ pub enum GetUsagePlanKeysErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUsagePlanKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10946,7 +11034,7 @@ impl GetUsagePlanKeysError {
     /// Creates the `GetUsagePlanKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUsagePlanKeysErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -10955,7 +11043,7 @@ impl GetUsagePlanKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUsagePlanKeysErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlanKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11012,7 +11100,7 @@ impl std::error::Error for GetUsagePlanKeysError {
             GetUsagePlanKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsagePlanKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsagePlanKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetUsagePlanKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUsagePlanKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11039,7 +11127,7 @@ pub enum GetUsagePlansErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUsagePlansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11069,7 +11157,7 @@ impl GetUsagePlansError {
     /// Creates the `GetUsagePlansError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUsagePlansErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11078,7 +11166,7 @@ impl GetUsagePlansError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUsagePlansErrorKind::Unhandled(err.into()),
+            kind: GetUsagePlansErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11129,7 +11217,7 @@ impl std::error::Error for GetUsagePlansError {
             GetUsagePlansErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUsagePlansErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11156,7 +11244,7 @@ pub enum GetVpcLinkErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11186,7 +11274,7 @@ impl GetVpcLinkError {
     /// Creates the `GetVpcLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetVpcLinkErrorKind::Unhandled(err.into()),
+            kind: GetVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11195,7 +11283,7 @@ impl GetVpcLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetVpcLinkErrorKind::Unhandled(err.into()),
+            kind: GetVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11243,7 +11331,7 @@ impl std::error::Error for GetVpcLinkError {
             GetVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetVpcLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11270,7 +11358,7 @@ pub enum GetVpcLinksErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetVpcLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11300,7 +11388,7 @@ impl GetVpcLinksError {
     /// Creates the `GetVpcLinksError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetVpcLinksErrorKind::Unhandled(err.into()),
+            kind: GetVpcLinksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11309,7 +11397,7 @@ impl GetVpcLinksError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetVpcLinksErrorKind::Unhandled(err.into()),
+            kind: GetVpcLinksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11360,7 +11448,7 @@ impl std::error::Error for GetVpcLinksError {
             GetVpcLinksErrorKind::NotFoundException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetVpcLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetVpcLinksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11391,7 +11479,7 @@ pub enum ImportApiKeysErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11423,7 +11511,7 @@ impl ImportApiKeysError {
     /// Creates the `ImportApiKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportApiKeysErrorKind::Unhandled(err.into()),
+            kind: ImportApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11432,7 +11520,7 @@ impl ImportApiKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportApiKeysErrorKind::Unhandled(err.into()),
+            kind: ImportApiKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11496,7 +11584,7 @@ impl std::error::Error for ImportApiKeysError {
             ImportApiKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportApiKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportApiKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11527,7 +11615,7 @@ pub enum ImportDocumentationPartsErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportDocumentationPartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11559,7 +11647,9 @@ impl ImportDocumentationPartsError {
     /// Creates the `ImportDocumentationPartsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportDocumentationPartsErrorKind::Unhandled(err.into()),
+            kind: ImportDocumentationPartsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -11568,7 +11658,9 @@ impl ImportDocumentationPartsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportDocumentationPartsErrorKind::Unhandled(err.into()),
+            kind: ImportDocumentationPartsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -11644,7 +11736,7 @@ impl std::error::Error for ImportDocumentationPartsError {
             ImportDocumentationPartsErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ImportDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11675,7 +11767,7 @@ pub enum ImportRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11707,7 +11799,7 @@ impl ImportRestApiError {
     /// Creates the `ImportRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportRestApiErrorKind::Unhandled(err.into()),
+            kind: ImportRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11716,7 +11808,7 @@ impl ImportRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportRestApiErrorKind::Unhandled(err.into()),
+            kind: ImportRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11780,7 +11872,7 @@ impl std::error::Error for ImportRestApiError {
             ImportRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ImportRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11811,7 +11903,7 @@ pub enum PutGatewayResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11843,7 +11935,7 @@ impl PutGatewayResponseError {
     /// Creates the `PutGatewayResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: PutGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -11852,7 +11944,7 @@ impl PutGatewayResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: PutGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -11928,7 +12020,7 @@ impl std::error::Error for PutGatewayResponseError {
             PutGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11959,7 +12051,7 @@ pub enum PutIntegrationErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11991,7 +12083,7 @@ impl PutIntegrationError {
     /// Creates the `PutIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutIntegrationErrorKind::Unhandled(err.into()),
+            kind: PutIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12000,7 +12092,7 @@ impl PutIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutIntegrationErrorKind::Unhandled(err.into()),
+            kind: PutIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12067,7 +12159,7 @@ impl std::error::Error for PutIntegrationError {
             PutIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             PutIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12098,7 +12190,7 @@ pub enum PutIntegrationResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12130,7 +12222,9 @@ impl PutIntegrationResponseError {
     /// Creates the `PutIntegrationResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: PutIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12139,7 +12233,9 @@ impl PutIntegrationResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: PutIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12215,7 +12311,7 @@ impl std::error::Error for PutIntegrationResponseError {
             PutIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             PutIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12246,7 +12342,7 @@ pub enum PutMethodErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12278,7 +12374,7 @@ impl PutMethodError {
     /// Creates the `PutMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMethodErrorKind::Unhandled(err.into()),
+            kind: PutMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12287,7 +12383,7 @@ impl PutMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMethodErrorKind::Unhandled(err.into()),
+            kind: PutMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12345,7 +12441,7 @@ impl std::error::Error for PutMethodError {
             PutMethodErrorKind::NotFoundException(_inner) => Some(_inner),
             PutMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12376,7 +12472,7 @@ pub enum PutMethodResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12408,7 +12504,7 @@ impl PutMethodResponseError {
     /// Creates the `PutMethodResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMethodResponseErrorKind::Unhandled(err.into()),
+            kind: PutMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12417,7 +12513,7 @@ impl PutMethodResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMethodResponseErrorKind::Unhandled(err.into()),
+            kind: PutMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12487,7 +12583,7 @@ impl std::error::Error for PutMethodResponseError {
             PutMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             PutMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMethodResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12518,7 +12614,7 @@ pub enum PutRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12550,7 +12646,7 @@ impl PutRestApiError {
     /// Creates the `PutRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRestApiErrorKind::Unhandled(err.into()),
+            kind: PutRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12559,7 +12655,7 @@ impl PutRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRestApiErrorKind::Unhandled(err.into()),
+            kind: PutRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12617,7 +12713,7 @@ impl std::error::Error for PutRestApiError {
             PutRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             PutRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12648,7 +12744,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12680,7 +12776,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12689,7 +12785,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12750,7 +12846,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12777,7 +12873,7 @@ pub enum TestInvokeAuthorizerErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestInvokeAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12807,7 +12903,9 @@ impl TestInvokeAuthorizerError {
     /// Creates the `TestInvokeAuthorizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestInvokeAuthorizerErrorKind::Unhandled(err.into()),
+            kind: TestInvokeAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -12816,7 +12914,9 @@ impl TestInvokeAuthorizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestInvokeAuthorizerErrorKind::Unhandled(err.into()),
+            kind: TestInvokeAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -12876,7 +12976,7 @@ impl std::error::Error for TestInvokeAuthorizerError {
             TestInvokeAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             TestInvokeAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TestInvokeAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            TestInvokeAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestInvokeAuthorizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -12903,7 +13003,7 @@ pub enum TestInvokeMethodErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TestInvokeMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12933,7 +13033,7 @@ impl TestInvokeMethodError {
     /// Creates the `TestInvokeMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TestInvokeMethodErrorKind::Unhandled(err.into()),
+            kind: TestInvokeMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -12942,7 +13042,7 @@ impl TestInvokeMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TestInvokeMethodErrorKind::Unhandled(err.into()),
+            kind: TestInvokeMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -12999,7 +13099,7 @@ impl std::error::Error for TestInvokeMethodError {
             TestInvokeMethodErrorKind::NotFoundException(_inner) => Some(_inner),
             TestInvokeMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TestInvokeMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            TestInvokeMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TestInvokeMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13030,7 +13130,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13062,7 +13162,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13071,7 +13171,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13135,7 +13235,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13166,7 +13266,7 @@ pub enum UpdateAccountErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13198,7 +13298,7 @@ impl UpdateAccountError {
     /// Creates the `UpdateAccountError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAccountErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13207,7 +13307,7 @@ impl UpdateAccountError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAccountErrorKind::Unhandled(err.into()),
+            kind: UpdateAccountErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13271,7 +13371,7 @@ impl std::error::Error for UpdateAccountError {
             UpdateAccountErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAccountErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13302,7 +13402,7 @@ pub enum UpdateApiKeyErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13334,7 +13434,7 @@ impl UpdateApiKeyError {
     /// Creates the `UpdateApiKeyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateApiKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13343,7 +13443,7 @@ impl UpdateApiKeyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateApiKeyErrorKind::Unhandled(err.into()),
+            kind: UpdateApiKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13404,7 +13504,7 @@ impl std::error::Error for UpdateApiKeyError {
             UpdateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateApiKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13435,7 +13535,7 @@ pub enum UpdateAuthorizerErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13467,7 +13567,7 @@ impl UpdateAuthorizerError {
     /// Creates the `UpdateAuthorizerError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateAuthorizerErrorKind::Unhandled(err.into()),
+            kind: UpdateAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13476,7 +13576,7 @@ impl UpdateAuthorizerError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateAuthorizerErrorKind::Unhandled(err.into()),
+            kind: UpdateAuthorizerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13546,7 +13646,7 @@ impl std::error::Error for UpdateAuthorizerError {
             UpdateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13577,7 +13677,7 @@ pub enum UpdateBasePathMappingErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13609,7 +13709,9 @@ impl UpdateBasePathMappingError {
     /// Creates the `UpdateBasePathMappingError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: UpdateBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13618,7 +13720,9 @@ impl UpdateBasePathMappingError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateBasePathMappingErrorKind::Unhandled(err.into()),
+            kind: UpdateBasePathMappingErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13694,7 +13798,7 @@ impl std::error::Error for UpdateBasePathMappingError {
             UpdateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13725,7 +13829,7 @@ pub enum UpdateClientCertificateErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13757,7 +13861,9 @@ impl UpdateClientCertificateError {
     /// Creates the `UpdateClientCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateClientCertificateErrorKind::Unhandled(err.into()),
+            kind: UpdateClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -13766,7 +13872,9 @@ impl UpdateClientCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateClientCertificateErrorKind::Unhandled(err.into()),
+            kind: UpdateClientCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -13842,7 +13950,7 @@ impl std::error::Error for UpdateClientCertificateError {
             UpdateClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -13875,7 +13983,7 @@ pub enum UpdateDeploymentErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13908,7 +14016,7 @@ impl UpdateDeploymentError {
     /// Creates the `UpdateDeploymentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDeploymentErrorKind::Unhandled(err.into()),
+            kind: UpdateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -13917,7 +14025,7 @@ impl UpdateDeploymentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDeploymentErrorKind::Unhandled(err.into()),
+            kind: UpdateDeploymentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -13995,7 +14103,7 @@ impl std::error::Error for UpdateDeploymentError {
             UpdateDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDeploymentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14026,7 +14134,7 @@ pub enum UpdateDocumentationPartErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14058,7 +14166,9 @@ impl UpdateDocumentationPartError {
     /// Creates the `UpdateDocumentationPartError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14067,7 +14177,9 @@ impl UpdateDocumentationPartError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDocumentationPartErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentationPartErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14143,7 +14255,7 @@ impl std::error::Error for UpdateDocumentationPartError {
             UpdateDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14174,7 +14286,7 @@ pub enum UpdateDocumentationVersionErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14206,7 +14318,9 @@ impl UpdateDocumentationVersionError {
     /// Creates the `UpdateDocumentationVersionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14215,7 +14329,9 @@ impl UpdateDocumentationVersionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDocumentationVersionErrorKind::Unhandled(err.into()),
+            kind: UpdateDocumentationVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14291,7 +14407,7 @@ impl std::error::Error for UpdateDocumentationVersionError {
             UpdateDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14322,7 +14438,7 @@ pub enum UpdateDomainNameErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14354,7 +14470,7 @@ impl UpdateDomainNameError {
     /// Creates the `UpdateDomainNameError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDomainNameErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14363,7 +14479,7 @@ impl UpdateDomainNameError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDomainNameErrorKind::Unhandled(err.into()),
+            kind: UpdateDomainNameErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14433,7 +14549,7 @@ impl std::error::Error for UpdateDomainNameError {
             UpdateDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDomainNameErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14464,7 +14580,7 @@ pub enum UpdateGatewayResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14496,7 +14612,9 @@ impl UpdateGatewayResponseError {
     /// Creates the `UpdateGatewayResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14505,7 +14623,9 @@ impl UpdateGatewayResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14581,7 +14701,7 @@ impl std::error::Error for UpdateGatewayResponseError {
             UpdateGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14612,7 +14732,7 @@ pub enum UpdateIntegrationErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14644,7 +14764,7 @@ impl UpdateIntegrationError {
     /// Creates the `UpdateIntegrationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14653,7 +14773,7 @@ impl UpdateIntegrationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIntegrationErrorKind::Unhandled(err.into()),
+            kind: UpdateIntegrationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14723,7 +14843,7 @@ impl std::error::Error for UpdateIntegrationError {
             UpdateIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateIntegrationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14754,7 +14874,7 @@ pub enum UpdateIntegrationResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14786,7 +14906,9 @@ impl UpdateIntegrationResponseError {
     /// Creates the `UpdateIntegrationResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -14795,7 +14917,9 @@ impl UpdateIntegrationResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIntegrationResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateIntegrationResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -14871,7 +14995,7 @@ impl std::error::Error for UpdateIntegrationResponseError {
             UpdateIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -14900,7 +15024,7 @@ pub enum UpdateMethodErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14931,7 +15055,7 @@ impl UpdateMethodError {
     /// Creates the `UpdateMethodError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMethodErrorKind::Unhandled(err.into()),
+            kind: UpdateMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -14940,7 +15064,7 @@ impl UpdateMethodError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMethodErrorKind::Unhandled(err.into()),
+            kind: UpdateMethodErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -14996,7 +15120,7 @@ impl std::error::Error for UpdateMethodError {
             UpdateMethodErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMethodErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15027,7 +15151,7 @@ pub enum UpdateMethodResponseErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15059,7 +15183,9 @@ impl UpdateMethodResponseError {
     /// Creates the `UpdateMethodResponseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMethodResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15068,7 +15194,9 @@ impl UpdateMethodResponseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMethodResponseErrorKind::Unhandled(err.into()),
+            kind: UpdateMethodResponseErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15144,7 +15272,7 @@ impl std::error::Error for UpdateMethodResponseError {
             UpdateMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMethodResponseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15175,7 +15303,7 @@ pub enum UpdateModelErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15207,7 +15335,7 @@ impl UpdateModelError {
     /// Creates the `UpdateModelError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateModelErrorKind::Unhandled(err.into()),
+            kind: UpdateModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15216,7 +15344,7 @@ impl UpdateModelError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateModelErrorKind::Unhandled(err.into()),
+            kind: UpdateModelErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15277,7 +15405,7 @@ impl std::error::Error for UpdateModelError {
             UpdateModelErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateModelErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15308,7 +15436,7 @@ pub enum UpdateRequestValidatorErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15340,7 +15468,9 @@ impl UpdateRequestValidatorError {
     /// Creates the `UpdateRequestValidatorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: UpdateRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -15349,7 +15479,9 @@ impl UpdateRequestValidatorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRequestValidatorErrorKind::Unhandled(err.into()),
+            kind: UpdateRequestValidatorErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -15425,7 +15557,7 @@ impl std::error::Error for UpdateRequestValidatorError {
             UpdateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15454,7 +15586,7 @@ pub enum UpdateResourceErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15485,7 +15617,7 @@ impl UpdateResourceError {
     /// Creates the `UpdateResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateResourceErrorKind::Unhandled(err.into()),
+            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15494,7 +15626,7 @@ impl UpdateResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateResourceErrorKind::Unhandled(err.into()),
+            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15553,7 +15685,7 @@ impl std::error::Error for UpdateResourceError {
             UpdateResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15584,7 +15716,7 @@ pub enum UpdateRestApiErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15616,7 +15748,7 @@ impl UpdateRestApiError {
     /// Creates the `UpdateRestApiError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRestApiErrorKind::Unhandled(err.into()),
+            kind: UpdateRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15625,7 +15757,7 @@ impl UpdateRestApiError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRestApiErrorKind::Unhandled(err.into()),
+            kind: UpdateRestApiErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15689,7 +15821,7 @@ impl std::error::Error for UpdateRestApiError {
             UpdateRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRestApiErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15720,7 +15852,7 @@ pub enum UpdateStageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15752,7 +15884,7 @@ impl UpdateStageError {
     /// Creates the `UpdateStageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateStageErrorKind::Unhandled(err.into()),
+            kind: UpdateStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15761,7 +15893,7 @@ impl UpdateStageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateStageErrorKind::Unhandled(err.into()),
+            kind: UpdateStageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15822,7 +15954,7 @@ impl std::error::Error for UpdateStageError {
             UpdateStageErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateStageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15853,7 +15985,7 @@ pub enum UpdateUsageErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15885,7 +16017,7 @@ impl UpdateUsageError {
     /// Creates the `UpdateUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUsageErrorKind::Unhandled(err.into()),
+            kind: UpdateUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -15894,7 +16026,7 @@ impl UpdateUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUsageErrorKind::Unhandled(err.into()),
+            kind: UpdateUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -15955,7 +16087,7 @@ impl std::error::Error for UpdateUsageError {
             UpdateUsageErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateUsageErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -15986,7 +16118,7 @@ pub enum UpdateUsagePlanErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16018,7 +16150,7 @@ impl UpdateUsagePlanError {
     /// Creates the `UpdateUsagePlanError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUsagePlanErrorKind::Unhandled(err.into()),
+            kind: UpdateUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16027,7 +16159,7 @@ impl UpdateUsagePlanError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUsagePlanErrorKind::Unhandled(err.into()),
+            kind: UpdateUsagePlanErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16094,7 +16226,7 @@ impl std::error::Error for UpdateUsagePlanError {
             UpdateUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -16125,7 +16257,7 @@ pub enum UpdateVpcLinkErrorKind {
     /// <p>The request is denied because the caller has insufficient permissions.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16157,7 +16289,7 @@ impl UpdateVpcLinkError {
     /// Creates the `UpdateVpcLinkError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVpcLinkErrorKind::Unhandled(err.into()),
+            kind: UpdateVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -16166,7 +16298,7 @@ impl UpdateVpcLinkError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVpcLinkErrorKind::Unhandled(err.into()),
+            kind: UpdateVpcLinkErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -16230,7 +16362,32 @@ impl std::error::Error for UpdateVpcLinkError {
             UpdateVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            UpdateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

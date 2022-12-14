@@ -775,7 +775,7 @@ pub enum CreateGroupErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -814,7 +814,7 @@ impl CreateGroupError {
     /// Creates the `CreateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -823,7 +823,7 @@ impl CreateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupErrorKind::Unhandled(err.into()),
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -892,7 +892,7 @@ impl std::error::Error for CreateGroupError {
             CreateGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -929,7 +929,7 @@ pub enum CreateGroupMembershipErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -970,7 +970,9 @@ impl CreateGroupMembershipError {
     /// Creates the `CreateGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -979,7 +981,9 @@ impl CreateGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: CreateGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1063,7 +1067,7 @@ impl std::error::Error for CreateGroupMembershipError {
             CreateGroupMembershipErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateGroupMembershipErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1100,7 +1104,7 @@ pub enum CreateUserErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1139,7 +1143,7 @@ impl CreateUserError {
     /// Creates the `CreateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1148,7 +1152,7 @@ impl CreateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateUserErrorKind::Unhandled(err.into()),
+            kind: CreateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1217,7 +1221,7 @@ impl std::error::Error for CreateUserError {
             CreateUserErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateUserErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1252,7 +1256,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1290,7 +1294,7 @@ impl DeleteGroupError {
     /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1299,7 +1303,7 @@ impl DeleteGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1360,7 +1364,7 @@ impl std::error::Error for DeleteGroupError {
             DeleteGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1395,7 +1399,7 @@ pub enum DeleteGroupMembershipErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1435,7 +1439,9 @@ impl DeleteGroupMembershipError {
     /// Creates the `DeleteGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1444,7 +1450,9 @@ impl DeleteGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DeleteGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1520,7 +1528,7 @@ impl std::error::Error for DeleteGroupMembershipError {
             DeleteGroupMembershipErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteGroupMembershipErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1555,7 +1563,7 @@ pub enum DeleteUserErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1593,7 +1601,7 @@ impl DeleteUserError {
     /// Creates the `DeleteUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1602,7 +1610,7 @@ impl DeleteUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteUserErrorKind::Unhandled(err.into()),
+            kind: DeleteUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1663,7 +1671,7 @@ impl std::error::Error for DeleteUserError {
             DeleteUserErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteUserErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1692,7 +1700,7 @@ pub enum DescribeGroupErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1731,7 +1739,7 @@ impl DescribeGroupError {
     /// Creates the `DescribeGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1740,7 +1748,7 @@ impl DescribeGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1799,7 +1807,7 @@ impl std::error::Error for DescribeGroupError {
             DescribeGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1828,7 +1836,7 @@ pub enum DescribeGroupMembershipErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGroupMembershipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1867,7 +1875,9 @@ impl DescribeGroupMembershipError {
     /// Creates the `DescribeGroupMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1876,7 +1886,9 @@ impl DescribeGroupMembershipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGroupMembershipErrorKind::Unhandled(err.into()),
+            kind: DescribeGroupMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1944,7 +1956,7 @@ impl std::error::Error for DescribeGroupMembershipError {
             DescribeGroupMembershipErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeGroupMembershipErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeGroupMembershipErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGroupMembershipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1973,7 +1985,7 @@ pub enum DescribeUserErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2010,7 +2022,7 @@ impl DescribeUserError {
     /// Creates the `DescribeUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2019,7 +2031,7 @@ impl DescribeUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeUserErrorKind::Unhandled(err.into()),
+            kind: DescribeUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2078,7 +2090,7 @@ impl std::error::Error for DescribeUserError {
             DescribeUserErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DescribeUserErrorKind::InternalServerException(_inner) => Some(_inner),
             DescribeUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2107,7 +2119,7 @@ pub enum GetGroupIdErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupIdError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2144,7 +2156,7 @@ impl GetGroupIdError {
     /// Creates the `GetGroupIdError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupIdErrorKind::Unhandled(err.into()),
+            kind: GetGroupIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2153,7 +2165,7 @@ impl GetGroupIdError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupIdErrorKind::Unhandled(err.into()),
+            kind: GetGroupIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2209,7 +2221,7 @@ impl std::error::Error for GetGroupIdError {
             GetGroupIdErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetGroupIdErrorKind::InternalServerException(_inner) => Some(_inner),
             GetGroupIdErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetGroupIdErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupIdErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2238,7 +2250,7 @@ pub enum GetGroupMembershipIdErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupMembershipIdError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2277,7 +2289,9 @@ impl GetGroupMembershipIdError {
     /// Creates the `GetGroupMembershipIdError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetGroupMembershipIdErrorKind::Unhandled(err.into()),
+            kind: GetGroupMembershipIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2286,7 +2300,9 @@ impl GetGroupMembershipIdError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetGroupMembershipIdErrorKind::Unhandled(err.into()),
+            kind: GetGroupMembershipIdErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2354,7 +2370,7 @@ impl std::error::Error for GetGroupMembershipIdError {
             GetGroupMembershipIdErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetGroupMembershipIdErrorKind::InternalServerException(_inner) => Some(_inner),
             GetGroupMembershipIdErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetGroupMembershipIdErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetGroupMembershipIdErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2383,7 +2399,7 @@ pub enum GetUserIdErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetUserIdError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2420,7 +2436,7 @@ impl GetUserIdError {
     /// Creates the `GetUserIdError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetUserIdErrorKind::Unhandled(err.into()),
+            kind: GetUserIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2429,7 +2445,7 @@ impl GetUserIdError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetUserIdErrorKind::Unhandled(err.into()),
+            kind: GetUserIdErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2482,7 +2498,7 @@ impl std::error::Error for GetUserIdError {
             GetUserIdErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetUserIdErrorKind::InternalServerException(_inner) => Some(_inner),
             GetUserIdErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetUserIdErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetUserIdErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2511,7 +2527,7 @@ pub enum IsMemberInGroupsErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for IsMemberInGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2550,7 +2566,7 @@ impl IsMemberInGroupsError {
     /// Creates the `IsMemberInGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: IsMemberInGroupsErrorKind::Unhandled(err.into()),
+            kind: IsMemberInGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2559,7 +2575,7 @@ impl IsMemberInGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: IsMemberInGroupsErrorKind::Unhandled(err.into()),
+            kind: IsMemberInGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2627,7 +2643,7 @@ impl std::error::Error for IsMemberInGroupsError {
             IsMemberInGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             IsMemberInGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
             IsMemberInGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            IsMemberInGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            IsMemberInGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2656,7 +2672,7 @@ pub enum ListGroupMembershipsErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupMembershipsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2695,7 +2711,9 @@ impl ListGroupMembershipsError {
     /// Creates the `ListGroupMembershipsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2704,7 +2722,9 @@ impl ListGroupMembershipsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupMembershipsErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2772,7 +2792,7 @@ impl std::error::Error for ListGroupMembershipsError {
             ListGroupMembershipsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListGroupMembershipsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListGroupMembershipsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGroupMembershipsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupMembershipsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2801,7 +2821,7 @@ pub enum ListGroupMembershipsForMemberErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupMembershipsForMemberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2847,7 +2867,9 @@ impl ListGroupMembershipsForMemberError {
     /// Creates the `ListGroupMembershipsForMemberError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupMembershipsForMemberErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsForMemberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2856,7 +2878,9 @@ impl ListGroupMembershipsForMemberError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupMembershipsForMemberErrorKind::Unhandled(err.into()),
+            kind: ListGroupMembershipsForMemberErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2926,7 +2950,7 @@ impl std::error::Error for ListGroupMembershipsForMemberError {
             ListGroupMembershipsForMemberErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListGroupMembershipsForMemberErrorKind::InternalServerException(_inner) => Some(_inner),
             ListGroupMembershipsForMemberErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGroupMembershipsForMemberErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupMembershipsForMemberErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2955,7 +2979,7 @@ pub enum ListGroupsErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2992,7 +3016,7 @@ impl ListGroupsError {
     /// Creates the `ListGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3001,7 +3025,7 @@ impl ListGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGroupsErrorKind::Unhandled(err.into()),
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3057,7 +3081,7 @@ impl std::error::Error for ListGroupsError {
             ListGroupsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListGroupsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListGroupsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3086,7 +3110,7 @@ pub enum ListUsersErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3123,7 +3147,7 @@ impl ListUsersError {
     /// Creates the `ListUsersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3132,7 +3156,7 @@ impl ListUsersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListUsersErrorKind::Unhandled(err.into()),
+            kind: ListUsersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3185,7 +3209,7 @@ impl std::error::Error for ListUsersError {
             ListUsersErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListUsersErrorKind::InternalServerException(_inner) => Some(_inner),
             ListUsersErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListUsersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3222,7 +3246,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3261,7 +3285,7 @@ impl UpdateGroupError {
     /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3270,7 +3294,7 @@ impl UpdateGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3339,7 +3363,7 @@ impl std::error::Error for UpdateGroupError {
             UpdateGroupErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateGroupErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3376,7 +3400,7 @@ pub enum UpdateUserErrorKind {
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3415,7 +3439,7 @@ impl UpdateUserError {
     /// Creates the `UpdateUserError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3424,7 +3448,7 @@ impl UpdateUserError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateUserErrorKind::Unhandled(err.into()),
+            kind: UpdateUserErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3493,7 +3517,32 @@ impl std::error::Error for UpdateUserError {
             UpdateUserErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateUserErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateUserErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateUserErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

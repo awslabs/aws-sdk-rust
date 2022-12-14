@@ -34,7 +34,7 @@ pub enum Error {
     /// <p>The caller has no permissions to operate on the resource involved in the API call.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -74,9 +74,11 @@ where
                 crate::error::ApproveSkillErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::ApproveSkillErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ApproveSkillErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -98,10 +100,10 @@ where
                     inner,
                 ) => Error::LimitExceededException(inner),
                 crate::error::AssociateContactWithAddressBookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -122,9 +124,9 @@ where
                 crate::error::AssociateDeviceWithNetworkProfileErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AssociateDeviceWithNetworkProfileErrorKind::DeviceNotRegisteredException(inner) => Error::DeviceNotRegisteredException(inner),
                 crate::error::AssociateDeviceWithNetworkProfileErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::AssociateDeviceWithNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateDeviceWithNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,10 +150,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::AssociateDeviceWithRoomErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,9 +168,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AssociateSkillGroupWithRoomErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::AssociateSkillGroupWithRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateSkillGroupWithRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -185,9 +187,9 @@ where
                 crate::error::AssociateSkillWithSkillGroupErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AssociateSkillWithSkillGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::AssociateSkillWithSkillGroupErrorKind::SkillNotLinkedException(inner) => Error::SkillNotLinkedException(inner),
-                crate::error::AssociateSkillWithSkillGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssociateSkillWithSkillGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -208,10 +210,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::AssociateSkillWithUsersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -231,10 +233,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateAddressBookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -252,10 +254,10 @@ where
                     inner,
                 ) => Error::AlreadyExistsException(inner),
                 crate::error::CreateBusinessReportScheduleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -273,10 +275,10 @@ where
                     Error::AlreadyExistsException(inner)
                 }
                 crate::error::CreateConferenceProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -293,9 +295,11 @@ where
                 crate::error::CreateContactErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,10 +319,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateGatewayGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -337,9 +341,9 @@ where
                 crate::error::CreateNetworkProfileErrorKind::InvalidCertificateAuthorityException(inner) => Error::InvalidCertificateAuthorityException(inner),
                 crate::error::CreateNetworkProfileErrorKind::InvalidServiceLinkedRoleStateException(inner) => Error::InvalidServiceLinkedRoleStateException(inner),
                 crate::error::CreateNetworkProfileErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::CreateNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -359,9 +363,11 @@ where
                 crate::error::CreateProfileErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -378,9 +384,11 @@ where
                 crate::error::CreateRoomErrorKind::LimitExceededException(inner) => {
                     Error::LimitExceededException(inner)
                 }
-                crate::error::CreateRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateRoomErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -403,10 +411,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateSkillGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -426,9 +434,11 @@ where
                 crate::error::CreateUserErrorKind::ResourceInUseException(inner) => {
                     Error::ResourceInUseException(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -448,10 +458,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::DeleteAddressBookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,9 +477,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteBusinessReportScheduleErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteBusinessReportScheduleErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::DeleteBusinessReportScheduleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBusinessReportScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -487,10 +497,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::DeleteConferenceProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -507,9 +517,11 @@ where
                 crate::error::DeleteContactErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -529,9 +541,11 @@ where
                 crate::error::DeleteDeviceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -555,10 +569,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::DeleteDeviceUsageDataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -575,10 +589,10 @@ where
                     Error::ResourceAssociatedException(inner)
                 }
                 crate::error::DeleteGatewayGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -602,10 +616,10 @@ where
                     Error::ResourceInUseException(inner)
                 }
                 crate::error::DeleteNetworkProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -622,9 +636,11 @@ where
                 crate::error::DeleteProfileErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -641,9 +657,11 @@ where
                 crate::error::DeleteRoomErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRoomErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -658,9 +676,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteRoomSkillParameterErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::DeleteRoomSkillParameterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRoomSkillParameterErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -676,9 +694,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteSkillAuthorizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteSkillAuthorizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::DeleteSkillAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSkillAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -698,10 +716,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::DeleteSkillGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -718,9 +736,11 @@ where
                 crate::error::DeleteUserErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -740,10 +760,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisassociateContactFromAddressBookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -759,9 +779,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateDeviceFromRoomErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DisassociateDeviceFromRoomErrorKind::DeviceNotRegisteredException(inner) => Error::DeviceNotRegisteredException(inner),
-                crate::error::DisassociateDeviceFromRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateDeviceFromRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -781,9 +801,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateSkillFromSkillGroupErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DisassociateSkillFromSkillGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::DisassociateSkillFromSkillGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateSkillFromSkillGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +819,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateSkillFromUsersErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DisassociateSkillFromUsersErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::DisassociateSkillFromUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateSkillFromUsersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -820,9 +840,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DisassociateSkillGroupFromRoomErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-                crate::error::DisassociateSkillGroupFromRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisassociateSkillGroupFromRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -840,10 +860,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ForgetSmartHomeAppliancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -857,9 +877,11 @@ where
                 crate::error::GetAddressBookErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetAddressBookErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAddressBookErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -877,10 +899,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetConferencePreferenceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -898,10 +920,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetConferenceProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -915,9 +937,11 @@ where
                 crate::error::GetContactErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -931,9 +955,11 @@ where
                 crate::error::GetDeviceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -947,9 +973,11 @@ where
                 crate::error::GetGatewayErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -963,9 +991,11 @@ where
                 crate::error::GetGatewayGroupErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetGatewayGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGatewayGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -983,10 +1013,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetInvitationConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1001,9 +1031,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetNetworkProfileErrorKind::InvalidSecretsManagerResourceException(inner) => Error::InvalidSecretsManagerResourceException(inner),
                 crate::error::GetNetworkProfileErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::GetNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1017,9 +1047,11 @@ where
                 crate::error::GetProfileErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1033,9 +1065,11 @@ where
                 crate::error::GetRoomErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRoomErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1053,10 +1087,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetRoomSkillParameterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1070,9 +1104,11 @@ where
                 crate::error::GetSkillGroupErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::GetSkillGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSkillGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1087,10 +1123,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListBusinessReportSchedulesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1105,10 +1141,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListConferenceProvidersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1125,10 +1161,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListDeviceEventsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1142,10 +1178,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListGatewayGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1156,9 +1192,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGatewaysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListGatewaysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGatewaysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1169,9 +1207,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSkillsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListSkillsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListSkillsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1186,10 +1226,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSkillsStoreCategoriesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1208,10 +1248,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSkillsStoreSkillsByCategoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1229,10 +1269,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListSmartHomeAppliancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1246,9 +1286,11 @@ where
                 crate::error::ListTagsErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::ListTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1266,10 +1308,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::PutConferencePreferenceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1285,9 +1327,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutInvitationConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::PutInvitationConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::PutInvitationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutInvitationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1305,10 +1347,10 @@ where
                     inner,
                 ) => Error::ConcurrentModificationException(inner),
                 crate::error::PutRoomSkillParameterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1329,10 +1371,10 @@ where
                     Error::UnauthorizedException(inner)
                 }
                 crate::error::PutSkillAuthorizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1358,10 +1400,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::RegisterAVSDeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1378,9 +1420,11 @@ where
                 crate::error::RejectSkillErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::RejectSkillErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RejectSkillErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1394,9 +1438,11 @@ where
                 crate::error::ResolveRoomErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::ResolveRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResolveRoomErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1416,10 +1462,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::RevokeInvitationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1433,10 +1479,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchAddressBooksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1447,9 +1493,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchContactsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchContactsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchContactsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1460,9 +1508,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchDevicesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchDevicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchDevicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1477,10 +1527,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchNetworkProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1491,9 +1541,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchProfilesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchProfilesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchProfilesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1504,9 +1556,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchRoomsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchRoomsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchRoomsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1520,10 +1574,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchSkillGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1534,9 +1588,11 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchUsersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SearchUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1556,10 +1612,10 @@ where
                     Error::LimitExceededException(inner)
                 }
                 crate::error::SendAnnouncementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1579,9 +1635,11 @@ where
                 crate::error::SendInvitationErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::SendInvitationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendInvitationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1595,9 +1653,11 @@ where
                 crate::error::StartDeviceSyncErrorKind::DeviceNotRegisteredException(inner) => {
                     Error::DeviceNotRegisteredException(inner)
                 }
-                crate::error::StartDeviceSyncErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartDeviceSyncErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1619,10 +1679,10 @@ where
                     inner,
                 ) => Error::NotFoundException(inner),
                 crate::error::StartSmartHomeApplianceDiscoveryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1636,9 +1696,11 @@ where
                 crate::error::TagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1652,9 +1714,11 @@ where
                 crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1677,10 +1741,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateAddressBookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1696,9 +1760,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateBusinessReportScheduleErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::UpdateBusinessReportScheduleErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::UpdateBusinessReportScheduleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateBusinessReportScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1716,10 +1780,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateConferenceProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1736,9 +1800,11 @@ where
                 crate::error::UpdateContactErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateContactErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1758,9 +1824,11 @@ where
                 crate::error::UpdateDeviceErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1777,9 +1845,11 @@ where
                 crate::error::UpdateGatewayErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateGatewayErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1799,10 +1869,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateGatewayGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1821,9 +1891,9 @@ where
                 crate::error::UpdateNetworkProfileErrorKind::InvalidSecretsManagerResourceException(inner) => Error::InvalidSecretsManagerResourceException(inner),
                 crate::error::UpdateNetworkProfileErrorKind::NameInUseException(inner) => Error::NameInUseException(inner),
                 crate::error::UpdateNetworkProfileErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::UpdateNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateNetworkProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1843,9 +1913,11 @@ where
                 crate::error::UpdateProfileErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1862,9 +1934,11 @@ where
                 crate::error::UpdateRoomErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UpdateRoomErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoomErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1887,10 +1961,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateSkillGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

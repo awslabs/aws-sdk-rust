@@ -30,7 +30,7 @@ pub enum Error {
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71,9 +71,9 @@ where
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionUnavailableException(inner) => Error::SerialConsoleSessionUnavailableException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -108,10 +108,10 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::SendSSHPublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

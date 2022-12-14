@@ -1068,7 +1068,7 @@ pub enum AddTagsToCertificateErrorKind {
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddTagsToCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1101,7 +1101,9 @@ impl AddTagsToCertificateError {
     /// Creates the `AddTagsToCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AddTagsToCertificateErrorKind::Unhandled(err.into()),
+            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1110,7 +1112,9 @@ impl AddTagsToCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AddTagsToCertificateErrorKind::Unhandled(err.into()),
+            kind: AddTagsToCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1194,7 +1198,7 @@ impl std::error::Error for AddTagsToCertificateError {
             AddTagsToCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
             AddTagsToCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
             AddTagsToCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AddTagsToCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AddTagsToCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1219,7 +1223,7 @@ pub enum DeleteCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1248,7 +1252,7 @@ impl DeleteCertificateError {
     /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1257,7 +1261,7 @@ impl DeleteCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            kind: DeleteCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1309,7 +1313,7 @@ impl std::error::Error for DeleteCertificateError {
             DeleteCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1332,7 +1336,7 @@ pub enum DescribeCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1360,7 +1364,7 @@ impl DescribeCertificateError {
     /// Creates the `DescribeCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1369,7 +1373,7 @@ impl DescribeCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+            kind: DescribeCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1413,7 +1417,7 @@ impl std::error::Error for DescribeCertificateError {
         match &self.kind {
             DescribeCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1438,7 +1442,7 @@ pub enum ExportCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1467,7 +1471,7 @@ impl ExportCertificateError {
     /// Creates the `ExportCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportCertificateErrorKind::Unhandled(err.into()),
+            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1476,7 +1480,7 @@ impl ExportCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportCertificateErrorKind::Unhandled(err.into()),
+            kind: ExportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1528,7 +1532,7 @@ impl std::error::Error for ExportCertificateError {
             ExportCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             ExportCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
             ExportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExportCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1551,7 +1555,7 @@ pub enum GetAccountConfigurationErrorKind {
     /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1579,7 +1583,9 @@ impl GetAccountConfigurationError {
     /// Creates the `GetAccountConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAccountConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1588,7 +1594,9 @@ impl GetAccountConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAccountConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1632,7 +1640,7 @@ impl std::error::Error for GetAccountConfigurationError {
         match &self.kind {
             GetAccountConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
             GetAccountConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1657,7 +1665,7 @@ pub enum GetCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1686,7 +1694,7 @@ impl GetCertificateError {
     /// Creates the `GetCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1695,7 +1703,7 @@ impl GetCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCertificateErrorKind::Unhandled(err.into()),
+            kind: GetCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1744,7 +1752,7 @@ impl std::error::Error for GetCertificateError {
             GetCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             GetCertificateErrorKind::RequestInProgressException(_inner) => Some(_inner),
             GetCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1777,7 +1785,7 @@ pub enum ImportCertificateErrorKind {
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1810,7 +1818,7 @@ impl ImportCertificateError {
     /// Creates the `ImportCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1819,7 +1827,7 @@ impl ImportCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+            kind: ImportCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1903,7 +1911,7 @@ impl std::error::Error for ImportCertificateError {
             ImportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ImportCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
             ImportCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1924,7 +1932,7 @@ pub enum ListCertificatesErrorKind {
     /// <p>One or more of of request parameters specified is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1951,7 +1959,7 @@ impl ListCertificatesError {
     /// Creates the `ListCertificatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1960,7 +1968,7 @@ impl ListCertificatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+            kind: ListCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1996,7 +2004,7 @@ impl std::error::Error for ListCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListCertificatesErrorKind::InvalidArgsException(_inner) => Some(_inner),
-            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2019,7 +2027,7 @@ pub enum ListTagsForCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2047,7 +2055,9 @@ impl ListTagsForCertificateError {
     /// Creates the `ListTagsForCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForCertificateErrorKind::Unhandled(err.into()),
+            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2056,7 +2066,9 @@ impl ListTagsForCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForCertificateErrorKind::Unhandled(err.into()),
+            kind: ListTagsForCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2100,7 +2112,7 @@ impl std::error::Error for ListTagsForCertificateError {
         match &self.kind {
             ListTagsForCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             ListTagsForCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2127,7 +2139,7 @@ pub enum PutAccountConfigurationErrorKind {
     /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2157,7 +2169,9 @@ impl PutAccountConfigurationError {
     /// Creates the `PutAccountConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAccountConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2166,7 +2180,9 @@ impl PutAccountConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAccountConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutAccountConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2226,7 +2242,7 @@ impl std::error::Error for PutAccountConfigurationError {
             PutAccountConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
             PutAccountConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
             PutAccountConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            PutAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAccountConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2257,7 +2273,7 @@ pub enum RemoveTagsFromCertificateErrorKind {
     /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveTagsFromCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2289,7 +2305,9 @@ impl RemoveTagsFromCertificateError {
     /// Creates the `RemoveTagsFromCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RemoveTagsFromCertificateErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2298,7 +2316,9 @@ impl RemoveTagsFromCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RemoveTagsFromCertificateErrorKind::Unhandled(err.into()),
+            kind: RemoveTagsFromCertificateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2374,7 +2394,7 @@ impl std::error::Error for RemoveTagsFromCertificateError {
             RemoveTagsFromCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RemoveTagsFromCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
             RemoveTagsFromCertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RemoveTagsFromCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2397,7 +2417,7 @@ pub enum RenewCertificateErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RenewCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2425,7 +2445,7 @@ impl RenewCertificateError {
     /// Creates the `RenewCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RenewCertificateErrorKind::Unhandled(err.into()),
+            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2434,7 +2454,7 @@ impl RenewCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RenewCertificateErrorKind::Unhandled(err.into()),
+            kind: RenewCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2478,7 +2498,7 @@ impl std::error::Error for RenewCertificateError {
         match &self.kind {
             RenewCertificateErrorKind::InvalidArnException(_inner) => Some(_inner),
             RenewCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RenewCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RenewCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2511,7 +2531,7 @@ pub enum RequestCertificateErrorKind {
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RequestCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2546,7 +2566,7 @@ impl RequestCertificateError {
     /// Creates the `RequestCertificateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RequestCertificateErrorKind::Unhandled(err.into()),
+            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2555,7 +2575,7 @@ impl RequestCertificateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RequestCertificateErrorKind::Unhandled(err.into()),
+            kind: RequestCertificateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2641,7 +2661,7 @@ impl std::error::Error for RequestCertificateError {
             RequestCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
             RequestCertificateErrorKind::TagPolicyException(_inner) => Some(_inner),
             RequestCertificateErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            RequestCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RequestCertificateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2668,7 +2688,7 @@ pub enum ResendValidationEmailErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResendValidationEmailError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2700,7 +2720,9 @@ impl ResendValidationEmailError {
     /// Creates the `ResendValidationEmailError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ResendValidationEmailErrorKind::Unhandled(err.into()),
+            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2709,7 +2731,9 @@ impl ResendValidationEmailError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ResendValidationEmailErrorKind::Unhandled(err.into()),
+            kind: ResendValidationEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2771,7 +2795,7 @@ impl std::error::Error for ResendValidationEmailError {
             }
             ResendValidationEmailErrorKind::InvalidStateException(_inner) => Some(_inner),
             ResendValidationEmailErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ResendValidationEmailErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ResendValidationEmailErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2798,7 +2822,7 @@ pub enum UpdateCertificateOptionsErrorKind {
     /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCertificateOptionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2828,7 +2852,9 @@ impl UpdateCertificateOptionsError {
     /// Creates the `UpdateCertificateOptionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateCertificateOptionsErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2837,7 +2863,9 @@ impl UpdateCertificateOptionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateCertificateOptionsErrorKind::Unhandled(err.into()),
+            kind: UpdateCertificateOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2897,7 +2925,32 @@ impl std::error::Error for UpdateCertificateOptionsError {
             UpdateCertificateOptionsErrorKind::InvalidStateException(_inner) => Some(_inner),
             UpdateCertificateOptionsErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateCertificateOptionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateCertificateOptionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

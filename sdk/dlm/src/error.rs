@@ -508,7 +508,7 @@ pub enum CreateLifecyclePolicyErrorKind {
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLifecyclePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -537,7 +537,9 @@ impl CreateLifecyclePolicyError {
     /// Creates the `CreateLifecyclePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -546,7 +548,9 @@ impl CreateLifecyclePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: CreateLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -598,7 +602,7 @@ impl std::error::Error for CreateLifecyclePolicyError {
             CreateLifecyclePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateLifecyclePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateLifecyclePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -623,7 +627,7 @@ pub enum DeleteLifecyclePolicyErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLifecyclePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -652,7 +656,9 @@ impl DeleteLifecyclePolicyError {
     /// Creates the `DeleteLifecyclePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -661,7 +667,9 @@ impl DeleteLifecyclePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: DeleteLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -713,7 +721,7 @@ impl std::error::Error for DeleteLifecyclePolicyError {
             DeleteLifecyclePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteLifecyclePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteLifecyclePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -740,7 +748,7 @@ pub enum GetLifecyclePoliciesErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLifecyclePoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -770,7 +778,9 @@ impl GetLifecyclePoliciesError {
     /// Creates the `GetLifecyclePoliciesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLifecyclePoliciesErrorKind::Unhandled(err.into()),
+            kind: GetLifecyclePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -779,7 +789,9 @@ impl GetLifecyclePoliciesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLifecyclePoliciesErrorKind::Unhandled(err.into()),
+            kind: GetLifecyclePoliciesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -839,7 +851,7 @@ impl std::error::Error for GetLifecyclePoliciesError {
             GetLifecyclePoliciesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetLifecyclePoliciesErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetLifecyclePoliciesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetLifecyclePoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLifecyclePoliciesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -864,7 +876,7 @@ pub enum GetLifecyclePolicyErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLifecyclePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -893,7 +905,7 @@ impl GetLifecyclePolicyError {
     /// Creates the `GetLifecyclePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: GetLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -902,7 +914,7 @@ impl GetLifecyclePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: GetLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -954,7 +966,7 @@ impl std::error::Error for GetLifecyclePolicyError {
             GetLifecyclePolicyErrorKind::InternalServerException(_inner) => Some(_inner),
             GetLifecyclePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetLifecyclePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -979,7 +991,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1008,7 +1020,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1017,7 +1029,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1069,7 +1081,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1094,7 +1106,7 @@ pub enum TagResourceErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1123,7 +1135,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1132,7 +1144,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1178,7 +1190,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1203,7 +1215,7 @@ pub enum UntagResourceErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1232,7 +1244,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1241,7 +1253,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1293,7 +1305,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1320,7 +1332,7 @@ pub enum UpdateLifecyclePolicyErrorKind {
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLifecyclePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1350,7 +1362,9 @@ impl UpdateLifecyclePolicyError {
     /// Creates the `UpdateLifecyclePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1359,7 +1373,9 @@ impl UpdateLifecyclePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateLifecyclePolicyErrorKind::Unhandled(err.into()),
+            kind: UpdateLifecyclePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1419,7 +1435,32 @@ impl std::error::Error for UpdateLifecyclePolicyError {
             UpdateLifecyclePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateLifecyclePolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateLifecyclePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -20,7 +20,7 @@ pub enum Error {
     /// <p>The input fails to satisfy the constraints specified by the AWS service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54,9 +54,9 @@ where
                 crate::error::CreateExtendedSourceServerErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateExtendedSourceServerErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::CreateExtendedSourceServerErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateExtendedSourceServerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateExtendedSourceServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -84,9 +84,9 @@ where
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::CreateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -112,9 +112,11 @@ where
                 crate::error::DeleteJobErrorKind::UninitializedAccountException(inner) => {
                     Error::UninitializedAccountException(inner)
                 }
-                crate::error::DeleteJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -144,10 +146,10 @@ where
                     inner,
                 ) => Error::UninitializedAccountException(inner),
                 crate::error::DeleteRecoveryInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -174,9 +176,9 @@ where
                 crate::error::DeleteReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteReplicationConfigurationTemplateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DeleteReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::DeleteReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -205,10 +207,10 @@ where
                     Error::UninitializedAccountException(inner)
                 }
                 crate::error::DeleteSourceServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -234,10 +236,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeJobLogItemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -260,9 +262,11 @@ where
                 crate::error::DescribeJobsErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::DescribeJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -289,10 +293,10 @@ where
                     inner,
                 ) => Error::UninitializedAccountException(inner),
                 crate::error::DescribeRecoveryInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -322,10 +326,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeRecoverySnapshotsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -352,9 +356,9 @@ where
                 crate::error::DescribeReplicationConfigurationTemplatesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DescribeReplicationConfigurationTemplatesErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::DescribeReplicationConfigurationTemplatesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::DescribeReplicationConfigurationTemplatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeReplicationConfigurationTemplatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -381,10 +385,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeSourceServersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -404,9 +408,9 @@ where
                 crate::error::DisconnectRecoveryInstanceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DisconnectRecoveryInstanceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::DisconnectRecoveryInstanceErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::DisconnectRecoveryInstanceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisconnectRecoveryInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -436,10 +440,10 @@ where
                     inner,
                 ) => Error::UninitializedAccountException(inner),
                 crate::error::DisconnectSourceServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -465,9 +469,9 @@ where
                 crate::error::GetFailbackReplicationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetFailbackReplicationConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetFailbackReplicationConfigurationErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::GetFailbackReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetFailbackReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -494,10 +498,10 @@ where
                     inner,
                 ) => Error::UninitializedAccountException(inner),
                 crate::error::GetLaunchConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -516,9 +520,9 @@ where
                 crate::error::GetReplicationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::GetReplicationConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetReplicationConfigurationErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::GetReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -544,10 +548,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::InitializeServiceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -566,9 +570,9 @@ where
                 crate::error::ListExtensibleSourceServersErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::ListExtensibleSourceServersErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::ListExtensibleSourceServersErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::ListExtensibleSourceServersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListExtensibleSourceServersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -597,10 +601,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListStagingAccountsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -629,10 +633,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -662,10 +666,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::RetryDataReplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,10 +701,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::StartFailbackLaunchErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -726,9 +730,11 @@ where
                 crate::error::StartRecoveryErrorKind::UninitializedAccountException(inner) => {
                     Error::UninitializedAccountException(inner)
                 }
-                crate::error::StartRecoveryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartRecoveryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -751,9 +757,11 @@ where
                 crate::error::StopFailbackErrorKind::UninitializedAccountException(inner) => {
                     Error::UninitializedAccountException(inner)
                 }
-                crate::error::StopFailbackErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopFailbackErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -779,9 +787,11 @@ where
                 crate::error::TagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -800,9 +810,9 @@ where
                 crate::error::TerminateRecoveryInstancesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
                 crate::error::TerminateRecoveryInstancesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::TerminateRecoveryInstancesErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::TerminateRecoveryInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TerminateRecoveryInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -828,9 +838,11 @@ where
                 crate::error::UntagResourceErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -857,9 +869,9 @@ where
                 crate::error::UpdateFailbackReplicationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateFailbackReplicationConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateFailbackReplicationConfigurationErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
-                crate::error::UpdateFailbackReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFailbackReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -892,10 +904,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateLaunchConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -920,9 +932,9 @@ where
                 crate::error::UpdateReplicationConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateReplicationConfigurationErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::UpdateReplicationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -950,9 +962,9 @@ where
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-                crate::error::UpdateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

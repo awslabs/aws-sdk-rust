@@ -26,7 +26,7 @@ pub enum Error {
     /// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61,9 +61,9 @@ where
                 crate::error::AddAttributesToFindingsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::AddAttributesToFindingsErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::AddAttributesToFindingsErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::AddAttributesToFindingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddAttributesToFindingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -84,9 +84,9 @@ where
                 crate::error::CreateAssessmentTargetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateAssessmentTargetErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::CreateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::CreateAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -106,9 +106,9 @@ where
                 crate::error::CreateAssessmentTemplateErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateAssessmentTemplateErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::CreateAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::CreateAssessmentTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAssessmentTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -128,9 +128,9 @@ where
                 crate::error::CreateExclusionsPreviewErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::CreateExclusionsPreviewErrorKind::PreviewGenerationInProgressException(inner) => Error::PreviewGenerationInProgressException(inner),
                 crate::error::CreateExclusionsPreviewErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::CreateExclusionsPreviewErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateExclusionsPreviewErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +148,9 @@ where
                 crate::error::CreateResourceGroupErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::CreateResourceGroupErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateResourceGroupErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::CreateResourceGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateResourceGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -169,9 +169,9 @@ where
                 crate::error::DeleteAssessmentRunErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::DeleteAssessmentRunErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteAssessmentRunErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::DeleteAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -191,9 +191,9 @@ where
                 crate::error::DeleteAssessmentTargetErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::DeleteAssessmentTargetErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::DeleteAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -213,9 +213,9 @@ where
                 crate::error::DeleteAssessmentTemplateErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::DeleteAssessmentTemplateErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::DeleteAssessmentTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAssessmentTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -236,10 +236,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeAssessmentRunsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -260,10 +260,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeAssessmentTargetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -284,10 +284,10 @@ where
                     inner,
                 ) => Error::InvalidInputException(inner),
                 crate::error::DescribeAssessmentTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -309,10 +309,10 @@ where
                     Error::InternalException(inner)
                 }
                 crate::error::DescribeCrossAccountAccessRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -332,10 +332,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeExclusionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -355,10 +355,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeFindingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -379,10 +379,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeResourceGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -403,10 +403,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::DescribeRulesPackagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -426,9 +426,9 @@ where
                 crate::error::GetAssessmentReportErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::GetAssessmentReportErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
                 crate::error::GetAssessmentReportErrorKind::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
-                crate::error::GetAssessmentReportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetAssessmentReportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -455,10 +455,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::GetExclusionsPreviewErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -485,10 +485,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::GetTelemetryMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -515,10 +515,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListAssessmentRunAgentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -544,10 +544,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListAssessmentRunsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -571,10 +571,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::ListAssessmentTargetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -601,10 +601,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListAssessmentTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -631,10 +631,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListEventSubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -657,9 +657,11 @@ where
                 crate::error::ListExclusionsErrorKind::NoSuchEntityException(inner) => {
                     Error::NoSuchEntityException(inner)
                 }
-                crate::error::ListExclusionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListExclusionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -682,9 +684,11 @@ where
                 crate::error::ListFindingsErrorKind::NoSuchEntityException(inner) => {
                     Error::NoSuchEntityException(inner)
                 }
-                crate::error::ListFindingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListFindingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -707,10 +711,10 @@ where
                     Error::InvalidInputException(inner)
                 }
                 crate::error::ListRulesPackagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -736,10 +740,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -765,9 +769,11 @@ where
                 crate::error::PreviewAgentsErrorKind::NoSuchEntityException(inner) => {
                     Error::NoSuchEntityException(inner)
                 }
-                crate::error::PreviewAgentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PreviewAgentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -790,9 +796,9 @@ where
                 crate::error::RegisterCrossAccountAccessRoleErrorKind::InvalidCrossAccountRoleException(inner) => Error::InvalidCrossAccountRoleException(inner),
                 crate::error::RegisterCrossAccountAccessRoleErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::RegisterCrossAccountAccessRoleErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::RegisterCrossAccountAccessRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterCrossAccountAccessRoleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -811,9 +817,9 @@ where
                 crate::error::RemoveAttributesFromFindingsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::RemoveAttributesFromFindingsErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::RemoveAttributesFromFindingsErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::RemoveAttributesFromFindingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveAttributesFromFindingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -831,9 +837,9 @@ where
                 crate::error::SetTagsForResourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::SetTagsForResourceErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::SetTagsForResourceErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::SetTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -854,9 +860,9 @@ where
                 crate::error::StartAssessmentRunErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::StartAssessmentRunErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::StartAssessmentRunErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::StartAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StartAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -874,9 +880,9 @@ where
                 crate::error::StopAssessmentRunErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::StopAssessmentRunErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::StopAssessmentRunErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::StopAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::StopAssessmentRunErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -908,10 +914,10 @@ where
                     inner,
                 ) => Error::ServiceTemporarilyUnavailableException(inner),
                 crate::error::SubscribeToEventErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -930,9 +936,9 @@ where
                 crate::error::UnsubscribeFromEventErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::UnsubscribeFromEventErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UnsubscribeFromEventErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::UnsubscribeFromEventErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UnsubscribeFromEventErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -951,9 +957,9 @@ where
                 crate::error::UpdateAssessmentTargetErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::UpdateAssessmentTargetErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UpdateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException(inner) => Error::ServiceTemporarilyUnavailableException(inner),
-                crate::error::UpdateAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAssessmentTargetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

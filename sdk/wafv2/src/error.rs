@@ -1315,7 +1315,7 @@ pub enum AssociateWebACLErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1346,7 +1346,7 @@ impl AssociateWebACLError {
     /// Creates the `AssociateWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: AssociateWebACLErrorKind::Unhandled(err.into()),
+            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1355,7 +1355,7 @@ impl AssociateWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: AssociateWebACLErrorKind::Unhandled(err.into()),
+            kind: AssociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1423,7 +1423,7 @@ impl std::error::Error for AssociateWebACLError {
             AssociateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             AssociateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             AssociateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            AssociateWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            AssociateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1468,7 +1468,7 @@ pub enum CheckCapacityErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckCapacityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1505,7 +1505,7 @@ impl CheckCapacityError {
     /// Creates the `CheckCapacityError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CheckCapacityErrorKind::Unhandled(err.into()),
+            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1514,7 +1514,7 @@ impl CheckCapacityError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CheckCapacityErrorKind::Unhandled(err.into()),
+            kind: CheckCapacityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1616,7 +1616,7 @@ impl std::error::Error for CheckCapacityError {
             CheckCapacityErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CheckCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CheckCapacityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1657,7 +1657,7 @@ pub enum CreateIPSetErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1691,7 +1691,7 @@ impl CreateIPSetError {
     /// Creates the `CreateIPSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateIPSetErrorKind::Unhandled(err.into()),
+            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1700,7 +1700,7 @@ impl CreateIPSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateIPSetErrorKind::Unhandled(err.into()),
+            kind: CreateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1792,7 +1792,7 @@ impl std::error::Error for CreateIPSetError {
             CreateIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             CreateIPSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
             CreateIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            CreateIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateIPSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1833,7 +1833,7 @@ pub enum CreateRegexPatternSetErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1869,7 +1869,9 @@ impl CreateRegexPatternSetError {
     /// Creates the `CreateRegexPatternSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1878,7 +1880,9 @@ impl CreateRegexPatternSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: CreateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1972,7 +1976,7 @@ impl std::error::Error for CreateRegexPatternSetError {
             CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
                 Some(_inner)
             }
-            CreateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2019,7 +2023,7 @@ pub enum CreateRuleGroupErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2058,7 +2062,7 @@ impl CreateRuleGroupError {
     /// Creates the `CreateRuleGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRuleGroupErrorKind::Unhandled(err.into()),
+            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2067,7 +2071,7 @@ impl CreateRuleGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRuleGroupErrorKind::Unhandled(err.into()),
+            kind: CreateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2183,7 +2187,7 @@ impl std::error::Error for CreateRuleGroupError {
             CreateRuleGroupErrorKind::WafTagOperationException(_inner) => Some(_inner),
             CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
             CreateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CreateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2236,7 +2240,7 @@ pub enum CreateWebACLErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2275,7 +2279,7 @@ impl CreateWebACLError {
     /// Creates the `CreateWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateWebACLErrorKind::Unhandled(err.into()),
+            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2284,7 +2288,7 @@ impl CreateWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateWebACLErrorKind::Unhandled(err.into()),
+            kind: CreateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2416,7 +2420,7 @@ impl std::error::Error for CreateWebACLError {
             CreateWebACLErrorKind::WafTagOperationException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
             CreateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            CreateWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2451,7 +2455,7 @@ pub enum DeleteFirewallManagerRuleGroupsErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFirewallManagerRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2495,7 +2499,9 @@ impl DeleteFirewallManagerRuleGroupsError {
     /// Creates the `DeleteFirewallManagerRuleGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2504,7 +2510,9 @@ impl DeleteFirewallManagerRuleGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2582,7 +2590,7 @@ impl std::error::Error for DeleteFirewallManagerRuleGroupsError {
             DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(_inner) => {
                 Some(_inner)
             }
-            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2623,7 +2631,7 @@ pub enum DeleteIPSetErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2657,7 +2665,7 @@ impl DeleteIPSetError {
     /// Creates the `DeleteIPSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteIPSetErrorKind::Unhandled(err.into()),
+            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2666,7 +2674,7 @@ impl DeleteIPSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteIPSetErrorKind::Unhandled(err.into()),
+            kind: DeleteIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2758,7 +2766,7 @@ impl std::error::Error for DeleteIPSetError {
             DeleteIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             DeleteIPSetErrorKind::WafTagOperationException(_inner) => Some(_inner),
             DeleteIPSetErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteIPSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2793,7 +2801,7 @@ pub enum DeleteLoggingConfigurationErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2832,7 +2840,9 @@ impl DeleteLoggingConfigurationError {
     /// Creates the `DeleteLoggingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2841,7 +2851,9 @@ impl DeleteLoggingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2915,7 +2927,7 @@ impl std::error::Error for DeleteLoggingConfigurationError {
                 Some(_inner)
             }
             DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2946,7 +2958,7 @@ pub enum DeletePermissionPolicyErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2975,7 +2987,9 @@ impl DeletePermissionPolicyError {
     /// Creates the `DeletePermissionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeletePermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2984,7 +2998,9 @@ impl DeletePermissionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeletePermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: DeletePermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3036,7 +3052,7 @@ impl std::error::Error for DeletePermissionPolicyError {
             DeletePermissionPolicyErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             DeletePermissionPolicyErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             DeletePermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DeletePermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeletePermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3077,7 +3093,7 @@ pub enum DeleteRegexPatternSetErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3113,7 +3129,9 @@ impl DeleteRegexPatternSetError {
     /// Creates the `DeleteRegexPatternSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3122,7 +3140,9 @@ impl DeleteRegexPatternSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: DeleteRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3216,7 +3236,7 @@ impl std::error::Error for DeleteRegexPatternSetError {
             DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(_inner) => {
                 Some(_inner)
             }
-            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3257,7 +3277,7 @@ pub enum DeleteRuleGroupErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3293,7 +3313,7 @@ impl DeleteRuleGroupError {
     /// Creates the `DeleteRuleGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRuleGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3302,7 +3322,7 @@ impl DeleteRuleGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRuleGroupErrorKind::Unhandled(err.into()),
+            kind: DeleteRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3394,7 +3414,7 @@ impl std::error::Error for DeleteRuleGroupError {
             DeleteRuleGroupErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             DeleteRuleGroupErrorKind::WafTagOperationException(_inner) => Some(_inner),
             DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteRuleGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3435,7 +3455,7 @@ pub enum DeleteWebACLErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3469,7 +3489,7 @@ impl DeleteWebACLError {
     /// Creates the `DeleteWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteWebACLErrorKind::Unhandled(err.into()),
+            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3478,7 +3498,7 @@ impl DeleteWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteWebACLErrorKind::Unhandled(err.into()),
+            kind: DeleteWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3570,7 +3590,7 @@ impl std::error::Error for DeleteWebACLError {
             DeleteWebACLErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             DeleteWebACLErrorKind::WafTagOperationException(_inner) => Some(_inner),
             DeleteWebACLErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            DeleteWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3609,7 +3629,7 @@ pub enum DescribeManagedRuleGroupErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeManagedRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3647,7 +3667,9 @@ impl DescribeManagedRuleGroupError {
     /// Creates the `DescribeManagedRuleGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeManagedRuleGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3656,7 +3678,9 @@ impl DescribeManagedRuleGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeManagedRuleGroupErrorKind::Unhandled(err.into()),
+            kind: DescribeManagedRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3734,7 +3758,7 @@ impl std::error::Error for DescribeManagedRuleGroupError {
             DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
             DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeManagedRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3767,7 +3791,7 @@ pub enum DisassociateWebACLErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3797,7 +3821,7 @@ impl DisassociateWebACLError {
     /// Creates the `DisassociateWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DisassociateWebACLErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3806,7 +3830,7 @@ impl DisassociateWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DisassociateWebACLErrorKind::Unhandled(err.into()),
+            kind: DisassociateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3866,7 +3890,7 @@ impl std::error::Error for DisassociateWebACLError {
             DisassociateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             DisassociateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             DisassociateWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            DisassociateWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DisassociateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3899,7 +3923,7 @@ pub enum GenerateMobileSdkReleaseUrlErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateMobileSdkReleaseUrlError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3937,7 +3961,9 @@ impl GenerateMobileSdkReleaseUrlError {
     /// Creates the `GenerateMobileSdkReleaseUrlError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(err.into()),
+            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3946,7 +3972,9 @@ impl GenerateMobileSdkReleaseUrlError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(err.into()),
+            kind: GenerateMobileSdkReleaseUrlErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4012,7 +4040,7 @@ impl std::error::Error for GenerateMobileSdkReleaseUrlError {
             GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(_inner) => {
                 Some(_inner)
             }
-            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateMobileSdkReleaseUrlErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4045,7 +4073,7 @@ pub enum GetIPSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4075,7 +4103,7 @@ impl GetIPSetError {
     /// Creates the `GetIPSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIPSetErrorKind::Unhandled(err.into()),
+            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4084,7 +4112,7 @@ impl GetIPSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIPSetErrorKind::Unhandled(err.into()),
+            kind: GetIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4141,7 +4169,7 @@ impl std::error::Error for GetIPSetError {
             GetIPSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetIPSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetIPSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIPSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4174,7 +4202,7 @@ pub enum GetLoggingConfigurationErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4204,7 +4232,9 @@ impl GetLoggingConfigurationError {
     /// Creates the `GetLoggingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4213,7 +4243,9 @@ impl GetLoggingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4273,7 +4305,7 @@ impl std::error::Error for GetLoggingConfigurationError {
             GetLoggingConfigurationErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4306,7 +4338,7 @@ pub enum GetManagedRuleSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetManagedRuleSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4336,7 +4368,7 @@ impl GetManagedRuleSetError {
     /// Creates the `GetManagedRuleSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetManagedRuleSetErrorKind::Unhandled(err.into()),
+            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4345,7 +4377,7 @@ impl GetManagedRuleSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetManagedRuleSetErrorKind::Unhandled(err.into()),
+            kind: GetManagedRuleSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4405,7 +4437,7 @@ impl std::error::Error for GetManagedRuleSetError {
             GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetManagedRuleSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetManagedRuleSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4438,7 +4470,7 @@ pub enum GetMobileSdkReleaseErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMobileSdkReleaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4468,7 +4500,7 @@ impl GetMobileSdkReleaseError {
     /// Creates the `GetMobileSdkReleaseError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMobileSdkReleaseErrorKind::Unhandled(err.into()),
+            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4477,7 +4509,7 @@ impl GetMobileSdkReleaseError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMobileSdkReleaseErrorKind::Unhandled(err.into()),
+            kind: GetMobileSdkReleaseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4537,7 +4569,7 @@ impl std::error::Error for GetMobileSdkReleaseError {
             GetMobileSdkReleaseErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetMobileSdkReleaseErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetMobileSdkReleaseErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMobileSdkReleaseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4568,7 +4600,7 @@ pub enum GetPermissionPolicyErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4597,7 +4629,7 @@ impl GetPermissionPolicyError {
     /// Creates the `GetPermissionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetPermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4606,7 +4638,7 @@ impl GetPermissionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetPermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: GetPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4658,7 +4690,7 @@ impl std::error::Error for GetPermissionPolicyError {
             GetPermissionPolicyErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             GetPermissionPolicyErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4691,7 +4723,7 @@ pub enum GetRateBasedStatementManagedKeysErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRateBasedStatementManagedKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4732,7 +4764,9 @@ impl GetRateBasedStatementManagedKeysError {
     /// Creates the `GetRateBasedStatementManagedKeysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(err.into()),
+            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -4741,7 +4775,9 @@ impl GetRateBasedStatementManagedKeysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(err.into()),
+            kind: GetRateBasedStatementManagedKeysErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -4809,7 +4845,7 @@ impl std::error::Error for GetRateBasedStatementManagedKeysError {
             GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(_inner) => {
                 Some(_inner)
             }
-            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRateBasedStatementManagedKeysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4842,7 +4878,7 @@ pub enum GetRegexPatternSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4872,7 +4908,7 @@ impl GetRegexPatternSetError {
     /// Creates the `GetRegexPatternSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4881,7 +4917,7 @@ impl GetRegexPatternSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: GetRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4941,7 +4977,7 @@ impl std::error::Error for GetRegexPatternSetError {
             GetRegexPatternSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetRegexPatternSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4974,7 +5010,7 @@ pub enum GetRuleGroupErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5004,7 +5040,7 @@ impl GetRuleGroupError {
     /// Creates the `GetRuleGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRuleGroupErrorKind::Unhandled(err.into()),
+            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5013,7 +5049,7 @@ impl GetRuleGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRuleGroupErrorKind::Unhandled(err.into()),
+            kind: GetRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5073,7 +5109,7 @@ impl std::error::Error for GetRuleGroupError {
             GetRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetRuleGroupErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetRuleGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5104,7 +5140,7 @@ pub enum GetSampledRequestsErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSampledRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5133,7 +5169,7 @@ impl GetSampledRequestsError {
     /// Creates the `GetSampledRequestsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetSampledRequestsErrorKind::Unhandled(err.into()),
+            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5142,7 +5178,7 @@ impl GetSampledRequestsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetSampledRequestsErrorKind::Unhandled(err.into()),
+            kind: GetSampledRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5194,7 +5230,7 @@ impl std::error::Error for GetSampledRequestsError {
             GetSampledRequestsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             GetSampledRequestsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetSampledRequestsErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetSampledRequestsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetSampledRequestsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5227,7 +5263,7 @@ pub enum GetWebACLErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5257,7 +5293,7 @@ impl GetWebACLError {
     /// Creates the `GetWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWebACLErrorKind::Unhandled(err.into()),
+            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5266,7 +5302,7 @@ impl GetWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWebACLErrorKind::Unhandled(err.into()),
+            kind: GetWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5323,7 +5359,7 @@ impl std::error::Error for GetWebACLError {
             GetWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             GetWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            GetWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5358,7 +5394,7 @@ pub enum GetWebACLForResourceErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetWebACLForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5389,7 +5425,9 @@ impl GetWebACLForResourceError {
     /// Creates the `GetWebACLForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetWebACLForResourceErrorKind::Unhandled(err.into()),
+            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5398,7 +5436,9 @@ impl GetWebACLForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetWebACLForResourceErrorKind::Unhandled(err.into()),
+            kind: GetWebACLForResourceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5466,7 +5506,7 @@ impl std::error::Error for GetWebACLForResourceError {
             GetWebACLForResourceErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetWebACLForResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             GetWebACLForResourceErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            GetWebACLForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetWebACLForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5497,7 +5537,7 @@ pub enum ListAvailableManagedRuleGroupsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableManagedRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5535,7 +5575,9 @@ impl ListAvailableManagedRuleGroupsError {
     /// Creates the `ListAvailableManagedRuleGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5544,7 +5586,9 @@ impl ListAvailableManagedRuleGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableManagedRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5602,7 +5646,7 @@ impl std::error::Error for ListAvailableManagedRuleGroupsError {
             ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(_inner) => {
                 Some(_inner)
             }
-            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListAvailableManagedRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5635,7 +5679,7 @@ pub enum ListAvailableManagedRuleGroupVersionsErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAvailableManagedRuleGroupVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5676,7 +5720,9 @@ impl ListAvailableManagedRuleGroupVersionsError {
     /// Creates the `ListAvailableManagedRuleGroupVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -5685,7 +5731,9 @@ impl ListAvailableManagedRuleGroupVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(err.into()),
+            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -5753,9 +5801,7 @@ impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
             ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(_inner) => {
                 Some(_inner)
             }
-            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5786,7 +5832,7 @@ pub enum ListIPSetsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIPSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5815,7 +5861,7 @@ impl ListIPSetsError {
     /// Creates the `ListIPSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIPSetsErrorKind::Unhandled(err.into()),
+            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5824,7 +5870,7 @@ impl ListIPSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIPSetsErrorKind::Unhandled(err.into()),
+            kind: ListIPSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5876,7 +5922,7 @@ impl std::error::Error for ListIPSetsError {
             ListIPSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListIPSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListIPSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListIPSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIPSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5907,7 +5953,7 @@ pub enum ListLoggingConfigurationsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLoggingConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5940,7 +5986,9 @@ impl ListLoggingConfigurationsError {
     /// Creates the `ListLoggingConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListLoggingConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5949,7 +5997,9 @@ impl ListLoggingConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListLoggingConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListLoggingConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6005,7 +6055,7 @@ impl std::error::Error for ListLoggingConfigurationsError {
             ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_inner) => {
                 Some(_inner)
             }
-            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListLoggingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6036,7 +6086,7 @@ pub enum ListManagedRuleSetsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListManagedRuleSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6065,7 +6115,7 @@ impl ListManagedRuleSetsError {
     /// Creates the `ListManagedRuleSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListManagedRuleSetsErrorKind::Unhandled(err.into()),
+            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6074,7 +6124,7 @@ impl ListManagedRuleSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListManagedRuleSetsErrorKind::Unhandled(err.into()),
+            kind: ListManagedRuleSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6126,7 +6176,7 @@ impl std::error::Error for ListManagedRuleSetsError {
             ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListManagedRuleSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListManagedRuleSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6157,7 +6207,7 @@ pub enum ListMobileSdkReleasesErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMobileSdkReleasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6186,7 +6236,9 @@ impl ListMobileSdkReleasesError {
     /// Creates the `ListMobileSdkReleasesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMobileSdkReleasesErrorKind::Unhandled(err.into()),
+            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6195,7 +6247,9 @@ impl ListMobileSdkReleasesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMobileSdkReleasesErrorKind::Unhandled(err.into()),
+            kind: ListMobileSdkReleasesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6247,7 +6301,7 @@ impl std::error::Error for ListMobileSdkReleasesError {
             ListMobileSdkReleasesErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListMobileSdkReleasesErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListMobileSdkReleasesErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMobileSdkReleasesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6278,7 +6332,7 @@ pub enum ListRegexPatternSetsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRegexPatternSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6307,7 +6361,9 @@ impl ListRegexPatternSetsError {
     /// Creates the `ListRegexPatternSetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRegexPatternSetsErrorKind::Unhandled(err.into()),
+            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6316,7 +6372,9 @@ impl ListRegexPatternSetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRegexPatternSetsErrorKind::Unhandled(err.into()),
+            kind: ListRegexPatternSetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6368,7 +6426,7 @@ impl std::error::Error for ListRegexPatternSetsError {
             ListRegexPatternSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListRegexPatternSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListRegexPatternSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListRegexPatternSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRegexPatternSetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6401,7 +6459,7 @@ pub enum ListResourcesForWebACLErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesForWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6431,7 +6489,9 @@ impl ListResourcesForWebACLError {
     /// Creates the `ListResourcesForWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListResourcesForWebACLErrorKind::Unhandled(err.into()),
+            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6440,7 +6500,9 @@ impl ListResourcesForWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListResourcesForWebACLErrorKind::Unhandled(err.into()),
+            kind: ListResourcesForWebACLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6500,7 +6562,7 @@ impl std::error::Error for ListResourcesForWebACLError {
             ListResourcesForWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListResourcesForWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             ListResourcesForWebACLErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            ListResourcesForWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListResourcesForWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6531,7 +6593,7 @@ pub enum ListRuleGroupsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRuleGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6560,7 +6622,7 @@ impl ListRuleGroupsError {
     /// Creates the `ListRuleGroupsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6569,7 +6631,7 @@ impl ListRuleGroupsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRuleGroupsErrorKind::Unhandled(err.into()),
+            kind: ListRuleGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6621,7 +6683,7 @@ impl std::error::Error for ListRuleGroupsError {
             ListRuleGroupsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListRuleGroupsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListRuleGroupsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRuleGroupsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6658,7 +6720,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6692,7 +6754,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6701,7 +6763,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6779,7 +6841,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(_inner) => {
                 Some(_inner)
             }
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6810,7 +6872,7 @@ pub enum ListWebACLsErrorKind {
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListWebACLsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6839,7 +6901,7 @@ impl ListWebACLsError {
     /// Creates the `ListWebACLsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListWebACLsErrorKind::Unhandled(err.into()),
+            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6848,7 +6910,7 @@ impl ListWebACLsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListWebACLsErrorKind::Unhandled(err.into()),
+            kind: ListWebACLsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6900,7 +6962,7 @@ impl std::error::Error for ListWebACLsError {
             ListWebACLsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             ListWebACLsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             ListWebACLsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
-            ListWebACLsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListWebACLsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6943,7 +7005,7 @@ pub enum PutLoggingConfigurationErrorKind {
     /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
     WafServiceLinkedRoleErrorException(crate::error::WafServiceLinkedRoleErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLoggingConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6981,7 +7043,9 @@ impl PutLoggingConfigurationError {
     /// Creates the `PutLoggingConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6990,7 +7054,9 @@ impl PutLoggingConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutLoggingConfigurationErrorKind::Unhandled(err.into()),
+            kind: PutLoggingConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7086,7 +7152,7 @@ impl std::error::Error for PutLoggingConfigurationError {
             PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_inner) => {
                 Some(_inner)
             }
-            PutLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7121,7 +7187,7 @@ pub enum PutManagedRuleSetVersionsErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutManagedRuleSetVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7158,7 +7224,9 @@ impl PutManagedRuleSetVersionsError {
     /// Creates the `PutManagedRuleSetVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(err.into()),
+            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7167,7 +7235,9 @@ impl PutManagedRuleSetVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(err.into()),
+            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7239,7 +7309,7 @@ impl std::error::Error for PutManagedRuleSetVersionsError {
             }
             PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7281,7 +7351,7 @@ pub enum PutPermissionPolicyErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutPermissionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7313,7 +7383,7 @@ impl PutPermissionPolicyError {
     /// Creates the `PutPermissionPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutPermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7322,7 +7392,7 @@ impl PutPermissionPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutPermissionPolicyErrorKind::Unhandled(err.into()),
+            kind: PutPermissionPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7384,7 +7454,7 @@ impl std::error::Error for PutPermissionPolicyError {
                 Some(_inner)
             }
             PutPermissionPolicyErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
-            PutPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutPermissionPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7423,7 +7493,7 @@ pub enum TagResourceErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7456,7 +7526,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7465,7 +7535,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7549,7 +7619,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             TagResourceErrorKind::WafTagOperationException(_inner) => Some(_inner),
             TagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7586,7 +7656,7 @@ pub enum UntagResourceErrorKind {
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7618,7 +7688,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7627,7 +7697,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7703,7 +7773,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             UntagResourceErrorKind::WafTagOperationException(_inner) => Some(_inner),
             UntagResourceErrorKind::WafTagOperationInternalErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7742,7 +7812,7 @@ pub enum UpdateIPSetErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateIPSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7775,7 +7845,7 @@ impl UpdateIPSetError {
     /// Creates the `UpdateIPSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateIPSetErrorKind::Unhandled(err.into()),
+            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7784,7 +7854,7 @@ impl UpdateIPSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateIPSetErrorKind::Unhandled(err.into()),
+            kind: UpdateIPSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7868,7 +7938,7 @@ impl std::error::Error for UpdateIPSetError {
             UpdateIPSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
             UpdateIPSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             UpdateIPSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateIPSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7903,7 +7973,7 @@ pub enum UpdateManagedRuleSetVersionExpiryDateErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateManagedRuleSetVersionExpiryDateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7947,7 +8017,9 @@ impl UpdateManagedRuleSetVersionExpiryDateError {
     /// Creates the `UpdateManagedRuleSetVersionExpiryDateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(err.into()),
+            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7956,7 +8028,9 @@ impl UpdateManagedRuleSetVersionExpiryDateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(err.into()),
+            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8034,9 +8108,7 @@ impl std::error::Error for UpdateManagedRuleSetVersionExpiryDateError {
             UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) => {
                 Some(_inner)
             }
-            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8075,7 +8147,7 @@ pub enum UpdateRegexPatternSetErrorKind {
     /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRegexPatternSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8108,7 +8180,9 @@ impl UpdateRegexPatternSetError {
     /// Creates the `UpdateRegexPatternSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8117,7 +8191,9 @@ impl UpdateRegexPatternSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRegexPatternSetErrorKind::Unhandled(err.into()),
+            kind: UpdateRegexPatternSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8201,7 +8277,7 @@ impl std::error::Error for UpdateRegexPatternSetError {
             UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
             UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             UpdateRegexPatternSetErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
-            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRegexPatternSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8248,7 +8324,7 @@ pub enum UpdateRuleGroupErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8284,7 +8360,7 @@ impl UpdateRuleGroupError {
     /// Creates the `UpdateRuleGroupError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRuleGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8293,7 +8369,7 @@ impl UpdateRuleGroupError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRuleGroupErrorKind::Unhandled(err.into()),
+            kind: UpdateRuleGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8401,7 +8477,7 @@ impl std::error::Error for UpdateRuleGroupError {
             UpdateRuleGroupErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
             UpdateRuleGroupErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            UpdateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRuleGroupErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8454,7 +8530,7 @@ pub enum UpdateWebACLErrorKind {
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8494,7 +8570,7 @@ impl UpdateWebACLError {
     /// Creates the `UpdateWebACLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateWebACLErrorKind::Unhandled(err.into()),
+            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8503,7 +8579,7 @@ impl UpdateWebACLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateWebACLErrorKind::Unhandled(err.into()),
+            kind: UpdateWebACLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8629,7 +8705,32 @@ impl std::error::Error for UpdateWebACLError {
             UpdateWebACLErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafSubscriptionNotFoundException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafUnavailableEntityException(_inner) => Some(_inner),
-            UpdateWebACLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateWebACLErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

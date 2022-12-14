@@ -412,7 +412,7 @@ pub enum CreateComponentErrorKind {
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -442,7 +442,7 @@ impl CreateComponentError {
     /// Creates the `CreateComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateComponentErrorKind::Unhandled(err.into()),
+            kind: CreateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -451,7 +451,7 @@ impl CreateComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateComponentErrorKind::Unhandled(err.into()),
+            kind: CreateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -511,7 +511,7 @@ impl std::error::Error for CreateComponentError {
             CreateComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateComponentErrorKind::ResourceConflictException(_inner) => Some(_inner),
             CreateComponentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            CreateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -538,7 +538,7 @@ pub enum CreateFormErrorKind {
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateFormError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -568,7 +568,7 @@ impl CreateFormError {
     /// Creates the `CreateFormError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateFormErrorKind::Unhandled(err.into()),
+            kind: CreateFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -577,7 +577,7 @@ impl CreateFormError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateFormErrorKind::Unhandled(err.into()),
+            kind: CreateFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -634,7 +634,7 @@ impl std::error::Error for CreateFormError {
             CreateFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateFormErrorKind::ResourceConflictException(_inner) => Some(_inner),
             CreateFormErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            CreateFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateFormErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -661,7 +661,7 @@ pub enum CreateThemeErrorKind {
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -691,7 +691,7 @@ impl CreateThemeError {
     /// Creates the `CreateThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateThemeErrorKind::Unhandled(err.into()),
+            kind: CreateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -700,7 +700,7 @@ impl CreateThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateThemeErrorKind::Unhandled(err.into()),
+            kind: CreateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -757,7 +757,7 @@ impl std::error::Error for CreateThemeError {
             CreateThemeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             CreateThemeErrorKind::ResourceConflictException(_inner) => Some(_inner),
             CreateThemeErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            CreateThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -782,7 +782,7 @@ pub enum DeleteComponentErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -811,7 +811,7 @@ impl DeleteComponentError {
     /// Creates the `DeleteComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+            kind: DeleteComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -820,7 +820,7 @@ impl DeleteComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+            kind: DeleteComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -872,7 +872,7 @@ impl std::error::Error for DeleteComponentError {
             DeleteComponentErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -897,7 +897,7 @@ pub enum DeleteFormErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteFormError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -926,7 +926,7 @@ impl DeleteFormError {
     /// Creates the `DeleteFormError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteFormErrorKind::Unhandled(err.into()),
+            kind: DeleteFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -935,7 +935,7 @@ impl DeleteFormError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteFormErrorKind::Unhandled(err.into()),
+            kind: DeleteFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -984,7 +984,7 @@ impl std::error::Error for DeleteFormError {
             DeleteFormErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteFormErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteFormErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1009,7 +1009,7 @@ pub enum DeleteThemeErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1038,7 +1038,7 @@ impl DeleteThemeError {
     /// Creates the `DeleteThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteThemeErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1047,7 +1047,7 @@ impl DeleteThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteThemeErrorKind::Unhandled(err.into()),
+            kind: DeleteThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1096,7 +1096,7 @@ impl std::error::Error for DeleteThemeError {
             DeleteThemeErrorKind::InternalServerException(_inner) => Some(_inner),
             DeleteThemeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1117,7 +1117,7 @@ pub enum ExchangeCodeForTokenErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExchangeCodeForTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1144,7 +1144,9 @@ impl ExchangeCodeForTokenError {
     /// Creates the `ExchangeCodeForTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExchangeCodeForTokenErrorKind::Unhandled(err.into()),
+            kind: ExchangeCodeForTokenErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1153,7 +1155,9 @@ impl ExchangeCodeForTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExchangeCodeForTokenErrorKind::Unhandled(err.into()),
+            kind: ExchangeCodeForTokenErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1189,7 +1193,7 @@ impl std::error::Error for ExchangeCodeForTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ExchangeCodeForTokenErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExchangeCodeForTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExchangeCodeForTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1212,7 +1216,7 @@ pub enum ExportComponentsErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportComponentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1240,7 +1244,7 @@ impl ExportComponentsError {
     /// Creates the `ExportComponentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportComponentsErrorKind::Unhandled(err.into()),
+            kind: ExportComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1249,7 +1253,7 @@ impl ExportComponentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportComponentsErrorKind::Unhandled(err.into()),
+            kind: ExportComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1293,7 +1297,7 @@ impl std::error::Error for ExportComponentsError {
         match &self.kind {
             ExportComponentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ExportComponentsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExportComponentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportComponentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1316,7 +1320,7 @@ pub enum ExportFormsErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportFormsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1344,7 +1348,7 @@ impl ExportFormsError {
     /// Creates the `ExportFormsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportFormsErrorKind::Unhandled(err.into()),
+            kind: ExportFormsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1353,7 +1357,7 @@ impl ExportFormsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportFormsErrorKind::Unhandled(err.into()),
+            kind: ExportFormsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1394,7 +1398,7 @@ impl std::error::Error for ExportFormsError {
         match &self.kind {
             ExportFormsErrorKind::InternalServerException(_inner) => Some(_inner),
             ExportFormsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExportFormsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportFormsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1417,7 +1421,7 @@ pub enum ExportThemesErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportThemesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1445,7 +1449,7 @@ impl ExportThemesError {
     /// Creates the `ExportThemesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportThemesErrorKind::Unhandled(err.into()),
+            kind: ExportThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1454,7 +1458,7 @@ impl ExportThemesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportThemesErrorKind::Unhandled(err.into()),
+            kind: ExportThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1498,7 +1502,7 @@ impl std::error::Error for ExportThemesError {
         match &self.kind {
             ExportThemesErrorKind::InternalServerException(_inner) => Some(_inner),
             ExportThemesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ExportThemesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportThemesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1523,7 +1527,7 @@ pub enum GetComponentErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1552,7 +1556,7 @@ impl GetComponentError {
     /// Creates the `GetComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetComponentErrorKind::Unhandled(err.into()),
+            kind: GetComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1561,7 +1565,7 @@ impl GetComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetComponentErrorKind::Unhandled(err.into()),
+            kind: GetComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1613,7 +1617,7 @@ impl std::error::Error for GetComponentError {
             GetComponentErrorKind::InternalServerException(_inner) => Some(_inner),
             GetComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetComponentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1638,7 +1642,7 @@ pub enum GetFormErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFormError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1667,7 +1671,7 @@ impl GetFormError {
     /// Creates the `GetFormError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetFormErrorKind::Unhandled(err.into()),
+            kind: GetFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1676,7 +1680,7 @@ impl GetFormError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetFormErrorKind::Unhandled(err.into()),
+            kind: GetFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1719,7 +1723,7 @@ impl std::error::Error for GetFormError {
             GetFormErrorKind::InternalServerException(_inner) => Some(_inner),
             GetFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetFormErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetFormErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1742,7 +1746,7 @@ pub enum GetMetadataErrorKind {
     /// <p>You don't have permission to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1770,7 +1774,7 @@ impl GetMetadataError {
     /// Creates the `GetMetadataError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMetadataErrorKind::Unhandled(err.into()),
+            kind: GetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1779,7 +1783,7 @@ impl GetMetadataError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMetadataErrorKind::Unhandled(err.into()),
+            kind: GetMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1820,7 +1824,7 @@ impl std::error::Error for GetMetadataError {
         match &self.kind {
             GetMetadataErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetMetadataErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            GetMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMetadataErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1845,7 +1849,7 @@ pub enum GetThemeErrorKind {
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1874,7 +1878,7 @@ impl GetThemeError {
     /// Creates the `GetThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetThemeErrorKind::Unhandled(err.into()),
+            kind: GetThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1883,7 +1887,7 @@ impl GetThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetThemeErrorKind::Unhandled(err.into()),
+            kind: GetThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1926,7 +1930,7 @@ impl std::error::Error for GetThemeError {
             GetThemeErrorKind::InternalServerException(_inner) => Some(_inner),
             GetThemeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetThemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1949,7 +1953,7 @@ pub enum ListComponentsErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListComponentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1977,7 +1981,7 @@ impl ListComponentsError {
     /// Creates the `ListComponentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListComponentsErrorKind::Unhandled(err.into()),
+            kind: ListComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1986,7 +1990,7 @@ impl ListComponentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListComponentsErrorKind::Unhandled(err.into()),
+            kind: ListComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2030,7 +2034,7 @@ impl std::error::Error for ListComponentsError {
         match &self.kind {
             ListComponentsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListComponentsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListComponentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListComponentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2053,7 +2057,7 @@ pub enum ListFormsErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFormsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2081,7 +2085,7 @@ impl ListFormsError {
     /// Creates the `ListFormsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFormsErrorKind::Unhandled(err.into()),
+            kind: ListFormsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2090,7 +2094,7 @@ impl ListFormsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFormsErrorKind::Unhandled(err.into()),
+            kind: ListFormsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2128,7 +2132,7 @@ impl std::error::Error for ListFormsError {
         match &self.kind {
             ListFormsErrorKind::InternalServerException(_inner) => Some(_inner),
             ListFormsErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListFormsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFormsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2151,7 +2155,7 @@ pub enum ListThemesErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListThemesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2179,7 +2183,7 @@ impl ListThemesError {
     /// Creates the `ListThemesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListThemesErrorKind::Unhandled(err.into()),
+            kind: ListThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2188,7 +2192,7 @@ impl ListThemesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListThemesErrorKind::Unhandled(err.into()),
+            kind: ListThemesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2229,7 +2233,7 @@ impl std::error::Error for ListThemesError {
         match &self.kind {
             ListThemesErrorKind::InternalServerException(_inner) => Some(_inner),
             ListThemesErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            ListThemesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListThemesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2252,7 +2256,7 @@ pub enum PutMetadataFlagErrorKind {
     /// <p>You don't have permission to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutMetadataFlagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2280,7 +2284,7 @@ impl PutMetadataFlagError {
     /// Creates the `PutMetadataFlagError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutMetadataFlagErrorKind::Unhandled(err.into()),
+            kind: PutMetadataFlagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2289,7 +2293,7 @@ impl PutMetadataFlagError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutMetadataFlagErrorKind::Unhandled(err.into()),
+            kind: PutMetadataFlagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2333,7 +2337,7 @@ impl std::error::Error for PutMetadataFlagError {
         match &self.kind {
             PutMetadataFlagErrorKind::InvalidParameterException(_inner) => Some(_inner),
             PutMetadataFlagErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            PutMetadataFlagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutMetadataFlagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2354,7 +2358,7 @@ pub enum RefreshTokenErrorKind {
     /// <p>An invalid or out-of-range value was supplied for the input parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RefreshTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2381,7 +2385,7 @@ impl RefreshTokenError {
     /// Creates the `RefreshTokenError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RefreshTokenErrorKind::Unhandled(err.into()),
+            kind: RefreshTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2390,7 +2394,7 @@ impl RefreshTokenError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RefreshTokenErrorKind::Unhandled(err.into()),
+            kind: RefreshTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2426,7 +2430,7 @@ impl std::error::Error for RefreshTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RefreshTokenErrorKind::InvalidParameterException(_inner) => Some(_inner),
-            RefreshTokenErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RefreshTokenErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2451,7 +2455,7 @@ pub enum UpdateComponentErrorKind {
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2480,7 +2484,7 @@ impl UpdateComponentError {
     /// Creates the `UpdateComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateComponentErrorKind::Unhandled(err.into()),
+            kind: UpdateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2489,7 +2493,7 @@ impl UpdateComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateComponentErrorKind::Unhandled(err.into()),
+            kind: UpdateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2541,7 +2545,7 @@ impl std::error::Error for UpdateComponentError {
             UpdateComponentErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateComponentErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateComponentErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            UpdateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2566,7 +2570,7 @@ pub enum UpdateFormErrorKind {
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateFormError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2595,7 +2599,7 @@ impl UpdateFormError {
     /// Creates the `UpdateFormError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateFormErrorKind::Unhandled(err.into()),
+            kind: UpdateFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2604,7 +2608,7 @@ impl UpdateFormError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateFormErrorKind::Unhandled(err.into()),
+            kind: UpdateFormErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2653,7 +2657,7 @@ impl std::error::Error for UpdateFormError {
             UpdateFormErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateFormErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateFormErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            UpdateFormErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateFormErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2678,7 +2682,7 @@ pub enum UpdateThemeErrorKind {
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateThemeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2707,7 +2711,7 @@ impl UpdateThemeError {
     /// Creates the `UpdateThemeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateThemeErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2716,7 +2720,7 @@ impl UpdateThemeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateThemeErrorKind::Unhandled(err.into()),
+            kind: UpdateThemeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2765,7 +2769,32 @@ impl std::error::Error for UpdateThemeError {
             UpdateThemeErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateThemeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateThemeErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            UpdateThemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateThemeErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

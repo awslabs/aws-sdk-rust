@@ -820,7 +820,7 @@ pub enum GetRoutingControlStateErrorKind {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRoutingControlStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -854,7 +854,9 @@ impl GetRoutingControlStateError {
     /// Creates the `GetRoutingControlStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRoutingControlStateErrorKind::Unhandled(err.into()),
+            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -863,7 +865,9 @@ impl GetRoutingControlStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRoutingControlStateErrorKind::Unhandled(err.into()),
+            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -941,7 +945,7 @@ impl std::error::Error for GetRoutingControlStateError {
             GetRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRoutingControlStateErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetRoutingControlStateErrorKind::ValidationException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -972,7 +976,7 @@ pub enum ListRoutingControlsErrorKind {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRoutingControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1006,7 +1010,7 @@ impl ListRoutingControlsError {
     /// Creates the `ListRoutingControlsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRoutingControlsErrorKind::Unhandled(err.into()),
+            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1015,7 +1019,7 @@ impl ListRoutingControlsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRoutingControlsErrorKind::Unhandled(err.into()),
+            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1093,7 +1097,7 @@ impl std::error::Error for ListRoutingControlsError {
             ListRoutingControlsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListRoutingControlsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListRoutingControlsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRoutingControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1126,7 +1130,7 @@ pub enum UpdateRoutingControlStateErrorKind {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRoutingControlStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1161,7 +1165,9 @@ impl UpdateRoutingControlStateError {
     /// Creates the `UpdateRoutingControlStateError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRoutingControlStateErrorKind::Unhandled(err.into()),
+            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1170,7 +1176,9 @@ impl UpdateRoutingControlStateError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRoutingControlStateErrorKind::Unhandled(err.into()),
+            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1256,7 +1264,7 @@ impl std::error::Error for UpdateRoutingControlStateError {
             UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRoutingControlStateErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateRoutingControlStateErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1291,7 +1299,7 @@ pub enum UpdateRoutingControlStatesErrorKind {
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRoutingControlStatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1329,7 +1337,9 @@ impl UpdateRoutingControlStatesError {
     /// Creates the `UpdateRoutingControlStatesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRoutingControlStatesErrorKind::Unhandled(err.into()),
+            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1338,7 +1348,9 @@ impl UpdateRoutingControlStatesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRoutingControlStatesErrorKind::Unhandled(err.into()),
+            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1434,7 +1446,32 @@ impl std::error::Error for UpdateRoutingControlStatesError {
             }
             UpdateRoutingControlStatesErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateRoutingControlStatesErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -16,7 +16,7 @@ pub enum Error {
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::error::ValidationError),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,9 +56,11 @@ where
                 crate::error::InvokeEndpointErrorKind::ValidationError(inner) => {
                     Error::ValidationError(inner)
                 }
-                crate::error::InvokeEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InvokeEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -81,10 +83,10 @@ where
                     Error::ValidationError(inner)
                 }
                 crate::error::InvokeEndpointAsyncErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

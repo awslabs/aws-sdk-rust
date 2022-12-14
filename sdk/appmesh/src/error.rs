@@ -692,7 +692,7 @@ pub enum CreateGatewayRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -737,7 +737,7 @@ impl CreateGatewayRouteError {
     /// Creates the `CreateGatewayRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -746,7 +746,7 @@ impl CreateGatewayRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: CreateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -838,7 +838,7 @@ impl std::error::Error for CreateGatewayRouteError {
             CreateGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -873,7 +873,7 @@ pub enum CreateMeshErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -918,7 +918,7 @@ impl CreateMeshError {
     /// Creates the `CreateMeshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateMeshErrorKind::Unhandled(err.into()),
+            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -927,7 +927,7 @@ impl CreateMeshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateMeshErrorKind::Unhandled(err.into()),
+            kind: CreateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1001,7 +1001,7 @@ impl std::error::Error for CreateMeshError {
             CreateMeshErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateMeshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateMeshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1036,7 +1036,7 @@ pub enum CreateRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1081,7 +1081,7 @@ impl CreateRouteError {
     /// Creates the `CreateRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateRouteErrorKind::Unhandled(err.into()),
+            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1090,7 +1090,7 @@ impl CreateRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateRouteErrorKind::Unhandled(err.into()),
+            kind: CreateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1167,7 +1167,7 @@ impl std::error::Error for CreateRouteError {
             CreateRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1202,7 +1202,7 @@ pub enum CreateVirtualGatewayErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1247,7 +1247,9 @@ impl CreateVirtualGatewayError {
     /// Creates the `CreateVirtualGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1256,7 +1258,9 @@ impl CreateVirtualGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1348,7 +1352,7 @@ impl std::error::Error for CreateVirtualGatewayError {
             CreateVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1383,7 +1387,7 @@ pub enum CreateVirtualNodeErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1428,7 +1432,7 @@ impl CreateVirtualNodeError {
     /// Creates the `CreateVirtualNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1437,7 +1441,7 @@ impl CreateVirtualNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1523,7 +1527,7 @@ impl std::error::Error for CreateVirtualNodeError {
             CreateVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1558,7 +1562,7 @@ pub enum CreateVirtualRouterErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1603,7 +1607,7 @@ impl CreateVirtualRouterError {
     /// Creates the `CreateVirtualRouterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1612,7 +1616,7 @@ impl CreateVirtualRouterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1704,7 +1708,7 @@ impl std::error::Error for CreateVirtualRouterError {
             CreateVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1739,7 +1743,7 @@ pub enum CreateVirtualServiceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1784,7 +1788,9 @@ impl CreateVirtualServiceError {
     /// Creates the `CreateVirtualServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1793,7 +1799,9 @@ impl CreateVirtualServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: CreateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1885,7 +1893,7 @@ impl std::error::Error for CreateVirtualServiceError {
             CreateVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             CreateVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1918,7 +1926,7 @@ pub enum DeleteGatewayRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1962,7 +1970,7 @@ impl DeleteGatewayRouteError {
     /// Creates the `DeleteGatewayRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1971,7 +1979,7 @@ impl DeleteGatewayRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: DeleteGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2055,7 +2063,7 @@ impl std::error::Error for DeleteGatewayRouteError {
             DeleteGatewayRouteErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2088,7 +2096,7 @@ pub enum DeleteMeshErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2132,7 +2140,7 @@ impl DeleteMeshError {
     /// Creates the `DeleteMeshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteMeshErrorKind::Unhandled(err.into()),
+            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2141,7 +2149,7 @@ impl DeleteMeshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteMeshErrorKind::Unhandled(err.into()),
+            kind: DeleteMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2210,7 +2218,7 @@ impl std::error::Error for DeleteMeshError {
             DeleteMeshErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteMeshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteMeshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2243,7 +2251,7 @@ pub enum DeleteRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2287,7 +2295,7 @@ impl DeleteRouteError {
     /// Creates the `DeleteRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRouteErrorKind::Unhandled(err.into()),
+            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2296,7 +2304,7 @@ impl DeleteRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRouteErrorKind::Unhandled(err.into()),
+            kind: DeleteRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2368,7 +2376,7 @@ impl std::error::Error for DeleteRouteError {
             DeleteRouteErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2401,7 +2409,7 @@ pub enum DeleteVirtualGatewayErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2445,7 +2453,9 @@ impl DeleteVirtualGatewayError {
     /// Creates the `DeleteVirtualGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2454,7 +2464,9 @@ impl DeleteVirtualGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2538,7 +2550,7 @@ impl std::error::Error for DeleteVirtualGatewayError {
             DeleteVirtualGatewayErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2571,7 +2583,7 @@ pub enum DeleteVirtualNodeErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2615,7 +2627,7 @@ impl DeleteVirtualNodeError {
     /// Creates the `DeleteVirtualNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2624,7 +2636,7 @@ impl DeleteVirtualNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2705,7 +2717,7 @@ impl std::error::Error for DeleteVirtualNodeError {
             DeleteVirtualNodeErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2738,7 +2750,7 @@ pub enum DeleteVirtualRouterErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2782,7 +2794,7 @@ impl DeleteVirtualRouterError {
     /// Creates the `DeleteVirtualRouterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2791,7 +2803,7 @@ impl DeleteVirtualRouterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2875,7 +2887,7 @@ impl std::error::Error for DeleteVirtualRouterError {
             DeleteVirtualRouterErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2908,7 +2920,7 @@ pub enum DeleteVirtualServiceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2952,7 +2964,9 @@ impl DeleteVirtualServiceError {
     /// Creates the `DeleteVirtualServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2961,7 +2975,9 @@ impl DeleteVirtualServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: DeleteVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3045,7 +3061,7 @@ impl std::error::Error for DeleteVirtualServiceError {
             DeleteVirtualServiceErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3076,7 +3092,7 @@ pub enum DescribeGatewayRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3119,7 +3135,9 @@ impl DescribeGatewayRouteError {
     /// Creates the `DescribeGatewayRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3128,7 +3146,9 @@ impl DescribeGatewayRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: DescribeGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3204,7 +3224,7 @@ impl std::error::Error for DescribeGatewayRouteError {
             DescribeGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3235,7 +3255,7 @@ pub enum DescribeMeshErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3278,7 +3298,7 @@ impl DescribeMeshError {
     /// Creates the `DescribeMeshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeMeshErrorKind::Unhandled(err.into()),
+            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3287,7 +3307,7 @@ impl DescribeMeshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeMeshErrorKind::Unhandled(err.into()),
+            kind: DescribeMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3354,7 +3374,7 @@ impl std::error::Error for DescribeMeshError {
             DescribeMeshErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeMeshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeMeshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3385,7 +3405,7 @@ pub enum DescribeRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3428,7 +3448,7 @@ impl DescribeRouteError {
     /// Creates the `DescribeRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRouteErrorKind::Unhandled(err.into()),
+            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3437,7 +3457,7 @@ impl DescribeRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRouteErrorKind::Unhandled(err.into()),
+            kind: DescribeRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3504,7 +3524,7 @@ impl std::error::Error for DescribeRouteError {
             DescribeRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3535,7 +3555,7 @@ pub enum DescribeVirtualGatewayErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3578,7 +3598,9 @@ impl DescribeVirtualGatewayError {
     /// Creates the `DescribeVirtualGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3587,7 +3609,9 @@ impl DescribeVirtualGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3663,7 +3687,7 @@ impl std::error::Error for DescribeVirtualGatewayError {
             DescribeVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3694,7 +3718,7 @@ pub enum DescribeVirtualNodeErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3737,7 +3761,7 @@ impl DescribeVirtualNodeError {
     /// Creates the `DescribeVirtualNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3746,7 +3770,7 @@ impl DescribeVirtualNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3822,7 +3846,7 @@ impl std::error::Error for DescribeVirtualNodeError {
             DescribeVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3853,7 +3877,7 @@ pub enum DescribeVirtualRouterErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3896,7 +3920,9 @@ impl DescribeVirtualRouterError {
     /// Creates the `DescribeVirtualRouterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3905,7 +3931,9 @@ impl DescribeVirtualRouterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3981,7 +4009,7 @@ impl std::error::Error for DescribeVirtualRouterError {
             DescribeVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4012,7 +4040,7 @@ pub enum DescribeVirtualServiceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4055,7 +4083,9 @@ impl DescribeVirtualServiceError {
     /// Creates the `DescribeVirtualServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4064,7 +4094,9 @@ impl DescribeVirtualServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: DescribeVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4140,7 +4172,7 @@ impl std::error::Error for DescribeVirtualServiceError {
             DescribeVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4171,7 +4203,7 @@ pub enum ListGatewayRoutesErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewayRoutesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4214,7 +4246,7 @@ impl ListGatewayRoutesError {
     /// Creates the `ListGatewayRoutesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListGatewayRoutesErrorKind::Unhandled(err.into()),
+            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4223,7 +4255,7 @@ impl ListGatewayRoutesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListGatewayRoutesErrorKind::Unhandled(err.into()),
+            kind: ListGatewayRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4296,7 +4328,7 @@ impl std::error::Error for ListGatewayRoutesError {
             ListGatewayRoutesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListGatewayRoutesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListGatewayRoutesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListGatewayRoutesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListGatewayRoutesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4327,7 +4359,7 @@ pub enum ListMeshesErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListMeshesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4370,7 +4402,7 @@ impl ListMeshesError {
     /// Creates the `ListMeshesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListMeshesErrorKind::Unhandled(err.into()),
+            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4379,7 +4411,7 @@ impl ListMeshesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListMeshesErrorKind::Unhandled(err.into()),
+            kind: ListMeshesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4443,7 +4475,7 @@ impl std::error::Error for ListMeshesError {
             ListMeshesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListMeshesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListMeshesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListMeshesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListMeshesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4474,7 +4506,7 @@ pub enum ListRoutesErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRoutesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4517,7 +4549,7 @@ impl ListRoutesError {
     /// Creates the `ListRoutesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRoutesErrorKind::Unhandled(err.into()),
+            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4526,7 +4558,7 @@ impl ListRoutesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRoutesErrorKind::Unhandled(err.into()),
+            kind: ListRoutesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4590,7 +4622,7 @@ impl std::error::Error for ListRoutesError {
             ListRoutesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListRoutesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListRoutesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListRoutesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRoutesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4621,7 +4653,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4664,7 +4696,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4673,7 +4705,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4749,7 +4781,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4780,7 +4812,7 @@ pub enum ListVirtualGatewaysErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4823,7 +4855,7 @@ impl ListVirtualGatewaysError {
     /// Creates the `ListVirtualGatewaysError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4832,7 +4864,7 @@ impl ListVirtualGatewaysError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualGatewaysErrorKind::Unhandled(err.into()),
+            kind: ListVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4908,7 +4940,7 @@ impl std::error::Error for ListVirtualGatewaysError {
             ListVirtualGatewaysErrorKind::NotFoundException(_inner) => Some(_inner),
             ListVirtualGatewaysErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListVirtualGatewaysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4939,7 +4971,7 @@ pub enum ListVirtualNodesErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualNodesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4982,7 +5014,7 @@ impl ListVirtualNodesError {
     /// Creates the `ListVirtualNodesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualNodesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4991,7 +5023,7 @@ impl ListVirtualNodesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualNodesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualNodesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5061,7 +5093,7 @@ impl std::error::Error for ListVirtualNodesError {
             ListVirtualNodesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListVirtualNodesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListVirtualNodesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualNodesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualNodesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5092,7 +5124,7 @@ pub enum ListVirtualRoutersErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualRoutersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5135,7 +5167,7 @@ impl ListVirtualRoutersError {
     /// Creates the `ListVirtualRoutersError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualRoutersErrorKind::Unhandled(err.into()),
+            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5144,7 +5176,7 @@ impl ListVirtualRoutersError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualRoutersErrorKind::Unhandled(err.into()),
+            kind: ListVirtualRoutersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5220,7 +5252,7 @@ impl std::error::Error for ListVirtualRoutersError {
             ListVirtualRoutersErrorKind::NotFoundException(_inner) => Some(_inner),
             ListVirtualRoutersErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListVirtualRoutersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualRoutersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualRoutersErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5251,7 +5283,7 @@ pub enum ListVirtualServicesErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualServicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5294,7 +5326,7 @@ impl ListVirtualServicesError {
     /// Creates the `ListVirtualServicesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListVirtualServicesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5303,7 +5335,7 @@ impl ListVirtualServicesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListVirtualServicesErrorKind::Unhandled(err.into()),
+            kind: ListVirtualServicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5379,7 +5411,7 @@ impl std::error::Error for ListVirtualServicesError {
             ListVirtualServicesErrorKind::NotFoundException(_inner) => Some(_inner),
             ListVirtualServicesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListVirtualServicesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListVirtualServicesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListVirtualServicesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5412,7 +5444,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5456,7 +5488,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5465,7 +5497,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5537,7 +5569,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5568,7 +5600,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5611,7 +5643,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5620,7 +5652,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5687,7 +5719,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5722,7 +5754,7 @@ pub enum UpdateGatewayRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5767,7 +5799,7 @@ impl UpdateGatewayRouteError {
     /// Creates the `UpdateGatewayRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5776,7 +5808,7 @@ impl UpdateGatewayRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateGatewayRouteErrorKind::Unhandled(err.into()),
+            kind: UpdateGatewayRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5868,7 +5900,7 @@ impl std::error::Error for UpdateGatewayRouteError {
             UpdateGatewayRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGatewayRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateGatewayRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateGatewayRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5901,7 +5933,7 @@ pub enum UpdateMeshErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateMeshError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5945,7 +5977,7 @@ impl UpdateMeshError {
     /// Creates the `UpdateMeshError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateMeshErrorKind::Unhandled(err.into()),
+            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5954,7 +5986,7 @@ impl UpdateMeshError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateMeshErrorKind::Unhandled(err.into()),
+            kind: UpdateMeshErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6023,7 +6055,7 @@ impl std::error::Error for UpdateMeshError {
             UpdateMeshErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateMeshErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateMeshErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateMeshErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateMeshErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6058,7 +6090,7 @@ pub enum UpdateRouteErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRouteError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6103,7 +6135,7 @@ impl UpdateRouteError {
     /// Creates the `UpdateRouteError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRouteErrorKind::Unhandled(err.into()),
+            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6112,7 +6144,7 @@ impl UpdateRouteError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRouteErrorKind::Unhandled(err.into()),
+            kind: UpdateRouteErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6189,7 +6221,7 @@ impl std::error::Error for UpdateRouteError {
             UpdateRouteErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRouteErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateRouteErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateRouteErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRouteErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6224,7 +6256,7 @@ pub enum UpdateVirtualGatewayErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6269,7 +6301,9 @@ impl UpdateVirtualGatewayError {
     /// Creates the `UpdateVirtualGatewayError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6278,7 +6312,9 @@ impl UpdateVirtualGatewayError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVirtualGatewayErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6370,7 +6406,7 @@ impl std::error::Error for UpdateVirtualGatewayError {
             UpdateVirtualGatewayErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateVirtualGatewayErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVirtualGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6405,7 +6441,7 @@ pub enum UpdateVirtualNodeErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualNodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6450,7 +6486,7 @@ impl UpdateVirtualNodeError {
     /// Creates the `UpdateVirtualNodeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6459,7 +6495,7 @@ impl UpdateVirtualNodeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVirtualNodeErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualNodeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6545,7 +6581,7 @@ impl std::error::Error for UpdateVirtualNodeError {
             UpdateVirtualNodeErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVirtualNodeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateVirtualNodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVirtualNodeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6580,7 +6616,7 @@ pub enum UpdateVirtualRouterErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualRouterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6625,7 +6661,7 @@ impl UpdateVirtualRouterError {
     /// Creates the `UpdateVirtualRouterError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6634,7 +6670,7 @@ impl UpdateVirtualRouterError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVirtualRouterErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualRouterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6726,7 +6762,7 @@ impl std::error::Error for UpdateVirtualRouterError {
             UpdateVirtualRouterErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVirtualRouterErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateVirtualRouterErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVirtualRouterErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6761,7 +6797,7 @@ pub enum UpdateVirtualServiceErrorKind {
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualServiceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6806,7 +6842,9 @@ impl UpdateVirtualServiceError {
     /// Creates the `UpdateVirtualServiceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6815,7 +6853,9 @@ impl UpdateVirtualServiceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateVirtualServiceErrorKind::Unhandled(err.into()),
+            kind: UpdateVirtualServiceErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6907,7 +6947,32 @@ impl std::error::Error for UpdateVirtualServiceError {
             UpdateVirtualServiceErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVirtualServiceErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateVirtualServiceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateVirtualServiceErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

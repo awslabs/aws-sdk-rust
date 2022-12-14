@@ -182,7 +182,7 @@ pub enum Error {
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -277,9 +277,11 @@ where
                 crate::error::AcceptHandshakeErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::AcceptHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AcceptHandshakeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -329,9 +331,11 @@ where
                 crate::error::AttachPolicyErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::AttachPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AttachPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -366,9 +370,11 @@ where
                 crate::error::CancelHandshakeErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::CancelHandshakeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelHandshakeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -412,9 +418,11 @@ where
                 crate::error::CloseAccountErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::CloseAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CloseAccountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -452,9 +460,11 @@ where
                 crate::error::CreateAccountErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::CreateAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAccountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -496,10 +506,10 @@ where
                     inner,
                 ) => Error::UnsupportedApiEndpointException(inner),
                 crate::error::CreateGovCloudAccountErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -537,10 +547,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -563,9 +573,9 @@ where
                 crate::error::CreateOrganizationalUnitErrorKind::ParentNotFoundException(inner) => Error::ParentNotFoundException(inner),
                 crate::error::CreateOrganizationalUnitErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::CreateOrganizationalUnitErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::CreateOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -587,9 +597,9 @@ where
                 crate::error::CreatePolicyErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::CreatePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::CreatePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::CreatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -627,10 +637,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeclineHandshakeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -665,10 +675,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -690,9 +700,9 @@ where
                 crate::error::DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(inner) => Error::OrganizationalUnitNotFoundException(inner),
                 crate::error::DeleteOrganizationalUnitErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteOrganizationalUnitErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DeleteOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -730,9 +740,11 @@ where
                 crate::error::DeletePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::DeletePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -760,9 +772,9 @@ where
                 crate::error::DeregisterDelegatedAdministratorErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeregisterDelegatedAdministratorErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DeregisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::DeregisterDelegatedAdministratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeregisterDelegatedAdministratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -791,9 +803,11 @@ where
                 crate::error::DescribeAccountErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAccountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -814,9 +828,9 @@ where
                 crate::error::DescribeCreateAccountStatusErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DescribeCreateAccountStatusErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeCreateAccountStatusErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::DescribeCreateAccountStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeCreateAccountStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -839,9 +853,9 @@ where
                 crate::error::DescribeEffectivePolicyErrorKind::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
                 crate::error::DescribeEffectivePolicyErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::DescribeEffectivePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeEffectivePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -873,10 +887,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeHandshakeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -906,10 +920,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DescribeOrganizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -929,9 +943,9 @@ where
                 crate::error::DescribeOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(inner) => Error::OrganizationalUnitNotFoundException(inner),
                 crate::error::DescribeOrganizationalUnitErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DescribeOrganizationalUnitErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::DescribeOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -963,9 +977,11 @@ where
                 crate::error::DescribePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::DescribePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1012,9 +1028,11 @@ where
                 crate::error::DetachPolicyErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::DetachPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetachPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1036,9 +1054,9 @@ where
                 crate::error::DisableAWSServiceAccessErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DisableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::DisableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DisableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1085,10 +1103,10 @@ where
                     inner,
                 ) => Error::UnsupportedApiEndpointException(inner),
                 crate::error::DisablePolicyTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1123,10 +1141,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::EnableAllFeaturesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1148,9 +1166,9 @@ where
                 crate::error::EnableAWSServiceAccessErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::EnableAWSServiceAccessErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::EnableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableAWSServiceAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1175,9 +1193,9 @@ where
                 crate::error::EnablePolicyTypeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::EnablePolicyTypeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::EnablePolicyTypeErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::EnablePolicyTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnablePolicyTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1202,9 +1220,9 @@ where
                 crate::error::InviteAccountToOrganizationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::InviteAccountToOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::InviteAccountToOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::InviteAccountToOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::InviteAccountToOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1226,9 +1244,9 @@ where
                 crate::error::LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException(inner) => Error::MasterCannotLeaveOrganizationException(inner),
                 crate::error::LeaveOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::LeaveOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::LeaveOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::LeaveOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1254,9 +1272,11 @@ where
                 crate::error::ListAccountsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListAccountsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccountsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1289,10 +1309,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListAccountsForParentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1321,9 +1341,9 @@ where
                 crate::error::ListAWSServiceAccessForOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListAWSServiceAccessForOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListAWSServiceAccessForOrganizationErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::ListAWSServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAWSServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1352,9 +1372,11 @@ where
                 crate::error::ListChildrenErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListChildrenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListChildrenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1374,9 +1396,9 @@ where
                 crate::error::ListCreateAccountStatusErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListCreateAccountStatusErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::ListCreateAccountStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListCreateAccountStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1397,9 +1419,9 @@ where
                 crate::error::ListDelegatedAdministratorsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListDelegatedAdministratorsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListDelegatedAdministratorsErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::ListDelegatedAdministratorsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDelegatedAdministratorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1426,9 +1448,9 @@ where
                 crate::error::ListDelegatedServicesForAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListDelegatedServicesForAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListDelegatedServicesForAccountErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::ListDelegatedServicesForAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListDelegatedServicesForAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1447,9 +1469,9 @@ where
                 crate::error::ListHandshakesForAccountErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::ListHandshakesForAccountErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListHandshakesForAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListHandshakesForAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHandshakesForAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1469,9 +1491,9 @@ where
                 crate::error::ListHandshakesForOrganizationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::ListHandshakesForOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListHandshakesForOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListHandshakesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListHandshakesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1495,9 +1517,9 @@ where
                 crate::error::ListOrganizationalUnitsForParentErrorKind::ParentNotFoundException(inner) => Error::ParentNotFoundException(inner),
                 crate::error::ListOrganizationalUnitsForParentErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::ListOrganizationalUnitsForParentErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::ListOrganizationalUnitsForParentErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListOrganizationalUnitsForParentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1526,9 +1548,11 @@ where
                 crate::error::ListParentsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListParentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListParentsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1557,9 +1581,11 @@ where
                 crate::error::ListPoliciesErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::ListPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPoliciesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1595,10 +1621,10 @@ where
                     inner,
                 ) => Error::UnsupportedApiEndpointException(inner),
                 crate::error::ListPoliciesForTargetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1624,9 +1650,11 @@ where
                 crate::error::ListRootsErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListRootsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRootsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1658,10 +1686,10 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1697,10 +1725,10 @@ where
                     inner,
                 ) => Error::UnsupportedApiEndpointException(inner),
                 crate::error::ListTargetsForPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1741,9 +1769,11 @@ where
                 crate::error::MoveAccountErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::MoveAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::MoveAccountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1771,9 +1801,9 @@ where
                 crate::error::RegisterDelegatedAdministratorErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::RegisterDelegatedAdministratorErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::RegisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
-                crate::error::RegisterDelegatedAdministratorErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RegisterDelegatedAdministratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1796,9 +1826,9 @@ where
                 crate::error::RemoveAccountFromOrganizationErrorKind::MasterCannotLeaveOrganizationException(inner) => Error::MasterCannotLeaveOrganizationException(inner),
                 crate::error::RemoveAccountFromOrganizationErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::RemoveAccountFromOrganizationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::RemoveAccountFromOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveAccountFromOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1833,9 +1863,11 @@ where
                 crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1870,9 +1902,11 @@ where
                 crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
                     Error::TooManyRequestsException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1894,9 +1928,9 @@ where
                 crate::error::UpdateOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(inner) => Error::OrganizationalUnitNotFoundException(inner),
                 crate::error::UpdateOrganizationalUnitErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::UpdateOrganizationalUnitErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-                crate::error::UpdateOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateOrganizationalUnitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1943,9 +1977,11 @@ where
                 crate::error::UpdatePolicyErrorKind::UnsupportedApiEndpointException(inner) => {
                     Error::UnsupportedApiEndpointException(inner)
                 }
-                crate::error::UpdatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdatePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

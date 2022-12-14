@@ -1135,7 +1135,7 @@ pub enum CancelImageCreationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelImageCreationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1171,7 +1171,7 @@ impl CancelImageCreationError {
     /// Creates the `CancelImageCreationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CancelImageCreationErrorKind::Unhandled(err.into()),
+            kind: CancelImageCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1180,7 +1180,7 @@ impl CancelImageCreationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CancelImageCreationErrorKind::Unhandled(err.into()),
+            kind: CancelImageCreationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1271,7 +1271,7 @@ impl std::error::Error for CancelImageCreationError {
             CancelImageCreationErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CancelImageCreationErrorKind::ServiceException(_inner) => Some(_inner),
             CancelImageCreationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CancelImageCreationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CancelImageCreationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1312,7 +1312,7 @@ pub enum CreateComponentErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1349,7 +1349,7 @@ impl CreateComponentError {
     /// Creates the `CreateComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateComponentErrorKind::Unhandled(err.into()),
+            kind: CreateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1358,7 +1358,7 @@ impl CreateComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateComponentErrorKind::Unhandled(err.into()),
+            kind: CreateComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1465,7 +1465,7 @@ impl std::error::Error for CreateComponentError {
             CreateComponentErrorKind::ServiceException(_inner) => Some(_inner),
             CreateComponentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateComponentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1506,7 +1506,7 @@ pub enum CreateContainerRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContainerRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1545,7 +1545,9 @@ impl CreateContainerRecipeError {
     /// Creates the `CreateContainerRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: CreateContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1554,7 +1556,9 @@ impl CreateContainerRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: CreateContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1672,7 +1676,7 @@ impl std::error::Error for CreateContainerRecipeError {
             CreateContainerRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             CreateContainerRecipeErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateContainerRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1713,7 +1717,7 @@ pub enum CreateDistributionConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDistributionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1769,7 +1773,9 @@ impl CreateDistributionConfigurationError {
     /// Creates the `CreateDistributionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1778,7 +1784,9 @@ impl CreateDistributionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1910,7 +1918,7 @@ impl std::error::Error for CreateDistributionConfigurationError {
             CreateDistributionConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            CreateDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1947,7 +1955,7 @@ pub enum CreateImageErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1982,7 +1990,7 @@ impl CreateImageError {
     /// Creates the `CreateImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateImageErrorKind::Unhandled(err.into()),
+            kind: CreateImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1991,7 +1999,7 @@ impl CreateImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateImageErrorKind::Unhandled(err.into()),
+            kind: CreateImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2076,7 +2084,7 @@ impl std::error::Error for CreateImageError {
             CreateImageErrorKind::ServiceException(_inner) => Some(_inner),
             CreateImageErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateImageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2115,7 +2123,7 @@ pub enum CreateImagePipelineErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateImagePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2153,7 +2161,7 @@ impl CreateImagePipelineError {
     /// Creates the `CreateImagePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateImagePipelineErrorKind::Unhandled(err.into()),
+            kind: CreateImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2162,7 +2170,7 @@ impl CreateImagePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateImagePipelineErrorKind::Unhandled(err.into()),
+            kind: CreateImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2269,7 +2277,7 @@ impl std::error::Error for CreateImagePipelineError {
             CreateImagePipelineErrorKind::ServiceException(_inner) => Some(_inner),
             CreateImagePipelineErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateImagePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateImagePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateImagePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2310,7 +2318,7 @@ pub enum CreateImageRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateImageRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2349,7 +2357,7 @@ impl CreateImageRecipeError {
     /// Creates the `CreateImageRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateImageRecipeErrorKind::Unhandled(err.into()),
+            kind: CreateImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2358,7 +2366,7 @@ impl CreateImageRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateImageRecipeErrorKind::Unhandled(err.into()),
+            kind: CreateImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2470,7 +2478,7 @@ impl std::error::Error for CreateImageRecipeError {
             CreateImageRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             CreateImageRecipeErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateImageRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            CreateImageRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateImageRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2509,7 +2517,7 @@ pub enum CreateInfrastructureConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInfrastructureConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2562,7 +2570,9 @@ impl CreateInfrastructureConfigurationError {
     /// Creates the `CreateInfrastructureConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: CreateInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2571,7 +2581,9 @@ impl CreateInfrastructureConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: CreateInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: CreateInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2693,7 +2705,7 @@ impl std::error::Error for CreateInfrastructureConfigurationError {
             CreateInfrastructureConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            CreateInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            CreateInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2726,7 +2738,7 @@ pub enum DeleteComponentErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2759,7 +2771,7 @@ impl DeleteComponentError {
     /// Creates the `DeleteComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+            kind: DeleteComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2768,7 +2780,7 @@ impl DeleteComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteComponentErrorKind::Unhandled(err.into()),
+            kind: DeleteComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2843,7 +2855,7 @@ impl std::error::Error for DeleteComponentError {
             DeleteComponentErrorKind::ResourceDependencyException(_inner) => Some(_inner),
             DeleteComponentErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteComponentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2876,7 +2888,7 @@ pub enum DeleteContainerRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContainerRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2909,7 +2921,9 @@ impl DeleteContainerRecipeError {
     /// Creates the `DeleteContainerRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2918,7 +2932,9 @@ impl DeleteContainerRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: DeleteContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3002,7 +3018,7 @@ impl std::error::Error for DeleteContainerRecipeError {
             DeleteContainerRecipeErrorKind::ResourceDependencyException(_inner) => Some(_inner),
             DeleteContainerRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteContainerRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3035,7 +3051,7 @@ pub enum DeleteDistributionConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDistributionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3079,7 +3095,9 @@ impl DeleteDistributionConfigurationError {
     /// Creates the `DeleteDistributionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3088,7 +3106,9 @@ impl DeleteDistributionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3180,7 +3200,7 @@ impl std::error::Error for DeleteDistributionConfigurationError {
             DeleteDistributionConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            DeleteDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3213,7 +3233,7 @@ pub enum DeleteImageErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3246,7 +3266,7 @@ impl DeleteImageError {
     /// Creates the `DeleteImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteImageErrorKind::Unhandled(err.into()),
+            kind: DeleteImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3255,7 +3275,7 @@ impl DeleteImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteImageErrorKind::Unhandled(err.into()),
+            kind: DeleteImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3327,7 +3347,7 @@ impl std::error::Error for DeleteImageError {
             DeleteImageErrorKind::ResourceDependencyException(_inner) => Some(_inner),
             DeleteImageErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteImageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3360,7 +3380,7 @@ pub enum DeleteImagePipelineErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteImagePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3393,7 +3413,7 @@ impl DeleteImagePipelineError {
     /// Creates the `DeleteImagePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteImagePipelineErrorKind::Unhandled(err.into()),
+            kind: DeleteImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3402,7 +3422,7 @@ impl DeleteImagePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteImagePipelineErrorKind::Unhandled(err.into()),
+            kind: DeleteImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3483,7 +3503,7 @@ impl std::error::Error for DeleteImagePipelineError {
             DeleteImagePipelineErrorKind::ResourceDependencyException(_inner) => Some(_inner),
             DeleteImagePipelineErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteImagePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteImagePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteImagePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3516,7 +3536,7 @@ pub enum DeleteImageRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteImageRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3549,7 +3569,7 @@ impl DeleteImageRecipeError {
     /// Creates the `DeleteImageRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteImageRecipeErrorKind::Unhandled(err.into()),
+            kind: DeleteImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3558,7 +3578,7 @@ impl DeleteImageRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteImageRecipeErrorKind::Unhandled(err.into()),
+            kind: DeleteImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3636,7 +3656,7 @@ impl std::error::Error for DeleteImageRecipeError {
             DeleteImageRecipeErrorKind::ResourceDependencyException(_inner) => Some(_inner),
             DeleteImageRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteImageRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            DeleteImageRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteImageRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3669,7 +3689,7 @@ pub enum DeleteInfrastructureConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInfrastructureConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3713,7 +3733,9 @@ impl DeleteInfrastructureConfigurationError {
     /// Creates the `DeleteInfrastructureConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3722,7 +3744,9 @@ impl DeleteInfrastructureConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: DeleteInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3814,7 +3838,7 @@ impl std::error::Error for DeleteInfrastructureConfigurationError {
             DeleteInfrastructureConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            DeleteInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3845,7 +3869,7 @@ pub enum GetComponentErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3877,7 +3901,7 @@ impl GetComponentError {
     /// Creates the `GetComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetComponentErrorKind::Unhandled(err.into()),
+            kind: GetComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3886,7 +3910,7 @@ impl GetComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetComponentErrorKind::Unhandled(err.into()),
+            kind: GetComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3953,7 +3977,7 @@ impl std::error::Error for GetComponentError {
             GetComponentErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetComponentErrorKind::ServiceException(_inner) => Some(_inner),
             GetComponentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3984,7 +4008,7 @@ pub enum GetComponentPolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetComponentPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4016,7 +4040,7 @@ impl GetComponentPolicyError {
     /// Creates the `GetComponentPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetComponentPolicyErrorKind::Unhandled(err.into()),
+            kind: GetComponentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4025,7 +4049,7 @@ impl GetComponentPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetComponentPolicyErrorKind::Unhandled(err.into()),
+            kind: GetComponentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4098,7 +4122,7 @@ impl std::error::Error for GetComponentPolicyError {
             GetComponentPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetComponentPolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetComponentPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetComponentPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetComponentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4129,7 +4153,7 @@ pub enum GetContainerRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4161,7 +4185,7 @@ impl GetContainerRecipeError {
     /// Creates the `GetContainerRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: GetContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4170,7 +4194,7 @@ impl GetContainerRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerRecipeErrorKind::Unhandled(err.into()),
+            kind: GetContainerRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4240,7 +4264,7 @@ impl std::error::Error for GetContainerRecipeError {
             GetContainerRecipeErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetContainerRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4271,7 +4295,7 @@ pub enum GetContainerRecipePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContainerRecipePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4305,7 +4329,9 @@ impl GetContainerRecipePolicyError {
     /// Creates the `GetContainerRecipePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContainerRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: GetContainerRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4314,7 +4340,9 @@ impl GetContainerRecipePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContainerRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: GetContainerRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4392,7 +4420,7 @@ impl std::error::Error for GetContainerRecipePolicyError {
             GetContainerRecipePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetContainerRecipePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetContainerRecipePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetContainerRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContainerRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4423,7 +4451,7 @@ pub enum GetDistributionConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDistributionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4459,7 +4487,9 @@ impl GetDistributionConfigurationError {
     /// Creates the `GetDistributionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetDistributionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -4468,7 +4498,9 @@ impl GetDistributionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetDistributionConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -4548,7 +4580,7 @@ impl std::error::Error for GetDistributionConfigurationError {
             GetDistributionConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            GetDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4579,7 +4611,7 @@ pub enum GetImageErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4611,7 +4643,7 @@ impl GetImageError {
     /// Creates the `GetImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImageErrorKind::Unhandled(err.into()),
+            kind: GetImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4620,7 +4652,7 @@ impl GetImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImageErrorKind::Unhandled(err.into()),
+            kind: GetImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4684,7 +4716,7 @@ impl std::error::Error for GetImageError {
             GetImageErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetImageErrorKind::ServiceException(_inner) => Some(_inner),
             GetImageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4715,7 +4747,7 @@ pub enum GetImagePipelineErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImagePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4747,7 +4779,7 @@ impl GetImagePipelineError {
     /// Creates the `GetImagePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImagePipelineErrorKind::Unhandled(err.into()),
+            kind: GetImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4756,7 +4788,7 @@ impl GetImagePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImagePipelineErrorKind::Unhandled(err.into()),
+            kind: GetImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4823,7 +4855,7 @@ impl std::error::Error for GetImagePipelineError {
             GetImagePipelineErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetImagePipelineErrorKind::ServiceException(_inner) => Some(_inner),
             GetImagePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetImagePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImagePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4854,7 +4886,7 @@ pub enum GetImagePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImagePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4886,7 +4918,7 @@ impl GetImagePolicyError {
     /// Creates the `GetImagePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImagePolicyErrorKind::Unhandled(err.into()),
+            kind: GetImagePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -4895,7 +4927,7 @@ impl GetImagePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImagePolicyErrorKind::Unhandled(err.into()),
+            kind: GetImagePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -4965,7 +4997,7 @@ impl std::error::Error for GetImagePolicyError {
             GetImagePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetImagePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetImagePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetImagePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImagePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4996,7 +5028,7 @@ pub enum GetImageRecipeErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImageRecipeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5028,7 +5060,7 @@ impl GetImageRecipeError {
     /// Creates the `GetImageRecipeError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImageRecipeErrorKind::Unhandled(err.into()),
+            kind: GetImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5037,7 +5069,7 @@ impl GetImageRecipeError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImageRecipeErrorKind::Unhandled(err.into()),
+            kind: GetImageRecipeErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5104,7 +5136,7 @@ impl std::error::Error for GetImageRecipeError {
             GetImageRecipeErrorKind::InvalidRequestException(_inner) => Some(_inner),
             GetImageRecipeErrorKind::ServiceException(_inner) => Some(_inner),
             GetImageRecipeErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetImageRecipeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImageRecipeErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5135,7 +5167,7 @@ pub enum GetImageRecipePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImageRecipePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5167,7 +5199,9 @@ impl GetImageRecipePolicyError {
     /// Creates the `GetImageRecipePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImageRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: GetImageRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5176,7 +5210,9 @@ impl GetImageRecipePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImageRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: GetImageRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5252,7 +5288,7 @@ impl std::error::Error for GetImageRecipePolicyError {
             GetImageRecipePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetImageRecipePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             GetImageRecipePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetImageRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImageRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5283,7 +5319,7 @@ pub enum GetInfrastructureConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInfrastructureConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5324,7 +5360,9 @@ impl GetInfrastructureConfigurationError {
     /// Creates the `GetInfrastructureConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetInfrastructureConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5333,7 +5371,9 @@ impl GetInfrastructureConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetInfrastructureConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5415,7 +5455,7 @@ impl std::error::Error for GetInfrastructureConfigurationError {
             GetInfrastructureConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            GetInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5454,7 +5494,7 @@ pub enum ImportComponentErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5490,7 +5530,7 @@ impl ImportComponentError {
     /// Creates the `ImportComponentError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportComponentErrorKind::Unhandled(err.into()),
+            kind: ImportComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5499,7 +5539,7 @@ impl ImportComponentError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportComponentErrorKind::Unhandled(err.into()),
+            kind: ImportComponentErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5598,7 +5638,7 @@ impl std::error::Error for ImportComponentError {
             ImportComponentErrorKind::ResourceInUseException(_inner) => Some(_inner),
             ImportComponentErrorKind::ServiceException(_inner) => Some(_inner),
             ImportComponentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ImportComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportComponentErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5623,7 +5663,7 @@ pub enum ImportVmImageErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportVmImageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5652,7 +5692,7 @@ impl ImportVmImageError {
     /// Creates the `ImportVmImageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ImportVmImageErrorKind::Unhandled(err.into()),
+            kind: ImportVmImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5661,7 +5701,7 @@ impl ImportVmImageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ImportVmImageErrorKind::Unhandled(err.into()),
+            kind: ImportVmImageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -5707,7 +5747,7 @@ impl std::error::Error for ImportVmImageError {
             ImportVmImageErrorKind::ClientException(_inner) => Some(_inner),
             ImportVmImageErrorKind::ServiceException(_inner) => Some(_inner),
             ImportVmImageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ImportVmImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ImportVmImageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5740,7 +5780,7 @@ pub enum ListComponentBuildVersionsErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListComponentBuildVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5779,7 +5819,9 @@ impl ListComponentBuildVersionsError {
     /// Creates the `ListComponentBuildVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListComponentBuildVersionsErrorKind::Unhandled(err.into()),
+            kind: ListComponentBuildVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -5788,7 +5830,9 @@ impl ListComponentBuildVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListComponentBuildVersionsErrorKind::Unhandled(err.into()),
+            kind: ListComponentBuildVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -5878,7 +5922,7 @@ impl std::error::Error for ListComponentBuildVersionsError {
             ListComponentBuildVersionsErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            ListComponentBuildVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListComponentBuildVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5911,7 +5955,7 @@ pub enum ListComponentsErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListComponentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5944,7 +5988,7 @@ impl ListComponentsError {
     /// Creates the `ListComponentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListComponentsErrorKind::Unhandled(err.into()),
+            kind: ListComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -5953,7 +5997,7 @@ impl ListComponentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListComponentsErrorKind::Unhandled(err.into()),
+            kind: ListComponentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6028,7 +6072,7 @@ impl std::error::Error for ListComponentsError {
             ListComponentsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListComponentsErrorKind::ServiceException(_inner) => Some(_inner),
             ListComponentsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListComponentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListComponentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6061,7 +6105,7 @@ pub enum ListContainerRecipesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListContainerRecipesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6094,7 +6138,9 @@ impl ListContainerRecipesError {
     /// Creates the `ListContainerRecipesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListContainerRecipesErrorKind::Unhandled(err.into()),
+            kind: ListContainerRecipesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6103,7 +6149,9 @@ impl ListContainerRecipesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListContainerRecipesErrorKind::Unhandled(err.into()),
+            kind: ListContainerRecipesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6187,7 +6235,7 @@ impl std::error::Error for ListContainerRecipesError {
             ListContainerRecipesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListContainerRecipesErrorKind::ServiceException(_inner) => Some(_inner),
             ListContainerRecipesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListContainerRecipesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListContainerRecipesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6220,7 +6268,7 @@ pub enum ListDistributionConfigurationsErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDistributionConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6264,7 +6312,9 @@ impl ListDistributionConfigurationsError {
     /// Creates the `ListDistributionConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDistributionConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListDistributionConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6273,7 +6323,9 @@ impl ListDistributionConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDistributionConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListDistributionConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6365,7 +6417,7 @@ impl std::error::Error for ListDistributionConfigurationsError {
             ListDistributionConfigurationsErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            ListDistributionConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDistributionConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6398,7 +6450,7 @@ pub enum ListImageBuildVersionsErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImageBuildVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6435,7 +6487,9 @@ impl ListImageBuildVersionsError {
     /// Creates the `ListImageBuildVersionsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImageBuildVersionsErrorKind::Unhandled(err.into()),
+            kind: ListImageBuildVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6444,7 +6498,9 @@ impl ListImageBuildVersionsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImageBuildVersionsErrorKind::Unhandled(err.into()),
+            kind: ListImageBuildVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6530,7 +6586,7 @@ impl std::error::Error for ListImageBuildVersionsError {
             ListImageBuildVersionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListImageBuildVersionsErrorKind::ServiceException(_inner) => Some(_inner),
             ListImageBuildVersionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImageBuildVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImageBuildVersionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6565,7 +6621,7 @@ pub enum ListImagePackagesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImagePackagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6599,7 +6655,7 @@ impl ListImagePackagesError {
     /// Creates the `ListImagePackagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImagePackagesErrorKind::Unhandled(err.into()),
+            kind: ListImagePackagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6608,7 +6664,7 @@ impl ListImagePackagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImagePackagesErrorKind::Unhandled(err.into()),
+            kind: ListImagePackagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -6694,7 +6750,7 @@ impl std::error::Error for ListImagePackagesError {
             ListImagePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListImagePackagesErrorKind::ServiceException(_inner) => Some(_inner),
             ListImagePackagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImagePackagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImagePackagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6729,7 +6785,7 @@ pub enum ListImagePipelineImagesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImagePipelineImagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6767,7 +6823,9 @@ impl ListImagePipelineImagesError {
     /// Creates the `ListImagePipelineImagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImagePipelineImagesErrorKind::Unhandled(err.into()),
+            kind: ListImagePipelineImagesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -6776,7 +6834,9 @@ impl ListImagePipelineImagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImagePipelineImagesErrorKind::Unhandled(err.into()),
+            kind: ListImagePipelineImagesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -6872,7 +6932,7 @@ impl std::error::Error for ListImagePipelineImagesError {
             ListImagePipelineImagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListImagePipelineImagesErrorKind::ServiceException(_inner) => Some(_inner),
             ListImagePipelineImagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImagePipelineImagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImagePipelineImagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6905,7 +6965,7 @@ pub enum ListImagePipelinesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImagePipelinesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6938,7 +6998,7 @@ impl ListImagePipelinesError {
     /// Creates the `ListImagePipelinesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImagePipelinesErrorKind::Unhandled(err.into()),
+            kind: ListImagePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -6947,7 +7007,7 @@ impl ListImagePipelinesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImagePipelinesErrorKind::Unhandled(err.into()),
+            kind: ListImagePipelinesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7025,7 +7085,7 @@ impl std::error::Error for ListImagePipelinesError {
             ListImagePipelinesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListImagePipelinesErrorKind::ServiceException(_inner) => Some(_inner),
             ListImagePipelinesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImagePipelinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImagePipelinesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7058,7 +7118,7 @@ pub enum ListImageRecipesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImageRecipesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7091,7 +7151,7 @@ impl ListImageRecipesError {
     /// Creates the `ListImageRecipesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImageRecipesErrorKind::Unhandled(err.into()),
+            kind: ListImageRecipesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7100,7 +7160,7 @@ impl ListImageRecipesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImageRecipesErrorKind::Unhandled(err.into()),
+            kind: ListImageRecipesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7175,7 +7235,7 @@ impl std::error::Error for ListImageRecipesError {
             ListImageRecipesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListImageRecipesErrorKind::ServiceException(_inner) => Some(_inner),
             ListImageRecipesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImageRecipesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImageRecipesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7208,7 +7268,7 @@ pub enum ListImagesErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListImagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7241,7 +7301,7 @@ impl ListImagesError {
     /// Creates the `ListImagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListImagesErrorKind::Unhandled(err.into()),
+            kind: ListImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7250,7 +7310,7 @@ impl ListImagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListImagesErrorKind::Unhandled(err.into()),
+            kind: ListImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7322,7 +7382,7 @@ impl std::error::Error for ListImagesError {
             ListImagesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListImagesErrorKind::ServiceException(_inner) => Some(_inner),
             ListImagesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            ListImagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListImagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7355,7 +7415,7 @@ pub enum ListInfrastructureConfigurationsErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListInfrastructureConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7399,7 +7459,9 @@ impl ListInfrastructureConfigurationsError {
     /// Creates the `ListInfrastructureConfigurationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListInfrastructureConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListInfrastructureConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -7408,7 +7470,9 @@ impl ListInfrastructureConfigurationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListInfrastructureConfigurationsErrorKind::Unhandled(err.into()),
+            kind: ListInfrastructureConfigurationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -7500,7 +7564,7 @@ impl std::error::Error for ListInfrastructureConfigurationsError {
             ListInfrastructureConfigurationsErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            ListInfrastructureConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListInfrastructureConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7525,7 +7589,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7554,7 +7618,7 @@ impl ListTagsForResourceError {
     /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7563,7 +7627,7 @@ impl ListTagsForResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7615,7 +7679,7 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ServiceException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7650,7 +7714,7 @@ pub enum PutComponentPolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutComponentPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7684,7 +7748,7 @@ impl PutComponentPolicyError {
     /// Creates the `PutComponentPolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutComponentPolicyErrorKind::Unhandled(err.into()),
+            kind: PutComponentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -7693,7 +7757,7 @@ impl PutComponentPolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutComponentPolicyErrorKind::Unhandled(err.into()),
+            kind: PutComponentPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -7779,7 +7843,7 @@ impl std::error::Error for PutComponentPolicyError {
             PutComponentPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutComponentPolicyErrorKind::ServiceException(_inner) => Some(_inner),
             PutComponentPolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutComponentPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutComponentPolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7814,7 +7878,7 @@ pub enum PutContainerRecipePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutContainerRecipePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7852,7 +7916,9 @@ impl PutContainerRecipePolicyError {
     /// Creates the `PutContainerRecipePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutContainerRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: PutContainerRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -7861,7 +7927,9 @@ impl PutContainerRecipePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutContainerRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: PutContainerRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -7957,7 +8025,7 @@ impl std::error::Error for PutContainerRecipePolicyError {
             PutContainerRecipePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutContainerRecipePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             PutContainerRecipePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutContainerRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutContainerRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7992,7 +8060,7 @@ pub enum PutImagePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutImagePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8026,7 +8094,7 @@ impl PutImagePolicyError {
     /// Creates the `PutImagePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutImagePolicyErrorKind::Unhandled(err.into()),
+            kind: PutImagePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8035,7 +8103,7 @@ impl PutImagePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutImagePolicyErrorKind::Unhandled(err.into()),
+            kind: PutImagePolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8118,7 +8186,7 @@ impl std::error::Error for PutImagePolicyError {
             PutImagePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutImagePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             PutImagePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutImagePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutImagePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8153,7 +8221,7 @@ pub enum PutImageRecipePolicyErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutImageRecipePolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8187,7 +8255,9 @@ impl PutImageRecipePolicyError {
     /// Creates the `PutImageRecipePolicyError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutImageRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: PutImageRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8196,7 +8266,9 @@ impl PutImageRecipePolicyError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutImageRecipePolicyErrorKind::Unhandled(err.into()),
+            kind: PutImageRecipePolicyErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8288,7 +8360,7 @@ impl std::error::Error for PutImageRecipePolicyError {
             PutImageRecipePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             PutImageRecipePolicyErrorKind::ServiceException(_inner) => Some(_inner),
             PutImageRecipePolicyErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            PutImageRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutImageRecipePolicyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8325,7 +8397,7 @@ pub enum StartImagePipelineExecutionErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartImagePipelineExecutionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8368,7 +8440,9 @@ impl StartImagePipelineExecutionError {
     /// Creates the `StartImagePipelineExecutionError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartImagePipelineExecutionErrorKind::Unhandled(err.into()),
+            kind: StartImagePipelineExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -8377,7 +8451,9 @@ impl StartImagePipelineExecutionError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartImagePipelineExecutionErrorKind::Unhandled(err.into()),
+            kind: StartImagePipelineExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -8483,7 +8559,7 @@ impl std::error::Error for StartImagePipelineExecutionError {
             StartImagePipelineExecutionErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            StartImagePipelineExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartImagePipelineExecutionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8508,7 +8584,7 @@ pub enum TagResourceErrorKind {
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8537,7 +8613,7 @@ impl TagResourceError {
     /// Creates the `TagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8546,7 +8622,7 @@ impl TagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(err.into()),
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8595,7 +8671,7 @@ impl std::error::Error for TagResourceError {
             TagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::ServiceException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8620,7 +8696,7 @@ pub enum UntagResourceErrorKind {
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8649,7 +8725,7 @@ impl UntagResourceError {
     /// Creates the `UntagResourceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8658,7 +8734,7 @@ impl UntagResourceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -8707,7 +8783,7 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8744,7 +8820,7 @@ pub enum UpdateDistributionConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDistributionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8794,7 +8870,9 @@ impl UpdateDistributionConfigurationError {
     /// Creates the `UpdateDistributionConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -8803,7 +8881,9 @@ impl UpdateDistributionConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateDistributionConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateDistributionConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -8915,7 +8995,7 @@ impl std::error::Error for UpdateDistributionConfigurationError {
             UpdateDistributionConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            UpdateDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateDistributionConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8950,7 +9030,7 @@ pub enum UpdateImagePipelineErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateImagePipelineError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8986,7 +9066,7 @@ impl UpdateImagePipelineError {
     /// Creates the `UpdateImagePipelineError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateImagePipelineErrorKind::Unhandled(err.into()),
+            kind: UpdateImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -8995,7 +9075,7 @@ impl UpdateImagePipelineError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateImagePipelineErrorKind::Unhandled(err.into()),
+            kind: UpdateImagePipelineErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -9086,7 +9166,7 @@ impl std::error::Error for UpdateImagePipelineError {
             UpdateImagePipelineErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateImagePipelineErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateImagePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateImagePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateImagePipelineErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9121,7 +9201,7 @@ pub enum UpdateInfrastructureConfigurationErrorKind {
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateInfrastructureConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9168,7 +9248,9 @@ impl UpdateInfrastructureConfigurationError {
     /// Creates the `UpdateInfrastructureConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -9177,7 +9259,9 @@ impl UpdateInfrastructureConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateInfrastructureConfigurationErrorKind::Unhandled(err.into()),
+            kind: UpdateInfrastructureConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -9279,7 +9363,32 @@ impl std::error::Error for UpdateInfrastructureConfigurationError {
             UpdateInfrastructureConfigurationErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            UpdateInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateInfrastructureConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

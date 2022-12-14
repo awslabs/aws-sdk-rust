@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,9 +58,11 @@ where
                 crate::error::AssumeRoleErrorKind::RegionDisabledException(inner) => {
                     Error::RegionDisabledException(inner)
                 }
-                crate::error::AssumeRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssumeRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -92,10 +94,10 @@ where
                     Error::RegionDisabledException(inner)
                 }
                 crate::error::AssumeRoleWithSAMLErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -116,9 +118,9 @@ where
                 crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
                 crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
                 crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
-                crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AssumeRoleWithWebIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -133,9 +135,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(inner) => Error::InvalidAuthorizationMessageException(inner),
-                crate::error::DecodeAuthorizationMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DecodeAuthorizationMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,10 +151,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetAccessKeyInfoErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -166,10 +168,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetCallerIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -192,10 +194,10 @@ where
                     Error::RegionDisabledException(inner)
                 }
                 crate::error::GetFederationTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,9 +211,11 @@ where
                 crate::error::GetSessionTokenErrorKind::RegionDisabledException(inner) => {
                     Error::RegionDisabledException(inner)
                 }
-                crate::error::GetSessionTokenErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSessionTokenErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

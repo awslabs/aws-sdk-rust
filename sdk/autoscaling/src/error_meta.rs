@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,9 +53,11 @@ where
                 crate::error::AttachInstancesErrorKind::ServiceLinkedRoleFailure(inner) => {
                     Error::ServiceLinkedRoleFailure(inner)
                 }
-                crate::error::AttachInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AttachInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -75,10 +77,10 @@ where
                     Error::ServiceLinkedRoleFailure(inner)
                 }
                 crate::error::AttachLoadBalancersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -103,10 +105,10 @@ where
                     inner,
                 ) => Error::ServiceLinkedRoleFailure(inner),
                 crate::error::AttachLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -124,10 +126,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::BatchDeleteScheduledActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -149,9 +151,9 @@ where
                 crate::error::BatchPutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault(inner) => Error::AlreadyExistsFault(inner),
                 crate::error::BatchPutScheduledUpdateGroupActionErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
                 crate::error::BatchPutScheduledUpdateGroupActionErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
-                crate::error::BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::BatchPutScheduledUpdateGroupActionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,9 +170,9 @@ where
                 crate::error::CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault(inner) => Error::ActiveInstanceRefreshNotFoundFault(inner),
                 crate::error::CancelInstanceRefreshErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
                 crate::error::CancelInstanceRefreshErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
-                crate::error::CancelInstanceRefreshErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CancelInstanceRefreshErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -188,10 +190,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::CompleteLifecycleActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -218,10 +220,10 @@ where
                     Error::ServiceLinkedRoleFailure(inner)
                 }
                 crate::error::CreateAutoScalingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -245,10 +247,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::CreateLaunchConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -274,10 +276,10 @@ where
                     Error::ResourceInUseFault(inner)
                 }
                 crate::error::CreateOrUpdateTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -301,10 +303,10 @@ where
                     inner,
                 ) => Error::ScalingActivityInProgressFault(inner),
                 crate::error::DeleteAutoScalingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -325,10 +327,10 @@ where
                     Error::ResourceInUseFault(inner)
                 }
                 crate::error::DeleteLaunchConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,10 +347,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DeleteLifecycleHookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -370,10 +372,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DeleteNotificationConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -390,9 +392,11 @@ where
                 crate::error::DeletePolicyErrorKind::ServiceLinkedRoleFailure(inner) => {
                     Error::ServiceLinkedRoleFailure(inner)
                 }
-                crate::error::DeletePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -410,10 +414,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DeleteScheduledActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -430,9 +434,11 @@ where
                 crate::error::DeleteTagsErrorKind::ResourceInUseFault(inner) => {
                     Error::ResourceInUseFault(inner)
                 }
-                crate::error::DeleteTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -455,9 +461,11 @@ where
                 crate::error::DeleteWarmPoolErrorKind::ScalingActivityInProgressFault(inner) => {
                     Error::ScalingActivityInProgressFault(inner)
                 }
-                crate::error::DeleteWarmPoolErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteWarmPoolErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -475,10 +483,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -496,10 +504,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeAdjustmentTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -520,10 +528,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeAutoScalingGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -544,10 +552,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeAutoScalingInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -570,9 +578,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeAutoScalingNotificationTypesErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
-                crate::error::DescribeAutoScalingNotificationTypesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeAutoScalingNotificationTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -593,10 +601,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeInstanceRefreshesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -617,10 +625,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeLaunchConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -638,10 +646,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeLifecycleHooksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -659,10 +667,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeLifecycleHookTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -683,10 +691,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeLoadBalancersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -706,9 +714,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
                 crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
-                crate::error::DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -726,10 +734,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeMetricCollectionTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -750,9 +758,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DescribeNotificationConfigurationsErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
                 crate::error::DescribeNotificationConfigurationsErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
-                crate::error::DescribeNotificationConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeNotificationConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -775,10 +783,10 @@ where
                     Error::ServiceLinkedRoleFailure(inner)
                 }
                 crate::error::DescribePoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,10 +807,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeScalingActivitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -820,10 +828,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeScalingProcessTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -844,10 +852,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeScheduledActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -864,9 +872,11 @@ where
                 crate::error::DescribeTagsErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
-                crate::error::DescribeTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -888,10 +898,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeTerminationPolicyTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -914,10 +924,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DescribeWarmPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -931,9 +941,11 @@ where
                 crate::error::DetachInstancesErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
-                crate::error::DetachInstancesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DetachInstancesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -950,10 +962,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DetachLoadBalancersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -975,10 +987,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::DetachLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -996,10 +1008,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::DisableMetricsCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1017,10 +1029,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::EnableMetricsCollectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1034,9 +1046,11 @@ where
                 crate::error::EnterStandbyErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
-                crate::error::EnterStandbyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnterStandbyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1053,9 +1067,11 @@ where
                 crate::error::ExecutePolicyErrorKind::ScalingActivityInProgressFault(inner) => {
                     Error::ScalingActivityInProgressFault(inner)
                 }
-                crate::error::ExecutePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExecutePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1069,9 +1085,11 @@ where
                 crate::error::ExitStandbyErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
-                crate::error::ExitStandbyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ExitStandbyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1089,10 +1107,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::GetPredictiveScalingForecastErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1112,10 +1130,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::PutLifecycleHookErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1139,10 +1157,10 @@ where
                     inner,
                 ) => Error::ServiceLinkedRoleFailure(inner),
                 crate::error::PutNotificationConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1165,10 +1183,10 @@ where
                     Error::ServiceLinkedRoleFailure(inner)
                 }
                 crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1192,10 +1210,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::PutScheduledUpdateGroupActionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1212,9 +1230,11 @@ where
                 crate::error::PutWarmPoolErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
-                crate::error::PutWarmPoolErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutWarmPoolErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1236,10 +1256,10 @@ where
                     inner,
                 ) => Error::ResourceContentionFault(inner),
                 crate::error::RecordLifecycleActionHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1256,9 +1276,11 @@ where
                 crate::error::ResumeProcessesErrorKind::ResourceInUseFault(inner) => {
                     Error::ResourceInUseFault(inner)
                 }
-                crate::error::ResumeProcessesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResumeProcessesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1278,10 +1300,10 @@ where
                     inner,
                 ) => Error::ScalingActivityInProgressFault(inner),
                 crate::error::SetDesiredCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1298,10 +1320,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::SetInstanceHealthErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1322,10 +1344,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::SetInstanceProtectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1349,10 +1371,10 @@ where
                     Error::ResourceContentionFault(inner)
                 }
                 crate::error::StartInstanceRefreshErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1372,10 +1394,10 @@ where
                     Error::ResourceInUseFault(inner)
                 }
                 crate::error::SuspendProcessesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1399,9 +1421,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
                 crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault(inner) => Error::ScalingActivityInProgressFault(inner),
-                crate::error::TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TerminateInstanceInAutoScalingGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1425,10 +1447,10 @@ where
                     Error::ServiceLinkedRoleFailure(inner)
                 }
                 crate::error::UpdateAutoScalingGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

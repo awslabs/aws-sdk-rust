@@ -871,7 +871,7 @@ pub enum BulkPublishErrorKind {
     /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for BulkPublishError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -903,7 +903,7 @@ impl BulkPublishError {
     /// Creates the `BulkPublishError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: BulkPublishErrorKind::Unhandled(err.into()),
+            kind: BulkPublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -912,7 +912,7 @@ impl BulkPublishError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: BulkPublishErrorKind::Unhandled(err.into()),
+            kind: BulkPublishErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -982,7 +982,7 @@ impl std::error::Error for BulkPublishError {
             BulkPublishErrorKind::InvalidParameterException(_inner) => Some(_inner),
             BulkPublishErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             BulkPublishErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            BulkPublishErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            BulkPublishErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1013,7 +1013,7 @@ pub enum DeleteDatasetErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1045,7 +1045,7 @@ impl DeleteDatasetError {
     /// Creates the `DeleteDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            kind: DeleteDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1054,7 +1054,7 @@ impl DeleteDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            kind: DeleteDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1130,7 +1130,7 @@ impl std::error::Error for DeleteDatasetError {
             DeleteDatasetErrorKind::ResourceConflictException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDatasetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1159,7 +1159,7 @@ pub enum DescribeDatasetErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1190,7 +1190,7 @@ impl DescribeDatasetError {
     /// Creates the `DescribeDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+            kind: DescribeDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1199,7 +1199,7 @@ impl DescribeDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+            kind: DescribeDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1267,7 +1267,7 @@ impl std::error::Error for DescribeDatasetError {
             DescribeDatasetErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             DescribeDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDatasetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1296,7 +1296,7 @@ pub enum DescribeIdentityPoolUsageErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIdentityPoolUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1327,7 +1327,9 @@ impl DescribeIdentityPoolUsageError {
     /// Creates the `DescribeIdentityPoolUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIdentityPoolUsageErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityPoolUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1336,7 +1338,9 @@ impl DescribeIdentityPoolUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIdentityPoolUsageErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityPoolUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1404,7 +1408,7 @@ impl std::error::Error for DescribeIdentityPoolUsageError {
             DescribeIdentityPoolUsageErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             DescribeIdentityPoolUsageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeIdentityPoolUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeIdentityPoolUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeIdentityPoolUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1433,7 +1437,7 @@ pub enum DescribeIdentityUsageErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeIdentityUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1464,7 +1468,9 @@ impl DescribeIdentityUsageError {
     /// Creates the `DescribeIdentityUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeIdentityUsageErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1473,7 +1479,9 @@ impl DescribeIdentityUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeIdentityUsageErrorKind::Unhandled(err.into()),
+            kind: DescribeIdentityUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1541,7 +1549,7 @@ impl std::error::Error for DescribeIdentityUsageError {
             DescribeIdentityUsageErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             DescribeIdentityUsageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeIdentityUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeIdentityUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeIdentityUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1568,7 +1576,7 @@ pub enum GetBulkPublishDetailsErrorKind {
     /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetBulkPublishDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1598,7 +1606,9 @@ impl GetBulkPublishDetailsError {
     /// Creates the `GetBulkPublishDetailsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetBulkPublishDetailsErrorKind::Unhandled(err.into()),
+            kind: GetBulkPublishDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1607,7 +1617,9 @@ impl GetBulkPublishDetailsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetBulkPublishDetailsErrorKind::Unhandled(err.into()),
+            kind: GetBulkPublishDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1667,7 +1679,7 @@ impl std::error::Error for GetBulkPublishDetailsError {
             GetBulkPublishDetailsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetBulkPublishDetailsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetBulkPublishDetailsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetBulkPublishDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetBulkPublishDetailsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1696,7 +1708,7 @@ pub enum GetCognitoEventsErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCognitoEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1727,7 +1739,7 @@ impl GetCognitoEventsError {
     /// Creates the `GetCognitoEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetCognitoEventsErrorKind::Unhandled(err.into()),
+            kind: GetCognitoEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1736,7 +1748,7 @@ impl GetCognitoEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetCognitoEventsErrorKind::Unhandled(err.into()),
+            kind: GetCognitoEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1804,7 +1816,7 @@ impl std::error::Error for GetCognitoEventsError {
             GetCognitoEventsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetCognitoEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetCognitoEventsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetCognitoEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetCognitoEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1833,7 +1845,7 @@ pub enum GetIdentityPoolConfigurationErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetIdentityPoolConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1870,7 +1882,9 @@ impl GetIdentityPoolConfigurationError {
     /// Creates the `GetIdentityPoolConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetIdentityPoolConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetIdentityPoolConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1879,7 +1893,9 @@ impl GetIdentityPoolConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetIdentityPoolConfigurationErrorKind::Unhandled(err.into()),
+            kind: GetIdentityPoolConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1951,7 +1967,7 @@ impl std::error::Error for GetIdentityPoolConfigurationError {
                 Some(_inner)
             }
             GetIdentityPoolConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetIdentityPoolConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetIdentityPoolConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1978,7 +1994,7 @@ pub enum ListDatasetsErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDatasetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2008,7 +2024,7 @@ impl ListDatasetsError {
     /// Creates the `ListDatasetsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListDatasetsErrorKind::Unhandled(err.into()),
+            kind: ListDatasetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2017,7 +2033,7 @@ impl ListDatasetsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListDatasetsErrorKind::Unhandled(err.into()),
+            kind: ListDatasetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2071,7 +2087,7 @@ impl std::error::Error for ListDatasetsError {
             ListDatasetsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListDatasetsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             ListDatasetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListDatasetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListDatasetsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2098,7 +2114,7 @@ pub enum ListIdentityPoolUsageErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListIdentityPoolUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2128,7 +2144,9 @@ impl ListIdentityPoolUsageError {
     /// Creates the `ListIdentityPoolUsageError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListIdentityPoolUsageErrorKind::Unhandled(err.into()),
+            kind: ListIdentityPoolUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2137,7 +2155,9 @@ impl ListIdentityPoolUsageError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListIdentityPoolUsageErrorKind::Unhandled(err.into()),
+            kind: ListIdentityPoolUsageErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2197,7 +2217,7 @@ impl std::error::Error for ListIdentityPoolUsageError {
             ListIdentityPoolUsageErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListIdentityPoolUsageErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             ListIdentityPoolUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListIdentityPoolUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListIdentityPoolUsageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2224,7 +2244,7 @@ pub enum ListRecordsErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2254,7 +2274,7 @@ impl ListRecordsError {
     /// Creates the `ListRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListRecordsErrorKind::Unhandled(err.into()),
+            kind: ListRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2263,7 +2283,7 @@ impl ListRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListRecordsErrorKind::Unhandled(err.into()),
+            kind: ListRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2317,7 +2337,7 @@ impl std::error::Error for ListRecordsError {
             ListRecordsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListRecordsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             ListRecordsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2348,7 +2368,7 @@ pub enum RegisterDeviceErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2380,7 +2400,7 @@ impl RegisterDeviceError {
     /// Creates the `RegisterDeviceError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: RegisterDeviceErrorKind::Unhandled(err.into()),
+            kind: RegisterDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2389,7 +2409,7 @@ impl RegisterDeviceError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: RegisterDeviceErrorKind::Unhandled(err.into()),
+            kind: RegisterDeviceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2465,7 +2485,7 @@ impl std::error::Error for RegisterDeviceError {
             RegisterDeviceErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             RegisterDeviceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RegisterDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            RegisterDeviceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2494,7 +2514,7 @@ pub enum SetCognitoEventsErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetCognitoEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2525,7 +2545,7 @@ impl SetCognitoEventsError {
     /// Creates the `SetCognitoEventsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetCognitoEventsErrorKind::Unhandled(err.into()),
+            kind: SetCognitoEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2534,7 +2554,7 @@ impl SetCognitoEventsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetCognitoEventsErrorKind::Unhandled(err.into()),
+            kind: SetCognitoEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2602,7 +2622,7 @@ impl std::error::Error for SetCognitoEventsError {
             SetCognitoEventsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             SetCognitoEventsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SetCognitoEventsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SetCognitoEventsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetCognitoEventsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2633,7 +2653,7 @@ pub enum SetIdentityPoolConfigurationErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetIdentityPoolConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2673,7 +2693,9 @@ impl SetIdentityPoolConfigurationError {
     /// Creates the `SetIdentityPoolConfigurationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SetIdentityPoolConfigurationErrorKind::Unhandled(err.into()),
+            kind: SetIdentityPoolConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2682,7 +2704,9 @@ impl SetIdentityPoolConfigurationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SetIdentityPoolConfigurationErrorKind::Unhandled(err.into()),
+            kind: SetIdentityPoolConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2764,7 +2788,7 @@ impl std::error::Error for SetIdentityPoolConfigurationError {
                 Some(_inner)
             }
             SetIdentityPoolConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SetIdentityPoolConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SetIdentityPoolConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2795,7 +2819,7 @@ pub enum SubscribeToDatasetErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubscribeToDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2827,7 +2851,7 @@ impl SubscribeToDatasetError {
     /// Creates the `SubscribeToDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SubscribeToDatasetErrorKind::Unhandled(err.into()),
+            kind: SubscribeToDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2836,7 +2860,7 @@ impl SubscribeToDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SubscribeToDatasetErrorKind::Unhandled(err.into()),
+            kind: SubscribeToDatasetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2912,7 +2936,7 @@ impl std::error::Error for SubscribeToDatasetError {
             SubscribeToDatasetErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             SubscribeToDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             SubscribeToDatasetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SubscribeToDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SubscribeToDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2943,7 +2967,7 @@ pub enum UnsubscribeFromDatasetErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnsubscribeFromDatasetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2975,7 +2999,9 @@ impl UnsubscribeFromDatasetError {
     /// Creates the `UnsubscribeFromDatasetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UnsubscribeFromDatasetErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeFromDatasetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2984,7 +3010,9 @@ impl UnsubscribeFromDatasetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UnsubscribeFromDatasetErrorKind::Unhandled(err.into()),
+            kind: UnsubscribeFromDatasetErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3060,7 +3088,7 @@ impl std::error::Error for UnsubscribeFromDatasetError {
             UnsubscribeFromDatasetErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             UnsubscribeFromDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UnsubscribeFromDatasetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UnsubscribeFromDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UnsubscribeFromDatasetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3097,7 +3125,7 @@ pub enum UpdateRecordsErrorKind {
     /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3132,7 +3160,7 @@ impl UpdateRecordsError {
     /// Creates the `UpdateRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateRecordsErrorKind::Unhandled(err.into()),
+            kind: UpdateRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -3141,7 +3169,7 @@ impl UpdateRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateRecordsErrorKind::Unhandled(err.into()),
+            kind: UpdateRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -3241,7 +3269,32 @@ impl std::error::Error for UpdateRecordsError {
             UpdateRecordsErrorKind::ResourceConflictException(_inner) => Some(_inner),
             UpdateRecordsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateRecordsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -351,7 +351,7 @@ pub enum DescribeStreamErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -379,7 +379,7 @@ impl DescribeStreamError {
     /// Creates the `DescribeStreamError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -388,7 +388,7 @@ impl DescribeStreamError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeStreamErrorKind::Unhandled(err.into()),
+            kind: DescribeStreamErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -429,7 +429,7 @@ impl std::error::Error for DescribeStreamError {
         match &self.kind {
             DescribeStreamErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeStreamErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeStreamErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -466,7 +466,7 @@ pub enum GetRecordsErrorKind {
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecordsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -497,7 +497,7 @@ impl GetRecordsError {
     /// Creates the `GetRecordsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRecordsErrorKind::Unhandled(err.into()),
+            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -506,7 +506,7 @@ impl GetRecordsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRecordsErrorKind::Unhandled(err.into()),
+            kind: GetRecordsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -565,7 +565,7 @@ impl std::error::Error for GetRecordsError {
             GetRecordsErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetRecordsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetRecordsErrorKind::TrimmedDataAccessException(_inner) => Some(_inner),
-            GetRecordsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRecordsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -595,7 +595,7 @@ pub enum GetShardIteratorErrorKind {
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetShardIteratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -624,7 +624,7 @@ impl GetShardIteratorError {
     /// Creates the `GetShardIteratorError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetShardIteratorErrorKind::Unhandled(err.into()),
+            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -633,7 +633,7 @@ impl GetShardIteratorError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetShardIteratorErrorKind::Unhandled(err.into()),
+            kind: GetShardIteratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -685,7 +685,7 @@ impl std::error::Error for GetShardIteratorError {
             GetShardIteratorErrorKind::InternalServerError(_inner) => Some(_inner),
             GetShardIteratorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetShardIteratorErrorKind::TrimmedDataAccessException(_inner) => Some(_inner),
-            GetShardIteratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetShardIteratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -708,7 +708,7 @@ pub enum ListStreamsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStreamsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -736,7 +736,7 @@ impl ListStreamsError {
     /// Creates the `ListStreamsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListStreamsErrorKind::Unhandled(err.into()),
+            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -745,7 +745,7 @@ impl ListStreamsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListStreamsErrorKind::Unhandled(err.into()),
+            kind: ListStreamsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -786,7 +786,32 @@ impl std::error::Error for ListStreamsError {
         match &self.kind {
             ListStreamsErrorKind::InternalServerError(_inner) => Some(_inner),
             ListStreamsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListStreamsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListStreamsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -68,7 +68,7 @@ pub enum Error {
     /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
     VerificationException(crate::error::VerificationException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -128,9 +128,11 @@ where
                 crate::error::AddPermissionErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::AddPermissionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddPermissionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -148,9 +150,9 @@ where
                 crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-                crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -182,10 +184,10 @@ where
                     inner,
                 ) => Error::SubscriptionLimitExceededException(inner),
                 crate::error::ConfirmSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -209,10 +211,10 @@ where
                     inner,
                 ) => Error::InvalidParameterException(inner),
                 crate::error::CreatePlatformApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -239,10 +241,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::CreatePlatformEndpointErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -275,10 +277,10 @@ where
                     Error::UserErrorException(inner)
                 }
                 crate::error::CreateSMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -316,9 +318,11 @@ where
                 crate::error::CreateTopicErrorKind::TopicLimitExceededException(inner) => {
                     Error::TopicLimitExceededException(inner)
                 }
-                crate::error::CreateTopicErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateTopicErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -338,9 +342,11 @@ where
                 crate::error::DeleteEndpointErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteEndpointErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -364,10 +370,10 @@ where
                     inner,
                 ) => Error::InvalidParameterException(inner),
                 crate::error::DeletePlatformApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -400,10 +406,10 @@ where
                     Error::UserErrorException(inner)
                 }
                 crate::error::DeleteSMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -435,9 +441,11 @@ where
                 crate::error::DeleteTopicErrorKind::TagPolicyException(inner) => {
                     Error::TagPolicyException(inner)
                 }
-                crate::error::DeleteTopicErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteTopicErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -467,10 +475,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetDataProtectionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -497,10 +505,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetEndpointAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -522,9 +530,9 @@ where
                 crate::error::GetPlatformApplicationAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::GetPlatformApplicationAttributesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetPlatformApplicationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::GetPlatformApplicationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPlatformApplicationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -550,10 +558,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetSMSAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -577,10 +585,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::GetSMSSandboxAccountStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -607,10 +615,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetSubscriptionAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -639,10 +647,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetTopicAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -665,9 +673,9 @@ where
                 crate::error::ListEndpointsByPlatformApplicationErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListEndpointsByPlatformApplicationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::ListEndpointsByPlatformApplicationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListEndpointsByPlatformApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -697,10 +705,10 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListOriginationNumbersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -727,10 +735,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::ListPhoneNumbersOptedOutErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -754,10 +762,10 @@ where
                     inner,
                 ) => Error::InvalidParameterException(inner),
                 crate::error::ListPlatformApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -787,10 +795,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::ListSMSSandboxPhoneNumbersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -813,10 +821,10 @@ where
                     Error::InvalidParameterException(inner)
                 }
                 crate::error::ListSubscriptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -843,10 +851,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::ListSubscriptionsByTopicErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -875,10 +883,10 @@ where
                     Error::TagPolicyException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -898,9 +906,11 @@ where
                 crate::error::ListTopicsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
-                crate::error::ListTopicsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListTopicsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -926,10 +936,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::OptInPhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -985,9 +995,11 @@ where
                 crate::error::PublishErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PublishErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PublishErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1058,9 +1070,11 @@ where
                 crate::error::PublishBatchErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
-                crate::error::PublishBatchErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PublishBatchErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1090,10 +1104,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::PutDataProtectionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1119,10 +1133,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::RemovePermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1149,10 +1163,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::SetEndpointAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1174,9 +1188,9 @@ where
                 crate::error::SetPlatformApplicationAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::SetPlatformApplicationAttributesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::SetPlatformApplicationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::SetPlatformApplicationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetPlatformApplicationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1202,10 +1216,10 @@ where
                     Error::ThrottledException(inner)
                 }
                 crate::error::SetSMSAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1224,9 +1238,9 @@ where
                 crate::error::SetSubscriptionAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::SetSubscriptionAttributesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::SetSubscriptionAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::SetSubscriptionAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetSubscriptionAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1255,10 +1269,10 @@ where
                     Error::NotFoundException(inner)
                 }
                 crate::error::SetTopicAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1290,9 +1304,11 @@ where
                 crate::error::SubscribeErrorKind::SubscriptionLimitExceededException(inner) => {
                     Error::SubscriptionLimitExceededException(inner)
                 }
-                crate::error::SubscribeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SubscribeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1324,9 +1340,11 @@ where
                 crate::error::TagResourceErrorKind::TagPolicyException(inner) => {
                     Error::TagPolicyException(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1352,9 +1370,11 @@ where
                 crate::error::UnsubscribeErrorKind::NotFoundException(inner) => {
                     Error::NotFoundException(inner)
                 }
-                crate::error::UnsubscribeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UnsubscribeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1386,9 +1406,11 @@ where
                 crate::error::UntagResourceErrorKind::TagPolicyException(inner) => {
                     Error::TagPolicyException(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1421,10 +1443,10 @@ where
                     inner,
                 ) => Error::VerificationException(inner),
                 crate::error::VerifySMSSandboxPhoneNumberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

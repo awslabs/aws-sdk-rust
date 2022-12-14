@@ -460,7 +460,7 @@ pub enum SendCommandErrorKind {
     /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
     RateExceededException(crate::error::RateExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendCommandError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -492,7 +492,7 @@ impl SendCommandError {
     /// Creates the `SendCommandError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: SendCommandErrorKind::Unhandled(err.into()),
+            kind: SendCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -501,7 +501,7 @@ impl SendCommandError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: SendCommandErrorKind::Unhandled(err.into()),
+            kind: SendCommandErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -562,7 +562,32 @@ impl std::error::Error for SendCommandError {
             SendCommandErrorKind::LimitExceededException(_inner) => Some(_inner),
             SendCommandErrorKind::OccConflictException(_inner) => Some(_inner),
             SendCommandErrorKind::RateExceededException(_inner) => Some(_inner),
-            SendCommandErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            SendCommandErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

@@ -357,7 +357,7 @@ pub enum DeleteAlternateContactErrorKind {
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAlternateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -396,7 +396,9 @@ impl DeleteAlternateContactError {
     /// Creates the `DeleteAlternateContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteAlternateContactErrorKind::Unhandled(err.into()),
+            kind: DeleteAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -405,7 +407,9 @@ impl DeleteAlternateContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteAlternateContactErrorKind::Unhandled(err.into()),
+            kind: DeleteAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -473,7 +477,7 @@ impl std::error::Error for DeleteAlternateContactError {
             DeleteAlternateContactErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAlternateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAlternateContactErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteAlternateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteAlternateContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -502,7 +506,7 @@ pub enum GetAlternateContactErrorKind {
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAlternateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -541,7 +545,7 @@ impl GetAlternateContactError {
     /// Creates the `GetAlternateContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAlternateContactErrorKind::Unhandled(err.into()),
+            kind: GetAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -550,7 +554,7 @@ impl GetAlternateContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAlternateContactErrorKind::Unhandled(err.into()),
+            kind: GetAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -618,7 +622,7 @@ impl std::error::Error for GetAlternateContactError {
             GetAlternateContactErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetAlternateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAlternateContactErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAlternateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAlternateContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -647,7 +651,7 @@ pub enum GetContactInformationErrorKind {
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -686,7 +690,9 @@ impl GetContactInformationError {
     /// Creates the `GetContactInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetContactInformationErrorKind::Unhandled(err.into()),
+            kind: GetContactInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -695,7 +701,9 @@ impl GetContactInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetContactInformationErrorKind::Unhandled(err.into()),
+            kind: GetContactInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -763,7 +771,7 @@ impl std::error::Error for GetContactInformationError {
             GetContactInformationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetContactInformationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetContactInformationErrorKind::ValidationException(_inner) => Some(_inner),
-            GetContactInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetContactInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -790,7 +798,7 @@ pub enum PutAlternateContactErrorKind {
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAlternateContactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -828,7 +836,7 @@ impl PutAlternateContactError {
     /// Creates the `PutAlternateContactError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutAlternateContactErrorKind::Unhandled(err.into()),
+            kind: PutAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -837,7 +845,7 @@ impl PutAlternateContactError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutAlternateContactErrorKind::Unhandled(err.into()),
+            kind: PutAlternateContactErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -897,7 +905,7 @@ impl std::error::Error for PutAlternateContactError {
             PutAlternateContactErrorKind::InternalServerException(_inner) => Some(_inner),
             PutAlternateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutAlternateContactErrorKind::ValidationException(_inner) => Some(_inner),
-            PutAlternateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutAlternateContactErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -924,7 +932,7 @@ pub enum PutContactInformationErrorKind {
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutContactInformationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -962,7 +970,9 @@ impl PutContactInformationError {
     /// Creates the `PutContactInformationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutContactInformationErrorKind::Unhandled(err.into()),
+            kind: PutContactInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -971,7 +981,9 @@ impl PutContactInformationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutContactInformationErrorKind::Unhandled(err.into()),
+            kind: PutContactInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1031,7 +1043,32 @@ impl std::error::Error for PutContactInformationError {
             PutContactInformationErrorKind::InternalServerException(_inner) => Some(_inner),
             PutContactInformationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutContactInformationErrorKind::ValidationException(_inner) => Some(_inner),
-            PutContactInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutContactInformationErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

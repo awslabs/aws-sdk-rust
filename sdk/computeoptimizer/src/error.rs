@@ -615,7 +615,7 @@ pub enum DeleteRecommendationPreferencesErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -666,7 +666,9 @@ impl DeleteRecommendationPreferencesError {
     /// Creates the `DeleteRecommendationPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -675,7 +677,9 @@ impl DeleteRecommendationPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -779,7 +783,7 @@ impl std::error::Error for DeleteRecommendationPreferencesError {
                 Some(_inner)
             }
             DeleteRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -814,7 +818,7 @@ pub enum DescribeRecommendationExportJobsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRecommendationExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -865,7 +869,9 @@ impl DescribeRecommendationExportJobsError {
     /// Creates the `DescribeRecommendationExportJobsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(err.into()),
+            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -874,7 +880,9 @@ impl DescribeRecommendationExportJobsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(err.into()),
+            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -980,7 +988,7 @@ impl std::error::Error for DescribeRecommendationExportJobsError {
                 Some(_inner)
             }
             DescribeRecommendationExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1015,7 +1023,7 @@ pub enum ExportAutoScalingGroupRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportAutoScalingGroupRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1068,7 +1076,9 @@ impl ExportAutoScalingGroupRecommendationsError {
     /// Creates the `ExportAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1077,7 +1087,9 @@ impl ExportAutoScalingGroupRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1185,9 +1197,7 @@ impl std::error::Error for ExportAutoScalingGroupRecommendationsError {
             ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1222,7 +1232,7 @@ pub enum ExportEBSVolumeRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportEBSVolumeRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1271,7 +1281,9 @@ impl ExportEBSVolumeRecommendationsError {
     /// Creates the `ExportEBSVolumeRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1280,7 +1292,9 @@ impl ExportEBSVolumeRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1380,7 +1394,7 @@ impl std::error::Error for ExportEBSVolumeRecommendationsError {
                 Some(_inner)
             }
             ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1415,7 +1429,7 @@ pub enum ExportEC2InstanceRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportEC2InstanceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1466,7 +1480,9 @@ impl ExportEC2InstanceRecommendationsError {
     /// Creates the `ExportEC2InstanceRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1475,7 +1491,9 @@ impl ExportEC2InstanceRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1581,7 +1599,7 @@ impl std::error::Error for ExportEC2InstanceRecommendationsError {
                 Some(_inner)
             }
             ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1616,7 +1634,7 @@ pub enum ExportLambdaFunctionRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportLambdaFunctionRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1669,7 +1687,9 @@ impl ExportLambdaFunctionRecommendationsError {
     /// Creates the `ExportLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1678,7 +1698,9 @@ impl ExportLambdaFunctionRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(err.into()),
+            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1786,9 +1808,7 @@ impl std::error::Error for ExportLambdaFunctionRecommendationsError {
             ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1823,7 +1843,7 @@ pub enum GetAutoScalingGroupRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAutoScalingGroupRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1876,7 +1896,9 @@ impl GetAutoScalingGroupRecommendationsError {
     /// Creates the `GetAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -1885,7 +1907,9 @@ impl GetAutoScalingGroupRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -1993,7 +2017,7 @@ impl std::error::Error for GetAutoScalingGroupRecommendationsError {
             GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2028,7 +2052,7 @@ pub enum GetEBSVolumeRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEBSVolumeRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2070,7 +2094,9 @@ impl GetEBSVolumeRecommendationsError {
     /// Creates the `GetEBSVolumeRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2079,7 +2105,9 @@ impl GetEBSVolumeRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2177,7 +2205,7 @@ impl std::error::Error for GetEBSVolumeRecommendationsError {
                 Some(_inner)
             }
             GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2212,7 +2240,7 @@ pub enum GetEC2InstanceRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEC2InstanceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2259,7 +2287,9 @@ impl GetEC2InstanceRecommendationsError {
     /// Creates the `GetEC2InstanceRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -2268,7 +2298,9 @@ impl GetEC2InstanceRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -2368,7 +2400,7 @@ impl std::error::Error for GetEC2InstanceRecommendationsError {
                 Some(_inner)
             }
             GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2403,7 +2435,7 @@ pub enum GetEC2RecommendationProjectedMetricsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEC2RecommendationProjectedMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2456,7 +2488,9 @@ impl GetEC2RecommendationProjectedMetricsError {
     /// Creates the `GetEC2RecommendationProjectedMetricsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(err.into()),
+            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2465,7 +2499,9 @@ impl GetEC2RecommendationProjectedMetricsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(err.into()),
+            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2573,9 +2609,7 @@ impl std::error::Error for GetEC2RecommendationProjectedMetricsError {
             GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2610,7 +2644,7 @@ pub enum GetEffectiveRecommendationPreferencesErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEffectiveRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2663,7 +2697,9 @@ impl GetEffectiveRecommendationPreferencesError {
     /// Creates the `GetEffectiveRecommendationPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -2672,7 +2708,9 @@ impl GetEffectiveRecommendationPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -2780,9 +2818,7 @@ impl std::error::Error for GetEffectiveRecommendationPreferencesError {
             GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2813,7 +2849,7 @@ pub enum GetEnrollmentStatusErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEnrollmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2845,7 +2881,7 @@ impl GetEnrollmentStatusError {
     /// Creates the `GetEnrollmentStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEnrollmentStatusErrorKind::Unhandled(err.into()),
+            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -2854,7 +2890,7 @@ impl GetEnrollmentStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEnrollmentStatusErrorKind::Unhandled(err.into()),
+            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -2930,7 +2966,7 @@ impl std::error::Error for GetEnrollmentStatusError {
             GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => Some(_inner),
             GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetEnrollmentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2961,7 +2997,7 @@ pub enum GetEnrollmentStatusesForOrganizationErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEnrollmentStatusesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3008,7 +3044,9 @@ impl GetEnrollmentStatusesForOrganizationError {
     /// Creates the `GetEnrollmentStatusesForOrganizationError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3017,7 +3055,9 @@ impl GetEnrollmentStatusesForOrganizationError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(err.into()),
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3105,9 +3145,7 @@ impl std::error::Error for GetEnrollmentStatusesForOrganizationError {
             GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) => {
                 Some(_inner)
             }
-            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => {
-                Some(_inner.as_ref())
-            }
+            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3142,7 +3180,7 @@ pub enum GetLambdaFunctionRecommendationsErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLambdaFunctionRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3193,7 +3231,9 @@ impl GetLambdaFunctionRecommendationsError {
     /// Creates the `GetLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
             meta: Default::default(),
         }
     }
@@ -3202,7 +3242,9 @@ impl GetLambdaFunctionRecommendationsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(err.into()),
+            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(err.into()),
+            ),
         }
     }
 
@@ -3308,7 +3350,7 @@ impl std::error::Error for GetLambdaFunctionRecommendationsError {
                 Some(_inner)
             }
             GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3343,7 +3385,7 @@ pub enum GetRecommendationPreferencesErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3385,7 +3427,9 @@ impl GetRecommendationPreferencesError {
     /// Creates the `GetRecommendationPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3394,7 +3438,9 @@ impl GetRecommendationPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3494,7 +3540,7 @@ impl std::error::Error for GetRecommendationPreferencesError {
                 Some(_inner)
             }
             GetRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3527,7 +3573,7 @@ pub enum GetRecommendationSummariesErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecommendationSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3566,7 +3612,9 @@ impl GetRecommendationSummariesError {
     /// Creates the `GetRecommendationSummariesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetRecommendationSummariesErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3575,7 +3623,9 @@ impl GetRecommendationSummariesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetRecommendationSummariesErrorKind::Unhandled(err.into()),
+            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3663,7 +3713,7 @@ impl std::error::Error for GetRecommendationSummariesError {
                 Some(_inner)
             }
             GetRecommendationSummariesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetRecommendationSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3698,7 +3748,7 @@ pub enum PutRecommendationPreferencesErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3740,7 +3790,9 @@ impl PutRecommendationPreferencesError {
     /// Creates the `PutRecommendationPreferencesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: PutRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3749,7 +3801,9 @@ impl PutRecommendationPreferencesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: PutRecommendationPreferencesErrorKind::Unhandled(err.into()),
+            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3849,7 +3903,7 @@ impl std::error::Error for PutRecommendationPreferencesError {
                 Some(_inner)
             }
             PutRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3880,7 +3934,7 @@ pub enum UpdateEnrollmentStatusErrorKind {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnrollmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3914,7 +3968,9 @@ impl UpdateEnrollmentStatusError {
     /// Creates the `UpdateEnrollmentStatusError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: UpdateEnrollmentStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -3923,7 +3979,9 @@ impl UpdateEnrollmentStatusError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: UpdateEnrollmentStatusErrorKind::Unhandled(err.into()),
+            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -3999,7 +4057,32 @@ impl std::error::Error for UpdateEnrollmentStatusError {
             UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => Some(_inner),
             UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateEnrollmentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

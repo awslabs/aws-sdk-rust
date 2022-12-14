@@ -81,7 +81,7 @@ pub enum GenerateDataSetErrorKind {
     /// This exception is thrown when an internal service error occurs.
     MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -110,7 +110,7 @@ impl GenerateDataSetError {
     /// Creates the `GenerateDataSetError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GenerateDataSetErrorKind::Unhandled(err.into()),
+            kind: GenerateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -119,7 +119,7 @@ impl GenerateDataSetError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GenerateDataSetErrorKind::Unhandled(err.into()),
+            kind: GenerateDataSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -155,7 +155,7 @@ impl std::error::Error for GenerateDataSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException(_inner) => Some(_inner),
-            GenerateDataSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GenerateDataSetErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -176,7 +176,7 @@ pub enum StartSupportDataExportErrorKind {
     /// This exception is thrown when an internal service error occurs.
     MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSupportDataExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -205,7 +205,9 @@ impl StartSupportDataExportError {
     /// Creates the `StartSupportDataExportError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: StartSupportDataExportErrorKind::Unhandled(err.into()),
+            kind: StartSupportDataExportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -214,7 +216,9 @@ impl StartSupportDataExportError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: StartSupportDataExportErrorKind::Unhandled(err.into()),
+            kind: StartSupportDataExportErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -252,7 +256,32 @@ impl std::error::Error for StartSupportDataExportError {
             StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(_inner) => {
                 Some(_inner)
             }
-            StartSupportDataExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            StartSupportDataExportErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

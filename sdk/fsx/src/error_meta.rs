@@ -74,7 +74,7 @@ pub enum Error {
     /// <p>No Amazon FSx volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -138,10 +138,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::AssociateFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,10 +171,10 @@ where
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::CancelDataRepositoryTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -216,9 +216,11 @@ where
                 crate::error::CopyBackupErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
-                crate::error::CopyBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CopyBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -251,9 +253,11 @@ where
                 crate::error::CreateBackupErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::CreateBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -277,9 +281,9 @@ where
                 crate::error::CreateDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::CreateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
                 crate::error::CreateDataRepositoryAssociationErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-                crate::error::CreateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -315,10 +319,10 @@ where
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::CreateDataRepositoryTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -350,9 +354,11 @@ where
                 crate::error::CreateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
                     Error::ServiceLimitExceeded(inner)
                 }
-                crate::error::CreateFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFileCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -396,10 +402,10 @@ where
                     Error::ServiceLimitExceeded(inner)
                 }
                 crate::error::CreateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -422,9 +428,9 @@ where
                 crate::error::CreateFileSystemFromBackupErrorKind::InvalidPerUnitStorageThroughput(inner) => Error::InvalidPerUnitStorageThroughput(inner),
                 crate::error::CreateFileSystemFromBackupErrorKind::MissingFileSystemConfiguration(inner) => Error::MissingFileSystemConfiguration(inner),
                 crate::error::CreateFileSystemFromBackupErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
-                crate::error::CreateFileSystemFromBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateFileSystemFromBackupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -447,9 +453,11 @@ where
                 crate::error::CreateSnapshotErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -485,10 +493,10 @@ where
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::CreateStorageVirtualMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -521,9 +529,11 @@ where
                 crate::error::CreateVolumeErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
-                crate::error::CreateVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -562,10 +572,10 @@ where
                     inner,
                 ) => Error::StorageVirtualMachineNotFound(inner),
                 crate::error::CreateVolumeFromBackupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -595,9 +605,11 @@ where
                 crate::error::DeleteBackupErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
-                crate::error::DeleteBackupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteBackupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -620,9 +632,9 @@ where
                 crate::error::DeleteDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
                 crate::error::DeleteDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DeleteDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
-                crate::error::DeleteDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -648,9 +660,11 @@ where
                 crate::error::DeleteFileCacheErrorKind::ServiceLimitExceeded(inner) => {
                     Error::ServiceLimitExceeded(inner)
                 }
-                crate::error::DeleteFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteFileCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -679,10 +693,10 @@ where
                     Error::ServiceLimitExceeded(inner)
                 }
                 crate::error::DeleteFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -702,9 +716,11 @@ where
                 crate::error::DeleteSnapshotErrorKind::SnapshotNotFound(inner) => {
                     Error::SnapshotNotFound(inner)
                 }
-                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -722,9 +738,9 @@ where
                 crate::error::DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
                 crate::error::DeleteStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
-                crate::error::DeleteStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -745,9 +761,11 @@ where
                 crate::error::DeleteVolumeErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -773,9 +791,11 @@ where
                 crate::error::DescribeBackupsErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -799,9 +819,9 @@ where
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::InvalidDataRepositoryType(inner) => Error::InvalidDataRepositoryType(inner),
-                crate::error::DescribeDataRepositoryAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeDataRepositoryAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -828,10 +848,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeDataRepositoryTasksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -854,10 +874,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeFileCachesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -881,10 +901,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -907,10 +927,10 @@ where
                     Error::InternalServerError(inner)
                 }
                 crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -933,10 +953,10 @@ where
                     Error::SnapshotNotFound(inner)
                 }
                 crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -957,9 +977,9 @@ where
                 crate::error::DescribeStorageVirtualMachinesErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DescribeStorageVirtualMachinesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
-                crate::error::DescribeStorageVirtualMachinesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeStorageVirtualMachinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -979,9 +999,11 @@ where
                 crate::error::DescribeVolumesErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::DescribeVolumesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DescribeVolumesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1005,10 +1027,10 @@ where
                     inner,
                 ) => Error::InternalServerError(inner),
                 crate::error::DisassociateFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1037,10 +1059,10 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1070,10 +1092,10 @@ where
                     Error::ServiceLimitExceeded(inner)
                 }
                 crate::error::ReleaseFileSystemNfsV3LocksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1097,10 +1119,10 @@ where
                     Error::VolumeNotFound(inner)
                 }
                 crate::error::RestoreVolumeFromSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1124,9 +1146,11 @@ where
                 crate::error::TagResourceErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
                 }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1150,9 +1174,11 @@ where
                 crate::error::UntagResourceErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
                 }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1175,9 +1201,9 @@ where
                 crate::error::UpdateDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
                 crate::error::UpdateDataRepositoryAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
-                crate::error::UpdateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateDataRepositoryAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1209,9 +1235,11 @@ where
                 crate::error::UpdateFileCacheErrorKind::UnsupportedOperation(inner) => {
                     Error::UnsupportedOperation(inner)
                 }
-                crate::error::UpdateFileCacheErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateFileCacheErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1246,10 +1274,10 @@ where
                     Error::UnsupportedOperation(inner)
                 }
                 crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1269,9 +1297,11 @@ where
                 crate::error::UpdateSnapshotErrorKind::SnapshotNotFound(inner) => {
                     Error::SnapshotNotFound(inner)
                 }
-                crate::error::UpdateSnapshotErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateSnapshotErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1290,9 +1320,9 @@ where
                 crate::error::UpdateStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
                 crate::error::UpdateStorageVirtualMachineErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-                crate::error::UpdateStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateStorageVirtualMachineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1316,9 +1346,11 @@ where
                 crate::error::UpdateVolumeErrorKind::VolumeNotFound(inner) => {
                     Error::VolumeNotFound(inner)
                 }
-                crate::error::UpdateVolumeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateVolumeErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

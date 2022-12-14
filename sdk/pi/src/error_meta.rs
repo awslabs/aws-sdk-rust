@@ -10,7 +10,7 @@ pub enum Error {
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,10 +42,10 @@ where
                     Error::NotAuthorizedException(inner)
                 }
                 crate::error::DescribeDimensionKeysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -69,10 +69,10 @@ where
                     Error::NotAuthorizedException(inner)
                 }
                 crate::error::GetDimensionKeyDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -95,10 +95,10 @@ where
                     Error::NotAuthorizedException(inner)
                 }
                 crate::error::GetResourceMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -121,10 +121,10 @@ where
                     Error::NotAuthorizedException(inner)
                 }
                 crate::error::GetResourceMetricsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,9 +145,9 @@ where
                 crate::error::ListAvailableResourceDimensionsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
                 crate::error::ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-                crate::error::ListAvailableResourceDimensionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAvailableResourceDimensionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -171,10 +171,10 @@ where
                     inner,
                 ) => Error::NotAuthorizedException(inner),
                 crate::error::ListAvailableResourceMetricsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }

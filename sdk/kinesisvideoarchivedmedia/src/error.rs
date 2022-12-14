@@ -619,7 +619,7 @@ pub enum GetClipErrorKind {
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetClipError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -654,7 +654,7 @@ impl GetClipError {
     /// Creates the `GetClipError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetClipErrorKind::Unhandled(err.into()),
+            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -663,7 +663,7 @@ impl GetClipError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetClipErrorKind::Unhandled(err.into()),
+            kind: GetClipErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -748,7 +748,7 @@ impl std::error::Error for GetClipError {
             GetClipErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetClipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetClipErrorKind::UnsupportedStreamMediaTypeException(_inner) => Some(_inner),
-            GetClipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetClipErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -784,7 +784,7 @@ pub enum GetDASHStreamingSessionURLErrorKind {
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDASHStreamingSessionURLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -826,7 +826,9 @@ impl GetDASHStreamingSessionURLError {
     /// Creates the `GetDASHStreamingSessionURLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(err.into()),
+            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -835,7 +837,9 @@ impl GetDASHStreamingSessionURLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(err.into()),
+            kind: GetDASHStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -935,7 +939,7 @@ impl std::error::Error for GetDASHStreamingSessionURLError {
             GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
                 Some(_inner)
             }
-            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetDASHStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -971,7 +975,7 @@ pub enum GetHLSStreamingSessionURLErrorKind {
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetHLSStreamingSessionURLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1013,7 +1017,9 @@ impl GetHLSStreamingSessionURLError {
     /// Creates the `GetHLSStreamingSessionURLError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(err.into()),
+            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1022,7 +1028,9 @@ impl GetHLSStreamingSessionURLError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(err.into()),
+            kind: GetHLSStreamingSessionURLErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1122,7 +1130,7 @@ impl std::error::Error for GetHLSStreamingSessionURLError {
             GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException(_inner) => {
                 Some(_inner)
             }
-            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetHLSStreamingSessionURLErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1150,7 +1158,7 @@ pub enum GetImagesErrorKind {
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetImagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1180,7 +1188,7 @@ impl GetImagesError {
     /// Creates the `GetImagesError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetImagesErrorKind::Unhandled(err.into()),
+            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1189,7 +1197,7 @@ impl GetImagesError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetImagesErrorKind::Unhandled(err.into()),
+            kind: GetImagesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1240,7 +1248,7 @@ impl std::error::Error for GetImagesError {
             GetImagesErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetImagesErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetImagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetImagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetImagesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1268,7 +1276,7 @@ pub enum GetMediaForFragmentListErrorKind {
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetMediaForFragmentListError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1298,7 +1306,9 @@ impl GetMediaForFragmentListError {
     /// Creates the `GetMediaForFragmentListError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: GetMediaForFragmentListErrorKind::Unhandled(err.into()),
+            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
             meta: Default::default(),
         }
     }
@@ -1307,7 +1317,9 @@ impl GetMediaForFragmentListError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: GetMediaForFragmentListErrorKind::Unhandled(err.into()),
+            kind: GetMediaForFragmentListErrorKind::Unhandled(crate::error::Unhandled::new(
+                err.into(),
+            )),
         }
     }
 
@@ -1367,7 +1379,7 @@ impl std::error::Error for GetMediaForFragmentListError {
             GetMediaForFragmentListErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             GetMediaForFragmentListErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             GetMediaForFragmentListErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetMediaForFragmentListErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            GetMediaForFragmentListErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1395,7 +1407,7 @@ pub enum ListFragmentsErrorKind {
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFragmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1425,7 +1437,7 @@ impl ListFragmentsError {
     /// Creates the `ListFragmentsError::Unhandled` variant from any error type.
     pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
         Self {
-            kind: ListFragmentsErrorKind::Unhandled(err.into()),
+            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
             meta: Default::default(),
         }
     }
@@ -1434,7 +1446,7 @@ impl ListFragmentsError {
     pub fn generic(err: aws_smithy_types::Error) -> Self {
         Self {
             meta: err.clone(),
-            kind: ListFragmentsErrorKind::Unhandled(err.into()),
+            kind: ListFragmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 
@@ -1494,7 +1506,32 @@ impl std::error::Error for ListFragmentsError {
             ListFragmentsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             ListFragmentsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
             ListFragmentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListFragmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+            ListFragmentsErrorKind::Unhandled(_inner) => Some(_inner),
         }
+    }
+}
+
+///
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+///
+/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+///
+#[derive(Debug)]
+pub struct Unhandled {
+    source: Box<dyn std::error::Error + Send + Sync + 'static>,
+}
+impl Unhandled {
+    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self { source }
+    }
+}
+impl std::fmt::Display for Unhandled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+        write!(f, "unhandled error")
+    }
+}
+impl std::error::Error for Unhandled {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        Some(self.source.as_ref() as _)
     }
 }

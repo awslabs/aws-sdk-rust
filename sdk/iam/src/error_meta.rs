@@ -58,7 +58,7 @@ pub enum Error {
     /// <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unhandled error occurred.
-    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+    Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -113,9 +113,9 @@ where
                 crate::error::AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::AddClientIDToOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddClientIDToOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -145,10 +145,10 @@ where
                     inner,
                 ) => Error::UnmodifiableEntityException(inner),
                 crate::error::AddRoleToInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -168,9 +168,11 @@ where
                 crate::error::AddUserToGroupErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::AddUserToGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::AddUserToGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -199,10 +201,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::AttachGroupPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -234,10 +236,10 @@ where
                     Error::UnmodifiableEntityException(inner)
                 }
                 crate::error::AttachRolePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -266,10 +268,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::AttachUserPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -298,9 +300,11 @@ where
                 crate::error::ChangePasswordErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ChangePasswordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ChangePasswordErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -320,9 +324,11 @@ where
                 crate::error::CreateAccessKeyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::CreateAccessKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateAccessKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -345,10 +351,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateAccountAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -371,9 +377,11 @@ where
                 crate::error::CreateGroupErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::CreateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -403,10 +411,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -435,10 +443,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateLoginProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -457,9 +465,9 @@ where
                 crate::error::CreateOpenIDConnectProviderErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::CreateOpenIDConnectProviderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateOpenIDConnectProviderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::CreateOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -488,9 +496,11 @@ where
                 crate::error::CreatePolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::CreatePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreatePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -519,10 +529,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreatePolicyVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -551,9 +561,11 @@ where
                 crate::error::CreateRoleErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::CreateRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -582,10 +594,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateSAMLProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -612,10 +624,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateServiceLinkedRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -636,9 +648,9 @@ where
                 crate::error::CreateServiceSpecificCredentialErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::CreateServiceSpecificCredentialErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException(inner) => Error::ServiceNotSupportedException(inner),
-                crate::error::CreateServiceSpecificCredentialErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateServiceSpecificCredentialErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -667,9 +679,11 @@ where
                 crate::error::CreateUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::CreateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -699,10 +713,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::CreateVirtualMFADeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -719,9 +733,9 @@ where
                 crate::error::DeactivateMFADeviceErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DeactivateMFADeviceErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeactivateMFADeviceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::DeactivateMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeactivateMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -741,9 +755,11 @@ where
                 crate::error::DeleteAccessKeyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DeleteAccessKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteAccessKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -766,10 +782,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteAccountAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -793,10 +809,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::DeleteAccountPasswordPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -819,9 +835,11 @@ where
                 crate::error::DeleteGroupErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DeleteGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -844,10 +862,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteGroupPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -874,10 +892,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -894,9 +912,9 @@ where
                 crate::error::DeleteLoginProfileErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::DeleteLoginProfileErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteLoginProfileErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::DeleteLoginProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteLoginProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -920,10 +938,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::DeleteOpenIDConnectProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -949,9 +967,11 @@ where
                 crate::error::DeletePolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DeletePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeletePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -980,10 +1000,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeletePolicyVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1012,9 +1032,11 @@ where
                 crate::error::DeleteRoleErrorKind::UnmodifiableEntityException(inner) => {
                     Error::UnmodifiableEntityException(inner)
                 }
-                crate::error::DeleteRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1031,9 +1053,9 @@ where
                 crate::error::DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
                 crate::error::DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(inner) => Error::UnmodifiableEntityException(inner),
-                crate::error::DeleteRolePermissionsBoundaryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteRolePermissionsBoundaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1059,10 +1081,10 @@ where
                     Error::UnmodifiableEntityException(inner)
                 }
                 crate::error::DeleteRolePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1088,10 +1110,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteSAMLProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1118,10 +1140,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1145,10 +1167,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteServiceLinkedRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1170,10 +1192,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::DeleteServiceSpecificCredentialErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1197,10 +1219,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteSigningCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1217,10 +1239,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::DeleteSSHPublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1246,9 +1268,11 @@ where
                 crate::error::DeleteUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::DeleteUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1269,10 +1293,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::DeleteUserPermissionsBoundaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1295,10 +1319,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteUserPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1325,10 +1349,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DeleteVirtualMFADeviceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1354,10 +1378,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DetachGroupPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1386,10 +1410,10 @@ where
                     Error::UnmodifiableEntityException(inner)
                 }
                 crate::error::DetachRolePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1415,10 +1439,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::DetachUserPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1447,9 +1471,11 @@ where
                 crate::error::EnableMFADeviceErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::EnableMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::EnableMFADeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1470,10 +1496,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GenerateCredentialReportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1492,9 +1518,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException(inner) => Error::ReportGenerationLimitExceededException(inner),
-                crate::error::GenerateOrganizationsAccessReportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateOrganizationsAccessReportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1515,9 +1541,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
-                crate::error::GenerateServiceLastAccessedDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GenerateServiceLastAccessedDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1535,10 +1561,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::GetAccessKeyLastUsedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1560,10 +1586,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::GetAccountAuthorizationDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1584,10 +1610,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetAccountPasswordPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1604,10 +1630,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetAccountSummaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1625,10 +1651,10 @@ where
                     inner,
                 ) => Error::InvalidInputException(inner),
                 crate::error::GetContextKeysForCustomPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1653,10 +1679,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::GetContextKeysForPrincipalPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1682,10 +1708,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetCredentialReportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1702,9 +1728,11 @@ where
                 crate::error::GetGroupErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1721,9 +1749,11 @@ where
                 crate::error::GetGroupPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetGroupPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1743,10 +1773,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1763,9 +1793,11 @@ where
                 crate::error::GetLoginProfileErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetLoginProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetLoginProfileErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1789,10 +1821,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetOpenIDConnectProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1810,10 +1842,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::GetOrganizationsAccessReportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1833,9 +1865,11 @@ where
                 crate::error::GetPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1858,10 +1892,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetPolicyVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1878,9 +1912,11 @@ where
                 crate::error::GetRoleErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1897,9 +1933,11 @@ where
                 crate::error::GetRolePolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetRolePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetRolePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1919,9 +1957,11 @@ where
                 crate::error::GetSAMLProviderErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetSAMLProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSAMLProviderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1942,10 +1982,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::GetServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1966,10 +2006,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::GetServiceLastAccessedDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -1993,9 +2033,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
-                crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2017,9 +2057,9 @@ where
                 crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2036,9 +2076,11 @@ where
                 crate::error::GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(
                     inner,
                 ) => Error::UnrecognizedPublicKeyEncodingException(inner),
-                crate::error::GetSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetSSHPublicKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2055,9 +2097,11 @@ where
                 crate::error::GetUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2074,9 +2118,11 @@ where
                 crate::error::GetUserPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::GetUserPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::GetUserPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2093,9 +2139,11 @@ where
                 crate::error::ListAccessKeysErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListAccessKeysErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListAccessKeysErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2112,10 +2160,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListAccountAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2139,10 +2187,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::ListAttachedGroupPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2166,10 +2214,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListAttachedRolePoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2193,10 +2241,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListAttachedUserPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2220,10 +2268,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListEntitiesForPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2243,10 +2291,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListGroupPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2260,9 +2308,11 @@ where
                 crate::error::ListGroupsErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2282,10 +2332,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListGroupsForUserErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2303,10 +2353,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListInstanceProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2327,10 +2377,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::ListInstanceProfilesForRoleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2351,10 +2401,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListInstanceProfileTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2371,9 +2421,11 @@ where
                 crate::error::ListMFADevicesErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListMFADevicesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListMFADevicesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2396,10 +2448,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListMFADeviceTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2417,10 +2469,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::ListOpenIDConnectProvidersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2444,10 +2496,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::ListOpenIDConnectProviderTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2461,9 +2513,11 @@ where
                 crate::error::ListPoliciesErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPoliciesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2488,10 +2542,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::ListPoliciesGrantingServiceAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2511,9 +2565,11 @@ where
                 crate::error::ListPolicyTagsErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListPolicyTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListPolicyTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2536,10 +2592,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListPolicyVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2559,10 +2615,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListRolePoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2576,9 +2632,11 @@ where
                 crate::error::ListRolesErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListRolesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRolesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2595,9 +2653,11 @@ where
                 crate::error::ListRoleTagsErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListRoleTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListRoleTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2614,10 +2674,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListSAMLProvidersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2641,10 +2701,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListSAMLProviderTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2662,10 +2722,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListServerCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2686,10 +2746,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::ListServerCertificateTagsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2709,9 +2769,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ListServiceSpecificCredentialsErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException(inner) => Error::ServiceNotSupportedException(inner),
-                crate::error::ListServiceSpecificCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListServiceSpecificCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2732,10 +2792,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListSigningCertificatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2752,10 +2812,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::ListSSHPublicKeysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2775,10 +2835,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::ListUserPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2792,9 +2852,11 @@ where
                 crate::error::ListUsersErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUsersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2811,9 +2873,11 @@ where
                 crate::error::ListUserTagsErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ListUserTagsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ListUserTagsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2828,10 +2892,10 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListVirtualMFADevicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2854,9 +2918,11 @@ where
                 crate::error::PutGroupPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::PutGroupPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutGroupPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2886,10 +2952,10 @@ where
                     inner,
                 ) => Error::UnmodifiableEntityException(inner),
                 crate::error::PutRolePermissionsBoundaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2915,9 +2981,11 @@ where
                 crate::error::PutRolePolicyErrorKind::UnmodifiableEntityException(inner) => {
                     Error::UnmodifiableEntityException(inner)
                 }
-                crate::error::PutRolePolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutRolePolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2944,10 +3012,10 @@ where
                     inner,
                 ) => Error::ServiceFailureException(inner),
                 crate::error::PutUserPermissionsBoundaryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2970,9 +3038,11 @@ where
                 crate::error::PutUserPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::PutUserPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::PutUserPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -2997,9 +3067,9 @@ where
                 crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3017,9 +3087,9 @@ where
                 crate::error::RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
                 crate::error::RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException(inner) => Error::UnmodifiableEntityException(inner),
-                crate::error::RemoveRoleFromInstanceProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::RemoveRoleFromInstanceProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3042,10 +3112,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::RemoveUserFromGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3067,10 +3137,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::ResetServiceSpecificCredentialErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3093,9 +3163,11 @@ where
                 crate::error::ResyncMFADeviceErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::ResyncMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::ResyncMFADeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3122,10 +3194,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::SetDefaultPolicyVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3145,9 +3217,9 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::SetSecurityTokenServicePreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::SetSecurityTokenServicePreferencesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3168,10 +3240,10 @@ where
                     Error::PolicyEvaluationException(inner)
                 }
                 crate::error::SimulateCustomPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3195,10 +3267,10 @@ where
                     inner,
                 ) => Error::PolicyEvaluationException(inner),
                 crate::error::SimulatePrincipalPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3227,10 +3299,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::TagInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3256,9 +3328,11 @@ where
                 crate::error::TagMFADeviceErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::TagMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagMFADeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3277,9 +3351,9 @@ where
                 crate::error::TagOpenIDConnectProviderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::TagOpenIDConnectProviderErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::TagOpenIDConnectProviderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::TagOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3305,9 +3379,11 @@ where
                 crate::error::TagPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::TagPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3333,9 +3409,11 @@ where
                 crate::error::TagRoleErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::TagRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3361,9 +3439,11 @@ where
                 crate::error::TagSAMLProviderErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::TagSAMLProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagSAMLProviderErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3393,10 +3473,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::TagServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3422,9 +3502,11 @@ where
                 crate::error::TagUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::TagUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::TagUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3451,10 +3533,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UntagInstanceProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3477,9 +3559,11 @@ where
                 crate::error::UntagMFADeviceErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UntagMFADeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagMFADeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3497,9 +3581,9 @@ where
                 crate::error::UntagOpenIDConnectProviderErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::UntagOpenIDConnectProviderErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UntagOpenIDConnectProviderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::UntagOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagOpenIDConnectProviderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3522,9 +3606,11 @@ where
                 crate::error::UntagPolicyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UntagPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3544,9 +3630,11 @@ where
                 crate::error::UntagRoleErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UntagRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3572,10 +3660,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UntagSAMLProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3602,10 +3690,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UntagServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3625,9 +3713,11 @@ where
                 crate::error::UntagUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UntagUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UntagUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3647,9 +3737,11 @@ where
                 crate::error::UpdateAccessKeyErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UpdateAccessKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAccessKeyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3667,9 +3759,9 @@ where
                 crate::error::UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
                 crate::error::UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UpdateAccountPasswordPolicyErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::UpdateAccountPasswordPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateAccountPasswordPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3699,10 +3791,10 @@ where
                     inner,
                 ) => Error::UnmodifiableEntityException(inner),
                 crate::error::UpdateAssumeRolePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3725,9 +3817,11 @@ where
                 crate::error::UpdateGroupErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UpdateGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3745,9 +3839,9 @@ where
                 crate::error::UpdateLoginProfileErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UpdateLoginProfileErrorKind::PasswordPolicyViolationException(inner) => Error::PasswordPolicyViolationException(inner),
                 crate::error::UpdateLoginProfileErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::UpdateLoginProfileErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateLoginProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3772,9 +3866,9 @@ where
                 crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
                 crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-                crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3794,9 +3888,11 @@ where
                 crate::error::UpdateRoleErrorKind::UnmodifiableEntityException(inner) => {
                     Error::UnmodifiableEntityException(inner)
                 }
-                crate::error::UpdateRoleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateRoleErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3820,10 +3916,10 @@ where
                     inner,
                 ) => Error::UnmodifiableEntityException(inner),
                 crate::error::UpdateRoleDescriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3849,10 +3945,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UpdateSAMLProviderErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3879,10 +3975,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UpdateServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3904,10 +4000,10 @@ where
                     inner,
                 ) => Error::NoSuchEntityException(inner),
                 crate::error::UpdateServiceSpecificCredentialErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3931,10 +4027,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UpdateSigningCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3951,10 +4047,10 @@ where
                     Error::NoSuchEntityException(inner)
                 }
                 crate::error::UpdateSSHPublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -3983,9 +4079,11 @@ where
                 crate::error::UpdateUserErrorKind::ServiceFailureException(inner) => {
                     Error::ServiceFailureException(inner)
                 }
-                crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UpdateUserErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4021,10 +4119,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UploadServerCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4060,10 +4158,10 @@ where
                     Error::ServiceFailureException(inner)
                 }
                 crate::error::UploadSigningCertificateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
+                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
                 }
             },
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
@@ -4081,9 +4179,9 @@ where
                 crate::error::UploadSSHPublicKeyErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::UploadSSHPublicKeyErrorKind::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
                 crate::error::UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(inner) => Error::UnrecognizedPublicKeyEncodingException(inner),
-                crate::error::UploadSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+                crate::error::UploadSSHPublicKeyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
-            _ => Error::Unhandled(err.into()),
+            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
 }
